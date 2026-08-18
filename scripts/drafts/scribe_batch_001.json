@@ -1,0 +1,578 @@
+[
+  {
+    "class_level": "B4",
+    "subject": "Mathematics",
+    "strand": "Number",
+    "topic": "Place value",
+    "difficulty": "Easy",
+    "type": "mcq",
+    "question": "In the number 3,608, what is the value of the digit 6?",
+    "options": [
+      "60",
+      "600",
+      "6",
+      "6,000"
+    ],
+    "answer_index": 1,
+    "explanation": "The digit 6 is in the hundreds place, so it stands for 600.",
+    "confidence": "high",
+    "needs_review": false
+  },
+  {
+    "class_level": "B4",
+    "subject": "Science",
+    "strand": "Cycles",
+    "topic": "Weather",
+    "difficulty": "Easy",
+    "type": "mcq",
+    "question": "During the harmattan season in Ghana, the air is usually:",
+    "options": [
+      "Wet and rainy",
+      "Dry and dusty",
+      "Full of thunderstorms every day",
+      "Completely still, with no wind"
+    ],
+    "answer_index": 1,
+    "explanation": "Harmattan is a dry, dusty wind that blows from the Sahara, usually from December to February. The air feels dry, not rainy.",
+    "confidence": "high",
+    "needs_review": true,
+    "review_notes": "Scientific description of harmattan is standard. Confirm NaCCA B4 Science (Cycles/Weather) covers harmattan explicitly, not only OWOP/Social Studies."
+  },
+  {
+    "class_level": "B4",
+    "subject": "Computing",
+    "strand": "Introduction to Computing",
+    "topic": "Output devices",
+    "difficulty": "Medium",
+    "type": "mcq",
+    "question": "Kojo finishes his homework on a computer. Which device will put the work onto paper?",
+    "options": [
+      "Mouse",
+      "Printer",
+      "Keyboard",
+      "Speaker"
+    ],
+    "answer_index": 1,
+    "explanation": "A printer is an output device. It takes information from the computer and puts it on paper. A mouse and keyboard are input devices; a speaker outputs sound, not paper.",
+    "confidence": "high",
+    "needs_review": false
+  },
+  {
+    "class_level": "B4",
+    "subject": "Mathematics",
+    "strand": "Number",
+    "topic": "Fractions",
+    "difficulty": "Medium",
+    "type": "mcq",
+    "question": "A market woman has 12 cassava tubers. She gives 1/3 of them to her neighbour. How many tubers does she give away?",
+    "options": [
+      "3",
+      "9",
+      "6",
+      "4"
+    ],
+    "answer_index": 3,
+    "explanation": "One-third means divide into 3 equal groups. 12 ÷ 3 = 4, so she gives away 4 tubers.",
+    "confidence": "high",
+    "needs_review": false
+  },
+  {
+    "class_level": "B4",
+    "subject": "Science",
+    "strand": "Forces and Energy",
+    "topic": "Heat transfer",
+    "difficulty": "Hard",
+    "type": "mcq",
+    "question": "A metal cooking pot on a coal pot becomes too hot to hold. Why does a thick cloth help Ama lift it more safely?",
+    "options": [
+      "The cloth makes the pot lighter",
+      "The cloth is a poor conductor of heat",
+      "The cloth cools the soup inside",
+      "Metal cannot get hot if a cloth is nearby"
+    ],
+    "answer_index": 1,
+    "explanation": "Metals conduct heat well, so the pot gets hot. Cloth is a poor conductor, so less heat reaches Ama's hand. The cloth does not make the pot lighter or cool the food.",
+    "confidence": "high",
+    "needs_review": true,
+    "review_notes": "Heat conductors/insulators are in upper-primary Forces and Energy. Confirm the indicator is B4 rather than B5/B6 before seeding as a B4 Hard item."
+  },
+  {
+    "class_level": "B5",
+    "subject": "Computing",
+    "strand": "Introduction to Computing",
+    "topic": "Input devices",
+    "difficulty": "Easy",
+    "type": "mcq",
+    "question": "Which of these is an input device?",
+    "options": [
+      "Monitor",
+      "Speaker",
+      "Webcam",
+      "Projector"
+    ],
+    "answer_index": 2,
+    "explanation": "A webcam sends pictures into the computer, so it is an input device. A monitor, speaker, and projector send information out of the computer.",
+    "confidence": "high",
+    "needs_review": false
+  },
+  {
+    "class_level": "B5",
+    "subject": "Mathematics",
+    "strand": "Number",
+    "topic": "Money",
+    "difficulty": "Easy",
+    "type": "mcq",
+    "question": "Ama buys a loaf of bread for GHS 7 and a sachet of milk for GHS 4. She pays with a GHS 20 note. How much change should she receive?",
+    "options": [
+      "GHS 7",
+      "GHS 13",
+      "GHS 11",
+      "GHS 9"
+    ],
+    "answer_index": 3,
+    "explanation": "She spends 7 + 4 = GHS 11. Change is 20 − 11 = GHS 9.",
+    "confidence": "high",
+    "needs_review": false
+  },
+  {
+    "class_level": "B5",
+    "subject": "Science",
+    "strand": "Cycles",
+    "topic": "Water cycle",
+    "difficulty": "Medium",
+    "type": "mcq",
+    "question": "After a sunny morning in Kumasi, tiny water droplets form on the outside of a cold bottle of water. What process made those droplets?",
+    "options": [
+      "Evaporation",
+      "Condensation",
+      "Melting",
+      "Freezing"
+    ],
+    "answer_index": 1,
+    "explanation": "Water vapour in the warm air cools when it touches the cold bottle and changes into liquid water. That change of gas to liquid is condensation. The droplets are not ice, so it is not freezing.",
+    "confidence": "high",
+    "needs_review": false
+  },
+  {
+    "class_level": "B5",
+    "subject": "Computing",
+    "strand": "Internet Safety",
+    "topic": "Personal information",
+    "difficulty": "Medium",
+    "type": "mcq",
+    "question": "A stranger in a chat asks Efua for her home address and when her parents leave the house. What should she do?",
+    "options": [
+      "Send the address but not the time",
+      "Ask the stranger to call her instead",
+      "Refuse and tell a trusted adult",
+      "Post the address on her status so friends can check it"
+    ],
+    "answer_index": 2,
+    "explanation": "Never share your home address or family routines with someone you do not know in real life. Tell a parent, teacher, or another trusted adult.",
+    "confidence": "high",
+    "needs_review": false
+  },
+  {
+    "class_level": "B5",
+    "subject": "Mathematics",
+    "strand": "Geometry and Measurement",
+    "topic": "Area",
+    "difficulty": "Hard",
+    "type": "mcq",
+    "question": "A rectangular school garden is 9 m long and 6 m wide. What is its area?",
+    "options": [
+      "15 m²",
+      "54 m²",
+      "30 m²",
+      "108 m²"
+    ],
+    "answer_index": 1,
+    "explanation": "Area of a rectangle = length × width. 9 × 6 = 54 square metres. 15 m is 9 + 6, and 30 m is the perimeter (2 × 15), not the area.",
+    "confidence": "high",
+    "needs_review": true,
+    "review_notes": "Area of a rectangle is in B4–B6 Geometry and Measurement. Confirm B5 (vs B6) is the intended first teaching point for area in m²."
+  },
+  {
+    "class_level": "B6",
+    "subject": "Science",
+    "strand": "Cycles",
+    "topic": "Evaporation",
+    "difficulty": "Easy",
+    "type": "mcq",
+    "question": "Wet school uniforms dry faster when spread in the sun. Which process is mainly happening?",
+    "options": [
+      "Condensation",
+      "Freezing",
+      "Melting",
+      "Evaporation"
+    ],
+    "answer_index": 3,
+    "explanation": "Heat from the sun turns liquid water in the cloth into water vapour, which goes into the air. That is evaporation.",
+    "confidence": "high",
+    "needs_review": false
+  },
+  {
+    "class_level": "B6",
+    "subject": "Computing",
+    "strand": "Files",
+    "topic": "Folders",
+    "difficulty": "Easy",
+    "type": "mcq",
+    "question": "Yaw has many homework files on a computer. What is the best use of a folder?",
+    "options": [
+      "To group related files in one place",
+      "To print every file at once",
+      "To make the computer run faster by itself",
+      "To delete files automatically every night"
+    ],
+    "answer_index": 0,
+    "explanation": "A folder is a container that helps you organise files, like putting all Mathematics notes in one envelope. It does not print, speed up, or delete files by itself.",
+    "confidence": "high",
+    "needs_review": false
+  },
+  {
+    "class_level": "B6",
+    "subject": "Mathematics",
+    "strand": "Number",
+    "topic": "Percentages",
+    "difficulty": "Medium",
+    "type": "mcq",
+    "question": "A farmer harvested 80 bags of maize. She sold 25% of the bags at the market. How many bags did she sell?",
+    "options": [
+      "16",
+      "40",
+      "25",
+      "20"
+    ],
+    "answer_index": 3,
+    "explanation": "25% means 25 out of 100, which is the same as one-quarter. One-quarter of 80 is 80 ÷ 4 = 20 bags.",
+    "confidence": "high",
+    "needs_review": false
+  },
+  {
+    "class_level": "B6",
+    "subject": "Science",
+    "strand": "Cycles",
+    "topic": "Food chains",
+    "difficulty": "Medium",
+    "type": "mcq",
+    "question": "On a maize farm, a lizard eats grasshoppers that have been eating maize leaves. What is the lizard in this food chain?",
+    "options": [
+      "A producer",
+      "A primary consumer",
+      "A secondary consumer",
+      "A decomposer"
+    ],
+    "answer_index": 2,
+    "explanation": "Maize is the producer (it makes its own food). The grasshopper eats the plant, so it is a primary consumer. The lizard eats the grasshopper, so it is a secondary consumer.",
+    "confidence": "medium",
+    "needs_review": true,
+    "review_notes": "Food chains are in upper-primary Science. The terms primary/secondary consumer may be taught more explicitly at B7; confirm B6 indicator language before seeding."
+  },
+  {
+    "class_level": "B6",
+    "subject": "Computing",
+    "strand": "Computational Thinking",
+    "topic": "Selection (if-then)",
+    "difficulty": "Hard",
+    "type": "mcq",
+    "question": "A Scratch-style program says: if score ≥ 50 then display \"Pass\", else display \"Try again\". What should it display when the score is 49?",
+    "options": [
+      "Pass",
+      "Error",
+      "50",
+      "Try again"
+    ],
+    "answer_index": 3,
+    "explanation": "49 is not greater than or equal to 50, so the else part runs and the program displays \"Try again\".",
+    "confidence": "high",
+    "needs_review": true,
+    "review_notes": "Scratch/block programming appears in B4–B6 Computing. Confirm B6 is the right first point for if-then (selection), vs a simpler sequencing item."
+  },
+  {
+    "class_level": "B7",
+    "subject": "Mathematics",
+    "strand": "Number",
+    "topic": "Integers",
+    "difficulty": "Easy",
+    "type": "mcq",
+    "question": "A freezer in a chop bar is at −6 °C. After a power cut the temperature rises by 10 °C. What is the new temperature?",
+    "options": [
+      "−16 °C",
+      "−4 °C",
+      "4 °C",
+      "16 °C"
+    ],
+    "answer_index": 2,
+    "explanation": "Start at −6 and add 10: −6 + 10 = 4. The new temperature is 4 °C, which is above 0 °C.",
+    "confidence": "high",
+    "needs_review": false
+  },
+  {
+    "class_level": "B7",
+    "subject": "Science",
+    "strand": "Systems",
+    "topic": "Cells",
+    "difficulty": "Easy",
+    "type": "mcq",
+    "question": "Which statement about plant cells is true?",
+    "options": [
+      "They have a cell wall and usually chloroplasts",
+      "They have no cell wall",
+      "They have no nucleus",
+      "They cannot make food"
+    ],
+    "answer_index": 0,
+    "explanation": "Plant cells have a cell wall that supports them. Many also have chloroplasts, which help the plant make food. Animal cells do not have a cell wall or chloroplasts.",
+    "confidence": "high",
+    "needs_review": false
+  },
+  {
+    "class_level": "B7",
+    "subject": "Computing",
+    "strand": "Computer Networks",
+    "topic": "LAN and WAN",
+    "difficulty": "Medium",
+    "type": "mcq",
+    "question": "Computers in one classroom share a printer without using the worldwide internet. This kind of network is called a:",
+    "options": [
+      "LAN (Local Area Network)",
+      "WAN (Wide Area Network)",
+      "Browser",
+      "Search engine"
+    ],
+    "answer_index": 0,
+    "explanation": "A LAN connects devices in a small area, such as one classroom or school. The internet is a huge WAN. A browser and a search engine are programs, not types of network.",
+    "confidence": "high",
+    "needs_review": false
+  },
+  {
+    "class_level": "B7",
+    "subject": "Mathematics",
+    "strand": "Number",
+    "topic": "Ratio",
+    "difficulty": "Medium",
+    "type": "mcq",
+    "question": "A mason mixes cement and sand in the ratio 1:3. He uses 20 buckets of the mixture in all. How many buckets of sand does he use?",
+    "options": [
+      "4",
+      "5",
+      "15",
+      "16"
+    ],
+    "answer_index": 2,
+    "explanation": "The total number of parts is 1 + 3 = 4. Each part is 20 ÷ 4 = 5 buckets. Sand is 3 parts, so 3 × 5 = 15 buckets.",
+    "confidence": "high",
+    "needs_review": false
+  },
+  {
+    "class_level": "B7",
+    "subject": "Science",
+    "strand": "Forces and Energy",
+    "topic": "Light and sound",
+    "difficulty": "Hard",
+    "type": "mcq",
+    "question": "During a storm over Accra, learners see lightning and hear thunder a few seconds later. Why is the thunder later?",
+    "options": [
+      "Thunder is made only after the lightning has gone",
+      "Clouds block sound but never block light",
+      "Sound cannot travel through rain",
+      "Light travels much faster than sound"
+    ],
+    "answer_index": 3,
+    "explanation": "Lightning and thunder happen at the same moment. Light reaches your eyes almost at once. Sound is slower, so you hear the thunder later. Rain does not stop sound from travelling.",
+    "confidence": "high",
+    "needs_review": false
+  },
+  {
+    "class_level": "B8",
+    "subject": "Computing",
+    "strand": "Information Security",
+    "topic": "Secure websites",
+    "difficulty": "Easy",
+    "type": "mcq",
+    "question": "Before typing a school password on a website, Yaa should first check that:",
+    "options": [
+      "The address starts with https and shows a padlock",
+      "The page is colourful",
+      "The site has many adverts",
+      "The page loads very slowly"
+    ],
+    "answer_index": 0,
+    "explanation": "https and a padlock mean the connection is encrypted, so it is safer to enter a password. Colour, adverts, and speed do not make a site safe.",
+    "confidence": "high",
+    "needs_review": false
+  },
+  {
+    "class_level": "B8",
+    "subject": "Mathematics",
+    "strand": "Algebra",
+    "topic": "Linear equations",
+    "difficulty": "Easy",
+    "type": "mcq",
+    "question": "Solve for x: x + 9 = 24",
+    "options": [
+      "15",
+      "33",
+      "9",
+      "24"
+    ],
+    "answer_index": 0,
+    "explanation": "Subtract 9 from both sides to keep the equation balanced: x = 24 − 9 = 15.",
+    "confidence": "high",
+    "needs_review": false
+  },
+  {
+    "class_level": "B8",
+    "subject": "Science",
+    "strand": "Forces and Energy",
+    "topic": "Electric circuits",
+    "difficulty": "Medium",
+    "type": "mcq",
+    "question": "Three bulbs are connected in one series loop to a battery. One bulb burns out (its filament breaks). What happens?",
+    "options": [
+      "The other two bulbs stay bright",
+      "The battery stops being a cell",
+      "Only the bulb next to the battery stays on",
+      "The other two bulbs go out as well"
+    ],
+    "answer_index": 3,
+    "explanation": "In a series circuit there is only one path for current. A broken filament opens that path, so current cannot flow and all the bulbs go out.",
+    "confidence": "high",
+    "needs_review": false
+  },
+  {
+    "class_level": "B8",
+    "subject": "Computing",
+    "strand": "Digital Citizenship",
+    "topic": "Plagiarism",
+    "difficulty": "Medium",
+    "type": "mcq",
+    "question": "Kwame copies a whole page from a website into his Computing homework and writes only his name on it. What is the main problem?",
+    "options": [
+      "He has used someone else's work without saying so (plagiarism)",
+      "The page will not print",
+      "Websites cannot be read at school",
+      "His name is too short"
+    ],
+    "answer_index": 0,
+    "explanation": "Using another person's words as if they are yours is plagiarism. Write in your own words, and name the source if you quote.",
+    "confidence": "high",
+    "needs_review": false
+  },
+  {
+    "class_level": "B8",
+    "subject": "Mathematics",
+    "strand": "Geometry and Measurement",
+    "topic": "Pythagoras' theorem",
+    "difficulty": "Hard",
+    "type": "mcq",
+    "question": "A rectangular farm plot is 6 m by 8 m. What is the length of the straight path from one corner to the opposite corner?",
+    "options": [
+      "10 m",
+      "14 m",
+      "24 m",
+      "48 m"
+    ],
+    "answer_index": 0,
+    "explanation": "The path is the diagonal of a right-angled triangle with sides 6 m and 8 m. 6² + 8² = 36 + 64 = 100, and √100 = 10 m. This is a 6-8-10 triangle (a scaled 3-4-5 triangle).",
+    "confidence": "high",
+    "needs_review": false
+  },
+  {
+    "class_level": "B9",
+    "subject": "Science",
+    "strand": "Humans and the Environment",
+    "topic": "E-waste",
+    "difficulty": "Easy",
+    "type": "mcq",
+    "question": "The safest thing to do with a broken phone battery is to:",
+    "options": [
+      "Burn it with household refuse",
+      "Bury it in the school garden",
+      "Take it to an e-waste or recycling collection point",
+      "Throw it into a storm drain"
+    ],
+    "answer_index": 2,
+    "explanation": "Batteries contain chemicals that can harm soil and water if they are burned, buried, or dumped. An e-waste collection point keeps those chemicals out of the environment.",
+    "confidence": "high",
+    "needs_review": false
+  },
+  {
+    "class_level": "B9",
+    "subject": "Computing",
+    "strand": "Software",
+    "topic": "Application software",
+    "difficulty": "Easy",
+    "type": "mcq",
+    "question": "Which of these is application software?",
+    "options": [
+      "A computer mouse",
+      "A keyboard",
+      "A word processor such as Microsoft Word",
+      "A monitor"
+    ],
+    "answer_index": 2,
+    "explanation": "Application software is a program that helps you do a task, such as writing. A mouse, keyboard, and monitor are hardware (physical parts).",
+    "confidence": "high",
+    "needs_review": false
+  },
+  {
+    "class_level": "B9",
+    "subject": "Mathematics",
+    "strand": "Number",
+    "topic": "Percentages (profit)",
+    "difficulty": "Medium",
+    "type": "mcq",
+    "question": "A trader buys a bag of rice for GHS 200 and sells it at a 15% profit. What is the selling price?",
+    "options": [
+      "GHS 185",
+      "GHS 215",
+      "GHS 230",
+      "GHS 300"
+    ],
+    "answer_index": 2,
+    "explanation": "15% of 200 = (15/100) × 200 = 30. Selling price = cost + profit = 200 + 30 = GHS 230.",
+    "confidence": "high",
+    "needs_review": false
+  },
+  {
+    "class_level": "B9",
+    "subject": "Science",
+    "strand": "Forces and Energy",
+    "topic": "Pressure",
+    "difficulty": "Medium",
+    "type": "mcq",
+    "question": "Why is it easier to cut an onion with a sharp knife than with a blunt one?",
+    "options": [
+      "A sharp knife is always heavier",
+      "Onions only react chemically with sharp metal",
+      "A blunt knife stores more energy",
+      "A sharp edge has a smaller area, so the same force makes greater pressure"
+    ],
+    "answer_index": 3,
+    "explanation": "Pressure = force ÷ area. A sharp edge has a very small area, so the force is concentrated and the onion cuts more easily. The knife's weight is not the main reason.",
+    "confidence": "high",
+    "needs_review": false
+  },
+  {
+    "class_level": "B9",
+    "subject": "Computing",
+    "strand": "Programming",
+    "topic": "Tracing algorithms",
+    "difficulty": "Hard",
+    "type": "mcq",
+    "question": "A program does this: x ← 4; y ← 7; x ← x + y; y ← x − y. What are x and y at the end?",
+    "options": [
+      "x = 4, y = 7",
+      "x = 11, y = 4",
+      "x = 11, y = 7",
+      "x = 11, y = 11"
+    ],
+    "answer_index": 1,
+    "explanation": "After x ← x + y, x becomes 4 + 7 = 11. Then y ← x − y uses the new x: 11 − 7 = 4. So x = 11 and y = 4. (The old value of y is used only in that subtraction.)",
+    "confidence": "high",
+    "needs_review": true,
+    "review_notes": "Algorithm tracing is appropriate for CCP Computing, but assignment-arrow notation may be new. Confirm B9 programming indicators use this depth; simplify to Scratch-style blocks if needed."
+  }
+]

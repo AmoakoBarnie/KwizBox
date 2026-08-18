@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 240" width="440" height="240">
+  <rect width="440" height="240" rx="12" fill="#f4f8ff"/>
+  <text x="220" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#022c1c">Desktop computer</text>
+  <!-- A monitor -->
+  <rect x="150" y="36" width="130" height="86" rx="6" fill="#1b3a4b" stroke="#022c1c" stroke-width="2"/>
+  <rect x="160" y="46" width="110" height="60" fill="#d9eef7"/>
+  <rect x="204" y="122" width="22" height="10" fill="#333"/>
+  <rect x="184" y="132" width="62" height="6" rx="2" fill="#333"/>
+  <text x="215" y="156" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#022c1c">A Monitor</text>
+  <!-- B system unit -->
+  <rect x="20" y="56" width="78" height="100" rx="6" fill="#4a4a4a" stroke="#222" stroke-width="2"/>
+  <circle cx="59" cy="82" r="9" fill="#00b36b" stroke="#022c1c" stroke-width="2"/>
+  <rect x="34" y="104" width="50" height="8" fill="#888"/>
+  <rect x="34" y="118" width="50" height="8" fill="#888"/>
+  <rect x="34" y="132" width="24" height="10" fill="#222"/>
+  <text x="59" y="176" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#022c1c">B System unit</text>
+  <!-- C keyboard -->
+  <rect x="140" y="176" width="150" height="34" rx="4" fill="#e8e8e8" stroke="#555" stroke-width="2"/>
+  <g fill="#bbb">
+    <rect x="150" y="184" width="12" height="8" rx="1"/>
+    <rect x="166" y="184" width="12" height="8" rx="1"/>
+    <rect x="182" y="184" width="12" height="8" rx="1"/>
+    <rect x="198" y="184" width="12" height="8" rx="1"/>
+    <rect x="214" y="184" width="12" height="8" rx="1"/>
+    <rect x="230" y="184" width="12" height="8" rx="1"/>
+    <rect x="246" y="184" width="12" height="8" rx="1"/>
+    <rect x="158" y="196" width="114" height="6" rx="1"/>
+  </g>
+  <text x="215" y="228" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#022c1c">C Keyboard</text>
+  <!-- D mouse -->
+  <ellipse cx="370" cy="150" rx="24" ry="34" fill="#ddd" stroke="#555" stroke-width="2"/>
+  <line x1="370" y1="120" x2="370" y2="150" stroke="#555" stroke-width="2"/>
+  <rect x="366" y="142" width="8" height="14" rx="3" fill="#bbb"/>
+  <text x="370" y="204" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#022c1c">D Mouse</text>
+</svg>
