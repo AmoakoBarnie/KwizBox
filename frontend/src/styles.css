@@ -183,10 +183,11 @@ body {
   flex-direction: column; justify-content: center; min-height: 88px;
   font-size: 22px; font-weight: 800; font-family: var(--font-display);
 }
-.options.tf .option.tf-true { border-color: rgba(0,210,126,0.55); }
-.options.tf .option.tf-true.picked { background: var(--grad); color: #042; border-color: transparent; }
-.options.tf .option.tf-false { border-color: rgba(255,210,63,0.55); }
-.options.tf .option.tf-false.picked { background: var(--grad-gold); color: #3a2c00; border-color: transparent; }
+.options.tf .option.tf-true { border-color: #006B3F; }
+.options.tf .option.tf-true.picked { background: #006B3F; color: #fff; border-color: #006B3F; }
+.options.tf .option.tf-false { border-color: #CE1126; }
+.options.tf .option.tf-false.picked { background: #CE1126; color: #fff; border-color: #CE1126; }
+.options.tf .option.picked { box-shadow: 0 0 0 3px #FCD116; }
 
 .feedback { background: var(--glass); backdrop-filter: blur(16px); border: 1px solid var(--glass-border); border-radius: var(--radius); padding: 18px; display: flex; flex-direction: column; gap: 10px; box-shadow: var(--shadow); }
 .fb-correct { color: var(--green-dark); font-weight: 800; margin: 0; }

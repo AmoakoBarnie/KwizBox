@@ -66,6 +66,17 @@ def main():
     print(f"Loaded {len(data)} questions from {json_path}")
 
     Base.metadata.create_all(bind=engine)
+    # Idempotent ALTER so a live trivia.db without the new columns is not wiped.
+    from sqlalchemy import inspect, text as sa_text
+    insp = inspect(engine)
+    if "questions" in insp.get_table_names():
+        cols = {c["name"] for c in insp.get_columns("questions")}
+        with engine.begin() as conn:
+            if "question_type" not in cols:
+                conn.execute(sa_text("ALTER TABLE questions ADD COLUMN question_type VARCHAR(20) DEFAULT 'mcq'"))
+            if "image_url" not in cols:
+                conn.execute(sa_text("ALTER TABLE questions ADD COLUMN image_url VARCHAR(500)"))
+            conn.execute(sa_text("UPDATE questions SET question_type = 'mcq' WHERE question_type IS NULL OR question_type = ''"))
     db = SessionLocal()
     try:
         existing = db.query(Question).count()
