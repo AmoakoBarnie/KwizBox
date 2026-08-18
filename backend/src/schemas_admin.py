@@ -91,6 +91,8 @@ class QuestionOut(BaseModel):
     times_answered: int
     times_correct: int
     correct_rate: Opt[float]
+    question_type: str = "mcq"
+    image_url: Opt[str] = None
 
 
 class QuestionCreate(BaseModel):
@@ -100,9 +102,11 @@ class QuestionCreate(BaseModel):
     strand: str = ""
     difficulty: str = Field(pattern="^(Easy|Medium|Hard)$")
     question: str
-    options: list  # exactly 4
+    options: list  # 4 for mcq/image_mcq; 2 for true_false
     answer_index: int = Field(ge=0, le=3)
     explanation: str = ""
+    question_type: str = "mcq"
+    image_url: Opt[str] = None
 
 
 class QuestionUpdate(BaseModel):
@@ -116,6 +120,8 @@ class QuestionUpdate(BaseModel):
     answer_index: Opt[int] = None
     explanation: Opt[str] = None
     is_active: Opt[bool] = None
+    question_type: Opt[str] = None
+    image_url: Opt[str] = None
 
 
 # ---------- School code management ----------

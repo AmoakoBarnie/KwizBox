@@ -12,6 +12,7 @@ BACKEND = os.path.dirname(HERE)
 sys.path.insert(0, BACKEND)
 
 from src.models import Base, Question  # noqa: E402
+from src.question_types import pad_options, demo_questions  # noqa: E402
 
 DB_PATH = os.path.join(BACKEND, "trivia.db")
 engine = create_engine(f"sqlite:///{DB_PATH}", connect_args={"check_same_thread": False})
@@ -30,10 +31,32 @@ def find_json():
     return None
 
 
+def _row_from_json(d):
+    qtype = d.get("question_type") or d.get("qtype") or "mcq"
+    opts = pad_options(qtype, d.get("options") or [])
+    return Question(
+        id=d["id"],
+        class_level=d["class_level"],
+        subject=d["subject"],
+        topic=d["topic"],
+        strand=d["strand"],
+        difficulty=d["difficulty"],
+        question=d["question"],
+        option_a=opts[0],
+        option_b=opts[1],
+        option_c=opts[2],
+        option_d=opts[3],
+        answer_index=d["answer_index"],
+        explanation=d["explanation"],
+        question_type=qtype,
+        image_url=d.get("image_url") or None,
+    )
+
+
 def main():
     json_path = find_json()
     if not json_path:
-        print("questions.json not found. Looked in:", candidates if False else [
+        print("questions.json not found. Looked in:", [
             os.path.join(HERE, "questions.json"),
             os.path.join(BACKEND, "scripts", "questions.json"),
         ])
@@ -50,23 +73,17 @@ def main():
             print(f"Questions table already has {existing} rows; clearing for clean reseed.")
             db.query(Question).delete()
         for d in data:
-            db.add(Question(
-                id=d["id"],
-                class_level=d["class_level"],
-                subject=d["subject"],
-                topic=d["topic"],
-                strand=d["strand"],
-                difficulty=d["difficulty"],
-                question=d["question"],
-                option_a=d["options"][0],
-                option_b=d["options"][1],
-                option_c=d["options"][2],
-                option_d=d["options"][3],
-                answer_index=d["answer_index"],
-                explanation=d["explanation"],
-            ))
+            db.add(_row_from_json(d))
+        # Placeholder T/F + image items (skipped if the JSON already contains the same stem)
+        stems = {d["question"] for d in data}
+        extra = 0
+        for d in demo_questions():
+            if d["question"] in stems:
+                continue
+            db.add(Question(**d, is_active=True))
+            extra += 1
         db.commit()
-        print(f"Seeded {len(data)} questions into {DB_PATH}")
+        print(f"Seeded {len(data)} questions (+ {extra} type-demo placeholders) into {DB_PATH}")
     finally:
         db.close()
 

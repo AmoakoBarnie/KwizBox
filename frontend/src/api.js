@@ -2,6 +2,19 @@
 // and directly in prod (set VITE_API_URL to the backend origin).
 const BASE = import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace(/\/$/, '') : '/api'
 
+/** Resolve a question image_url so /media/... hits the API (Vite proxies /media in dev). */
+export function mediaUrl(path) {
+  if (!path) return null
+  if (/^https?:\/\//i.test(path)) return path
+  const rel = path.startsWith('/') ? path : `/${path}`
+  const raw = import.meta.env.VITE_API_URL
+  if (raw) {
+    const origin = raw.replace(/\/$/, '').replace(/\/api$/, '')
+    return `${origin}${rel}`
+  }
+  return rel
+}
+
 async function request(method, path, body, token) {
   const headers = {}
   if (body) headers['Content-Type'] = 'application/json'

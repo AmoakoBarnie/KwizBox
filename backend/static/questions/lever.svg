@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 180" width="360" height="180">
+  <rect width="360" height="180" rx="12" fill="#f7fbf8"/>
+  <text x="180" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#022c1c">Lever</text>
+  <!-- bar -->
+  <line x1="40" y1="70" x2="320" y2="110" stroke="#1a1a1a" stroke-width="8" stroke-linecap="round"/>
+  <!-- fulcrum -->
+  <polygon points="180,118 155,158 205,158" fill="#00b36b"/>
+  <text x="180" y="174" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#022c1c">Fulcrum</text>
+  <!-- load -->
+  <rect x="48" y="38" width="36" height="28" rx="3" fill="#ff4d5e"/>
+  <text x="66" y="34" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#ff4d5e">Load</text>
+  <!-- effort -->
+  <circle cx="310" cy="96" r="10" fill="#ffd23f" stroke="#c99700" stroke-width="2"/>
+  <text x="310" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#8a6a00">Effort</text>
+</svg>

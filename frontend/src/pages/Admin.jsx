@@ -202,14 +202,15 @@ function Questions({ token }) {
       <input placeholder="Search…" value={search} onChange={e=>setSearch(e.target.value)} />
       <select value={f.class_level||''} onChange={e=>setF({...f,class_level:e.target.value||undefined})}><option value="">All classes</option>{['B4','B5','B6','B7','B8','B9'].map(c=><option key={c}>{c}</option>)}</select>
       <select value={f.subject||''} onChange={e=>setF({...f,subject:e.target.value||undefined})}><option value="">All subjects</option>{['Mathematics','Science','Computing'].map(c=><option key={c}>{c}</option>)}</select>
-      <button className="btn primary" onClick={()=>setEditing({class_level:'B4',subject:'Mathematics',topic:'',strand:'',difficulty:'Easy',question:'',options:['','','',''],answer_index:0,explanation:''})}>+ New Question</button>
+      <select value={f.question_type||''} onChange={e=>setF({...f,question_type:e.target.value||undefined})}><option value="">All types</option><option value="mcq">MCQ</option><option value="true_false">True/False</option><option value="image_mcq">Image MCQ</option></select>
+      <button className="btn primary" onClick={()=>setEditing({class_level:'B4',subject:'Mathematics',topic:'',strand:'',difficulty:'Easy',question:'',options:['','','',''],answer_index:0,explanation:'',question_type:'mcq',image_url:''})}>+ New Question</button>
       {msg && <p className="hint">{msg}</p>}
       <table className="grid-table">
-        <thead><tr><th>ID</th><th>Q</th><th>Subject</th><th>Answered</th><th>Correct%</th><th>Active</th><th></th></tr></thead>
+        <thead><tr><th>ID</th><th>Q</th><th>Type</th><th>Subject</th><th>Answered</th><th>Correct%</th><th>Active</th><th></th></tr></thead>
         <tbody>
           {list.map(q=>(
             <tr key={q.id}>
-              <td>{q.id}</td><td>{q.question.slice(0,50)}…</td><td>{q.subject}</td>
+              <td>{q.id}</td><td>{q.question.slice(0,50)}…</td><td>{q.question_type||'mcq'}</td><td>{q.subject}</td>
               <td>{q.times_answered}</td><td>{q.correct_rate!=null?(q.correct_rate*100).toFixed(0)+'%':'-'}</td>
               <td>{q.is_active?'✅':'⛔'}</td>
               <td><button className="btn small" onClick={()=>setEditing(q)}>Edit</button><button className="btn small" onClick={()=>tog(q)}>{q.is_active?'Off':'On'}</button><button className="btn small danger" onClick={()=>del(q.id)}>Del</button></td>
@@ -223,16 +224,41 @@ function Questions({ token }) {
 }
 
 function QuestionEditor({ q, onSave, onCancel }) {
-  const [d, setD] = useState(JSON.parse(JSON.stringify(q)))
+  const [d, setD] = useState(JSON.parse(JSON.stringify({
+    question_type: 'mcq', image_url: '', options: ['','','',''], ...q,
+  })))
   const set=(k,v)=>setD({...d,[k]:v})
   const setOpt=(i,v)=>{const o=[...d.options];o[i]=v;set('options',o)}
+  const setType=(t)=>{
+    if (t === 'true_false') {
+      setD({...d, question_type: t, options: [d.options[0]||'True', d.options[1]||'False'], answer_index: d.answer_index>1?0:d.answer_index})
+    } else if (t === 'image_mcq') {
+      const opts = [...(d.options||[])]
+      while (opts.length < 4) opts.push('')
+      setD({...d, question_type: t, options: opts.slice(0,4)})
+    } else {
+      const opts = [...(d.options||[])]
+      while (opts.length < 4) opts.push('')
+      setD({...d, question_type: t, options: opts.slice(0,4)})
+    }
+  }
+  const isTF = d.question_type === 'true_false'
+  const shown = isTF ? (d.options||[]).slice(0,2) : (d.options||['','','',''])
   return (
     <div className="modal">
       <h3>{d.id?'Edit':'New'} Question</h3>
-      <input value={d.question} onChange={e=>set('question',e.target.value)} placeholder="Question" />
-      {d.options.map((o,i)=>(<input key={i} value={o} onChange={e=>setOpt(i,e.target.value)} placeholder={`Option ${i+1}`} />))}
       <div className="row">
-        <label>Answer: <select value={d.answer_index} onChange={e=>set('answer_index',+e.target.value)}>{d.options.map((_,i)=><option key={i} value={i}>{i+1}</option>)}</select></label>
+        <label>Type: <select value={d.question_type||'mcq'} onChange={e=>setType(e.target.value)}>
+          <option value="mcq">Multiple choice</option>
+          <option value="true_false">True / False</option>
+          <option value="image_mcq">Image MCQ</option>
+        </select></label>
+      </div>
+      <input value={d.question} onChange={e=>set('question',e.target.value)} placeholder="Question" />
+      <input value={d.image_url||''} onChange={e=>set('image_url',e.target.value)} placeholder="Image URL (optional, e.g. /media/questions/lever.svg)" />
+      {shown.map((o,i)=>(<input key={i} value={o} onChange={e=>setOpt(i,e.target.value)} placeholder={isTF ? (i===0?'True':'False') : `Option ${i+1}`} />))}
+      <div className="row">
+        <label>Answer: <select value={d.answer_index} onChange={e=>set('answer_index',+e.target.value)}>{shown.map((_,i)=><option key={i} value={i}>{isTF ? (i===0?'True':'False') : (i+1)}</option>)}</select></label>
         <label>Class: <select value={d.class_level} onChange={e=>set('class_level',e.target.value)}>{['B4','B5','B6','B7','B8','B9'].map(c=><option key={c}>{c}</option>)}</select></label>
         <label>Subject: <select value={d.subject} onChange={e=>set('subject',e.target.value)}>{['Mathematics','Science','Computing'].map(c=><option key={c}>{c}</option>)}</select></label>
         <label>Difficulty: <select value={d.difficulty} onChange={e=>set('difficulty',e.target.value)}>{['Easy','Medium','Hard'].map(c=><option key={c}>{c}</option>)}</select></label>

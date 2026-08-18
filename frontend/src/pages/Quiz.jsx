@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useAuth } from '../auth.jsx'
-import { api } from '../api.js'
+import { api, mediaUrl } from '../api.js'
 import Mascot from '../components/Mascot.jsx'
 
 export default function Quiz() {
@@ -87,20 +87,27 @@ export default function Quiz() {
           className="question"
         >
           <span className="badge">{q.subject} · {q.difficulty}{q.topic ? ` · ${q.topic}` : ''}</span>
+          {q.image_url && (
+            <div className="q-image-wrap">
+              <img className="q-image" src={mediaUrl(q.image_url)} alt="Question diagram" />
+            </div>
+          )}
           <h2>{q.question}</h2>
-          <div className="options">
+          <div className={`options${(q.question_type === 'true_false' || q.options.length === 2) ? ' tf' : ''}`}>
             {q.options.map((opt, i) => {
               const isPicked = (selected === i) || (answered && answers[idx]?.selected_index === i)
+              const isTF = q.question_type === 'true_false' || q.options.length === 2
+              const tfClass = isTF ? (i === 0 ? ' tf-true' : ' tf-false') : ''
               return (
                 <motion.button
                   key={i}
-                  className={`option${isPicked ? ' picked' : ''}`}
+                  className={`option${tfClass}${isPicked ? ' picked' : ''}`}
                   onClick={() => choose(i)} disabled={locked || answered}
                   whileTap={{ scale: 0.96 }}
                   animate={isPicked ? { scale: [1, 1.04, 1] } : {}}
                   transition={{ duration: 0.28 }}
                 >
-                  <span className="opt-key">{String.fromCharCode(65 + i)}</span>
+                  {!isTF && <span className="opt-key">{String.fromCharCode(65 + i)}</span>}
                   <span className="opt-text">{opt}</span>
                 </motion.button>
               )

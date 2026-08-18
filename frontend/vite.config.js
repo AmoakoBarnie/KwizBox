@@ -35,7 +35,8 @@ export default defineConfig({
     port: 5173,
     host: true,
     proxy: {
-      '/api': { target: API_TARGET, changeOrigin: true, rewrite: (p) => p.replace(/^\/api/, '') }
+      '/api': { target: API_TARGET, changeOrigin: true, rewrite: (p) => p.replace(/^\/api/, '') },
+      '/media': { target: API_TARGET, changeOrigin: true },
     }
   },
   build: { outDir: 'dist' }

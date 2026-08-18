@@ -55,6 +55,9 @@ class Question(Base):
     option_d = Column(Text, nullable=False)
     answer_index = Column(Integer, nullable=False)  # 0..3
     explanation = Column(Text, nullable=False)
+    # mcq (default) | true_false | image_mcq. Existing rows backfill to mcq.
+    question_type = Column(String(20), nullable=False, default="mcq", index=True)
+    image_url = Column(String(500), nullable=True)  # e.g. /media/questions/lever.svg
     is_active = Column(Boolean, default=True, nullable=False)  # deactivated questions excluded from packs
     times_answered = Column(Integer, default=0)
     times_correct = Column(Integer, default=0)

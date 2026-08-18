@@ -67,9 +67,21 @@ cd ../backend && python scripts/seed.py
 - POST `/auth/login`     `{nickname,password}` → token
 - POST `/auth/guest`     `{nickname?,class_level?,school_code?}` → token (no persistence)
 - GET  `/auth/me`        (Bearer) → profile
-- POST `/quiz/pack`      `{class_level,subject,Mixed?,difficulty,count,topic?}` → questions (no answer leaked)
-- POST `/quiz/submit`    `{class_level,subject,difficulty,answers:[{question_id,selected_index}],duration_seconds?}` → graded result + feedback
+- POST `/quiz/pack`      `{class_level,subject,Mixed?,difficulty,count,topic?}` → questions (no answer leaked). Each item includes `question_type` (`mcq` | `true_false` | `image_mcq`) and `image_url` (or null). `true_false` options are length 2.
+- POST `/quiz/submit`    `{class_level,subject,difficulty,answers:[{question_id,selected_index}],duration_seconds?}` → graded result + feedback (2-option T/F and 4-option MCQ)
+- GET  `/media/questions/...`  placeholder diagrams for `image_mcq` (e.g. `/media/questions/lever.svg`)
 - GET  `/quiz/leaderboard?scope=global|class&class_level=&school_code=&limit=` → board
+
+## Question types
+- `mcq` (default) — 4 options, `answer_index` 0–3. All existing seed rows stay this type.
+- `true_false` — options A/B are True/False; C/D stored empty; `answer_index` 0 or 1. Pack responses send only 2 options.
+- `image_mcq` — 4 options plus `image_url` (public path such as `/media/questions/lever.svg`).
+
+SQLite: `create_all` does not add columns to an existing `questions` table. On startup the API runs an idempotent `ALTER TABLE ... ADD COLUMN` for `question_type` (default `mcq`) and `image_url`, then backfills `mcq`. Live `backend/trivia.db` is kept. Restart the backend once after pulling this change.
+
+Demo T/F + image questions (B4 Science / Computing, Easy) are inserted on startup if missing. Play **B4 → Science → Easy** (or Computing) a few times, or create items in Admin → Questions (type selector + image URL). Placeholder SVGs live in `backend/static/questions/`.
+
+JSON seed: `question_type` / `image_url` are optional (default `mcq`). Tests: `cd backend && venv/Scripts/python -m pytest tests/test_question_types.py -q`.
 
 ## Notes / pitfalls
 - `bcrypt` is pinned to `4.0.1` — newer bcrypt breaks `passlib` at import on this host.
