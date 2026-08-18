@@ -1,0 +1,616 @@
+[
+  {
+    "class_level": "B4",
+    "subject": "Mathematics",
+    "strand": "Number",
+    "topic": "Multiplication",
+    "difficulty": "Easy",
+    "question_type": "mcq",
+    "question": "A shop sells water in packs of 6 sachets. How many sachets are in 4 packs?",
+    "options": [
+      "10",
+      "18",
+      "24",
+      "30"
+    ],
+    "answer_index": 2,
+    "explanation": "Each pack has 6 sachets. Four packs have 6 × 4 = 24 sachets.",
+    "image_url": null,
+    "image_brief": null,
+    "confidence": "high",
+    "needs_review": false
+  },
+  {
+    "class_level": "B4",
+    "subject": "Science",
+    "strand": "Diversity of Matter",
+    "topic": "Living things",
+    "difficulty": "Easy",
+    "question_type": "true_false",
+    "question": "A stone is a living thing.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer_index": 1,
+    "explanation": "A stone is non-living. It does not grow, feed, or reproduce. Living things such as plants and animals do these things.",
+    "image_url": null,
+    "image_brief": null,
+    "confidence": "high",
+    "needs_review": false
+  },
+  {
+    "class_level": "B4",
+    "subject": "Computing",
+    "strand": "Introduction to Computing",
+    "topic": "Input and output devices",
+    "difficulty": "Medium",
+    "question_type": "true_false",
+    "question": "A printer is an input device.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer_index": 1,
+    "explanation": "A printer is an output device. It sends information out of the computer onto paper. Input devices, such as a keyboard or mouse, send information into the computer.",
+    "image_url": null,
+    "image_brief": null,
+    "confidence": "high",
+    "needs_review": false
+  },
+  {
+    "class_level": "B4",
+    "subject": "Mathematics",
+    "strand": "Number",
+    "topic": "Division",
+    "difficulty": "Medium",
+    "question_type": "mcq",
+    "question": "Kofi has 36 oranges. He puts them equally into 6 bags. How many oranges are in each bag?",
+    "options": [
+      "4",
+      "6",
+      "12",
+      "30"
+    ],
+    "answer_index": 1,
+    "explanation": "Share 36 oranges equally among 6 bags: 36 ÷ 6 = 6. Each bag has 6 oranges.",
+    "image_url": null,
+    "image_brief": null,
+    "confidence": "high",
+    "needs_review": false
+  },
+  {
+    "class_level": "B4",
+    "subject": "Science",
+    "strand": "Forces and Energy",
+    "topic": "Simple machines",
+    "difficulty": "Hard",
+    "question_type": "image_mcq",
+    "question": "The diagram shows a crowbar used as a lever to lift a stone. What is the part labelled F?",
+    "options": [
+      "Load",
+      "Fulcrum",
+      "Effort",
+      "Wheel"
+    ],
+    "answer_index": 1,
+    "explanation": "F marks the fulcrum, the pivot the bar turns on. L is the load (the stone) and E is the effort (the push).",
+    "image_url": null,
+    "image_brief": "Side-view line diagram of a straight crowbar. A triangular pivot labelled F sits under the bar, closer to a grey rock labelled L on the right. A downward arrow labelled E is on the left end of the bar. No realistic human. White background, thick black lines, labels F, L, E in a readable school-textbook style.",
+    "confidence": "medium",
+    "needs_review": true,
+    "review_notes": "Simple machines and levers may be taught later than B4 (often B6 Science or Career Technology). Confirm the NaCCA B4 Science indicator before seeding this as a B4 Hard item."
+  },
+  {
+    "class_level": "B5",
+    "subject": "Computing",
+    "strand": "Hardware",
+    "topic": "Output devices",
+    "difficulty": "Easy",
+    "question_type": "true_false",
+    "question": "Speakers send sound out of the computer.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer_index": 0,
+    "explanation": "Speakers are output devices. They take information from the computer and send it out as sound you can hear.",
+    "image_url": null,
+    "image_brief": null,
+    "confidence": "high",
+    "needs_review": false
+  },
+  {
+    "class_level": "B5",
+    "subject": "Mathematics",
+    "strand": "Algebra",
+    "topic": "Number patterns",
+    "difficulty": "Easy",
+    "question_type": "mcq",
+    "question": "What is the next number in 12, 15, 18, 21, …?",
+    "options": [
+      "22",
+      "23",
+      "24",
+      "25"
+    ],
+    "answer_index": 2,
+    "explanation": "Each number is 3 more than the one before it. 21 + 3 = 24.",
+    "image_url": null,
+    "image_brief": null,
+    "confidence": "high",
+    "needs_review": false
+  },
+  {
+    "class_level": "B5",
+    "subject": "Science",
+    "strand": "Cycles",
+    "topic": "Water cycle",
+    "difficulty": "Medium",
+    "question_type": "image_mcq",
+    "question": "Which labelled arrow shows water turning from liquid into vapour?",
+    "options": [
+      "From sea to sky",
+      "From cloud to ground as rain",
+      "From cloud blown sideways",
+      "Rain flowing in a river"
+    ],
+    "answer_index": 0,
+    "explanation": "Liquid water in the sea turns into vapour and rises. That change is evaporation, shown by the arrow from the sea up to the sky.",
+    "image_url": null,
+    "image_brief": "Simple water-cycle diagram. Yellow sun top-left. Blue sea at bottom. Grey cloud top-right. Arrow A from sea surface upward (evaporation). Arrow B from cloud downward as rain drops (precipitation). Arrow C from cloud to the right (wind). Arrow D along the land into a stream (runoff). Labels A B C D only on arrows. No people.",
+    "confidence": "high",
+    "needs_review": false
+  },
+  {
+    "class_level": "B5",
+    "subject": "Computing",
+    "strand": "Software",
+    "topic": "Keyboard shortcuts",
+    "difficulty": "Medium",
+    "question_type": "mcq",
+    "question": "On most computers, Ctrl + S usually:",
+    "options": [
+      "Shuts down the computer",
+      "Sends an email",
+      "Starts a search",
+      "Saves the current file"
+    ],
+    "answer_index": 3,
+    "explanation": "Ctrl + S is the shortcut that saves the file you are working on. It does not shut down the computer, send email, or start a search.",
+    "image_url": null,
+    "image_brief": null,
+    "confidence": "high",
+    "needs_review": false
+  },
+  {
+    "class_level": "B5",
+    "subject": "Mathematics",
+    "strand": "Geometry and Measurement",
+    "topic": "Area and perimeter",
+    "difficulty": "Hard",
+    "question_type": "true_false",
+    "question": "A square with side 5 cm has an area of 20 cm².",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer_index": 1,
+    "explanation": "Area of a square is side × side, so 5 × 5 = 25 cm², not 20 cm². The number 20 cm is the perimeter, because 4 × 5 = 20 cm.",
+    "image_url": null,
+    "image_brief": null,
+    "confidence": "high",
+    "needs_review": false
+  },
+  {
+    "class_level": "B6",
+    "subject": "Science",
+    "strand": "Cycles",
+    "topic": "Change of state",
+    "difficulty": "Easy",
+    "question_type": "true_false",
+    "question": "When water boils, it changes from a liquid to a gas.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer_index": 0,
+    "explanation": "Boiling turns liquid water into water vapour, a gas. This change of state is called boiling.",
+    "image_url": null,
+    "image_brief": null,
+    "confidence": "high",
+    "needs_review": false
+  },
+  {
+    "class_level": "B6",
+    "subject": "Computing",
+    "strand": "Software",
+    "topic": "Keyboard shortcuts",
+    "difficulty": "Easy",
+    "question_type": "mcq",
+    "question": "To copy selected text, you usually press:",
+    "options": [
+      "Ctrl + C",
+      "Ctrl + V",
+      "Ctrl + P",
+      "Ctrl + Z"
+    ],
+    "answer_index": 0,
+    "explanation": "Ctrl + C copies the selected text. Ctrl + V pastes, Ctrl + P prints, and Ctrl + Z undoes the last action.",
+    "image_url": null,
+    "image_brief": null,
+    "confidence": "high",
+    "needs_review": false
+  },
+  {
+    "class_level": "B6",
+    "subject": "Mathematics",
+    "strand": "Number",
+    "topic": "Percentages",
+    "difficulty": "Medium",
+    "question_type": "true_false",
+    "question": "One-half (1/2) is the same as 50%.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer_index": 0,
+    "explanation": "Percent means out of 100. One-half of 100 is 50, so 1/2 = 50%.",
+    "image_url": null,
+    "image_brief": null,
+    "confidence": "high",
+    "needs_review": false
+  },
+  {
+    "class_level": "B6",
+    "subject": "Science",
+    "strand": "Cycles",
+    "topic": "Food chains",
+    "difficulty": "Medium",
+    "question_type": "image_mcq",
+    "question": "Which of these is the producer in the food chain?",
+    "options": [
+      "Grasscutter",
+      "Hawk",
+      "Grass",
+      "Soil"
+    ],
+    "answer_index": 2,
+    "explanation": "A producer makes its own food. Grass is a plant that makes food by photosynthesis. The grasscutter and hawk are consumers. Soil is not an organism in this chain.",
+    "image_url": null,
+    "image_brief": "Left-to-right food chain on a white background. Green grass tuft, right arrow, brown grasscutter (simple side-view rodent, not a photo), right arrow, hawk/bird of prey in flight (simple silhouette). Labels under each: Grass, Grasscutter, Hawk. No people.",
+    "confidence": "medium",
+    "needs_review": true,
+    "review_notes": "Confirm B6 Science uses the term \"producer\" (versus only \"plant that makes food\"). If the indicator uses simpler language, rephrase the stem before seeding."
+  },
+  {
+    "class_level": "B6",
+    "subject": "Computing",
+    "strand": "Computational Thinking",
+    "topic": "Algorithms",
+    "difficulty": "Hard",
+    "question_type": "mcq",
+    "question": "These steps find the total to pay at a market stall: (1) write the first price (2) write the second price (3) add the two prices (4) write the sum. If step 3 is left out, what is the problem?",
+    "options": [
+      "The two prices are never written",
+      "The computer will shut down",
+      "You will not have added, so you will not get the total",
+      "The sum will print twice"
+    ],
+    "answer_index": 2,
+    "explanation": "Steps 1 and 2 still write the prices, but without step 3 they are never added. So you cannot get the total to pay. Leaving out one step does not shut the computer down.",
+    "image_url": null,
+    "image_brief": null,
+    "confidence": "high",
+    "needs_review": false
+  },
+  {
+    "class_level": "B7",
+    "subject": "Mathematics",
+    "strand": "Number",
+    "topic": "Integers",
+    "difficulty": "Easy",
+    "question_type": "true_false",
+    "question": "−8 is smaller than −2.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer_index": 0,
+    "explanation": "On the number line, −8 is further to the left than −2, so −8 is smaller.",
+    "image_url": null,
+    "image_brief": null,
+    "confidence": "high",
+    "needs_review": false
+  },
+  {
+    "class_level": "B7",
+    "subject": "Science",
+    "strand": "Systems",
+    "topic": "Human body",
+    "difficulty": "Easy",
+    "question_type": "mcq",
+    "question": "Which organ pumps blood around the body?",
+    "options": [
+      "Lungs",
+      "Stomach",
+      "Kidney",
+      "Heart"
+    ],
+    "answer_index": 3,
+    "explanation": "The heart is a muscle that pumps blood through the blood vessels. The lungs help you breathe, the stomach helps digest food, and the kidneys help clean the blood.",
+    "image_url": null,
+    "image_brief": null,
+    "confidence": "high",
+    "needs_review": false
+  },
+  {
+    "class_level": "B7",
+    "subject": "Computing",
+    "strand": "Hardware",
+    "topic": "Computer parts",
+    "difficulty": "Medium",
+    "question_type": "image_mcq",
+    "question": "Which labelled part is used to point and click?",
+    "options": [
+      "Monitor",
+      "System unit",
+      "Keyboard",
+      "Mouse"
+    ],
+    "answer_index": 3,
+    "explanation": "The mouse (D) is moved on the table to point at items on the screen and click. The keyboard is for typing, the monitor shows the display, and the system unit holds the main parts of the computer.",
+    "image_url": null,
+    "image_brief": "Front view of a simple desktop computer. A: rectangular monitor with a blank screen. B: vertical system-unit box with a circular power button. C: keyboard. D: mouse with a scroll wheel. Labels A B C D. Flat textbook diagram, no brand logos, no people.",
+    "confidence": "high",
+    "needs_review": false
+  },
+  {
+    "class_level": "B7",
+    "subject": "Mathematics",
+    "strand": "Number",
+    "topic": "Ratio",
+    "difficulty": "Medium",
+    "question_type": "mcq",
+    "question": "GHS 48 is shared between Ama and Kofi in the ratio 1:2. How much does Kofi get?",
+    "options": [
+      "GHS 32",
+      "GHS 12",
+      "GHS 16",
+      "GHS 24"
+    ],
+    "answer_index": 0,
+    "explanation": "The ratio 1:2 has 3 equal parts. 48 ÷ 3 = GHS 16 per part. Kofi gets 2 parts: 2 × 16 = GHS 32.",
+    "image_url": null,
+    "image_brief": null,
+    "confidence": "high",
+    "needs_review": false
+  },
+  {
+    "class_level": "B7",
+    "subject": "Science",
+    "strand": "Systems",
+    "topic": "Body organs",
+    "difficulty": "Hard",
+    "question_type": "image_mcq",
+    "question": "Which labelled organ is mainly used for breathing?",
+    "options": [
+      "Brain",
+      "Lungs",
+      "Heart",
+      "Stomach"
+    ],
+    "answer_index": 1,
+    "explanation": "The lungs (B) take in air when you breathe. The brain controls the body, the heart pumps blood, and the stomach helps digest food.",
+    "image_url": null,
+    "image_brief": "Simple anterior outline of a human torso and head, unisex, no realistic face. A brain in the head, B pair of lungs in the chest, C heart between the lungs, D stomach in the upper abdomen. Labels A B C D. School-textbook line drawing, white background.",
+    "confidence": "high",
+    "needs_review": false
+  },
+  {
+    "class_level": "B8",
+    "subject": "Computing",
+    "strand": "Hardware",
+    "topic": "Software and hardware",
+    "difficulty": "Easy",
+    "question_type": "true_false",
+    "question": "A computer mouse is software.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer_index": 1,
+    "explanation": "A mouse is a hardware device you can touch. Software is the programs that run on the computer, not the physical parts.",
+    "image_url": null,
+    "image_brief": null,
+    "confidence": "high",
+    "needs_review": false
+  },
+  {
+    "class_level": "B8",
+    "subject": "Mathematics",
+    "strand": "Algebra",
+    "topic": "Simple equations",
+    "difficulty": "Easy",
+    "question_type": "mcq",
+    "question": "If 3x = 18, what is x?",
+    "options": [
+      "6",
+      "3",
+      "15",
+      "21"
+    ],
+    "answer_index": 0,
+    "explanation": "3x means 3 times x. Divide both sides by 3: x = 18 ÷ 3 = 6.",
+    "image_url": null,
+    "image_brief": null,
+    "confidence": "high",
+    "needs_review": false
+  },
+  {
+    "class_level": "B8",
+    "subject": "Science",
+    "strand": "Forces and Energy",
+    "topic": "Electric circuits",
+    "difficulty": "Medium",
+    "question_type": "image_mcq",
+    "question": "The switch in the diagram is open. What happens to the bulb?",
+    "options": [
+      "It lights",
+      "It lights then bursts",
+      "Only half the bulb lights",
+      "It does not light"
+    ],
+    "answer_index": 3,
+    "explanation": "An open switch has a gap, so the circuit is not complete. Current cannot flow, and the bulb does not light.",
+    "image_url": null,
+    "image_brief": "Series circuit textbook diagram. Battery (long/short lines) at bottom, connecting wires, a bulb in a circle at top, a switch drawn as a gap with a hinged lever OPEN (not touching). Labels: Battery, Switch (open), Bulb. No people.",
+    "confidence": "high",
+    "needs_review": false
+  },
+  {
+    "class_level": "B8",
+    "subject": "Computing",
+    "strand": "Computer Networks",
+    "topic": "The internet",
+    "difficulty": "Medium",
+    "question_type": "mcq",
+    "question": "A URL is:",
+    "options": [
+      "A type of printer",
+      "The address of a web page",
+      "A computer virus",
+      "The computer's mouse"
+    ],
+    "answer_index": 1,
+    "explanation": "URL stands for Uniform Resource Locator. It is the address you type or tap to open a web page, such as a school website.",
+    "image_url": null,
+    "image_brief": null,
+    "confidence": "high",
+    "needs_review": false
+  },
+  {
+    "class_level": "B8",
+    "subject": "Mathematics",
+    "strand": "Geometry and Measurement",
+    "topic": "Pythagoras",
+    "difficulty": "Hard",
+    "question_type": "true_false",
+    "question": "A right-angled triangle has shorter sides 5 cm and 12 cm. Its longest side is 13 cm.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer_index": 0,
+    "explanation": "For a right-angled triangle, the longest side satisfies a² + b² = c². 5² + 12² = 25 + 144 = 169, and 13² = 169, so the longest side is 13 cm.",
+    "image_url": null,
+    "image_brief": null,
+    "confidence": "high",
+    "needs_review": false
+  },
+  {
+    "class_level": "B9",
+    "subject": "Science",
+    "strand": "Systems",
+    "topic": "Respiration",
+    "difficulty": "Easy",
+    "question_type": "mcq",
+    "question": "Which gas do humans take in from the air for respiration?",
+    "options": [
+      "Carbon dioxide",
+      "Oxygen",
+      "Nitrogen only",
+      "Water vapour only"
+    ],
+    "answer_index": 1,
+    "explanation": "Air contains several gases. For respiration, the body takes in oxygen and uses it to release energy from food.",
+    "image_url": null,
+    "image_brief": null,
+    "confidence": "high",
+    "needs_review": false
+  },
+  {
+    "class_level": "B9",
+    "subject": "Computing",
+    "strand": "Computer Networks",
+    "topic": "Internet and the Web",
+    "difficulty": "Easy",
+    "question_type": "true_false",
+    "question": "The internet and the World Wide Web are exactly the same thing.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer_index": 1,
+    "explanation": "The internet is the global network of computers. The World Wide Web is one service that uses that network — websites you open in a browser.",
+    "image_url": null,
+    "image_brief": null,
+    "confidence": "medium",
+    "needs_review": true,
+    "review_notes": "Confirm this internet vs World Wide Web distinction is in CCP Computing B9. It may appear at B8. Do not seed as B9 until the indicator is checked."
+  },
+  {
+    "class_level": "B9",
+    "subject": "Mathematics",
+    "strand": "Number",
+    "topic": "Percentages",
+    "difficulty": "Medium",
+    "question_type": "mcq",
+    "question": "A price of GHS 80 is increased by 10%. What is the new price?",
+    "options": [
+      "GHS 70",
+      "GHS 90",
+      "GHS 800",
+      "GHS 88"
+    ],
+    "answer_index": 3,
+    "explanation": "10% of 80 is 8. Add the increase: 80 + 8 = GHS 88.",
+    "image_url": null,
+    "image_brief": null,
+    "confidence": "high",
+    "needs_review": false
+  },
+  {
+    "class_level": "B9",
+    "subject": "Science",
+    "strand": "Systems",
+    "topic": "Plant parts",
+    "difficulty": "Medium",
+    "question_type": "image_mcq",
+    "question": "Which labelled part mainly makes food by photosynthesis?",
+    "options": [
+      "Roots",
+      "Stem",
+      "Leaf",
+      "Flower"
+    ],
+    "answer_index": 2,
+    "explanation": "Leaves contain chlorophyll and are the main place where the plant makes food by photosynthesis. Roots take in water, the stem supports the plant, and the flower is for reproduction.",
+    "image_url": null,
+    "image_brief": "Simple flowering plant, side view. Roots below a soil line, stem, two broad leaves, one flower at the top. Labels: Roots, Stem, Leaf, Flower. Green leaves, brown roots, no people, textbook style.",
+    "confidence": "high",
+    "needs_review": false
+  },
+  {
+    "class_level": "B9",
+    "subject": "Computing",
+    "strand": "Hardware",
+    "topic": "Internal computer parts",
+    "difficulty": "Hard",
+    "question_type": "image_mcq",
+    "question": "Which labelled part is often called the brain of the computer?",
+    "options": [
+      "CPU",
+      "RAM",
+      "Hard disk",
+      "Power supply"
+    ],
+    "answer_index": 0,
+    "explanation": "The CPU (central processing unit) processes instructions, so it is often called the brain of the computer. RAM is working memory, the hard disk stores files, and the power supply provides electricity.",
+    "image_url": null,
+    "image_brief": "Top-down simplified motherboard inside an open computer case. A: square CPU in a socket at centre. B: two long RAM sticks in slots. C: rectangular hard-disk drive. D: boxy power supply in a corner with a fan circle. Labels A–D. Flat diagram, no logos, no people.",
+    "confidence": "medium",
+    "needs_review": true,
+    "review_notes": "Internal components (RAM vs CPU vs HDD) may sit at B8 or B9; confirm the B9 Computing indicator. The existing bank already has a text item that the CPU is the brain of the computer — this is the image version of that idea, so check for overlap before seeding both."
+  }
+]

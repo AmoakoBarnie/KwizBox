@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 300" width="440" height="300">
+  <rect width="440" height="300" rx="12" fill="#f4f8ff"/>
+  <text x="220" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#022c1c">Inside a computer</text>
+  <!-- case / motherboard -->
+  <rect x="30" y="40" width="380" height="240" rx="8" fill="#1b3a4b" stroke="#022c1c" stroke-width="3"/>
+  <rect x="46" y="56" width="260" height="208" rx="4" fill="#0e5c3a" stroke="#026b40" stroke-width="2"/>
+  <!-- A CPU square at centre -->
+  <rect x="130" y="120" width="70" height="70" rx="4" fill="#c0c0c0" stroke="#ffd23f" stroke-width="3"/>
+  <rect x="142" y="132" width="46" height="46" fill="#888"/>
+  <text x="165" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#ffd23f">A CPU</text>
+  <!-- B two RAM sticks -->
+  <rect x="230" y="80" width="18" height="110" rx="2" fill="#3aa0d8" stroke="#fff" stroke-width="1.5"/>
+  <rect x="254" y="80" width="18" height="110" rx="2" fill="#3aa0d8" stroke="#fff" stroke-width="1.5"/>
+  <g fill="#ffd23f">
+    <rect x="232" y="90" width="14" height="6"/>
+    <rect x="232" y="102" width="14" height="6"/>
+    <rect x="256" y="90" width="14" height="6"/>
+    <rect x="256" y="102" width="14" height="6"/>
+  </g>
+  <text x="252" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#7ad7ff">B RAM</text>
+  <!-- C hard disk -->
+  <rect x="56" y="200" width="90" height="48" rx="4" fill="#4a4a4a" stroke="#ddd" stroke-width="2"/>
+  <circle cx="82" cy="224" r="12" fill="#888" stroke="#ddd" stroke-width="2"/>
+  <circle cx="82" cy="224" r="4" fill="#222"/>
+  <text x="101" y="268" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#fff">C Hard disk</text>
+  <!-- D power supply with fan -->
+  <rect x="310" y="56" width="84" height="84" rx="4" fill="#333" stroke="#ddd" stroke-width="2"/>
+  <circle cx="352" cy="98" r="26" fill="#222" stroke="#888" stroke-width="2"/>
+  <circle cx="352" cy="98" r="6" fill="#888"/>
+  <line x1="352" y1="72" x2="352" y2="124" stroke="#888" stroke-width="2"/>
+  <line x1="326" y1="98" x2="378" y2="98" stroke="#888" stroke-width="2"/>
+  <text x="352" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#fff">D Power supply</text>
+</svg>
