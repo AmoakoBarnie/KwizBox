@@ -173,6 +173,21 @@ body {
 .option.wrong .opt-key { background: var(--red); color: #fff; }
 .option.dim { opacity: .5; }
 
+.q-image-wrap {
+  margin: 10px 0 4px; background: #fff; border-radius: 16px; padding: 10px;
+  border: 1px solid var(--glass-border); text-align: center;
+}
+.q-image { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+.options.tf { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.options.tf .option {
+  flex-direction: column; justify-content: center; min-height: 88px;
+  font-size: 22px; font-weight: 800; font-family: var(--font-display);
+}
+.options.tf .option.tf-true { border-color: rgba(0,210,126,0.55); }
+.options.tf .option.tf-true.picked { background: var(--grad); color: #042; border-color: transparent; }
+.options.tf .option.tf-false { border-color: rgba(255,210,63,0.55); }
+.options.tf .option.tf-false.picked { background: var(--grad-gold); color: #3a2c00; border-color: transparent; }
+
 .feedback { background: var(--glass); backdrop-filter: blur(16px); border: 1px solid var(--glass-border); border-radius: var(--radius); padding: 18px; display: flex; flex-direction: column; gap: 10px; box-shadow: var(--shadow); }
 .fb-correct { color: var(--green-dark); font-weight: 800; margin: 0; }
 .fb-wrong { color: var(--red); font-weight: 800; margin: 0; }

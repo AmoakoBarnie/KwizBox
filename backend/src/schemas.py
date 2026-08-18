@@ -55,7 +55,9 @@ class QuestionOut(BaseModel):
     strand: str
     difficulty: str
     question: str
-    options: list[str]  # exactly 4, no correct-answer leaked
+    options: list[str]  # 4 for mcq/image_mcq, 2 for true_false; never leaks the answer
+    question_type: str = "mcq"  # mcq | true_false | image_mcq
+    image_url: Optional[str] = None
 
 
 class QuizPackRequest(BaseModel):
@@ -69,7 +71,7 @@ class QuizPackRequest(BaseModel):
 # ---------- Quiz submission ----------
 class AnswerSubmission(BaseModel):
     question_id: int
-    selected_index: int  # 0..3; -1 allowed for "no answer"
+    selected_index: int  # 0..3 (0..1 for true_false); -1 allowed for "no answer"
 
 
 class QuizResultRequest(BaseModel):

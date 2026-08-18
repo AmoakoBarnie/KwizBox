@@ -16,6 +16,7 @@ from ..scoring import question_points
 from ..mastery import calculate_mastery, is_mastered
 from ..periods import week_period, month_period
 from ..progress import build_progress
+from ..question_types import options_from_question
 
 router = APIRouter(prefix="/quiz", tags=["quiz"])
 
@@ -29,7 +30,9 @@ def _to_question_out(q: Question) -> QuestionOut:
         strand=q.strand,
         difficulty=q.difficulty,
         question=q.question,
-        options=[q.option_a, q.option_b, q.option_c, q.option_d],
+        options=options_from_question(q),
+        question_type=getattr(q, "question_type", None) or "mcq",
+        image_url=getattr(q, "image_url", None) or None,
     )
 
 
@@ -126,7 +129,7 @@ def _mark_seen(db, user, question_ids):
 
 
 def _options(q: Question) -> list[str]:
-    return [q.option_a, q.option_b, q.option_c, q.option_d]
+    return options_from_question(q)
 
 
 @router.post("/submit", response_model=QuizResultResponse)

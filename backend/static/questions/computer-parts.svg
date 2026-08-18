@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 220" width="400" height="220">
+  <rect width="400" height="220" rx="12" fill="#f4f8ff"/>
+  <text x="200" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#022c1c">Computer parts</text>
+  <!-- monitor -->
+  <rect x="140" y="36" width="120" height="80" rx="6" fill="#1b3a4b" stroke="#022c1c" stroke-width="2"/>
+  <rect x="150" y="46" width="100" height="54" fill="#7ad7ff"/>
+  <rect x="188" y="116" width="24" height="10" fill="#333"/>
+  <rect x="168" y="126" width="64" height="6" rx="2" fill="#333"/>
+  <text x="200" y="156" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#022c1c">A Monitor</text>
+  <!-- CPU -->
+  <rect x="20" y="70" width="70" height="90" rx="6" fill="#4a4a4a" stroke="#222" stroke-width="2"/>
+  <circle cx="55" cy="95" r="8" fill="#00b36b"/>
+  <rect x="32" y="112" width="46" height="8" fill="#888"/>
+  <rect x="32" y="126" width="46" height="8" fill="#888"/>
+  <text x="55" y="178" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#022c1c">D CPU</text>
+  <!-- keyboard -->
+  <rect x="130" y="168" width="140" height="32" rx="4" fill="#e8e8e8" stroke="#555" stroke-width="2"/>
+  <g fill="#bbb">
+    <rect x="140" y="176" width="12" height="8" rx="1"/>
+    <rect x="156" y="176" width="12" height="8" rx="1"/>
+    <rect x="172" y="176" width="12" height="8" rx="1"/>
+    <rect x="188" y="176" width="12" height="8" rx="1"/>
+    <rect x="204" y="176" width="12" height="8" rx="1"/>
+    <rect x="220" y="176" width="12" height="8" rx="1"/>
+    <rect x="148" y="188" width="100" height="6" rx="1"/>
+  </g>
+  <text x="200" y="214" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#022c1c">B Keyboard</text>
+  <!-- mouse -->
+  <ellipse cx="340" cy="130" rx="22" ry="32" fill="#ddd" stroke="#555" stroke-width="2"/>
+  <line x1="340" y1="102" x2="340" y2="130" stroke="#555" stroke-width="2"/>
+  <text x="340" y="178" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#022c1c">C Mouse</text>
+</svg>

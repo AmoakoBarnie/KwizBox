@@ -30,6 +30,7 @@ from ..schemas_admin import (
 )
 from pydantic import BaseModel
 from typing import Optional as Opt
+from ..question_types import options_from_question, pad_options, validate_question_fields
 
 router = APIRouter(prefix="/admin", tags=["admin"])
 
@@ -276,6 +277,7 @@ def list_questions(
     class_level: Optional[str] = Query(None),
     subject: Optional[str] = Query(None),
     difficulty: Optional[str] = Query(None),
+    question_type: Optional[str] = Query(None),
     is_active: Optional[bool] = Query(None),
     limit: int = 100, offset: int = 0,
 ):
@@ -288,6 +290,8 @@ def list_questions(
         q = q.filter(Question.subject == subject)
     if difficulty:
         q = q.filter(Question.difficulty == difficulty)
+    if question_type:
+        q = q.filter(Question.question_type == question_type)
     if is_active is not None:
         q = q.filter(Question.is_active.is_(is_active))
     rows = q.order_by(Question.id).limit(limit).offset(offset).all()
@@ -299,9 +303,11 @@ def _q_out(x: Question):
     return QuestionOut(
         id=x.id, class_level=x.class_level, subject=x.subject, topic=x.topic, strand=x.strand,
         difficulty=x.difficulty, question=x.question,
-        options=[x.option_a, x.option_b, x.option_c, x.option_d], answer_index=x.answer_index,
+        options=options_from_question(x), answer_index=x.answer_index,
         explanation=x.explanation, is_active=x.is_active, times_answered=x.times_answered or 0,
         times_correct=x.times_correct or 0, correct_rate=rate,
+        question_type=getattr(x, "question_type", None) or "mcq",
+        image_url=getattr(x, "image_url", None) or None,
     )
 
 
@@ -311,13 +317,16 @@ def create_question(
     admin: AdminUser = Depends(require_permission("questions")),
     db: Session = Depends(get_db),
 ):
-    if len(body.options) != 4:
-        raise HTTPException(400, "exactly 4 options required")
+    qtype = validate_question_fields(
+        body.question_type, body.options, body.answer_index, body.image_url, require_image=True,
+    )
+    a, b, c, d = pad_options(qtype, body.options)
     q = Question(
         class_level=body.class_level, subject=body.subject, topic=body.topic, strand=body.strand,
         difficulty=body.difficulty, question=body.question,
-        option_a=body.options[0], option_b=body.options[1], option_c=body.options[2], option_d=body.options[3],
+        option_a=a, option_b=b, option_c=c, option_d=d,
         answer_index=body.answer_index, explanation=body.explanation, is_active=True,
+        question_type=qtype, image_url=(body.image_url or None),
     )
     db.add(q); db.commit(); db.refresh(q)
     audit(db, admin, "question.create", target=f"question:{q.id}")
@@ -334,12 +343,29 @@ def update_question(
     if not q:
         raise HTTPException(404, "question not found")
     data = body.dict(exclude_unset=True)
+    new_type = data.get("question_type", q.question_type or "mcq")
+    new_opts = data["options"] if "options" in data and data["options"] is not None else [
+        q.option_a, q.option_b, q.option_c, q.option_d,
+    ]
+    new_idx = data["answer_index"] if "answer_index" in data and data["answer_index"] is not None else q.answer_index
+    if "image_url" in data:
+        new_img = data["image_url"]
+    else:
+        new_img = q.image_url
+    validate_question_fields(
+        new_type, new_opts, new_idx, new_img, require_image=(new_type == "image_mcq"),
+    )
     if "options" in data and data["options"] is not None:
-        if len(data["options"]) != 4:
-            raise HTTPException(400, "exactly 4 options required")
-        q.option_a, q.option_b, q.option_c, q.option_d = data.pop("options")
+        a, b, c, d = pad_options(new_type, data.pop("options"))
+        q.option_a, q.option_b, q.option_c, q.option_d = a, b, c, d
+    elif "question_type" in data:
+        # type changed without new options: re-pad current values
+        a, b, c, d = pad_options(new_type, [q.option_a, q.option_b, q.option_c, q.option_d])
+        q.option_a, q.option_b, q.option_c, q.option_d = a, b, c, d
     for k, v in data.items():
-        if v is not None:
+        if k == "image_url":
+            q.image_url = v or None
+        elif v is not None:
             setattr(q, k, v)
     db.commit()
     audit(db, admin, "question.update", target=f"question:{qid}")

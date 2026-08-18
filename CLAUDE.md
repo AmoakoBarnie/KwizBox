@@ -17,13 +17,16 @@ STEM trivia web app for Ghanaian learners (Primary 4 / B4 → JHS 3 / B9), NaCCA
 - Seed DB: `cd backend && python scripts/seed.py` (run once, or after editing questions.json).
 
 ## Key conventions
-- Do NOT leak the correct answer in `/quiz/pack` responses (only options + metadata).
+- Do NOT leak the correct answer in `/quiz/pack` responses (only options + metadata). Pack items include `question_type` and `image_url`; never `answer_index` or `explanation`. For `true_false` send exactly 2 options.
 - Guest submissions are graded but NOT persisted (no leaderboard entry); registered users accumulate.
 - `bcrypt` is pinned to 4.0.1 in requirements.txt — newer bcrypt breaks passlib import on this host. Do not bump blindly.
 - Rebuild content: `cd scripts && python parse_questions.py` (needs extracted_py.txt) → `python scripts/seed.py`.
 
 ## Architecture
-- `backend/src/models.py`: User, Question, QuizSession, SchoolCode.
+- `backend/src/models.py`: User, Question (`question_type`, `image_url`), QuizSession, SchoolCode.
+- `backend/src/question_types.py`: mcq / true_false / image_mcq helpers + demo placeholders.
+- `backend/src/database.py`: `create_all` plus idempotent SQLite ALTER for new Question columns (do not drop trivia.db).
 - `backend/src/routes/quiz.py`: pack + submit + leaderboard. `auth.py`: register/login/guest/me.
+- Question images: `backend/static/questions/` mounted at `/media`. Vite proxies `/media` → :8001.
 - `frontend/src/api.js`: fetch client. `auth.jsx`: AuthContext (token in localStorage).
 - `frontend/src/pages/`: Landing, Play, Quiz, Summary, Leaderboard, Profile.
