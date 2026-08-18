@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { motion, AnimatePresence } from 'framer-motion'
 import { api } from '../api.js'
 
 const SCOPES = [
@@ -8,6 +9,11 @@ const SCOPES = [
   { key: 'weekly', label: '📅 This week' },
   { key: 'monthly', label: '🗓️ This month' },
 ]
+
+const rowVar = {
+  hidden: { opacity: 0, x: -16 },
+  show: (i) => ({ opacity: 1, x: 0, transition: { delay: 0.04 * i, duration: 0.3 } }),
+}
 
 export default function Leaderboard() {
   const nav = useNavigate()
@@ -25,7 +31,6 @@ export default function Leaderboard() {
       setRows(r)
     } catch (e) { setRows([]) } finally { setLoading(false) }
   }
-
   useEffect(() => { load() }, [scope, classLevel]) // eslint-disable-line
 
   return (
@@ -48,14 +53,20 @@ export default function Leaderboard() {
       {loading ? <div className="spinner" /> : (
         <ol className="board">
           {rows.length === 0 && <p className="hint">No scores yet — be the first!</p>}
-          {rows.map((r) => (
-            <li key={r.rank} className="board-row">
-              <span className="rank">{r.rank <= 3 ? ['🥇', '🥈', '🥉'][r.rank - 1] : r.rank}</span>
-              <span className="name">{r.nickname}{r.class_level ? ` · ${r.class_level}` : ''}</span>
-              <span className="pts">{r.lifetime_score} pts</span>
-              <span className="acc">{Math.round(r.accuracy * 100)}%</span>
-            </li>
-          ))}
+          <AnimatePresence>
+            {rows.map((r, i) => (
+              <motion.li key={r.rank} className="board-row"
+                custom={i} variants={rowVar} initial="hidden" animate="show" exit={{ opacity: 0 }}>
+                <motion.span className="rank"
+                  initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 0.04 * i + 0.1, type: 'spring', stiffness: 300, damping: 14 }}>
+                  {r.rank <= 3 ? ['🥇', '🥈', '🥉'][r.rank - 1] : r.rank}
+                </motion.span>
+                <span className="name">{r.nickname}{r.class_level ? ` · ${r.class_level}` : ''}</span>
+                <span className="pts">{r.lifetime_score} pts</span>
+                <span className="acc">{Math.round(r.accuracy * 100)}%</span>
+              </motion.li>
+            ))}
+          </AnimatePresence>
         </ol>
       )}
       <p className="hint">
@@ -64,7 +75,7 @@ export default function Leaderboard() {
         {scope === 'global' && 'All-time points.'}
         {scope === 'class' && 'All-time points within the selected class.'}
       </p>
-      <button className="btn primary" onClick={() => nav('/play')}>Play to climb! 🚀</button>
+      <motion.button className="btn primary" onClick={() => nav('/play')} whileTap={{ scale: 0.96 }}>Play to climb! 🚀</motion.button>
     </div>
   )
 }

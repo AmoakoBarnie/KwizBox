@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { motion } from 'framer-motion'
 import { api } from '../api.js'
 
 const ADMIN_TOKEN = 'ghana_admin_token'
@@ -7,10 +8,12 @@ const ADMIN_INFO = 'ghana_admin_info'
 
 function Stat({ label, value }) {
   return (
-    <div className="stat-card">
+    <motion.div className="stat-card"
+      initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3 }}>
       <div className="stat-value">{value}</div>
       <div className="stat-label">{label}</div>
-    </div>
+    </motion.div>
   )
 }
 
@@ -70,15 +73,18 @@ export default function Admin() {
         <button className="btn ghost" onClick={logout}>Logout</button>
       </div>
       <div className="admin-body">
-        {tab === 'dashboard' && <Dashboard token={token} perms={perms} />}
-        {tab === 'users' && <Users token={token} />}
-        {tab === 'questions' && <Questions token={token} />}
-        {tab === 'schools' && <SchoolCodes token={token} />}
-        {tab === 'leaderboard' && <Leaderboards token={token} />}
-        {tab === 'monitor' && <Monitor token={token} />}
-        {tab === 'settings' && <Settings token={token} />}
-        {tab === 'audit' && <Audit token={token} />}
-        {tab === 'admins' && <Admins token={token} />}
+        <motion.div key={tab}
+          initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.22 }}>
+          {tab === 'dashboard' && <Dashboard token={token} perms={perms} />}
+          {tab === 'users' && <Users token={token} />}
+          {tab === 'questions' && <Questions token={token} />}
+          {tab === 'schools' && <SchoolCodes token={token} />}
+          {tab === 'leaderboard' && <Leaderboards token={token} />}
+          {tab === 'monitor' && <Monitor token={token} />}
+          {tab === 'settings' && <Settings token={token} />}
+          {tab === 'audit' && <Audit token={token} />}
+          {tab === 'admins' && <Admins token={token} />}
+        </motion.div>
       </div>
     </div>
   )
