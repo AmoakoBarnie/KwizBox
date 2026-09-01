@@ -1,0 +1,6 @@
+tunnel: 276bda48-eda4-488e-acbe-3996f60426ee
+credentials-file: C:/Users/Amoako/.cloudflared/276bda48-eda4-488e-acbe-3996f60426ee.json
+ingress:
+  - hostname: ghanastem.trycloudflare.com
+    service: http://localhost:8001
+  - service: http_status:404
