@@ -2,6 +2,9 @@ import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import { AuthProvider } from './auth.jsx'
 import AnimatedBg from './components/AnimatedBg.jsx'
+import KenteFrame from './components/KenteFrame.jsx'
+import SoundToggle from './components/SoundToggle.jsx'
+import ThemeToggle from './components/ThemeToggle.jsx'
 import Landing from './pages/Landing.jsx'
 import Play from './pages/Play.jsx'
 import Quiz from './pages/Quiz.jsx'
@@ -20,6 +23,7 @@ function Page({ children }) {
       exit={{ opacity: 0, y: -14, scale: 0.98 }}
       transition={spring}
       className="app"
+      id="main-content"
     >
       {children}
     </motion.div>
@@ -31,6 +35,9 @@ export default function App() {
   return (
     <AuthProvider>
       <AnimatedBg />
+      <KenteFrame />
+      <SoundToggle />
+      <ThemeToggle />
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Page><Landing /></Page>} />

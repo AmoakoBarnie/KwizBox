@@ -3,6 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useAuth } from '../auth.jsx'
 import Mascot from '../components/Mascot.jsx'
 import Confetti from '../components/Confetti.jsx'
+import { evaluateBadges } from '../badges.js'
+import { levelUp } from '../sound.js'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 16 },
@@ -44,6 +46,19 @@ export default function Summary() {
     )
   }
 
+  // Evaluate & award badges
+  if (user && !isGuest) {
+    const existingBadges = JSON.parse(localStorage.getItem('stem_badges') || '[]')
+    const { newEarned, newlyAwarded } = evaluateBadges(result, cfg, existingBadges)
+    if (newEarned.length > existingBadges.length) {
+      localStorage.setItem('stem_badges', JSON.stringify(newEarned))
+      // pass to Profile via transient state
+      window.__lastQuizResult = result
+      window.__lastQuizCfg = cfg
+      levelUp()
+    }
+  }
+
   const { total, correct, accuracy, score, streak, feedback } = result
   const pct = Math.round(accuracy * 100)
   const mistakes = feedback.filter((f) => !f.is_correct)
@@ -63,7 +78,7 @@ export default function Summary() {
       </motion.h2>
 
       <motion.div className="mascot-center" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.15 }}>
-        <Mascot state={celebrate ? 'celebrate' : 'encourage'} size={110} />
+        <Mascot state={celebrate ? 'celebrate' : 'encourage'} size={110} gender="female" classLevel={cfg?.class_level} />
       </motion.div>
 
       <motion.p className="big-score" initial={{ scale: 0.6, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ type: 'spring', stiffness: 200, damping: 14, delay: 0.2 }}>
@@ -76,11 +91,33 @@ export default function Summary() {
         <motion.div className="stat" variants={fadeUp} custom={2}><b>{streak}🔥</b><span>Streak</span></motion.div>
       </motion.div>
 
-      {isGuest && <p className="hint">You played as a guest — sign up to save this score and join the leaderboard!</p>}
-
       <p className="review-intro">
         You got <b>{gotRight}</b> right and <b>{mistakes.length}</b> wrong. Here's every question with the answer and why:
       </p>
+
+      {user && !isGuest && (
+        <motion.div className="guest-nudge" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
+          <p className="gn-title">🎮 Nice game! Create a free account to keep your score &amp; streak.</p>
+          <p className="gn-sub">Guest scores aren't saved. Sign up to keep playing and join the leaderboard.</p>
+          <div className="row">
+            <button className="btn primary" onClick={() => nav('/', { state: { openTab: 'signup' } })}>Create account &amp; continue</button>
+            <button className="btn" onClick={() => nav('/play')}>Play as guest again</button>
+          </div>
+        </motion.div>
+      )}
+
+      {isGuest && !user && (
+        <>
+        <div className="row">
+          <motion.button className="btn primary" onClick={() => nav('/play')}
+            whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }}
+            animate={{ scale: [1, 1.03, 1] }} transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}>
+            Play again 🔁
+          </motion.button>
+          <motion.button className="btn" onClick={() => nav('/leaderboard')} whileTap={{ scale: 0.96 }}>Leaderboard</motion.button>
+        </div>
+        </>
+      )}
 
       <div className="review-list">
         {feedback.map((f, n) => (
@@ -102,15 +139,6 @@ export default function Summary() {
             {f.explanation && <p className="rq-explain">💡 {f.explanation}</p>}
           </motion.div>
         ))}
-      </div>
-
-      <div className="row">
-        <motion.button className="btn primary" onClick={() => nav('/play')}
-          whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }}
-          animate={{ scale: [1, 1.03, 1] }} transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}>
-          Play again 🔁
-        </motion.button>
-        <motion.button className="btn" onClick={() => nav('/leaderboard')} whileTap={{ scale: 0.96 }}>Leaderboard</motion.button>
       </div>
     </motion.div>
   )
