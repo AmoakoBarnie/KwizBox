@@ -100,7 +100,7 @@ function AdminLogin({ onLogin, err, busy }) {
       <input placeholder="Username" value={u} onChange={e=>setU(e.target.value)} />
       <input type="password" placeholder="Password" value={p} onChange={e=>setP(e.target.value)} />
       <button className="btn primary big" disabled={busy} onClick={()=>onLogin(u,p)}>Login</button>
-      <p className="hint">Default super-admin — change before production: <code>admin</code> / <code>Admin@1234</code></p>
+      <p className="hint">Authorized staff only. Activity is logged and audited.</p>
     </div>
   )
 }

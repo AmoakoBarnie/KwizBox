@@ -35,7 +35,7 @@ export default function Play() {
         initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}
         style={{ display: 'flex', justifyContent: 'center', marginBottom: 4 }}
       >
-        <Mascot state="thinking" size={96} />
+        <Mascot state="thinking" size={96} classLevel={cls} />
       </motion.div>
 
       <motion.div className="field" variants={container} initial="hidden" animate="show">
