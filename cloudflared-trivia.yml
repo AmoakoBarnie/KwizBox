@@ -1,0 +1,12 @@
+# Cloudflare quick-tunnel ingress for Ghana STEM Trivia
+# Catch-all serves the built PWA (vite preview :4173); /api and /media proxy to the FastAPI backend (:8001).
+ingress:
+  - path: /api
+    service: http://localhost:8001
+  - path: /api/*
+    service: http://localhost:8001
+  - path: /media
+    service: http://localhost:8001
+  - path: /media/*
+    service: http://localhost:8001
+  - service: http://localhost:4173
