@@ -1,0 +1,230 @@
+{
+  "subject": "Computing",
+  "levels": [
+    {
+      "code": "B6",
+      "strands": [
+        {
+          "name": "Safety",
+          "sub_strands": [
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B6.2.1.1",
+                  "text": "Demonstrate how B6.2.1.1.1. Demonstrate how to use the File menu, the Insert and Design 1. Creativity and innovation.",
+                  "indicators": [
+                    {
+                      "indicator_id": "B6.2.1.1.2",
+                      "text": ". Demonstrate how to use icons in the Text group in the Insert 4. Personal development and"
+                    },
+                    {
+                      "indicator_id": "B6.2.1.1.3",
+                      "text": ". Be able to give a 5-side presentation in MS-PowerPoint using Subject Specific Practices"
+                    },
+                    {
+                      "indicator_id": "B6.3.1.1.2",
+                      "text": "Demonstrate how to use icons in the Text group in the Insert 4. Personal development and"
+                    },
+                    {
+                      "indicator_id": "B6.3.1.1.3",
+                      "text": "Be able to use the attributes of the ribbons studied in a Subject Specific Practices"
+                    },
+                    {
+                      "indicator_id": "B6.5.1.1.2",
+                      "text": "Identify databases and data structures. 3. Cultural identity and global"
+                    },
+                    {
+                      "indicator_id": "B6.5.1.1.3",
+                      "text": ". Explain Fundamental Database concepts. 5. Digital literacy."
+                    },
+                    {
+                      "indicator_id": "B6.5.1.1.5",
+                      "text": ". Describe the basics of Relational Data model. 2. Communication"
+                    },
+                    {
+                      "indicator_id": "B6.5.1.1.6",
+                      "text": ". Identify the basics of logical Database Design."
+                    },
+                    {
+                      "indicator_id": "B6.5.1.1.7",
+                      "text": ". Illustrate basics of relational algebra."
+                    },
+                    {
+                      "indicator_id": "B6.5.1.1.9",
+                      "text": ". Operate basics SQL: querying and manipulating data. 4. Personal development and"
+                    },
+                    {
+                      "indicator_id": "B6.5.3.1.2",
+                      "text": ". Learners to create basic worksheets using Microsoft Excel 4. Personal development and"
+                    },
+                    {
+                      "indicator_id": "B6.5.3.1.3",
+                      "text": ". Perform calculations in an MS-Excel worksheet. 1. Skill development"
+                    },
+                    {
+                      "indicator_id": "B6.5.3.1.4",
+                      "text": ". Modify an MS-Excel worksheet."
+                    },
+                    {
+                      "indicator_id": "B6.5.3.1.5",
+                      "text": "Modify the appearance of data within a worksheet."
+                    },
+                    {
+                      "indicator_id": "B6.5.3.1.7",
+                      "text": ". Print the content of an MS-Excel worksheet. citizenship."
+                    },
+                    {
+                      "indicator_id": "B6.6.1.1.2",
+                      "text": ". Describe the types of information available on the Internet. citizenship."
+                    },
+                    {
+                      "indicator_id": "B6.6.1.1.3",
+                      "text": ". Identify data duplication."
+                    },
+                    {
+                      "indicator_id": "B6.6.1.1.4",
+                      "text": ". Outline what one needs to connect to the Internet."
+                    },
+                    {
+                      "indicator_id": "B6.6.2.1.2",
+                      "text": ". Recognise the status bar and list its use. 4. Personal development and"
+                    },
+                    {
+                      "indicator_id": "B6.6.2.1.3",
+                      "text": ". Illustrate using help button."
+                    },
+                    {
+                      "indicator_id": "B6.6.2.1.4",
+                      "text": ". Recognise internet explorer speed keys."
+                    },
+                    {
+                      "indicator_id": "B6.6.2.1.6",
+                      "text": ". Demonstrate how to return to a URL. leadership."
+                    },
+                    {
+                      "indicator_id": "B6.6.2.1.7",
+                      "text": ". Show how to find items on a page. Subject Specific Practices"
+                    },
+                    {
+                      "indicator_id": "B6.6.3.1.2",
+                      "text": ". Illustrate how to jump directory to URLs. leadership."
+                    },
+                    {
+                      "indicator_id": "B6.6.3.1.3",
+                      "text": ". Demonstrate how to return to a URL. Subject Specific Practices"
+                    },
+                    {
+                      "indicator_id": "B6.6.3.1.4",
+                      "text": ". Show how to find items on a page."
+                    },
+                    {
+                      "indicator_id": "B6.6.3.1.5",
+                      "text": ". Illustrate how to print pages."
+                    },
+                    {
+                      "indicator_id": "B6.6.4.1.2",
+                      "text": ". Demonstrate deleting favourite links. citizenship."
+                    },
+                    {
+                      "indicator_id": "B6.6.4.1.3",
+                      "text": ". Create favourite folder. 5. Digital literacy."
+                    },
+                    {
+                      "indicator_id": "B6.6.4.1.4",
+                      "text": ". Use the links toolbar and Favourite Places."
+                    },
+                    {
+                      "indicator_id": "B6.6.5.1.2",
+                      "text": ". Demonstrate the filing of forms offline. 4. Personal development and leadership"
+                    },
+                    {
+                      "indicator_id": "B6.6.5.1.3",
+                      "text": ". Demonstrate uploading of files. Subject Specific Practices"
+                    },
+                    {
+                      "indicator_id": "B6.6.5.1.4",
+                      "text": ". Illustrate retrieving text, pictures, sounds and programs."
+                    },
+                    {
+                      "indicator_id": "B6.6.5.1.5",
+                      "text": ". Discuss more about security on the form submission."
+                    },
+                    {
+                      "indicator_id": "B6.6.6.1.2",
+                      "text": ". Illustrate how to set themes. 5. Digital literacy."
+                    },
+                    {
+                      "indicator_id": "B6.6.6.1.3",
+                      "text": ". Show how to customise the toolbar. 1. Communication"
+                    },
+                    {
+                      "indicator_id": "B6.6.6.1.4",
+                      "text": ". Set bookmarks."
+                    },
+                    {
+                      "indicator_id": "B6.6.6.1.5",
+                      "text": ". Show how to set cookies demonstrate the steps in turning on"
+                    },
+                    {
+                      "indicator_id": "B6.6.7.1.2",
+                      "text": ". Illustrate how to reply to and forward received messages. 3. Cultural identity and global"
+                    },
+                    {
+                      "indicator_id": "B6.6.7.1.3",
+                      "text": ". Demonstrate how to delete messages. leadership"
+                    },
+                    {
+                      "indicator_id": "B6.6.7.1.4",
+                      "text": ". Illustrate filing of e-mail messages. Subject Specific Practices"
+                    },
+                    {
+                      "indicator_id": "B6.6.7.1.5",
+                      "text": ". Create address list."
+                    },
+                    {
+                      "indicator_id": "B6.6.7.1.6",
+                      "text": ". Demonstrate attaching files to e-mail messages."
+                    },
+                    {
+                      "indicator_id": "B6.6.7.1.7",
+                      "text": ". Demonstrate some e-mail tips."
+                    },
+                    {
+                      "indicator_id": "B6.6.8.1.2",
+                      "text": ". Give more examples of internet of things with a consumer citizenship"
+                    },
+                    {
+                      "indicator_id": "B6.6.8.1.3",
+                      "text": ". Mention at least five more terms and acronyms of IoT . 1. Communication"
+                    },
+                    {
+                      "indicator_id": "B6.6.9.1.2",
+                      "text": ". Devise various techniques on how to protect oneself from citizenship"
+                    },
+                    {
+                      "indicator_id": "B6.6.9.1.3",
+                      "text": ". Debate a spam and solicited messages. Subject Specific Practices"
+                    },
+                    {
+                      "indicator_id": "B6.6.9.1.4",
+                      "text": ". Differentiate between virtual friends and real friends."
+                    },
+                    {
+                      "indicator_id": "B6.6.10.1.2",
+                      "text": ". Investigate on the responsible use of computers. 4. Personal development and"
+                    },
+                    {
+                      "indicator_id": "B6.7.1.1.2",
+                      "text": ". Demonstrate solutions for the health related problems in leadership"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

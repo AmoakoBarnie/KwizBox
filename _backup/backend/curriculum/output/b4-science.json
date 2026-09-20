@@ -1,0 +1,176 @@
+{
+  "subject": "Science",
+  "level": "B4",
+  "strands": [
+    {
+      "name": "DIVERSITY OF MATTER",
+      "sub_strands": [
+        {
+          "name": "Living and Non-Living Things",
+          "content_standards": [
+            {
+              "id": "B4.1.1.1",
+              "text": "Understand the physical features and life processes of living things and use this understanding to classify them",
+              "indicators": [
+                {
+                  "indicator_id": "B4.1.1.1.1",
+                  "text": "Classify animals into insects, birds, mammals and reptiles"
+                },
+                {
+                  "indicator_id": "B4.1.1.1.2",
+                  "text": "Know life processes of animals (movement, nutrition and reproduction)"
+                }
+              ]
+            },
+            {
+              "id": "B4.1.1.2",
+              "text": "Understand the differences between living things and things which have never been alive",
+              "indicators": [
+                {
+                  "indicator_id": "B4.1.1.2.1",
+                  "text": "Describe the physical appearance of different types of plants (trees, shrubs, climbing, creeping)"
+                },
+                {
+                  "indicator_id": "B4.1.1.2.2",
+                  "text": "Describe the physical features of mammals, reptiles, insects and amphibians"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Materials",
+          "content_standards": [
+            {
+              "id": "B4.1.2.1",
+              "text": "Know the uses of materials in our environment",
+              "indicators": [
+                {
+                  "indicator_id": "B4.1.2.1.1",
+                  "text": "Identify the uses of common materials (e.g. wood, metal, plastic, glass, fabric)"
+                },
+                {
+                  "indicator_id": "B4.1.2.1.2",
+                  "text": "Suggest suitable materials for specific purposes"
+                }
+              ]
+            },
+            {
+              "id": "B4.1.2.2",
+              "text": "Understand mixtures, their types, components and ways of separating them into their components",
+              "indicators": [
+                {
+                  "indicator_id": "B4.1.2.2.1",
+                  "text": "Identify a liquid-liquid mixture and describe how to separate its components"
+                },
+                {
+                  "indicator_id": "B4.1.2.2.2",
+                  "text": "Describe the ways of separating insoluble solids from liquids"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CYCLES",
+      "sub_strands": [
+        {
+          "name": "Earth Science",
+          "content_standards": [
+            {
+              "id": "B4.2.1.1",
+              "text": "Recognise that some events in our environment occur recurrently",
+              "indicators": [
+                {
+                  "indicator_id": "B4.2.1.1.1",
+                  "text": "Demonstrate understanding of cyclic movements in the environment"
+                },
+                {
+                  "indicator_id": "B4.2.1.1.2",
+                  "text": "Describe the water cycle"
+                }
+              ]
+            },
+            {
+              "id": "B4.2.1.2",
+              "text": "Recognise the relationship between the earth and the sun",
+              "indicators": [
+                {
+                  "indicator_id": "B4.2.1.2.1",
+                  "text": "Identify the objects in the sky during day and night"
+                },
+                {
+                  "indicator_id": "B4.2.1.2.2",
+                  "text": "Describe the changes that occur from day to night"
+                }
+              ]
+            },
+            {
+              "id": "B4.2.1.3",
+              "text": "Show an understanding of the roles of condensation, evaporation, transpiration and precipitation in the hydrological (water) cycle",
+              "indicators": [
+                {
+                  "indicator_id": "B4.2.1.3.1",
+                  "text": "Demonstrate the process of evapotranspiration"
+                },
+                {
+                  "indicator_id": "B4.2.1.3.2",
+                  "text": "Describe the water cycle in the local environment"
+                }
+              ]
+            },
+            {
+              "id": "B4.2.1.5",
+              "text": "Recognise water and air as important natural resources",
+              "indicators": [
+                {
+                  "indicator_id": "B4.2.1.5.1",
+                  "text": "Demonstrate ways of making water safe for use"
+                },
+                {
+                  "indicator_id": "B4.2.1.5.2",
+                  "text": "Describe ways of keeping air clean in our environment"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Life Cycles of Organisms",
+          "content_standards": [
+            {
+              "id": "B4.3.1.1",
+              "text": "Show an understanding of the life cycles of plants and animals",
+              "indicators": [
+                {
+                  "indicator_id": "B4.3.1.1.1",
+                  "text": "Describe the life cycle of a maize plant"
+                },
+                {
+                  "indicator_id": "B4.3.1.1.2",
+                  "text": "Describe the life cycle of a frog"
+                }
+              ]
+            },
+            {
+              "id": "B4.3.1.2",
+              "text": "Show an understanding of metamorphosis in animals",
+              "indicators": [
+                {
+                  "indicator_id": "B4.3.1.2.1",
+                  "text": "Describe the life cycle of a butterfly"
+                },
+                {
+                  "indicator_id": "B4.3.1.2.2",
+                  "text": "Describe the life cycle of a chicken"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

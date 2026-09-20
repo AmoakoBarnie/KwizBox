@@ -1,0 +1,1555 @@
+{
+  "subject": "Mathematics",
+  "levels": [
+    {
+      "code": "B7",
+      "strands": [
+        {
+          "name": "decimal",
+          "sub_strands": [
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B7.1.1.1",
+                  "text": "Demonstrate B7.1.1.1.1 Model number quantities more than 1,000,000,000 using Critical Thinking and",
+                  "indicators": []
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B7.1.1.1",
+                  "text": "Demonstrate E.g.3. Use tokens (or paper-made currency notes) such as GH\u20b520, Critical Thinking and",
+                  "indicators": []
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B7.1.1.2",
+                  "text": "Compare and order whole numbers more than1,000,000,000",
+                  "indicators": []
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B7.1.1.1",
+                  "text": "Demonstrate B7.1.1.1.3 Round (off, up, down) whole numbers more than Personal Development",
+                  "indicators": []
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B7.1.1.1",
+                  "text": "Demonstrate B7.1.1.1.4 Round decimals to the nearest tenth, hundredth, Critical Thinking and",
+                  "indicators": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "measurement",
+          "sub_strands": [
+            {
+              "name": "Number Operations",
+              "content_standards": [
+                {
+                  "id": "B7.1.1.1",
+                  "text": "Demonstrate B7.1.1.1.5 Express decimal numerals to given significant and decimal Critical Thinking and",
+                  "indicators": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "multiplication",
+          "sub_strands": [
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B7.1.2.1",
+                  "text": "Apply mental B7.1.2.1.1 Multiply and divide given numbers by powers of 10 Communication and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B7.1.2.1.2",
+                      "text": "Apply mental mathematics strategies and number Creativity and Innovation"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Place value",
+          "sub_strands": [
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B7.1.2.1",
+                  "text": "Apply mental B7.1.2.1.3 Apply mental mathematics strategies to solve word Creativity and Innovation",
+                  "indicators": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "counting",
+          "sub_strands": [
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B7.1.2.3",
+                  "text": "Demonstrate B7.1.2.3.1 Illustrate with examples the meaning of repeated factors Creativity and Innovation",
+                  "indicators": [
+                    {
+                      "indicator_id": "B7.1.2.3.2",
+                      "text": "Express a given number as a product of a given number or"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B7.1.2.3",
+                  "text": "Demonstrate B7.1.2.3.3 Show that the value of any natural number with zero as its Creativity and Innovation",
+                  "indicators": [
+                    {
+                      "indicator_id": "B7.1.2.3.4",
+                      "text": "Find the value of a number written in index form. Creativity and Innovation"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B7.1.2.3",
+                  "text": "Demonstrate B7.1.2.3.5 Apply the concept of powers of numbers (product of Creativity and Innovation",
+                  "indicators": []
+                }
+              ]
+            },
+            {
+              "name": "Fractions, Decimals and Percentages",
+              "content_standards": [
+                {
+                  "id": "B7.1.2.3",
+                  "text": "Demonstrate E.g. 3. LCM Real life example Creativity and Innovation",
+                  "indicators": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Decimal",
+          "sub_strands": [
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B7.1.3.1",
+                  "text": "Simplify, B7.1.3.1.1 Determine and recall the percentages and decimals of given Critical thinking and",
+                  "indicators": []
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B7.1.3.1",
+                  "text": "Simplify, E.g. 3. Identifying fractions which are (i) closer to half; (ii) closer to one; and Critical thinking and",
+                  "indicators": []
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B7.1.3.1",
+                  "text": "Simplify, B7.1.3.1.2 Compare and order fractions (i.e. common, percent and Communication and",
+                  "indicators": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "subtraction",
+          "sub_strands": [
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B7.1.3.2",
+                  "text": "Demonstrate B7.1.3.2.1 Explain the process of addition and subtraction of two or Communication and",
+                  "indicators": []
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B7.1.3.2",
+                  "text": "Demonstrate B7.1.3.2.2 Solve problems involving addition or subtraction of Critical thinking and",
+                  "indicators": []
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B7.1.3.3",
+                  "text": "Demonstrate B7.1.3.3.1 Explain the process of multiplying a fraction (i.e. common, Critical thinking and",
+                  "indicators": []
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B7.1.3.3",
+                  "text": "Demonstrate B7.1.3.3.2 Find a fraction of given quantity (i.e. money or given Critical thinking and",
+                  "indicators": []
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B7.1.3.3",
+                  "text": "Demonstrate B7.1.3.3.3 Explain the process of dividing a fraction (i.e. common, Critical thinking and",
+                  "indicators": []
+                }
+              ]
+            },
+            {
+              "name": "Number: Ratios and Proportion",
+              "content_standards": [
+                {
+                  "id": "B7.1.3.3",
+                  "text": "Demonstrate B7.1.3.3.4 Determine the result of dividing a quantity (i.e. money or Critical thinking and",
+                  "indicators": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "proportion",
+          "sub_strands": [
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B7.1.4.1",
+                  "text": "Demonstrate B7.1.4.1.1 Find ratio and use ratio language to describe relationship Critical Thinking and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B7.1.4.1.2",
+                      "text": "Use the concept of a unit rate associated with a ratio a:b Critical Thinking and"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B7.1.4.1",
+                  "text": "Demonstrate B7.1.4.1.3 Make tables of equivalent ratios (written as common Critical Thinking and",
+                  "indicators": []
+                }
+              ]
+            },
+            {
+              "name": "Patterns and Relations",
+              "content_standards": [
+                {
+                  "id": "B7.1.4.1",
+                  "text": "Demonstrate B7.1.4.1.4 Use the proportional reasoning to find missing values in the Critical Thinking and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B7.1.4.1.5",
+                      "text": "Find a 6perce3nt of a quantity as a rate3 per 100 3(e.g. 30% of a Critical Thinking and"
+                    }
+                  ]
+                },
+                {
+                  "id": "B7.2.1.1",
+                  "text": "Derive the rule B7.2.1.1.1 Extend a given relation presented with and without symbolic Creativity and Innovation",
+                  "indicators": []
+                },
+                {
+                  "id": "B7.2.1.1",
+                  "text": "Derive the rule E.g.3 Extend a given number relation. Creativity and Innovation",
+                  "indicators": [
+                    {
+                      "indicator_id": "B7.2.1.1.2",
+                      "text": "Describe the rule for a given relation using mathematical Creativity and Innovation"
+                    }
+                  ]
+                },
+                {
+                  "id": "B7.2.1.1",
+                  "text": "Derive the rule E.g.2 Describe the rule for a relation using mathematics language. Creativity and Innovation",
+                  "indicators": []
+                },
+                {
+                  "id": "B7.2.1.1",
+                  "text": "Derive the rule B7.2.1.1.3 Identify the relation or rule in a pattern/mapping presented Creativity and Innovation",
+                  "indicators": []
+                },
+                {
+                  "id": "B7.2.1.1",
+                  "text": "Derive the rule B7.2.1.1.4 Locate points on the number plane, draw a table of values of Creativity and Innovation",
+                  "indicators": []
+                },
+                {
+                  "id": "B7.2.1.1",
+                  "text": "Derive the rule E.g.2Locate points on the number plane \u2013 (1, 2) and (-3, 2) Creativity and Innovation",
+                  "indicators": []
+                },
+                {
+                  "id": "B7.2.1.1",
+                  "text": "Derive the rule E.g.3 Draw graphs for given relations Creativity and Innovation",
+                  "indicators": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "algebra",
+          "sub_strands": [
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B7.2.1.1",
+                  "text": "Derive the rule E.g.4 Use knowledge of identifying and plotting points in a number plane to Creativity and Innovation",
+                  "indicators": []
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B7.2.2.1",
+                  "text": "Simplify B7.2.2.1.2 Perform addition and subtraction of algebraic expressions Critical Thinking and",
+                  "indicators": []
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B7.2.2.1",
+                  "text": "Simplify E.g.3 Adding and subtracting algebraic expressions. Critical Thinking and",
+                  "indicators": []
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B7.2.2.1",
+                  "text": "Simplify B7.2.2.1.3 Perform multiplication and division of algebraic expressions Communication and",
+                  "indicators": []
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B7.2.2.1",
+                  "text": "Simplify B7.2.2.1.4 Substitute values to evaluate algebraic expressions. Communication and",
+                  "indicators": []
+                }
+              ]
+            },
+            {
+              "name": "Variables and Equations",
+              "content_standards": [
+                {
+                  "id": "B7.2.2.1",
+                  "text": "Simplify i. find the perimeter and area of the Communication and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B7.2.2.1.5",
+                      "text": "Use properties of the four operations to simplify algebraic"
+                    }
+                  ]
+                },
+                {
+                  "id": "B7.2.3.1",
+                  "text": "Demonstrate an B7.2.3.1.1 Translate word problems to linear equations in one variable Communication and",
+                  "indicators": []
+                },
+                {
+                  "id": "B7.2.3.1",
+                  "text": "Demonstrate an E.g.2: Translate word problems to linear equations. Communication and",
+                  "indicators": []
+                },
+                {
+                  "id": "B7.2.3.1",
+                  "text": "Demonstrate an B7.2.3.1.2 Model and solve linear equations using concrete materials Communication and",
+                  "indicators": []
+                },
+                {
+                  "id": "B7.2.3.1",
+                  "text": "Demonstrate an E.g. 2. Model and solve linear equations set with shapes on a balance Communication and",
+                  "indicators": []
+                },
+                {
+                  "id": "B7.2.3.1",
+                  "text": "Demonstrate an Communication and",
+                  "indicators": []
+                }
+              ]
+            },
+            {
+              "name": "Shape and Space",
+              "content_standards": [
+                {
+                  "id": "B7.2.3.1",
+                  "text": "Demonstrate an Communication and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B7.2.3.1.4",
+                      "text": "Solve linear equations in one variable"
+                    }
+                  ]
+                },
+                {
+                  "id": "B7.3.1.1",
+                  "text": "Demonstrate B7.3.1.1.1 Measure and classify angles according to their measured Creativity and Innovation",
+                  "indicators": []
+                },
+                {
+                  "id": "B7.3.1.1",
+                  "text": "Demonstrate B7.3.1.1.2 Apply the fact that (i) complementary angles are two angles Creativity and Innovation",
+                  "indicators": []
+                },
+                {
+                  "id": "B7.3.1.1",
+                  "text": "Demonstrate B7.3.1.1.3 Use adjacent, supplementary and vertically opposite angles Creativity and Innovation",
+                  "indicators": []
+                },
+                {
+                  "id": "B7.3.1.1",
+                  "text": "Demonstrate E.g.3 Use the figure at the right to identify and label the following angles Creativity and Innovation",
+                  "indicators": []
+                },
+                {
+                  "id": "B7.3.1.2",
+                  "text": "Demonstrate B7.3.1.2.1 Construct a line segment perpendicular to another line Critical Thinking and",
+                  "indicators": []
+                },
+                {
+                  "id": "B7.3.1.2",
+                  "text": "Demonstrate B7.3.1.2.2: Construct the perpendicular bisector of a line segment Critical Thinking and",
+                  "indicators": []
+                },
+                {
+                  "id": "B7.3.1.2",
+                  "text": "Demonstrate B7.3.1.2.3: Copy and bisect angles Critical Thinking and",
+                  "indicators": []
+                },
+                {
+                  "id": "B7.3.1.2",
+                  "text": "Demonstrate E.g.2 Perform geometric construction to bisect a given angle to Critical Thinking and",
+                  "indicators": []
+                },
+                {
+                  "id": "B7.3.1.2",
+                  "text": "Demonstrate 7.3.1.2.4: Construct angles of 900 and Critical Thinking and",
+                  "indicators": []
+                },
+                {
+                  "id": "B7.3.1.2",
+                  "text": "Demonstrate 7.3.1.2.5: Construct angles of 60\u02da and 30\u02da Critical Thinking and",
+                  "indicators": []
+                },
+                {
+                  "id": "B7.3.1.2",
+                  "text": "Demonstrate 7.3.1.2.6: Construct angles whose measures are15\u02da and 75\u02da.",
+                  "indicators": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "ANGLE",
+          "sub_strands": [
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B7.3.1.2",
+                  "text": "Demonstrate E.g.3: Use a pair of compasses and a ruler to construct an angle of 75\u02da at a Communication and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B7.3.1.2.7",
+                      "text": "Describe examples of perpendicular line segments,"
+                    },
+                    {
+                      "indicator_id": "B7.3.2.1.2",
+                      "text": "Use the relationships between the diameter and the"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B7.3.2.3",
+                  "text": "Demonstrate B7.3.2.3.1 Describe the bearing of a point from another point Critical Thinking and",
+                  "indicators": []
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B7.3.2.3",
+                  "text": "Demonstrate E.g.2 Recognise true bearings as the angle measured in the clockwise Critical Thinking and",
+                  "indicators": []
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B7.3.2.3",
+                  "text": "Demonstrate B7.3.2.3.2 Explain how to find the back bearing when the direction of Critical Thinking and",
+                  "indicators": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "movement",
+          "sub_strands": [
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B7.3.2.3",
+                  "text": "Demonstrate B7.3.2.3.3 Distinguish between scalar and vector quantities Critical Thinking and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B7.3.2.3.4",
+                      "text": "Represent vector in the column (component) form and"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Position and Transformation",
+              "content_standards": [
+                {
+                  "id": "B7.3.2.3",
+                  "text": "Demonstrate B7.3.2.3.5 Convert vectors in the column (component) form to the Critical Thinking and",
+                  "indicators": []
+                },
+                {
+                  "id": "B7.3.3.1",
+                  "text": "Perform a B7.3.3.1.1 Determine shapes in real life that have reflectional (or fold) Critical Thinking and",
+                  "indicators": []
+                },
+                {
+                  "id": "B7.3.3.1",
+                  "text": "Perform a B7.3.3.1.2 Plot points and shapes (i.e. plane figures) on a coordinate Creativity and Innovation",
+                  "indicators": []
+                },
+                {
+                  "id": "B7.3.3.1",
+                  "text": "Perform a E.g. 3: Plot given points (or shape) the number plane and draw its Digital Literacy (DL)",
+                  "indicators": []
+                },
+                {
+                  "id": "B7.3.3.1",
+                  "text": "Perform a B7.3.3.1.3 Plot points and shapes (i.e. plane figures) on a coordinate Digital Literacy (DL)",
+                  "indicators": []
+                }
+              ]
+            },
+            {
+              "name": "Data",
+              "content_standards": [
+                {
+                  "id": "B7.3.3.1",
+                  "text": "Perform a B7.3.3.1.4 Verify the concept of congruent and similar shapes in Creativity and Innovation",
+                  "indicators": []
+                },
+                {
+                  "id": "B7.4.1.1",
+                  "text": "Select, justify, B7.4.1.1.1- Select and justify a method to collect data (quantitative and Critical Thinking and",
+                  "indicators": []
+                },
+                {
+                  "id": "B7.4.1.1",
+                  "text": "Select, justify, B7.4.1.1.2- Design and administer a questionnaire for collecting data to answer Critical Thinking and",
+                  "indicators": []
+                },
+                {
+                  "id": "B7.4.1.1",
+                  "text": "Select, justify, B7.4.1.1.3- Organise and present data from a survey into a table and/or",
+                  "indicators": []
+                },
+                {
+                  "id": "B7.4.1.1",
+                  "text": "Select, justify, Marks Tally Frequency i. Draw a bar graph to",
+                  "indicators": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Angle",
+          "sub_strands": [
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B7.4.1.1",
+                  "text": "Select, justify, E.g. 2 Use tallies to organise into a frequency table, the data below which was",
+                  "indicators": []
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B7.4.1.1",
+                  "text": "Select, justify, E.g. 3. Draw a graph or chart for data organised in a frequency table and use it to Critical Thinking and",
+                  "indicators": []
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B7.4.1.2",
+                  "text": "Determine the B7.4.1.2.1 Calculate the mean for a given ungrouped data and use it to solve Critical Thinking and",
+                  "indicators": []
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B7.4.1.2",
+                  "text": "Determine the B7.4.1.2.2 Calculate the median for a given ungrouped data and use it to",
+                  "indicators": []
+                }
+              ]
+            },
+            {
+              "name": "Chance or Probability",
+              "content_standards": [
+                {
+                  "id": "B7.4.1.2",
+                  "text": "Determine the E.g. 2 Find the median for a data set (in a frequency table). Critical Thinking and Problem",
+                  "indicators": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "probability",
+          "sub_strands": [
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B7.4.2.1",
+                  "text": "Identify the B7.4.2.1.1Demonstrate understanding of likelihood of a single outcome Critical Thinking and",
+                  "indicators": []
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B7.4.2.1",
+                  "text": "Identify the B7.4.2.1.2Classify the likelihood of a single outcome Critical Thinking and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B7.4.2.1.3",
+                      "text": "Calculate the probability of the event and express the Critical Thinking and"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "B8",
+      "strands": [
+        {
+          "name": "probability",
+          "sub_strands": [
+            {
+              "name": "Number and Numeration Systems",
+              "content_standards": [
+                {
+                  "id": "B7.4.2.1",
+                  "text": "Identify the",
+                  "indicators": []
+                },
+                {
+                  "id": "B8.1.1.1",
+                  "text": "Demonstrate B8.1.1.1.1 Apply the understanding of place value to read and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B8.1.1.1.2",
+                      "text": ". Skip count forwards and backwards in 10,000s,"
+                    },
+                    {
+                      "indicator_id": "B8.1.1.1.3",
+                      "text": ". Compare and order whole numbers using \u201c>, <, and"
+                    }
+                  ]
+                },
+                {
+                  "id": "B8.1.1.1",
+                  "text": "Demonstrate B8.1.1.1.4 Express integers of any size into standard form",
+                  "indicators": [
+                    {
+                      "indicator_id": "B8.1.1.1.5",
+                      "text": "Express integers in a given number of significant and"
+                    },
+                    {
+                      "indicator_id": "B8.1.1.1.6",
+                      "text": "Create and solve word or real-life problems on place"
+                    }
+                  ]
+                },
+                {
+                  "id": "B8.1.1.2",
+                  "text": "Apply the concepts and B8.1.1.2.1. Use the concept of sets to identify perfect squares",
+                  "indicators": []
+                }
+              ]
+            },
+            {
+              "name": "Number Operations",
+              "content_standards": [
+                {
+                  "id": "B8.1.1.2",
+                  "text": "Apply the concepts B8.1.1.2.2. Use the knowledge on sets and sets of factors of Critical Thinking and",
+                  "indicators": []
+                },
+                {
+                  "id": "B8.1.2.1",
+                  "text": "Apply mental B8.1.2.1.1 Multiply and divide by power of 10 including decimals and Critical Thinking and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B8.1.2.1.2",
+                      "text": "Apply mental mathematics strategies and number"
+                    },
+                    {
+                      "indicator_id": "B8.1.2.1.3",
+                      "text": "Apply mental mathematics strategies to solve word"
+                    }
+                  ]
+                },
+                {
+                  "id": "B8.1.2.2",
+                  "text": "Apply the B8.1.2.2.1 Add and subtract more than four-digit numbers.",
+                  "indicators": []
+                },
+                {
+                  "id": "B8.1.2.2",
+                  "text": "Apply the B8.1.2.2.2 Multiply or divide multi-digit numbers by 2- and 3-digit numbers. Critical Thinking and Problem",
+                  "indicators": []
+                },
+                {
+                  "id": "B8.1.2.2",
+                  "text": "Apply the E.g.3 Multiply whole numbers using the lattice method: Critical Thinking and",
+                  "indicators": []
+                },
+                {
+                  "id": "B8.1.2.2",
+                  "text": "Apply the B8.1.2.2.3. Create and solve story problems involving decimals on the four Communication and",
+                  "indicators": []
+                },
+                {
+                  "id": "B8.1.2.2",
+                  "text": "Apply the E.g.2 Solve word problems on data presented in a table. Communication and",
+                  "indicators": []
+                },
+                {
+                  "id": "B8.1.2.3",
+                  "text": "Demonstrate B8.1.2.3.1 Identify and explain the laws of indices Critical Thinking and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B8.1.2.3.2",
+                      "text": "Apply the laws of indices to simplify and evaluate numbers"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Fractions, Decimals and Percentages",
+              "content_standards": [
+                {
+                  "id": "B8.1.2.3",
+                  "text": "Demonstrate B8.1.2.3.3 Solve exponential equations Critical Thinking and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B8.1.2.3.4",
+                      "text": "Solve real life problems involving powers of natural numbers."
+                    }
+                  ]
+                },
+                {
+                  "id": "B8.1.3.1",
+                  "text": "Apply the B8.1.3.1.1 Review fractions and solve problems involving basic Critical Thinking and",
+                  "indicators": []
+                },
+                {
+                  "id": "B8.1.3.1",
+                  "text": "Apply the B8.1.3.1.2 Add and/or subtract, multiply and/or divide given fractions, Critical Thinking and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B8.1.3.1.3",
+                      "text": ". Review word problems involving basic operations on"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Patterns and Relations",
+              "content_standards": [
+                {
+                  "id": "B8.1.3.1",
+                  "text": "Apply the ii. Faako answers 42 out of 60 questions correctly. What percentage Critical Thinking and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B8.1.4.1.2",
+                      "text": "Solve unit rate problems including those involving unit"
+                    }
+                  ]
+                },
+                {
+                  "id": "B8.2.1.1",
+                  "text": "Demonstrate B8.2.1.1.1 Calculate the gradient of a line and use it to write equation of a line of Critical Thinking and",
+                  "indicators": []
+                },
+                {
+                  "id": "B8.2.1.1",
+                  "text": "Demonstrate E.g.3 Determine the gradient when given two coordinates. Critical Thinking and",
+                  "indicators": []
+                },
+                {
+                  "id": "B8.2.1.1",
+                  "text": "Demonstrate the E.g.6 Determine the slope-intercept form of the equation of a straight line Critical Thinking and",
+                  "indicators": []
+                },
+                {
+                  "id": "B8.2.1.1",
+                  "text": "Demonstrate the B8.2.1.1.2 Use graph of a linear relation to determine subsequent missing Critical Thinking and",
+                  "indicators": []
+                },
+                {
+                  "id": "B8.2.1.1",
+                  "text": "Demonstrate E.g.2 Use information from a graph to The diameter of a Wawa tree is currently 10 Critical Thinking and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B8.2.1.1.3",
+                      "text": "Use graphs of linear relations to solve real life problems."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Algebraic Expressions",
+              "content_standards": [
+                {
+                  "id": "B8.2.1.1",
+                  "text": "Demonstrate Copy and complete the table for the Critical Thinking and",
+                  "indicators": []
+                },
+                {
+                  "id": "B8.2.2.1",
+                  "text": "Solve problems B8.2.2.1.1 Use the distributive property to remove brackets and solve Critical Thinking and",
+                  "indicators": []
+                },
+                {
+                  "id": "B8.2.2.1",
+                  "text": "Solve problems Simplify: Critical Thinking and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B8.2.2.1.3",
+                      "text": "Substitute values to evaluate algebraic expressions including"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Variables and Equations",
+              "content_standards": [
+                {
+                  "id": "B8.2.2.1",
+                  "text": "Solve problems B8.2.2.1.4 Factorise given expressions involving the four operations and use the Critical Thinking and",
+                  "indicators": []
+                },
+                {
+                  "id": "B8.2.3.1",
+                  "text": "Demonstrate an B8.2.3.1.1 Translate word problems into linear inequalities in one Critical Thinking and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B8.2.3.1.2",
+                      "text": "Solve simple linear inequalities"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Shapes and Space",
+              "content_standards": [
+                {
+                  "id": "B8.2.3.1",
+                  "text": "Demonstrate an B8.2.3.1.3 Determine solution sets of simple linear inequalities in given Critical Thinking and",
+                  "indicators": []
+                },
+                {
+                  "id": "B8.3.1.1",
+                  "text": "Demonstrate B8.3.1.1.1 Draw and determine the values of alternate and corresponding Creativity and Innovation",
+                  "indicators": []
+                },
+                {
+                  "id": "B8.3.1.1",
+                  "text": "Demonstrate B8.3.1.1.2 Determine the values of angles in a triangle using knowledge of Creativity and Innovation",
+                  "indicators": []
+                },
+                {
+                  "id": "B8.3.1.2",
+                  "text": "Demonstrate the B8.3.1.2.1 Construct and bisect angles of 120\u02da, 105\u02da, 135\u02da and 150\u02da Creativity and Innovation",
+                  "indicators": []
+                },
+                {
+                  "id": "B8.3.1.2",
+                  "text": "Demonstrate the E.g.3: Use a pair of compasses and a ruler to perform the geometric Creativity and Innovation",
+                  "indicators": []
+                },
+                {
+                  "id": "B8.3.1.2",
+                  "text": "Demonstrate the B8.3.1.2.2: Construct scalene triangles, isosceles triangles, Creativity and Innovation",
+                  "indicators": []
+                },
+                {
+                  "id": "B8.3.1.2",
+                  "text": "Demonstrate E.g.2 : Use a pair of compasses and a ruler to construct an equilateral triangle by Creativity and Innovation",
+                  "indicators": []
+                },
+                {
+                  "id": "B8.3.1.2",
+                  "text": "Demonstrate E.g.4: Use a pair of compasses and a ruler to perform geometric construction of Creativity and Innovation",
+                  "indicators": []
+                },
+                {
+                  "id": "B8.3.1.2",
+                  "text": "Demonstrate E.g.5: Use a pair of compasses and a ruler to perform geometric construction of Creativity and Innovation",
+                  "indicators": []
+                },
+                {
+                  "id": "B8.3.1.2",
+                  "text": "Demonstrate Creativity and Innovation",
+                  "indicators": []
+                },
+                {
+                  "id": "B8.3.1.2",
+                  "text": "Demonstrate the Creativity and Innovation",
+                  "indicators": []
+                },
+                {
+                  "id": "B8.3.1.2",
+                  "text": "Demonstrate B8.3.1.2.3: Construct loci under given conditions including: Creativity and Innovation",
+                  "indicators": []
+                },
+                {
+                  "id": "B8.3.1.2",
+                  "text": "Demonstrate E.g.2: Perform geometric construction to locate the centre of a circle by locating Creativity and Innovation",
+                  "indicators": []
+                },
+                {
+                  "id": "B8.3.1.2",
+                  "text": "Demonstrate E.g.3: Draw circles of given radii at the points as centre and chord. Creativity and Innovation",
+                  "indicators": []
+                },
+                {
+                  "id": "B8.3.1.2",
+                  "text": "Demonstrate the E.g.4: Construct a regular hexagon within a circle given the length of a Creativity and Innovation",
+                  "indicators": []
+                },
+                {
+                  "id": "B8.3.1.2",
+                  "text": "Demonstrate the E.g.5 Use intersecting circles to construct a regular hexagon and measure Creativity and Innovation",
+                  "indicators": []
+                },
+                {
+                  "id": "B8.3.1.2",
+                  "text": "Demonstrate the E.g.6: Construct a perpendicular bisector (mediator) as a locus and explain Creativity and Innovation",
+                  "indicators": []
+                },
+                {
+                  "id": "B8.3.1.2",
+                  "text": "Demonstrate the Any point on line CD is of equal distance from the two fixed points A and B. Creativity and Innovation",
+                  "indicators": []
+                },
+                {
+                  "id": "B8.3.1.2",
+                  "text": "Demonstrate the E.g. 7 Construct an angle bisector as a locus of points equidistant from Creativity and Innovation",
+                  "indicators": []
+                }
+              ]
+            },
+            {
+              "name": "Measurement",
+              "content_standards": [
+                {
+                  "id": "B8.3.1.2",
+                  "text": "Demonstrate the E.g.8: Construct parallel lines as a locus (i.e. tracing the path of a point Creativity and Innovation",
+                  "indicators": [
+                    {
+                      "indicator_id": "B8.3.2.1.3",
+                      "text": "Use the Pythagorean theorem to solve problems on right-"
+                    },
+                    {
+                      "indicator_id": "B8.3.2.1.5",
+                      "text": "Establish the relationship between the basic trigonometric"
+                    }
+                  ]
+                },
+                {
+                  "id": "B8.3.2.2",
+                  "text": "Demonstrate B8.3.2.2.1 Add, subtract and find the scalar multiplication of vectors in Critical Thinking and",
+                  "indicators": []
+                }
+              ]
+            },
+            {
+              "name": "Position and Transformation",
+              "content_standards": [
+                {
+                  "id": "B8.3.2.2",
+                  "text": "Demonstrate B8.3.2.2.2 Demonstrate understanding of vector equality. Critical Thinking and",
+                  "indicators": []
+                },
+                {
+                  "id": "B8.3.3.1",
+                  "text": "Perform a B8.3.3.1.1 Understand rotation and identify real-life situations involving Critical Thinking and",
+                  "indicators": []
+                }
+              ]
+            },
+            {
+              "name": "Data",
+              "content_standards": [
+                {
+                  "id": "B8.3.3.1",
+                  "text": "Perform a B8.3.3.1.2 Draw rotation image in a coordinate plane and determine the angle Critical Thinking and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B8.3.3.1.3",
+                      "text": "Investigate the concept of congruent shapes."
+                    }
+                  ]
+                },
+                {
+                  "id": "B8.4.1.1",
+                  "text": "Select, justify, and B8.4.1.1.1 Identify types of given data including numerical, categorical, Critical Thinking and",
+                  "indicators": []
+                },
+                {
+                  "id": "B8.4.1.1",
+                  "text": "Select, justify, and B8.4.1.1.2 - Select and justify a method to collect data (quantitative and Critical Thinking and",
+                  "indicators": []
+                },
+                {
+                  "id": "B8.4.1.1",
+                  "text": "Select, justify, and B8.4.1.1.3 - Organise data (grouped/ungrouped), present it in frequency Critical Thinking and",
+                  "indicators": []
+                },
+                {
+                  "id": "B8.4.1.1",
+                  "text": "Select, justify, and E.g. -2 A cleaner of a small office spent GH\u20b5120 of his salary on food; Critical Thinking and",
+                  "indicators": []
+                },
+                {
+                  "id": "B8.4.1.1",
+                  "text": "Select, justify, and E.g. 4 Make a stem and leaf plot (a stem-and-leaf display or stem-and-leaf Critical Thinking and",
+                  "indicators": []
+                },
+                {
+                  "id": "B8.4.1.2",
+                  "text": "Demonstrate an B8.4.1.2.1 Calculate the mean, median and mode for a given set of",
+                  "indicators": []
+                },
+                {
+                  "id": "B8.4.1.2",
+                  "text": "Demonstrate an E. g. 2 The table below shows the area of the sitting room floors of each of 7 real-",
+                  "indicators": []
+                }
+              ]
+            },
+            {
+              "name": "Chance or Probability",
+              "content_standards": [
+                {
+                  "id": "B8.4.1.2",
+                  "text": "Demonstrate an B8.4.1.2.2Justify a context in which the mean, median or mode is the most Critical Thinking and",
+                  "indicators": []
+                },
+                {
+                  "id": "B8.4.2.1",
+                  "text": "Identify the sample B8.4.2.1.1.Perform a probability experiment involving two independent Critical Thinking and",
+                  "indicators": []
+                },
+                {
+                  "id": "B8.4.2.1",
+                  "text": "Identify the sample B8.4.2.1.2. Express the probabilities of the events as fractions, Critical Thinking and",
+                  "indicators": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "B9",
+      "strands": [
+        {
+          "name": "probability",
+          "sub_strands": [
+            {
+              "name": "Number and Numeration System",
+              "content_standards": [
+                {
+                  "id": "B8.4.2.1",
+                  "text": "Identify the sample E.g. 2 A die is thrown at most three times. If 6 is scored the game stops. Critical Thinking and",
+                  "indicators": []
+                },
+                {
+                  "id": "B9.1.1.1",
+                  "text": "Apply the B9.1.1.1.1 Express integers to a given number of significant and decimal",
+                  "indicators": [
+                    {
+                      "indicator_id": "B9.1.1.1.2",
+                      "text": ". Use knowledge and understanding of place value to solve"
+                    }
+                  ]
+                },
+                {
+                  "id": "B9.1.1.2",
+                  "text": "Demonstrate an B9.1.1.2.1 Solve problems on relationship between members of the",
+                  "indicators": []
+                }
+              ]
+            },
+            {
+              "name": "Number Operations",
+              "content_standards": [
+                {
+                  "id": "B9.1.1.2",
+                  "text": "Demonstrate an E.g. 2 Write the factors of 12 and 15 and represent them on a Venn diagram. Communication and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B9.1.1.2.2",
+                      "text": "Apply the concept of sets to solve problems on relationship"
+                    },
+                    {
+                      "indicator_id": "B9.1.2.1.3",
+                      "text": "Use the associative property of addition and multiplication."
+                    },
+                    {
+                      "indicator_id": "B9.1.2.1.4",
+                      "text": "Use the distributive property in solving problems."
+                    }
+                  ]
+                },
+                {
+                  "id": "B9.1.2.2",
+                  "text": "Apply the",
+                  "indicators": [
+                    {
+                      "indicator_id": "B9.1.2.2.1",
+                      "text": "Solve operations involving addition, subtraction, multiplication Critical Thinking and"
+                    },
+                    {
+                      "indicator_id": "B9.1.2.2.2",
+                      "text": "Solve word problems involving the four basic operations and"
+                    }
+                  ]
+                },
+                {
+                  "id": "B9.1.2.4",
+                  "text": "Demonstrate B9.1.2.4.1 Identify simple and compound surds. Critical Thinking and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B9.1.2.4.3",
+                      "text": "Simplify given surds )"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Fractions, Decimals and Percentages",
+              "content_standards": [
+                {
+                  "id": "B9.1.2.4",
+                  "text": "Demonstrate B9.1.2.3.4 Approximate the square roots of non-perfect squares with Personal Development",
+                  "indicators": []
+                },
+                {
+                  "id": "B9.1.3.1",
+                  "text": "Apply the B9.1.3.1.1 Review fractions and solve problems involving basic operations",
+                  "indicators": []
+                },
+                {
+                  "id": "B9.1.3.1",
+                  "text": "Apply the B9.1.3.1.2 Add and/or subtract, multiply and/or divide given fractions, using Creativity and",
+                  "indicators": []
+                }
+              ]
+            },
+            {
+              "name": "Number: Ratios and Proportion",
+              "content_standards": [
+                {
+                  "id": "B9.1.3.1",
+                  "text": "Apply the B9.1.3.1.3. Review word problems involving basic operations on fractions. Creativity and",
+                  "indicators": []
+                },
+                {
+                  "id": "B9.1.4.1",
+                  "text": "Apply the B9.1.4.1.1 Represent proportional relationships by equations. Critical Thinking and",
+                  "indicators": []
+                },
+                {
+                  "id": "B9.1.4.1",
+                  "text": "Apply the E.g.5 solve problems involving depreciation. Critical Thinking and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B9.1.4.1.3",
+                      "text": "Use knowledge of rates and proportional reasoning to solve problems"
+                    }
+                  ]
+                },
+                {
+                  "id": "B9.1.4.1",
+                  "text": "Apply the E.g.2 Calculate employee/employer contributions to SSNIT under Act 766. Critical Thinking and",
+                  "indicators": []
+                }
+              ]
+            },
+            {
+              "name": "Patterns and Relations",
+              "content_standards": [
+                {
+                  "id": "B9.1.4.1",
+                  "text": "Apply the = GH\u20b56,469.50 Critical Thinking and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B9.1.4.1.4",
+                      "text": "Recognise and graph proportional relationships, interpreting the Digital Literacy (DL)"
+                    }
+                  ]
+                },
+                {
+                  "id": "B9.2.1.1",
+                  "text": "Demonstrate B9.2.1.1.1 Construct a table of values for two linear relations and graph the Critical Thinking and",
+                  "indicators": []
+                },
+                {
+                  "id": "B9.2.1.1",
+                  "text": "Demonstrate B9.2.1.1.2 Use graphs of two linear relations to determine subsequent missing",
+                  "indicators": []
+                }
+              ]
+            },
+            {
+              "name": "Variables and Equations",
+              "content_standards": [
+                {
+                  "id": "B9.2.1.1",
+                  "text": "Demonstrate B9.2.1.1.3 Use graphs to solve equations involving two linear relations. Creativity and",
+                  "indicators": []
+                },
+                {
+                  "id": "B9.2.3.1",
+                  "text": "Demonstrate B9.2.3.1.1 Solve single variable linear inequalities with rational coefficients. Critical Thinking and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B9.2.3.1.2",
+                      "text": "Illustrate solution sets of linear inequalities on the number line"
+                    }
+                  ]
+                },
+                {
+                  "id": "B9.2.3.1",
+                  "text": "Demonstrate E.g.2 Graph linear inequalities in one variable on a number line. Digital Literacy (DL)",
+                  "indicators": []
+                },
+                {
+                  "id": "B9.2.3.1",
+                  "text": "Demonstrate E.g.4 Solve and graph linear inequalities on a cartesian plane. Digital Literacy (DL)",
+                  "indicators": []
+                },
+                {
+                  "id": "B9.2.3.1",
+                  "text": "Demonstrate B9.2.3.1.3 Solve real-life problems involving linear equations and Critical Thinking and",
+                  "indicators": []
+                },
+                {
+                  "id": "B9.2.3.1",
+                  "text": "Demonstrate ii. A man paid GH\u20b5 290 for 11 books. Some of the books were geography Critical Thinking and",
+                  "indicators": []
+                }
+              ]
+            },
+            {
+              "name": "Shapes and Space",
+              "content_standards": [
+                {
+                  "id": "B9.2.3.1",
+                  "text": "Demonstrate If the third side is cm long then, Critical Thinking and",
+                  "indicators": []
+                },
+                {
+                  "id": "B9.3.1.1",
+                  "text": "Apply the properties B9.3.1.1.1Derive the formula for calculating the sum of angles in any Communication and",
+                  "indicators": []
+                },
+                {
+                  "id": "B9.3.1.1",
+                  "text": "Apply the properties E.g.2. Derive and use the Critical Thinking and",
+                  "indicators": []
+                },
+                {
+                  "id": "B9.3.1.1",
+                  "text": "Apply the properties B9.3.1.1.2 Identify similar and congruent triangles and use the Critical Thinking and",
+                  "indicators": []
+                },
+                {
+                  "id": "B9.3.1.2",
+                  "text": "Construct inscribed B9.3.1.2.1 Draw inscribed and circumscribed circles for triangles under Critical Thinking and",
+                  "indicators": []
+                },
+                {
+                  "id": "B9.3.1.2",
+                  "text": "Construct E.g..2: Use a pair of compasses and a ruler to construct a triangle (say ABC) Creativity and Innovation",
+                  "indicators": []
+                },
+                {
+                  "id": "B9.3.1.2",
+                  "text": "Construct E.g.4: Perform a geometric construction of a triangle (say ) under a given Creativity and Innovation",
+                  "indicators": [
+                    {
+                      "indicator_id": "B9.3.1.2.2",
+                      "text": "Construct parallelograms (i.e. square, rectangle, rhombus) Communication and"
+                    }
+                  ]
+                },
+                {
+                  "id": "B9.3.1.2",
+                  "text": "Construct E.g.2: Construct a square ABCD with =6.5cm. Measure and record the Critical Thinking and",
+                  "indicators": []
+                },
+                {
+                  "id": "B9.3.1.2",
+                  "text": "Construct E.g.5: Perform geometric construction of a rectangle with a given side and Critical Thinking and",
+                  "indicators": []
+                }
+              ]
+            },
+            {
+              "name": "Measurement",
+              "content_standards": [
+                {
+                  "id": "B9.3.1.2",
+                  "text": "Construct",
+                  "indicators": [
+                    {
+                      "indicator_id": "B9.3.2.1.2",
+                      "text": "Use the net of a cuboid to determine its surface area."
+                    },
+                    {
+                      "indicator_id": "B9.3.2.1.3",
+                      "text": "Use the net of a triangular prism to determine its surface"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Position and Transformation",
+              "content_standards": [
+                {
+                  "id": "B9.3.2.2",
+                  "text": "Solve problems B9.3.2.2.1 Show an understanding of parallel vectors and Digital Literacy (DL)",
+                  "indicators": [
+                    {
+                      "indicator_id": "B9.3.2.2.2",
+                      "text": "Apply the triangular and parallelogram laws of addition to Creativity and Innovation"
+                    }
+                  ]
+                },
+                {
+                  "id": "B9.3.3.1",
+                  "text": "Demonstrate B9.3.3.1.1 Know examples of situations in everyday life that depict Creativity and Innovation (CI)",
+                  "indicators": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "representation",
+          "sub_strands": [
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B9.3.3.1",
+                  "text": "Demonstrate B9.3.3.1.2 Understand enlargement and identify real-life situations Creativity and Innovation",
+                  "indicators": [
+                    {
+                      "indicator_id": "B9.3.3.1.3",
+                      "text": "Investigate the concept of congruent and similar"
+                    },
+                    {
+                      "indicator_id": "B9.4.1.1.2",
+                      "text": ".Organise data (grouped/ungrouped) present it in frequency"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "statistics",
+          "sub_strands": [
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B9.4.1.2",
+                  "text": "Select, justify, B9.4.1.2.1 - Select a method for collecting data (quantitative and qualitative), Critical Thinking and",
+                  "indicators": []
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B9.4.1.2",
+                  "text": "Select, justify, E.g. 3Learners in B9 are asked by their physical education teacher to complete a Critical Thinking and",
+                  "indicators": []
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B9.4.1.2",
+                  "text": "Select, justify, OR Critical Thinking and",
+                  "indicators": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "strands": [
+        {
+          "name": "Division",
+          "sub_strands": [
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B9.4.1.2",
+                  "text": "Select, justify, B9.4.1.2.3Demonstrate the effect on the mean, median, and mode when Critical Thinking and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B9.4.2.1.2",
+                      "text": ". Express the probabilities of the events as fractions, decimals,"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

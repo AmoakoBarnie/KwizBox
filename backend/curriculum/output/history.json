@@ -1,0 +1,66 @@
+{
+  "subject": "History",
+  "levels": [
+    {
+      "code": "B6",
+      "strands": [
+        {
+          "name": "Ghana Gains Independence",
+          "sub_strands": [
+            {
+              "name": "MILITARY RULE",
+              "content_standards": [
+                {
+                  "id": "B1.3.1.1",
+                  "text": "Show understanding B1.3.1.1.1 Explore which Europeans came to Ghana As learners use evidence to",
+                  "indicators": [
+                    {
+                      "indicator_id": "B2.2.5.1.1",
+                      "text": "Exhibit B2.2.5.1.1. Identify Ghanaian women who have made significant The use of evidence to appreciate"
+                    },
+                    {
+                      "indicator_id": "B3.2.2.1.2",
+                      "text": "Name some of the items exchanged among the various groups."
+                    },
+                    {
+                      "indicator_id": "B3.2.2.1.3",
+                      "text": "Describe the conflicts and alliances that existed among the ethnic groups in"
+                    },
+                    {
+                      "indicator_id": "B4.2.1.1.2",
+                      "text": "State the factors that led to decline of the"
+                    },
+                    {
+                      "indicator_id": "B4.6.1.1.1",
+                      "text": ".2 State the dates and names of the leaders of the four"
+                    },
+                    {
+                      "indicator_id": "B5.2.1.1.2",
+                      "text": "Describe some ancient towns in Ghana."
+                    },
+                    {
+                      "indicator_id": "B5.4.2.1.2",
+                      "text": "Identify some of the health facilities and housing"
+                    },
+                    {
+                      "indicator_id": "B5.5.1.1.2",
+                      "text": "Examine sources of evidence about the role"
+                    },
+                    {
+                      "indicator_id": "B4.5.3.1.2",
+                      "text": "Examine sources of evidence about what happened during"
+                    },
+                    {
+                      "indicator_id": "B6.5.4.1.2",
+                      "text": "Explain how Ghana gained independence through"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

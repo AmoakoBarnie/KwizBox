@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 360" width="280" height="360">
+  <rect width="280" height="360" rx="12" fill="#f7fbf8"/>
+  <text x="140" y="24" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#022c1c">Body organs</text>
+  <!-- unisex outline: oval head, no face, torso -->
+  <ellipse cx="140" cy="62" rx="28" ry="32" fill="#fde8d0" stroke="#1a1a1a" stroke-width="3"/>
+  <line x1="140" y1="94" x2="140" y2="112" stroke="#1a1a1a" stroke-width="3"/>
+  <path d="M88 120 C 88 112, 100 108, 140 108 C 180 108, 192 112, 192 120 L 200 250 C 200 280, 176 300, 140 300 C 104 300, 80 280, 80 250 Z" fill="#fde8d0" stroke="#1a1a1a" stroke-width="3"/>
+  <!-- A brain in the head -->
+  <ellipse cx="140" cy="58" rx="16" ry="12" fill="#ffb6c1" stroke="#c45c7a" stroke-width="2"/>
+  <path d="M128 58 Q 140 50 152 58" fill="none" stroke="#c45c7a" stroke-width="1.5"/>
+  <text x="188" y="56" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#022c1c">A</text>
+  <line x1="158" y1="54" x2="180" y2="52" stroke="#022c1c" stroke-width="1.5"/>
+  <!-- B lungs -->
+  <ellipse cx="118" cy="168" rx="22" ry="32" fill="#ffd23f" stroke="#c99700" stroke-width="2"/>
+  <ellipse cx="162" cy="168" rx="22" ry="32" fill="#ffd23f" stroke="#c99700" stroke-width="2"/>
+  <line x1="140" y1="128" x2="140" y2="158" stroke="#c99700" stroke-width="3"/>
+  <text x="54" y="168" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#022c1c">B</text>
+  <line x1="70" y1="166" x2="96" y2="166" stroke="#022c1c" stroke-width="1.5"/>
+  <!-- C heart between lungs -->
+  <path d="M140 186 C 140 174, 126 170, 122 180 C 118 190, 140 204, 140 204 C 140 204, 162 190, 158 180 C 154 170, 140 174, 140 186 Z" fill="#ff4d5e" stroke="#b01224" stroke-width="2"/>
+  <text x="210" y="198" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#022c1c">C</text>
+  <line x1="158" y1="196" x2="198" y2="196" stroke="#022c1c" stroke-width="1.5"/>
+  <!-- D stomach -->
+  <ellipse cx="150" cy="244" rx="22" ry="16" fill="#00b36b" stroke="#026b40" stroke-width="2"/>
+  <text x="54" y="250" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#022c1c">D</text>
+  <line x1="70" y1="246" x2="128" y2="244" stroke="#022c1c" stroke-width="1.5"/>
+</svg>

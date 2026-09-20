@@ -1,0 +1,27 @@
+# dependencies
+node_modules/
+frontend/node_modules/
+
+# build output
+frontend/dist/
+dist/
+
+# python venv
+backend/venv/
+venv/
+
+# local db (regenerable)
+backend/trivia.db
+
+# env
+.env
+*.local
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log
+
+# vite PWA caches
+frontend/dist/sw.js
+frontend/dist/workbox-*.js

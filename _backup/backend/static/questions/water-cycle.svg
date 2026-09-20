@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 260" width="440" height="260">
+  <rect width="440" height="260" rx="12" fill="#f4f8ff"/>
+  <text x="220" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#022c1c">Water cycle</text>
+  <!-- sun -->
+  <circle cx="48" cy="48" r="18" fill="#ffd23f" stroke="#c99700" stroke-width="2"/>
+  <!-- sea -->
+  <rect x="0" y="196" width="260" height="64" fill="#3aa0d8"/>
+  <path d="M0 196 Q 40 180 80 196 T 160 196 T 240 196 T 260 196" fill="#3aa0d8"/>
+  <text x="80" y="236" font-family="Arial, sans-serif" font-size="12" fill="#022c1c">Sea</text>
+  <!-- land -->
+  <polygon points="240,196 440,196 440,260 240,260" fill="#c9e4b4"/>
+  <!-- stream -->
+  <path d="M300 210 Q 340 220 380 230 T 440 240" fill="none" stroke="#3aa0d8" stroke-width="8" stroke-linecap="round"/>
+  <!-- cloud -->
+  <ellipse cx="320" cy="58" rx="42" ry="20" fill="#c5cdd6"/>
+  <ellipse cx="350" cy="62" rx="28" ry="16" fill="#c5cdd6"/>
+  <ellipse cx="292" cy="64" rx="24" ry="14" fill="#c5cdd6"/>
+  <!-- A: evaporation sea to sky -->
+  <line x1="120" y1="186" x2="120" y2="92" stroke="#022c1c" stroke-width="3" marker-end="url(#arr)"/>
+  <text x="136" y="140" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#022c1c">A</text>
+  <!-- B: rain cloud to ground -->
+  <line x1="300" y1="86" x2="300" y2="170" stroke="#022c1c" stroke-width="3" marker-end="url(#arr)"/>
+  <line x1="288" y1="108" x2="284" y2="124" stroke="#3aa0d8" stroke-width="2"/>
+  <line x1="308" y1="112" x2="312" y2="128" stroke="#3aa0d8" stroke-width="2"/>
+  <line x1="298" y1="128" x2="296" y2="144" stroke="#3aa0d8" stroke-width="2"/>
+  <text x="316" y="136" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#022c1c">B</text>
+  <!-- C: wind cloud sideways -->
+  <line x1="372" y1="58" x2="424" y2="58" stroke="#022c1c" stroke-width="3" marker-end="url(#arr)"/>
+  <text x="390" y="48" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#022c1c">C</text>
+  <!-- D: runoff along land into stream -->
+  <line x1="280" y1="188" x2="360" y2="228" stroke="#022c1c" stroke-width="3" marker-end="url(#arr)"/>
+  <text x="300" y="228" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#022c1c">D</text>
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#022c1c"/>
+    </marker>
+  </defs>
+</svg>

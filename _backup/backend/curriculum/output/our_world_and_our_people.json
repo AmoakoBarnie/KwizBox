@@ -1,0 +1,53 @@
+{
+  "subject": "Our World and Our People",
+  "levels": [
+    {
+      "code": "B6",
+      "strands": [
+        {
+          "name": "our environment",
+          "sub_strands": [
+            {
+              "name": "Being a Citizen",
+              "content_standards": [
+                {
+                  "id": "B4.2.1.1",
+                  "text": "Demonstrate B4.2.1.1 .1. Explain ways of Learners talk about ways of ensuring safety in the",
+                  "indicators": [
+                    {
+                      "indicator_id": "B4.2.2.1.2",
+                      "text": ". Through group work guide learners to play games and"
+                    },
+                    {
+                      "indicator_id": "B6.1.2.1.2",
+                      "text": ". Learners in groups discuss how to manage the challenges that come"
+                    },
+                    {
+                      "indicator_id": "B6.4.1.1.2",
+                      "text": "."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "our nation",
+          "sub_strands": [
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B6.4.1.2",
+                  "text": ". B6.4.1.2.1. Learners explain public accountability e.g. Public Accountability is a",
+                  "indicators": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

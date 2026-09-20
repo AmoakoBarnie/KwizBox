@@ -1,0 +1,3904 @@
+[
+  {
+    "code": "english",
+    "name": "English",
+    "indicators": [
+      {
+        "indicator_id": "B6.3.5.1.2",
+        "text": "Use appropriate subject-verb agreement (indefinite",
+        "cs_id": "B6.1.5.1",
+        "cs_text": "B6.1.5.1.1. Dramatise/role-play whole/parts of stories/scenes, Creativity and Innovation",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.4.9.1.1",
+        "text": "into a three-paragraph draft",
+        "cs_id": "B6.1.5.1",
+        "cs_text": "B6.1.5.1.1. Dramatise/role-play whole/parts of stories/scenes, Creativity and Innovation",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.4.13.2.2",
+        "text": "Use words, phrases, and clauses to clarify the",
+        "cs_id": "B6.1.5.1",
+        "cs_text": "B6.1.5.1.1. Dramatise/role-play whole/parts of stories/scenes, Creativity and Innovation",
+        "level": "B6"
+      }
+    ]
+  },
+  {
+    "code": "french",
+    "name": "French",
+    "indicators": [
+      {
+        "indicator_id": "B4.1.2.4.1",
+        "text": "Écrire à un correspondant ; donner son nom, son prénom, sa nationalité",
+        "cs_id": "B4.1.2.2",
+        "cs_text": ": Se présenter à quelqu’un",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B4.1.3.3.1",
+        "text": "Lire et comprendre un texte simple dans lequel on présente quelqu’un",
+        "cs_id": "B4.1.2.2",
+        "cs_text": ": Se présenter à quelqu’un",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B4.1.3.4.1",
+        "text": "Écrire une note pour présenter quelqu’un",
+        "cs_id": "B4.1.2.2",
+        "cs_text": ": Se présenter à quelqu’un",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B4.1.4.2.1",
+        "text": "Poser et répondre à des questions sur les caractéristiques physiques d’une",
+        "cs_id": "B4.1.2.2",
+        "cs_text": ": Se présenter à quelqu’un",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B4.1.4.2.2",
+        "text": "Réciter un poème, chanter une chanson sur les caractéristiques physiques d’une - Digital literacy",
+        "cs_id": "B4.1.2.2",
+        "cs_text": ": Se présenter à quelqu’un",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B4.1.4.4.1",
+        "text": "Décrire les caractéristiques physiques d’une personne",
+        "cs_id": "B4.1.2.2",
+        "cs_text": ": Se présenter à quelqu’un",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B4.2.1.2.1",
+        "text": "Demander à quelqu’un de nommer un objet de la maison",
+        "cs_id": "B4.1.2.2",
+        "cs_text": ": Se présenter à quelqu’un",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B4.2.1.2.2",
+        "text": "Réciter des poèmes, chanter des chansons sur des objets de la maison",
+        "cs_id": "B4.1.2.2",
+        "cs_text": ": Se présenter à quelqu’un",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B4.2.1.3.1",
+        "text": "Identifier les pièces et les objets de la maison",
+        "cs_id": "B4.1.2.2",
+        "cs_text": ": Se présenter à quelqu’un",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B4.2.1.4.1",
+        "text": "Écrire, dessiner et colorier des objets de la maison",
+        "cs_id": "B4.1.2.2",
+        "cs_text": ": Se présenter à quelqu’un",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B4.2.2.2.1",
+        "text": "Poser et répondre à des questions sur ce que l’on fait avec les objets de la classe - Personal development and",
+        "cs_id": "B4.1.2.2",
+        "cs_text": ": Se présenter à quelqu’un",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B4.2.2.2.2",
+        "text": "Poser et répondre à des questions simples sur des endroits de l’école",
+        "cs_id": "B4.1.2.2",
+        "cs_text": ": Se présenter à quelqu’un",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B4.2.2.3.1",
+        "text": "Lire et comprendre des textes simples accompagnés d’images sur les objets de",
+        "cs_id": "B4.1.2.2",
+        "cs_text": ": Se présenter à quelqu’un",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B4.2.2.4.1",
+        "text": "A l’aide d’images compléter les noms des objets de l’école par les lettres",
+        "cs_id": "B4.1.2.2",
+        "cs_text": ": Se présenter à quelqu’un",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B4.3.1.1.1",
+        "text": "Écouter/Regarder et comprendre un document audio-visuel sur les goûts de",
+        "cs_id": "B4.1.2.2",
+        "cs_text": ": Se présenter à quelqu’un",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B4.3.1.2.1",
+        "text": "Poser et répondre à des questions sur les goûts",
+        "cs_id": "B4.1.2.2",
+        "cs_text": ": Se présenter à quelqu’un",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B4.3.1.2.2",
+        "text": "Dire ce que l’on aime",
+        "cs_id": "B4.1.2.2",
+        "cs_text": ": Se présenter à quelqu’un",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B4.3.1.3.1",
+        "text": "Lire et comprendre un texte simple sur les goûts et des préférences des personnes",
+        "cs_id": "B4.1.2.2",
+        "cs_text": ": Se présenter à quelqu’un",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B4.3.1.4.1",
+        "text": "Faire une liste d’objets que l’on aime",
+        "cs_id": "B4.1.2.2",
+        "cs_text": ": Se présenter à quelqu’un",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B4.3.2.2.3",
+        "text": "Enumérerce qu’on aime et ceque l’on n’aime pas",
+        "cs_id": "B4.1.2.2",
+        "cs_text": ": Se présenter à quelqu’un",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B4.4.1.2.1",
+        "text": "Compter à haute voix des objets, des personnes, de son environnement",
+        "cs_id": "B4.1.2.2",
+        "cs_text": ": Se présenter à quelqu’un",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B4.4.1.2.2",
+        "text": "Réciter un poème portant sur les nombres",
+        "cs_id": "B4.1.2.2",
+        "cs_text": ": Se présenter à quelqu’un",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B4.4.1.2.3",
+        "text": "Compter à haute voix des objets, des personnes de son environnement",
+        "cs_id": "B4.1.2.2",
+        "cs_text": ": Se présenter à quelqu’un",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B4.4.1.3.1",
+        "text": "Lire à haute voixde 1 à 20",
+        "cs_id": "B4.1.2.2",
+        "cs_text": ": Se présenter à quelqu’un",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B4.4.1.4.1",
+        "text": "Faire des calculs simples à l’écrit avec des chiffres en lettres",
+        "cs_id": "B4.1.2.2",
+        "cs_text": ": Se présenter à quelqu’un",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B4.4.2.2.1",
+        "text": "Poser et répondre à des questions sur l’heure qu’il est - Critical thinking",
+        "cs_id": "B4.1.2.2",
+        "cs_text": ": Se présenter à quelqu’un",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B4.4.2.3.2",
+        "text": "Indiquer l’heure qu’il est en changeant les aiguilles d’une horloge",
+        "cs_id": "B4.4.2.2",
+        "cs_text": ": Parler de l’emploi du temps de la journée",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B4.4.3.2.2",
+        "text": "Dire ce que l’on fait chaque jour de la semaine - Digital literacy",
+        "cs_id": "B4.4.2.2",
+        "cs_text": ": Parler de l’emploi du temps de la journée",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B4.4.3.3.1",
+        "text": "Lire et comprendre un texte simple sur les activités d’une personne",
+        "cs_id": "B4.4.2.2",
+        "cs_text": ": Parler de l’emploi du temps de la journée",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B4.4.3.4.2",
+        "text": "Écrire une carte postale à un(e) ami(e) pour lui raconter comment on passe sa global citizenship",
+        "cs_id": "B4.4.2.2",
+        "cs_text": ": Parler de l’emploi du temps de la journée",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B4.4.3.4.3",
+        "text": "Remplir un emploi du temps vierge avec des rubriques comme jour, matière, heure. leadership",
+        "cs_id": "B4.4.2.2",
+        "cs_text": ": Parler de l’emploi du temps de la journée",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B4.4.4.2.1",
+        "text": "Poser et répondre à des questions sur les mois de l’année",
+        "cs_id": "B4.4.2.2",
+        "cs_text": ": Parler de l’emploi du temps de la journée",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B4.4.4.2.2",
+        "text": "Dire dans quel mois un événement/une activité a lieu - Digital literacy",
+        "cs_id": "B4.4.2.2",
+        "cs_text": ": Parler de l’emploi du temps de la journée",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B4.4.4.2.3",
+        "text": "Réciter des poèmes ou chanter des chansons sur les mois de l’année",
+        "cs_id": "B4.4.2.2",
+        "cs_text": ": Parler de l’emploi du temps de la journée",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B4.4.4.2.4",
+        "text": "Situer un événement/une action dans un mois de l’année",
+        "cs_id": "B4.4.2.2",
+        "cs_text": ": Parler de l’emploi du temps de la journée",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B5.1.3.3.2",
+        "text": "Creativity and innovation",
+        "cs_id": "B4.4.2.2",
+        "cs_text": ": Parler de l’emploi du temps de la journée",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B5.4.1.1.1",
+        "text": "Communication and",
+        "cs_id": "B4.4.2.2",
+        "cs_text": ": Parler de l’emploi du temps de la journée",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B5.4.2.2.2",
+        "text": "Cultural identity and",
+        "cs_id": "B4.4.2.2",
+        "cs_text": ": Parler de l’emploi du temps de la journée",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B5.4.3.2.1",
+        "text": "Personal development",
+        "cs_id": "B4.4.2.2",
+        "cs_text": ": Parler de l’emploi du temps de la journée",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.1.2.2.1",
+        "text": "Critical thinking",
+        "cs_id": "B4.4.2.2",
+        "cs_text": ": Parler de l’emploi du temps de la journée",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.1.2.4.1",
+        "text": "Digital literacy",
+        "cs_id": "B4.4.2.2",
+        "cs_text": ": Parler de l’emploi du temps de la journée",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.3.1.2.1",
+        "text": "global citizenship",
+        "cs_id": "B4.4.2.2",
+        "cs_text": ": Parler de l’emploi du temps de la journée",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.4.1.2.2",
+        "text": "Jouer aux jeux avec des chiffres",
+        "cs_id": "B4.4.2.2",
+        "cs_text": ": Parler de l’emploi du temps de la journée",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.4.1.3.2",
+        "text": "leadership",
+        "cs_id": "B4.4.2.2",
+        "cs_text": ": Parler de l’emploi du temps de la journée",
+        "level": "B6"
+      }
+    ]
+  },
+  {
+    "code": "computing",
+    "name": "Computing",
+    "indicators": [
+      {
+        "indicator_id": "B6.2.1.1.2",
+        "text": "Demonstrate how to use icons in the Text group in the Insert 4. Personal development and",
+        "cs_id": "B6.2.1.1",
+        "cs_text": "Demonstrate how B6.2.1.1.1. Demonstrate how to use the File menu, the Insert and Design 1. Creativity and innovation",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.2.1.1.3",
+        "text": "Be able to give a 5-side presentation in MS-PowerPoint using Subject Specific Practices",
+        "cs_id": "B6.2.1.1",
+        "cs_text": "Demonstrate how B6.2.1.1.1. Demonstrate how to use the File menu, the Insert and Design 1. Creativity and innovation",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.3.1.1.3",
+        "text": "Be able to use the attributes of the ribbons studied in a Subject Specific Practices",
+        "cs_id": "B6.2.1.1",
+        "cs_text": "Demonstrate how B6.2.1.1.1. Demonstrate how to use the File menu, the Insert and Design 1. Creativity and innovation",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.5.1.1.2",
+        "text": "Identify databases and data structures. 3. Cultural identity and global",
+        "cs_id": "B6.2.1.1",
+        "cs_text": "Demonstrate how B6.2.1.1.1. Demonstrate how to use the File menu, the Insert and Design 1. Creativity and innovation",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.5.1.1.3",
+        "text": "Explain Fundamental Database concepts. 5. Digital literacy",
+        "cs_id": "B6.2.1.1",
+        "cs_text": "Demonstrate how B6.2.1.1.1. Demonstrate how to use the File menu, the Insert and Design 1. Creativity and innovation",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.5.1.1.5",
+        "text": "Describe the basics of Relational Data model. 2. Communication",
+        "cs_id": "B6.2.1.1",
+        "cs_text": "Demonstrate how B6.2.1.1.1. Demonstrate how to use the File menu, the Insert and Design 1. Creativity and innovation",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.5.1.1.6",
+        "text": "Identify the basics of logical Database Design",
+        "cs_id": "B6.2.1.1",
+        "cs_text": "Demonstrate how B6.2.1.1.1. Demonstrate how to use the File menu, the Insert and Design 1. Creativity and innovation",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.5.1.1.7",
+        "text": "Illustrate basics of relational algebra",
+        "cs_id": "B6.2.1.1",
+        "cs_text": "Demonstrate how B6.2.1.1.1. Demonstrate how to use the File menu, the Insert and Design 1. Creativity and innovation",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.5.1.1.9",
+        "text": "Operate basics SQL: querying and manipulating data. 4. Personal development and",
+        "cs_id": "B6.2.1.1",
+        "cs_text": "Demonstrate how B6.2.1.1.1. Demonstrate how to use the File menu, the Insert and Design 1. Creativity and innovation",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.5.3.1.2",
+        "text": "Learners to create basic worksheets using Microsoft Excel 4. Personal development and",
+        "cs_id": "B6.2.1.1",
+        "cs_text": "Demonstrate how B6.2.1.1.1. Demonstrate how to use the File menu, the Insert and Design 1. Creativity and innovation",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.5.3.1.3",
+        "text": "Perform calculations in an MS-Excel worksheet. 1. Skill development",
+        "cs_id": "B6.2.1.1",
+        "cs_text": "Demonstrate how B6.2.1.1.1. Demonstrate how to use the File menu, the Insert and Design 1. Creativity and innovation",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.5.3.1.4",
+        "text": "Modify an MS-Excel worksheet",
+        "cs_id": "B6.2.1.1",
+        "cs_text": "Demonstrate how B6.2.1.1.1. Demonstrate how to use the File menu, the Insert and Design 1. Creativity and innovation",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.5.3.1.5",
+        "text": "Modify the appearance of data within a worksheet",
+        "cs_id": "B6.2.1.1",
+        "cs_text": "Demonstrate how B6.2.1.1.1. Demonstrate how to use the File menu, the Insert and Design 1. Creativity and innovation",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.5.3.1.7",
+        "text": "Print the content of an MS-Excel worksheet. citizenship",
+        "cs_id": "B6.2.1.1",
+        "cs_text": "Demonstrate how B6.2.1.1.1. Demonstrate how to use the File menu, the Insert and Design 1. Creativity and innovation",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.6.1.1.2",
+        "text": "Describe the types of information available on the Internet. citizenship",
+        "cs_id": "B6.2.1.1",
+        "cs_text": "Demonstrate how B6.2.1.1.1. Demonstrate how to use the File menu, the Insert and Design 1. Creativity and innovation",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.6.1.1.3",
+        "text": "Identify data duplication",
+        "cs_id": "B6.2.1.1",
+        "cs_text": "Demonstrate how B6.2.1.1.1. Demonstrate how to use the File menu, the Insert and Design 1. Creativity and innovation",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.6.1.1.4",
+        "text": "Outline what one needs to connect to the Internet",
+        "cs_id": "B6.2.1.1",
+        "cs_text": "Demonstrate how B6.2.1.1.1. Demonstrate how to use the File menu, the Insert and Design 1. Creativity and innovation",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.6.2.1.2",
+        "text": "Recognise the status bar and list its use. 4. Personal development and",
+        "cs_id": "B6.2.1.1",
+        "cs_text": "Demonstrate how B6.2.1.1.1. Demonstrate how to use the File menu, the Insert and Design 1. Creativity and innovation",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.6.2.1.3",
+        "text": "Illustrate using help button",
+        "cs_id": "B6.2.1.1",
+        "cs_text": "Demonstrate how B6.2.1.1.1. Demonstrate how to use the File menu, the Insert and Design 1. Creativity and innovation",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.6.2.1.4",
+        "text": "Recognise internet explorer speed keys",
+        "cs_id": "B6.2.1.1",
+        "cs_text": "Demonstrate how B6.2.1.1.1. Demonstrate how to use the File menu, the Insert and Design 1. Creativity and innovation",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.6.2.1.6",
+        "text": "Demonstrate how to return to a URL. leadership",
+        "cs_id": "B6.2.1.1",
+        "cs_text": "Demonstrate how B6.2.1.1.1. Demonstrate how to use the File menu, the Insert and Design 1. Creativity and innovation",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.6.2.1.7",
+        "text": "Show how to find items on a page. Subject Specific Practices",
+        "cs_id": "B6.2.1.1",
+        "cs_text": "Demonstrate how B6.2.1.1.1. Demonstrate how to use the File menu, the Insert and Design 1. Creativity and innovation",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.6.3.1.2",
+        "text": "Illustrate how to jump directory to URLs. leadership",
+        "cs_id": "B6.2.1.1",
+        "cs_text": "Demonstrate how B6.2.1.1.1. Demonstrate how to use the File menu, the Insert and Design 1. Creativity and innovation",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.6.3.1.3",
+        "text": "Demonstrate how to return to a URL. Subject Specific Practices",
+        "cs_id": "B6.2.1.1",
+        "cs_text": "Demonstrate how B6.2.1.1.1. Demonstrate how to use the File menu, the Insert and Design 1. Creativity and innovation",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.6.3.1.4",
+        "text": "Show how to find items on a page",
+        "cs_id": "B6.2.1.1",
+        "cs_text": "Demonstrate how B6.2.1.1.1. Demonstrate how to use the File menu, the Insert and Design 1. Creativity and innovation",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.6.3.1.5",
+        "text": "Illustrate how to print pages",
+        "cs_id": "B6.2.1.1",
+        "cs_text": "Demonstrate how B6.2.1.1.1. Demonstrate how to use the File menu, the Insert and Design 1. Creativity and innovation",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.6.4.1.2",
+        "text": "Demonstrate deleting favourite links. citizenship",
+        "cs_id": "B6.2.1.1",
+        "cs_text": "Demonstrate how B6.2.1.1.1. Demonstrate how to use the File menu, the Insert and Design 1. Creativity and innovation",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.6.4.1.3",
+        "text": "Create favourite folder. 5. Digital literacy",
+        "cs_id": "B6.2.1.1",
+        "cs_text": "Demonstrate how B6.2.1.1.1. Demonstrate how to use the File menu, the Insert and Design 1. Creativity and innovation",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.6.4.1.4",
+        "text": "Use the links toolbar and Favourite Places",
+        "cs_id": "B6.2.1.1",
+        "cs_text": "Demonstrate how B6.2.1.1.1. Demonstrate how to use the File menu, the Insert and Design 1. Creativity and innovation",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.6.5.1.2",
+        "text": "Demonstrate the filing of forms offline. 4. Personal development and leadership",
+        "cs_id": "B6.2.1.1",
+        "cs_text": "Demonstrate how B6.2.1.1.1. Demonstrate how to use the File menu, the Insert and Design 1. Creativity and innovation",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.6.5.1.3",
+        "text": "Demonstrate uploading of files. Subject Specific Practices",
+        "cs_id": "B6.2.1.1",
+        "cs_text": "Demonstrate how B6.2.1.1.1. Demonstrate how to use the File menu, the Insert and Design 1. Creativity and innovation",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.6.5.1.4",
+        "text": "Illustrate retrieving text, pictures, sounds and programs",
+        "cs_id": "B6.2.1.1",
+        "cs_text": "Demonstrate how B6.2.1.1.1. Demonstrate how to use the File menu, the Insert and Design 1. Creativity and innovation",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.6.5.1.5",
+        "text": "Discuss more about security on the form submission",
+        "cs_id": "B6.2.1.1",
+        "cs_text": "Demonstrate how B6.2.1.1.1. Demonstrate how to use the File menu, the Insert and Design 1. Creativity and innovation",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.6.6.1.2",
+        "text": "Illustrate how to set themes. 5. Digital literacy",
+        "cs_id": "B6.2.1.1",
+        "cs_text": "Demonstrate how B6.2.1.1.1. Demonstrate how to use the File menu, the Insert and Design 1. Creativity and innovation",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.6.6.1.3",
+        "text": "Show how to customise the toolbar. 1. Communication",
+        "cs_id": "B6.2.1.1",
+        "cs_text": "Demonstrate how B6.2.1.1.1. Demonstrate how to use the File menu, the Insert and Design 1. Creativity and innovation",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.6.6.1.4",
+        "text": "Set bookmarks",
+        "cs_id": "B6.2.1.1",
+        "cs_text": "Demonstrate how B6.2.1.1.1. Demonstrate how to use the File menu, the Insert and Design 1. Creativity and innovation",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.6.6.1.5",
+        "text": "Show how to set cookies demonstrate the steps in turning on",
+        "cs_id": "B6.2.1.1",
+        "cs_text": "Demonstrate how B6.2.1.1.1. Demonstrate how to use the File menu, the Insert and Design 1. Creativity and innovation",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.6.7.1.2",
+        "text": "Illustrate how to reply to and forward received messages. 3. Cultural identity and global",
+        "cs_id": "B6.2.1.1",
+        "cs_text": "Demonstrate how B6.2.1.1.1. Demonstrate how to use the File menu, the Insert and Design 1. Creativity and innovation",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.6.7.1.3",
+        "text": "Demonstrate how to delete messages. leadership",
+        "cs_id": "B6.2.1.1",
+        "cs_text": "Demonstrate how B6.2.1.1.1. Demonstrate how to use the File menu, the Insert and Design 1. Creativity and innovation",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.6.7.1.4",
+        "text": "Illustrate filing of e-mail messages. Subject Specific Practices",
+        "cs_id": "B6.2.1.1",
+        "cs_text": "Demonstrate how B6.2.1.1.1. Demonstrate how to use the File menu, the Insert and Design 1. Creativity and innovation",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.6.7.1.5",
+        "text": "Create address list",
+        "cs_id": "B6.2.1.1",
+        "cs_text": "Demonstrate how B6.2.1.1.1. Demonstrate how to use the File menu, the Insert and Design 1. Creativity and innovation",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.6.7.1.6",
+        "text": "Demonstrate attaching files to e-mail messages",
+        "cs_id": "B6.2.1.1",
+        "cs_text": "Demonstrate how B6.2.1.1.1. Demonstrate how to use the File menu, the Insert and Design 1. Creativity and innovation",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.6.7.1.7",
+        "text": "Demonstrate some e-mail tips",
+        "cs_id": "B6.2.1.1",
+        "cs_text": "Demonstrate how B6.2.1.1.1. Demonstrate how to use the File menu, the Insert and Design 1. Creativity and innovation",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.6.8.1.2",
+        "text": "Give more examples of internet of things with a consumer citizenship",
+        "cs_id": "B6.2.1.1",
+        "cs_text": "Demonstrate how B6.2.1.1.1. Demonstrate how to use the File menu, the Insert and Design 1. Creativity and innovation",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.6.8.1.3",
+        "text": "Mention at least five more terms and acronyms of IoT . 1. Communication",
+        "cs_id": "B6.2.1.1",
+        "cs_text": "Demonstrate how B6.2.1.1.1. Demonstrate how to use the File menu, the Insert and Design 1. Creativity and innovation",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.6.9.1.2",
+        "text": "Devise various techniques on how to protect oneself from citizenship",
+        "cs_id": "B6.2.1.1",
+        "cs_text": "Demonstrate how B6.2.1.1.1. Demonstrate how to use the File menu, the Insert and Design 1. Creativity and innovation",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.6.9.1.3",
+        "text": "Debate a spam and solicited messages. Subject Specific Practices",
+        "cs_id": "B6.2.1.1",
+        "cs_text": "Demonstrate how B6.2.1.1.1. Demonstrate how to use the File menu, the Insert and Design 1. Creativity and innovation",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.6.9.1.4",
+        "text": "Differentiate between virtual friends and real friends",
+        "cs_id": "B6.2.1.1",
+        "cs_text": "Demonstrate how B6.2.1.1.1. Demonstrate how to use the File menu, the Insert and Design 1. Creativity and innovation",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.6.10.1.2",
+        "text": "Investigate on the responsible use of computers. 4. Personal development and",
+        "cs_id": "B6.2.1.1",
+        "cs_text": "Demonstrate how B6.2.1.1.1. Demonstrate how to use the File menu, the Insert and Design 1. Creativity and innovation",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.7.1.1.2",
+        "text": "Demonstrate solutions for the health related problems in leadership",
+        "cs_id": "B6.2.1.1",
+        "cs_text": "Demonstrate how B6.2.1.1.1. Demonstrate how to use the File menu, the Insert and Design 1. Creativity and innovation",
+        "level": "B6"
+      }
+    ]
+  },
+  {
+    "code": "ghanaian_language",
+    "name": "Ghanaian Language",
+    "indicators": [
+      {
+        "indicator_id": "B5.2.5.1.2",
+        "text": "Read stories aloud with correct pronunciation and tone",
+        "cs_id": "B5.2.4.1",
+        "cs_text": "B4.2.4.1.4 Recognise and say consonant clusters in words found in paragraphs",
+        "level": "B5"
+      },
+      {
+        "indicator_id": "B5.3.1.1.2",
+        "text": "Recognise that a comma is used to separate a list of items. It serves as a",
+        "cs_id": "B5.2.4.1",
+        "cs_text": "B4.2.4.1.4 Recognise and say consonant clusters in words found in paragraphs",
+        "level": "B5"
+      },
+      {
+        "indicator_id": "B5.3.1.1.3",
+        "text": "Recognise that a colon is used to list and explain a statement, or to mention",
+        "cs_id": "B5.2.4.1",
+        "cs_text": "B4.2.4.1.4 Recognise and say consonant clusters in words found in paragraphs",
+        "level": "B5"
+      },
+      {
+        "indicator_id": "B5.3.1.1.5",
+        "text": "Write simple sentences",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B5.4.1.1.2",
+        "text": "Understand and use exclamation mark in narrative writing appropriately. leadership",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B5.4.1.1.3",
+        "text": "Know the appropriate use of colon and quotation marks in narrative writing",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B5.4.2.1.2",
+        "text": "Write an imaginative longer story on their own. Creativity and Innovation",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B5.4.2.1.3",
+        "text": "Create a story that relates to their environment",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B5.4.3.1.2",
+        "text": "Give simple descriptive essays about objects using controlled",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B5.4.3.1.3",
+        "text": "Write their own simple descriptive essays on given topics",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B5.4.4.1.2",
+        "text": "Write simple persuasive essays about domestic issues. Personal development and",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B5.4.4.1.3",
+        "text": "Write persuasive essays on given topics",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B5.4.5.1.2",
+        "text": "Comprehend and discuss how to write for or against a motion in an",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B5.4.5.1.3",
+        "text": "Write a simple argumentative essay on a given topic",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B5.4.6.1.2",
+        "text": "Publish and appreciate the articles in the journal",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B5.4.7.1.2",
+        "text": "Create short prose",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B5.4.7.1.3",
+        "text": "Write a short and simple play",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B5.4.8.1.2",
+        "text": "Write semi-formal letters using controlled composition",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B5.4.8.1.3",
+        "text": "Write good semi-formal letters",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B5.5.1.1.2",
+        "text": "Comprehend the use of capital letters after a colon",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B5.5.1.1.3",
+        "text": "Understand the use of capital letters after a question mark",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B5.5.2.1.2",
+        "text": "Understand and use exclamation mark in writing appropriately. Personal development and",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B5.5.2.1.3",
+        "text": "Use colon and quotation marks in writing appropriately",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B5.5.3.1.2",
+        "text": "Use simple past tense action words in sentences",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B5.5.4.1.2",
+        "text": "Use of comparative and superlative words/adjectives forms in sentences",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B5.5.5.1.3",
+        "text": "Recognise postpositions in paragraphs Personal development and",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B5.5.6.1.2",
+        "text": "Use single conjunctions in forming compound sentences",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B5.5.6.1.3",
+        "text": "Form compound sentences with appropriate conjunctions",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B5.5.7.1.2",
+        "text": "Rearrange letters to form new words. Personal development and",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B5.5.7.1.3",
+        "text": "Fill in missing words from passages",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B5.6.1.1.2",
+        "text": "Demonstrate correct speech, rhythm and tone",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B5.6.3.1.3",
+        "text": "Retell the short stories or narratives read",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B5.6.3.1.4",
+        "text": "Read paragraphs, passages and stories of different texts",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B5.6.3.1.5",
+        "text": "Answer factual questions based on the passage read",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B5.6.3.1.6",
+        "text": "Write a summary of passage/text read",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.1.1.1.2",
+        "text": "Discuss the importance and some moral lessons of the songs and the",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.1.4.1.2",
+        "text": "Discuss the values or morals of folktales and of stories",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.1.5.1.2",
+        "text": "Perform a drama",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.1.6.1.2",
+        "text": "Explore or say some towns and villages in Ghana",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.1.6.1.3",
+        "text": "Discuss the major rivers in Ghana and those close to the area",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.1.7.1.3",
+        "text": "Use the appropriate terms to describe families",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.1.10.1.2",
+        "text": "Use the landmarks to give directions to a house",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.1.10.1.3",
+        "text": "Use the landmarks to give directions to your school",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.1.11.1.2",
+        "text": "Discuss causes of accidents in the environment",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.1.11.1.3",
+        "text": "Discuss some safety measures to prevent accidents that occur at home, Personal development and",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.2.4.1.2",
+        "text": "Blend three or more syllables to form words and read them",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.2.4.1.3",
+        "text": "Recognise and say consonant clusters in passages",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.2.5.1.2",
+        "text": "Read long text/passages aloud with correct pronunciation and tone",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.2.6.1.2",
+        "text": "Answer factual and inferential questions",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.2.6.1.3",
+        "text": "Make predictions of a given text",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.2.7.1.2",
+        "text": "Retell the story sequentially",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.2.9.1.2",
+        "text": "Recognise topic sentences in each paragraph",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.2.9.1.3",
+        "text": "Re-write the main ideas in a passage in a logical order",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.2.9.1.3",
+        "text": "Re-write the main ideas in a passage in a logical order. Personal development and",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.3.1.1.2",
+        "text": "Write sentences using joint scripts",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.4.1.1.2",
+        "text": "Write a brief report on an event or activity they have witnessed",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.4.1.1.3",
+        "text": "Write a report or account of a particular event or activity",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.4.2.1.3",
+        "text": "Write a longer imaginative or real story",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.4.2.2.2",
+        "text": "Write a long real story of about five paragraphs",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.4.3.1.2",
+        "text": "Write a descriptive essay about a situation",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.4.3.1.3",
+        "text": "Write a descriptive composition on a certain process",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.4.4.1.2",
+        "text": "Write a persuasive essay about education",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.4.4.1.3",
+        "text": "Write a persuasive essay on a national issue",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.4.5.1.2",
+        "text": "Take a stand and write an argumentative essay against a given motion",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.4.5.1.3",
+        "text": "Write an argumentative essay on a given topic. Creativity and innovation",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.4.6.1.2",
+        "text": "Write speeches, letter to the press and reports using controlled",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.4.6.1.3",
+        "text": "Write good speeches, letter to the press and reports",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.4.6.1.4",
+        "text": "Write good reports on various activities",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.4.7.1.3",
+        "text": "Write a good play using daily activities and experiences",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.4.8.1.2",
+        "text": "Write formal letters using controlled composition",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.4.8.1.3",
+        "text": "Write good formal letters",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.5.1.1.2",
+        "text": "Use upper case letters to begin paragraphs and after exclamation mark",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.5.2.1.2",
+        "text": "Use punctuation marks appropriately in writing essays",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.5.2.1.3",
+        "text": "Use punctuation marks appropriately in writing reports",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.5.3.1.3",
+        "text": "Apply the use of the singular and plural subject and verb forms that go with them",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.5.4.1.2",
+        "text": "Write short description of people using adjectives. Personal development and",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.5.4.1.3",
+        "text": "Use the different types of adverbs in sentences",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.5.5.1.2",
+        "text": "Use postpositions in writing paragraphs appropriately",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.5.6.1.2",
+        "text": "Use conjunctions in forming compound sentences correctly",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.5.7.1.2",
+        "text": "Fill in missing words from a short passage. Communication and",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.5.7.1.3",
+        "text": "Write dictated passages",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.6.1.1.2",
+        "text": "Recognise features of articles for a class magazine",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.6.1.1.3",
+        "text": "Write articles for class magazine",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.6.1.1.4",
+        "text": "Publish the articles in the magazines",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.6.1.1.5",
+        "text": "Appreciate the articles",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.6.3.1.2",
+        "text": "Answer questions that are based on the passage",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.6.3.1.3",
+        "text": "Read paragraphs, passages and stories of different text at a reasonable speed",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.6.3.1.4",
+        "text": "Find the meaning of unfamiliar words from the dictionary and context",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.6.3.1.5",
+        "text": "Answer factual and inferential questions from the passage read",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.6.3.1.6",
+        "text": "Write a summary of the passage or text read",
+        "cs_id": "B5.3.1.1",
+        "cs_text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+        "level": "B6"
+      }
+    ]
+  },
+  {
+    "code": "history",
+    "name": "History",
+    "indicators": [
+      {
+        "indicator_id": "B2.2.5.1.1",
+        "text": "Exhibit B2.2.5.1.1. Identify Ghanaian women who have made significant The use of evidence to appreciate",
+        "cs_id": "B1.3.1.1",
+        "cs_text": "Show understanding B1.3.1.1.1 Explore which Europeans came to Ghana As learners use evidence to",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B3.2.2.1.2",
+        "text": "Name some of the items exchanged among the various groups",
+        "cs_id": "B1.3.1.1",
+        "cs_text": "Show understanding B1.3.1.1.1 Explore which Europeans came to Ghana As learners use evidence to",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B3.2.2.1.3",
+        "text": "Describe the conflicts and alliances that existed among the ethnic groups in",
+        "cs_id": "B1.3.1.1",
+        "cs_text": "Show understanding B1.3.1.1.1 Explore which Europeans came to Ghana As learners use evidence to",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B4.2.1.1.2",
+        "text": "State the factors that led to decline of the",
+        "cs_id": "B1.3.1.1",
+        "cs_text": "Show understanding B1.3.1.1.1 Explore which Europeans came to Ghana As learners use evidence to",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B4.6.1.1.1",
+        "text": "2 State the dates and names of the leaders of the four",
+        "cs_id": "B1.3.1.1",
+        "cs_text": "Show understanding B1.3.1.1.1 Explore which Europeans came to Ghana As learners use evidence to",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B5.2.1.1.2",
+        "text": "Describe some ancient towns in Ghana",
+        "cs_id": "B1.3.1.1",
+        "cs_text": "Show understanding B1.3.1.1.1 Explore which Europeans came to Ghana As learners use evidence to",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B5.4.2.1.2",
+        "text": "Identify some of the health facilities and housing",
+        "cs_id": "B1.3.1.1",
+        "cs_text": "Show understanding B1.3.1.1.1 Explore which Europeans came to Ghana As learners use evidence to",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B5.5.1.1.2",
+        "text": "Examine sources of evidence about the role",
+        "cs_id": "B1.3.1.1",
+        "cs_text": "Show understanding B1.3.1.1.1 Explore which Europeans came to Ghana As learners use evidence to",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B4.5.3.1.2",
+        "text": "Examine sources of evidence about what happened during",
+        "cs_id": "B1.3.1.1",
+        "cs_text": "Show understanding B1.3.1.1.1 Explore which Europeans came to Ghana As learners use evidence to",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.5.4.1.2",
+        "text": "Explain how Ghana gained independence through",
+        "cs_id": "B1.3.1.1",
+        "cs_text": "Show understanding B1.3.1.1.1 Explore which Europeans came to Ghana As learners use evidence to",
+        "level": "B6"
+      }
+    ]
+  },
+  {
+    "code": "our_world_and_our_people",
+    "name": "Our World and Our People",
+    "indicators": [
+      {
+        "indicator_id": "B4.2.2.1.2",
+        "text": "Through group work guide learners to play games and",
+        "cs_id": "B4.2.1.1",
+        "cs_text": "Demonstrate B4.2.1.1 .1. Explain ways of Learners talk about ways of ensuring safety in the",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.1.2.1.2",
+        "text": "Learners in groups discuss how to manage the challenges that come",
+        "cs_id": "B4.2.1.1",
+        "cs_text": "Demonstrate B4.2.1.1 .1. Explain ways of Learners talk about ways of ensuring safety in the",
+        "level": "B6"
+      }
+    ]
+  },
+  {
+    "code": "physical_education",
+    "name": "Physical Education",
+    "indicators": [
+      {
+        "indicator_id": "B1.1.3.1.3",
+        "text": "Roll a ball from stationary position using hands",
+        "cs_id": "B1.1.1.1",
+        "cs_text": "B1.1.1.1.1: Travel (move) over, under, in front of, behind, and through objects using Personal Development,",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B1.1.7.1.7",
+        "text": "Strike a light ball upward continuously, using a large, short-handled",
+        "cs_id": "B1.1.1.1",
+        "cs_text": "B1.1.1.1.1: Travel (move) over, under, in front of, behind, and through objects using Personal Development,",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B1.1.8.1.9",
+        "text": "Throw and catch a self-tossed ball. Leadership, Skills: Learners",
+        "cs_id": "B1.1.1.1",
+        "cs_text": "B1.1.1.1.1: Travel (move) over, under, in front of, behind, and through objects using Personal Development,",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B1.1.10.1.13",
+        "text": "Move the ball forward while dribbling with the hand and with the foot",
+        "cs_id": "B1.1.1.1",
+        "cs_text": "B1.1.1.1.1: Travel (move) over, under, in front of, behind, and through objects using Personal Development,",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B1.1.12.1.15",
+        "text": "Marching to a beat(rhythm)",
+        "cs_id": "B1.1.1.1",
+        "cs_text": "B1.1.1.1.1: Travel (move) over, under, in front of, behind, and through objects using Personal Development,",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B1.1.12.1.16",
+        "text": "Demonstrate a smooth transition between even-beat and uneven-beat",
+        "cs_id": "B1.1.1.1",
+        "cs_text": "B1.1.1.1.1: Travel (move) over, under, in front of, behind, and through objects using Personal Development,",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B1.2.2.2.3",
+        "text": "Explain the key differences and similarities in jog and a run, a hop Skills: Learners develop communication",
+        "cs_id": "B1.2.1.2",
+        "cs_text": "B1.2.1.2.1: Identify personal space Communication and Collaboration",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B1.2.4.2.5",
+        "text": "Identify the base of support of balanced objects",
+        "cs_id": "B1.2.1.2",
+        "cs_text": "B1.2.1.2.1: Identify personal space Communication and Collaboration",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B1.2.5.2.6",
+        "text": "Identify different opportunities to use striking skills. etc., as the teacher demonstrates",
+        "cs_id": "B1.2.1.2",
+        "cs_text": "B1.2.1.2.1: Identify personal space Communication and Collaboration",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B1.3.3.3.3",
+        "text": "Perform sit and reach. Personal Development and Problem-",
+        "cs_id": "B1.2.1.2",
+        "cs_text": "B1.2.1.2.1: Identify personal space Communication and Collaboration",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B1.3.3.3.4",
+        "text": "Identify human body parts",
+        "cs_id": "B1.2.1.2",
+        "cs_text": "B1.2.1.2.1: Identify personal space Communication and Collaboration",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B1.4.3.4.3",
+        "text": "Explain the purpose of warming up before physical activity and",
+        "cs_id": "B1.4.1.4",
+        "cs_text": "B1.4.1.4.1: Participate in enjoyable physical activities for increasing periods Personal Development and",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B1.5.3.5.3",
+        "text": "Demonstrate non-verbal appreciation",
+        "cs_id": "B1.5.1.5",
+        "cs_text": "B1.5.1.5.1: Participate willingly in physical activities. Cultural Identity and Global",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B1.5.4.5.4",
+        "text": "Demonstrate how to solve a problem with another person during Cultural Identity and Global",
+        "cs_id": "B1.5.1.5",
+        "cs_text": "B1.5.1.5.1: Participate willingly in physical activities. Cultural Identity and Global",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B2.1.2.1.2",
+        "text": "Forward and backward skip without a rope",
+        "cs_id": "B2.1.1.1",
+        "cs_text": "B2.1.1.1.1: Travel (move) in straight, curved, and zigzag pathways, using the Personal Development and",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B2.1.3.1.3",
+        "text": "Roll a ball from stationary to a given point and back, using hands",
+        "cs_id": "B2.1.1.1",
+        "cs_text": "B2.1.1.1.1: Travel (move) in straight, curved, and zigzag pathways, using the Personal Development and",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B2.1.4.1.4",
+        "text": "Demonstrate balance on the ground and on objects, using bases",
+        "cs_id": "B2.1.1.1",
+        "cs_text": "B2.1.1.1.1: Travel (move) in straight, curved, and zigzag pathways, using the Personal Development and",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B2.1.5.1.5",
+        "text": "Transfer weight from feet to hands and from hands to feet, such as accuracy, precision,",
+        "cs_id": "B2.1.1.1",
+        "cs_text": "B2.1.1.1.1: Travel (move) in straight, curved, and zigzag pathways, using the Personal Development and",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B2.1.6.1.6",
+        "text": "Strike a ball continuously in an upward or forward motion, using courage, patience, teamwork, fair-",
+        "cs_id": "B2.1.1.1",
+        "cs_text": "B2.1.1.1.1: Travel (move) in straight, curved, and zigzag pathways, using the Personal Development and",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B2.1.8.1.8",
+        "text": "Perform the overhand throw pattern",
+        "cs_id": "B2.1.1.1",
+        "cs_text": "B2.1.1.1.1: Travel (move) in straight, curved, and zigzag pathways, using the Personal Development and",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B2.1.8.1.9",
+        "text": "Throw a ball to a partner using the underhand, overhand and creativity etc. as they practice underarm",
+        "cs_id": "B2.1.1.1",
+        "cs_text": "B2.1.1.1.1: Travel (move) in straight, curved, and zigzag pathways, using the Personal Development and",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B2.1.9.1.11",
+        "text": "Kick a stationary ball using a smooth continuous running stationary ball using a smooth",
+        "cs_id": "B2.1.1.1",
+        "cs_text": "B2.1.1.1.1: Travel (move) in straight, curved, and zigzag pathways, using the Personal Development and",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B2.1.10.1.12",
+        "text": "Hand-dribble by controlling a ball for a sustained period. tolerance, fair-play, as they practice",
+        "cs_id": "B2.1.1.1",
+        "cs_text": "B2.1.1.1.1: Travel (move) in straight, curved, and zigzag pathways, using the Personal Development and",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B2.1.11.1.14",
+        "text": "Foot-dribble by controlling a ball on the ground",
+        "cs_id": "B2.1.1.1",
+        "cs_text": "B2.1.1.1.1: Travel (move) in straight, curved, and zigzag pathways, using the Personal Development and",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B2.1.12.1.15",
+        "text": "Clap and dance to beat (rhythm)",
+        "cs_id": "B2.1.1.1",
+        "cs_text": "B2.1.1.1.1: Travel (move) in straight, curved, and zigzag pathways, using the Personal Development and",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B2.2.3.2.3",
+        "text": "Compare the body parts. Skills: Learners develop communication",
+        "cs_id": "B2.2.2.2",
+        "cs_text": "B2.2.2.2.1: Explain open spaces Communication and Collaboration",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B2.2.5.2.6",
+        "text": "Identify opportunities to use underhand and overhand involved in catching objects to them",
+        "cs_id": "B2.2.2.2",
+        "cs_text": "B2.2.2.2.1: Explain open spaces Communication and Collaboration",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B2.3.3.3.3",
+        "text": "Perform two set of four continuous abdominal curls",
+        "cs_id": "B2.2.2.2",
+        "cs_text": "B2.2.2.2.1: Explain open spaces Communication and Collaboration",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B2.3.4.3.4",
+        "text": "Perform lower back stretch",
+        "cs_id": "B2.2.2.2",
+        "cs_text": "B2.2.2.2.1: Explain open spaces Communication and Collaboration",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B2.3.5.3.5",
+        "text": "Identify the various components of human body (bones, muscles, Communication and Digital Literacy",
+        "cs_id": "B2.2.2.2",
+        "cs_text": "B2.2.2.2.1: Explain open spaces Communication and Collaboration",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B2.4.1.4.2",
+        "text": "Mention the components of physical fitness",
+        "cs_id": "B2.2.2.2",
+        "cs_text": "B2.2.2.2.1: Explain open spaces Communication and Collaboration",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B2.4.4.4.5",
+        "text": "Classify PE equipment into new and old. Skills: As learners listen to teacher and",
+        "cs_id": "B2.2.2.2",
+        "cs_text": "B2.2.2.2.1: Explain open spaces Communication and Collaboration",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B2.4.5.4.6",
+        "text": "Identify types of drugs commonly used by adolescents",
+        "cs_id": "B2.2.2.2",
+        "cs_text": "B2.2.2.2.1: Explain open spaces Communication and Collaboration",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B2.5.3.5.3",
+        "text": "Participate positively in physical activities rely on Learners develop social skills such as",
+        "cs_id": "B2.5.1.5",
+        "cs_text": "B2.5.1.5.1: Accept responsibility for one’s own behaviour in a group Cultural Identity and Global",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B2.5.4.5.4",
+        "text": "Collect data and record progress toward mastery of a Solving Skills: Learners develop personal",
+        "cs_id": "B2.5.1.5",
+        "cs_text": "B2.5.1.5.1: Accept responsibility for one’s own behaviour in a group Cultural Identity and Global",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B3.1.3.1.4",
+        "text": "Roll a ball from stationary forward and back, using sticks. Leadership Skills: Learners develop",
+        "cs_id": "B3.1.1.1",
+        "cs_text": "B3.1.1.1.1: Change direction from forward and back and right and left while Personal Development and",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B3.1.6.1.7",
+        "text": "Strike (serve) a lightweight ball to a partner, using the Leadership Skills: Learners develop",
+        "cs_id": "B3.1.1.1",
+        "cs_text": "B3.1.1.1.1: Change direction from forward and back and right and left while Personal Development and",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B3.1.7.1.8",
+        "text": "Strike a gently tossed ball with a bat, using a side orientation Leadership Skills: Learners develop",
+        "cs_id": "B3.1.1.1",
+        "cs_text": "B3.1.1.1.1: Change direction from forward and back and right and left while Personal Development and",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B3.1.8.1.10",
+        "text": "Throw and catch a ball with a partner while both partners",
+        "cs_id": "B3.1.1.1",
+        "cs_text": "B3.1.1.1.1: Change direction from forward and back and right and left while Personal Development and",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B3.1.8.1.11",
+        "text": "Catch a flying ball away from the body. Skills: As learners catch a flying ball away from",
+        "cs_id": "B3.1.1.1",
+        "cs_text": "B3.1.1.1.1: Change direction from forward and back and right and left while Personal Development and",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B3.1.11.1.14",
+        "text": "Foot-dribble a ball continuously while traveling and",
+        "cs_id": "B3.1.1.1",
+        "cs_text": "B3.1.1.1.1: Change direction from forward and back and right and left while Personal Development and",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B3.1.13.1.17",
+        "text": "Roll forward from standing position many time to a distance",
+        "cs_id": "B3.1.1.1",
+        "cs_text": "B3.1.1.1.1: Change direction from forward and back and right and left while Personal Development and",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B3.2.2.2.3",
+        "text": "Identify steps and rhythm patterns for traditional and cultural",
+        "cs_id": "B3.2.1.2",
+        "cs_text": "B3.2.1.2.1: Identify general space. Communication Skills and Critical",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B3.2.5.2.7",
+        "text": "Explain the similar movement elements of the underhand throw Communication and Critical",
+        "cs_id": "B3.2.1.2",
+        "cs_text": "B3.2.1.2.1: Identify general space. Communication Skills and Critical",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B3.3.2.3.2",
+        "text": "Perform continuous step-ups. Personal Development and",
+        "cs_id": "B3.3.1.3",
+        "cs_text": "B3.3.1.3. 1: Perform 10 minutes dance with music. Personal Development and",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B3.3.3.3.3",
+        "text": "Perform three set of continuous step-ups",
+        "cs_id": "B3.3.1.3",
+        "cs_text": "B3.3.1.3. 1: Perform 10 minutes dance with music. Personal Development and",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B3.3.5.3.5",
+        "text": "Identify body composition using fat and fat free body mass. Literacy: As learners observe the",
+        "cs_id": "B3.3.1.3",
+        "cs_text": "B3.3.1.3. 1: Perform 10 minutes dance with music. Personal Development and",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B3.4.2.4.3",
+        "text": "Explain the energy requirements of the body during physical Personal Skills and Communication",
+        "cs_id": "B3.4.1.4",
+        "cs_text": "B3.4.1.4.1: Sustain continuous movement for an increasing period of time Personal Development and",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B3.4.4.4.5",
+        "text": "Classify PE equipment into safe and unsafe. Communication and Collaboration",
+        "cs_id": "B3.4.1.4",
+        "cs_text": "B3.4.1.4.1: Sustain continuous movement for an increasing period of time Personal Development and",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B3.4.6.4.7",
+        "text": "Explain the meaning of body composition using fat and fat free Communication and Digital",
+        "cs_id": "B3.4.5.4",
+        "cs_text": "6: Recall why adolescents use drugs for physical activities",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B3.5.3.5.3",
+        "text": "Use verbal and nonverbal communication to improve practice",
+        "cs_id": "B3.5.1.5",
+        "cs_text": "B3.5.1.5.1: Set a personal goal to improve a motor skill and work toward Personal Development and",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B3.5.4.5.4",
+        "text": "Demonstrate how to solve a problem with another person Cultural Identity and Global",
+        "cs_id": "B3.5.1.5",
+        "cs_text": "B3.5.1.5.1: Set a personal goal to improve a motor skill and work toward Personal Development and",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B4.1.2.1.2",
+        "text": "Enter, jump, and leave a long swinging rope turned by Personal Development and Leadership Skills:",
+        "cs_id": "B4.1.1.1",
+        "cs_text": "B4.1.1.1.1: Demonstrate the difference between slow and fast, heavy and",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B4.1.3.1.3",
+        "text": "Roll ball with a stick to a target. Personal Development and Leadership Skills:",
+        "cs_id": "B4.1.1.1",
+        "cs_text": "B4.1.1.1.1: Demonstrate the difference between slow and fast, heavy and",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B4.1.6.1.6",
+        "text": "Strike a bounce ball with the hands and feet. Learners develop personal and eadership skills such",
+        "cs_id": "B4.1.1.1",
+        "cs_text": "B4.1.1.1.1: Demonstrate the difference between slow and fast, heavy and",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B4.1.7.1.7",
+        "text": "Strike a self-tossed light weight ball with a paddle or",
+        "cs_id": "B4.1.1.1",
+        "cs_text": "B4.1.1.1.1: Demonstrate the difference between slow and fast, heavy and",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B4.1.8.1.10",
+        "text": "Catch a ball above the head and near the middle of the Personal Development and",
+        "cs_id": "B4.1.1.1",
+        "cs_text": "B4.1.1.1.1: Demonstrate the difference between slow and fast, heavy and",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B4.1.9.1.11",
+        "text": "Kick a ball dropped from the hands",
+        "cs_id": "B4.1.1.1",
+        "cs_text": "B4.1.1.1.1: Demonstrate the difference between slow and fast, heavy and",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B4.1.11.1.13",
+        "text": "Keep a foot-dribbled ball away from a defensive partner. Personal development and leadership,",
+        "cs_id": "B4.1.1.1",
+        "cs_text": "B4.1.1.1.1: Demonstrate the difference between slow and fast, heavy and",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B4.1.12.1.15",
+        "text": "Perform movement skill with one hand or one foot and traditional music",
+        "cs_id": "B4.1.1.1",
+        "cs_text": "B4.1.1.1.1: Demonstrate the difference between slow and fast, heavy and",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B4.1.13.1.16",
+        "text": "Roll smoothly in a backward direction (back roll). practicing movement skills of skills as",
+        "cs_id": "B4.1.1.1",
+        "cs_text": "B4.1.1.1.1: Demonstrate the difference between slow and fast, heavy and",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B4.2.2.2.2",
+        "text": "Explain the difference between throwing to a stationary Communication and Collaboration",
+        "cs_id": "B4.2.1.2",
+        "cs_text": "B4.2.1.2.1: Distinguish between self-space and open space. Communication and Collaboration",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B4.2.3.2.3",
+        "text": "Identify body parts that are used for kicking a ball",
+        "cs_id": "B4.2.1.2",
+        "cs_text": "B4.2.1.2.1: Distinguish between self-space and open space. Communication and Collaboration",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B4.2.5.2.5",
+        "text": "Identify the difference between dribbling a ball (with the hand Communication and Collaboration",
+        "cs_id": "B4.2.1.2",
+        "cs_text": "B4.2.1.2.1: Distinguish between self-space and open space. Communication and Collaboration",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B4.3.2.3.2",
+        "text": "Perform continuous ‘v’ push-up Personal Development and",
+        "cs_id": "B4.3.1.3",
+        "cs_text": "B4.3.1.3.1: Perform 15 minutes’ brisk walk with music. Personal Development and",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B4.3.3.3.3",
+        "text": "Perform two sets of eight continuous ‘v’ push-ups. Personal Development and",
+        "cs_id": "B4.3.1.3",
+        "cs_text": "B4.3.1.3.1: Perform 15 minutes’ brisk walk with music. Personal Development and",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B4.3.4.3.4",
+        "text": "Perform groin flexibility Personal Development and",
+        "cs_id": "B4.3.1.3",
+        "cs_text": "B4.3.1.3.1: Perform 15 minutes’ brisk walk with music. Personal Development and",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B4.4.1.4.2",
+        "text": "Discuss how prolong physical activity increases endurance, Communication and Collaboration",
+        "cs_id": "B4.3.1.3",
+        "cs_text": "B4.3.5.3.5: Identify body types such as endomorph (big body), Communication and Digital",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B4.4.2.2.4",
+        "text": "3: Explain how the intensity and duration of exercise, as well Communication and Collaboration",
+        "cs_id": "B4.3.1.3",
+        "cs_text": "B4.3.5.3.5: Identify body types such as endomorph (big body), Communication and Digital",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B4.4.4.4.5",
+        "text": "Classify PE equipment under safe and unsafe. Communication and Collaboration",
+        "cs_id": "B4.3.1.3",
+        "cs_text": "B4.3.5.3.5: Identify body types such as endomorph (big body), Communication and Digital",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B4.5.4.4.6",
+        "text": "Identify the effects of drugs use for physical activities. Communication and critical",
+        "cs_id": "B4.3.1.3",
+        "cs_text": "B4.3.5.3.5: Identify body types such as endomorph (big body), Communication and Digital",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B4.5.2.5.2",
+        "text": "Participate in a variety of group settings (e.g., partners, small Citizenship Skills: As learners",
+        "cs_id": "B4.5.1.5",
+        "cs_text": "B4.5.1.5.1:. Accept responsibility for one’s own behaviour in a group Cultural Identity and Global",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B4.5.3.5.3",
+        "text": "Demonstrate respect for self, others, and equipment during Cultural Identity and Global",
+        "cs_id": "B4.5.1.5",
+        "cs_text": "B4.5.1.5.1:. Accept responsibility for one’s own behaviour in a group Cultural Identity and Global",
+        "level": "B4"
+      },
+      {
+        "indicator_id": "B5.1.3.1.2",
+        "text": "Skip and leap continuously Development of Personal and",
+        "cs_id": "B5.1.2.1",
+        "cs_text": "B5.1.2.1.1: Walk on straight lines edges. Development of Personal and",
+        "level": "B5"
+      },
+      {
+        "indicator_id": "B5.1.4.1.3",
+        "text": "Roll ball using a stick through obstacles (arranged cones)",
+        "cs_id": "B5.1.2.1",
+        "cs_text": "B5.1.2.1.1: Walk on straight lines edges. Development of Personal and",
+        "level": "B5"
+      },
+      {
+        "indicator_id": "B5.1.6.1.6",
+        "text": "Striking a dropping light ball upward and forward to a",
+        "cs_id": "B5.1.2.1",
+        "cs_text": "B5.1.2.1.1: Walk on straight lines edges. Development of Personal and",
+        "level": "B5"
+      },
+      {
+        "indicator_id": "B5.1.8.1.8",
+        "text": "Throw a ball to a moving partner to catch while walking, Development of Personal and",
+        "cs_id": "B5.1.2.1",
+        "cs_text": "B5.1.2.1.1: Walk on straight lines edges. Development of Personal and",
+        "level": "B5"
+      },
+      {
+        "indicator_id": "B5.1.8.1.9",
+        "text": "Catch a ball below the waist and away from the body while Development of Personal and",
+        "cs_id": "B5.1.2.1",
+        "cs_text": "B5.1.2.1.1: Walk on straight lines edges. Development of Personal and",
+        "level": "B5"
+      },
+      {
+        "indicator_id": "B5.1.10.1.11",
+        "text": "Dribble a ball (by hand) while preventing another person Development of Personal and",
+        "cs_id": "B5.1.2.1",
+        "cs_text": "B5.1.2.1.1: Walk on straight lines edges. Development of Personal and",
+        "level": "B5"
+      },
+      {
+        "indicator_id": "B5.1.11.1.12",
+        "text": "Dribble a ball (by foot) and kick it to a partner at a distance",
+        "cs_id": "B5.1.2.1",
+        "cs_text": "B5.1.2.1.1: Walk on straight lines edges. Development of Personal and",
+        "level": "B5"
+      },
+      {
+        "indicator_id": "B5.2.1.2.1",
+        "text": "Describe ways to create more space between an offensive player and a",
+        "cs_id": "B5.1.2.1",
+        "cs_text": "B5.1.2.1.1: Walk on straight lines edges. Development of Personal and",
+        "level": "B5"
+      },
+      {
+        "indicator_id": "B5.2.2.2.2",
+        "text": "Explain the differences in applying and receiving force when jumping for",
+        "cs_id": "B5.1.2.1",
+        "cs_text": "B5.1.2.1.1: Walk on straight lines edges. Development of Personal and",
+        "level": "B5"
+      },
+      {
+        "indicator_id": "B5.2.5.2.5",
+        "text": "Distinguish between volleying and kicking and describe the",
+        "cs_id": "B5.1.2.1",
+        "cs_text": "B5.1.2.1.1: Walk on straight lines edges. Development of Personal and",
+        "level": "B5"
+      },
+      {
+        "indicator_id": "B5.3.3.3.3",
+        "text": "Perform two set of continuous push-ups. continuous pull-ups",
+        "cs_id": "B5.3.1.3",
+        "cs_text": "B5.3.1.3.1: Perform 10 minutes jogging with music. Personal Development and Leadership",
+        "level": "B5"
+      },
+      {
+        "indicator_id": "B5.3.4.3.4",
+        "text": "Perform standing bend and reach the knee with the forehead",
+        "cs_id": "B5.3.1.3",
+        "cs_text": "B5.3.1.3.1: Perform 10 minutes jogging with music. Personal Development and Leadership",
+        "level": "B5"
+      },
+      {
+        "indicator_id": "B5.3.5.3.5",
+        "text": "Identify the capabilities of the various body types. Skills: As learners listen to teacher and",
+        "cs_id": "B5.3.1.3",
+        "cs_text": "B5.3.1.3.1: Perform 10 minutes jogging with music. Personal Development and Leadership",
+        "level": "B5"
+      },
+      {
+        "indicator_id": "B5.4.1.4.2",
+        "text": "Describe how muscle strength and muscle endurance",
+        "cs_id": "B5.4.1.4",
+        "cs_text": "B5.4.1.4.1: Monitor the intensity of one’s heart rate during physical Personal Development and",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B5.4.2.4.3",
+        "text": "Explain why dehydration impairs temperature regulation and Personal Development and",
+        "cs_id": "B5.4.1.4",
+        "cs_text": "B5.4.1.4.1: Monitor the intensity of one’s heart rate during physical Personal Development and",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B5.5.1.5.1",
+        "text": "Participating independently in fitness and skill development Personal Development and",
+        "cs_id": "B5.4.1.4",
+        "cs_text": "B5.4.1.4.1: Monitor the intensity of one’s heart rate during physical Personal Development and",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B5.5.3.5.3",
+        "text": "Identify and define the role of each participant in a cooperation, empathy, teamwork and fair-",
+        "cs_id": "B5.4.1.4",
+        "cs_text": "B5.4.1.4.1: Monitor the intensity of one’s heart rate during physical Personal Development and",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B5.5.4.5.4",
+        "text": "Contribute ideas and listen to the ideas of others in teamwork, fair-play in cultural and",
+        "cs_id": "B5.4.1.4",
+        "cs_text": "B5.4.1.4.1: Monitor the intensity of one’s heart rate during physical Personal Development and",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.1.2.1.2",
+        "text": "Jump for distance, landing on both feet and bending the hips, Leadership Skills: Learners develop",
+        "cs_id": "B6.1.1.1",
+        "cs_text": "B6.1.1.1.1: Develop a cooperative movement game that uses locomotor Personal Development and",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.1.4.1.5",
+        "text": "Perform simple small stunts while shifting base of support",
+        "cs_id": "B6.1.1.1",
+        "cs_text": "B6.1.1.1.1: Develop a cooperative movement game that uses locomotor Personal Development and",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.1.6.1.7",
+        "text": "Strike a tossed ball with the hands above the forehead Personal Development and Leadership",
+        "cs_id": "B6.1.1.1",
+        "cs_text": "B6.1.1.1.1: Develop a cooperative movement game that uses locomotor Personal Development and",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.1.7.1.8",
+        "text": "Strike a gently tossed ball with a bat, using a forehand and",
+        "cs_id": "B6.1.1.1",
+        "cs_text": "B6.1.1.1.1: Develop a cooperative movement game that uses locomotor Personal Development and",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.1.8.1.10",
+        "text": "Show how to adjust body position to catch a ball thrown off- Personal Development and Leadership",
+        "cs_id": "B6.1.1.1",
+        "cs_text": "B6.1.1.1.1: Develop a cooperative movement game that uses locomotor Personal Development and",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.1.8.1.11",
+        "text": "Catch a flying ball above the head, below the waist, and Personal Development and Leadership",
+        "cs_id": "B6.1.1.1",
+        "cs_text": "B6.1.1.1.1: Develop a cooperative movement game that uses locomotor Personal Development and",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.1.10.1.13",
+        "text": "Dribble and pass a ball to a partner while being guarded. Personal Development and Leadership",
+        "cs_id": "B6.1.1.1",
+        "cs_text": "B6.1.1.1.1: Develop a cooperative movement game that uses locomotor Personal Development and",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.1.11.1.14",
+        "text": "Dribble a ball and kick (shoot) it towards a goal while being Personal Development and Leadership",
+        "cs_id": "B6.1.1.1",
+        "cs_text": "B6.1.1.1.1: Develop a cooperative movement game that uses locomotor Personal Development and",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.1.13.1.16",
+        "text": "Roll (body) smoothly forward and backward perform forward roll from standing",
+        "cs_id": "B6.1.1.1",
+        "cs_text": "B6.1.1.1.1: Develop a cooperative movement game that uses locomotor Personal Development and",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.2.2.2.2",
+        "text": "Identify the time necessary to prepare for and begin a concepts, principles, strategies, etc., as the",
+        "cs_id": "B6.1.1.1",
+        "cs_text": "B6.1.1.1.1: Develop a cooperative movement game that uses locomotor Personal Development and",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.2.3.2.3",
+        "text": "Illustrate how the intended direction of an object is affected Learners develop communication skills as",
+        "cs_id": "B6.1.1.1",
+        "cs_text": "B6.1.1.1.1: Develop a cooperative movement game that uses locomotor Personal Development and",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.3.1.3.1",
+        "text": "Perform 8 minutes running with or without music. Personal Development and Leadership",
+        "cs_id": "B6.1.1.1",
+        "cs_text": "B6.1.1.1.1: Develop a cooperative movement game that uses locomotor Personal Development and",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.3.2.3.2",
+        "text": "Perform 15 continuous sit-ups",
+        "cs_id": "B6.3.1.3",
+        "cs_text": "Learners in files music (any form) run for 8 minutes none stop for fitness test at",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.3.3.3.3",
+        "text": "Perform three set of 15 continuous push-ups",
+        "cs_id": "B6.3.1.3",
+        "cs_text": "Learners in files music (any form) run for 8 minutes none stop for fitness test at",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.3.4.3.4",
+        "text": "Perform trunk rotation. Personal Development and Leadership",
+        "cs_id": "B6.3.1.3",
+        "cs_text": "Learners in files music (any form) run for 8 minutes none stop for fitness test at",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.3.5.3.5",
+        "text": "Identify the capabilities of the various body types",
+        "cs_id": "B6.3.1.3",
+        "cs_text": "Learners in files music (any form) run for 8 minutes none stop for fitness test at",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.4.1.4.2",
+        "text": "Explain the role that weight bearing activities play in bone",
+        "cs_id": "B6.4.1.4",
+        "cs_text": "B6.4.1.4.1: Develop a one-day personal physical fitness plan specifying Communication and Collaboration",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.4.2.4.3",
+        "text": "Plan a balance diet menu to improve performance in skills: As learners plan a balance diet menu",
+        "cs_id": "B6.4.1.4",
+        "cs_text": "B6.4.1.4.1: Develop a one-day personal physical fitness plan specifying Communication and Collaboration",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.4.4.4.5",
+        "text": "Identify ways to minimise injuries when using PE Communication and Collaboration skills:",
+        "cs_id": "B6.4.1.4",
+        "cs_text": "B6.4.1.4.1: Develop a one-day personal physical fitness plan specifying Communication and Collaboration",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.4.5.4.6",
+        "text": "Discuss with learners the effects of drug addiction",
+        "cs_id": "B6.4.1.4",
+        "cs_text": "B6.4.1.4.1: Develop a one-day personal physical fitness plan specifying Communication and Collaboration",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.4.6.4.7",
+        "text": "Discuss with learners the capabilities of the various body",
+        "cs_id": "B6.4.1.4",
+        "cs_text": "B6.4.1.4.1: Develop a one-day personal physical fitness plan specifying Communication and Collaboration",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.5.2.5.2",
+        "text": "Provide positive feedback to peers during physical",
+        "cs_id": "B6.4.1.4",
+        "cs_text": "B6.4.1.4.1: Develop a one-day personal physical fitness plan specifying Communication and Collaboration",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.5.3.5.3",
+        "text": "Identify and agree on a common goal when participating in others, and equipment during physical",
+        "cs_id": "B6.4.1.4",
+        "cs_text": "B6.4.1.4.1: Develop a one-day personal physical fitness plan specifying Communication and Collaboration",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B6.5.4.5.4",
+        "text": "Evaluate individual responsibility in group efforts. As teacher evaluate individual responsibility in",
+        "cs_id": "B6.4.1.4",
+        "cs_text": "B6.4.1.4.1: Develop a one-day personal physical fitness plan specifying Communication and Collaboration",
+        "level": "B6"
+      }
+    ]
+  },
+  {
+    "code": "religious_and_moral_education",
+    "name": "Religious and Moral Education",
+    "indicators": [
+      {
+        "indicator_id": "B4.1.1.2.1",
+        "text": "Identify the uniqueness of humankind from other",
+        "cs_id": "B3.4.1.1",
+        "cs_text": "Appreciate the role B3. 4.1.1.3: Identify moral lessons learnt from responding to God’s call",
+        "level": "B6"
+      },
+      {
+        "indicator_id": "B5.1.1.1.2",
+        "text": "State the qualities of God that humankind",
+        "cs_id": "B3.4.1.1",
+        "cs_text": "Appreciate the role B3. 4.1.1.3: Identify moral lessons learnt from responding to God’s call",
+        "level": "B6"
+      }
+    ]
+  },
+  {
+    "code": "mathematics",
+    "name": "Mathematics",
+    "indicators": [
+      {
+        "indicator_id": "B7.1.2.1.2",
+        "text": "Apply mental mathematics strategies and number Creativity and Innovation",
+        "cs_id": "B7.1.2.1",
+        "cs_text": "Apply mental B7.1.2.1.1 Multiply and divide given numbers by powers of 10 Communication and",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.1.2.3.2",
+        "text": "Express a given number as a product of a given number or",
+        "cs_id": "B7.1.2.3",
+        "cs_text": "Demonstrate B7.1.2.3.1 Illustrate with examples the meaning of repeated factors Creativity and Innovation",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.1.2.3.4",
+        "text": "Find the value of a number written in index form. Creativity and Innovation",
+        "cs_id": "B7.1.2.3",
+        "cs_text": "Demonstrate B7.1.2.3.3 Show that the value of any natural number with zero as its Creativity and Innovation",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.1.4.1.2",
+        "text": "Use the concept of a unit rate associated with a ratio a:b Critical Thinking and",
+        "cs_id": "B7.1.4.1",
+        "cs_text": "Demonstrate B7.1.4.1.1 Find ratio and use ratio language to describe relationship Critical Thinking and",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.1.4.1.5",
+        "text": "Find a 6perce3nt of a quantity as a rate3 per 100 3(e.g. 30% of a Critical Thinking and",
+        "cs_id": "B7.1.4.1",
+        "cs_text": "Demonstrate B7.1.4.1.4 Use the proportional reasoning to find missing values in the Critical Thinking and",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.2.1.1.2",
+        "text": "Describe the rule for a given relation using mathematical Creativity and Innovation",
+        "cs_id": "B7.2.1.1",
+        "cs_text": "Derive the rule E.g.3 Extend a given number relation. Creativity and Innovation",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.2.2.1.5",
+        "text": "Use properties of the four operations to simplify algebraic",
+        "cs_id": "B7.2.2.1",
+        "cs_text": "Simplify i. find the perimeter and area of the Communication and",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.2.3.1.4",
+        "text": "Solve linear equations in one variable",
+        "cs_id": "B7.2.3.1",
+        "cs_text": "Demonstrate an Communication and",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.3.1.2.7",
+        "text": "Describe examples of perpendicular line segments,",
+        "cs_id": "B7.3.1.2",
+        "cs_text": "Demonstrate E.g.3: Use a pair of compasses and a ruler to construct an angle of 75˚ at a Communication and",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.3.2.1.2",
+        "text": "Use the relationships between the diameter and the",
+        "cs_id": "B7.3.1.2",
+        "cs_text": "Demonstrate E.g.3: Use a pair of compasses and a ruler to construct an angle of 75˚ at a Communication and",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.3.2.3.4",
+        "text": "Represent vector in the column (component) form and",
+        "cs_id": "B7.3.2.3",
+        "cs_text": "Demonstrate B7.3.2.3.3 Distinguish between scalar and vector quantities Critical Thinking and",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.4.2.1.3",
+        "text": "Calculate the probability of the event and express the Critical Thinking and",
+        "cs_id": "B7.4.2.1",
+        "cs_text": "Identify the B7.4.2.1.2Classify the likelihood of a single outcome Critical Thinking and",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B8.1.1.1.2",
+        "text": "Skip count forwards and backwards in 10,000s,",
+        "cs_id": "B8.1.1.1",
+        "cs_text": "Demonstrate B8.1.1.1.1 Apply the understanding of place value to read and",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.1.1.1.3",
+        "text": "Compare and order whole numbers using “>, <, and",
+        "cs_id": "B8.1.1.1",
+        "cs_text": "Demonstrate B8.1.1.1.1 Apply the understanding of place value to read and",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.1.1.1.5",
+        "text": "Express integers in a given number of significant and",
+        "cs_id": "B8.1.1.1",
+        "cs_text": "Demonstrate B8.1.1.1.4 Express integers of any size into standard form",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.1.1.1.6",
+        "text": "Create and solve word or real-life problems on place",
+        "cs_id": "B8.1.1.1",
+        "cs_text": "Demonstrate B8.1.1.1.4 Express integers of any size into standard form",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.1.2.1.2",
+        "text": "Apply mental mathematics strategies and number",
+        "cs_id": "B8.1.2.1",
+        "cs_text": "Apply mental B8.1.2.1.1 Multiply and divide by power of 10 including decimals and Critical Thinking and",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.1.2.1.3",
+        "text": "Apply mental mathematics strategies to solve word",
+        "cs_id": "B8.1.2.1",
+        "cs_text": "Apply mental B8.1.2.1.1 Multiply and divide by power of 10 including decimals and Critical Thinking and",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.1.2.3.2",
+        "text": "Apply the laws of indices to simplify and evaluate numbers",
+        "cs_id": "B8.1.2.3",
+        "cs_text": "Demonstrate B8.1.2.3.1 Identify and explain the laws of indices Critical Thinking and",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.1.2.3.4",
+        "text": "Solve real life problems involving powers of natural numbers",
+        "cs_id": "B8.1.2.3",
+        "cs_text": "Demonstrate B8.1.2.3.3 Solve exponential equations Critical Thinking and",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.1.3.1.3",
+        "text": "Review word problems involving basic operations on",
+        "cs_id": "B8.1.3.1",
+        "cs_text": "Apply the B8.1.3.1.2 Add and/or subtract, multiply and/or divide given fractions, Critical Thinking and",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.1.4.1.2",
+        "text": "Solve unit rate problems including those involving unit",
+        "cs_id": "B8.1.3.1",
+        "cs_text": "Apply the ii. Faako answers 42 out of 60 questions correctly. What percentage Critical Thinking and",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.2.1.1.3",
+        "text": "Use graphs of linear relations to solve real life problems",
+        "cs_id": "B8.2.1.1",
+        "cs_text": "Demonstrate E.g.2 Use information from a graph to The diameter of a Wawa tree is currently 10 Critical Thinking and",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.2.2.1.3",
+        "text": "Substitute values to evaluate algebraic expressions including",
+        "cs_id": "B8.2.2.1",
+        "cs_text": "Solve problems Simplify: Critical Thinking and",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.2.3.1.2",
+        "text": "Solve simple linear inequalities",
+        "cs_id": "B8.2.3.1",
+        "cs_text": "Demonstrate an B8.2.3.1.1 Translate word problems into linear inequalities in one Critical Thinking and",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.3.2.1.3",
+        "text": "Use the Pythagorean theorem to solve problems on right-",
+        "cs_id": "B8.3.1.2",
+        "cs_text": "Demonstrate the E.g.8: Construct parallel lines as a locus (i.e. tracing the path of a point Creativity and Innovation",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.3.2.1.5",
+        "text": "Establish the relationship between the basic trigonometric",
+        "cs_id": "B8.3.1.2",
+        "cs_text": "Demonstrate the E.g.8: Construct parallel lines as a locus (i.e. tracing the path of a point Creativity and Innovation",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.3.3.1.3",
+        "text": "Investigate the concept of congruent shapes",
+        "cs_id": "B8.3.3.1",
+        "cs_text": "Perform a B8.3.3.1.2 Draw rotation image in a coordinate plane and determine the angle Critical Thinking and",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B9.1.1.1.2",
+        "text": "Use knowledge and understanding of place value to solve",
+        "cs_id": "B9.1.1.1",
+        "cs_text": "Apply the B9.1.1.1.1 Express integers to a given number of significant and decimal",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.1.1.2.2",
+        "text": "Apply the concept of sets to solve problems on relationship",
+        "cs_id": "B9.1.1.2",
+        "cs_text": "Demonstrate an E.g. 2 Write the factors of 12 and 15 and represent them on a Venn diagram. Communication and",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.1.2.1.3",
+        "text": "Use the associative property of addition and multiplication",
+        "cs_id": "B9.1.1.2",
+        "cs_text": "Demonstrate an E.g. 2 Write the factors of 12 and 15 and represent them on a Venn diagram. Communication and",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.1.2.1.4",
+        "text": "Use the distributive property in solving problems",
+        "cs_id": "B9.1.1.2",
+        "cs_text": "Demonstrate an E.g. 2 Write the factors of 12 and 15 and represent them on a Venn diagram. Communication and",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.1.2.2.1",
+        "text": "Solve operations involving addition, subtraction, multiplication Critical Thinking and",
+        "cs_id": "B9.1.2.2",
+        "cs_text": "Apply the",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.1.2.2.2",
+        "text": "Solve word problems involving the four basic operations and",
+        "cs_id": "B9.1.2.2",
+        "cs_text": "Apply the",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.1.2.4.3",
+        "text": "Simplify given surds )",
+        "cs_id": "B9.1.2.4",
+        "cs_text": "Demonstrate B9.1.2.4.1 Identify simple and compound surds. Critical Thinking and",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.1.4.1.3",
+        "text": "Use knowledge of rates and proportional reasoning to solve problems",
+        "cs_id": "B9.1.4.1",
+        "cs_text": "Apply the E.g.5 solve problems involving depreciation. Critical Thinking and",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.1.4.1.4",
+        "text": "Recognise and graph proportional relationships, interpreting the Digital Literacy (DL)",
+        "cs_id": "B9.1.4.1",
+        "cs_text": "Apply the = GH₵6,469.50 Critical Thinking and",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.2.3.1.2",
+        "text": "Illustrate solution sets of linear inequalities on the number line",
+        "cs_id": "B9.2.3.1",
+        "cs_text": "Demonstrate B9.2.3.1.1 Solve single variable linear inequalities with rational coefficients. Critical Thinking and",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.3.1.2.2",
+        "text": "Construct parallelograms (i.e. square, rectangle, rhombus) Communication and",
+        "cs_id": "B9.3.1.2",
+        "cs_text": "Construct E.g.4: Perform a geometric construction of a triangle (say ) under a given Creativity and Innovation",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.3.2.1.2",
+        "text": "Use the net of a cuboid to determine its surface area",
+        "cs_id": "B9.3.1.2",
+        "cs_text": "Construct",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.3.2.1.3",
+        "text": "Use the net of a triangular prism to determine its surface",
+        "cs_id": "B9.3.1.2",
+        "cs_text": "Construct",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.3.2.2.2",
+        "text": "Apply the triangular and parallelogram laws of addition to Creativity and Innovation",
+        "cs_id": "B9.3.2.2",
+        "cs_text": "Solve problems B9.3.2.2.1 Show an understanding of parallel vectors and Digital Literacy (DL)",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.3.3.1.3",
+        "text": "Investigate the concept of congruent and similar",
+        "cs_id": "B9.3.3.1",
+        "cs_text": "Demonstrate B9.3.3.1.2 Understand enlargement and identify real-life situations Creativity and Innovation",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.4.1.1.2",
+        "text": "Organise data (grouped/ungrouped) present it in frequency",
+        "cs_id": "B9.3.3.1",
+        "cs_text": "Demonstrate B9.3.3.1.2 Understand enlargement and identify real-life situations Creativity and Innovation",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.4.2.1.2",
+        "text": "Express the probabilities of the events as fractions, decimals,",
+        "cs_id": "B9.4.1.2",
+        "cs_text": "Select, justify, B9.4.1.2.3Demonstrate the effect on the mean, median, and mode when Critical Thinking and",
+        "level": "B4"
+      }
+    ]
+  },
+  {
+    "code": "science",
+    "name": "Science",
+    "indicators": [
+      {
+        "indicator_id": "B7.1.1.1.2",
+        "text": "Discuss the importance of liquids in the life of Communication and Collaboration (CC),",
+        "cs_id": "B7.1.1.1",
+        "cs_text": "Recognise B7.1.1.1.1 Classify materials into liquids, solids and gases Creativity and Innovation (CI), Critical",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.1.1.1.3",
+        "text": "Discuss the importance of specific solids to life Critical Thinking and Problem solving",
+        "cs_id": "B7.1.1.1",
+        "cs_text": "Recognise B7.1.1.1.1 Classify materials into liquids, solids and gases Creativity and Innovation (CI), Critical",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.1.2.1.2",
+        "text": "State the functions of each organelle in Digital Literacy (DL), Communication and Collaboration",
+        "cs_id": "B7.1.2.1",
+        "cs_text": "Demonstrate B7.1.2.1.1 Describe the structure and function of Digital Literacy (DL), Communication and Collaboration",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.2.1.1.2",
+        "text": "Describe the importance of the water cycle in nature Communication and Collaboration (CC),",
+        "cs_id": "B7.2.1.1",
+        "cs_text": "Recognise that B7.2.1.1.1 Explain how the water cycle occurs as a repeated Critical Thinking and Problem Solving (CP)",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.2.2.1.2",
+        "text": "Discuss the activities of the housefly as a menace to Creativity and Innovation (CI), Communication",
+        "cs_id": "B7.2.2.1",
+        "cs_text": "Demonstrate B7.2.2.1.1 Describe the life cycle of the housefly Communication and Collaboration (CC),",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.2.3.1.2",
+        "text": "Describe the physical characteristics of different Digital Literacy (DL), Communication",
+        "cs_id": "B7.2.3.1",
+        "cs_text": "Demonstrate B7.2.3.1.1 Observe and list all plant nutrient sources available Communication and Collaboration (CC),",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.2.4.1.2",
+        "text": "Show the differences and similarities among Digital Literacy (DL), Critical Thinking and",
+        "cs_id": "B7.2.4.1",
+        "cs_text": "Demonstrate B7.2.4.1.1 Examine and list domestic animals in the Digital Literacy (DL), Critical Thinking and",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.2.4.2.2",
+        "text": "Observe and compare the uses of the different types Digital Literacy (DL), Critical Thinking and",
+        "cs_id": "B7.2.4.2",
+        "cs_text": "Show an B7.2.4.2.1 Discuss and write the domestic and commercial uses Digital Literacy (DL), Communication and",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.3.1.1.2",
+        "text": "Examine what happens to food at the stages of Digital Literacy (DL), Critical Thinking and",
+        "cs_id": "B7.3.1.1",
+        "cs_text": "Show an B7.3.1.1.1 Explain the concept of food and the need for humans Digital Literacy (DL), Critical Thinking and",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.3.1.1.3",
+        "text": "Identify the end product of digestion of starchy, Digital Literacy (DL), Critical Thinking and",
+        "cs_id": "B7.3.1.1",
+        "cs_text": "Show an B7.3.1.1.1 Explain the concept of food and the need for humans Digital Literacy (DL), Critical Thinking and",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.3.2.1.2",
+        "text": "Discuss the properties and the relative motions of Digital Literacy (DL), Critical Thinking and",
+        "cs_id": "B7.3.1.1",
+        "cs_text": "Show an B7.3.1.1.1 Explain the concept of food and the need for humans Digital Literacy (DL), Critical Thinking and",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.3.4.1.2",
+        "text": "Categorise different farming systems Digital Literacy (DL), Critical Thinking",
+        "cs_id": "B7.3.4.1",
+        "cs_text": "Demonstrate B7.3.4.1.1 Examine and discuss the differences among the Digital Literacy (DL), Critical Thinking and",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.3.4.1.3",
+        "text": "Discuss the usefulness of different farming systems Critical Thinking and Problem Solving (CP),",
+        "cs_id": "B7.3.4.1",
+        "cs_text": "Demonstrate B7.3.4.1.1 Examine and discuss the differences among the Digital Literacy (DL), Critical Thinking and",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.4.1.1.2",
+        "text": "Explain daily applications of forms of energy. Digital Literacy (DL), Cultural Identity and",
+        "cs_id": "B7.4.1.1",
+        "cs_text": "Demonstrate an B7.4.1.1.1 Identify the various forms of energy and show how Digital Literacy (DL), Cultural Identity and",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.4.2.1.2",
+        "text": "Explain the impact of electricity generation on the Communication and Collaboration (CC),",
+        "cs_id": "B7.4.1.3",
+        "cs_text": "Demonstrate B7.4.1.3.1 Demonstrate how light travels in a straight line. Digital Literacy (DL), Communication and",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.4.2.2.2",
+        "text": "Discuss the function of each electronic component Communication and Collaboration (CC),",
+        "cs_id": "B7.4.2.2",
+        "cs_text": "Demonstrate B7.4.2.2.1 Demonstrate how to assemble basic electronic Digital Literacy (DL), Creativity and Innovation",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.4.2.2.3",
+        "text": "Discuss the function of each electronic Communication and Collaboration (CC),",
+        "cs_id": "B7.4.2.2",
+        "cs_text": "Demonstrate B7.4.2.2.1 Demonstrate how to assemble basic electronic Digital Literacy (DL), Creativity and Innovation",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.4.3.1.2",
+        "text": "Demonstrate the conversion of energy into useable Creativity and Innovation (CI)",
+        "cs_id": "B7.4.2.2",
+        "cs_text": "Demonstrate B7.4.2.2.1 Demonstrate how to assemble basic electronic Digital Literacy (DL), Creativity and Innovation",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.4.3.1.3",
+        "text": "Know how energy could be conserved for future use Digital Literacy (DL), Communication and",
+        "cs_id": "B7.4.2.2",
+        "cs_text": "Demonstrate B7.4.2.2.1 Demonstrate how to assemble basic electronic Digital Literacy (DL), Creativity and Innovation",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.4.4.1.2",
+        "text": "State and explain Newton’s First Law of motion. Digital Literacy (DL), Communication and",
+        "cs_id": "B7.4.4.1",
+        "cs_text": "Examine the B7.4.4.1.1 Understand that unbalanced forces acting on an Digital Literacy (DL), Communication and",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.4.4.1.3",
+        "text": "Examine the application of Newton’s First Law of Communication and Collaboration (CC),",
+        "cs_id": "B7.4.4.1",
+        "cs_text": "Examine the B7.4.4.1.1 Understand that unbalanced forces acting on an Digital Literacy (DL), Communication and",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.4.4.1.4",
+        "text": "Demonstrate the behaviour of magnet and its use to Communication and Collaboration (CC),",
+        "cs_id": "B7.4.4.1",
+        "cs_text": "Examine the B7.4.4.1.1 Understand that unbalanced forces acting on an Digital Literacy (DL), Communication and",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.4.4.2.2",
+        "text": "Describe the types and functions of levers. Digital Literacy (DL), Communication and",
+        "cs_id": "B7.4.4.2",
+        "cs_text": "Recognise some B7.4.4.2.1 Identify simple machines. Digital Literacy (DL), Communication",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.4.4.2.3",
+        "text": "Know work input, and output and efficiency as they Digital Literacy (DL), Communication",
+        "cs_id": "B7.4.4.2",
+        "cs_text": "Recognise some B7.4.4.2.1 Identify simple machines. Digital Literacy (DL), Communication",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.4.5.1.2",
+        "text": "Apply the handling and maintenance of basic and Communication and Collaboration (CC), Critical",
+        "cs_id": "B7.4.5.1",
+        "cs_text": "Demonstrate B7.4.5.1.1 Explain the basic rules in handling and maintaining Communication and Collaboration (CC),",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B9.5.5.1.2",
+        "text": "Demonstrate the use of different plant parts for Communication and Collaboration (CC),",
+        "cs_id": "B9.5.5.1",
+        "cs_text": "Demonstrate B9.5.5.1.1 Show and list the uses of different plant parts for Communication and Collaboration (CC),",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.5.5.1.2",
+        "text": "Explain the nature of associations that exist Critical Thinking and Problem Solving (CP),",
+        "cs_id": "B7.5.5.1",
+        "cs_text": "Demonstrate B7.5.5.1.1 List and describe the different types of plants and Critical Thinking and Problem Solving (CP),",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.1.1.1.2",
+        "text": "Design and perform processes for separating kinds of Creativity and Innovation (CI), Critical",
+        "cs_id": "B7.5.5.1",
+        "cs_text": "Demonstrate B7.5.5.1.1 List and describe the different types of plants and Critical Thinking and Problem Solving (CP),",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.1.1.2.2",
+        "text": "Explain the arrangement of elements in terms of the Critical Thinking and Problem Solving (CP),",
+        "cs_id": "B8.1.1.2",
+        "cs_text": "Demonstrate B8.1.1.2.1 Describe atoms as composed of sub-atomic particles Critical Thinking and Problem Solving",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.1.2.1.2",
+        "text": "Classify organisms (plants or animals) as prokaryotic Critical Thinking and Problem Solving",
+        "cs_id": "B8.1.2.1",
+        "cs_text": "Demonstrate B8.1.2.1.1 Examine and describe the structure of prokaryotic Critical Thinking and Problem Solving (CP),",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.2.1.1.2",
+        "text": "Describe the role of the carbon cycle to the Critical Thinking and Problem Solving (CP),",
+        "cs_id": "B8.2.1.1",
+        "cs_text": "Demonstrate B8.2.1.1.1 Explain the process of the carbon cycle. Critical Thinking and Problem Solving (CP),",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.2.3.1.2",
+        "text": "Plant different types of crops on different seed beds. Critical Thinking and Problem Solving",
+        "cs_id": "B8.2.3.1",
+        "cs_text": "Demonstrate B8.2.3.1.1 Explore the different seed beds for planting crops in Critical Thinking and Problem Solving (CP),",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.3.1.1.2",
+        "text": "Discuss the functions of the different types of teeth Critical Thinking and Problem Solving (CP),",
+        "cs_id": "B8.2.4.2",
+        "cs_text": "Demonstrate B8.2.4.2.1 Explain the importance of water and animal feed to Critical Thinking and Problem Solving (CP),",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.3.1.1.3",
+        "text": "Explain the causes and prevention of tooth and gum Critical Thinking and Problem Solving (CP),",
+        "cs_id": "B8.2.4.2",
+        "cs_text": "Demonstrate B8.2.4.2.1 Explain the importance of water and animal feed to Critical Thinking and Problem Solving (CP),",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.3.4.1.2",
+        "text": "Discuss the usefulness of the different crops and Critical Thinking and Problem Solving (CP),",
+        "cs_id": "B8.3.4.1",
+        "cs_text": "Demonstrate B8.3.4.1.1 Identify and describe the types of crops, animals and Critical Thinking and Problem Solving (CP),",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.4.1.1.2",
+        "text": "Discuss the importance of conversion of energy. Critical Thinking and Problem Solving (CP),",
+        "cs_id": "B8.4.1.1",
+        "cs_text": "Demonstrate B8.4.1.1.1 Describe energy conversion Critical Thinking and Problem Solving (CP),",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.4.1.2.2",
+        "text": "Demonstrate how to manage sources of renewable Critical Thinking and Problem Solving",
+        "cs_id": "B8.4.1.2",
+        "cs_text": "Show an B8.4.1.2.1 Describe renewable and non-renewable forms of Critical Thinking and Problem Solving (CP),",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.4.4.1.2",
+        "text": "Explain the relationship between magnetic force Critical Thinking and Problem Solving",
+        "cs_id": "B8.4.4.1",
+        "cs_text": "Demonstrate B8.4.4.1.1 Demonstrate simple ways of making magnets and Critical Thinking and Problem Solving (CP),",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.4.5.1.2",
+        "text": "Engage in the use of basic and simple agricultural Critical Thinking and Problem Solving (CP),",
+        "cs_id": "B8.4.5.1",
+        "cs_text": "Demonstrate B8.4.5.1.1 Show and discuss the use of basic and simple Critical Thinking and Problem Solving (CP),",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.5.1.1.2",
+        "text": "Apply knowledge of waste management practices to Critical Thinking and Problem Solving",
+        "cs_id": "B8.5.1.1",
+        "cs_text": "Demonstrate B8.5.1.1.1 Explain sustainable waste management practices Critical Thinking and Problem Solving (CP),",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.5.4.1.2",
+        "text": "Describe climate change and green economy Critical Thinking and Problem Solving (CP),",
+        "cs_id": "B8.5.4.1",
+        "cs_text": "Demonstrate an B8.5.4.1.1 Explain the concept of climate change and its effect Critical Thinking and Problem Solving",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.5.5.1.2",
+        "text": "Analyse the physical properties of soils and soil Critical Thinking and Problem Solving (CP),",
+        "cs_id": "B8.5.5.1",
+        "cs_text": "Demonstrate B8.5.5.1.1 Discuss physical properties of soils Critical Thinking and Problem Solving (CP),",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B9.1.1.1.2",
+        "text": "Discuss the formation of binary chemical compounds. Critical Thinking and Problem Solving (CP),",
+        "cs_id": "B9.1.1.1",
+        "cs_text": "Show an B9.1.1.1.1 Identify by name binary chemical compounds and Critical Thinking and Problem Solving (CP),",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.1.1.1.3",
+        "text": "Describe the characteristics of common acids, bases Critical Thinking and Problem Solving (CP),",
+        "cs_id": "B9.1.1.1",
+        "cs_text": "Show an B9.1.1.1.1 Identify by name binary chemical compounds and Critical Thinking and Problem Solving (CP),",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.1.2.1.2",
+        "text": "Examine the functions of specialised cells in Digital Literacy (DL), Critical Thinking",
+        "cs_id": "B9.1.2.1",
+        "cs_text": "Demonstrate B9.1.2.1.1 Discuss the concepts of specialised cells and how they Communication and Collaboration (CC),",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.1.2.1.3",
+        "text": "Examine the functions of specialised animal cells Digital Literacy (DL), Critical Thinking and",
+        "cs_id": "B9.1.2.1",
+        "cs_text": "Demonstrate B9.1.2.1.1 Discuss the concepts of specialised cells and how they Communication and Collaboration (CC),",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.2.1.1.2",
+        "text": "Describe the importance of the nitrogen cycle to the Critical Thinking and Problem Solving (CP),",
+        "cs_id": "B9.2.1.1",
+        "cs_text": "Demonstrate B9.2.1.1.1 Explain the process of the nitrogen cycle as a Critical Thinking and Problem Solving (CP),",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.2.2.1.2",
+        "text": "Examine how the activities of the grasshopper affect Critical Thinking and Problem Solving (CP),",
+        "cs_id": "B9.2.2.1",
+        "cs_text": "Demonstrate B9.2.2.1.1 Describe the life cycle of the grasshopper as a form Critical Thinking and Problem Solving (CP),",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.2.3.2.2",
+        "text": "Evaluate the importance of knowledge of maturity Communication and Collaboration (CC) Digital",
+        "cs_id": "B9.2.3.2",
+        "cs_text": "Demonstrate B9.2.3.2.1 Observe and record the uses of different crops at Communication and Collaboration (CC)",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.2.3.2.2",
+        "text": "Evaluate the importance of knowledge of the Communication and Collaboration (CC) Digital",
+        "cs_id": "B9.2.3.2",
+        "cs_text": "Demonstrate B9.2.3.2.1 Observe and record the uses of different crops at Communication and Collaboration (CC)",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.2.4.2.2",
+        "text": "Differentiate between different types of feed for Critical Thinking and Problem Solving (CP),",
+        "cs_id": "B9.2.4.2",
+        "cs_text": "Demonstrate B9.2.4.2.1 Describe and select appropriate feed for different Critical Thinking and Problem Solving (CP),",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.2.4.2.3",
+        "text": "Perform the feeding of domestic and commercial Critical Thinking and Problem Solving",
+        "cs_id": "B9.2.4.2",
+        "cs_text": "Demonstrate B9.2.4.2.1 Describe and select appropriate feed for different Critical Thinking and Problem Solving (CP),",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.3.1.1.2",
+        "text": "Explain the concept of respiration and show how the Communication and Collaboration (CC),",
+        "cs_id": "B9.3.1.1",
+        "cs_text": "Demonstrate B9.3.1.1.1 Explain the concept of the circulatory system, Critical Thinking and Problem Solving (CP),",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.3.4.1.2",
+        "text": "Demonstrate the preparation of different types of Communication and Collaboration (CC),",
+        "cs_id": "B9.3.4.1",
+        "cs_text": "Demonstrate B9.3.4.1.1 List and explain the different plant and animal waste Communication and Collaboration (CC),",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.3.4.1.3",
+        "text": "Prepare different types of manure. Communication and Collaboration (CC),",
+        "cs_id": "B9.3.4.1",
+        "cs_text": "Demonstrate B9.3.4.1.1 List and explain the different plant and animal waste Communication and Collaboration (CC),",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.4.1.1.2",
+        "text": "Explain the importance of energy conservation in Digital Literacy (DL)",
+        "cs_id": "B9.4.1.1",
+        "cs_text": "Show B9.4.1.1 .1 List the ways to conserve energy. Examples: ironing Creativity and Innovation (CI), Communication",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.4.1.2.2",
+        "text": "Describe how images are formed in cameras. Creativity and Innovation (CI)",
+        "cs_id": "B9.4.1.2",
+        "cs_text": "Demonstrate B9.4.1.2.1 Explain how to calculate energy consumed over a Critical Thinking and Problem Solving (CP)",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.4.1.2.3",
+        "text": "Describe the formation of shadows. Communication and Collaboration (CC)",
+        "cs_id": "B9.4.1.2",
+        "cs_text": "Demonstrate B9.4.1.2.1 Explain how to calculate energy consumed over a Critical Thinking and Problem Solving (CP)",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.4.1.2.4",
+        "text": "Demonstrate the formation of an eclipse. Creativity and Innovation (CI), Digital Literacy",
+        "cs_id": "B9.4.1.2",
+        "cs_text": "Demonstrate B9.4.1.2.1 Explain how to calculate energy consumed over a Critical Thinking and Problem Solving (CP)",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.4.4.1.2",
+        "text": "Demonstrate the application of Newton’s Third Law Creativity and Innovation (CI)",
+        "cs_id": "B9.4.4.2",
+        "cs_text": "Demonstrate B9.4.4.2.1 Explain the importance of Newton’s Third Law of Communication and Collaboration (CC)",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.4.5.1.2",
+        "text": "Discuss and write activities involved in making Communication and Collaboration (CC)",
+        "cs_id": "B9.4.5.1",
+        "cs_text": "Demonstrate B9.4.5.1.1 Identify materials used in making simple agricultural Creativity and Innovation (CI), Communication",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.4.5.1.3",
+        "text": "Manufacture simple agricultural tools. Creativity and Innovation (CI)",
+        "cs_id": "B9.4.5.1",
+        "cs_text": "Demonstrate B9.4.5.1.1 Identify materials used in making simple agricultural Creativity and Innovation (CI), Communication",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.5.2.2.2",
+        "text": "Explain the concept of common diseases in an Critical Thinking and Problem Solving (CP),",
+        "cs_id": "B9.5.2.2",
+        "cs_text": "Demonstrate B9.5.2.2.1 Explain the concepts of health and disease and show Critical Thinking and Problem Solving (CP),",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.5.3.2.2",
+        "text": "Examine indigenous industries in their communities Critical Thinking and Problem Solving (CP),",
+        "cs_id": "B9.5.3.2",
+        "cs_text": "Demonstrate B9.5.3.2.1 Explain the concept of industry and distinguish Critical Thinking and Problem Solving (CP),",
+        "level": "B9"
+      }
+    ]
+  },
+  {
+    "code": "arabic",
+    "name": "Arabic",
+    "indicators": [
+      {
+        "indicator_id": "B7.1.1.1.2",
+        "text": "Show ability to listen to and identify phonemes as shown in the examples",
+        "cs_id": "B7.1.1.1",
+        "cs_text": "Learner B7.1.1.1.1. Identify the 28 sounds of Arabic consonants and vowels, and the various sound groupings",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.1.1.1.3",
+        "text": "Demonstrate understanding of diversity of language syllables by sifting and selecting peculiar Arabic",
+        "cs_id": "B7.1.1.1",
+        "cs_text": "Learner B7.1.1.1.1. Identify the 28 sounds of Arabic consonants and vowels, and the various sound groupings",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.1.1.1.4",
+        "text": "Demonstrate understanding of the relationship between Arabic consonants/long vowel patterns and",
+        "cs_id": "B7.1.1.1",
+        "cs_text": "Learner B7.1.1.1.1. Identify the 28 sounds of Arabic consonants and vowels, and the various sound groupings",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.1.1.2.2",
+        "text": "Identify and follow a range of utterances, vocabulary and instructions related to common birds and",
+        "cs_id": "B7.1.1.2",
+        "cs_text": "Learner B7.1.1.2.1. Recognise simple questions related to domestic animals, like cat, dog, mouse, sheep, etc. Communication and",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.1.1.2.3",
+        "text": "Show awareness of the differences in intonation between a question and a statement",
+        "cs_id": "B7.1.1.2",
+        "cs_text": "Learner B7.1.1.2.1. Recognise simple questions related to domestic animals, like cat, dog, mouse, sheep, etc. Communication and",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.1.1.3.2",
+        "text": "Recognize the sounds and meanings of words in everyday simple questions",
+        "cs_id": "B7.1.1.3",
+        "cs_text": "Learner B7.1.1.3.1. Identify the sound patterns and pronunciations of names of classroom items within simple phrases and Communication and",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.1.1.4.2",
+        "text": "Identify various sounds of Arabic letters that form words and phrases that represent teaching acts",
+        "cs_id": "B7.1.1.4",
+        "cs_text": "Learner B7.1.1.4.1. Identify various sounds that form words and phrases on learning activities Communication and",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.1.1.4.3",
+        "text": "Demonstrate understanding of the difference in the sounds of the Arabic sun and moon letters in words",
+        "cs_id": "B7.1.1.4",
+        "cs_text": "Learner B7.1.1.4.1. Identify various sounds that form words and phrases on learning activities Communication and",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.1.2.1.2",
+        "text": "Show understanding of the difference in intonation of simple phrases relating to weights and temperature",
+        "cs_id": "B7.1.2.1",
+        "cs_text": "Learner B7.1.2.1. 1. Show understanding of the difference in intonation of simple phrases relating to sizes and heights in the",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.1.2.1.3",
+        "text": "Identify the difference in intonation of simple phrases relating to numbers, colours and shapes of people",
+        "cs_id": "B7.1.2.1",
+        "cs_text": "Learner B7.1.2.1. 1. Show understanding of the difference in intonation of simple phrases relating to sizes and heights in the",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.1.2.2.2",
+        "text": "State the general idea(s) behind a story told in class about sanitation and identify associated vocabulary. CP 5.6: Demonstrate a",
+        "cs_id": "B7.1.2.1",
+        "cs_text": "Learner B7.1.2.1. 1. Show understanding of the difference in intonation of simple phrases relating to sizes and heights in the",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.1.2.3.2",
+        "text": "Show understanding of simple expressions related to courtesies and requests for favours or excuses",
+        "cs_id": "B7.1.2.1",
+        "cs_text": "Learner B7.1.2.1. 1. Show understanding of the difference in intonation of simple phrases relating to sizes and heights in the",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.1.2.3.3",
+        "text": "Demonstrate knowledge in the use of appropriate expressions for seasonal greetings and well wishes",
+        "cs_id": "B7.1.2.1",
+        "cs_text": "Learner B7.1.2.1. 1. Show understanding of the difference in intonation of simple phrases relating to sizes and heights in the",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.1.2.3.4",
+        "text": "Demonstrate understanding of culturally specific gestures associated with certain special occasions",
+        "cs_id": "B7.1.2.1",
+        "cs_text": "Learner B7.1.2.1. 1. Show understanding of the difference in intonation of simple phrases relating to sizes and heights in the",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.2.1.1.2",
+        "text": "Recognise the use of appropriate expressions and intonations to respond to courtesies like,",
+        "cs_id": "B7.1.2.1",
+        "cs_text": "Learner B7.1.2.1. 1. Show understanding of the difference in intonation of simple phrases relating to sizes and heights in the",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.2.1.1.3",
+        "text": "Demonstrate knowledge of appropriate expressions for greetings, courtesies and requests",
+        "cs_id": "B7.1.2.1",
+        "cs_text": "Learner B7.1.2.1. 1. Show understanding of the difference in intonation of simple phrases relating to sizes and heights in the",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.2.1.1.4",
+        "text": "Show awareness of basic personal health information and respond to greetings and gestures",
+        "cs_id": "B7.1.2.1",
+        "cs_text": "Learner B7.1.2.1. 1. Show understanding of the difference in intonation of simple phrases relating to sizes and heights in the",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.2.1.2.2",
+        "text": "Demonstrate oral proficiency in the use of words to describe self and the human body parts",
+        "cs_id": "B7.1.2.1",
+        "cs_text": "Learner B7.1.2.1. 1. Show understanding of the difference in intonation of simple phrases relating to sizes and heights in the",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.2.1.2.3",
+        "text": "Pronounce words accurately for immediate family relations such as father, mother or sister",
+        "cs_id": "B7.1.2.1",
+        "cs_text": "Learner B7.1.2.1. 1. Show understanding of the difference in intonation of simple phrases relating to sizes and heights in the",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.2.1.2.4",
+        "text": "Demonstrate skills in the pronunciation of names of home items, and room contents",
+        "cs_id": "B7.1.2.1",
+        "cs_text": "Learner B7.1.2.1. 1. Show understanding of the difference in intonation of simple phrases relating to sizes and heights in the",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.2.1.3.2",
+        "text": "Demonstrate oral communicative skills in the pronunciation of such sensual expressions as",
+        "cs_id": "B7.1.2.1",
+        "cs_text": "Learner B7.1.2.1. 1. Show understanding of the difference in intonation of simple phrases relating to sizes and heights in the",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.2.1.3.3",
+        "text": "Reproduce action words like sit, stand, eat, talk, laugh, sleep, etc",
+        "cs_id": "B7.1.2.1",
+        "cs_text": "Learner B7.1.2.1. 1. Show understanding of the difference in intonation of simple phrases relating to sizes and heights in the",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.2.1.4.2",
+        "text": "Recognise and name teaching and learning materials like books, pens, pencils, ruler, pictures",
+        "cs_id": "B7.1.2.1",
+        "cs_text": "Learner B7.1.2.1. 1. Show understanding of the difference in intonation of simple phrases relating to sizes and heights in the",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.2.1.5.2",
+        "text": "Produce the appropriate intonation of simple sentences relating to sizes and heights of family",
+        "cs_id": "B7.1.2.1",
+        "cs_text": "Learner B7.1.2.1. 1. Show understanding of the difference in intonation of simple phrases relating to sizes and heights in the",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.2.2.1.2",
+        "text": "Demonstrate the strength of recall through recitation of simple Arabic proverbs",
+        "cs_id": "B7.1.2.1",
+        "cs_text": "Learner B7.1.2.1. 1. Show understanding of the difference in intonation of simple phrases relating to sizes and heights in the",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.2.3.1.2",
+        "text": "State grammatical words that describes the name of a place",
+        "cs_id": "B7.2.3.1",
+        "cs_text": "Learner speaks B7.2.3.1.1. State words representing nouns such as names of persons, animals and places. Communication and",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.2.3.1.3",
+        "text": "State the grammatical words that can stand in place of a noun",
+        "cs_id": "B7.2.3.1",
+        "cs_text": "Learner speaks B7.2.3.1.1. State words representing nouns such as names of persons, animals and places. Communication and",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.3.1.1.2",
+        "text": "Demonstrate the ability to reproduce the appropriate sounds of the vowelized consonants",
+        "cs_id": "B7.3.1.1",
+        "cs_text": "Learner shows B7.3.1.1.1. Show preliminary reading skill in producing the various Arabic syllables. Communication and",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.3.1.1.3",
+        "text": "Demonstrate ability to distinguish between common language sounds and the peculiar Arabic",
+        "cs_id": "B7.3.1.1",
+        "cs_text": "Learner shows B7.3.1.1.1. Show preliminary reading skill in producing the various Arabic syllables. Communication and",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.3.1.2.2",
+        "text": "Demonstrate the ability to pronounce consonants with tanwin ending, and their",
+        "cs_id": "B7.3.1.2",
+        "cs_text": "Learner B7.3.1.2.1. Demonstrate ability to accurately pronounce Arabic words formed from a combination of",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.3.1.2.3",
+        "text": "Demonstrate ability to pronounce Arabic words having complex sound permutations",
+        "cs_id": "B7.3.1.2",
+        "cs_text": "Learner B7.3.1.2.1. Demonstrate ability to accurately pronounce Arabic words formed from a combination of",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.3.2.1.2",
+        "text": "Demonstrate the skill of using appropriate strategies to resolve comprehension problems",
+        "cs_id": "B7.3.1.2",
+        "cs_text": "Learner B7.3.1.2.1. Demonstrate ability to accurately pronounce Arabic words formed from a combination of",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.3.2.1.3",
+        "text": "Demonstrate the skill of using the question-answer relationship strategy to improve the",
+        "cs_id": "B7.3.1.2",
+        "cs_text": "Learner B7.3.1.2.1. Demonstrate ability to accurately pronounce Arabic words formed from a combination of",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.3.3.1.2",
+        "text": "Demonstrate ability to recognise abstract nouns in short passages about home, school and",
+        "cs_id": "B7.3.3.1",
+        "cs_text": "Learner reads Good B7.3.3.1.1. Demonstrate comprehension skills after reading passages about immediate environment Communication and",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B8.3.3.1.3",
+        "text": "Recognise and understand the description of the characters and objects represented in a",
+        "cs_id": "B7.3.3.1",
+        "cs_text": "Learner reads Good B7.3.3.1.1. Demonstrate comprehension skills after reading passages about immediate environment Communication and",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.3.3.1.4",
+        "text": "Show ability to recognise and demonstrate comprehension of pronouns in short passages on",
+        "cs_id": "B7.3.3.1",
+        "cs_text": "Learner reads Good B7.3.3.1.1. Demonstrate comprehension skills after reading passages about immediate environment Communication and",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.4.1.1.2",
+        "text": "Demonstrate knowledge and skills in copying words previously read in class with appropriate combinations of",
+        "cs_id": "B7.4.1.1",
+        "cs_text": "Learner B7.4.1.1.1 Demonstrate competence and skills in writing the Arabic alphabet in their various forms at the initial, Communication and",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.4.2.1.2",
+        "text": "Demonstrate knowledge and understanding of the spellings of all the letters of the Arabic alphabet in",
+        "cs_id": "B7.4.2.1",
+        "cs_text": "Learner B7.4.2.1.1. Recognise and use punctuation marks, accents, symbols, tanwin, shadda, madda and the short vowel signs. Communication and",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.4.2.1.3",
+        "text": "Demonstrate the ability to fill in appropriate words to complete grammatically correct short phrases or",
+        "cs_id": "B7.4.2.1",
+        "cs_text": "Learner B7.4.2.1.1. Recognise and use punctuation marks, accents, symbols, tanwin, shadda, madda and the short vowel signs. Communication and",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.4.2.1.4",
+        "text": "Demonstrate ability to form own phrases leading to construction of a simple syntactic structure",
+        "cs_id": "B7.4.2.1",
+        "cs_text": "Learner B7.4.2.1.1. Recognise and use punctuation marks, accents, symbols, tanwin, shadda, madda and the short vowel signs. Communication and",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B7.4.2.2.2",
+        "text": "Demonstrate ability to provide correct answers to questions from simple comprehension texts with familiar",
+        "cs_id": "B7.4.2.2",
+        "cs_text": "Learner. B7.4.2.2.1. Show ability to write basic expressions individually, using the linguistic input and vocabulary acquired Communication and",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B9.4.3.1.2",
+        "text": "Demonstrate the ability to select quotations that are relevant to an idea and incorporate them",
+        "cs_id": "B9.4.3.1",
+        "cs_text": "Learner B9.4.3.1.1. Show good skills in planning an essay, drafting, editing and revision. Creativity and Innovation",
+        "level": "B7"
+      },
+      {
+        "indicator_id": "B8.1.1.1.2",
+        "text": "Demonstrate understanding of the semi-complex verb forms (ىﺎﺸّﻟأا, Al-awzaan) and their",
+        "cs_id": "B7.4.3.1",
+        "cs_text": "Learner B7.4.3.1.1. Demonstrate creative writing skills by Summarizing a simple narrative text in a clear, Communication and",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.1.1.2.2",
+        "text": "Identify the intonation and style of texts read in class such as prose or poetry",
+        "cs_id": "B8.1.1.2",
+        "cs_text": "Learner B8.1.1.2.1. Identify the phonemic changes of (ؿ) before any given consonant.) ةي رم ق لا و ةي ﺶﻣ ش لا ؼ و ﺮﻠﺣا( Communication and",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.1.1.2.3",
+        "text": "Demonstrate listening skills through dictation of simple Arabic sounds patterns",
+        "cs_id": "B8.1.1.2",
+        "cs_text": "Learner B8.1.1.2.1. Identify the phonemic changes of (ؿ) before any given consonant.) ةي رم ق لا و ةي ﺶﻣ ش لا ؼ و ﺮﻠﺣا( Communication and",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.1.2.1.4",
+        "text": "Produce names of different types of clothes from a text read in class. For eg. shirt, shorts,",
+        "cs_id": "B8.1.2.1",
+        "cs_text": "Learner recognises - ف ◌ٌ ش ◌ ّ ◌ِ ◌ َ م ن وف ُ ◌ِ ◌ظ ّ ◌ِ ◌ َ ن◌ ُ بد اه ف ظنأ ؼ ر غلا و ت يبلا ةف اظ ن C of C id 7 e .3 a : s , P o r r o g v a i n d i e s a fe ti e o d n b , a v c o k i c in e, a reas",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.1.2.2.1",
+        "text": "Show ability to respond to questions about parents and their professions and those of others",
+        "cs_id": "B8.1.2.1",
+        "cs_text": "Learner recognises - ف ◌ٌ ش ◌ ّ ◌ِ ◌ َ م ن وف ُ ◌ِ ◌ظ ّ ◌ِ ◌ َ ن◌ ُ بد اه ف ظنأ ؼ ر غلا و ت يبلا ةف اظ ن C of C id 7 e .3 a : s , P o r r o g v a i n d i e s a fe ti e o d n b , a v c o k i c in e, a reas",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.1.2.3.2",
+        "text": "Identify the key words and phrases used in targeted theme(s) of a story read in class in order",
+        "cs_id": "B8.1.2.3",
+        "cs_text": "Learner indicates B8.1.2.3.1. Recognise and name the persons and objects represented in an audio-visual format",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.1.2.3.3",
+        "text": "Predict and connect the main ideas of a story told by the teacher or taken from an audio-",
+        "cs_id": "B8.1.2.3",
+        "cs_text": "Learner indicates B8.1.2.3.1. Recognise and name the persons and objects represented in an audio-visual format",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.1.2.3.4",
+        "text": "Demonstrate listening ability through a class discussion of a story from an audio-visual",
+        "cs_id": "B8.1.2.3",
+        "cs_text": "Learner indicates B8.1.2.3.1. Recognise and name the persons and objects represented in an audio-visual format",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.1.2.4.2",
+        "text": "Demonstrate skills in initiating appropriate expressions for courtesies and requests for",
+        "cs_id": "B8.1.2.3",
+        "cs_text": "Learner indicates B8.1.2.3.1. Recognise and name the persons and objects represented in an audio-visual format",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.1.2.4.3",
+        "text": "Demonstrate communicative skill by assigning the appropriate expressions for seasonal",
+        "cs_id": "B8.1.2.3",
+        "cs_text": "Learner indicates B8.1.2.3.1. Recognise and name the persons and objects represented in an audio-visual format",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.1.2.4.4",
+        "text": "Demonstrate skills in using some cultural gestures that are used on special occasions",
+        "cs_id": "B8.1.2.3",
+        "cs_text": "Learner indicates B8.1.2.3.1. Recognise and name the persons and objects represented in an audio-visual format",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.2.1.1.2",
+        "text": "Show communicative ability in introducing others",
+        "cs_id": "B8.1.2.3",
+        "cs_text": "Learner indicates B8.1.2.3.1. Recognise and name the persons and objects represented in an audio-visual format",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.2.1.2.1",
+        "text": "Demonstrate ability to use basic vocabulary and phrases to talk about daily routine",
+        "cs_id": "B8.2.1.2",
+        "cs_text": "Learner Communication and",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.2.1.2.2",
+        "text": "Show proficiency in the use of previously learnt phrases and simple sentences in an interactive",
+        "cs_id": "B8.2.1.2",
+        "cs_text": "Learner Communication and",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.2.1.2.3",
+        "text": "Incorporate modelled structures to produce ten se ntences about one favourite class activity and",
+        "cs_id": "B8.2.1.2",
+        "cs_text": "Learner Communication and",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.2.1.3.2",
+        "text": "Demonstrate competence in using a vocabulary of 50 words to speak about a school excursion",
+        "cs_id": "B8.2.1.3",
+        "cs_text": "Learner shows oral B8.2.1.3.1. Show competence in using a vocabulary of 50 words to talk about a selected school game. Communication and",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.2.1.3.3",
+        "text": "Show proficiency in using previously learnt phrases and simple sentences in an interactive",
+        "cs_id": "B8.2.1.3",
+        "cs_text": "Learner shows oral B8.2.1.3.1. Show competence in using a vocabulary of 50 words to talk about a selected school game. Communication and",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.2.1.3.4",
+        "text": "Demonstrate creativity in the use of modelled structures to produce ten sentences about a",
+        "cs_id": "B8.2.1.3",
+        "cs_text": "Learner shows oral B8.2.1.3.1. Show competence in using a vocabulary of 50 words to talk about a selected school game. Communication and",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.2.1.4.2",
+        "text": "Show proficiency in initiating, maintaining and closing conversations about familiar topics",
+        "cs_id": "B8.2.1.3",
+        "cs_text": "Learner shows oral B8.2.1.3.1. Show competence in using a vocabulary of 50 words to talk about a selected school game. Communication and",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.2.1.4.4",
+        "text": "Demonstrate proficiency in communicating ideas and emotions spontaneously using learnt",
+        "cs_id": "B8.2.1.3",
+        "cs_text": "Learner shows oral B8.2.1.3.1. Show competence in using a vocabulary of 50 words to talk about a selected school game. Communication and",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.2.1.5.2",
+        "text": "Demonstrate proficiency by conveying other people‟s ideas and show agreement or",
+        "cs_id": "B8.2.1.5",
+        "cs_text": "Learner B8.2.1.5.1. Show the ability to share very basic information about others- their personalities, character Communication and",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.2.2.1.2",
+        "text": "Demonstrate the strong recall ability through recitation of Arabic proverbs",
+        "cs_id": "B8.2.1.5",
+        "cs_text": "Learner B8.2.1.5.1. Show the ability to share very basic information about others- their personalities, character Communication and",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.2.3.1.2",
+        "text": "Demonstrate understanding of grammatical rules through speech. CP.5.6: Demonstrate a",
+        "cs_id": "B8.2.3.1",
+        "cs_text": "Learner speaks B8.2.3.1 .1. Exhibit oral skills in pronouncing nouns and their adjectives as well as different types of Communication and",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.2.3.1.3",
+        "text": "Identify the adjectives in a piece of text in terms of gender, number and grammatical function",
+        "cs_id": "B8.2.3.1",
+        "cs_text": "Learner speaks B8.2.3.1 .1. Exhibit oral skills in pronouncing nouns and their adjectives as well as different types of Communication and",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.3.1.1.2",
+        "text": "Demonstrate ability to read wor ds with long vowels and prolonged doubled consonant in",
+        "cs_id": "B8.2.3.1",
+        "cs_text": "Learner speaks B8.2.3.1 .1. Exhibit oral skills in pronouncing nouns and their adjectives as well as different types of Communication and",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.3.2.1.1",
+        "text": "Demonstrate skill in reading written words about sanitation and health",
+        "cs_id": "B8.2.3.1",
+        "cs_text": "Learner speaks B8.2.3.1 .1. Exhibit oral skills in pronouncing nouns and their adjectives as well as different types of Communication and",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.3.2.1.3",
+        "text": "Show the appropriate comprehension strategies to use, demonstrating why, when and how to",
+        "cs_id": "B8.3.2.1",
+        "cs_text": "2 Demonstrate competence in generating main ideas to questions and summary in order to",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.3.2.1.4",
+        "text": "Show the ability to use appropriate strategies to gather information from a piece of text about",
+        "cs_id": "B8.3.2.1",
+        "cs_text": "2 Demonstrate competence in generating main ideas to questions and summary in order to",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.3.2.1.5",
+        "text": "Identify the common text structures of an expository text as an organisation principle to",
+        "cs_id": "B8.3.2.1",
+        "cs_text": "2 Demonstrate competence in generating main ideas to questions and summary in order to",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.3.3.1.2",
+        "text": "Demonstrate understanding of grammatical rules by reading out a selected text with fluency,",
+        "cs_id": "B8.3.3.1",
+        "cs_text": "Learner reads Good B8.3.3.1 .1. Demonstrate the ability to match nouns to their adjectives of colours. Communication and",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.3.4.1.2",
+        "text": "Demonstrate the ability to elicit information from the text in order to extract lessons or",
+        "cs_id": "B8.3.4.1",
+        "cs_text": "Learner B8.3.4.1.1. Show ability to make good sense of a text by pulling information from different segments Communication and",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.3.4.1.3",
+        "text": "Demonstrate analytical skill in identifying patterns in a given text",
+        "cs_id": "B8.3.4.1",
+        "cs_text": "Learner B8.3.4.1.1. Show ability to make good sense of a text by pulling information from different segments Communication and",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.3.4.1.4",
+        "text": "Demonstrate interpretive skills by explaining patterns in a given text",
+        "cs_id": "B8.3.4.1",
+        "cs_text": "Learner B8.3.4.1.1. Show ability to make good sense of a text by pulling information from different segments Communication and",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.3.4.2.2",
+        "text": "Recognize the diversity of cultural practices within Ghanaian society",
+        "cs_id": "B8.3.4.1",
+        "cs_text": "Learner B8.3.4.1.1. Show ability to make good sense of a text by pulling information from different segments Communication and",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.4.1.1.2",
+        "text": "Demonstrate knowledge and understanding of the difference among handwritten and printed",
+        "cs_id": "B8.4.1.1",
+        "cs_text": "Learner B8.4.1.1.1. Identify the types of Arabic fonts found in different written texts. Communication and",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.4.1.1.3",
+        "text": "Show competence in writing the diacritics in their various forms in a handwritten script",
+        "cs_id": "B8.4.1.1",
+        "cs_text": "Learner B8.4.1.1.1. Identify the types of Arabic fonts found in different written texts. Communication and",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.4.1.1.4",
+        "text": "Demonstrate knowledge and skills in copying words and numerals previously read in class,",
+        "cs_id": "B8.4.1.1",
+        "cs_text": "Learner B8.4.1.1.1. Identify the types of Arabic fonts found in different written texts. Communication and",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.4.2.1.2",
+        "text": "Show writing skills in reorganising, rearranging jumbled sentences to complete a full text",
+        "cs_id": "B8.4.2.1",
+        "cs_text": "Learner B8.4.2.1.1. Demonstrate ability to respond to questions using familiar vocabulary. Communication and",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.4.2.1.3",
+        "text": "Show ability to write short messages independently, using appropriate words",
+        "cs_id": "B8.4.2.1",
+        "cs_text": "Learner B8.4.2.1.1. Demonstrate ability to respond to questions using familiar vocabulary. Communication and",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.4.2.1.4",
+        "text": "Demonstrate the knowledge and ability to fill in and select appropriate words to complete",
+        "cs_id": "B8.4.2.1",
+        "cs_text": "Learner B8.4.2.1.1. Demonstrate ability to respond to questions using familiar vocabulary. Communication and",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.4.2.2.2",
+        "text": "Show composition skills by filling in the blank spaces with appropriate words to complete",
+        "cs_id": "B8.4.2.2",
+        "cs_text": "Learner shows B8.4.2.2.1. Show ability to summarise a prose read in class. Communication and",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.4.2.2.3",
+        "text": "Show ability to write short answers that follow the rules of sentence structure and connect",
+        "cs_id": "B8.4.2.2",
+        "cs_text": "Learner shows B8.4.2.2.1. Show ability to summarise a prose read in class. Communication and",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B9.2.1.3.2",
+        "text": "Show proficiency in presenting clear personal ideas after reading discussing of school",
+        "cs_id": "B9.2.1.3",
+        "cs_text": "Learner. shows B9.2.1.3.1. Demonstrate the ability to express personal contributions in a discussion about inter-school Communication and",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B9.2.1.3.3",
+        "text": "Show the ability to predict the closest meanings of some unfamiliar words in a text about ICT",
+        "cs_id": "B9.2.1.3",
+        "cs_text": "Learner. shows B9.2.1.3.1. Demonstrate the ability to express personal contributions in a discussion about inter-school Communication and",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B9.2.1.4.2",
+        "text": "Show adequate acquisition and usage of vocabulary of 30 words for self-expression about",
+        "cs_id": "B9.2.1.3",
+        "cs_text": "Learner. shows B9.2.1.3.1. Demonstrate the ability to express personal contributions in a discussion about inter-school Communication and",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B9.2.1.4.3",
+        "text": "Show proficiency in the use of previously learnt phrases and simple sentences in an",
+        "cs_id": "B9.2.1.3",
+        "cs_text": "Learner. shows B9.2.1.3.1. Demonstrate the ability to express personal contributions in a discussion about inter-school Communication and",
+        "level": "B8"
+      },
+      {
+        "indicator_id": "B8.4.2.3.2",
+        "text": "Show creative writing skills in narrative and descriptive essay writing",
+        "cs_id": "B8.4.2.3",
+        "cs_text": "Learner B8.4.2.3.1. Demonstrate creative skills by describing characters in a story based on their actions, and Communication and",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B8.4.2.3.3",
+        "text": "Show creativity in organising ideas logically and fluently in order to write coherent texts that",
+        "cs_id": "B8.4.2.3",
+        "cs_text": "Learner B8.4.2.3.1. Demonstrate creative skills by describing characters in a story based on their actions, and Communication and",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B8.4.2.3.4",
+        "text": "Demonstrate the ability to distinguish between the literal meaning and the figurative meaning,",
+        "cs_id": "B8.4.2.3",
+        "cs_text": "Learner B8.4.2.3.1. Demonstrate creative skills by describing characters in a story based on their actions, and Communication and",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.1.1.1.2",
+        "text": "Recognise and recall main points in a short dialogue and use the model in personal",
+        "cs_id": "B8.4.2.3",
+        "cs_text": "Learner B8.4.2.3.1. Demonstrate creative skills by describing characters in a story based on their actions, and Communication and",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.1.1.1.3",
+        "text": "Demonstrate the ability to extrapolate and respond to essential general ideas and information",
+        "cs_id": "B8.4.2.3",
+        "cs_text": "Learner B8.4.2.3.1. Demonstrate creative skills by describing characters in a story based on their actions, and Communication and",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.1.1.1.4",
+        "text": "Show ability to follow and understand a variety of spoken discourse between two or several",
+        "cs_id": "B8.4.2.3",
+        "cs_text": "Learner B8.4.2.3.1. Demonstrate creative skills by describing characters in a story based on their actions, and Communication and",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.1.1.2.2",
+        "text": "Demonstrate the ability to visualise images and scenes in order to facilitate understanding of a",
+        "cs_id": "B9.1.1.2",
+        "cs_text": "Learner identifies B9.1.1.2.1. Demonstrate an understanding of central issues in aural discussions on inter-school football Communication and",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.1.1.3.2",
+        "text": "Recognise and recall main points in a text read in class on education and career path, and",
+        "cs_id": "B9.1.1.3",
+        "cs_text": "Learner B9.1.1.3.1. Demonstrate ability to answer questions about the relationships between education and career, Communication and",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.1.1.3.3",
+        "text": "Show ability to participate in a spoken discourse and express personal ideas about children",
+        "cs_id": "B9.1.1.3",
+        "cs_text": "Learner B9.1.1.3.1. Demonstrate ability to answer questions about the relationships between education and career, Communication and",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.1.1.4.2",
+        "text": "Show effective listening skills by identifying various linguistic and tonal features for",
+        "cs_id": "B9.1.1.4",
+        "cs_text": "Learner responds B9.1.1.4.1. Demonstrate ability to answer questions on a text read in class, and to express an independent Communication and",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.1.1.4.3",
+        "text": "Demonstrate the ability to listen accurately and critically and identify various images and",
+        "cs_id": "B9.1.1.4",
+        "cs_text": "Learner responds B9.1.1.4.1. Demonstrate ability to answer questions on a text read in class, and to express an independent Communication and",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.1.2.1.2",
+        "text": "Show ability to deduce meaning of some unfamiliar words from a context with prior",
+        "cs_id": "B9.1.2.1",
+        "cs_text": "Learner B9.1.2.1.1. Show listening skills and strategies while listening to discussion after reading a text. Communication and",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.1.2.1.3",
+        "text": "Demonstrate the ability to interpret other arguments independently and respond appropriately",
+        "cs_id": "B9.1.2.1",
+        "cs_text": "Learner B9.1.2.1.1. Show listening skills and strategies while listening to discussion after reading a text. Communication and",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.1.2.1.4",
+        "text": "Show ability to deduce meanings of some unfamiliar words and phrases from the context",
+        "cs_id": "B9.1.2.1",
+        "cs_text": "Learner B9.1.2.1.1. Show listening skills and strategies while listening to discussion after reading a text. Communication and",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.1.2.2.2",
+        "text": "Demonstrate the ability to discriminate between the main and subsidiary ideas in discourse,",
+        "cs_id": "B9.1.2.2",
+        "cs_text": "Learner B9.1.2.2.1 Show ability to listen accurately and critically, as well as identify implied meanings in a Communication and",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.2.1.1.2",
+        "text": "Show communicative competence by using appropriate expressions for names of languages",
+        "cs_id": "B9.2.1.1",
+        "cs_text": "Learner B9.2.1.1.1. Show ability to distinguish between formal and informal registers of familiar vocabulary. Communication and",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.2.1.1.3",
+        "text": "Demonstrate skills in using some culturally specific gestures in a limited range of special",
+        "cs_id": "B9.2.1.1",
+        "cs_text": "Learner B9.2.1.1.1. Show ability to distinguish between formal and informal registers of familiar vocabulary. Communication and",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.2.1.1.4",
+        "text": "Show mastery of appropriate speech act and diction in communicating about a food and CI:",
+        "cs_id": "B9.2.1.1",
+        "cs_text": "Learner B9.2.1.1.1. Show ability to distinguish between formal and informal registers of familiar vocabulary. Communication and",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.2.1.2.2",
+        "text": "Show the ability to select and manipulate certain structures, like appropriate tense and emotive",
+        "cs_id": "B9.2.1.2",
+        "cs_text": "Learner B9.2.1.2.1. Demonstrate the ability to employ various conversational strategies (such as interrogative Communication and",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.2.1.2.3",
+        "text": "Demonstrate awareness of verbal and non-verbal communications to communicate effectively",
+        "cs_id": "B9.2.1.2",
+        "cs_text": "Learner B9.2.1.2.1. Demonstrate the ability to employ various conversational strategies (such as interrogative Communication and",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.2.2.1.2",
+        "text": "Demonstrate the ability to play the main character in a simple play",
+        "cs_id": "B8.2.2.1",
+        "cs_text": "Learner participates B9.2.2.1.1. Demonstrate oral communicative skills through supporting role play in a drama. Communication and",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.2.3.1.2",
+        "text": "Demonstrate knowledge of verb conjugation in simple connected dialogues which include the",
+        "cs_id": "B9.2.3.1",
+        "cs_text": "Learner speaks B9.2.3.1.1. Demonstrate knowledge of verb conjugation in simple connected dialogues which include the Communication and",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.3.1.1.1",
+        "text": "Show fluency and correct pronunciation of semi vowelised joint Arabic letters, phrases and",
+        "cs_id": "B9.3.1.1",
+        "cs_text": "Learner shows Communication and",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.3.1.1.2",
+        "text": "Show reading skills in articulating various letters and their representative sounds",
+        "cs_id": "B9.3.1.1",
+        "cs_text": "Learner shows Communication and",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.3.1.1.3",
+        "text": "Show reading skills in articulating rare combinations of letters and their representative",
+        "cs_id": "B9.3.1.1",
+        "cs_text": "Learner shows Communication and",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.3.2.1.2",
+        "text": "Recognise and respond to key ideas from a passage about a given topic",
+        "cs_id": "B9.3.2.1",
+        "cs_text": "Learner reads skills B9.3.2.1 1. Identify the subject matter of a text through illustrations, and other clues. Communication and",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.3.2.1.3",
+        "text": "Demonstrate active contributions to group readings to develop comprehension skills",
+        "cs_id": "B9.3.2.1",
+        "cs_text": "Learner reads skills B9.3.2.1 1. Identify the subject matter of a text through illustrations, and other clues. Communication and",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.3.4.1.2",
+        "text": "Show the ability to identify cultural elements and their depictions in a simple text",
+        "cs_id": "B9.3.4.1",
+        "cs_text": "Learner B9.3.4.1.1 Demonstrate the ability to make inferences of text features such as word order, conjugation of Communication and",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.3.4.1.3",
+        "text": "Demonstrate competence in vocabulary building to enhance understanding of unfamiliar texts",
+        "cs_id": "B9.3.4.1",
+        "cs_text": "Learner B9.3.4.1.1 Demonstrate the ability to make inferences of text features such as word order, conjugation of Communication and",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.3.4.2.3",
+        "text": "Show awareness and appreciation of the author‟s manipulation of words to give literal or",
+        "cs_id": "B9.3.4.1",
+        "cs_text": "Learner B9.3.4.1.1 Demonstrate the ability to make inferences of text features such as word order, conjugation of Communication and",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.4.1.1.2",
+        "text": "Demonstrate awareness of the rules for writing word-medial hamza (ء) in the Arabic text",
+        "cs_id": "B9.4.1.1",
+        "cs_text": "Learner B9.4.1.1.1. Demonstrate awareness of the rules for writing word-initial hamza (ء) in the Arabic text. Communication and",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.4.1.1.3",
+        "text": "Demonstrate awareness of the rules for writing word-final hamza (ء) in the Arabic text",
+        "cs_id": "B9.4.1.1",
+        "cs_text": "Learner B9.4.1.1.1. Demonstrate awareness of the rules for writing word-initial hamza (ء) in the Arabic text. Communication and",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.4.2.1.2",
+        "text": "Demonstrate the ability to recognise formal and informal texts in correspondence",
+        "cs_id": "B9.4.2.1",
+        "cs_text": "Learner B9.4.2.1.1. Show writing skill in simple compositions, including a dialogue, formal and informal Communication and",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.4.2.1.3",
+        "text": "Demonstrate the ability to recognise formal texts and informal correspondence",
+        "cs_id": "B9.4.2.1",
+        "cs_text": "Learner B9.4.2.1.1. Show writing skill in simple compositions, including a dialogue, formal and informal Communication and",
+        "level": "B9"
+      },
+      {
+        "indicator_id": "B9.4.2.1.4",
+        "text": "Show preliminary writing skills in a targeted text format, including prose, poetry and",
+        "cs_id": "B9.4.2.1",
+        "cs_text": "Learner B9.4.2.1.1. Show writing skill in simple compositions, including a dialogue, formal and informal Communication and",
+        "level": "B9"
+      }
+    ]
+  }
+]

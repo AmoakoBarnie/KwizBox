@@ -1,0 +1,40 @@
+# KwizBox .htaccess for InfinityFree
+# - API routes (/auth/*, /quiz/*, /admin/*, /curriculum/*, /media/*) go to php-backend/index.php
+# - Frontend static files (frontend/dist/*) are served directly
+# - All other paths fall back to the React frontend (SPA routing)
+
+RewriteEngine On
+
+# ── Security headers ──
+Header set X-Content-Type-Options "nosniff"
+Header set X-Frame-Options "DENY"
+Header set X-XSS-Protection "1; mode=block"
+Header set Referrer-Policy "no-referrer"
+
+# ── CORS headers (also set in PHP, belt-and-suspenders) ──
+Header set Access-Control-Allow-Origin "https://kwizbox.infinityfree.io"
+Header set Access-Control-Allow-Methods "GET, POST, PUT, PATCH, DELETE, OPTIONS"
+Header set Access-Control-Allow-Headers "Content-Type, Authorization"
+Header set Access-Control-Allow-Credentials "true"
+
+# ── OPTIONS requests → 204 immediately ──
+RewriteCond %{REQUEST_METHOD} OPTIONS
+RewriteRule ^ - [R=204,L]
+
+# ── API: route to PHP backend router ──
+RewriteRule ^(auth|quiz|admin|curriculum|media)/(.*)$ php-backend/index.php [QSA,L]
+
+# ── Frontend assets (served from frontend/dist/) ──
+# If the request matches a real file in frontend/dist/, serve it directly
+RewriteCond %{DOCUMENT_ROOT}/frontend/dist%{REQUEST_URI} -f
+RewriteRule ^ frontend/dist%{REQUEST_URI} [L]
+
+# ── Fallback: everything else → React index.html (SPA routing) ──
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ frontend/dist/index.html [L]
+
+# ── PHP settings ──
+php_value display_errors 0
+php_value upload_max_filesize 10M
+php_value post_max_size 10M

@@ -1,0 +1,1330 @@
+{
+  "summary": {
+    "audited_at": "2026-08-18 08:16 UTC",
+    "user_local": "Atlantic/Reykjavik (UTC+0)",
+    "source": "C:\\Users\\Amoako\\ghana-stem-trivia\\backend\\trivia.db (copied read-only)",
+    "compared_with": "scripts\\questions.json (470 seed items; live DB has extra scribe batch ids 473–545)",
+    "total_questions": 543,
+    "error_count_wrong_keys": 5,
+    "level_flag_count": 15,
+    "quality_flag_count": 28,
+    "duplicate_group_count": 44,
+    "recommended_deactivate_count": 42,
+    "naccac_official_docs_checked": false,
+    "naccac_caveat": "Level flags use common Ghana B4–B9 / CCP knowledge (SHS topics such as calculus, matrices, trig ratios, logs, complex numbers, quantum, relativity). Official NaCCA PDF indicators were NOT opened or cited. Do not treat this as NaCCA-perfect.",
+    "review_coverage": {
+      "structural_scan": "all 543",
+      "hard_items": 91,
+      "true_false": 22,
+      "image_mcq": 10,
+      "image_files_verified": true,
+      "b4_scan": 91,
+      "math_recomputed": "all parseable arithmetic/algebra plus full math dump review; 4 confirmed wrong keys",
+      "science_spotcheck": "all Hard science + keyword hits + compact list of remaining science stems",
+      "computing_safety": "password/http/stranger/e-waste/plagiarism items — advice is sound"
+    },
+    "ten_worst": [
+      {
+        "rank": 1,
+        "id": 449,
+        "why": "WRONG KEY: 100−37 keyed 73; expl=63"
+      },
+      {
+        "rank": 2,
+        "id": 234,
+        "why": "WRONG KEY: 2.5+1.5 keyed 4.5; expl=4"
+      },
+      {
+        "rank": 3,
+        "id": 242,
+        "why": "WRONG KEY: 80−15 keyed GHS 75; expl=65"
+      },
+      {
+        "rank": 4,
+        "id": 305,
+        "why": "WRONG KEY: 5x−3=22 keyed 6 (x=5) + garbled expl"
+      },
+      {
+        "rank": 5,
+        "id": 413,
+        "why": "FALSE SCIENCE: ramp keyed as wedge; no inclined-plane option"
+      },
+      {
+        "rank": 6,
+        "id": 200,
+        "why": "Explanation leaks full Q1–Q200 answer key"
+      },
+      {
+        "rank": 7,
+        "id": 440,
+        "why": "Calculus/derivative on a B9 live item"
+      },
+      {
+        "rank": 8,
+        "id": 470,
+        "why": "Planck/quantum + two-plausible options"
+      },
+      {
+        "rank": 9,
+        "id": 468,
+        "why": "Complex numbers i² on B9"
+      },
+      {
+        "rank": 10,
+        "id": 281,
+        "why": "Two correct MCQ options (1/2 and 6/12 or 1/2)"
+      }
+    ],
+    "true_false_empty_cd": "22 true_false rows have empty option_c/option_d; this matches backend convention (exactly 2 options). Not flagged as defects.",
+    "inactive": 0,
+    "ghana_context": "Harmattan, kenkey, galamsey, Akosombo, mobile money, cassava, grasscutter, GHS, cutlass, cocoa are appropriate. No Ghana-wrong cultural flags."
+  },
+  "counts": {
+    "total": 543,
+    "active": 543,
+    "inactive": 0,
+    "by_class": {
+      "B6": 93,
+      "B5": 92,
+      "B4": 91,
+      "B7": 89,
+      "B8": 89,
+      "B9": 89
+    },
+    "by_subject": {
+      "Mathematics": 219,
+      "Science": 210,
+      "Computing": 114
+    },
+    "by_difficulty": {
+      "Medium": 281,
+      "Easy": 171,
+      "Hard": 91
+    },
+    "by_question_type": {
+      "mcq": 511,
+      "true_false": 22,
+      "image_mcq": 10
+    },
+    "empty_explanations": 0,
+    "empty_explanation_ids": [],
+    "inactive_ids": [],
+    "missing_options": 22,
+    "missing_option_ids": [
+      503,
+      504,
+      505,
+      506,
+      507,
+      508,
+      509,
+      510,
+      511,
+      512,
+      513,
+      514,
+      516,
+      519,
+      523,
+      524,
+      526,
+      529,
+      533,
+      537,
+      539,
+      543
+    ],
+    "missing_options_note": "All 22 'missing options' are true_false items with empty C/D. App convention is 2 options for true_false; not a bank defect.",
+    "answer_index_out_of_range": 0,
+    "answer_index_out_of_range_ids": [],
+    "questions_json_seed_count": 470,
+    "live_db_count": 543,
+    "id_gaps": [
+      345,
+      361
+    ],
+    "image_mcq": 10,
+    "image_files_on_disk": 10,
+    "naccac_docs_checked": false
+  },
+  "errors": [
+    {
+      "id": 449,
+      "stem_snippet": "100 - 37 = ?",
+      "class_level": "B5",
+      "subject": "Mathematics",
+      "topic": "Subtraction",
+      "difficulty": "Easy",
+      "question_type": "mcq",
+      "answer_index": 2,
+      "keyed_option": "73",
+      "issue_type": "wrong_answer_key",
+      "severity": "error",
+      "recommended_action": "fix key",
+      "reason": "100 − 37 = 63, but answer_index=2 keys option C '73'. Explanation correctly says 63. Set answer_index=1 (B).",
+      "correct_answer_index": 1,
+      "correct_option": "63"
+    },
+    {
+      "id": 234,
+      "stem_snippet": "What is 2.5 + 1.5?",
+      "class_level": "B5",
+      "subject": "Mathematics",
+      "topic": "Decimals",
+      "difficulty": "Easy",
+      "question_type": "mcq",
+      "answer_index": 2,
+      "keyed_option": "4.5",
+      "issue_type": "wrong_answer_key",
+      "severity": "error",
+      "recommended_action": "fix key",
+      "reason": "2.5 + 1.5 = 4.0, but answer_index=2 keys '4.5'. Explanation says 4.0. Set answer_index=1 (B).",
+      "correct_answer_index": 1,
+      "correct_option": "4"
+    },
+    {
+      "id": 242,
+      "stem_snippet": "A dress costs GHS 80. It is discounted by GHS 15. What is the new price?",
+      "class_level": "B5",
+      "subject": "Mathematics",
+      "topic": "Money",
+      "difficulty": "Medium",
+      "question_type": "mcq",
+      "answer_index": 2,
+      "keyed_option": "GHS 75",
+      "issue_type": "wrong_answer_key",
+      "severity": "error",
+      "recommended_action": "fix key",
+      "reason": "GHS 80 − GHS 15 = GHS 65, but answer_index=2 keys 'GHS 75'. Explanation says 65. Set answer_index=1 (B).",
+      "correct_answer_index": 1,
+      "correct_option": "GHS 65"
+    },
+    {
+      "id": 305,
+      "stem_snippet": "Solve: 5x - 3 = 22",
+      "class_level": "B7",
+      "subject": "Mathematics",
+      "topic": "Algebra",
+      "difficulty": "Medium",
+      "question_type": "mcq",
+      "answer_index": 2,
+      "keyed_option": "6",
+      "issue_type": "wrong_answer_key",
+      "severity": "error",
+      "recommended_action": "fix key",
+      "reason": "5x − 3 = 22 → 5x = 25 → x = 5, but answer_index=2 keys '6'. Explanation also states x=5 then rambles. Set answer_index=1 (B) and rewrite explanation.",
+      "correct_answer_index": 1,
+      "correct_option": "5"
+    },
+    {
+      "id": 413,
+      "stem_snippet": "Which simple machine is a ramp?",
+      "class_level": "B6",
+      "subject": "Science",
+      "topic": "Energy",
+      "difficulty": "Hard",
+      "question_type": "mcq",
+      "answer_index": 2,
+      "keyed_option": "Wedge",
+      "issue_type": "wrong_answer_key",
+      "severity": "error",
+      "recommended_action": "rewrite",
+      "reason": "A ramp is an inclined plane, not a wedge. Keyed C 'Wedge' is false; options omit 'Inclined plane', so there is no correct choice. Rewrite options and key; deactivate until fixed."
+    }
+  ],
+  "level_flags": [
+    {
+      "id": 440,
+      "stem_snippet": "What does derivative represent?",
+      "class_level": "B9",
+      "subject": "Mathematics",
+      "topic": "Calculus",
+      "difficulty": "Hard",
+      "question_type": "mcq",
+      "answer_index": 1,
+      "keyed_option": "Rate of change",
+      "issue_type": "out_of_level",
+      "severity": "level",
+      "recommended_action": "deactivate",
+      "reason": "Calculus / derivative is SHS–tertiary, not B4–B9 CCP mathematics."
+    },
+    {
+      "id": 464,
+      "stem_snippet": "A 2×3 matrix has how many elements?",
+      "class_level": "B8",
+      "subject": "Mathematics",
+      "topic": "Matrices",
+      "difficulty": "Hard",
+      "question_type": "mcq",
+      "answer_index": 3,
+      "keyed_option": "6",
+      "issue_type": "out_of_level",
+      "severity": "level",
+      "recommended_action": "deactivate",
+      "reason": "Matrices are not a B4–B9 CCP topic (SHS elective / further math)."
+    },
+    {
+      "id": 468,
+      "stem_snippet": "What is i² (where i is imaginary)?",
+      "class_level": "B9",
+      "subject": "Mathematics",
+      "topic": "Complex Numbers",
+      "difficulty": "Hard",
+      "question_type": "mcq",
+      "answer_index": 1,
+      "keyed_option": "-1",
+      "issue_type": "out_of_level",
+      "severity": "level",
+      "recommended_action": "deactivate",
+      "reason": "Imaginary unit i² is complex numbers, SHS/tertiary, not JHS."
+    },
+    {
+      "id": 463,
+      "stem_snippet": "log₂(8) = ?",
+      "class_level": "B8",
+      "subject": "Mathematics",
+      "topic": "Logarithms",
+      "difficulty": "Hard",
+      "question_type": "mcq",
+      "answer_index": 1,
+      "keyed_option": "3",
+      "issue_type": "out_of_level",
+      "severity": "level",
+      "recommended_action": "deactivate",
+      "reason": "Logarithms (log₂ 8) go beyond JHS indices; typically SHS."
+    },
+    {
+      "id": 422,
+      "stem_snippet": "What does sine represent in a right triangle?",
+      "class_level": "B9",
+      "subject": "Mathematics",
+      "topic": "Trigonometry",
+      "difficulty": "Hard",
+      "question_type": "mcq",
+      "answer_index": 0,
+      "keyed_option": "Opposite/Hypotenuse",
+      "issue_type": "out_of_level",
+      "severity": "level",
+      "recommended_action": "deactivate",
+      "reason": "Sine as opposite/hypotenuse is SHS trigonometry; JHS has Pythagoras, not trig ratios."
+    },
+    {
+      "id": 470,
+      "stem_snippet": "What is Planck's constant used for?",
+      "class_level": "B9",
+      "subject": "Science",
+      "topic": "Quantum",
+      "difficulty": "Hard",
+      "question_type": "mcq",
+      "answer_index": 1,
+      "keyed_option": "Quantum mechanics",
+      "issue_type": "out_of_level",
+      "severity": "level",
+      "recommended_action": "deactivate",
+      "reason": "Planck's constant / quantum mechanics is far beyond B9 science. Options A and B are also both arguable (ambiguous)."
+    },
+    {
+      "id": 471,
+      "stem_snippet": "Einstein's E=mc² relates what?",
+      "class_level": "B9",
+      "subject": "Science",
+      "topic": "Relativity",
+      "difficulty": "Hard",
+      "question_type": "mcq",
+      "answer_index": 1,
+      "keyed_option": "Energy and mass",
+      "issue_type": "out_of_level",
+      "severity": "level",
+      "recommended_action": "deactivate",
+      "reason": "Einstein E=mc² / relativity is SHS–tertiary physics, not CCP B9."
+    },
+    {
+      "id": 472,
+      "stem_snippet": "What does ML stand for?",
+      "class_level": "B9",
+      "subject": "Computing",
+      "topic": "Machine Learning",
+      "difficulty": "Hard",
+      "question_type": "mcq",
+      "answer_index": 1,
+      "keyed_option": "Machine Learning",
+      "issue_type": "out_of_level",
+      "severity": "level",
+      "recommended_action": "deactivate",
+      "reason": "Machine Learning acronym item is awareness trivia, not B4–B9 Computing CCP core."
+    },
+    {
+      "id": 469,
+      "stem_snippet": "What is standard deviation?",
+      "class_level": "B9",
+      "subject": "Mathematics",
+      "topic": "Statistics",
+      "difficulty": "Hard",
+      "question_type": "mcq",
+      "answer_index": 1,
+      "keyed_option": "Measure of spread",
+      "issue_type": "out_of_level",
+      "severity": "level",
+      "recommended_action": "deactivate",
+      "reason": "Standard deviation is SHS statistics, not typical B9 CCP."
+    },
+    {
+      "id": 431,
+      "stem_snippet": "Quartiles divide data into how many parts?",
+      "class_level": "B6",
+      "subject": "Mathematics",
+      "topic": "Statistics",
+      "difficulty": "Hard",
+      "question_type": "mcq",
+      "answer_index": 2,
+      "keyed_option": "4",
+      "issue_type": "out_of_level",
+      "severity": "level",
+      "recommended_action": "deactivate",
+      "reason": "Quartiles at B6 is years early; even B9 CCP data work is mean/median/mode/range, not quartiles."
+    },
+    {
+      "id": 292,
+      "stem_snippet": "What colour of light has the longest wavelength?",
+      "class_level": "B6",
+      "subject": "Science",
+      "topic": "Light",
+      "difficulty": "Medium",
+      "question_type": "mcq",
+      "answer_index": 1,
+      "keyed_option": "Red",
+      "issue_type": "out_of_level",
+      "severity": "level",
+      "recommended_action": "relevel",
+      "reason": "Visible-light wavelength at B6 is SHS physics. If kept, move to B9 and still mark needs_review vs official docs.",
+      "from": "B6",
+      "to": "B9"
+    },
+    {
+      "id": 417,
+      "stem_snippet": "Which colour has the shortest wavelength?",
+      "class_level": "B7",
+      "subject": "Science",
+      "topic": "Light",
+      "difficulty": "Hard",
+      "question_type": "mcq",
+      "answer_index": 3,
+      "keyed_option": "Violet",
+      "issue_type": "out_of_level",
+      "severity": "level",
+      "recommended_action": "relevel",
+      "reason": "Shortest visible wavelength (violet) is SHS light/waves. Too advanced for B7; B9 still a stretch.",
+      "from": "B7",
+      "to": "B9"
+    },
+    {
+      "id": 433,
+      "stem_snippet": "What does HTML stand for?",
+      "class_level": "B6",
+      "subject": "Computing",
+      "topic": "Software",
+      "difficulty": "Hard",
+      "question_type": "mcq",
+      "answer_index": 0,
+      "keyed_option": "Hyper Text Markup Language",
+      "issue_type": "out_of_level",
+      "severity": "level",
+      "recommended_action": "relevel",
+      "reason": "HTML expansion at B6 is early; Ghana primary computing is devices/files/safety. Better as B8/B9 Computing.",
+      "from": "B6",
+      "to": "B8"
+    },
+    {
+      "id": 419,
+      "stem_snippet": "What is the area of a circle with radius 5?",
+      "class_level": "B8",
+      "subject": "Mathematics",
+      "topic": "Geometry",
+      "difficulty": "Hard",
+      "question_type": "mcq",
+      "answer_index": 0,
+      "keyed_option": "25π",
+      "issue_type": "out_of_level",
+      "severity": "level",
+      "recommended_action": "relevel",
+      "reason": "Symbolic area 25π is fine for upper JHS; B8 Hard is aggressive. Safer as B9.",
+      "from": "B8",
+      "to": "B9"
+    },
+    {
+      "id": 429,
+      "stem_snippet": "How many bones does an adult human have?",
+      "class_level": "B5",
+      "subject": "Science",
+      "topic": "Human Body",
+      "difficulty": "Hard",
+      "question_type": "mcq",
+      "answer_index": 2,
+      "keyed_option": "206",
+      "issue_type": "out_of_level",
+      "severity": "level",
+      "recommended_action": "relevel",
+      "reason": "Adult bone count 206 is rote trivia, not B5 science. If kept, B7+.",
+      "from": "B5",
+      "to": "B7"
+    }
+  ],
+  "quality_flags": [
+    {
+      "id": 200,
+      "stem_snippet": "How does the World Wide Web (WWW) relate to the internet?",
+      "class_level": "B9",
+      "subject": "Computing",
+      "topic": "Web Technologies",
+      "difficulty": "Hard",
+      "question_type": "mcq",
+      "answer_index": 1,
+      "keyed_option": "The WWW is a collection of websites and pages accessible via the internet",
+      "issue_type": "empty_or_wrong_explanation",
+      "severity": "quality",
+      "recommended_action": "rewrite",
+      "reason": "Explanation appends a full 'Answer Key (Quick Reference)' dumping Q1–Q200 keys plus pipeline notes — leaks the seed bank if shown after answering."
+    },
+    {
+      "id": 305,
+      "stem_snippet": "Solve: 5x - 3 = 22",
+      "class_level": "B7",
+      "subject": "Mathematics",
+      "topic": "Algebra",
+      "difficulty": "Medium",
+      "question_type": "mcq",
+      "answer_index": 2,
+      "keyed_option": "6",
+      "issue_type": "empty_or_wrong_explanation",
+      "severity": "quality",
+      "recommended_action": "rewrite",
+      "reason": "Explanation is an LLM scratchpad ('wait, let me recalculate… Hmm') even though it eventually states x=5. Rewrite after fixing the key."
+    },
+    {
+      "id": 281,
+      "stem_snippet": "What is 3/4 × 2/3?",
+      "class_level": "B6",
+      "subject": "Mathematics",
+      "topic": "Fractions",
+      "difficulty": "Hard",
+      "question_type": "mcq",
+      "answer_index": 2,
+      "keyed_option": "6/12 (or 1/2)",
+      "issue_type": "ambiguous_two_correct",
+      "severity": "quality",
+      "recommended_action": "rewrite",
+      "reason": "3/4 × 2/3 = 1/2. Both A '1/2' and C '6/12 (or 1/2)' are correct. Remove the unsimplified duplicate."
+    },
+    {
+      "id": 34,
+      "stem_snippet": "What is 1/4 + 1/4?",
+      "class_level": "B5",
+      "subject": "Mathematics",
+      "topic": "Number/Fractions",
+      "difficulty": "Easy",
+      "question_type": "mcq",
+      "answer_index": 1,
+      "keyed_option": "1/2",
+      "issue_type": "ambiguous_two_correct",
+      "severity": "quality",
+      "recommended_action": "rewrite",
+      "reason": "1/4 + 1/4 = 1/2 = 2/8. A pedagogic key of simplified 1/2 is fine, but 2/8 is also correct. Change C to a non-equivalent distractor."
+    },
+    {
+      "id": 170,
+      "stem_snippet": "Factorize: 4x + 8.",
+      "class_level": "B9",
+      "subject": "Mathematics",
+      "topic": "Algebra",
+      "difficulty": "Medium",
+      "question_type": "mcq",
+      "answer_index": 1,
+      "keyed_option": "4(x + 2)",
+      "issue_type": "ambiguous_two_correct",
+      "severity": "quality",
+      "recommended_action": "rewrite",
+      "reason": "Factorize 4x+8: B 4(x+2) is HCF (intended). A 2(2x+4) is also algebraically correct. Replace A with a wrong expansion."
+    },
+    {
+      "id": 370,
+      "stem_snippet": "Factorize: 4x + 8",
+      "class_level": "B9",
+      "subject": "Mathematics",
+      "topic": "Factorization",
+      "difficulty": "Medium",
+      "question_type": "mcq",
+      "answer_index": 1,
+      "keyed_option": "4(x + 2)",
+      "issue_type": "ambiguous_two_correct",
+      "severity": "quality",
+      "recommended_action": "rewrite",
+      "reason": "Clone of 170: 2(2x+4) and 4(x+2) are both valid factorizations."
+    },
+    {
+      "id": 447,
+      "stem_snippet": "A mouse is an input device. True or False?",
+      "class_level": "B4",
+      "subject": "Computing",
+      "topic": "Input",
+      "difficulty": "Easy",
+      "question_type": "mcq",
+      "answer_index": 1,
+      "keyed_option": "True",
+      "issue_type": "true_false_not_strict",
+      "severity": "quality",
+      "recommended_action": "rewrite",
+      "reason": "Stem is True/False but type=mcq with options False/True/Sometimes/Never. Convert to true_false with two options."
+    },
+    {
+      "id": 451,
+      "stem_snippet": "Penguins are birds. True or False?",
+      "class_level": "B5",
+      "subject": "Science",
+      "topic": "Animals",
+      "difficulty": "Easy",
+      "question_type": "mcq",
+      "answer_index": 1,
+      "keyed_option": "True",
+      "issue_type": "true_false_not_strict",
+      "severity": "quality",
+      "recommended_action": "rewrite",
+      "reason": "Stem is True/False but type=mcq with False/True/Sometimes/Rarely. Convert to true_false."
+    },
+    {
+      "id": 437,
+      "stem_snippet": "What is the name of a 3D circle?",
+      "class_level": "B8",
+      "subject": "Mathematics",
+      "topic": "Geometry",
+      "difficulty": "Hard",
+      "question_type": "mcq",
+      "answer_index": 1,
+      "keyed_option": "Sphere",
+      "issue_type": "ambiguous_two_correct",
+      "severity": "quality",
+      "recommended_action": "rewrite",
+      "reason": "Wording '3D circle' is non-standard (sphere is the 3D analogue of a circle). Rewrite stem."
+    },
+    {
+      "id": 470,
+      "stem_snippet": "What is Planck's constant used for?",
+      "class_level": "B9",
+      "subject": "Science",
+      "topic": "Quantum",
+      "difficulty": "Hard",
+      "question_type": "mcq",
+      "answer_index": 1,
+      "keyed_option": "Quantum mechanics",
+      "issue_type": "ambiguous_two_correct",
+      "severity": "quality",
+      "recommended_action": "deactivate",
+      "reason": "Planck's constant is used in energy calculations (E=hf) and in quantum mechanics; A and B both defendable. Also out of level."
+    },
+    {
+      "id": 139,
+      "stem_snippet": "Rotating a shape by 180° about a point does what to the shape?",
+      "class_level": "B8",
+      "subject": "Mathematics",
+      "topic": "Geometry",
+      "difficulty": "Medium",
+      "question_type": "mcq",
+      "answer_index": 1,
+      "keyed_option": "It flips to face the opposite direction",
+      "issue_type": "ambiguous_two_correct",
+      "severity": "quality",
+      "recommended_action": "rewrite",
+      "reason": "180° rotation is not the same as a flip; 'faces the opposite direction' is sloppy vs reflection. Rewrite."
+    },
+    {
+      "id": 339,
+      "stem_snippet": "Rotating a shape 180° makes it?",
+      "class_level": "B8",
+      "subject": "Mathematics",
+      "topic": "Transformations",
+      "difficulty": "Medium",
+      "question_type": "mcq",
+      "answer_index": 1,
+      "keyed_option": "Face the opposite direction",
+      "issue_type": "ambiguous_two_correct",
+      "severity": "quality",
+      "recommended_action": "rewrite",
+      "reason": "Clone of 139: same sloppy rotation wording."
+    },
+    {
+      "id": 411,
+      "stem_snippet": "How many lines of symmetry does a circle have?",
+      "class_level": "B6",
+      "subject": "Mathematics",
+      "topic": "Geometry",
+      "difficulty": "Hard",
+      "question_type": "mcq",
+      "answer_index": 2,
+      "keyed_option": "Many",
+      "issue_type": "empty_or_wrong_explanation",
+      "severity": "quality",
+      "recommended_action": "keep",
+      "reason": "Explanation says infinite lines of symmetry; keyed option is 'Many' (acceptable for B6). Optional: add 'Infinite' as the key."
+    },
+    {
+      "id": 415,
+      "stem_snippet": "What does CPU stand for?",
+      "class_level": "B6",
+      "subject": "Computing",
+      "topic": "Network",
+      "difficulty": "Hard",
+      "question_type": "mcq",
+      "answer_index": 1,
+      "keyed_option": "Central Processing Unit",
+      "issue_type": "question_type_option_mismatch",
+      "severity": "quality",
+      "recommended_action": "keep",
+      "reason": "CPU stand-for item is tagged strand/topic Network. Metadata only — recode to Hardware."
+    },
+    {
+      "id": 254,
+      "stem_snippet": "Which system helps us move?",
+      "class_level": "B5",
+      "subject": "Science",
+      "topic": "Body Systems",
+      "difficulty": "Medium",
+      "question_type": "mcq",
+      "answer_index": 1,
+      "keyed_option": "Skeletal",
+      "issue_type": "ambiguous_two_correct",
+      "severity": "quality",
+      "recommended_action": "keep",
+      "reason": "Keyed skeletal system; explanation also credits muscular. Acceptable among given options."
+    },
+    {
+      "id": 349,
+      "stem_snippet": "Vaccines mainly help prevent?",
+      "class_level": "B8",
+      "subject": "Science",
+      "topic": "Health",
+      "difficulty": "Easy",
+      "question_type": "mcq",
+      "answer_index": 1,
+      "keyed_option": "Diseases",
+      "issue_type": "empty_or_wrong_explanation",
+      "severity": "quality",
+      "recommended_action": "rewrite",
+      "reason": "Stem is generic 'Vaccines prevent?'; explanation talks about livestock. Align stem or explanation."
+    },
+    {
+      "id": 442,
+      "stem_snippet": "What is bandwidth?",
+      "class_level": "B9",
+      "subject": "Computing",
+      "topic": "Networks",
+      "difficulty": "Hard",
+      "question_type": "mcq",
+      "answer_index": 1,
+      "keyed_option": "Speed of data transfer",
+      "issue_type": "computing_anachronism_or_unsafe",
+      "severity": "quality",
+      "recommended_action": "keep",
+      "reason": "Bandwidth keyed as 'speed of data transfer' — school shorthand; technically capacity. Keep unless you want a stricter stem."
+    },
+    {
+      "id": 439,
+      "stem_snippet": "What is encryption?",
+      "class_level": "B8",
+      "subject": "Computing",
+      "topic": "Security",
+      "difficulty": "Hard",
+      "question_type": "mcq",
+      "answer_index": 1,
+      "keyed_option": "Converting to secret code",
+      "issue_type": "ambiguous_two_correct",
+      "severity": "quality",
+      "recommended_action": "keep",
+      "reason": "Encryption: A 'Hiding information' is a weak near-synonym of B. B is the better school key; optional tighten A."
+    },
+    {
+      "id": 216,
+      "stem_snippet": "What state is sugar in?",
+      "class_level": "B4",
+      "subject": "Science",
+      "topic": "Matter",
+      "difficulty": "Easy",
+      "question_type": "mcq",
+      "answer_index": 2,
+      "keyed_option": "Solid",
+      "issue_type": "out_of_level",
+      "severity": "quality",
+      "recommended_action": "keep",
+      "reason": "B4 'state of sugar' includes Plasma as a distractor — advanced word, not a wrong key."
+    },
+    {
+      "id": 141,
+      "stem_snippet": "The probability that the sun will rise tomorrow is best described as what?",
+      "class_level": "B8",
+      "subject": "Mathematics",
+      "topic": "Data/Probability",
+      "difficulty": "Easy",
+      "question_type": "mcq",
+      "answer_index": 2,
+      "keyed_option": "Certain",
+      "issue_type": "ambiguous_two_correct",
+      "severity": "quality",
+      "recommended_action": "keep",
+      "reason": "Sun-will-rise as 'Certain' is standard school probability; philosophically not certain. Keep for CCP."
+    },
+    {
+      "id": 341,
+      "stem_snippet": "Probability the sun rises tomorrow?",
+      "class_level": "B8",
+      "subject": "Mathematics",
+      "topic": "Probability",
+      "difficulty": "Easy",
+      "question_type": "mcq",
+      "answer_index": 2,
+      "keyed_option": "Certain",
+      "issue_type": "ambiguous_two_correct",
+      "severity": "quality",
+      "recommended_action": "keep",
+      "reason": "Clone of 141. Keep."
+    },
+    {
+      "id": 258,
+      "stem_snippet": "Which food group helps build strong bones?",
+      "class_level": "B5",
+      "subject": "Science",
+      "topic": "Health",
+      "difficulty": "Medium",
+      "question_type": "mcq",
+      "answer_index": 2,
+      "keyed_option": "Proteins and calcium",
+      "issue_type": "ambiguous_two_correct",
+      "severity": "quality",
+      "recommended_action": "rewrite",
+      "reason": "'Proteins and calcium' is two food groups mashed as one option. Rewrite as calcium-rich foods / dairy."
+    },
+    {
+      "id": 450,
+      "stem_snippet": "Plants make food using?",
+      "class_level": "B5",
+      "subject": "Science",
+      "topic": "Photosynthesis",
+      "difficulty": "Medium",
+      "question_type": "mcq",
+      "answer_index": 2,
+      "keyed_option": "Light, water, and air",
+      "issue_type": "ambiguous_two_correct",
+      "severity": "quality",
+      "recommended_action": "keep",
+      "reason": "Plants make food using 'Light, water, and air' — air stands in for CO₂. Acceptable at B5."
+    },
+    {
+      "id": 465,
+      "stem_snippet": "What measures pressure?",
+      "class_level": "B8",
+      "subject": "Science",
+      "topic": "Pressure",
+      "difficulty": "Medium",
+      "question_type": "mcq",
+      "answer_index": 1,
+      "keyed_option": "Barometer",
+      "issue_type": "ambiguous_two_correct",
+      "severity": "quality",
+      "recommended_action": "keep",
+      "reason": "Barometer measures atmospheric pressure, not pressure in general. Fine among given instruments."
+    },
+    {
+      "id": 31,
+      "stem_snippet": "Which of these is NOT a common use of a computer?",
+      "class_level": "B4",
+      "subject": "Computing",
+      "topic": "Introduction to Computing",
+      "difficulty": "Easy",
+      "question_type": "mcq",
+      "answer_index": 1,
+      "keyed_option": "Cooking food",
+      "issue_type": "computing_anachronism_or_unsafe",
+      "severity": "quality",
+      "recommended_action": "keep",
+      "reason": "'Computer cannot cook food' is a B4 distractor; ignore smart appliances. Keep."
+    },
+    {
+      "id": 498,
+      "stem_snippet": "The safest thing to do with a broken phone battery is to:",
+      "class_level": "B9",
+      "subject": "Science",
+      "topic": "E-waste",
+      "difficulty": "Easy",
+      "question_type": "mcq",
+      "answer_index": 2,
+      "keyed_option": "Take it to an e-waste or recycling collection point",
+      "issue_type": "computing_anachronism_or_unsafe",
+      "severity": "quality",
+      "recommended_action": "keep",
+      "reason": "Broken-battery e-waste item gives correct safety advice (do not burn/bury/dump). Keep."
+    },
+    {
+      "id": 481,
+      "stem_snippet": "A stranger in a chat asks Efua for her home address and when her parents leave the hous...",
+      "class_level": "B5",
+      "subject": "Computing",
+      "topic": "Personal information",
+      "difficulty": "Medium",
+      "question_type": "mcq",
+      "answer_index": 2,
+      "keyed_option": "Refuse and tell a trusted adult",
+      "issue_type": "computing_anachronism_or_unsafe",
+      "severity": "quality",
+      "recommended_action": "keep",
+      "reason": "Stranger-chat personal-info item: refuse and tell an adult. Sound advice. Keep."
+    },
+    {
+      "id": 512,
+      "stem_snippet": "It is safer to type a password on a site that uses http (no s) than on https.",
+      "class_level": "B8",
+      "subject": "Computing",
+      "topic": "Secure websites",
+      "difficulty": "Easy",
+      "question_type": "true_false",
+      "answer_index": 1,
+      "keyed_option": "False",
+      "issue_type": "computing_anachronism_or_unsafe",
+      "severity": "quality",
+      "recommended_action": "keep",
+      "reason": "http vs https T/F is correctly False (https is safer). Keep."
+    }
+  ],
+  "duplicates": [
+    {
+      "ids": [
+        169,
+        369
+      ],
+      "kind": "exact",
+      "note": "Expand: 3(x+4) identical options/key. Deactivate 369."
+    },
+    {
+      "ids": [
+        170,
+        370
+      ],
+      "kind": "exact",
+      "note": "Factorize: 4x+8 identical. Deactivate 370. Also two-correct issue."
+    },
+    {
+      "ids": [
+        179,
+        379
+      ],
+      "kind": "exact",
+      "note": "45,000 in standard form identical. Deactivate 379."
+    },
+    {
+      "ids": [
+        180,
+        380
+      ],
+      "kind": "exact",
+      "note": "2² × 2³ identical. Deactivate 380."
+    },
+    {
+      "ids": [
+        199,
+        399
+      ],
+      "kind": "near",
+      "note": "AI definition paraphrased, same class/subject/key."
+    },
+    {
+      "ids": [
+        124,
+        324
+      ],
+      "kind": "near",
+      "note": "Kidney filters blood; options shuffled, same key Kidney."
+    },
+    {
+      "ids": [
+        111,
+        311
+      ],
+      "kind": "near",
+      "note": "Percentage increase GHS 50→60 vs 40→50; same skill, different numbers."
+    },
+    {
+      "ids": [
+        153,
+        353
+      ],
+      "kind": "near",
+      "note": "120 km in 2 h → 60 km/h identical numbers."
+    },
+    {
+      "ids": [
+        171,
+        371
+      ],
+      "kind": "near",
+      "note": "3-4-5 hypotenuse clones."
+    },
+    {
+      "ids": [
+        172,
+        372
+      ],
+      "kind": "near",
+      "note": "Circle r=7 area 154 clones."
+    },
+    {
+      "ids": [
+        173,
+        373
+      ],
+      "kind": "near",
+      "note": "Circle r=7 circumference 44 clones."
+    },
+    {
+      "ids": [
+        132,
+        299,
+        332
+      ],
+      "kind": "near",
+      "note": "Microprocessor = 4th generation, three copies."
+    },
+    {
+      "ids": [
+        138,
+        338
+      ],
+      "kind": "near",
+      "note": "(2,3) reflect over x-axis clones."
+    },
+    {
+      "ids": [
+        106,
+        307
+      ],
+      "kind": "near",
+      "note": "Obtuse angle definition clones."
+    },
+    {
+      "ids": [
+        157,
+        357
+      ],
+      "kind": "near",
+      "note": "Mutualism clones."
+    },
+    {
+      "ids": [
+        194,
+        394
+      ],
+      "kind": "near",
+      "note": "Green economy clones."
+    },
+    {
+      "ids": [
+        200,
+        400
+      ],
+      "kind": "near",
+      "note": "WWW vs internet clones (200 also has key-dump explanation)."
+    },
+    {
+      "ids": [
+        181,
+        381
+      ],
+      "kind": "near",
+      "note": "Bearing due North clones."
+    },
+    {
+      "ids": [
+        134,
+        334
+      ],
+      "kind": "near",
+      "note": "Flour:sugar 4:1 recipe clones."
+    },
+    {
+      "ids": [
+        135,
+        335
+      ],
+      "kind": "near",
+      "note": "5 books GHS 25 → 8 books clones."
+    },
+    {
+      "ids": [
+        144,
+        344
+      ],
+      "kind": "near",
+      "note": "GHS 100 at 10% SI clones."
+    },
+    {
+      "ids": [
+        147,
+        347
+      ],
+      "kind": "near",
+      "note": "Buy 200 sell 250 profit clones."
+    },
+    {
+      "ids": [
+        167,
+        367
+      ],
+      "kind": "near",
+      "note": "1/2 rational clones."
+    },
+    {
+      "ids": [
+        168,
+        368
+      ],
+      "kind": "near",
+      "note": "x/3+2=5 clones."
+    },
+    {
+      "ids": [
+        174,
+        374
+      ],
+      "kind": "near",
+      "note": "Mean 4,8,6,10,7 clones."
+    },
+    {
+      "ids": [
+        175,
+        375
+      ],
+      "kind": "near",
+      "note": "Median 3,8,5,9,1 clones."
+    },
+    {
+      "ids": [
+        176,
+        376
+      ],
+      "kind": "near",
+      "note": "Mode 2,4,4,6,4,8 clones."
+    },
+    {
+      "ids": [
+        177,
+        377
+      ],
+      "kind": "near",
+      "note": "P(red)=3/5 bag clones."
+    },
+    {
+      "ids": [
+        178,
+        378
+      ],
+      "kind": "near",
+      "note": "10% off then 5% tax clones."
+    },
+    {
+      "ids": [
+        142,
+        342
+      ],
+      "kind": "near",
+      "note": "Mode 5,7,7,9,7,3 clones."
+    },
+    {
+      "ids": [
+        143,
+        343
+      ],
+      "kind": "near",
+      "note": "Mean 10,20,30 clones."
+    },
+    {
+      "ids": [
+        128,
+        542
+      ],
+      "kind": "near",
+      "note": "CPU is 'brain' — text MCQ vs image_mcq. Related not identical."
+    },
+    {
+      "ids": [
+        253,
+        393
+      ],
+      "kind": "near",
+      "note": "Decomposers break down dead matter; B5 vs B9 restatement."
+    },
+    {
+      "ids": [
+        190,
+        250,
+        390
+      ],
+      "kind": "near",
+      "note": "Renewable energy source family (solar/wind)."
+    },
+    {
+      "ids": [
+        139,
+        339
+      ],
+      "kind": "near",
+      "note": "180° rotation clones (and sloppy wording)."
+    },
+    {
+      "ids": [
+        141,
+        341
+      ],
+      "kind": "near",
+      "note": "Sun-rise certain clones."
+    },
+    {
+      "ids": [
+        109,
+        309
+      ],
+      "kind": "near",
+      "note": "Simplify ratio 8:12 vs 12:18, same skill."
+    },
+    {
+      "ids": [
+        118,
+        318,
+        287
+      ],
+      "kind": "near",
+      "note": "Igneous = cooled magma/lava family."
+    },
+    {
+      "ids": [
+        107,
+        416
+      ],
+      "kind": "near",
+      "note": "Sum of angles in a triangle 180°."
+    },
+    {
+      "ids": [
+        73,
+        272,
+        411
+      ],
+      "kind": "related",
+      "note": "Lines of symmetry square/rectangle/circle — related not dupes."
+    },
+    {
+      "ids": [
+        504,
+        506
+      ],
+      "kind": "related",
+      "note": "Printer/monitor are not input — related T/F pair, keep both."
+    },
+    {
+      "ids": [
+        511,
+        495,
+        352
+      ],
+      "kind": "related",
+      "note": "Series circuit bulb burns out — restated, keep one MCQ + one T/F if desired."
+    },
+    {
+      "ids": [
+        513,
+        501
+      ],
+      "kind": "related",
+      "note": "Sharp knife / pressure restated T/F vs MCQ."
+    },
+    {
+      "ids": [
+        539,
+        200,
+        400
+      ],
+      "kind": "related",
+      "note": "Internet ≠ WWW family."
+    }
+  ],
+  "recommended_deactivate_ids": [
+    299,
+    307,
+    324,
+    332,
+    334,
+    335,
+    338,
+    342,
+    343,
+    344,
+    347,
+    353,
+    357,
+    367,
+    368,
+    369,
+    370,
+    371,
+    372,
+    373,
+    374,
+    375,
+    376,
+    377,
+    378,
+    379,
+    380,
+    381,
+    394,
+    399,
+    400,
+    413,
+    422,
+    431,
+    440,
+    463,
+    464,
+    468,
+    469,
+    470,
+    471,
+    472
+  ],
+  "recommended_relevel": [
+    {
+      "id": 292,
+      "from": "B6",
+      "to": "B9",
+      "reason": "Visible-light wavelength"
+    },
+    {
+      "id": 417,
+      "from": "B7",
+      "to": "B9",
+      "reason": "Shortest visible wavelength"
+    },
+    {
+      "id": 433,
+      "from": "B6",
+      "to": "B8",
+      "reason": "HTML expansion"
+    },
+    {
+      "id": 419,
+      "from": "B8",
+      "to": "B9",
+      "reason": "Symbolic πr²"
+    },
+    {
+      "id": 429,
+      "from": "B5",
+      "to": "B7",
+      "reason": "206 bones trivia"
+    }
+  ]
+}

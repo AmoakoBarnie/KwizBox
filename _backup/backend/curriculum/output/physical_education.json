@@ -1,0 +1,794 @@
+{
+  "subject": "Physical Education",
+  "levels": [
+    {
+      "code": "B4",
+      "strands": [
+        {
+          "name": "motor skills",
+          "sub_strands": [
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B1.1.1.1",
+                  "text": "B1.1.1.1.1: Travel (move) over, under, in front of, behind, and through objects using Personal Development,",
+                  "indicators": [
+                    {
+                      "indicator_id": "B1.1.3.1.3",
+                      "text": "Roll a ball from stationary position using hands."
+                    },
+                    {
+                      "indicator_id": "B1.1.7.1.7",
+                      "text": "Strike a light ball upward continuously, using a large, short-handled"
+                    },
+                    {
+                      "indicator_id": "B1.1.8.1.9",
+                      "text": "Throw and catch a self-tossed ball. Leadership, Skills: Learners"
+                    },
+                    {
+                      "indicator_id": "B1.1.10.1.13",
+                      "text": "Move the ball forward while dribbling with the hand and with the foot"
+                    },
+                    {
+                      "indicator_id": "B1.1.12.1.15",
+                      "text": "Marching to a beat(rhythm)"
+                    },
+                    {
+                      "indicator_id": "B1.1.12.1.16",
+                      "text": "Demonstrate a smooth transition between even-beat and uneven-beat"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B1.2.1.2",
+                  "text": "B1.2.1.2.1: Identify personal space Communication and Collaboration",
+                  "indicators": [
+                    {
+                      "indicator_id": "B1.2.2.2.3",
+                      "text": "Explain the key differences and similarities in jog and a run, a hop Skills: Learners develop communication"
+                    },
+                    {
+                      "indicator_id": "B1.2.4.2.5",
+                      "text": "Identify the base of support of balanced objects."
+                    },
+                    {
+                      "indicator_id": "B1.2.5.2.6",
+                      "text": "Identify different opportunities to use striking skills. etc., as the teacher demonstrates"
+                    },
+                    {
+                      "indicator_id": "B1.3.3.3.3",
+                      "text": "Perform sit and reach. Personal Development and Problem-"
+                    },
+                    {
+                      "indicator_id": "B1.3.3.3.4",
+                      "text": "Identify human body parts."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Values and Psycho-social Concepts, Principles and Strategies",
+          "sub_strands": [
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B1.4.1.4",
+                  "text": "B1.4.1.4.1: Participate in enjoyable physical activities for increasing periods Personal Development and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B1.4.3.4.3",
+                      "text": "Explain the purpose of warming up before physical activity and"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B1.5.1.5",
+                  "text": "B1.5.1.5.1: Participate willingly in physical activities. Cultural Identity and Global",
+                  "indicators": [
+                    {
+                      "indicator_id": "B1.5.3.5.3",
+                      "text": "Demonstrate non-verbal appreciation."
+                    },
+                    {
+                      "indicator_id": "B1.5.4.5.4",
+                      "text": "Demonstrate how to solve a problem with another person during Cultural Identity and Global"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "athletics",
+          "sub_strands": [
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B2.1.1.1",
+                  "text": "B2.1.1.1.1: Travel (move) in straight, curved, and zigzag pathways, using the Personal Development and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B2.1.2.1.2",
+                      "text": "Forward and backward skip without a rope."
+                    },
+                    {
+                      "indicator_id": "B2.1.3.1.3",
+                      "text": "Roll a ball from stationary to a given point and back, using hands."
+                    },
+                    {
+                      "indicator_id": "B2.1.4.1.4",
+                      "text": "Demonstrate balance on the ground and on objects, using bases"
+                    },
+                    {
+                      "indicator_id": "B2.1.5.1.5",
+                      "text": "Transfer weight from feet to hands and from hands to feet, such as accuracy, precision,"
+                    },
+                    {
+                      "indicator_id": "B2.1.6.1.6",
+                      "text": "Strike a ball continuously in an upward or forward motion, using courage, patience, teamwork, fair-"
+                    },
+                    {
+                      "indicator_id": "B2.1.8.1.8",
+                      "text": "Perform the overhand throw pattern."
+                    },
+                    {
+                      "indicator_id": "B2.1.8.1.9",
+                      "text": "Throw a ball to a partner using the underhand, overhand and creativity etc. as they practice underarm"
+                    },
+                    {
+                      "indicator_id": "B2.1.9.1.11",
+                      "text": "Kick a stationary ball using a smooth continuous running stationary ball using a smooth"
+                    },
+                    {
+                      "indicator_id": "B2.1.10.1.12",
+                      "text": "Hand-dribble by controlling a ball for a sustained period. tolerance, fair-play, as they practice"
+                    },
+                    {
+                      "indicator_id": "B2.1.11.1.14",
+                      "text": "Foot-dribble by controlling a ball on the ground."
+                    },
+                    {
+                      "indicator_id": "B2.1.12.1.15",
+                      "text": "Clap and dance to beat (rhythm)"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "VALUES AND PSYCHO-SOCIAL CONCEPTS, PRINCIPLES AND STRATEGIES",
+          "sub_strands": [
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B2.2.2.2",
+                  "text": "B2.2.2.2.1: Explain open spaces Communication and Collaboration",
+                  "indicators": [
+                    {
+                      "indicator_id": "B2.2.3.2.3",
+                      "text": "Compare the body parts. Skills: Learners develop communication"
+                    },
+                    {
+                      "indicator_id": "B2.2.5.2.6",
+                      "text": "Identify opportunities to use underhand and overhand involved in catching objects to them"
+                    },
+                    {
+                      "indicator_id": "B2.3.3.3.3",
+                      "text": "Perform two set of four continuous abdominal curls."
+                    },
+                    {
+                      "indicator_id": "B2.3.4.3.4",
+                      "text": "Perform lower back stretch."
+                    },
+                    {
+                      "indicator_id": "B2.3.5.3.5",
+                      "text": "Identify the various components of human body (bones, muscles, Communication and Digital Literacy"
+                    },
+                    {
+                      "indicator_id": "B2.4.1.4.2",
+                      "text": "Mention the components of physical fitness."
+                    },
+                    {
+                      "indicator_id": "B2.4.4.4.5",
+                      "text": "Classify PE equipment into new and old. Skills: As learners listen to teacher and"
+                    },
+                    {
+                      "indicator_id": "B2.4.5.4.6",
+                      "text": "Identify types of drugs commonly used by adolescents."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B2.5.1.5",
+                  "text": "B2.5.1.5.1: Accept responsibility for one\u2019s own behaviour in a group Cultural Identity and Global",
+                  "indicators": [
+                    {
+                      "indicator_id": "B2.5.3.5.3",
+                      "text": "Participate positively in physical activities rely on Learners develop social skills such as"
+                    },
+                    {
+                      "indicator_id": "B2.5.4.5.4",
+                      "text": "Collect data and record progress toward mastery of a Solving Skills: Learners develop personal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B3.1.1.1",
+                  "text": "B3.1.1.1.1: Change direction from forward and back and right and left while Personal Development and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B3.1.3.1.4",
+                      "text": "Roll a ball from stationary forward and back, using sticks. Leadership Skills: Learners develop"
+                    },
+                    {
+                      "indicator_id": "B3.1.6.1.7",
+                      "text": "Strike (serve) a lightweight ball to a partner, using the Leadership Skills: Learners develop"
+                    },
+                    {
+                      "indicator_id": "B3.1.7.1.8",
+                      "text": "Strike a gently tossed ball with a bat, using a side orientation Leadership Skills: Learners develop"
+                    },
+                    {
+                      "indicator_id": "B3.1.8.1.10",
+                      "text": "Throw and catch a ball with a partner while both partners"
+                    },
+                    {
+                      "indicator_id": "B3.1.8.1.11",
+                      "text": "Catch a flying ball away from the body. Skills: As learners catch a flying ball away from"
+                    },
+                    {
+                      "indicator_id": "B3.1.11.1.14",
+                      "text": "Foot-dribble a ball continuously while traveling and"
+                    },
+                    {
+                      "indicator_id": "B3.1.13.1.17",
+                      "text": "Roll forward from standing position many time to a distance"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B3.2.1.2",
+                  "text": "B3.2.1.2.1: Identify general space. Communication Skills and Critical",
+                  "indicators": [
+                    {
+                      "indicator_id": "B3.2.2.2.3",
+                      "text": "Identify steps and rhythm patterns for traditional and cultural"
+                    },
+                    {
+                      "indicator_id": "B3.2.5.2.7",
+                      "text": "Explain the similar movement elements of the underhand throw Communication and Critical"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B3.3.1.3",
+                  "text": "B3.3.1.3. 1: Perform 10 minutes dance with music. Personal Development and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B3.3.2.3.2",
+                      "text": "Perform continuous step-ups. Personal Development and"
+                    },
+                    {
+                      "indicator_id": "B3.3.3.3.3",
+                      "text": "Perform three set of continuous step-ups."
+                    },
+                    {
+                      "indicator_id": "B3.3.5.3.5",
+                      "text": "Identify body composition using fat and fat free body mass. Literacy: As learners observe the"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B3.4.1.4",
+                  "text": "B3.4.1.4.1: Sustain continuous movement for an increasing period of time Personal Development and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B3.4.2.4.3",
+                      "text": "Explain the energy requirements of the body during physical Personal Skills and Communication"
+                    },
+                    {
+                      "indicator_id": "B3.4.4.4.5",
+                      "text": "Classify PE equipment into safe and unsafe. Communication and Collaboration"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B3.4.5.4",
+                  "text": "6: Recall why adolescents use drugs for physical activities.",
+                  "indicators": [
+                    {
+                      "indicator_id": "B3.4.6.4.7",
+                      "text": "Explain the meaning of body composition using fat and fat free Communication and Digital"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B3.5.1.5",
+                  "text": "B3.5.1.5.1: Set a personal goal to improve a motor skill and work toward Personal Development and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B3.5.3.5.3",
+                      "text": "Use verbal and nonverbal communication to improve practice."
+                    },
+                    {
+                      "indicator_id": "B3.5.4.5.4",
+                      "text": "Demonstrate how to solve a problem with another person Cultural Identity and Global"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Dance",
+          "sub_strands": [
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B4.1.1.1",
+                  "text": "B4.1.1.1.1: Demonstrate the difference between slow and fast, heavy and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B4.1.2.1.2",
+                      "text": "Enter, jump, and leave a long swinging rope turned by Personal Development and Leadership Skills:"
+                    },
+                    {
+                      "indicator_id": "B4.1.3.1.3",
+                      "text": "Roll ball with a stick to a target. Personal Development and Leadership Skills:"
+                    },
+                    {
+                      "indicator_id": "B4.1.6.1.6",
+                      "text": "Strike a bounce ball with the hands and feet. Learners develop personal and eadership skills such"
+                    },
+                    {
+                      "indicator_id": "B4.1.7.1.7",
+                      "text": "Strike a self-tossed light weight ball with a paddle or"
+                    },
+                    {
+                      "indicator_id": "B4.1.8.1.10",
+                      "text": "Catch a ball above the head and near the middle of the Personal Development and"
+                    },
+                    {
+                      "indicator_id": "B4.1.9.1.11",
+                      "text": "Kick a ball dropped from the hands."
+                    },
+                    {
+                      "indicator_id": "B4.1.11.1.13",
+                      "text": "Keep a foot-dribbled ball away from a defensive partner. Personal development and leadership,"
+                    },
+                    {
+                      "indicator_id": "B4.1.12.1.15",
+                      "text": "Perform movement skill with one hand or one foot and traditional music."
+                    },
+                    {
+                      "indicator_id": "B4.1.13.1.16",
+                      "text": "Roll smoothly in a backward direction (back roll). practicing movement skills of skills as"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B4.2.1.2",
+                  "text": "B4.2.1.2.1: Distinguish between self-space and open space. Communication and Collaboration",
+                  "indicators": [
+                    {
+                      "indicator_id": "B4.2.2.2.2",
+                      "text": "Explain the difference between throwing to a stationary Communication and Collaboration"
+                    },
+                    {
+                      "indicator_id": "B4.2.3.2.3",
+                      "text": "Identify body parts that are used for kicking a ball."
+                    },
+                    {
+                      "indicator_id": "B4.2.5.2.5",
+                      "text": "Identify the difference between dribbling a ball (with the hand Communication and Collaboration"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B4.3.1.3",
+                  "text": "B4.3.1.3.1: Perform 15 minutes\u2019 brisk walk with music. Personal Development and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B4.3.2.3.2",
+                      "text": "Perform continuous \u2018v\u2019 push-up Personal Development and"
+                    },
+                    {
+                      "indicator_id": "B4.3.3.3.3",
+                      "text": "Perform two sets of eight continuous \u2018v\u2019 push-ups. Personal Development and"
+                    },
+                    {
+                      "indicator_id": "B4.3.4.3.4",
+                      "text": "Perform groin flexibility Personal Development and"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B4.3.1.3",
+                  "text": "B4.3.5.3.5: Identify body types such as endomorph (big body), Communication and Digital",
+                  "indicators": [
+                    {
+                      "indicator_id": "B4.4.1.4.2",
+                      "text": "Discuss how prolong physical activity increases endurance, Communication and Collaboration"
+                    },
+                    {
+                      "indicator_id": "B4.4.2.2.4",
+                      "text": ".3: Explain how the intensity and duration of exercise, as well Communication and Collaboration"
+                    },
+                    {
+                      "indicator_id": "B4.4.4.4.5",
+                      "text": "Classify PE equipment under safe and unsafe. Communication and Collaboration"
+                    },
+                    {
+                      "indicator_id": "B4.5.4.4.6",
+                      "text": "Identify the effects of drugs use for physical activities. Communication and critical"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B4.5.1.5",
+                  "text": "B4.5.1.5.1:. Accept responsibility for one\u2019s own behaviour in a group Cultural Identity and Global",
+                  "indicators": [
+                    {
+                      "indicator_id": "B4.5.2.5.2",
+                      "text": ". Participate in a variety of group settings (e.g., partners, small Citizenship Skills: As learners"
+                    },
+                    {
+                      "indicator_id": "B4.5.3.5.3",
+                      "text": "Demonstrate respect for self, others, and equipment during Cultural Identity and Global"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "strands": [
+        {
+          "name": "Dance",
+          "sub_strands": [
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B4.5.1.5",
+                  "text": "B4.5.4.5.4: Distinguish between acts of physical courage and physically Personal Development and",
+                  "indicators": []
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B5.1.2.1",
+                  "text": "B5.1.2.1.1: Walk on straight lines edges. Development of Personal and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B5.1.3.1.2",
+                      "text": "Skip and leap continuously Development of Personal and"
+                    },
+                    {
+                      "indicator_id": "B5.1.4.1.3",
+                      "text": "Roll ball using a stick through obstacles (arranged cones)"
+                    },
+                    {
+                      "indicator_id": "B5.1.6.1.6",
+                      "text": "Striking a dropping light ball upward and forward to a"
+                    },
+                    {
+                      "indicator_id": "B5.1.8.1.8",
+                      "text": "Throw a ball to a moving partner to catch while walking, Development of Personal and"
+                    },
+                    {
+                      "indicator_id": "B5.1.8.1.9",
+                      "text": "Catch a ball below the waist and away from the body while Development of Personal and"
+                    },
+                    {
+                      "indicator_id": "B5.1.10.1.11",
+                      "text": "Dribble a ball (by hand) while preventing another person Development of Personal and"
+                    },
+                    {
+                      "indicator_id": "B5.1.11.1.12",
+                      "text": "Dribble a ball (by foot) and kick it to a partner at a distance"
+                    },
+                    {
+                      "indicator_id": "B5.2.1.2.1",
+                      "text": "Describe ways to create more space between an offensive player and a"
+                    },
+                    {
+                      "indicator_id": "B5.2.2.2.2",
+                      "text": "Explain the differences in applying and receiving force when jumping for"
+                    },
+                    {
+                      "indicator_id": "B5.2.5.2.5",
+                      "text": "Distinguish between volleying and kicking and describe the"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B5.3.1.3",
+                  "text": "B5.3.1.3.1: Perform 10 minutes jogging with music. Personal Development and Leadership",
+                  "indicators": [
+                    {
+                      "indicator_id": "B5.3.3.3.3",
+                      "text": "Perform two set of continuous push-ups. continuous pull-ups."
+                    },
+                    {
+                      "indicator_id": "B5.3.4.3.4",
+                      "text": "Perform standing bend and reach the knee with the forehead."
+                    },
+                    {
+                      "indicator_id": "B5.3.5.3.5",
+                      "text": "Identify the capabilities of the various body types. Skills: As learners listen to teacher and"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "B6",
+      "strands": [
+        {
+          "name": "Dance",
+          "sub_strands": [
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B5.4.1.4",
+                  "text": "B5.4.1.4.1: Monitor the intensity of one\u2019s heart rate during physical Personal Development and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B5.4.1.4.2",
+                      "text": "Describe how muscle strength and muscle endurance"
+                    },
+                    {
+                      "indicator_id": "B5.4.2.4.3",
+                      "text": "Explain why dehydration impairs temperature regulation and Personal Development and"
+                    },
+                    {
+                      "indicator_id": "B5.5.1.5.1",
+                      "text": "Participating independently in fitness and skill development Personal Development and"
+                    },
+                    {
+                      "indicator_id": "B5.5.3.5.3",
+                      "text": "Identify and define the role of each participant in a cooperation, empathy, teamwork and fair-"
+                    },
+                    {
+                      "indicator_id": "B5.5.4.5.4",
+                      "text": "Contribute ideas and listen to the ideas of others in teamwork, fair-play in cultural and"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B6.1.1.1",
+                  "text": "B6.1.1.1.1: Develop a cooperative movement game that uses locomotor Personal Development and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B6.1.2.1.2",
+                      "text": "Jump for distance, landing on both feet and bending the hips, Leadership Skills: Learners develop"
+                    },
+                    {
+                      "indicator_id": "B6.1.4.1.5",
+                      "text": "Perform simple small stunts while shifting base of support"
+                    },
+                    {
+                      "indicator_id": "B6.1.6.1.7",
+                      "text": "Strike a tossed ball with the hands above the forehead Personal Development and Leadership"
+                    },
+                    {
+                      "indicator_id": "B6.1.7.1.8",
+                      "text": "Strike a gently tossed ball with a bat, using a forehand and"
+                    },
+                    {
+                      "indicator_id": "B6.1.8.1.10",
+                      "text": "Show how to adjust body position to catch a ball thrown off- Personal Development and Leadership"
+                    },
+                    {
+                      "indicator_id": "B6.1.8.1.11",
+                      "text": "Catch a flying ball above the head, below the waist, and Personal Development and Leadership"
+                    },
+                    {
+                      "indicator_id": "B6.1.10.1.13",
+                      "text": "Dribble and pass a ball to a partner while being guarded. Personal Development and Leadership"
+                    },
+                    {
+                      "indicator_id": "B6.1.11.1.14",
+                      "text": "Dribble a ball and kick (shoot) it towards a goal while being Personal Development and Leadership"
+                    },
+                    {
+                      "indicator_id": "B6.1.13.1.16",
+                      "text": "Roll (body) smoothly forward and backward perform forward roll from standing"
+                    },
+                    {
+                      "indicator_id": "B6.2.2.2.2",
+                      "text": "Identify the time necessary to prepare for and begin a concepts, principles, strategies, etc., as the"
+                    },
+                    {
+                      "indicator_id": "B6.2.3.2.3",
+                      "text": "Illustrate how the intended direction of an object is affected Learners develop communication skills as"
+                    },
+                    {
+                      "indicator_id": "B6.3.1.3.1",
+                      "text": "Perform 8 minutes running with or without music. Personal Development and Leadership"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B6.3.1.3",
+                  "text": "Learners in files music (any form) run for 8 minutes none stop for fitness test at",
+                  "indicators": [
+                    {
+                      "indicator_id": "B6.3.2.3.2",
+                      "text": "Perform 15 continuous sit-ups"
+                    },
+                    {
+                      "indicator_id": "B6.3.3.3.3",
+                      "text": "Perform three set of 15 continuous push-ups."
+                    },
+                    {
+                      "indicator_id": "B6.3.4.3.4",
+                      "text": "Perform trunk rotation. Personal Development and Leadership"
+                    },
+                    {
+                      "indicator_id": "B6.3.5.3.5",
+                      "text": "Identify the capabilities of the various body types"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "swimming",
+          "sub_strands": [
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B6.4.1.4",
+                  "text": "B6.4.1.4.1: Develop a one-day personal physical fitness plan specifying Communication and Collaboration",
+                  "indicators": [
+                    {
+                      "indicator_id": "B6.4.1.4.2",
+                      "text": "Explain the role that weight bearing activities play in bone"
+                    },
+                    {
+                      "indicator_id": "B6.4.2.4.3",
+                      "text": "Plan a balance diet menu to improve performance in skills: As learners plan a balance diet menu"
+                    },
+                    {
+                      "indicator_id": "B6.4.4.4.5",
+                      "text": "Identify ways to minimise injuries when using PE Communication and Collaboration skills:"
+                    },
+                    {
+                      "indicator_id": "B6.4.5.4.6",
+                      "text": "Discuss with learners the effects of drug addiction."
+                    },
+                    {
+                      "indicator_id": "B6.4.6.4.7",
+                      "text": "Discuss with learners the capabilities of the various body"
+                    },
+                    {
+                      "indicator_id": "B6.5.2.5.2",
+                      "text": "Provide positive feedback to peers during physical"
+                    },
+                    {
+                      "indicator_id": "B6.5.3.5.3",
+                      "text": "Identify and agree on a common goal when participating in others, and equipment during physical"
+                    },
+                    {
+                      "indicator_id": "B6.5.4.5.4",
+                      "text": "Evaluate individual responsibility in group efforts. As teacher evaluate individual responsibility in"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

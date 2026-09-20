@@ -1,0 +1,1058 @@
+{
+  "subject": "Arabic",
+  "levels": [
+    {
+      "code": "B7",
+      "strands": [
+        {
+          "name": "Writing",
+          "sub_strands": [
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B7.1.1.1",
+                  "text": "Learner B7.1.1.1.1. Identify the 28 sounds of Arabic consonants and vowels, and the various sound groupings.",
+                  "indicators": [
+                    {
+                      "indicator_id": "B7.1.1.1.2",
+                      "text": ". Show ability to listen to and identify phonemes as shown in the examples. CC7.1: Identify real"
+                    },
+                    {
+                      "indicator_id": "B7.1.1.1.3",
+                      "text": ". Demonstrate understanding of diversity of language syllables by sifting and selecting peculiar Arabic CC7.1: Identify real"
+                    },
+                    {
+                      "indicator_id": "B7.1.1.1.4",
+                      "text": ". Demonstrate understanding of the relationship between Arabic consonants/long vowel patterns and CC7.1: Identify real"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B7.1.1.2",
+                  "text": "Learner B7.1.1.2.1. Recognise simple questions related to domestic animals, like cat, dog, mouse, sheep, etc. Communication and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B7.1.1.2.2",
+                      "text": "Identify and follow a range of utterances, vocabulary and instructions related to common birds and"
+                    },
+                    {
+                      "indicator_id": "B7.1.1.2.3",
+                      "text": "Show awareness of the differences in intonation between a question and a statement."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B7.1.1.3",
+                  "text": "Learner B7.1.1.3.1. Identify the sound patterns and pronunciations of names of classroom items within simple phrases and Communication and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B7.1.1.3.2",
+                      "text": ". Recognize the sounds and meanings of words in everyday simple questions. CC7.1: Identify words or"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B7.1.1.4",
+                  "text": "Learner B7.1.1.4.1. Identify various sounds that form words and phrases on learning activities Communication and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B7.1.1.4.2",
+                      "text": ". Identify various sounds of Arabic letters that form words and phrases that represent teaching acts. CC7.1: Identify real"
+                    },
+                    {
+                      "indicator_id": "B7.1.1.4.3",
+                      "text": ". Demonstrate understanding of the difference in the sounds of the Arabic sun and moon letters in words CC7.1: Identify real"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B7.1.2.1",
+                  "text": "Learner B7.1.2.1. 1. Show understanding of the difference in intonation of simple phrases relating to sizes and heights in the CC7.3: Interpret correctly",
+                  "indicators": [
+                    {
+                      "indicator_id": "B7.1.2.1.2",
+                      "text": "Show understanding of the difference in intonation of simple phrases relating to weights and temperature CC7.1: Interpret correctly"
+                    },
+                    {
+                      "indicator_id": "B7.1.2.1.3",
+                      "text": ". Identify the difference in intonation of simple phrases relating to numbers, colours and shapes of people CC7.1: Identify words or"
+                    },
+                    {
+                      "indicator_id": "B7.1.2.2.2",
+                      "text": ". State the general idea(s) behind a story told in class about sanitation and identify associated vocabulary. CP 5.6: Demonstrate a"
+                    },
+                    {
+                      "indicator_id": "B7.1.2.3.2",
+                      "text": ". Show understanding of simple expressions related to courtesies and requests for favours or excuses. CC9.2: Understand and"
+                    },
+                    {
+                      "indicator_id": "B7.1.2.3.3",
+                      "text": ". Demonstrate knowledge in the use of appropriate expressions for seasonal greetings and well wishes. CC9.2: Understand and"
+                    },
+                    {
+                      "indicator_id": "B7.1.2.3.4",
+                      "text": "Demonstrate understanding of culturally specific gestures associated with certain special occasions CG5.5: Adjust to the"
+                    },
+                    {
+                      "indicator_id": "B7.2.1.1.2",
+                      "text": ". Recognise the use of appropriate expressions and intonations to respond to courtesies like, CC7.3: Provide"
+                    },
+                    {
+                      "indicator_id": "B7.2.1.1.3",
+                      "text": "Demonstrate knowledge of appropriate expressions for greetings, courtesies and requests."
+                    },
+                    {
+                      "indicator_id": "B7.2.1.1.4",
+                      "text": ". Show awareness of basic personal health information and respond to greetings and gestures. CC7.1: Identify words"
+                    },
+                    {
+                      "indicator_id": "B7.2.1.2.2",
+                      "text": ". Demonstrate oral proficiency in the use of words to describe self and the human body parts. CC7.1: Identify words"
+                    },
+                    {
+                      "indicator_id": "B7.2.1.2.3",
+                      "text": ". Pronounce words accurately for immediate family relations such as father, mother or sister CC7.1: Identify words"
+                    },
+                    {
+                      "indicator_id": "B7.2.1.2.4",
+                      "text": ". Demonstrate skills in the pronunciation of names of home items, and room contents. CC7.1: Identify words"
+                    },
+                    {
+                      "indicator_id": "B7.2.1.3.2",
+                      "text": ". Demonstrate oral communicative skills in the pronunciation of such sensual expressions as CC7.1: Identify words or"
+                    },
+                    {
+                      "indicator_id": "B7.2.1.3.3",
+                      "text": ". Reproduce action words like sit, stand, eat, talk, laugh, sleep, etc. CC7.1: Identify words or"
+                    },
+                    {
+                      "indicator_id": "B7.2.1.4.2",
+                      "text": ". Recognise and name teaching and learning materials like books, pens, pencils, ruler, pictures CC7.1: Identify words or"
+                    },
+                    {
+                      "indicator_id": "B7.2.1.5.2",
+                      "text": ". Produce the appropriate intonation of simple sentences relating to sizes and heights of family CC7.1: Identify words or"
+                    },
+                    {
+                      "indicator_id": "B7.2.2.1.2",
+                      "text": "Demonstrate the strength of recall through recitation of simple Arabic proverbs. CC8.2: Explain ideas in a clear"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B7.2.3.1",
+                  "text": "Learner speaks B7.2.3.1.1. State words representing nouns such as names of persons, animals and places. Communication and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B7.2.3.1.2",
+                      "text": ". State grammatical words that describes the name of a place. CC8.2: Explain ideas in a clear"
+                    },
+                    {
+                      "indicator_id": "B7.2.3.1.3",
+                      "text": ". State the grammatical words that can stand in place of a noun CC8.2: Explain ideas in a clear"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B7.3.1.1",
+                  "text": "Learner shows B7.3.1.1.1. Show preliminary reading skill in producing the various Arabic syllables. Communication and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B7.3.1.1.2",
+                      "text": ". Demonstrate the ability to reproduce the appropriate sounds of the vowelized consonants. CC8.3: Apply appropriate"
+                    },
+                    {
+                      "indicator_id": "B7.3.1.1.3",
+                      "text": "Demonstrate ability to distinguish between common language sounds and the peculiar Arabic CC8.2: Explain ideas in a clear"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B7.3.1.2",
+                  "text": "Learner B7.3.1.2.1. Demonstrate ability to accurately pronounce Arabic words formed from a combination of CC8.1: Speak clearly and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B7.3.1.2.2",
+                      "text": ". Demonstrate the ability to pronounce consonants with tanwin ending, and their CC8.3 Apply appropriate"
+                    },
+                    {
+                      "indicator_id": "B7.3.1.2.3",
+                      "text": ". Demonstrate ability to pronounce Arabic words having complex sound permutations. CC8.2: Explain ideas in a clear"
+                    },
+                    {
+                      "indicator_id": "B7.3.2.1.2",
+                      "text": ". Demonstrate the skill of using appropriate strategies to resolve comprehension problems. CC8.2: Explain ideas in a clear"
+                    },
+                    {
+                      "indicator_id": "B7.3.2.1.3",
+                      "text": ". Demonstrate the skill of using the question-answer relationship strategy to improve the CC8.2: Explain ideas in a clear"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B7.3.3.1",
+                  "text": "Learner reads Good B7.3.3.1.1. Demonstrate comprehension skills after reading passages about immediate environment Communication and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B7.3.3.1.2",
+                      "text": ". Demonstrate ability to recognise abstract nouns in short passages about home, school and CP5.6: Demonstrate a thorough"
+                    },
+                    {
+                      "indicator_id": "B8.3.3.1.3",
+                      "text": ". Recognise and understand the description of the characters and objects represented in a CC8.2: Explain ideas in a clear"
+                    },
+                    {
+                      "indicator_id": "B7.3.3.1.4",
+                      "text": ". Show ability to recognise and demonstrate comprehension of pronouns in short passages on CC8.2: Explain ideas in a clear"
+                    },
+                    {
+                      "indicator_id": "B7.3.3.1.5",
+                      "text": "Show ability to recognise and demonstrate comprehension of pronouns in short passages on CC8.2: Explain ideas in a clear"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B7.4.1.1",
+                  "text": "Learner B7.4.1.1.1 Demonstrate competence and skills in writing the Arabic alphabet in their various forms at the initial, Communication and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B7.4.1.1.2",
+                      "text": "Demonstrate knowledge and skills in copying words previously read in class with appropriate combinations of CC8.2: Explain ideas in a"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B7.4.1.2",
+                  "text": "Learner B7.4.1.2.1. Demonstrate understanding of various writing styles, forms and names of the various word formats. CC8.2: Explain ideas in",
+                  "indicators": []
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B7.4.2.1",
+                  "text": "Learner B7.4.2.1.1. Recognise and use punctuation marks, accents, symbols, tanwin, shadda, madda and the short vowel signs. Communication and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B7.4.2.1.2",
+                      "text": ". Demonstrate knowledge and understanding of the spellings of all the letters of the Arabic alphabet in CC8.2: Explain ideas in a"
+                    },
+                    {
+                      "indicator_id": "B7.4.2.1.3",
+                      "text": ".Demonstrate the ability to fill in appropriate words to complete grammatically correct short phrases or CC7.1: Identify words or"
+                    },
+                    {
+                      "indicator_id": "B7.4.2.1.4",
+                      "text": ". Demonstrate ability to form own phrases leading to construction of a simple syntactic structure. CC7.1: Identify words or"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B7.4.2.2",
+                  "text": "Learner. B7.4.2.2.1. Show ability to write basic expressions individually, using the linguistic input and vocabulary acquired Communication and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B7.4.2.2.2",
+                      "text": ". Demonstrate ability to provide correct answers to questions from simple comprehension texts with familiar CC8.4: Anticipate"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B9.4.3.1",
+                  "text": "Learner B9.4.3.1.1. Show good skills in planning an essay, drafting, editing and revision. Creativity and Innovation",
+                  "indicators": [
+                    {
+                      "indicator_id": "B9.4.3.1.2",
+                      "text": ". Demonstrate the ability to select quotations that are relevant to an idea and incorporate them CP5.6: Demonstrate a thorough"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "B8",
+      "strands": [
+        {
+          "name": "Writing",
+          "sub_strands": [
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B7.4.3.1",
+                  "text": "Learner B7.4.3.1.1. Demonstrate creative writing skills by Summarizing a simple narrative text in a clear, Communication and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B8.1.1.1.2",
+                      "text": "Demonstrate understanding of the semi-complex verb forms (\u0649\ufe8e\ufeb8\u0651\ufedf\u0623\u0627, Al-awzaan) and their CC7.1: Identify words or"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B8.1.1.2",
+                  "text": "Learner B8.1.1.2.1. Identify the phonemic changes of (\u063f) before any given consonant.) \u0629\u064a \u0631\u0645 \u0642 \u0644\u0627 \u0648 \u0629\u064a \ufeb6\ufee3 \u0634 \u0644\u0627 \u063c \u0648 \ufeae\ufee0\ufea3\u0627( Communication and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B8.1.1.2.2",
+                      "text": ". Identify the intonation and style of texts read in class such as prose or poetry. CC7.1: Identify words or"
+                    },
+                    {
+                      "indicator_id": "B8.1.1.2.3",
+                      "text": ". Demonstrate listening skills through dictation of simple Arabic sounds patterns. CC7.1: Identify words or"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B8.1.2.1",
+                  "text": "Learner recognises - \u0641 \u25cc\u064c \u0634 \u25cc \u0651 \u25cc\u0650 \u25cc \u064e \u0645 \u0646 \u0648\u0641 \u064f \u25cc\u0650 \u25cc\u0638 \u0651 \u25cc\u0650 \u25cc \u064e \u0646\u25cc \u064f \u0628\u062f \u0627\u0647 \u0641 \u0638\u0646\u0623 \u063c \u0631 \u063a\u0644\u0627 \u0648 \u062a \u064a\u0628\u0644\u0627 \u0629\u0641 \u0627\u0638 \u0646 C of C id 7 e .3 a : s , P o r r o g v a i n d i e s a fe ti e o d n b , a v c o k i c in e, a reas",
+                  "indicators": [
+                    {
+                      "indicator_id": "B8.1.2.1.4",
+                      "text": "Produce names of different types of clothes from a text read in class. For eg. shirt, shorts,"
+                    },
+                    {
+                      "indicator_id": "B8.1.2.2.1",
+                      "text": ". Show ability to respond to questions about parents and their professions and those of others."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B8.1.2.2",
+                  "text": "Learner \u0633 \u062f\u0646\u0647 \u0645 \ufef2\ufebf \u0627\u0642 \u0628 \u064a\u0628 \u0637 \u0628 \u0633\ufefb\u0632 \ufef2\ufe8b\ufe8e\ufed3 \u0637\u0625 \u064a \u0631\ufeda\ufeb3\u0639 \u064a\u0637 \u0631 \u0634 \u061f\ufeda\ufef3\u0628 \u0623 \u0629\u0646\u0647 \u0645 \ufe8e \ufee3",
+                  "indicators": []
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B8.1.2.3",
+                  "text": "Learner indicates B8.1.2.3.1. Recognise and name the persons and objects represented in an audio-visual format. CC7.1: Identify words or",
+                  "indicators": [
+                    {
+                      "indicator_id": "B8.1.2.3.2",
+                      "text": ". Identify the key words and phrases used in targeted theme(s) of a story read in class in order CC7.1: Identify words or"
+                    },
+                    {
+                      "indicator_id": "B8.1.2.3.3",
+                      "text": ". Predict and connect the main ideas of a story told by the teacher or taken from an audio- CC7.1: Identify words or"
+                    },
+                    {
+                      "indicator_id": "B8.1.2.3.4",
+                      "text": ". Demonstrate listening ability through a class discussion of a story from an audio-visual CC7.4: Identify underlying"
+                    },
+                    {
+                      "indicator_id": "B8.1.2.4.2",
+                      "text": ". Demonstrate skills in initiating appropriate expressions for courtesies and requests for CC7.1: Identify words or"
+                    },
+                    {
+                      "indicator_id": "B8.1.2.4.3",
+                      "text": ". Demonstrate communicative skill by assigning the appropriate expressions for seasonal CC7.1: Identify words or"
+                    },
+                    {
+                      "indicator_id": "B8.1.2.4.4",
+                      "text": ". Demonstrate skills in using some cultural gestures that are used on special occasions. CC7.1: Identify words or"
+                    },
+                    {
+                      "indicator_id": "B8.2.1.1.2",
+                      "text": ". Show communicative ability in introducing others. CC7.1: Identify words or"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B8.2.1.2",
+                  "text": "Learner Communication and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B8.2.1.2.1",
+                      "text": ". Demonstrate ability to use basic vocabulary and phrases to talk about daily routine."
+                    },
+                    {
+                      "indicator_id": "B8.2.1.2.2",
+                      "text": ". Show proficiency in the use of previously learnt phrases and simple sentences in an interactive CC8.2: Explain ideas in a clear"
+                    },
+                    {
+                      "indicator_id": "B8.2.1.2.3",
+                      "text": "Incorporate modelled structures to produce ten se ntences about one favourite class activity and CC7.1: Identify words or"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B8.2.1.3",
+                  "text": "Learner shows oral B8.2.1.3.1. Show competence in using a vocabulary of 50 words to talk about a selected school game. Communication and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B8.2.1.3.2",
+                      "text": ". Demonstrate competence in using a vocabulary of 50 words to speak about a school excursion CC8.2: Explain ideas in a clear"
+                    },
+                    {
+                      "indicator_id": "B8.2.1.3.3",
+                      "text": ". Show proficiency in using previously learnt phrases and simple sentences in an interactive CC8.2: Explain ideas in a clear"
+                    },
+                    {
+                      "indicator_id": "B8.2.1.3.4",
+                      "text": ". Demonstrate creativity in the use of modelled structures to produce ten sentences about a CI5.1: Examine alternatives in"
+                    },
+                    {
+                      "indicator_id": "B8.2.1.4.2",
+                      "text": ". Show proficiency in initiating, maintaining and closing conversations about familiar topics CC9.2: Understand and use"
+                    },
+                    {
+                      "indicator_id": "B8.2.1.4.4",
+                      "text": "Demonstrate proficiency in communicating ideas and emotions spontaneously using learnt CC7.1: Identify words or"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B8.2.1.5",
+                  "text": "Learner B8.2.1.5.1. Show the ability to share very basic information about others- their personalities, character Communication and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B8.2.1.5.2",
+                      "text": ". Demonstrate proficiency by conveying other people\u201fs ideas and show agreement or CC8.1: Speak clearly and"
+                    },
+                    {
+                      "indicator_id": "B8.2.2.1.2",
+                      "text": ". Demonstrate the strong recall ability through recitation of Arabic proverbs. CC8.3: Apply appropriate"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B8.2.3.1",
+                  "text": "Learner speaks B8.2.3.1 .1. Exhibit oral skills in pronouncing nouns and their adjectives as well as different types of Communication and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B8.2.3.1.2",
+                      "text": ". Demonstrate understanding of grammatical rules through speech. CP.5.6: Demonstrate a"
+                    },
+                    {
+                      "indicator_id": "B8.2.3.1.3",
+                      "text": ". Identify the adjectives in a piece of text in terms of gender, number and grammatical function."
+                    },
+                    {
+                      "indicator_id": "B8.3.1.1.2",
+                      "text": "Demonstrate ability to read wor ds with long vowels and prolonged doubled consonant in CC7.1: Identify words or"
+                    },
+                    {
+                      "indicator_id": "B8.3.2.1.1",
+                      "text": ". Demonstrate skill in reading written words about sanitation and health."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B8.3.2.1",
+                  "text": "Learner CC7.1: Identify words or",
+                  "indicators": []
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B8.3.2.1",
+                  "text": ".2 Demonstrate competence in generating main ideas to questions and summary in order to CP5.2: Analyse and make",
+                  "indicators": [
+                    {
+                      "indicator_id": "B8.3.2.1.3",
+                      "text": ". Show the appropriate comprehension strategies to use, demonstrating why, when and how to CP5.6: Demonstrate a thorough"
+                    },
+                    {
+                      "indicator_id": "B8.3.2.1.4",
+                      "text": ". Show the ability to use appropriate strategies to gather information from a piece of text about CP5.6: Demonstrate a thorough"
+                    },
+                    {
+                      "indicator_id": "B8.3.2.1.5",
+                      "text": ". Identify the common text structures of an expository text as an organisation principle to CP5.6: Demonstrate a thorough"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B8.3.3.1",
+                  "text": "Learner reads Good B8.3.3.1 .1. Demonstrate the ability to match nouns to their adjectives of colours. Communication and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B8.3.3.1.2",
+                      "text": ". Demonstrate understanding of grammatical rules by reading out a selected text with fluency, CP5.1 Ability to combine"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B8.3.4.1",
+                  "text": "Learner B8.3.4.1.1. Show ability to make good sense of a text by pulling information from different segments Communication and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B8.3.4.1.2",
+                      "text": ". Demonstrate the ability to elicit information from the text in order to extract lessons or CP5.6: Demonstrate a thorough"
+                    },
+                    {
+                      "indicator_id": "B8.3.4.1.3",
+                      "text": ". Demonstrate analytical skill in identifying patterns in a given text. CP5.9: Identify and explain a"
+                    },
+                    {
+                      "indicator_id": "B8.3.4.1.4",
+                      "text": ". Demonstrate interpretive skills by explaining patterns in a given text. CC8.2: Explain ideas in a clear"
+                    },
+                    {
+                      "indicator_id": "B8.3.4.2.2",
+                      "text": ". Recognize the diversity of cultural practices within Ghanaian society. CG5.3: Develope and express"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B8.4.1.1",
+                  "text": "Learner B8.4.1.1.1. Identify the types of Arabic fonts found in different written texts. Communication and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B8.4.1.1.2",
+                      "text": ". Demonstrate knowledge and understanding of the difference among handwritten and printed CP5.1 Ability to combine"
+                    },
+                    {
+                      "indicator_id": "B8.4.1.1.3",
+                      "text": ". Show competence in writing the diacritics in their various forms in a handwritten script. CC8.2: Explain ideas in a clear"
+                    },
+                    {
+                      "indicator_id": "B8.4.1.1.4",
+                      "text": ". Demonstrate knowledge and skills in copying words and numerals previously read in class, CC8.2: Explain ideas in a clear"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B8.4.2.1",
+                  "text": "Learner B8.4.2.1.1. Demonstrate ability to respond to questions using familiar vocabulary. Communication and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B8.4.2.1.2",
+                      "text": ". Show writing skills in reorganising, rearranging jumbled sentences to complete a full text. CC8.2: Explain ideas in a clear"
+                    },
+                    {
+                      "indicator_id": "B8.4.2.1.3",
+                      "text": ". Show ability to write short messages independently, using appropriate words. CC8.2: Explain ideas in a clear"
+                    },
+                    {
+                      "indicator_id": "B8.4.2.1.4",
+                      "text": ". Demonstrate the knowledge and ability to fill in and select appropriate words to complete CC7.1: Identify words or"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B8.4.2.2",
+                  "text": "Learner shows B8.4.2.2.1. Show ability to summarise a prose read in class. Communication and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B8.4.2.2.2",
+                      "text": ". Show composition skills by filling in the blank spaces with appropriate words to complete CC7.1: Identify words or"
+                    },
+                    {
+                      "indicator_id": "B8.4.2.2.3",
+                      "text": ". Show ability to write short answers that follow the rules of sentence structure and connect CC8.2: Explain ideas in a clear"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B9.2.1.3",
+                  "text": "Learner. shows B9.2.1.3.1. Demonstrate the ability to express personal contributions in a discussion about inter-school Communication and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B9.2.1.3.2",
+                      "text": ". Show proficiency in presenting clear personal ideas after reading discussing of school CC8.2: Explain ideas in a clear"
+                    },
+                    {
+                      "indicator_id": "B9.2.1.3.3",
+                      "text": ". Show the ability to predict the closest meanings of some unfamiliar words in a text about ICT CP5.4: Generate hypothesis to"
+                    },
+                    {
+                      "indicator_id": "B9.2.1.4.2",
+                      "text": ". Show adequate acquisition and usage of vocabulary of 30 words for self-expression about CC7.1: Identify words or"
+                    },
+                    {
+                      "indicator_id": "B9.2.1.4.3",
+                      "text": ". Show proficiency in the use of previously learnt phrases and simple sentences in an CC8.2: Explain ideas in a clear"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "B9",
+      "strands": [
+        {
+          "name": "Writing",
+          "sub_strands": [
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B8.4.2.3",
+                  "text": "Learner B8.4.2.3.1. Demonstrate creative skills by describing characters in a story based on their actions, and Communication and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B8.4.2.3.2",
+                      "text": ". Show creative writing skills in narrative and descriptive essay writing. CI6.4: Imagining and seeing"
+                    },
+                    {
+                      "indicator_id": "B8.4.2.3.3",
+                      "text": ". Show creativity in organising ideas logically and fluently in order to write coherent texts that CC8.2: Explain ideas in a clear"
+                    },
+                    {
+                      "indicator_id": "B8.4.2.3.4",
+                      "text": ". Demonstrate the ability to distinguish between the literal meaning and the figurative meaning, CC7.1: Identify words or"
+                    },
+                    {
+                      "indicator_id": "B9.1.1.1.2",
+                      "text": ".Recognise and recall main points in a short dialogue and use the model in personal CC7.1: Identify words or"
+                    },
+                    {
+                      "indicator_id": "B9.1.1.1.3",
+                      "text": ". Demonstrate the ability to extrapolate and respond to essential general ideas and information CP5.6: Demonstrate a thorough"
+                    },
+                    {
+                      "indicator_id": "B9.1.1.1.4",
+                      "text": ". Show ability to follow and understand a variety of spoken discourse between two or several CC7.1: Identify words or"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B9.1.1.2",
+                  "text": "Learner identifies B9.1.1.2.1. Demonstrate an understanding of central issues in aural discussions on inter-school football Communication and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B9.1.1.2.2",
+                      "text": ". Demonstrate the ability to visualise images and scenes in order to facilitate understanding of a CC7.1: Identify words or"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B9.1.1.3",
+                  "text": "Learner B9.1.1.3.1. Demonstrate ability to answer questions about the relationships between education and career, Communication and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B9.1.1.3.2",
+                      "text": ". Recognise and recall main points in a text read in class on education and career path, and CC7.1: Identify words or"
+                    },
+                    {
+                      "indicator_id": "B9.1.1.3.3",
+                      "text": ". Show ability to participate in a spoken discourse and express personal ideas about children CI6.4: Imagining and seeing"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B9.1.1.4",
+                  "text": "Learner responds B9.1.1.4.1. Demonstrate ability to answer questions on a text read in class, and to express an independent Communication and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B9.1.1.4.2",
+                      "text": ". Show effective listening skills by identifying various linguistic and tonal features for CC7.1: Identify words or"
+                    },
+                    {
+                      "indicator_id": "B9.1.1.4.3",
+                      "text": ". Demonstrate the ability to listen accurately and critically and identify various images and DL5.3: Ability to find and utilise"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B9.1.2.1",
+                  "text": "Learner B9.1.2.1.1. Show listening skills and strategies while listening to discussion after reading a text. Communication and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B9.1.2.1.2",
+                      "text": ". Show ability to deduce meaning of some unfamiliar words from a context with prior CC7.1: Identify words or"
+                    },
+                    {
+                      "indicator_id": "B9.1.2.1.3",
+                      "text": ". Demonstrate the ability to interpret other arguments independently and respond appropriately CP5.6: Demonstrate a thorough"
+                    },
+                    {
+                      "indicator_id": "B9.1.2.1.4",
+                      "text": ". Show ability to deduce meanings of some unfamiliar words and phrases from the context CC7.1: Identify words or"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B9.1.2.2",
+                  "text": "Learner B9.1.2.2.1 Show ability to listen accurately and critically, as well as identify implied meanings in a Communication and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B9.1.2.2.2",
+                      "text": ". Demonstrate the ability to discriminate between the main and subsidiary ideas in discourse, CP5.2: Analyse and make"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B9.2.1.1",
+                  "text": "Learner B9.2.1.1.1. Show ability to distinguish between formal and informal registers of familiar vocabulary. Communication and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B9.2.1.1.2",
+                      "text": ". Show communicative competence by using appropriate expressions for names of languages CC7.1: Identify words or"
+                    },
+                    {
+                      "indicator_id": "B9.2.1.1.3",
+                      "text": ". Demonstrate skills in using some culturally specific gestures in a limited range of special CI5.2: Ability to merge"
+                    },
+                    {
+                      "indicator_id": "B9.2.1.1.4",
+                      "text": ". Show mastery of appropriate speech act and diction in communicating about a food and CI: CC8.2: Explain ideas in a"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B9.2.1.2",
+                  "text": "Learner B9.2.1.2.1. Demonstrate the ability to employ various conversational strategies (such as interrogative Communication and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B9.2.1.2.2",
+                      "text": "Show the ability to select and manipulate certain structures, like appropriate tense and emotive CC8.2: Explain ideas in a clear"
+                    },
+                    {
+                      "indicator_id": "B9.2.1.2.3",
+                      "text": ". Demonstrate awareness of verbal and non-verbal communications to communicate effectively CC8.2: Explain ideas in a clear"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B8.2.2.1",
+                  "text": "Learner participates B9.2.2.1.1. Demonstrate oral communicative skills through supporting role play in a drama. Communication and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B9.2.2.1.2",
+                      "text": ". Demonstrate the ability to play the main character in a simple play. CP5.6: Demonstrate a thorough"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B9.2.3.1",
+                  "text": "Learner speaks B9.2.3.1.1. Demonstrate knowledge of verb conjugation in simple connected dialogues which include the Communication and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B9.2.3.1.2",
+                      "text": ". Demonstrate knowledge of verb conjugation in simple connected dialogues which include the CC8.2: Explain ideas in a clear"
+                    },
+                    {
+                      "indicator_id": "B9.2.3.1.3",
+                      "text": ". Demonstrate knowledge of verb conjugation in simple connected dialogues which include the CC8.2: Explain ideas in a clear"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B9.3.1.1",
+                  "text": "Learner shows Communication and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B9.3.1.1.1",
+                      "text": ". Show fluency and correct pronunciation of semi vowelised joint Arabic letters, phrases and"
+                    },
+                    {
+                      "indicator_id": "B9.3.1.1.2",
+                      "text": ". Show reading skills in articulating various letters and their representative sounds. CC8.3: Apply appropriate"
+                    },
+                    {
+                      "indicator_id": "B9.3.1.1.3",
+                      "text": ". Show reading skills in articulating rare combinations of letters and their representative CC8.3: Apply appropriate"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B9.3.2.1",
+                  "text": "Learner reads skills B9.3.2.1 1. Identify the subject matter of a text through illustrations, and other clues. Communication and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B9.3.2.1.2",
+                      "text": ". Recognise and respond to key ideas from a passage about a given topic. CC8.2: Explain ideas in a clear"
+                    },
+                    {
+                      "indicator_id": "B9.3.2.1.3",
+                      "text": ". Demonstrate active contributions to group readings to develop comprehension skills. CP5.6: Demonstrate a thorough"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B9.3.3.1",
+                  "text": "Learner speaks B9.3.3.1.1 Demonstrate knowledge of verb tenses in reading of a semi vowelized script by identifying the Communication and",
+                  "indicators": []
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B93.3.1.3",
+                  "text": "Demonstrate knowledge of verb tenses in reading a semi vowelized script by identifying the CP5.6: Demonstrate a thorough",
+                  "indicators": []
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B9.3.4.1",
+                  "text": "Learner B9.3.4.1.1 Demonstrate the ability to make inferences of text features such as word order, conjugation of Communication and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B9.3.4.1.2",
+                      "text": ". Show the ability to identify cultural elements and their depictions in a simple text. CC7.1: Identify words or"
+                    },
+                    {
+                      "indicator_id": "B9.3.4.1.3",
+                      "text": ". Demonstrate competence in vocabulary building to enhance understanding of unfamiliar texts. CP5.6: Demonstrate a thorough"
+                    },
+                    {
+                      "indicator_id": "B9.3.4.2.3",
+                      "text": ". Show awareness and appreciation of the author\u201fs manipulation of words to give literal or CP5.6: Demonstrate a"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B9.4.1.1",
+                  "text": "Learner B9.4.1.1.1. Demonstrate awareness of the rules for writing word-initial hamza (\u0621) in the Arabic text. Communication and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B9.4.1.1.2",
+                      "text": ". Demonstrate awareness of the rules for writing word-medial hamza (\u0621) in the Arabic text. CP6.7: Implement strategies"
+                    },
+                    {
+                      "indicator_id": "B9.4.1.1.3",
+                      "text": ". Demonstrate awareness of the rules for writing word-final hamza (\u0621) in the Arabic text. CP6.7: Implement strategies"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B9.4.2.1",
+                  "text": "Learner B9.4.2.1.1. Show writing skill in simple compositions, including a dialogue, formal and informal Communication and",
+                  "indicators": [
+                    {
+                      "indicator_id": "B9.4.2.1.2",
+                      "text": ". Demonstrate the ability to recognise formal and informal texts in correspondence. CP5.6: Demonstrate a"
+                    },
+                    {
+                      "indicator_id": "B9.4.2.1.3",
+                      "text": ". Demonstrate the ability to recognise formal texts and informal correspondence. CC7.1: Identify words or"
+                    },
+                    {
+                      "indicator_id": "B9.4.2.1.4",
+                      "text": ". Show preliminary writing skills in a targeted text format, including prose, poetry and CC8.2: Explain ideas in a"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
