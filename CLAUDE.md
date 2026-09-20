@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-# Project: Ghana STEM Trivia
+# Project: KwizBox
 
 STEM trivia web app for Ghanaian learners (Primary 4 / B4 → JHS 3 / B9), NaCCA-aligned.
 
