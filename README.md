@@ -54,7 +54,7 @@ MY APP/
 │   │   ├── badges.js        # 24 badge definitions + evaluateBadges + loadBadges/saveBadges
 │   │   └── components/
 │   │       ├── HeroStage.jsx# Animated hero letter interaction (landing page)
-│   │       ├── Mascot.jsx   # Ghana STEM mascot — gender + class level variants,
+│   │       ├── Mascot.jsx   # KwizBox mascot — gender + class level variants,
 │   │       │                #   states: thinking/celebrate/encourage/sad/thinking
 │   │       ├── Mascot.css   # Mascot component styles
 │   │       ├── AnimatedBg.jsx# Gradient blob background (orbs + sparkles)
@@ -96,7 +96,7 @@ MY APP/
 cd /home/stephen/Desktop/MY APP/backend
 ./venv/bin/python -m uvicorn src.main:app --host 0.0.0.0 --port 8001
 ```
-**Health check:** `curl http://localhost:8001/health` → `{"status":"ok","service":"ghana-stem-trivia"}`
+**Health check:** `curl http://localhost:8001/health` → `{"status":"ok","service":"kwizbox"}`
 
 ### Frontend (port 5173)
 ```bash
