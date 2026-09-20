@@ -1,0 +1,62 @@
+[
+  {
+    "id": 204,
+    "class_level": "B4",
+    "subject": "Mathematics",
+    "topic": "Number",
+    "strand": "Number",
+    "difficulty": "Hard",
+    "question": "Ama has 48 oranges. She gives away one quarter of them and then buys 15 more. How many oranges does she have now?",
+    "options": [
+      "51",
+      "54",
+      "57",
+      "63"
+    ],
+    "answer": "C",
+    "answer_index": 2,
+    "explanation": "One quarter of 48 is 12, leaving 36 oranges. Adding 15 gives 51, so the correct answer is A.",
+    "question_type": "mcq",
+    "image_url": null
+  },
+  {
+    "id": 261,
+    "class_level": "B8",
+    "subject": "Mathematics",
+    "topic": "Linear equations",
+    "strand": "Algebraic thinking",
+    "difficulty": "Hard",
+    "question": "A number is multiplied by 4 and then 6 is added. The result is 30. What is the number?",
+    "options": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "answer": "A",
+    "answer_index": 0,
+    "explanation": "Subtracting 6 from 30 gives 24. Dividing 24 by 4 gives 6, so the correct answer is B.",
+    "question_type": "mcq",
+    "image_url": null
+  },
+  {
+    "id": 289,
+    "class_level": "B4",
+    "subject": "Mathematics",
+    "topic": "Time",
+    "strand": "Measurement",
+    "difficulty": "Hard",
+    "question": "A lesson starts at 9:35 a.m. and lasts 45 minutes. At what time does it end?",
+    "options": [
+      "10:10 a.m.",
+      "10:15 a.m.",
+      "10:20 a.m.",
+      "10:25 a.m."
+    ],
+    "answer": "B",
+    "answer_index": 1,
+    "explanation": "Adding 25 minutes to 9:35 gives 10:00. Adding the remaining 20 minutes gives 10:20, so the correct answer is C.",
+    "question_type": "mcq",
+    "image_url": null
+  }
+]

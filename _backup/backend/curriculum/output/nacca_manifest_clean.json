@@ -1,0 +1,4149 @@
+{
+  "subjects": [
+    {
+      "code": "english",
+      "name": "English",
+      "levels": [
+        {
+          "code": "B6",
+          "strands": [
+            {
+              "name": "General",
+              "sub_strands": [
+                {
+                  "name": "General",
+                  "content_standards": [
+                    {
+                      "id": "B6.1.5.1",
+                      "text": "B6.1.5.1.1. Dramatise/role-play whole/parts of stories/scenes, Creativity and Innovation",
+                      "indicators": [
+                        {
+                          "indicator_id": "B6.3.5.1.2",
+                          "text": "Use appropriate subject-verb agreement (indefinite"
+                        },
+                        {
+                          "indicator_id": "B6.4.9.1.1",
+                          "text": "into a three-paragraph draft."
+                        },
+                        {
+                          "indicator_id": "B6.4.13.2.2",
+                          "text": "Use words, phrases, and clauses to clarify the"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "code": "B5",
+          "strands": [
+            {
+              "name": "General",
+              "sub_strands": [
+                {
+                  "name": "General",
+                  "content_standards": [
+                    {
+                      "id": "B6.1.5.1",
+                      "text": "B6.1.5.1.1. Dramatise/role-play whole/parts of stories/scenes, Creativity and Innovation",
+                      "indicators": [
+                        {
+                          "indicator_id": "B6.3.5.1.2",
+                          "text": "Use appropriate subject-verb agreement (indefinite"
+                        },
+                        {
+                          "indicator_id": "B6.4.9.1.1",
+                          "text": "into a three-paragraph draft."
+                        },
+                        {
+                          "indicator_id": "B6.4.13.2.2",
+                          "text": "Use words, phrases, and clauses to clarify the"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "code": "B4",
+          "strands": [
+            {
+              "name": "General",
+              "sub_strands": [
+                {
+                  "name": "General",
+                  "content_standards": [
+                    {
+                      "id": "B6.1.5.1",
+                      "text": "B6.1.5.1.1. Dramatise/role-play whole/parts of stories/scenes, Creativity and Innovation",
+                      "indicators": [
+                        {
+                          "indicator_id": "B6.3.5.1.2",
+                          "text": "Use appropriate subject-verb agreement (indefinite"
+                        },
+                        {
+                          "indicator_id": "B6.4.9.1.1",
+                          "text": "into a three-paragraph draft."
+                        },
+                        {
+                          "indicator_id": "B6.4.13.2.2",
+                          "text": "Use words, phrases, and clauses to clarify the"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "creative_arts",
+      "name": "Creative Arts",
+      "levels": []
+    },
+    {
+      "code": "french",
+      "name": "French",
+      "levels": [
+        {
+          "code": "B4",
+          "strands": [
+            {
+              "name": "\u00c9couter",
+              "sub_strands": [
+                {
+                  "name": "Demander et donner l\u2019heure",
+                  "content_standards": [
+                    {
+                      "id": "B4.1.2.2",
+                      "text": ": Se pr\u00e9senter \u00e0 quelqu\u2019un",
+                      "indicators": [
+                        {
+                          "indicator_id": "B4.1.2.4.1",
+                          "text": "- \u00c9crire \u00e0 un correspondant ; donner son nom, son pr\u00e9nom, sa nationalit\u00e9"
+                        },
+                        {
+                          "indicator_id": "B4.1.3.3.1",
+                          "text": "Lire et comprendre un texte simple dans lequel on pr\u00e9sente quelqu\u2019un"
+                        },
+                        {
+                          "indicator_id": "B4.1.3.4.1",
+                          "text": "\u00c9crire une note pour pr\u00e9senter quelqu\u2019un"
+                        },
+                        {
+                          "indicator_id": "B4.1.4.2.1",
+                          "text": "Poser et r\u00e9pondre \u00e0 des questions sur les caract\u00e9ristiques physiques d\u2019une"
+                        },
+                        {
+                          "indicator_id": "B4.1.4.2.2",
+                          "text": "R\u00e9citer un po\u00e8me, chanter une chanson sur les caract\u00e9ristiques physiques d\u2019une - Digital literacy"
+                        },
+                        {
+                          "indicator_id": "B4.1.4.4.1",
+                          "text": "D\u00e9crire les caract\u00e9ristiques physiques d\u2019une personne"
+                        },
+                        {
+                          "indicator_id": "B4.2.1.2.1",
+                          "text": "Demander \u00e0 quelqu\u2019un de nommer un objet de la maison"
+                        },
+                        {
+                          "indicator_id": "B4.2.1.2.2",
+                          "text": "R\u00e9citer des po\u00e8mes, chanter des chansons sur des objets de la maison"
+                        },
+                        {
+                          "indicator_id": "B4.2.1.3.1",
+                          "text": "Identifier les pi\u00e8ces et les objets de la maison"
+                        },
+                        {
+                          "indicator_id": "B4.2.1.4.1",
+                          "text": "\u00c9crire, dessiner et colorier des objets de la maison"
+                        },
+                        {
+                          "indicator_id": "B4.2.2.2.1",
+                          "text": "Poser et r\u00e9pondre \u00e0 des questions sur ce que l\u2019on fait avec les objets de la classe - Personal development and"
+                        },
+                        {
+                          "indicator_id": "B4.2.2.2.2",
+                          "text": "Poser et r\u00e9pondre \u00e0 des questions simples sur des endroits de l\u2019\u00e9cole"
+                        },
+                        {
+                          "indicator_id": "B4.2.2.3.1",
+                          "text": "Lire et comprendre des textes simples accompagn\u00e9s d\u2019images sur les objets de"
+                        },
+                        {
+                          "indicator_id": "B4.2.2.4.1",
+                          "text": "A l\u2019aide d\u2019images compl\u00e9ter les noms des objets de l\u2019\u00e9cole par les lettres"
+                        },
+                        {
+                          "indicator_id": "B4.3.1.1.1",
+                          "text": "\u00c9couter/Regarder et comprendre un document audio-visuel sur les go\u00fbts de"
+                        },
+                        {
+                          "indicator_id": "B4.3.1.2.1",
+                          "text": "Poser et r\u00e9pondre \u00e0 des questions sur les go\u00fbts"
+                        },
+                        {
+                          "indicator_id": "B4.3.1.2.2",
+                          "text": "Dire ce que l\u2019on aime"
+                        },
+                        {
+                          "indicator_id": "B4.3.1.3.1",
+                          "text": "Lire et comprendre un texte simple sur les go\u00fbts et des pr\u00e9f\u00e9rences des personnes"
+                        },
+                        {
+                          "indicator_id": "B4.3.1.4.1",
+                          "text": "Faire une liste d\u2019objets que l\u2019on aime"
+                        },
+                        {
+                          "indicator_id": "B4.3.2.2.1",
+                          "text": "Poser et r\u00e9pondre \u00e0 des questions sur les go\u00fbts"
+                        },
+                        {
+                          "indicator_id": "B4.3.2.2.3",
+                          "text": "Enum\u00e9rerce qu\u2019on aime et ceque l\u2019on n\u2019aime pas"
+                        },
+                        {
+                          "indicator_id": "B4.4.1.2.1",
+                          "text": "Compter \u00e0 haute voix des objets, des personnes, de son environnement"
+                        },
+                        {
+                          "indicator_id": "B4.4.1.2.2",
+                          "text": "R\u00e9citer un po\u00e8me portant sur les nombres"
+                        },
+                        {
+                          "indicator_id": "B4.4.1.2.3",
+                          "text": "Compter \u00e0 haute voix des objets, des personnes de son environnement."
+                        },
+                        {
+                          "indicator_id": "B4.4.1.3.1",
+                          "text": "Lire \u00e0 haute voixde 1 \u00e0 20"
+                        },
+                        {
+                          "indicator_id": "B4.4.1.4.1",
+                          "text": "Faire des calculs simples \u00e0 l\u2019\u00e9crit avec des chiffres en lettres"
+                        },
+                        {
+                          "indicator_id": "B4.4.2.2.1",
+                          "text": "Poser et r\u00e9pondre \u00e0 des questions sur l\u2019heure qu\u2019il est - Critical thinking"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "code": "B6",
+          "strands": [
+            {
+              "name": "WRITING",
+              "sub_strands": [
+                {
+                  "name": "General",
+                  "content_standards": [
+                    {
+                      "id": "B4.4.2.2",
+                      "text": ": Parler de l\u2019emploi du temps de la journ\u00e9e",
+                      "indicators": [
+                        {
+                          "indicator_id": "B4.4.2.3.2",
+                          "text": "Indiquer l\u2019heure qu\u2019il est en changeant les aiguilles d\u2019une horloge"
+                        },
+                        {
+                          "indicator_id": "B4.4.3.2.2",
+                          "text": "Dire ce que l\u2019on fait chaque jour de la semaine - Digital literacy"
+                        },
+                        {
+                          "indicator_id": "B4.4.3.3.1",
+                          "text": "Lire et comprendre un texte simple sur les activit\u00e9s d\u2019une personne"
+                        },
+                        {
+                          "indicator_id": "B4.4.3.4.2",
+                          "text": "\u00c9crire une carte postale \u00e0 un(e) ami(e) pour lui raconter comment on passe sa global citizenship"
+                        },
+                        {
+                          "indicator_id": "B4.4.3.4.3",
+                          "text": "Remplir un emploi du temps vierge avec des rubriques comme jour, mati\u00e8re, heure. leadership"
+                        },
+                        {
+                          "indicator_id": "B4.4.4.2.1",
+                          "text": "Poser et r\u00e9pondre \u00e0 des questions sur les mois de l\u2019ann\u00e9e."
+                        },
+                        {
+                          "indicator_id": "B4.4.4.2.2",
+                          "text": "Dire dans quel mois un \u00e9v\u00e9nement/une activit\u00e9 a lieu - Digital literacy"
+                        },
+                        {
+                          "indicator_id": "B4.4.4.2.3",
+                          "text": "R\u00e9citer des po\u00e8mes ou chanter des chansons sur les mois de l\u2019ann\u00e9e"
+                        },
+                        {
+                          "indicator_id": "B4.4.4.2.4",
+                          "text": "Situer un \u00e9v\u00e9nement/une action dans un mois de l\u2019ann\u00e9e"
+                        },
+                        {
+                          "indicator_id": "B4.4.5.2.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B4.4.5.2.2",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B4.4.5.3.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B4.4.6.2.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B4.4.6.2.3",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B4.4.6.3.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B4.4.6.4.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B4.4.7.2.2",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B4.4.8.2.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B4.4.8.2.2",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B4.4.8.3.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B4.4.8.4.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B4.4.9.2.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B4.4.9.4.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B5.1.1.3.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B5.1.2.2.2",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B5.1.3.2.2",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B5.1.3.3.2",
+                          "text": "- Creativity and innovation"
+                        },
+                        {
+                          "indicator_id": "B5.1.4.2.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B5.1.4.2.2",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B5.1.4.3.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B5.1.4.4.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B5.1.5.2.2",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B5.1.5.3.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B5.2.1.2.2",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B5.2.1.3.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B5.2.1.4.2",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B5.2.2.2.2",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B5.2.2.2.3",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B5.3.1.2.2",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B5.3.1.3.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B5.3.1.4.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B5.4.1.1.1",
+                          "text": "- Communication and"
+                        },
+                        {
+                          "indicator_id": "B5.4.1.2.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B5.4.1.2.3",
+                          "text": "- Communication and"
+                        },
+                        {
+                          "indicator_id": "B5.4.1.4.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B5.4.1.4.2",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B5.4.2.1.1",
+                          "text": "- Communication and"
+                        },
+                        {
+                          "indicator_id": "B5.4.2.2.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B5.4.2.2.2",
+                          "text": "- Cultural identity and"
+                        },
+                        {
+                          "indicator_id": "B5.4.2.4.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B5.4.2.4.2",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B5.4.3.2.1",
+                          "text": "- Personal development"
+                        },
+                        {
+                          "indicator_id": "B5.4.3.2.2",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B5.4.3.3.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B5.4.3.4.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B5.4.4.1.1",
+                          "text": "- Communication and"
+                        },
+                        {
+                          "indicator_id": "B5.4.4.2.2",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B5.4.4.3.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B5.4.4.4.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B5.4.5.1.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B5.4.5.2.2",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B5.4.5.3.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B5.4.5.4.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B5.4.6.1.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B5.4.6.2.2",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B5.4.6.2.3",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B5.4.6.3.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B5.4.6.4.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B5.4.7.1.1",
+                          "text": "- Communication and"
+                        },
+                        {
+                          "indicator_id": "B5.4.7.2.2",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B5.4.7.3.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B5.4.7.4.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B5.4.8.2.2",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B5.4.8.3.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B5.4.8.4.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B5.4.9.1.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B5.4.9.2.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B5.4.9.3.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B5.4.9.4.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.1.1.1.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.1.1.3.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.1.1.4.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.1.2.1.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.1.2.2.1",
+                          "text": "- Critical thinking"
+                        },
+                        {
+                          "indicator_id": "B6.1.2.3.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.1.2.4.1",
+                          "text": "- Digital literacy"
+                        },
+                        {
+                          "indicator_id": "B6.1.2.5.3",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.1.3.1.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.1.3.2.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.1.3.3.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.1.3.4.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.1.4.1.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.1.4.2.1",
+                          "text": "- Creativity and innovation"
+                        },
+                        {
+                          "indicator_id": "B6.1.4.2.2",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.1.4.3.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.1.4.4.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.1.5.1.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.1.5.2.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.1.5.2.2",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.1.5.3.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.1.5.4.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.2.1.1.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.2.1.2.2",
+                          "text": "- Critical thinking"
+                        },
+                        {
+                          "indicator_id": "B6.2.1.3.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.2.1.4.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.2.2.1.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.2.2.2.2",
+                          "text": "- Digital literacy"
+                        },
+                        {
+                          "indicator_id": "B6.2.2.2.3",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.2.2.3.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.2.2.4.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.3.1.2.1",
+                          "text": "global citizenship"
+                        },
+                        {
+                          "indicator_id": "B6.3.1.3.1",
+                          "text": "global citizenship"
+                        },
+                        {
+                          "indicator_id": "B6.3.1.1.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.3.1.2.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.3.1.3.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.3.1.4.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.3.1.4.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.4.1.1.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.4.1.2.1",
+                          "text": "- Digital literacy"
+                        },
+                        {
+                          "indicator_id": "B6.4.1.2.2",
+                          "text": "Jouer aux jeux avec des chiffres"
+                        },
+                        {
+                          "indicator_id": "B6.4.1.2.3",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.4.1.3.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.4.1.3.2",
+                          "text": "leadership"
+                        },
+                        {
+                          "indicator_id": "B6.4.1.4.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.4.1.4.2",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.4.2.2.2",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.4.2.3.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.4.2.3.2",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.4.2.4.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.4.2.4.2",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.4.3.1.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.4.3.2.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.4.3.3.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.4.3.4.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.4.4.2.1",
+                          "text": "- Critical thinking"
+                        },
+                        {
+                          "indicator_id": "B6.4.4.2.2",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.4.4.3.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.4.4.4.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.4.5.1.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.4.5.2.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.4.5.2.2",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.4.5.4.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.4.6.2.1",
+                          "text": "- Critical thinking"
+                        },
+                        {
+                          "indicator_id": "B6.4.6.2.2",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.4.6.3.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.4.6.4.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.4.7.2.1",
+                          "text": "- Critical thinking"
+                        },
+                        {
+                          "indicator_id": "B6.4.7.3.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.4.7.4.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.4.8.1.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.4.8.2.2",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.4.8.3.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.4.8.4.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.4.9.1.1",
+                          "text": "Communication and"
+                        },
+                        {
+                          "indicator_id": "B6.4.9.2.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.4.9.3.1",
+                          "text": ""
+                        },
+                        {
+                          "indicator_id": "B6.4.9.4.1",
+                          "text": ""
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "computing",
+      "name": "Computing",
+      "levels": [
+        {
+          "code": "B6",
+          "strands": [
+            {
+              "name": "Safety",
+              "sub_strands": [
+                {
+                  "name": "General",
+                  "content_standards": [
+                    {
+                      "id": "B6.2.1.1",
+                      "text": "Demonstrate how B6.2.1.1.1. Demonstrate how to use the File menu, the Insert and Design 1. Creativity and innovation.",
+                      "indicators": [
+                        {
+                          "indicator_id": "B6.2.1.1.2",
+                          "text": ". Demonstrate how to use icons in the Text group in the Insert 4. Personal development and"
+                        },
+                        {
+                          "indicator_id": "B6.2.1.1.3",
+                          "text": ". Be able to give a 5-side presentation in MS-PowerPoint using Subject Specific Practices"
+                        },
+                        {
+                          "indicator_id": "B6.3.1.1.2",
+                          "text": "Demonstrate how to use icons in the Text group in the Insert 4. Personal development and"
+                        },
+                        {
+                          "indicator_id": "B6.3.1.1.3",
+                          "text": "Be able to use the attributes of the ribbons studied in a Subject Specific Practices"
+                        },
+                        {
+                          "indicator_id": "B6.5.1.1.2",
+                          "text": "Identify databases and data structures. 3. Cultural identity and global"
+                        },
+                        {
+                          "indicator_id": "B6.5.1.1.3",
+                          "text": ". Explain Fundamental Database concepts. 5. Digital literacy."
+                        },
+                        {
+                          "indicator_id": "B6.5.1.1.5",
+                          "text": ". Describe the basics of Relational Data model. 2. Communication"
+                        },
+                        {
+                          "indicator_id": "B6.5.1.1.6",
+                          "text": ". Identify the basics of logical Database Design."
+                        },
+                        {
+                          "indicator_id": "B6.5.1.1.7",
+                          "text": ". Illustrate basics of relational algebra."
+                        },
+                        {
+                          "indicator_id": "B6.5.1.1.9",
+                          "text": ". Operate basics SQL: querying and manipulating data. 4. Personal development and"
+                        },
+                        {
+                          "indicator_id": "B6.5.3.1.2",
+                          "text": ". Learners to create basic worksheets using Microsoft Excel 4. Personal development and"
+                        },
+                        {
+                          "indicator_id": "B6.5.3.1.3",
+                          "text": ". Perform calculations in an MS-Excel worksheet. 1. Skill development"
+                        },
+                        {
+                          "indicator_id": "B6.5.3.1.4",
+                          "text": ". Modify an MS-Excel worksheet."
+                        },
+                        {
+                          "indicator_id": "B6.5.3.1.5",
+                          "text": "Modify the appearance of data within a worksheet."
+                        },
+                        {
+                          "indicator_id": "B6.5.3.1.7",
+                          "text": ". Print the content of an MS-Excel worksheet. citizenship."
+                        },
+                        {
+                          "indicator_id": "B6.6.1.1.2",
+                          "text": ". Describe the types of information available on the Internet. citizenship."
+                        },
+                        {
+                          "indicator_id": "B6.6.1.1.3",
+                          "text": ". Identify data duplication."
+                        },
+                        {
+                          "indicator_id": "B6.6.1.1.4",
+                          "text": ". Outline what one needs to connect to the Internet."
+                        },
+                        {
+                          "indicator_id": "B6.6.2.1.2",
+                          "text": ". Recognise the status bar and list its use. 4. Personal development and"
+                        },
+                        {
+                          "indicator_id": "B6.6.2.1.3",
+                          "text": ". Illustrate using help button."
+                        },
+                        {
+                          "indicator_id": "B6.6.2.1.4",
+                          "text": ". Recognise internet explorer speed keys."
+                        },
+                        {
+                          "indicator_id": "B6.6.2.1.6",
+                          "text": ". Demonstrate how to return to a URL. leadership."
+                        },
+                        {
+                          "indicator_id": "B6.6.2.1.7",
+                          "text": ". Show how to find items on a page. Subject Specific Practices"
+                        },
+                        {
+                          "indicator_id": "B6.6.3.1.2",
+                          "text": ". Illustrate how to jump directory to URLs. leadership."
+                        },
+                        {
+                          "indicator_id": "B6.6.3.1.3",
+                          "text": ". Demonstrate how to return to a URL. Subject Specific Practices"
+                        },
+                        {
+                          "indicator_id": "B6.6.3.1.4",
+                          "text": ". Show how to find items on a page."
+                        },
+                        {
+                          "indicator_id": "B6.6.3.1.5",
+                          "text": ". Illustrate how to print pages."
+                        },
+                        {
+                          "indicator_id": "B6.6.4.1.2",
+                          "text": ". Demonstrate deleting favourite links. citizenship."
+                        },
+                        {
+                          "indicator_id": "B6.6.4.1.3",
+                          "text": ". Create favourite folder. 5. Digital literacy."
+                        },
+                        {
+                          "indicator_id": "B6.6.4.1.4",
+                          "text": ". Use the links toolbar and Favourite Places."
+                        },
+                        {
+                          "indicator_id": "B6.6.5.1.2",
+                          "text": ". Demonstrate the filing of forms offline. 4. Personal development and leadership"
+                        },
+                        {
+                          "indicator_id": "B6.6.5.1.3",
+                          "text": ". Demonstrate uploading of files. Subject Specific Practices"
+                        },
+                        {
+                          "indicator_id": "B6.6.5.1.4",
+                          "text": ". Illustrate retrieving text, pictures, sounds and programs."
+                        },
+                        {
+                          "indicator_id": "B6.6.5.1.5",
+                          "text": ". Discuss more about security on the form submission."
+                        },
+                        {
+                          "indicator_id": "B6.6.6.1.2",
+                          "text": ". Illustrate how to set themes. 5. Digital literacy."
+                        },
+                        {
+                          "indicator_id": "B6.6.6.1.3",
+                          "text": ". Show how to customise the toolbar. 1. Communication"
+                        },
+                        {
+                          "indicator_id": "B6.6.6.1.4",
+                          "text": ". Set bookmarks."
+                        },
+                        {
+                          "indicator_id": "B6.6.6.1.5",
+                          "text": ". Show how to set cookies demonstrate the steps in turning on"
+                        },
+                        {
+                          "indicator_id": "B6.6.7.1.2",
+                          "text": ". Illustrate how to reply to and forward received messages. 3. Cultural identity and global"
+                        },
+                        {
+                          "indicator_id": "B6.6.7.1.3",
+                          "text": ". Demonstrate how to delete messages. leadership"
+                        },
+                        {
+                          "indicator_id": "B6.6.7.1.4",
+                          "text": ". Illustrate filing of e-mail messages. Subject Specific Practices"
+                        },
+                        {
+                          "indicator_id": "B6.6.7.1.5",
+                          "text": ". Create address list."
+                        },
+                        {
+                          "indicator_id": "B6.6.7.1.6",
+                          "text": ". Demonstrate attaching files to e-mail messages."
+                        },
+                        {
+                          "indicator_id": "B6.6.7.1.7",
+                          "text": ". Demonstrate some e-mail tips."
+                        },
+                        {
+                          "indicator_id": "B6.6.8.1.2",
+                          "text": ". Give more examples of internet of things with a consumer citizenship"
+                        },
+                        {
+                          "indicator_id": "B6.6.8.1.3",
+                          "text": ". Mention at least five more terms and acronyms of IoT . 1. Communication"
+                        },
+                        {
+                          "indicator_id": "B6.6.9.1.2",
+                          "text": ". Devise various techniques on how to protect oneself from citizenship"
+                        },
+                        {
+                          "indicator_id": "B6.6.9.1.3",
+                          "text": ". Debate a spam and solicited messages. Subject Specific Practices"
+                        },
+                        {
+                          "indicator_id": "B6.6.9.1.4",
+                          "text": ". Differentiate between virtual friends and real friends."
+                        },
+                        {
+                          "indicator_id": "B6.6.10.1.2",
+                          "text": ". Investigate on the responsible use of computers. 4. Personal development and"
+                        },
+                        {
+                          "indicator_id": "B6.7.1.1.2",
+                          "text": ". Demonstrate solutions for the health related problems in leadership"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ghanaian_language",
+      "name": "Ghanaian Language",
+      "levels": [
+        {
+          "code": "B5",
+          "strands": [
+            {
+              "name": "Integrating Grammar in Written Language(Conjunctions)",
+              "sub_strands": [
+                {
+                  "name": "Penmanship/Handwriting",
+                  "content_standards": [
+                    {
+                      "id": "B5.2.4.1",
+                      "text": "B4.2.4.1.4 Recognise and say consonant clusters in words found in paragraphs.",
+                      "indicators": [
+                        {
+                          "indicator_id": "B5.2.5.1.2",
+                          "text": "Read stories aloud with correct pronunciation and tone."
+                        },
+                        {
+                          "indicator_id": "B5.3.1.1.2",
+                          "text": "Recognise that a comma is used to separate a list of items. It serves as a"
+                        },
+                        {
+                          "indicator_id": "B5.3.1.1.3",
+                          "text": "Recognise that a colon is used to list and explain a statement, or to mention"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "code": "B6",
+          "strands": [
+            {
+              "name": "Integrating Grammar in Written Language(Conjunctions)",
+              "sub_strands": [
+                {
+                  "name": "Reading Texts, Poems Narratives and Short Stories and Responding to them",
+                  "content_standards": [
+                    {
+                      "id": "B5.3.1.1",
+                      "text": "B5.3.1.1.4 Recognise that quotation marks are used when you want to write or",
+                      "indicators": [
+                        {
+                          "indicator_id": "B5.3.1.1.5",
+                          "text": "Write simple sentences."
+                        },
+                        {
+                          "indicator_id": "B5.4.1.1.2",
+                          "text": "Understand and use exclamation mark in narrative writing appropriately. leadership"
+                        },
+                        {
+                          "indicator_id": "B5.4.1.1.3",
+                          "text": "Know the appropriate use of colon and quotation marks in narrative writing."
+                        },
+                        {
+                          "indicator_id": "B5.4.2.1.2",
+                          "text": "Write an imaginative longer story on their own. Creativity and Innovation"
+                        },
+                        {
+                          "indicator_id": "B5.4.2.1.3",
+                          "text": "Create a story that relates to their environment."
+                        },
+                        {
+                          "indicator_id": "B5.4.3.1.2",
+                          "text": "Give simple descriptive essays about objects using controlled"
+                        },
+                        {
+                          "indicator_id": "B5.4.3.1.3",
+                          "text": "Write their own simple descriptive essays on given topics."
+                        },
+                        {
+                          "indicator_id": "B5.4.4.1.2",
+                          "text": "Write simple persuasive essays about domestic issues. Personal development and"
+                        },
+                        {
+                          "indicator_id": "B5.4.4.1.3",
+                          "text": "Write persuasive essays on given topics."
+                        },
+                        {
+                          "indicator_id": "B5.4.5.1.2",
+                          "text": "Comprehend and discuss how to write for or against a motion in an"
+                        },
+                        {
+                          "indicator_id": "B5.4.5.1.3",
+                          "text": "Write a simple argumentative essay on a given topic."
+                        },
+                        {
+                          "indicator_id": "B5.4.6.1.2",
+                          "text": "Publish and appreciate the articles in the journal."
+                        },
+                        {
+                          "indicator_id": "B5.4.7.1.2",
+                          "text": "Create short prose."
+                        },
+                        {
+                          "indicator_id": "B5.4.7.1.3",
+                          "text": "Write a short and simple play."
+                        },
+                        {
+                          "indicator_id": "B5.4.8.1.2",
+                          "text": "Write semi-formal letters using controlled composition."
+                        },
+                        {
+                          "indicator_id": "B5.4.8.1.3",
+                          "text": "Write good semi-formal letters."
+                        },
+                        {
+                          "indicator_id": "B5.5.1.1.2",
+                          "text": "Comprehend the use of capital letters after a colon."
+                        },
+                        {
+                          "indicator_id": "B5.5.1.1.3",
+                          "text": "Understand the use of capital letters after a question mark."
+                        },
+                        {
+                          "indicator_id": "B5.5.2.1.2",
+                          "text": "Understand and use exclamation mark in writing appropriately. Personal development and"
+                        },
+                        {
+                          "indicator_id": "B5.5.2.1.3",
+                          "text": "Use colon and quotation marks in writing appropriately."
+                        },
+                        {
+                          "indicator_id": "B5.5.3.1.2",
+                          "text": "Use simple past tense action words in sentences."
+                        },
+                        {
+                          "indicator_id": "B5.5.4.1.2",
+                          "text": "Use of comparative and superlative words/adjectives forms in sentences."
+                        },
+                        {
+                          "indicator_id": "B5.5.5.1.3",
+                          "text": "Recognise postpositions in paragraphs Personal development and"
+                        },
+                        {
+                          "indicator_id": "B5.5.6.1.2",
+                          "text": "Use single conjunctions in forming compound sentences."
+                        },
+                        {
+                          "indicator_id": "B5.5.6.1.3",
+                          "text": "Form compound sentences with appropriate conjunctions."
+                        },
+                        {
+                          "indicator_id": "B5.5.7.1.2",
+                          "text": "Rearrange letters to form new words. Personal development and"
+                        },
+                        {
+                          "indicator_id": "B5.5.7.1.3",
+                          "text": "Fill in missing words from passages."
+                        },
+                        {
+                          "indicator_id": "B5.6.1.1.2",
+                          "text": "Demonstrate correct speech, rhythm and tone."
+                        },
+                        {
+                          "indicator_id": "B5.6.3.1.3",
+                          "text": "Retell the short stories or narratives read."
+                        },
+                        {
+                          "indicator_id": "B5.6.3.1.4",
+                          "text": "Read paragraphs, passages and stories of different texts."
+                        },
+                        {
+                          "indicator_id": "B5.6.3.1.5",
+                          "text": "Answer factual questions based on the passage read."
+                        },
+                        {
+                          "indicator_id": "B5.6.3.1.6",
+                          "text": "Write a summary of passage/text read."
+                        },
+                        {
+                          "indicator_id": "B6.1.1.1.2",
+                          "text": ". Discuss the importance and some moral lessons of the songs and the"
+                        },
+                        {
+                          "indicator_id": "B6.1.4.1.2",
+                          "text": ". Discuss the values or morals of folktales and of stories."
+                        },
+                        {
+                          "indicator_id": "B6.1.5.1.2",
+                          "text": "Perform a drama."
+                        },
+                        {
+                          "indicator_id": "B6.1.6.1.2",
+                          "text": "Explore or say some towns and villages in Ghana."
+                        },
+                        {
+                          "indicator_id": "B6.1.6.1.3",
+                          "text": "Discuss the major rivers in Ghana and those close to the area."
+                        },
+                        {
+                          "indicator_id": "B6.1.7.1.3",
+                          "text": "Use the appropriate terms to describe families."
+                        },
+                        {
+                          "indicator_id": "B6.1.10.1.2",
+                          "text": "Use the landmarks to give directions to a house."
+                        },
+                        {
+                          "indicator_id": "B6.1.10.1.3",
+                          "text": ". Use the landmarks to give directions to your school."
+                        },
+                        {
+                          "indicator_id": "B6.1.11.1.2",
+                          "text": "Discuss causes of accidents in the environment."
+                        },
+                        {
+                          "indicator_id": "B6.1.11.1.3",
+                          "text": ". Discuss some safety measures to prevent accidents that occur at home, Personal development and"
+                        },
+                        {
+                          "indicator_id": "B6.2.4.1.2",
+                          "text": "Blend three or more syllables to form words and read them."
+                        },
+                        {
+                          "indicator_id": "B6.2.4.1.3",
+                          "text": "Recognise and say consonant clusters in passages."
+                        },
+                        {
+                          "indicator_id": "B6.2.5.1.2",
+                          "text": "Read long text/passages aloud with correct pronunciation and tone."
+                        },
+                        {
+                          "indicator_id": "B6.2.6.1.2",
+                          "text": "Answer factual and inferential questions."
+                        },
+                        {
+                          "indicator_id": "B6.2.6.1.3",
+                          "text": "Make predictions of a given text."
+                        },
+                        {
+                          "indicator_id": "B6.2.7.1.2",
+                          "text": "Retell the story sequentially."
+                        },
+                        {
+                          "indicator_id": "B6.2.9.1.2",
+                          "text": "Recognise topic sentences in each paragraph."
+                        },
+                        {
+                          "indicator_id": "B6.2.9.1.3",
+                          "text": "Re-write the main ideas in a passage in a logical order."
+                        },
+                        {
+                          "indicator_id": "B6.2.9.1.2",
+                          "text": "Recognise topic sentences in each paragraph."
+                        },
+                        {
+                          "indicator_id": "B6.2.9.1.3",
+                          "text": "Re-write the main ideas in a passage in a logical order. Personal development and"
+                        },
+                        {
+                          "indicator_id": "B6.3.1.1.2",
+                          "text": "Write sentences using joint scripts."
+                        },
+                        {
+                          "indicator_id": "B6.4.1.1.2",
+                          "text": "Write a brief report on an event or activity they have witnessed."
+                        },
+                        {
+                          "indicator_id": "B6.4.1.1.3",
+                          "text": "Write a report or account of a particular event or activity."
+                        },
+                        {
+                          "indicator_id": "B6.4.2.1.3",
+                          "text": "Write a longer imaginative or real story."
+                        },
+                        {
+                          "indicator_id": "B6.4.2.2.2",
+                          "text": "Write a long real story of about five paragraphs."
+                        },
+                        {
+                          "indicator_id": "B6.4.2.2.3",
+                          "text": "Write a longer imaginative or real story."
+                        },
+                        {
+                          "indicator_id": "B6.4.3.1.2",
+                          "text": "Write a descriptive essay about a situation."
+                        },
+                        {
+                          "indicator_id": "B6.4.3.1.3",
+                          "text": "Write a descriptive composition on a certain process."
+                        },
+                        {
+                          "indicator_id": "B6.4.4.1.2",
+                          "text": "Write a persuasive essay about education."
+                        },
+                        {
+                          "indicator_id": "B6.4.4.1.3",
+                          "text": "Write a persuasive essay on a national issue."
+                        },
+                        {
+                          "indicator_id": "B6.4.5.1.2",
+                          "text": "Take a stand and write an argumentative essay against a given motion."
+                        },
+                        {
+                          "indicator_id": "B6.4.5.1.3",
+                          "text": "Write an argumentative essay on a given topic. Creativity and innovation"
+                        },
+                        {
+                          "indicator_id": "B6.4.6.1.2",
+                          "text": "Write speeches, letter to the press and reports using controlled"
+                        },
+                        {
+                          "indicator_id": "B6.4.6.1.3",
+                          "text": "Write good speeches, letter to the press and reports."
+                        },
+                        {
+                          "indicator_id": "B6.4.6.1.4",
+                          "text": "Write good reports on various activities."
+                        },
+                        {
+                          "indicator_id": "B6.4.7.1.3",
+                          "text": "Write a good play using daily activities and experiences."
+                        },
+                        {
+                          "indicator_id": "B6.4.8.1.2",
+                          "text": "Write formal letters using controlled composition."
+                        },
+                        {
+                          "indicator_id": "B6.4.8.1.3",
+                          "text": "Write good formal letters."
+                        },
+                        {
+                          "indicator_id": "B6.5.1.1.2",
+                          "text": "Use upper case letters to begin paragraphs and after exclamation mark."
+                        },
+                        {
+                          "indicator_id": "B6.5.2.1.2",
+                          "text": "Use punctuation marks appropriately in writing essays."
+                        },
+                        {
+                          "indicator_id": "B6.5.2.1.3",
+                          "text": "Use punctuation marks appropriately in writing reports."
+                        },
+                        {
+                          "indicator_id": "B6.5.3.1.3",
+                          "text": "Apply the use of the singular and plural subject and verb forms that go with them."
+                        },
+                        {
+                          "indicator_id": "B6.5.4.1.2",
+                          "text": "Write short description of people using adjectives. Personal development and"
+                        },
+                        {
+                          "indicator_id": "B6.5.4.1.3",
+                          "text": "Use the different types of adverbs in sentences."
+                        },
+                        {
+                          "indicator_id": "B6.5.5.1.2",
+                          "text": "Use postpositions in writing paragraphs appropriately."
+                        },
+                        {
+                          "indicator_id": "B6.5.6.1.2",
+                          "text": "Use conjunctions in forming compound sentences correctly."
+                        },
+                        {
+                          "indicator_id": "B6.5.7.1.2",
+                          "text": "Fill in missing words from a short passage. Communication and"
+                        },
+                        {
+                          "indicator_id": "B6.5.7.1.3",
+                          "text": "Write dictated passages."
+                        },
+                        {
+                          "indicator_id": "B6.6.1.1.2",
+                          "text": "Recognise features of articles for a class magazine."
+                        },
+                        {
+                          "indicator_id": "B6.6.1.1.3",
+                          "text": "Write articles for class magazine."
+                        },
+                        {
+                          "indicator_id": "B6.6.1.1.4",
+                          "text": "Publish the articles in the magazines."
+                        },
+                        {
+                          "indicator_id": "B6.6.1.1.5",
+                          "text": ". Appreciate the articles."
+                        },
+                        {
+                          "indicator_id": "B6.6.3.1.2",
+                          "text": "Answer questions that are based on the passage."
+                        },
+                        {
+                          "indicator_id": "B6.6.3.1.3",
+                          "text": "Read paragraphs, passages and stories of different text at a reasonable speed."
+                        },
+                        {
+                          "indicator_id": "B6.6.3.1.4",
+                          "text": "Find the meaning of unfamiliar words from the dictionary and context."
+                        },
+                        {
+                          "indicator_id": "B6.6.3.1.5",
+                          "text": "Answer factual and inferential questions from the passage read."
+                        },
+                        {
+                          "indicator_id": "B6.6.3.1.6",
+                          "text": "Write a summary of the passage or text read."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "history",
+      "name": "History",
+      "levels": [
+        {
+          "code": "B6",
+          "strands": [
+            {
+              "name": "Ghana Gains Independence",
+              "sub_strands": [
+                {
+                  "name": "MILITARY RULE",
+                  "content_standards": [
+                    {
+                      "id": "B1.3.1.1",
+                      "text": "Show understanding B1.3.1.1.1 Explore which Europeans came to Ghana As learners use evidence to",
+                      "indicators": [
+                        {
+                          "indicator_id": "B2.2.5.1.1",
+                          "text": "Exhibit B2.2.5.1.1. Identify Ghanaian women who have made significant The use of evidence to appreciate"
+                        },
+                        {
+                          "indicator_id": "B3.2.2.1.2",
+                          "text": "Name some of the items exchanged among the various groups."
+                        },
+                        {
+                          "indicator_id": "B3.2.2.1.3",
+                          "text": "Describe the conflicts and alliances that existed among the ethnic groups in"
+                        },
+                        {
+                          "indicator_id": "B4.2.1.1.2",
+                          "text": "State the factors that led to decline of the"
+                        },
+                        {
+                          "indicator_id": "B4.6.1.1.1",
+                          "text": ".2 State the dates and names of the leaders of the four"
+                        },
+                        {
+                          "indicator_id": "B5.2.1.1.2",
+                          "text": "Describe some ancient towns in Ghana."
+                        },
+                        {
+                          "indicator_id": "B5.4.2.1.2",
+                          "text": "Identify some of the health facilities and housing"
+                        },
+                        {
+                          "indicator_id": "B5.5.1.1.2",
+                          "text": "Examine sources of evidence about the role"
+                        },
+                        {
+                          "indicator_id": "B4.5.3.1.2",
+                          "text": "Examine sources of evidence about what happened during"
+                        },
+                        {
+                          "indicator_id": "B6.5.4.1.2",
+                          "text": "Explain how Ghana gained independence through"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "our_world_and_our_people",
+      "name": "Our World and Our People",
+      "levels": [
+        {
+          "code": "B6",
+          "strands": [
+            {
+              "name": "our environment",
+              "sub_strands": [
+                {
+                  "name": "Being a Citizen",
+                  "content_standards": [
+                    {
+                      "id": "B4.2.1.1",
+                      "text": "Demonstrate B4.2.1.1 .1. Explain ways of Learners talk about ways of ensuring safety in the",
+                      "indicators": [
+                        {
+                          "indicator_id": "B4.2.2.1.2",
+                          "text": ". Through group work guide learners to play games and"
+                        },
+                        {
+                          "indicator_id": "B6.1.2.1.2",
+                          "text": ". Learners in groups discuss how to manage the challenges that come"
+                        },
+                        {
+                          "indicator_id": "B6.4.1.1.2",
+                          "text": "."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "our nation",
+              "sub_strands": [
+                {
+                  "name": "General",
+                  "content_standards": [
+                    {
+                      "id": "B6.4.1.2",
+                      "text": ". B6.4.1.2.1. Learners explain public accountability e.g. Public Accountability is a",
+                      "indicators": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "physical_education",
+      "name": "Physical Education",
+      "levels": [
+        {
+          "code": "B4",
+          "strands": [
+            {
+              "name": "motor skills",
+              "sub_strands": [
+                {
+                  "name": "General",
+                  "content_standards": [
+                    {
+                      "id": "B1.1.1.1",
+                      "text": "B1.1.1.1.1: Travel (move) over, under, in front of, behind, and through objects using Personal Development,",
+                      "indicators": [
+                        {
+                          "indicator_id": "B1.1.3.1.3",
+                          "text": "Roll a ball from stationary position using hands."
+                        },
+                        {
+                          "indicator_id": "B1.1.7.1.7",
+                          "text": "Strike a light ball upward continuously, using a large, short-handled"
+                        },
+                        {
+                          "indicator_id": "B1.1.8.1.9",
+                          "text": "Throw and catch a self-tossed ball. Leadership, Skills: Learners"
+                        },
+                        {
+                          "indicator_id": "B1.1.10.1.13",
+                          "text": "Move the ball forward while dribbling with the hand and with the foot"
+                        },
+                        {
+                          "indicator_id": "B1.1.12.1.15",
+                          "text": "Marching to a beat(rhythm)"
+                        },
+                        {
+                          "indicator_id": "B1.1.12.1.16",
+                          "text": "Demonstrate a smooth transition between even-beat and uneven-beat"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "General",
+                  "content_standards": [
+                    {
+                      "id": "B1.2.1.2",
+                      "text": "B1.2.1.2.1: Identify personal space Communication and Collaboration",
+                      "indicators": [
+                        {
+                          "indicator_id": "B1.2.2.2.3",
+                          "text": "Explain the key differences and similarities in jog and a run, a hop Skills: Learners develop communication"
+                        },
+                        {
+                          "indicator_id": "B1.2.4.2.5",
+                          "text": "Identify the base of support of balanced objects."
+                        },
+                        {
+                          "indicator_id": "B1.2.5.2.6",
+                          "text": "Identify different opportunities to use striking skills. etc., as the teacher demonstrates"
+                        },
+                        {
+                          "indicator_id": "B1.3.3.3.3",
+                          "text": "Perform sit and reach. Personal Development and Problem-"
+                        },
+                        {
+                          "indicator_id": "B1.3.3.3.4",
+                          "text": "Identify human body parts."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Values and Psycho-social Concepts, Principles and Strategies",
+              "sub_strands": [
+                {
+                  "name": "General",
+                  "content_standards": [
+                    {
+                      "id": "B1.4.1.4",
+                      "text": "B1.4.1.4.1: Participate in enjoyable physical activities for increasing periods Personal Development and",
+                      "indicators": [
+                        {
+                          "indicator_id": "B1.4.3.4.3",
+                          "text": "Explain the purpose of warming up before physical activity and"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "General",
+                  "content_standards": [
+                    {
+                      "id": "B1.5.1.5",
+                      "text": "B1.5.1.5.1: Participate willingly in physical activities. Cultural Identity and Global",
+                      "indicators": [
+                        {
+                          "indicator_id": "B1.5.3.5.3",
+                          "text": "Demonstrate non-verbal appreciation."
+                        },
+                        {
+                          "indicator_id": "B1.5.4.5.4",
+                          "text": "Demonstrate how to solve a problem with another person during Cultural Identity and Global"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "athletics",
+              "sub_strands": [
+                {
+                  "name": "General",
+                  "content_standards": [
+                    {
+                      "id": "B2.1.1.1",
+                      "text": "B2.1.1.1.1: Travel (move) in straight, curved, and zigzag pathways, using the Personal Development and",
+                      "indicators": [
+                        {
+                          "indicator_id": "B2.1.2.1.2",
+                          "text": "Forward and backward skip without a rope."
+                        },
+                        {
+                          "indicator_id": "B2.1.3.1.3",
+                          "text": "Roll a ball from stationary to a given point and back, using hands."
+                        },
+                        {
+                          "indicator_id": "B2.1.4.1.4",
+                          "text": "Demonstrate balance on the ground and on objects, using bases"
+                        },
+                        {
+                          "indicator_id": "B2.1.5.1.5",
+                          "text": "Transfer weight from feet to hands and from hands to feet, such as accuracy, precision,"
+                        },
+                        {
+                          "indicator_id": "B2.1.6.1.6",
+                          "text": "Strike a ball continuously in an upward or forward motion, using courage, patience, teamwork, fair-"
+                        },
+                        {
+                          "indicator_id": "B2.1.8.1.8",
+                          "text": "Perform the overhand throw pattern."
+                        },
+                        {
+                          "indicator_id": "B2.1.8.1.9",
+                          "text": "Throw a ball to a partner using the underhand, overhand and creativity etc. as they practice underarm"
+                        },
+                        {
+                          "indicator_id": "B2.1.9.1.11",
+                          "text": "Kick a stationary ball using a smooth continuous running stationary ball using a smooth"
+                        },
+                        {
+                          "indicator_id": "B2.1.10.1.12",
+                          "text": "Hand-dribble by controlling a ball for a sustained period. tolerance, fair-play, as they practice"
+                        },
+                        {
+                          "indicator_id": "B2.1.11.1.14",
+                          "text": "Foot-dribble by controlling a ball on the ground."
+                        },
+                        {
+                          "indicator_id": "B2.1.12.1.15",
+                          "text": "Clap and dance to beat (rhythm)"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "VALUES AND PSYCHO-SOCIAL CONCEPTS, PRINCIPLES AND STRATEGIES",
+              "sub_strands": [
+                {
+                  "name": "General",
+                  "content_standards": [
+                    {
+                      "id": "B2.2.2.2",
+                      "text": "B2.2.2.2.1: Explain open spaces Communication and Collaboration",
+                      "indicators": [
+                        {
+                          "indicator_id": "B2.2.3.2.3",
+                          "text": "Compare the body parts. Skills: Learners develop communication"
+                        },
+                        {
+                          "indicator_id": "B2.2.5.2.6",
+                          "text": "Identify opportunities to use underhand and overhand involved in catching objects to them"
+                        },
+                        {
+                          "indicator_id": "B2.3.3.3.3",
+                          "text": "Perform two set of four continuous abdominal curls."
+                        },
+                        {
+                          "indicator_id": "B2.3.4.3.4",
+                          "text": "Perform lower back stretch."
+                        },
+                        {
+                          "indicator_id": "B2.3.5.3.5",
+                          "text": "Identify the various components of human body (bones, muscles, Communication and Digital Literacy"
+                        },
+                        {
+                          "indicator_id": "B2.4.1.4.2",
+                          "text": "Mention the components of physical fitness."
+                        },
+                        {
+                          "indicator_id": "B2.4.4.4.5",
+                          "text": "Classify PE equipment into new and old. Skills: As learners listen to teacher and"
+                        },
+                        {
+                          "indicator_id": "B2.4.5.4.6",
+                          "text": "Identify types of drugs commonly used by adolescents."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "General",
+                  "content_standards": [
+                    {
+                      "id": "B2.5.1.5",
+                      "text": "B2.5.1.5.1: Accept responsibility for one\u2019s own behaviour in a group Cultural Identity and Global",
+                      "indicators": [
+                        {
+                          "indicator_id": "B2.5.3.5.3",
+                          "text": "Participate positively in physical activities rely on Learners develop social skills such as"
+                        },
+                        {
+                          "indicator_id": "B2.5.4.5.4",
+                          "text": "Collect data and record progress toward mastery of a Solving Skills: Learners develop personal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "General",
+                  "content_standards": [
+                    {
+                      "id": "B3.1.1.1",
+                      "text": "B3.1.1.1.1: Change direction from forward and back and right and left while Personal Development and",
+                      "indicators": [
+                        {
+                          "indicator_id": "B3.1.3.1.4",
+                          "text": "Roll a ball from stationary forward and back, using sticks. Leadership Skills: Learners develop"
+                        },
+                        {
+                          "indicator_id": "B3.1.6.1.7",
+                          "text": "Strike (serve) a lightweight ball to a partner, using the Leadership Skills: Learners develop"
+                        },
+                        {
+                          "indicator_id": "B3.1.7.1.8",
+                          "text": "Strike a gently tossed ball with a bat, using a side orientation Leadership Skills: Learners develop"
+                        },
+                        {
+                          "indicator_id": "B3.1.8.1.10",
+                          "text": "Throw and catch a ball with a partner while both partners"
+                        },
+                        {
+                          "indicator_id": "B3.1.8.1.11",
+                          "text": "Catch a flying ball away from the body. Skills: As learners catch a flying ball away from"
+                        },
+                        {
+                          "indicator_id": "B3.1.11.1.14",
+                          "text": "Foot-dribble a ball continuously while traveling and"
+                        },
+                        {
+                          "indicator_id": "B3.1.13.1.17",
+                          "text": "Roll forward from standing position many time to a distance"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "General",
+                  "content_standards": [
+                    {
+                      "id": "B3.2.1.2",
+                      "text": "B3.2.1.2.1: Identify general space. Communication Skills and Critical",
+                      "indicators": [
+                        {
+                          "indicator_id": "B3.2.2.2.3",
+                          "text": "Identify steps and rhythm patterns for traditional and cultural"
+                        },
+                        {
+                          "indicator_id": "B3.2.5.2.7",
+                          "text": "Explain the similar movement elements of the underhand throw Communication and Critical"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "General",
+                  "content_standards": [
+                    {
+                      "id": "B3.3.1.3",
+                      "text": "B3.3.1.3. 1: Perform 10 minutes dance with music. Personal Development and",
+                      "indicators": [
+                        {
+                          "indicator_id": "B3.3.2.3.2",
+                          "text": "Perform continuous step-ups. Personal Development and"
+                        },
+                        {
+                          "indicator_id": "B3.3.3.3.3",
+                          "text": "Perform three set of continuous step-ups."
+                        },
+                        {
+                          "indicator_id": "B3.3.5.3.5",
+                          "text": "Identify body composition using fat and fat free body mass. Literacy: As learners observe the"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "General",
+                  "content_standards": [
+                    {
+                      "id": "B3.4.1.4",
+                      "text": "B3.4.1.4.1: Sustain continuous movement for an increasing period of time Personal Development and",
+                      "indicators": [
+                        {
+                          "indicator_id": "B3.4.2.4.3",
+                          "text": "Explain the energy requirements of the body during physical Personal Skills and Communication"
+                        },
+                        {
+                          "indicator_id": "B3.4.4.4.5",
+                          "text": "Classify PE equipment into safe and unsafe. Communication and Collaboration"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "General",
+                  "content_standards": [
+                    {
+                      "id": "B3.4.5.4",
+                      "text": "6: Recall why adolescents use drugs for physical activities.",
+                      "indicators": [
+                        {
+                          "indicator_id": "B3.4.6.4.7",
+                          "text": "Explain the meaning of body composition using fat and fat free Communication and Digital"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "General",
+                  "content_standards": [
+                    {
+                      "id": "B3.5.1.5",
+                      "text": "B3.5.1.5.1: Set a personal goal to improve a motor skill and work toward Personal Development and",
+                      "indicators": [
+                        {
+                          "indicator_id": "B3.5.3.5.3",
+                          "text": "Use verbal and nonverbal communication to improve practice."
+                        },
+                        {
+                          "indicator_id": "B3.5.4.5.4",
+                          "text": "Demonstrate how to solve a problem with another person Cultural Identity and Global"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Dance",
+              "sub_strands": [
+                {
+                  "name": "General",
+                  "content_standards": [
+                    {
+                      "id": "B4.1.1.1",
+                      "text": "B4.1.1.1.1: Demonstrate the difference between slow and fast, heavy and",
+                      "indicators": [
+                        {
+                          "indicator_id": "B4.1.2.1.2",
+                          "text": "Enter, jump, and leave a long swinging rope turned by Personal Development and Leadership Skills:"
+                        },
+                        {
+                          "indicator_id": "B4.1.3.1.3",
+                          "text": "Roll ball with a stick to a target. Personal Development and Leadership Skills:"
+                        },
+                        {
+                          "indicator_id": "B4.1.6.1.6",
+                          "text": "Strike a bounce ball with the hands and feet. Learners develop personal and eadership skills such"
+                        },
+                        {
+                          "indicator_id": "B4.1.7.1.7",
+                          "text": "Strike a self-tossed light weight ball with a paddle or"
+                        },
+                        {
+                          "indicator_id": "B4.1.8.1.10",
+                          "text": "Catch a ball above the head and near the middle of the Personal Development and"
+                        },
+                        {
+                          "indicator_id": "B4.1.9.1.11",
+                          "text": "Kick a ball dropped from the hands."
+                        },
+                        {
+                          "indicator_id": "B4.1.11.1.13",
+                          "text": "Keep a foot-dribbled ball away from a defensive partner. Personal development and leadership,"
+                        },
+                        {
+                          "indicator_id": "B4.1.12.1.15",
+                          "text": "Perform movement skill with one hand or one foot and traditional music."
+                        },
+                        {
+                          "indicator_id": "B4.1.13.1.16",
+                          "text": "Roll smoothly in a backward direction (back roll). practicing movement skills of skills as"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "General",
+                  "content_standards": [
+                    {
+                      "id": "B4.2.1.2",
+                      "text": "B4.2.1.2.1: Distinguish between self-space and open space. Communication and Collaboration",
+                      "indicators": [
+                        {
+                          "indicator_id": "B4.2.2.2.2",
+                          "text": "Explain the difference between throwing to a stationary Communication and Collaboration"
+                        },
+                        {
+                          "indicator_id": "B4.2.3.2.3",
+                          "text": "Identify body parts that are used for kicking a ball."
+                        },
+                        {
+                          "indicator_id": "B4.2.5.2.5",
+                          "text": "Identify the difference between dribbling a ball (with the hand Communication and Collaboration"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "General",
+                  "content_standards": [
+                    {
+                      "id": "B4.3.1.3",
+                      "text": "B4.3.1.3.1: Perform 15 minutes\u2019 brisk walk with music. Personal Development and",
+                      "indicators": [
+                        {
+                          "indicator_id": "B4.3.2.3.2",
+                          "text": "Perform continuous \u2018v\u2019 push-up Personal Development and"
+                        },
+                        {
+                          "indicator_id": "B4.3.3.3.3",
+                          "text": "Perform two sets of eight continuous \u2018v\u2019 push-ups. Personal Development and"
+                        },
+                        {
+                          "indicator_id": "B4.3.4.3.4",
+                          "text": "Perform groin flexibility Personal Development and"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "General",
+                  "content_standards": [
+                    {
+                      "id": "B4.5.1.5",
+                      "text": "B4.5.1.5.1:. Accept responsibility for one\u2019s own behaviour in a group Cultural Identity and Global",
+                      "indicators": [
+                        {
+                          "indicator_id": "B4.5.2.5.2",
+                          "text": ". Participate in a variety of group settings (e.g., partners, small Citizenship Skills: As learners"
+                        },
+                        {
+                          "indicator_id": "B4.5.3.5.3",
+                          "text": "Demonstrate respect for self, others, and equipment during Cultural Identity and Global"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "code": "B5",
+          "strands": [
+            {
+              "name": "Dance",
+              "sub_strands": [
+                {
+                  "name": "General",
+                  "content_standards": [
+                    {
+                      "id": "B4.5.1.5",
+                      "text": "B4.5.4.5.4: Distinguish between acts of physical courage and physically Personal Development and",
+                      "indicators": []
+                    }
+                  ]
+                },
+                {
+                  "name": "General",
+                  "content_standards": [
+                    {
+                      "id": "B5.1.2.1",
+                      "text": "B5.1.2.1.1: Walk on straight lines edges. Development of Personal and",
+                      "indicators": [
+                        {
+                          "indicator_id": "B5.1.3.1.2",
+                          "text": "Skip and leap continuously Development of Personal and"
+                        },
+                        {
+                          "indicator_id": "B5.1.4.1.3",
+                          "text": "Roll ball using a stick through obstacles (arranged cones)"
+                        },
+                        {
+                          "indicator_id": "B5.1.6.1.6",
+                          "text": "Striking a dropping light ball upward and forward to a"
+                        },
+                        {
+                          "indicator_id": "B5.1.8.1.8",
+                          "text": "Throw a ball to a moving partner to catch while walking, Development of Personal and"
+                        },
+                        {
+                          "indicator_id": "B5.1.8.1.9",
+                          "text": "Catch a ball below the waist and away from the body while Development of Personal and"
+                        },
+                        {
+                          "indicator_id": "B5.1.10.1.11",
+                          "text": "Dribble a ball (by hand) while preventing another person Development of Personal and"
+                        },
+                        {
+                          "indicator_id": "B5.1.11.1.12",
+                          "text": "Dribble a ball (by foot) and kick it to a partner at a distance"
+                        },
+                        {
+                          "indicator_id": "B5.2.1.2.1",
+                          "text": "Describe ways to create more space between an offensive player and a"
+                        },
+                        {
+                          "indicator_id": "B5.2.2.2.2",
+                          "text": "Explain the differences in applying and receiving force when jumping for"
+                        },
+                        {
+                          "indicator_id": "B5.2.5.2.5",
+                          "text": "Distinguish between volleying and kicking and describe the"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "General",
+                  "content_standards": [
+                    {
+                      "id": "B5.3.1.3",
+                      "text": "B5.3.1.3.1: Perform 10 minutes jogging with music. Personal Development and Leadership",
+                      "indicators": [
+                        {
+                          "indicator_id": "B5.3.3.3.3",
+                          "text": "Perform two set of continuous push-ups. continuous pull-ups."
+                        },
+                        {
+                          "indicator_id": "B5.3.4.3.4",
+                          "text": "Perform standing bend and reach the knee with the forehead."
+                        },
+                        {
+                          "indicator_id": "B5.3.5.3.5",
+                          "text": "Identify the capabilities of the various body types. Skills: As learners listen to teacher and"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "code": "B6",
+          "strands": [
+            {
+              "name": "Dance",
+              "sub_strands": [
+                {
+                  "name": "General",
+                  "content_standards": [
+                    {
+                      "id": "B5.4.1.4",
+                      "text": "B5.4.1.4.1: Monitor the intensity of one\u2019s heart rate during physical Personal Development and",
+                      "indicators": [
+                        {
+                          "indicator_id": "B5.4.1.4.2",
+                          "text": "Describe how muscle strength and muscle endurance"
+                        },
+                        {
+                          "indicator_id": "B5.4.2.4.3",
+                          "text": "Explain why dehydration impairs temperature regulation and Personal Development and"
+                        },
+                        {
+                          "indicator_id": "B5.5.1.5.1",
+                          "text": "Participating independently in fitness and skill development Personal Development and"
+                        },
+                        {
+                          "indicator_id": "B5.5.3.5.3",
+                          "text": "Identify and define the role of each participant in a cooperation, empathy, teamwork and fair-"
+                        },
+                        {
+                          "indicator_id": "B5.5.4.5.4",
+                          "text": "Contribute ideas and listen to the ideas of others in teamwork, fair-play in cultural and"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "General",
+                  "content_standards": [
+                    {
+                      "id": "B6.1.1.1",
+                      "text": "B6.1.1.1.1: Develop a cooperative movement game that uses locomotor Personal Development and",
+                      "indicators": [
+                        {
+                          "indicator_id": "B6.1.2.1.2",
+                          "text": "Jump for distance, landing on both feet and bending the hips, Leadership Skills: Learners develop"
+                        },
+                        {
+                          "indicator_id": "B6.1.4.1.5",
+                          "text": "Perform simple small stunts while shifting base of support"
+                        },
+                        {
+                          "indicator_id": "B6.1.6.1.7",
+                          "text": "Strike a tossed ball with the hands above the forehead Personal Development and Leadership"
+                        },
+                        {
+                          "indicator_id": "B6.1.7.1.8",
+                          "text": "Strike a gently tossed ball with a bat, using a forehand and"
+                        },
+                        {
+                          "indicator_id": "B6.1.8.1.10",
+                          "text": "Show how to adjust body position to catch a ball thrown off- Personal Development and Leadership"
+                        },
+                        {
+                          "indicator_id": "B6.1.8.1.11",
+                          "text": "Catch a flying ball above the head, below the waist, and Personal Development and Leadership"
+                        },
+                        {
+                          "indicator_id": "B6.1.10.1.13",
+                          "text": "Dribble and pass a ball to a partner while being guarded. Personal Development and Leadership"
+                        },
+                        {
+                          "indicator_id": "B6.1.11.1.14",
+                          "text": "Dribble a ball and kick (shoot) it towards a goal while being Personal Development and Leadership"
+                        },
+                        {
+                          "indicator_id": "B6.1.13.1.16",
+                          "text": "Roll (body) smoothly forward and backward perform forward roll from standing"
+                        },
+                        {
+                          "indicator_id": "B6.2.2.2.2",
+                          "text": "Identify the time necessary to prepare for and begin a concepts, principles, strategies, etc., as the"
+                        },
+                        {
+                          "indicator_id": "B6.2.3.2.3",
+                          "text": "Illustrate how the intended direction of an object is affected Learners develop communication skills as"
+                        },
+                        {
+                          "indicator_id": "B6.3.1.3.1",
+                          "text": "Perform 8 minutes running with or without music. Personal Development and Leadership"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "General",
+                  "content_standards": [
+                    {
+                      "id": "B6.3.1.3",
+                      "text": "Learners in files music (any form) run for 8 minutes none stop for fitness test at",
+                      "indicators": [
+                        {
+                          "indicator_id": "B6.3.2.3.2",
+                          "text": "Perform 15 continuous sit-ups"
+                        },
+                        {
+                          "indicator_id": "B6.3.3.3.3",
+                          "text": "Perform three set of 15 continuous push-ups."
+                        },
+                        {
+                          "indicator_id": "B6.3.4.3.4",
+                          "text": "Perform trunk rotation. Personal Development and Leadership"
+                        },
+                        {
+                          "indicator_id": "B6.3.5.3.5",
+                          "text": "Identify the capabilities of the various body types"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "swimming",
+              "sub_strands": [
+                {
+                  "name": "General",
+                  "content_standards": [
+                    {
+                      "id": "B6.4.1.4",
+                      "text": "B6.4.1.4.1: Develop a one-day personal physical fitness plan specifying Communication and Collaboration",
+                      "indicators": [
+                        {
+                          "indicator_id": "B6.4.1.4.2",
+                          "text": "Explain the role that weight bearing activities play in bone"
+                        },
+                        {
+                          "indicator_id": "B6.4.2.4.3",
+                          "text": "Plan a balance diet menu to improve performance in skills: As learners plan a balance diet menu"
+                        },
+                        {
+                          "indicator_id": "B6.4.4.4.5",
+                          "text": "Identify ways to minimise injuries when using PE Communication and Collaboration skills:"
+                        },
+                        {
+                          "indicator_id": "B6.4.5.4.6",
+                          "text": "Discuss with learners the effects of drug addiction."
+                        },
+                        {
+                          "indicator_id": "B6.4.6.4.7",
+                          "text": "Discuss with learners the capabilities of the various body"
+                        },
+                        {
+                          "indicator_id": "B6.5.2.5.2",
+                          "text": "Provide positive feedback to peers during physical"
+                        },
+                        {
+                          "indicator_id": "B6.5.3.5.3",
+                          "text": "Identify and agree on a common goal when participating in others, and equipment during physical"
+                        },
+                        {
+                          "indicator_id": "B6.5.4.5.4",
+                          "text": "Evaluate individual responsibility in group efforts. As teacher evaluate individual responsibility in"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "religious_and_moral_education",
+      "name": "Religious and Moral Education",
+      "levels": [
+        {
+          "code": "B4",
+          "strands": [
+            {
+              "name": "The Purpose of God\u2019s Creation",
+              "sub_strands": [
+                {
+                  "name": "Early Life of the Leaders of the three Major Religions",
+                  "content_standards": [
+                    {
+                      "id": "B3.4.1.1",
+                      "text": "Appreciate the role B3.4.1.1.1: Discuss God\u2019s promises to humankind.",
+                      "indicators": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "code": "B6",
+          "strands": [
+            {
+              "name": "Commitment to the God",
+              "sub_strands": [
+                {
+                  "name": "Roles, Relationships in the Family and Character Formation",
+                  "content_standards": [
+                    {
+                      "id": "B3.4.1.1",
+                      "text": "Appreciate the role B3. 4.1.1.3: Identify moral lessons learnt from responding to God\u2019s call.",
+                      "indicators": [
+                        {
+                          "indicator_id": "B4.1.1.2.1",
+                          "text": "Identify the uniqueness of humankind from other"
+                        },
+                        {
+                          "indicator_id": "B5.1.1.1.2",
+                          "text": "State the qualities of God that humankind"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "mathematics",
+      "name": "Mathematics",
+      "levels": [
+        {
+          "code": "B7",
+          "strands": [
+            {
+              "name": "decimal",
+              "sub_strands": [
+                {
+                  "name": "General",
+                  "content_standards": [
+                    {
+                      "id": "B7.1.1.1",
+                      "text": "Demonstrate B7.1.1.1.1 Model number quantities more than 1,000,000,000 using Critical Thinking and",
+                      "indicators": []
+                    }
+                  ]
+                },
+                {
+                  "name": "General",
+                  "content_standards": [
+                    {
+                      "id": "B7.1.1.2",
+                      "text": "Compare and order whole numbers more than1,000,000,000",
+                      "indicators": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "multiplication",
+              "sub_strands": [
+                {
+                  "name": "General",
+                  "content_standards": [
+                    {
+                      "id": "B7.1.2.1",
+                      "text": "Apply mental B7.1.2.1.1 Multiply and divide given numbers by powers of 10 Communication and",
+                      "indicators": [
+                        {
+                          "indicator_id": "B7.1.2.1.2",
+                          "text": "Apply mental mathematics strategies and number Creativity and Innovation"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "counting",
+              "sub_strands": [
+                {
+                  "name": "General",
+                  "content_standards": [
+                    {
+                      "id": "B7.1.2.3",
+                      "text": "Demonstrate B7.1.2.3.1 Illustrate with examples the meaning of repeated factors Creativity and Innovation",
+                      "indicators": [
+                        {
+                          "indicator_id": "B7.1.2.3.2",
+                          "text": "Express a given number as a product of a given number or"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Decimal",
+              "sub_strands": [
+                {
+                  "name": "General",
+                  "content_standards": [
+                    {
+                      "id": "B7.1.3.1",
+                      "text": "Simplify, B7.1.3.1.1 Determine and recall the percentages and decimals of given Critical thinking and",
+                      "indicators": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "subtraction",
+              "sub_strands": [
+                {
+                  "name": "General",
+                  "content_standards": [
+                    {
+                      "id": "B7.1.3.2",
+                      "text": "Demonstrate B7.1.3.2.1 Explain the process of addition and subtraction of two or Communication and",
+                      "indicators": []
+                    }
+                  ]
+                },
+                {
+                  "name": "General",
+                  "content_standards": [
+                    {
+                      "id": "B7.1.3.3",
+                      "text": "Demonstrate B7.1.3.3.1 Explain the process of multiplying a fraction (i.e. common, Critical thinking and",
+                      "indicators": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "proportion",
+              "sub_strands": [
+                {
+                  "name": "General",
+                  "content_standards": [
+                    {
+                      "id": "B7.1.4.1",
+                      "text": "Demonstrate B7.1.4.1.1 Find ratio and use ratio language to describe relationship Critical Thinking and",
+                      "indicators": [
+                        {
+                          "indicator_id": "B7.1.4.1.2",
+                          "text": "Use the concept of a unit rate associated with a ratio a:b Critical Thinking and"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Patterns and Relations",
+                  "content_standards": [
+                    {
+                      "id": "B7.2.1.1",
+                      "text": "Derive the rule B7.2.1.1.1 Extend a given relation presented with and without symbolic Creativity and Innovation",
+                      "indicators": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "algebra",
+              "sub_strands": [
+                {
+                  "name": "General",
+                  "content_standards": [
+                    {
+                      "id": "B7.2.2.1",
+                      "text": "Simplify B7.2.2.1.2 Perform addition and subtraction of algebraic expressions Critical Thinking and",
+                      "indicators": []
+                    }
+                  ]
+                },
+                {
+                  "name": "Variables and Equations",
+                  "content_standards": [
+                    {
+                      "id": "B7.2.3.1",
+                      "text": "Demonstrate an B7.2.3.1.1 Translate word problems to linear equations in one variable Communication and",
+                      "indicators": []
+                    }
+                  ]
+                },
+                {
+                  "name": "Shape and Space",
+                  "content_standards": [
+                    {
+                      "id": "B7.3.1.1",
+                      "text": "Demonstrate B7.3.1.1.1 Measure and classify angles according to their measured Creativity and Innovation",
+                      "indicators": []
+                    },
+                    {
+                      "id": "B7.3.1.2",
+                      "text": "Demonstrate B7.3.1.2.1 Construct a line segment perpendicular to another line Critical Thinking and",
+                      "indicators": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "ANGLE",
+              "sub_strands": [
+                {
+                  "name": "General",
+                  "content_standards": [
+                    {
+                      "id": "B7.3.2.3",
+                      "text": "Demonstrate B7.3.2.3.1 Describe the bearing of a point from another point Critical Thinking and",
+                      "indicators": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "movement",
+              "sub_strands": [
+                {
+                  "name": "Position and Transformation",
+                  "content_standards": [
+                    {
+                      "id": "B7.3.3.1",
+                      "text": "Perform a B7.3.3.1.1 Determine shapes in real life that have reflectional (or fold) Critical Thinking and",
+                      "indicators": []
+                    }
+                  ]
+                },
+                {
+                  "name": "Data",
+                  "content_standards": [
+                    {
+                      "id": "B7.4.1.1",
+                      "text": "Select, justify, B7.4.1.1.1- Select and justify a method to collect data (quantitative and Critical Thinking and",
+                      "indicators": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Angle",
+              "sub_strands": [
+                {
+                  "name": "General",
+                  "content_standards": [
+                    {
+                      "id": "B7.4.1.2",
+                      "text": "Determine the B7.4.1.2.1 Calculate the mean for a given ungrouped data and use it to solve Critical Thinking and",
+                      "indicators": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "probability",
+              "sub_strands": [
+                {
+                  "name": "General",
+                  "content_standards": [
+                    {
+                      "id": "B7.4.2.1",
+                      "text": "Identify the B7.4.2.1.1Demonstrate understanding of likelihood of a single outcome Critical Thinking and",
+                      "indicators": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "code": "B8",
+          "strands": [
+            {
+              "name": "probability",
+              "sub_strands": [
+                {
+                  "name": "Number and Numeration Systems",
+                  "content_standards": [
+                    {
+                      "id": "B7.4.2.1",
+                      "text": "Identify the",
+                      "indicators": []
+                    },
+                    {
+                      "id": "B8.1.1.1",
+                      "text": "Demonstrate B8.1.1.1.1 Apply the understanding of place value to read and",
+                      "indicators": [
+                        {
+                          "indicator_id": "B8.1.1.1.2",
+                          "text": ". Skip count forwards and backwards in 10,000s,"
+                        },
+                        {
+                          "indicator_id": "B8.1.1.1.3",
+                          "text": ". Compare and order whole numbers using \u201c>, <, and"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "B8.1.1.2",
+                      "text": "Apply the concepts and B8.1.1.2.1. Use the concept of sets to identify perfect squares",
+                      "indicators": []
+                    }
+                  ]
+                },
+                {
+                  "name": "Number Operations",
+                  "content_standards": [
+                    {
+                      "id": "B8.1.2.1",
+                      "text": "Apply mental B8.1.2.1.1 Multiply and divide by power of 10 including decimals and Critical Thinking and",
+                      "indicators": [
+                        {
+                          "indicator_id": "B8.1.2.1.2",
+                          "text": "Apply mental mathematics strategies and number"
+                        },
+                        {
+                          "indicator_id": "B8.1.2.1.3",
+                          "text": "Apply mental mathematics strategies to solve word"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "B8.1.2.2",
+                      "text": "Apply the B8.1.2.2.1 Add and subtract more than four-digit numbers.",
+                      "indicators": []
+                    },
+                    {
+                      "id": "B8.1.2.3",
+                      "text": "Demonstrate B8.1.2.3.1 Identify and explain the laws of indices Critical Thinking and",
+                      "indicators": [
+                        {
+                          "indicator_id": "B8.1.2.3.2",
+                          "text": "Apply the laws of indices to simplify and evaluate numbers"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Fractions, Decimals and Percentages",
+                  "content_standards": [
+                    {
+                      "id": "B8.1.3.1",
+                      "text": "Apply the B8.1.3.1.1 Review fractions and solve problems involving basic Critical Thinking and",
+                      "indicators": []
+                    }
+                  ]
+                },
+                {
+                  "name": "Patterns and Relations",
+                  "content_standards": [
+                    {
+                      "id": "B8.2.1.1",
+                      "text": "Demonstrate B8.2.1.1.1 Calculate the gradient of a line and use it to write equation of a line of Critical Thinking and",
+                      "indicators": []
+                    }
+                  ]
+                },
+                {
+                  "name": "Algebraic Expressions",
+                  "content_standards": [
+                    {
+                      "id": "B8.2.2.1",
+                      "text": "Solve problems B8.2.2.1.1 Use the distributive property to remove brackets and solve Critical Thinking and",
+                      "indicators": []
+                    }
+                  ]
+                },
+                {
+                  "name": "Variables and Equations",
+                  "content_standards": [
+                    {
+                      "id": "B8.2.3.1",
+                      "text": "Demonstrate an B8.2.3.1.1 Translate word problems into linear inequalities in one Critical Thinking and",
+                      "indicators": [
+                        {
+                          "indicator_id": "B8.2.3.1.2",
+                          "text": "Solve simple linear inequalities"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Shapes and Space",
+                  "content_standards": [
+                    {
+                      "id": "B8.3.1.1",
+                      "text": "Demonstrate B8.3.1.1.1 Draw and determine the values of alternate and corresponding Creativity and Innovation",
+                      "indicators": []
+                    },
+                    {
+                      "id": "B8.3.1.2",
+                      "text": "Demonstrate the B8.3.1.2.1 Construct and bisect angles of 120\u02da, 105\u02da, 135\u02da and 150\u02da Creativity and Innovation",
+                      "indicators": []
+                    }
+                  ]
+                },
+                {
+                  "name": "Measurement",
+                  "content_standards": [
+                    {
+                      "id": "B8.3.2.2",
+                      "text": "Demonstrate B8.3.2.2.1 Add, subtract and find the scalar multiplication of vectors in Critical Thinking and",
+                      "indicators": []
+                    }
+                  ]
+                },
+                {
+                  "name": "Position and Transformation",
+                  "content_standards": [
+                    {
+                      "id": "B8.3.3.1",
+                      "text": "Perform a B8.3.3.1.1 Understand rotation and identify real-life situations involving Critical Thinking and",
+                      "indicators": []
+                    }
+                  ]
+                },
+                {
+                  "name": "Data",
+                  "content_standards": [
+                    {
+                      "id": "B8.4.1.1",
+                      "text": "Select, justify, and B8.4.1.1.1 Identify types of given data including numerical, categorical, Critical Thinking and",
+                      "indicators": []
+                    },
+                    {
+                      "id": "B8.4.1.2",
+                      "text": "Demonstrate an B8.4.1.2.1 Calculate the mean, median and mode for a given set of",
+                      "indicators": []
+                    }
+                  ]
+                },
+                {
+                  "name": "Chance or Probability",
+                  "content_standards": [
+                    {
+                      "id": "B8.4.2.1",
+                      "text": "Identify the sample B8.4.2.1.1.Perform a probability experiment involving two independent Critical Thinking and",
+                      "indicators": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "code": "B9",
+          "strands": [
+            {
+              "name": "probability",
+              "sub_strands": [
+                {
+                  "name": "Number and Numeration System",
+                  "content_standards": [
+                    {
+                      "id": "B8.4.2.1",
+                      "text": "Identify the sample E.g. 2 A die is thrown at most three times. If 6 is scored the game stops. Critical Thinking and",
+                      "indicators": []
+                    },
+                    {
+                      "id": "B9.1.1.1",
+                      "text": "Apply the B9.1.1.1.1 Express integers to a given number of significant and decimal",
+                      "indicators": [
+                        {
+                          "indicator_id": "B9.1.1.1.2",
+                          "text": ". Use knowledge and understanding of place value to solve"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "B9.1.1.2",
+                      "text": "Demonstrate an B9.1.1.2.1 Solve problems on relationship between members of the",
+                      "indicators": []
+                    }
+                  ]
+                },
+                {
+                  "name": "Number Operations",
+                  "content_standards": [
+                    {
+                      "id": "B9.1.2.2",
+                      "text": "Apply the",
+                      "indicators": [
+                        {
+                          "indicator_id": "B9.1.2.2.1",
+                          "text": "Solve operations involving addition, subtraction, multiplication Critical Thinking and"
+                        },
+                        {
+                          "indicator_id": "B9.1.2.2.2",
+                          "text": "Solve word problems involving the four basic operations and"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "B9.1.2.4",
+                      "text": "Demonstrate B9.1.2.4.1 Identify simple and compound surds. Critical Thinking and",
+                      "indicators": [
+                        {
+                          "indicator_id": "B9.1.2.4.3",
+                          "text": "Simplify given surds )"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Fractions, Decimals and Percentages",
+                  "content_standards": [
+                    {
+                      "id": "B9.1.3.1",
+                      "text": "Apply the B9.1.3.1.1 Review fractions and solve problems involving basic operations",
+                      "indicators": []
+                    }
+                  ]
+                },
+                {
+                  "name": "Number: Ratios and Proportion",
+                  "content_standards": [
+                    {
+                      "id": "B9.1.4.1",
+                      "text": "Apply the B9.1.4.1.1 Represent proportional relationships by equations. Critical Thinking and",
+                      "indicators": []
+                    }
+                  ]
+                },
+                {
+                  "name": "Patterns and Relations",
+                  "content_standards": [
+                    {
+                      "id": "B9.2.1.1",
+                      "text": "Demonstrate B9.2.1.1.1 Construct a table of values for two linear relations and graph the Critical Thinking and",
+                      "indicators": []
+                    }
+                  ]
+                },
+                {
+                  "name": "Variables and Equations",
+                  "content_standards": [
+                    {
+                      "id": "B9.2.3.1",
+                      "text": "Demonstrate B9.2.3.1.1 Solve single variable linear inequalities with rational coefficients. Critical Thinking and",
+                      "indicators": [
+                        {
+                          "indicator_id": "B9.2.3.1.2",
+                          "text": "Illustrate solution sets of linear inequalities on the number line"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Shapes and Space",
+                  "content_standards": [
+                    {
+                      "id": "B9.3.1.1",
+                      "text": "Apply the properties B9.3.1.1.1Derive the formula for calculating the sum of angles in any Communication and",
+                      "indicators": []
+                    },
+                    {
+                      "id": "B9.3.1.2",
+                      "text": "Construct inscribed B9.3.1.2.1 Draw inscribed and circumscribed circles for triangles under Critical Thinking and",
+                      "indicators": []
+                    }
+                  ]
+                },
+                {
+                  "name": "Position and Transformation",
+                  "content_standards": [
+                    {
+                      "id": "B9.3.2.2",
+                      "text": "Solve problems B9.3.2.2.1 Show an understanding of parallel vectors and Digital Literacy (DL)",
+                      "indicators": [
+                        {
+                          "indicator_id": "B9.3.2.2.2",
+                          "text": "Apply the triangular and parallelogram laws of addition to Creativity and Innovation"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "B9.3.3.1",
+                      "text": "Demonstrate B9.3.3.1.1 Know examples of situations in everyday life that depict Creativity and Innovation (CI)",
+                      "indicators": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "statistics",
+              "sub_strands": [
+                {
+                  "name": "General",
+                  "content_standards": [
+                    {
+                      "id": "B9.4.1.2",
+                      "text": "Select, justify, B9.4.1.2.1 - Select a method for collecting data (quantitative and qualitative), Critical Thinking and",
+                      "indicators": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "code": "B4",
+          "strands": [
+            {
+              "name": "Division",
+              "sub_strands": [
+                {
+                  "name": "General",
+                  "content_standards": [
+                    {
+                      "id": "B9.4.1.2",
+                      "text": "Select, justify, B9.4.1.2.3Demonstrate the effect on the mean, median, and mode when Critical Thinking and",
+                      "indicators": [
+                        {
+                          "indicator_id": "B9.4.2.1.2",
+                          "text": ". Express the probabilities of the events as fractions, decimals,"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "science",
+      "name": "Science",
+      "levels": [
+        {
+          "code": "B7",
+          "strands": [
+            {
+              "name": "HUMANS AND THE ENVIRONMENT",
+              "sub_strands": [
+                {
+                  "name": "MATERIALS",
+                  "content_standards": [
+                    {
+                      "id": "B7.1.1.1",
+                      "text": "Recognise B7.1.1.1.1 Classify materials into liquids, solids and gases Creativity and Innovation (CI), Critical",
+                      "indicators": [
+                        {
+                          "indicator_id": "B7.1.1.1.2",
+                          "text": "Discuss the importance of liquids in the life of Communication and Collaboration (CC),"
+                        },
+                        {
+                          "indicator_id": "B7.1.1.1.3",
+                          "text": "Discuss the importance of specific solids to life Critical Thinking and Problem solving"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "LIVING CELLS",
+                  "content_standards": [
+                    {
+                      "id": "B7.1.1.2",
+                      "text": "Understand B7.1.1.2.1 Demonstrate the knowledge of the orderly Digital Literacy (DL), Critical Thinking and",
+                      "indicators": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "systems",
+              "sub_strands": [
+                {
+                  "name": "EARTH SCIENCE",
+                  "content_standards": [
+                    {
+                      "id": "B7.1.2.1",
+                      "text": "Demonstrate B7.1.2.1.1 Describe the structure and function of Digital Literacy (DL), Communication and Collaboration",
+                      "indicators": [
+                        {
+                          "indicator_id": "B7.1.2.1.2",
+                          "text": "State the functions of each organelle in Digital Literacy (DL), Communication and Collaboration"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "LIFE CYCLE OF ORGANISMS",
+                  "content_standards": [
+                    {
+                      "id": "B7.2.1.1",
+                      "text": "Recognise that B7.2.1.1.1 Explain how the water cycle occurs as a repeated Critical Thinking and Problem Solving (CP)",
+                      "indicators": [
+                        {
+                          "indicator_id": "B7.2.1.1.2",
+                          "text": "Describe the importance of the water cycle in nature Communication and Collaboration (CC),"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "diseases",
+              "sub_strands": [
+                {
+                  "name": "CROP PRODUCTION",
+                  "content_standards": [
+                    {
+                      "id": "B7.2.2.1",
+                      "text": "Demonstrate B7.2.2.1.1 Describe the life cycle of the housefly Communication and Collaboration (CC),",
+                      "indicators": [
+                        {
+                          "indicator_id": "B7.2.2.1.2",
+                          "text": "Discuss the activities of the housefly as a menace to Creativity and Innovation (CI), Communication"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "ANIMAL PRODUCTION",
+                  "content_standards": [
+                    {
+                      "id": "B7.2.3.1",
+                      "text": "Demonstrate B7.2.3.1.1 Observe and list all plant nutrient sources available Communication and Collaboration (CC),",
+                      "indicators": [
+                        {
+                          "indicator_id": "B7.2.3.1.2",
+                          "text": "Describe the physical characteristics of different Digital Literacy (DL), Communication"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "B7.2.4.1",
+                      "text": "Demonstrate B7.2.4.1.1 Examine and list domestic animals in the Digital Literacy (DL), Critical Thinking and",
+                      "indicators": [
+                        {
+                          "indicator_id": "B7.2.4.1.2",
+                          "text": "Show the differences and similarities among Digital Literacy (DL), Critical Thinking and"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "THE HUMAN BODY SYSTEM",
+                  "content_standards": [
+                    {
+                      "id": "B7.2.4.2",
+                      "text": "Show an B7.2.4.2.1 Discuss and write the domestic and commercial uses Digital Literacy (DL), Communication and",
+                      "indicators": [
+                        {
+                          "indicator_id": "B7.2.4.2.2",
+                          "text": "Observe and compare the uses of the different types Digital Literacy (DL), Critical Thinking and"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "solar system",
+              "sub_strands": [
+                {
+                  "name": "ECOSYSTEM",
+                  "content_standards": [
+                    {
+                      "id": "B7.3.1.1",
+                      "text": "Show an B7.3.1.1.1 Explain the concept of food and the need for humans Digital Literacy (DL), Critical Thinking and",
+                      "indicators": [
+                        {
+                          "indicator_id": "B7.3.1.1.2",
+                          "text": "Examine what happens to food at the stages of Digital Literacy (DL), Critical Thinking and"
+                        },
+                        {
+                          "indicator_id": "B7.3.1.1.3",
+                          "text": "Identify the end product of digestion of starchy, Digital Literacy (DL), Critical Thinking and"
+                        },
+                        {
+                          "indicator_id": "B7.3.2.1.2",
+                          "text": "Discuss the properties and the relative motions of Digital Literacy (DL), Critical Thinking and"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "ecosystem",
+              "sub_strands": [
+                {
+                  "name": "FARMING SYSTEMS",
+                  "content_standards": [
+                    {
+                      "id": "B7.3.3.1",
+                      "text": "Recognise B7.3.3.1. 1 Analyse the components of ecosystems and identify Digital Literacy (DL), Critical Thinking and",
+                      "indicators": []
+                    }
+                  ]
+                },
+                {
+                  "name": "ENERGY",
+                  "content_standards": [
+                    {
+                      "id": "B7.3.4.1",
+                      "text": "Demonstrate B7.3.4.1.1 Examine and discuss the differences among the Digital Literacy (DL), Critical Thinking and",
+                      "indicators": [
+                        {
+                          "indicator_id": "B7.3.4.1.2",
+                          "text": "Categorise different farming systems Digital Literacy (DL), Critical Thinking"
+                        },
+                        {
+                          "indicator_id": "B7.3.4.1.3",
+                          "text": "Discuss the usefulness of different farming systems Critical Thinking and Problem Solving (CP),"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "B7.4.1.1",
+                      "text": "Demonstrate an B7.4.1.1.1 Identify the various forms of energy and show how Digital Literacy (DL), Cultural Identity and",
+                      "indicators": [
+                        {
+                          "indicator_id": "B7.4.1.1.2",
+                          "text": "Explain daily applications of forms of energy. Digital Literacy (DL), Cultural Identity and"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "B7.4.1.2",
+                      "text": "Demonstrate B7.4.1.2.1 Explain and demonstrate how heat is transferred in Digital Literacy (DL), Communication",
+                      "indicators": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "electricity",
+              "sub_strands": [
+                {
+                  "name": "General",
+                  "content_standards": [
+                    {
+                      "id": "B7.4.1.3",
+                      "text": "Demonstrate B7.4.1.3.1 Demonstrate how light travels in a straight line. Digital Literacy (DL), Communication and",
+                      "indicators": [
+                        {
+                          "indicator_id": "B7.4.2.1.2",
+                          "text": "Explain the impact of electricity generation on the Communication and Collaboration (CC),"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "FORCE AND MOTION",
+                  "content_standards": [
+                    {
+                      "id": "B7.4.2.2",
+                      "text": "Demonstrate B7.4.2.2.1 Demonstrate how to assemble basic electronic Digital Literacy (DL), Creativity and Innovation",
+                      "indicators": [
+                        {
+                          "indicator_id": "B7.4.2.2.2",
+                          "text": "Discuss the function of each electronic component Communication and Collaboration (CC),"
+                        },
+                        {
+                          "indicator_id": "B7.4.2.2.3",
+                          "text": "Discuss the function of each electronic Communication and Collaboration (CC),"
+                        },
+                        {
+                          "indicator_id": "B7.4.3.1.2",
+                          "text": "Demonstrate the conversion of energy into useable Creativity and Innovation (CI)"
+                        },
+                        {
+                          "indicator_id": "B7.4.3.1.3",
+                          "text": "Know how energy could be conserved for future use Digital Literacy (DL), Communication and"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "B7.4.4.1",
+                      "text": "Examine the B7.4.4.1.1 Understand that unbalanced forces acting on an Digital Literacy (DL), Communication and",
+                      "indicators": [
+                        {
+                          "indicator_id": "B7.4.4.1.2",
+                          "text": "State and explain Newton\u2019s First Law of motion. Digital Literacy (DL), Communication and"
+                        },
+                        {
+                          "indicator_id": "B7.4.4.1.3",
+                          "text": "Examine the application of Newton\u2019s First Law of Communication and Collaboration (CC),"
+                        },
+                        {
+                          "indicator_id": "B7.4.4.1.4",
+                          "text": "Demonstrate the behaviour of magnet and its use to Communication and Collaboration (CC),"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "AGRICULTURAL TOOLS",
+                  "content_standards": [
+                    {
+                      "id": "B7.4.4.2",
+                      "text": "Recognise some B7.4.4.2.1 Identify simple machines. Digital Literacy (DL), Communication",
+                      "indicators": [
+                        {
+                          "indicator_id": "B7.4.4.2.2",
+                          "text": "Describe the types and functions of levers. Digital Literacy (DL), Communication and"
+                        },
+                        {
+                          "indicator_id": "B7.4.4.2.3",
+                          "text": "Know work input, and output and efficiency as they Digital Literacy (DL), Communication"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "WASTE MANAGEMENT",
+                  "content_standards": [
+                    {
+                      "id": "B7.4.5.1",
+                      "text": "Demonstrate B7.4.5.1.1 Explain the basic rules in handling and maintaining Communication and Collaboration (CC),",
+                      "indicators": [
+                        {
+                          "indicator_id": "B7.4.5.1.2",
+                          "text": "Apply the handling and maintenance of basic and Communication and Collaboration (CC), Critical"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "HUMAN HEALTH",
+                  "content_standards": [
+                    {
+                      "id": "B7.5.1.1",
+                      "text": "Exhibit B7.5.1.1.1 Apply information from research on good Critical Thinking and Problem Solving (CP),",
+                      "indicators": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "the human body",
+              "sub_strands": [
+                {
+                  "name": "General",
+                  "content_standards": [
+                    {
+                      "id": "B7.5.2.1",
+                      "text": "Demonstrate B7.5.2.1.1 Explain the relationship between food nutrients and Critical Thinking and Problem Solving (CP),",
+                      "indicators": []
+                    }
+                  ]
+                },
+                {
+                  "name": "SCIENCE AND INDUSTRY",
+                  "content_standards": [
+                    {
+                      "id": "B7.5.2.2",
+                      "text": "Demonstrate B7.5.2.2.1 Explain the nature of viral diseases with special Critical Thinking and Problem Solving (CP),",
+                      "indicators": []
+                    }
+                  ]
+                },
+                {
+                  "name": "CLIMATE CHANGE AND GREEN ECONOMY",
+                  "content_standards": [
+                    {
+                      "id": "B7.5.3.1",
+                      "text": "Realise how B.7. 5.3.1.1 Discover and explain how careers in science can Critical Thinking and Problem Solving (CP),",
+                      "indicators": []
+                    }
+                  ]
+                },
+                {
+                  "name": "UNDERSTANDING THE ENVIRONMENT",
+                  "content_standards": [
+                    {
+                      "id": "B7.5.4.1",
+                      "text": "Demonstrate B7.5.4.1.1 Search for information on ways sustainable Critical Thinking and Problem Solving (CP),",
+                      "indicators": []
+                    },
+                    {
+                      "id": "B9.5.5.1",
+                      "text": "Demonstrate B9.5.5.1.1 Show and list the uses of different plant parts for Communication and Collaboration (CC),",
+                      "indicators": [
+                        {
+                          "indicator_id": "B9.5.5.1.2",
+                          "text": "Demonstrate the use of different plant parts for Communication and Collaboration (CC),"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "code": "B8",
+          "strands": [
+            {
+              "name": "the human body",
+              "sub_strands": [
+                {
+                  "name": "MATERIALS",
+                  "content_standards": [
+                    {
+                      "id": "B7.5.5.1",
+                      "text": "Demonstrate B7.5.5.1.1 List and describe the different types of plants and Critical Thinking and Problem Solving (CP),",
+                      "indicators": [
+                        {
+                          "indicator_id": "B7.5.5.1.2",
+                          "text": "Explain the nature of associations that exist Critical Thinking and Problem Solving (CP),"
+                        },
+                        {
+                          "indicator_id": "B8.1.1.1.2",
+                          "text": "Design and perform processes for separating kinds of Creativity and Innovation (CI), Critical"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "LIVING CELLS",
+                  "content_standards": [
+                    {
+                      "id": "B8.1.1.2",
+                      "text": "Demonstrate B8.1.1.2.1 Describe atoms as composed of sub-atomic particles Critical Thinking and Problem Solving",
+                      "indicators": [
+                        {
+                          "indicator_id": "B8.1.1.2.2",
+                          "text": "Explain the arrangement of elements in terms of the Critical Thinking and Problem Solving (CP),"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "EARTH SCIENCE",
+                  "content_standards": [
+                    {
+                      "id": "B8.1.2.1",
+                      "text": "Demonstrate B8.1.2.1.1 Examine and describe the structure of prokaryotic Critical Thinking and Problem Solving (CP),",
+                      "indicators": [
+                        {
+                          "indicator_id": "B8.1.2.1.2",
+                          "text": "Classify organisms (plants or animals) as prokaryotic Critical Thinking and Problem Solving"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "LIFE CYCLE OF ORGANISMS",
+                  "content_standards": [
+                    {
+                      "id": "B8.2.1.1",
+                      "text": "Demonstrate B8.2.1.1.1 Explain the process of the carbon cycle. Critical Thinking and Problem Solving (CP),",
+                      "indicators": [
+                        {
+                          "indicator_id": "B8.2.1.1.2",
+                          "text": "Describe the role of the carbon cycle to the Critical Thinking and Problem Solving (CP),"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "CROP PRODUCTION",
+                  "content_standards": [
+                    {
+                      "id": "B8.2.2.1",
+                      "text": "Demonstrate an B8.2.2.1.1 Describe the life cycle and economic importance of Critical Thinking and Problem Solving (CP),",
+                      "indicators": []
+                    },
+                    {
+                      "id": "B8.2.3.1",
+                      "text": "Demonstrate B8.2.3.1.1 Explore the different seed beds for planting crops in Critical Thinking and Problem Solving (CP),",
+                      "indicators": [
+                        {
+                          "indicator_id": "B8.2.3.1.2",
+                          "text": "Plant different types of crops on different seed beds. Critical Thinking and Problem Solving"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "ANIMAL PRODUCTION",
+                  "content_standards": [
+                    {
+                      "id": "B8.2.3.2",
+                      "text": "Demonstrate B8.2.3.2.1 Compare and contrast the differences in height, Critical Thinking and Problem Solving (CP),",
+                      "indicators": []
+                    },
+                    {
+                      "id": "B8.2.4.1",
+                      "text": "Recognise the B8.2.4.1.1 Compare and contrast the different types of feed for Critical Thinking and Problem Solving (CP),",
+                      "indicators": []
+                    }
+                  ]
+                },
+                {
+                  "name": "THE SOLAR SYSTEM",
+                  "content_standards": [
+                    {
+                      "id": "B8.2.4.2",
+                      "text": "Demonstrate B8.2.4.2.1 Explain the importance of water and animal feed to Critical Thinking and Problem Solving (CP),",
+                      "indicators": [
+                        {
+                          "indicator_id": "B8.3.1.1.2",
+                          "text": "Discuss the functions of the different types of teeth Critical Thinking and Problem Solving (CP),"
+                        },
+                        {
+                          "indicator_id": "B8.3.1.1.3",
+                          "text": "Explain the causes and prevention of tooth and gum Critical Thinking and Problem Solving (CP),"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "ECOSYSTEM",
+                  "content_standards": [
+                    {
+                      "id": "B8.3.2.1",
+                      "text": "Demonstrate B8.3.2.1.1 Identify the outer planets of the solar system and Critical Thinking and Problem Solving (CP),",
+                      "indicators": []
+                    }
+                  ]
+                },
+                {
+                  "name": "FARMING SYSTEMS",
+                  "content_standards": [
+                    {
+                      "id": "B8.3.3.1",
+                      "text": "Demonstrate B8.3.3.1.1 Explore the feeding relationships within an Critical Thinking and Problem Solving (CP),",
+                      "indicators": []
+                    }
+                  ]
+                },
+                {
+                  "name": "ENERGY",
+                  "content_standards": [
+                    {
+                      "id": "B8.3.4.1",
+                      "text": "Demonstrate B8.3.4.1.1 Identify and describe the types of crops, animals and Critical Thinking and Problem Solving (CP),",
+                      "indicators": [
+                        {
+                          "indicator_id": "B8.3.4.1.2",
+                          "text": "Discuss the usefulness of the different crops and Critical Thinking and Problem Solving (CP),"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "B8.4.1.1",
+                      "text": "Demonstrate B8.4.1.1.1 Describe energy conversion Critical Thinking and Problem Solving (CP),",
+                      "indicators": [
+                        {
+                          "indicator_id": "B8.4.1.1.2",
+                          "text": "Discuss the importance of conversion of energy. Critical Thinking and Problem Solving (CP),"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "B8.4.1.2",
+                      "text": "Show an B8.4.1.2.1 Describe renewable and non-renewable forms of Critical Thinking and Problem Solving (CP),",
+                      "indicators": [
+                        {
+                          "indicator_id": "B8.4.1.2.2",
+                          "text": "Demonstrate how to manage sources of renewable Critical Thinking and Problem Solving"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "ELECTRICITY AND ELECTRONICS",
+                  "content_standards": [
+                    {
+                      "id": "B8.4.1.3",
+                      "text": "Demonstrate B8.4.1.3.1 Discuss the differences and the relationship between Critical Thinking and Problem Solving (CP),",
+                      "indicators": []
+                    },
+                    {
+                      "id": "B8.4.2.1",
+                      "text": "Demonstrate B8.4.2.1.1 Explain how electricity transmission occurs. Critical Thinking and Problem Solving (CP),",
+                      "indicators": []
+                    }
+                  ]
+                },
+                {
+                  "name": "CONVERSION AND CONSERVATION OF ENERGY",
+                  "content_standards": [
+                    {
+                      "id": "B8.4.2.2",
+                      "text": "Demonstrate B8.4.2.2.1 Demonstrate the charging and discharging action of Critical Thinking and Problem Solving",
+                      "indicators": []
+                    }
+                  ]
+                },
+                {
+                  "name": "FORCE AND MOTION",
+                  "content_standards": [
+                    {
+                      "id": "B8.4.3.1",
+                      "text": "Evaluate the B8.4.3.1.1. Explain the importance of conversion of energy and Critical Thinking and Problem Solving (CP),",
+                      "indicators": []
+                    },
+                    {
+                      "id": "B8.4.4.1",
+                      "text": "Demonstrate B8.4.4.1.1 Demonstrate simple ways of making magnets and Critical Thinking and Problem Solving (CP),",
+                      "indicators": [
+                        {
+                          "indicator_id": "B8.4.4.1.2",
+                          "text": ". Explain the relationship between magnetic force Critical Thinking and Problem Solving"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "AGRICULTURAL TOOLS",
+                  "content_standards": [
+                    {
+                      "id": "B8.4.4.2",
+                      "text": "Demonstrate B8.4.4.2.1 Identify complex machines and describe their Critical Thinking and Problem Solving (CP),",
+                      "indicators": []
+                    }
+                  ]
+                },
+                {
+                  "name": "WASTE MANAGEMENT",
+                  "content_standards": [
+                    {
+                      "id": "B8.4.5.1",
+                      "text": "Demonstrate B8.4.5.1.1 Show and discuss the use of basic and simple Critical Thinking and Problem Solving (CP),",
+                      "indicators": [
+                        {
+                          "indicator_id": "B8.4.5.1.2",
+                          "text": "Engage in the use of basic and simple agricultural Critical Thinking and Problem Solving (CP),"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "HUMAN HEALTH",
+                  "content_standards": [
+                    {
+                      "id": "B8.5.1.1",
+                      "text": "Demonstrate B8.5.1.1.1 Explain sustainable waste management practices Critical Thinking and Problem Solving (CP),",
+                      "indicators": [
+                        {
+                          "indicator_id": "B8.5.1.1.2",
+                          "text": ". Apply knowledge of waste management practices to Critical Thinking and Problem Solving"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "B8.5.2.1",
+                      "text": "Demonstrate B8. 5.2.1.1 Explain the symptoms, effects and Critical Thinking and Problem Solving (CP),",
+                      "indicators": []
+                    }
+                  ]
+                },
+                {
+                  "name": "CLIMATE CHANGE AND GREEN ECONOMY",
+                  "content_standards": [
+                    {
+                      "id": "B8.5.2.2",
+                      "text": "Demonstrate B8. 5.2.2.1 Explain the nature of bacterial diseases Critical Thinking and Problem Solving (CP),",
+                      "indicators": []
+                    }
+                  ]
+                },
+                {
+                  "name": "UNDERSTANDING THE ENVIRONMENT",
+                  "content_standards": [
+                    {
+                      "id": "B8.5.4.1",
+                      "text": "Demonstrate an B8.5.4.1.1 Explain the concept of climate change and its effect Critical Thinking and Problem Solving",
+                      "indicators": [
+                        {
+                          "indicator_id": "B8.5.4.1.2",
+                          "text": ". Describe climate change and green economy Critical Thinking and Problem Solving (CP),"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "B8.5.5.1",
+                      "text": "Demonstrate B8.5.5.1.1 Discuss physical properties of soils Critical Thinking and Problem Solving (CP),",
+                      "indicators": [
+                        {
+                          "indicator_id": "B8.5.5.1.2",
+                          "text": "Analyse the physical properties of soils and soil Critical Thinking and Problem Solving (CP),"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "code": "B9",
+          "strands": [
+            {
+              "name": "the human body",
+              "sub_strands": [
+                {
+                  "name": "MATERIALS",
+                  "content_standards": [
+                    {
+                      "id": "B8.5.6.1",
+                      "text": "Recognise the B8.5.6.1.1 Observe and describe different types of rocks as Critical Thinking and Problem Solving (CP)",
+                      "indicators": []
+                    },
+                    {
+                      "id": "B9.1.1.1",
+                      "text": "Show an B9.1.1.1.1 Identify by name binary chemical compounds and Critical Thinking and Problem Solving (CP),",
+                      "indicators": [
+                        {
+                          "indicator_id": "B9.1.1.1.2",
+                          "text": "Discuss the formation of binary chemical compounds. Critical Thinking and Problem Solving (CP),"
+                        },
+                        {
+                          "indicator_id": "B9.1.1.1.3",
+                          "text": "Describe the characteristics of common acids, bases Critical Thinking and Problem Solving (CP),"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "LIVING CELLS",
+                  "content_standards": [
+                    {
+                      "id": "B9.1.1.2",
+                      "text": "Demonstrate B9.1.1.2.1 Recognise that chemical bond results from the Digital Literacy (DL), Personal Development",
+                      "indicators": []
+                    }
+                  ]
+                },
+                {
+                  "name": "EARTH SCIENCES",
+                  "content_standards": [
+                    {
+                      "id": "B9.1.2.1",
+                      "text": "Demonstrate B9.1.2.1.1 Discuss the concepts of specialised cells and how they Communication and Collaboration (CC),",
+                      "indicators": [
+                        {
+                          "indicator_id": "B9.1.2.1.2",
+                          "text": "Examine the functions of specialised cells in Digital Literacy (DL), Critical Thinking"
+                        },
+                        {
+                          "indicator_id": "B9.1.2.1.3",
+                          "text": "Examine the functions of specialised animal cells Digital Literacy (DL), Critical Thinking and"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "LIFE CYCLE OF ORGANISMS",
+                  "content_standards": [
+                    {
+                      "id": "B9.2.1.1",
+                      "text": "Demonstrate B9.2.1.1.1 Explain the process of the nitrogen cycle as a Critical Thinking and Problem Solving (CP),",
+                      "indicators": [
+                        {
+                          "indicator_id": "B9.2.1.1.2",
+                          "text": "Describe the importance of the nitrogen cycle to the Critical Thinking and Problem Solving (CP),"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "CROP PRODUCTION",
+                  "content_standards": [
+                    {
+                      "id": "B9.2.2.1",
+                      "text": "Demonstrate B9.2.2.1.1 Describe the life cycle of the grasshopper as a form Critical Thinking and Problem Solving (CP),",
+                      "indicators": [
+                        {
+                          "indicator_id": "B9.2.2.1.2",
+                          "text": "Examine how the activities of the grasshopper affect Critical Thinking and Problem Solving (CP),"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "B9.2.3.1",
+                      "text": "Show an B9.2.3.1.1 Observe and describe differences in maturation of Critical Thinking and Problem Solving (CP),",
+                      "indicators": []
+                    },
+                    {
+                      "id": "B9.2.3.2",
+                      "text": "Demonstrate B9.2.3.2.1 Observe and record the uses of different crops at Communication and Collaboration (CC)",
+                      "indicators": [
+                        {
+                          "indicator_id": "B9.2.3.2.2",
+                          "text": "Evaluate the importance of knowledge of maturity Communication and Collaboration (CC) Digital"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "ANIMAL PRODUCTION",
+                  "content_standards": [
+                    {
+                      "id": "B9.2.4.1",
+                      "text": "Demonstrate B9.2.4.1.1 List the ingredients and the method of preparation Critical Thinking and Problem Solving (CP),",
+                      "indicators": []
+                    }
+                  ]
+                },
+                {
+                  "name": "THE HUMAN BODY SYSTEM",
+                  "content_standards": [
+                    {
+                      "id": "B9.2.4.2",
+                      "text": "Demonstrate B9.2.4.2.1 Describe and select appropriate feed for different Critical Thinking and Problem Solving (CP),",
+                      "indicators": [
+                        {
+                          "indicator_id": "B9.2.4.2.2",
+                          "text": "Differentiate between different types of feed for Critical Thinking and Problem Solving (CP),"
+                        },
+                        {
+                          "indicator_id": "B9.2.4.2.3",
+                          "text": "Perform the feeding of domestic and commercial Critical Thinking and Problem Solving"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "THE SOLAR SYSTEM",
+                  "content_standards": [
+                    {
+                      "id": "B9.3.1.1",
+                      "text": "Demonstrate B9.3.1.1.1 Explain the concept of the circulatory system, Critical Thinking and Problem Solving (CP),",
+                      "indicators": [
+                        {
+                          "indicator_id": "B9.3.1.1.2",
+                          "text": "Explain the concept of respiration and show how the Communication and Collaboration (CC),"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "ECOSYSTEM",
+                  "content_standards": [
+                    {
+                      "id": "B9.3.2.1",
+                      "text": "Demonstrate B9.3.2.1.1 Understand the movement of non-planetary bodies Communication and Collaboration (CC), Digital",
+                      "indicators": []
+                    }
+                  ]
+                },
+                {
+                  "name": "FARMING SYSTEMS",
+                  "content_standards": [
+                    {
+                      "id": "B9.3.3.1",
+                      "text": "Recognise B9.3.3.1.1 Conduct research into the composition of an Communication and Collaboration (CC),",
+                      "indicators": []
+                    }
+                  ]
+                },
+                {
+                  "name": "ENERGY",
+                  "content_standards": [
+                    {
+                      "id": "B9.3.4.1",
+                      "text": "Demonstrate B9.3.4.1.1 List and explain the different plant and animal waste Communication and Collaboration (CC),",
+                      "indicators": [
+                        {
+                          "indicator_id": "B9.3.4.1.2",
+                          "text": "Demonstrate the preparation of different types of Communication and Collaboration (CC),"
+                        },
+                        {
+                          "indicator_id": "B9.3.4.1.3",
+                          "text": "Prepare different types of manure. Communication and Collaboration (CC),"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "B9.4.1.1",
+                      "text": "Show B9.4.1.1 .1 List the ways to conserve energy. Examples: ironing Creativity and Innovation (CI), Communication",
+                      "indicators": [
+                        {
+                          "indicator_id": "B9.4.1.1.2",
+                          "text": "Explain the importance of energy conservation in Digital Literacy (DL)"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "B9.4.1.2",
+                      "text": "Demonstrate B9.4.1.2.1 Explain how to calculate energy consumed over a Critical Thinking and Problem Solving (CP)",
+                      "indicators": [
+                        {
+                          "indicator_id": "B9.4.1.2.2",
+                          "text": "Describe how images are formed in cameras. Creativity and Innovation (CI)"
+                        },
+                        {
+                          "indicator_id": "B9.4.1.2.3",
+                          "text": "Describe the formation of shadows. Communication and Collaboration (CC)"
+                        },
+                        {
+                          "indicator_id": "B9.4.1.2.4",
+                          "text": "Demonstrate the formation of an eclipse. Creativity and Innovation (CI), Digital Literacy"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "ELECTRICITY AND ELECTRONICS",
+                  "content_standards": [
+                    {
+                      "id": "B9.4.1.3",
+                      "text": "Evaluate the B9.4.1.3.1 Demonstrate that light changes path when it travels Creativity and Innovation (CI)",
+                      "indicators": []
+                    },
+                    {
+                      "id": "B9.4.2.1",
+                      "text": "Construct B9.4.2.1.1 Demonstrate transformation of electrical energy to Communication and Collaboration (CC),",
+                      "indicators": []
+                    }
+                  ]
+                },
+                {
+                  "name": "CONVERSION AND CONSERVATION OF ENERGY",
+                  "content_standards": [
+                    {
+                      "id": "B9.4.2.2",
+                      "text": "Demonstrate B9.4.2.2.1 Describe forward bias and reverse bias and explain Communication and Collaboration (CC),",
+                      "indicators": []
+                    }
+                  ]
+                },
+                {
+                  "name": "FORCE AND MOTION",
+                  "content_standards": [
+                    {
+                      "id": "B9.4.3.1",
+                      "text": "Show an B9.4.3.1.1 Describe how energy can be converted from one Communication and Collaboration (CC)",
+                      "indicators": []
+                    },
+                    {
+                      "id": "B9.4.4.1",
+                      "text": "Demonstrate B9.4.4.1.1 Explain the concept of pressure and show how Critical Thinking and Problem Solving (CP)",
+                      "indicators": []
+                    },
+                    {
+                      "id": "B9.4.4.2",
+                      "text": "Demonstrate B9.4.4.2.1 Explain the importance of Newton\u2019s Third Law of Communication and Collaboration (CC)",
+                      "indicators": [
+                        {
+                          "indicator_id": "B9.4.4.1.2",
+                          "text": "Demonstrate the application of Newton\u2019s Third Law Creativity and Innovation (CI)"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "WASTE MANAGEMENT",
+                  "content_standards": [
+                    {
+                      "id": "B9.4.5.1",
+                      "text": "Demonstrate B9.4.5.1.1 Identify materials used in making simple agricultural Creativity and Innovation (CI), Communication",
+                      "indicators": [
+                        {
+                          "indicator_id": "B9.4.5.1.2",
+                          "text": "Discuss and write activities involved in making Communication and Collaboration (CC)"
+                        },
+                        {
+                          "indicator_id": "B9.4.5.1.3",
+                          "text": "Manufacture simple agricultural tools. Creativity and Innovation (CI)"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "HUMAN HEALTH",
+                  "content_standards": [
+                    {
+                      "id": "B9.5.1.1",
+                      "text": "Demonstrate B9. 5.1.1.1 Investigate the scientific methods used in waste Communication and Collaboration (CC),",
+                      "indicators": []
+                    },
+                    {
+                      "id": "B9.5.2.1",
+                      "text": "Demonstrate B9.5.2.1.1 Explain the symptoms, effects and prevention of Communication and Collaboration (CC),",
+                      "indicators": []
+                    },
+                    {
+                      "id": "B9.5.2.2",
+                      "text": "Demonstrate B9.5.2.2.1 Explain the concepts of health and disease and show Critical Thinking and Problem Solving (CP),",
+                      "indicators": [
+                        {
+                          "indicator_id": "B9.5.2.2.2",
+                          "text": "Explain the concept of common diseases in an Critical Thinking and Problem Solving (CP),"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "SCIENCE AND INDUSTRY",
+                  "content_standards": [
+                    {
+                      "id": "B9.5.3.1",
+                      "text": "Analyse the B9.5.3.1.1 Investigate the scientific concepts, principles and Communication and Collaboration (CC),",
+                      "indicators": []
+                    }
+                  ]
+                },
+                {
+                  "name": "CLIMATE CHANGE AND GREEN ECONOMY",
+                  "content_standards": [
+                    {
+                      "id": "B9.5.3.2",
+                      "text": "Demonstrate B9.5.3.2.1 Explain the concept of industry and distinguish Critical Thinking and Problem Solving (CP),",
+                      "indicators": [
+                        {
+                          "indicator_id": "B9.5.3.2.2",
+                          "text": "Examine indigenous industries in their communities Critical Thinking and Problem Solving (CP),"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "B9.5.4.1",
+                      "text": "Demonstrate B9.5.4.1.1 Examine various natural and human factors that Communication and Collaboration (CC),",
+                      "indicators": []
+                    }
+                  ]
+                },
+                {
+                  "name": "UNDERSTANDING THE ENVIRONMENT",
+                  "content_standards": [
+                    {
+                      "id": "B9.5.4.2",
+                      "text": "Evaluate B9.5.4.2.1 Assess data on climate change and green economy Critical Thinking and Problem Solving (CP),",
+                      "indicators": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

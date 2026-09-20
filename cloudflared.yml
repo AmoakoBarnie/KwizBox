@@ -1,0 +1,14 @@
+tunnel: 52d176fd-8e80-494b-816d-1466e41be75b
+credentials-file: /home/stephen/.cloudflared/52d176fd-8e80-494b-816d-1466e41be75b.json
+ingress:
+  - path: /api/*
+    rewrite: /
+    service: http://localhost:8001
+  - path: /api
+    rewrite: /
+    service: http://localhost:8001
+  - path: /media/*
+    service: http://localhost:8001
+  - path: /media
+    service: http://localhost:8001
+  - service: http://localhost:4173

@@ -1,0 +1,783 @@
+{
+  "subject": "French",
+  "levels": [
+    {
+      "code": "B4",
+      "strands": [
+        {
+          "name": "\u00c9couter",
+          "sub_strands": [
+            {
+              "name": "Demander et donner l\u2019heure",
+              "content_standards": [
+                {
+                  "id": "B4.1.2.2",
+                  "text": ": Se pr\u00e9senter \u00e0 quelqu\u2019un",
+                  "indicators": [
+                    {
+                      "indicator_id": "B4.1.2.4.1",
+                      "text": "- \u00c9crire \u00e0 un correspondant ; donner son nom, son pr\u00e9nom, sa nationalit\u00e9"
+                    },
+                    {
+                      "indicator_id": "B4.1.3.3.1",
+                      "text": "Lire et comprendre un texte simple dans lequel on pr\u00e9sente quelqu\u2019un"
+                    },
+                    {
+                      "indicator_id": "B4.1.3.4.1",
+                      "text": "\u00c9crire une note pour pr\u00e9senter quelqu\u2019un"
+                    },
+                    {
+                      "indicator_id": "B4.1.4.2.1",
+                      "text": "Poser et r\u00e9pondre \u00e0 des questions sur les caract\u00e9ristiques physiques d\u2019une"
+                    },
+                    {
+                      "indicator_id": "B4.1.4.2.2",
+                      "text": "R\u00e9citer un po\u00e8me, chanter une chanson sur les caract\u00e9ristiques physiques d\u2019une - Digital literacy"
+                    },
+                    {
+                      "indicator_id": "B4.1.4.4.1",
+                      "text": "D\u00e9crire les caract\u00e9ristiques physiques d\u2019une personne"
+                    },
+                    {
+                      "indicator_id": "B4.2.1.2.1",
+                      "text": "Demander \u00e0 quelqu\u2019un de nommer un objet de la maison"
+                    },
+                    {
+                      "indicator_id": "B4.2.1.2.2",
+                      "text": "R\u00e9citer des po\u00e8mes, chanter des chansons sur des objets de la maison"
+                    },
+                    {
+                      "indicator_id": "B4.2.1.3.1",
+                      "text": "Identifier les pi\u00e8ces et les objets de la maison"
+                    },
+                    {
+                      "indicator_id": "B4.2.1.4.1",
+                      "text": "\u00c9crire, dessiner et colorier des objets de la maison"
+                    },
+                    {
+                      "indicator_id": "B4.2.2.2.1",
+                      "text": "Poser et r\u00e9pondre \u00e0 des questions sur ce que l\u2019on fait avec les objets de la classe - Personal development and"
+                    },
+                    {
+                      "indicator_id": "B4.2.2.2.2",
+                      "text": "Poser et r\u00e9pondre \u00e0 des questions simples sur des endroits de l\u2019\u00e9cole"
+                    },
+                    {
+                      "indicator_id": "B4.2.2.3.1",
+                      "text": "Lire et comprendre des textes simples accompagn\u00e9s d\u2019images sur les objets de"
+                    },
+                    {
+                      "indicator_id": "B4.2.2.4.1",
+                      "text": "A l\u2019aide d\u2019images compl\u00e9ter les noms des objets de l\u2019\u00e9cole par les lettres"
+                    },
+                    {
+                      "indicator_id": "B4.3.1.1.1",
+                      "text": "\u00c9couter/Regarder et comprendre un document audio-visuel sur les go\u00fbts de"
+                    },
+                    {
+                      "indicator_id": "B4.3.1.2.1",
+                      "text": "Poser et r\u00e9pondre \u00e0 des questions sur les go\u00fbts"
+                    },
+                    {
+                      "indicator_id": "B4.3.1.2.2",
+                      "text": "Dire ce que l\u2019on aime"
+                    },
+                    {
+                      "indicator_id": "B4.3.1.3.1",
+                      "text": "Lire et comprendre un texte simple sur les go\u00fbts et des pr\u00e9f\u00e9rences des personnes"
+                    },
+                    {
+                      "indicator_id": "B4.3.1.4.1",
+                      "text": "Faire une liste d\u2019objets que l\u2019on aime"
+                    },
+                    {
+                      "indicator_id": "B4.3.2.2.1",
+                      "text": "Poser et r\u00e9pondre \u00e0 des questions sur les go\u00fbts"
+                    },
+                    {
+                      "indicator_id": "B4.3.2.2.3",
+                      "text": "Enum\u00e9rerce qu\u2019on aime et ceque l\u2019on n\u2019aime pas"
+                    },
+                    {
+                      "indicator_id": "B4.4.1.2.1",
+                      "text": "Compter \u00e0 haute voix des objets, des personnes, de son environnement"
+                    },
+                    {
+                      "indicator_id": "B4.4.1.2.2",
+                      "text": "R\u00e9citer un po\u00e8me portant sur les nombres"
+                    },
+                    {
+                      "indicator_id": "B4.4.1.2.3",
+                      "text": "Compter \u00e0 haute voix des objets, des personnes de son environnement."
+                    },
+                    {
+                      "indicator_id": "B4.4.1.3.1",
+                      "text": "Lire \u00e0 haute voixde 1 \u00e0 20"
+                    },
+                    {
+                      "indicator_id": "B4.4.1.4.1",
+                      "text": "Faire des calculs simples \u00e0 l\u2019\u00e9crit avec des chiffres en lettres"
+                    },
+                    {
+                      "indicator_id": "B4.4.2.2.1",
+                      "text": "Poser et r\u00e9pondre \u00e0 des questions sur l\u2019heure qu\u2019il est - Critical thinking"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "B6",
+      "strands": [
+        {
+          "name": "WRITING",
+          "sub_strands": [
+            {
+              "name": "General",
+              "content_standards": [
+                {
+                  "id": "B4.4.2.2",
+                  "text": ": Parler de l\u2019emploi du temps de la journ\u00e9e",
+                  "indicators": [
+                    {
+                      "indicator_id": "B4.4.2.3.2",
+                      "text": "Indiquer l\u2019heure qu\u2019il est en changeant les aiguilles d\u2019une horloge"
+                    },
+                    {
+                      "indicator_id": "B4.4.3.2.2",
+                      "text": "Dire ce que l\u2019on fait chaque jour de la semaine - Digital literacy"
+                    },
+                    {
+                      "indicator_id": "B4.4.3.3.1",
+                      "text": "Lire et comprendre un texte simple sur les activit\u00e9s d\u2019une personne"
+                    },
+                    {
+                      "indicator_id": "B4.4.3.4.2",
+                      "text": "\u00c9crire une carte postale \u00e0 un(e) ami(e) pour lui raconter comment on passe sa global citizenship"
+                    },
+                    {
+                      "indicator_id": "B4.4.3.4.3",
+                      "text": "Remplir un emploi du temps vierge avec des rubriques comme jour, mati\u00e8re, heure. leadership"
+                    },
+                    {
+                      "indicator_id": "B4.4.4.2.1",
+                      "text": "Poser et r\u00e9pondre \u00e0 des questions sur les mois de l\u2019ann\u00e9e."
+                    },
+                    {
+                      "indicator_id": "B4.4.4.2.2",
+                      "text": "Dire dans quel mois un \u00e9v\u00e9nement/une activit\u00e9 a lieu - Digital literacy"
+                    },
+                    {
+                      "indicator_id": "B4.4.4.2.3",
+                      "text": "R\u00e9citer des po\u00e8mes ou chanter des chansons sur les mois de l\u2019ann\u00e9e"
+                    },
+                    {
+                      "indicator_id": "B4.4.4.2.4",
+                      "text": "Situer un \u00e9v\u00e9nement/une action dans un mois de l\u2019ann\u00e9e"
+                    },
+                    {
+                      "indicator_id": "B4.4.5.2.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B4.4.5.2.2",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B4.4.5.3.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B4.4.6.2.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B4.4.6.2.3",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B4.4.6.3.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B4.4.6.4.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B4.4.7.2.2",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B4.4.8.2.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B4.4.8.2.2",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B4.4.8.3.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B4.4.8.4.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B4.4.9.2.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B4.4.9.4.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B5.1.1.3.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B5.1.2.2.2",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B5.1.3.2.2",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B5.1.3.3.2",
+                      "text": "- Creativity and innovation"
+                    },
+                    {
+                      "indicator_id": "B5.1.4.2.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B5.1.4.2.2",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B5.1.4.3.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B5.1.4.4.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B5.1.5.2.2",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B5.1.5.3.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B5.2.1.2.2",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B5.2.1.3.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B5.2.1.4.2",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B5.2.2.2.2",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B5.2.2.2.3",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B5.3.1.2.2",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B5.3.1.3.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B5.3.1.4.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B5.4.1.1.1",
+                      "text": "- Communication and"
+                    },
+                    {
+                      "indicator_id": "B5.4.1.2.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B5.4.1.2.3",
+                      "text": "- Communication and"
+                    },
+                    {
+                      "indicator_id": "B5.4.1.4.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B5.4.1.4.2",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B5.4.2.1.1",
+                      "text": "- Communication and"
+                    },
+                    {
+                      "indicator_id": "B5.4.2.2.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B5.4.2.2.2",
+                      "text": "- Cultural identity and"
+                    },
+                    {
+                      "indicator_id": "B5.4.2.4.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B5.4.2.4.2",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B5.4.3.2.1",
+                      "text": "- Personal development"
+                    },
+                    {
+                      "indicator_id": "B5.4.3.2.2",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B5.4.3.3.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B5.4.3.4.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B5.4.4.1.1",
+                      "text": "- Communication and"
+                    },
+                    {
+                      "indicator_id": "B5.4.4.2.2",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B5.4.4.3.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B5.4.4.4.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B5.4.5.1.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B5.4.5.2.2",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B5.4.5.3.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B5.4.5.4.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B5.4.6.1.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B5.4.6.2.2",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B5.4.6.2.3",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B5.4.6.3.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B5.4.6.4.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B5.4.7.1.1",
+                      "text": "- Communication and"
+                    },
+                    {
+                      "indicator_id": "B5.4.7.2.2",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B5.4.7.3.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B5.4.7.4.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B5.4.8.2.2",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B5.4.8.3.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B5.4.8.4.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B5.4.9.1.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B5.4.9.2.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B5.4.9.3.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B5.4.9.4.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.1.1.1.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.1.1.3.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.1.1.4.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.1.2.1.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.1.2.2.1",
+                      "text": "- Critical thinking"
+                    },
+                    {
+                      "indicator_id": "B6.1.2.3.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.1.2.4.1",
+                      "text": "- Digital literacy"
+                    },
+                    {
+                      "indicator_id": "B6.1.2.5.3",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.1.3.1.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.1.3.2.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.1.3.3.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.1.3.4.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.1.4.1.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.1.4.2.1",
+                      "text": "- Creativity and innovation"
+                    },
+                    {
+                      "indicator_id": "B6.1.4.2.2",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.1.4.3.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.1.4.4.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.1.5.1.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.1.5.2.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.1.5.2.2",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.1.5.3.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.1.5.4.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.2.1.1.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.2.1.2.2",
+                      "text": "- Critical thinking"
+                    },
+                    {
+                      "indicator_id": "B6.2.1.3.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.2.1.4.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.2.2.1.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.2.2.2.2",
+                      "text": "- Digital literacy"
+                    },
+                    {
+                      "indicator_id": "B6.2.2.2.3",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.2.2.3.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.2.2.4.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.3.1.2.1",
+                      "text": "global citizenship"
+                    },
+                    {
+                      "indicator_id": "B6.3.1.3.1",
+                      "text": "global citizenship"
+                    },
+                    {
+                      "indicator_id": "B6.3.1.1.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.3.1.2.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.3.1.3.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.3.1.4.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.3.1.4.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.4.1.1.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.4.1.2.1",
+                      "text": "- Digital literacy"
+                    },
+                    {
+                      "indicator_id": "B6.4.1.2.2",
+                      "text": "Jouer aux jeux avec des chiffres"
+                    },
+                    {
+                      "indicator_id": "B6.4.1.2.3",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.4.1.3.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.4.1.3.2",
+                      "text": "leadership"
+                    },
+                    {
+                      "indicator_id": "B6.4.1.4.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.4.1.4.2",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.4.2.2.2",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.4.2.3.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.4.2.3.2",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.4.2.4.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.4.2.4.2",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.4.3.1.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.4.3.2.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.4.3.3.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.4.3.4.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.4.4.2.1",
+                      "text": "- Critical thinking"
+                    },
+                    {
+                      "indicator_id": "B6.4.4.2.2",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.4.4.3.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.4.4.4.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.4.5.1.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.4.5.2.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.4.5.2.2",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.4.5.4.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.4.6.2.1",
+                      "text": "- Critical thinking"
+                    },
+                    {
+                      "indicator_id": "B6.4.6.2.2",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.4.6.3.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.4.6.4.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.4.7.2.1",
+                      "text": "- Critical thinking"
+                    },
+                    {
+                      "indicator_id": "B6.4.7.3.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.4.7.4.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.4.8.1.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.4.8.2.2",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.4.8.3.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.4.8.4.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.4.9.1.1",
+                      "text": "Communication and"
+                    },
+                    {
+                      "indicator_id": "B6.4.9.2.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.4.9.3.1",
+                      "text": ""
+                    },
+                    {
+                      "indicator_id": "B6.4.9.4.1",
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

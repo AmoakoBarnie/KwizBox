@@ -1,0 +1,73 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "NaCCA Curriculum Manifest",
+  "type": "object",
+  "required": ["subjects"],
+  "properties": {
+    "subjects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["code", "name", "levels"],
+        "properties": {
+          "code": { "type": "string" },
+          "name": { "type": "string" },
+          "levels": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["code", "strands"],
+              "properties": {
+                "code": { "type": "string" },
+                "strands": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": ["code", "name", "sub_strands"],
+                    "properties": {
+                      "code": { "type": "string" },
+                      "name": { "type": "string" },
+                      "sub_strands": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "required": ["code", "name", "content_standards"],
+                          "properties": {
+                            "code": { "type": "string" },
+                            "name": { "type": "string" },
+                            "content_standards": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "required": ["id", "statement", "indicators"],
+                                "properties": {
+                                  "id": { "type": "string" },
+                                  "statement": { "type": "string" },
+                                  "indicators": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "object",
+                                      "required": ["id", "statement"],
+                                      "properties": {
+                                        "id": { "type": "string" },
+                                        "statement": { "type": "string" }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

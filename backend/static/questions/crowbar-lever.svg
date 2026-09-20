@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" width="400" height="200">
+  <rect width="400" height="200" rx="12" fill="#f7fbf8"/>
+  <text x="200" y="24" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#022c1c">Crowbar as a lever</text>
+  <!-- bar (slightly tilted, effort down on left, load on right) -->
+  <line x1="36" y1="88" x2="360" y2="118" stroke="#1a1a1a" stroke-width="10" stroke-linecap="round"/>
+  <!-- fulcrum F, closer to the rock on the right -->
+  <polygon points="268,128 244,168 292,168" fill="#00b36b"/>
+  <text x="268" y="188" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#022c1c">F</text>
+  <!-- load L: grey rock on the right -->
+  <ellipse cx="338" cy="96" rx="28" ry="20" fill="#9aa3ad" stroke="#555" stroke-width="2"/>
+  <text x="338" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#555">L</text>
+  <!-- effort E: downward arrow on the left -->
+  <line x1="52" y1="48" x2="52" y2="78" stroke="#ff4d5e" stroke-width="4" stroke-linecap="round"/>
+  <polygon points="52,86 44,70 60,70" fill="#ff4d5e"/>
+  <text x="52" y="42" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#ff4d5e">E</text>
+</svg>
