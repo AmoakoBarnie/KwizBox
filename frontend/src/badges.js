@@ -28,7 +28,7 @@ export const BADGES = [
   { id: 'class_b9',      name: 'JHS Veteran',    desc: 'Complete a quiz at class B9',        icon: '🎓' },
 ]
 
-const BADGE_KEY = 'stem_badges'
+const BADGE_KEY = 'kwizbox_badges'
 
 /** Load earned badge IDs from localStorage (survives sessions). */
 export function loadBadges() {

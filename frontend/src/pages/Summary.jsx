@@ -266,10 +266,10 @@ function ShareCard({ result, cfg, user, onClose, onCopy, onShare }) {
 function renderSummary({ result, cfg, nav, user, isGuest, fromStorage = false, showShareCard, setShowShareCard, shareToast, setShareToast }) {
   // Evaluate & award badges
   if (user && !isGuest) {
-    const existingBadges = JSON.parse(localStorage.getItem('stem_badges') || '[]')
+    const existingBadges = JSON.parse(localStorage.getItem('kwizbox_badges') || '[]')
     const { newBadges, newlyAwarded } = evaluateBadges(result, cfg, existingBadges)
     if (newBadges.length > existingBadges.length) {
-      localStorage.setItem('stem_badges', JSON.stringify(newBadges))
+      localStorage.setItem('kwizbox_badges', JSON.stringify(newBadges))
       window.__lastQuizResult = result
       window.__lastQuizCfg = cfg
       levelUp()
@@ -545,8 +545,8 @@ export default function Summary() {
     if (!triedStorage) {
       // Try to read from localStorage as last resort
       try {
-        const savedResult = JSON.parse(localStorage.getItem('stem_last_result') || 'null')
-        const savedCfg = JSON.parse(localStorage.getItem('stem_last_cfg') || 'null')
+        const savedResult = JSON.parse(localStorage.getItem('kwizbox_last_result') || 'null')
+        const savedCfg = JSON.parse(localStorage.getItem('kwizbox_last_cfg') || 'null')
         if (savedResult) {
           setTriedStorage(true)
           return renderSummary({ result: savedResult, cfg: savedCfg, nav, user, isGuest, fromStorage: true, showShareCard, setShowShareCard, shareToast, setShareToast })
@@ -564,8 +564,8 @@ export default function Summary() {
 
   // Save to localStorage for future refreshes
   useEffect(() => {
-    localStorage.setItem('stem_last_result', JSON.stringify(result))
-    localStorage.setItem('stem_last_cfg', JSON.stringify(cfg))
+    localStorage.setItem('kwizbox_last_result', JSON.stringify(result))
+    localStorage.setItem('kwizbox_last_cfg', JSON.stringify(cfg))
   }, [result, cfg])
 
   // System preference auto-detect (if mode selector exists elsewhere, skip)

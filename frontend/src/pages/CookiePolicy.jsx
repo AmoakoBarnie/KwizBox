@@ -69,12 +69,12 @@ export default function CookiePolicy() {
               expires on its own.
             </li>
             <li>
-              <strong>Last quiz result and configuration</strong> (<code>stem_last_result</code>,
-              <code>stem_last_cfg</code>): your most recent quiz outcome and the settings used,
+              <strong>Last quiz result and configuration</strong> (<code>kwizbox_last_result</code>,
+              <code>kwizbox_last_cfg</code>): your most recent quiz outcome and the settings used,
               stored so you can see it if you refresh the page. It is your own result data.
             </li>
             <li>
-              <strong>Earned badges</strong> (<code>stem_badges</code>): a list of badges you
+              <strong>Earned badges</strong> (<code>kwizbox_badges</code>): a list of badges you
               have earned, stored so they persist across sessions.
             </li>
             <li>
