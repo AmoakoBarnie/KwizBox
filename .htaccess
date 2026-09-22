@@ -1,0 +1,41 @@
+# KwizBox .htaccess — Force HTTPS on InfinityFree
+RewriteEngine On
+
+# ── Force HTTPS ──
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# ── Security headers ──
+Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+Header always set X-Content-Type-Options "nosniff"
+Header always set X-Frame-Options "DENY"
+Header always set X-XSS-Protection "1; mode=block"
+Header always set Referrer-Policy "no-referrer"
+Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://kwizbox.infinityfree.io; frame-ancestors 'none';"
+
+# ── CORS headers ──
+Header always set Access-Control-Allow-Origin "https://kwizbox.infinityfree.io"
+Header always set Access-Control-Allow-Methods "GET, POST, PUT, PATCH, DELETE, OPTIONS"
+Header always set Access-Control-Allow-Headers "Content-Type, Authorization"
+Header always set Access-Control-Allow-Credentials "true"
+
+# ── OPTIONS preflight → 204 ──
+RewriteCond %{REQUEST_METHOD} OPTIONS
+RewriteRule ^ - [R=204,L]
+
+# ── PHP backend routes (if applicable) ──
+RewriteRule ^(auth|quiz|admin|curriculum|media)/(.*)$ php-backend/index.php [QSA,L]
+
+# ── Frontend static files ──
+RewriteCond %{DOCUMENT_ROOT}/frontend/dist%{REQUEST_URI} -f
+RewriteRule ^ frontend/dist%{REQUEST_URI} [L]
+
+# ── SPA fallback ──
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ frontend/dist/index.html [L]
+
+# ── PHP settings ──
+php_value display_errors 0
+php_value upload_max_filesize 10M
+php_value post_max_size 10M
