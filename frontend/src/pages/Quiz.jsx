@@ -117,8 +117,8 @@ export default function Quiz() {
     const max_streak = Math.max(...answers.map(a => a.streak || 0), streak)
     try {
       const res = await api.submit({ ...cfg, question_ids: finalAnswers.map(a => a.question_id), answers: finalAnswers.map(a => ({ ...a, max_streak })), duration_seconds, max_streak }, token)
-      try { localStorage.setItem('stem_last_result', JSON.stringify(res)) } catch (e) {}
-      try { localStorage.setItem('stem_last_cfg', JSON.stringify(cfg)) } catch (e) {}
+      try { localStorage.setItem('kwizbox_last_result', JSON.stringify(res)) } catch (e) {}
+      try { localStorage.setItem('kwizbox_last_cfg', JSON.stringify(cfg)) } catch (e) {}
       nav('/summary', { state: { result: res, cfg } })
     } catch (e) { setErr(e.message); setSubmitting(false) }
   }

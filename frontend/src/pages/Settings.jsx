@@ -269,9 +269,9 @@ export default function Settings() {
                 Remove cached data from this browser. Your account progress is safe on the server.
               </p>
               <button className="btn" onClick={() => {
-                localStorage.removeItem('stem_badges')
-                localStorage.removeItem('stem_last_result')
-                localStorage.removeItem('stem_last_cfg')
+                localStorage.removeItem('kwizbox_badges')
+                localStorage.removeItem('kwizbox_last_result')
+                localStorage.removeItem('kwizbox_last_cfg')
                 localStorage.removeItem('stem_theme')
                 localStorage.removeItem('stem_sound')
                 setToast({ msg: 'Local data cleared', type: 'success' })
