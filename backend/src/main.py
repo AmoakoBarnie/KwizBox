@@ -1,8 +1,9 @@
-"""FastAPI entry point for the Ghana Stem Trivia backend."""
+"""FastAPI entry point for the KwizBox backend."""
 from pathlib import Path
 
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.middleware.proxy_headers import ProxyHeadersMiddleware
 from fastapi.responses import FileResponse, JSONResponse, HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from slowapi import Limiter, _rate_limit_exceeded_handler
@@ -23,10 +24,17 @@ app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 # CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=False,
+    allow_origins=["https://kwizbox.infinityfree.io", "https://www.kwizbox.infinityfree.io"],
+    allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
+)
+
+# Trust InfinityFree reverse proxy headers for HTTPS
+app.add_middleware(
+    ProxyHeadersMiddleware,
+    trusted_hosts=["*"],
+    num_proxies=1,
 )
 
 app.include_router(auth.router)
