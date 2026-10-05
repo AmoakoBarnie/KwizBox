@@ -10,3 +10,6 @@ python-multipart==0.0.12
 
 # Postgres driver (required when DATABASE_URL is a postgresql:// DSN)
 psycopg2-binary==2.9.13
+
+# Rate limiting
+slowapi==0.1.9
