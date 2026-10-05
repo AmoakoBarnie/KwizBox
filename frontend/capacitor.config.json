@@ -1,0 +1,9 @@
+{
+  "appId": "com.kwizbox.app",
+  "appName": "KwizBox",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "http",
+    "cleartext": true
+  }
+}
