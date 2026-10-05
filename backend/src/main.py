@@ -3,7 +3,7 @@ from pathlib import Path
 
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.middleware.proxy_headers import ProxyHeadersMiddleware
+from uvicorn.middleware.proxy_headers import ProxyHeadersMiddleware
 from fastapi.responses import FileResponse, JSONResponse, HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from slowapi import Limiter, _rate_limit_exceeded_handler
@@ -22,9 +22,25 @@ app.state.limiter = limiter
 app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
 # CORS
+# Native shells (Capacitor) serve the app from a local origin, so allow those
+# too — otherwise the WebView's preflight is rejected before it reaches us.
+# Extra origins (e.g. the deployed frontend) can be added via ALLOWED_ORIGINS
+# as a comma-separated list, so no redeploy is needed to add a domain.
+import os as _os
+
+_extra_origins = [o.strip() for o in _os.getenv("ALLOWED_ORIGINS", "").split(",") if o.strip()]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://kwizbox.infinityfree.io", "https://www.kwizbox.infinityfree.io"],
+    allow_origins=[
+        "https://kwizbox.infinityfree.io",
+        "https://www.kwizbox.infinityfree.io",
+        "https://localhost",
+        "http://localhost",
+        "capacitor://localhost",
+        *_extra_origins,
+    ],
+    allow_origin_regex=r"^(https?://(localhost|10\.0\.2\.2|192\.168\.\d+\.\d+)(:\d+)?|capacitor://localhost)$",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -34,7 +50,6 @@ app.add_middleware(
 app.add_middleware(
     ProxyHeadersMiddleware,
     trusted_hosts=["*"],
-    num_proxies=1,
 )
 
 app.include_router(auth.router)

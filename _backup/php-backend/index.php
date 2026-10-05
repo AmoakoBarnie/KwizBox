@@ -71,16 +71,15 @@ foreach ($routeFiles as $prefix => $file) {
         if ($rMethod !== $method) continue;
 
         $patternSegments = array_values(array_filter(explode('/', $rPattern)));
-        $remainingSegments = array_slice($segments, 1);
 
-        if (count($patternSegments) !== count($remainingSegments)) continue;
+        if (count($patternSegments) !== count($segments)) continue;
 
         $params = [];
         $matched = true;
         foreach ($patternSegments as $i => $ps) {
             if (str_starts_with($ps, ':')) {
-                $params[substr($ps, 1)] = $remainingSegments[$i];
-            } elseif ($ps !== $remainingSegments[$i]) {
+                $params[substr($ps, 1)] = $segments[$i];
+            } elseif ($ps !== $segments[$i]) {
                 $matched = false;
                 break;
             }
@@ -114,6 +113,24 @@ foreach ($routeFiles as $prefix => $file) {
             }
         }
     }
+}
+
+// ─────────── SPA FALLBACK ───────────
+// Serve static assets from frontend/dist first, then index.html for SPA routing
+$frontendDir = dirname(__DIR__) . '/frontend/dist';
+$frontendIndex = $frontendDir . '/index.html';
+$requestedFile = $frontendDir . $path;
+if ($method === 'GET' && file_exists($requestedFile) && is_file($requestedFile)) {
+    $mime = mime_content_type($requestedFile) ?: 'application/octet-stream';
+    header('Content-Type: ' . $mime);
+    header('Cache-Control: public, max-age=86400');
+    readfile($requestedFile);
+    exit;
+}
+if ($method === 'GET' && file_exists($frontendIndex)) {
+    header('Content-Type: text/html; charset=utf-8');
+    readfile($frontendIndex);
+    exit;
 }
 
 // ─────────── 404 FALLBACK ───────────

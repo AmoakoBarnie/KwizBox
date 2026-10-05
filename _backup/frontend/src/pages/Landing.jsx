@@ -5,6 +5,13 @@ import { useAuth } from '../auth.jsx'
 import { api } from '../api.js'
 import HeroStage from '../components/HeroStage.jsx'
 import Mascot from '../components/Mascot.jsx'
+import Nav from '../components/Nav.jsx'
+import SignupForm from '../components/SignupForm.jsx'
+import ValueStrip from '../components/ValueStrip.jsx'
+import FeatureGrid from '../components/FeatureGrid.jsx'
+import HowItWorks from '../components/HowItWorks.jsx'
+import Pricing from '../components/Pricing.jsx'
+
 
 const CLASSES = ['B4', 'B5', 'B6', 'B7', 'B8', 'B9']
 
@@ -17,13 +24,13 @@ export default function Landing() {
   const { guestLogin, login, register, user, logout, isAuthed, isGuest } = useAuth()
   const nav = useNavigate()
   const location = useLocation()
-  // If we arrived from a guest game ("log in to continue"), open the Login tab.
   const [tab, setTab] = useState(location?.state?.openTab || null)
   const [form, setForm] = useState({ nickname: '', password: '', class_level: 'B4', school_code: '', security_question: api.securityQuestions[0], security_answer: '' })
   const [err, setErr] = useState('')
   const [busy, setBusy] = useState(false)
-  const [resetStep, setResetStep] = useState(0) // 0: hidden, 1: ask answer, 2: new password
+  const [resetStep, setResetStep] = useState(0)
   const [reset, setReset] = useState({ nickname: '', question: '', answer: '', new_password: '' })
+  const [signedEmail, setSignedEmail] = useState('')
 
   function set(k, v) { setForm((f) => ({ ...f, [k]: v })) }
 
@@ -57,43 +64,50 @@ export default function Landing() {
     try {
       const r = await api.resetVerify({ nickname: reset.nickname, security_answer: reset.answer, new_password: reset.new_password })
       setResetStep(0); setErr('')
-      // auto-login with the returned token
       login({ nickname: reset.nickname, password: reset.new_password })
       nav('/play')
     } catch (e) { setErr(e.message) } finally { setBusy(false) }
   }
 
+  function handleCta() {
+    if (!isAuthed) nav('/choose-quiz')
+  }
+
   return (
     <motion.div className="screen landing">
-    {/* shield admin button — landing page only */}
-    <motion.a
-      href="/admin"
-      className="admin-shield"
-      title="Admin login"
-      initial={{ opacity: 0, scale: 0.5 }}
-      animate={{ opacity: 1, scale: 1 }}
-      whileHover={{ scale: 1.12 }}
-      whileTap={{ scale: 0.92 }}
-      transition={{ type: 'spring', stiffness: 260, damping: 18 }}
-    >
-      🛡️
-    </motion.a>
+      <a className="skip-nav" href="#main-content">Skip to content</a>
 
-    <motion.div className="hero" initial="hidden" animate="show">
-      <motion.div className="flag-stripe" variants={fadeUp} custom={0} />
-      <HeroStage user={user} />
+      <Nav onCta={handleCta} />
+
+      <motion.div className="hero" initial="hidden" animate="show">
+        <motion.div className="flag-stripe" variants={fadeUp} custom={0} />
+        <HeroStage user={user} />
         <motion.p className="subtitle" variants={fadeUp} custom={3}>
           Practice Science, Maths &amp; Computing — Primary 4 to JHS 3 (B4–B9)
         </motion.p>
         <motion.div className="hero-badge" variants={fadeUp} custom={4}>
           <span className="dot" /> NaCCA-aligned · Low-data · Works on any phone
         </motion.div>
-        <motion.div className="feature-row" variants={fadeUp} custom={5}>
+        <motion.div className="hero-signup" variants={fadeUp} custom={5}>
+          <SignupForm onSuccess={setSignedEmail} />
+        </motion.div>
+        <motion.div className="feature-row" variants={fadeUp} custom={6}>
           <div className="feature"><span className="fi">🔬</span><b>Science</b></div>
           <div className="feature"><span className="fi">➗</span><b>Maths</b></div>
           <div className="feature"><span className="fi">💻</span><b>Computing</b></div>
         </motion.div>
       </motion.div>
+
+      <ValueStrip />
+      <FeatureGrid />
+      <HowItWorks />
+      
+      
+
+      <section id="signup" className="closing-band" aria-label="Sign up">
+        <h2>Ready to start?</h2>
+        <SignupForm onSuccess={setSignedEmail} />
+      </section>
 
       {user ? (
         <motion.div className="card center" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
@@ -107,14 +121,12 @@ export default function Landing() {
         </motion.div>
       ) : (
         <motion.div className="card" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.25 }}>
-          {/* Always-visible choices — the form pops up only after a click */}
           <div className="tabs">
             <button className={tab === 'guest' ? 'tab active' : 'tab'} onClick={() => setTab('guest')}>Play as Guest</button>
             <button className={tab === 'login' ? 'tab active' : 'tab'} onClick={() => setTab('login')}>Login</button>
             <button className={tab === 'signup' ? 'tab active' : 'tab'} onClick={() => setTab('signup')}>Sign up</button>
           </div>
 
-          {/* Pop-up panel: only shown once a choice is clicked */}
           <AnimatePresence mode="wait">
           {tab && (
             <motion.div
@@ -218,11 +230,20 @@ export default function Landing() {
         </motion.div>
       )}
 
+      <footer className="site-footer">
+        <p>KwizBox — STEM revision for Ghanaian learners · NaCCA-aligned</p>
+        <p>© {new Date().getFullYear()} KwizBox</p>
+      </footer>
+
       <div className="policy-foot">
         <a href="/privacy-policy" className="policy-link">Privacy Policy</a>
         <a href="/terms-and-conditions" className="policy-link">Terms &amp; Conditions</a>
         <a href="/cookie-policy" className="policy-link">Cookies &amp; Tracking</a>
       </div>
+
+      <motion.a href="/admin" className="admin-shield" title="Admin login" initial={{ opacity: 0, scale: 0.5 }} animate={{ opacity: 1, scale: 1 }} whileHover={{ scale: 1.12 }} whileTap={{ scale: 0.92 }} transition={{ type: 'spring', stiffness: 260, damping: 18 }}>
+        🛡️
+      </motion.a>
     </motion.div>
   )
 }

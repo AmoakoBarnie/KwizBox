@@ -3,6 +3,10 @@ from pydantic_settings import BaseSettings
 
 
 class Settings(BaseSettings):
+    # SQLite for local dev; set DATABASE_URL to a Postgres DSN for production.
+    #   postgresql://user:pass@host:5432/dbname
+    # Note: SQLite silently ignores VARCHAR(n) limits and does not enforce
+    # foreign keys, so data that runs locally can be rejected by Postgres.
     database_url: str = "sqlite:///./trivia.db"
     jwt_secret: str
     jwt_algorithm: str = "HS256"

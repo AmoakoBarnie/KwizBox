@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>KwizBox — Phone Preview</title>
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:
+      radial-gradient(1200px 600px at 15% -10%, #1f3b2e 0%, transparent 55%),
+      radial-gradient(900px 500px at 100% 110%, #0f2a20 0%, transparent 60%),
+      #0b1410;
+    color:#e8f2ec;
+    padding:24px 24px 32px;
+    min-height:100vh;
+  }
+  .bar{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin:0 0 20px}
+  .bar h1{font-size:14.5px;font-weight:650;margin:0 12px 0 0;letter-spacing:.2px}
+  .bar .dot{width:7px;height:7px;border-radius:50%;background:#3ddc84;box-shadow:0 0 8px #3ddc84;flex:0 0 auto}
+  button{
+    font:inherit;font-size:12.5px;font-weight:550;
+    color:#cfe6da;background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.14);
+    padding:7px 13px;border-radius:999px;cursor:pointer;
+    transition:background .15s,border-color .15s,color .15s;
+  }
+  button:hover{background:rgba(255,255,255,.12);color:#fff}
+  button.on{background:#006B3F;border-color:#0a8f56;color:#fff}
+  .meta{font-size:11.5px;color:#8fae9f;margin-left:auto;font-variant-numeric:tabular-nums}
+
+  .wrap{display:flex;align-items:flex-start;gap:24px;flex-wrap:wrap}
+
+  .phone{
+    position:relative;
+    background:linear-gradient(160deg,#31363d,#15181c 45%,#0a0c0e);
+    border-radius:46px;
+    padding:11px;
+    box-shadow:
+      0 0 0 1.5px #3a4048,
+      0 0 0 4px #0a0c0e,
+      0 26px 60px -12px rgba(0,0,0,.85),
+      inset 0 1px 1px rgba(255,255,255,.14);
+  }
+  .screen{
+    position:relative;
+    background:#000;
+    border-radius:37px;
+    overflow:hidden;
+    box-shadow:inset 0 0 0 1.5px #000;
+  }
+  iframe{display:block;border:0;background:#0b1410}
+  .cam{
+    position:absolute;top:11px;left:50%;transform:translateX(-50%);
+    width:11px;height:11px;border-radius:50%;
+    background:#05070a;
+    box-shadow:inset 0 0 0 1.5px #1c2026, 0 0 0 1px rgba(255,255,255,.05);
+    z-index:3;
+  }
+  .status{
+    position:absolute;top:0;left:0;right:0;height:26px;z-index:2;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 15px;font-size:10.5px;font-weight:600;color:#fff;
+    background:linear-gradient(#000000cc,#00000000);
+    pointer-events:none;letter-spacing:.2px;
+  }
+  .status .r{display:flex;align-items:center;gap:5px}
+  .batt{width:17px;height:9px;border:1.2px solid #fff;border-radius:2.5px;position:relative;display:inline-block}
+  .batt::after{content:"";position:absolute;left:1.4px;top:1.4px;bottom:1.4px;width:10px;background:#fff;border-radius:1px}
+  .gest{
+    position:absolute;bottom:6px;left:50%;transform:translateX(-50%);
+    width:112px;height:4px;border-radius:3px;background:rgba(255,255,255,.55);
+    z-index:2;pointer-events:none;
+  }
+  .cap{font-size:11.5px;color:#8fae9f;margin:12px 0 0;line-height:1.55;max-width:430px}
+  .cap b{color:#cfe6da;font-weight:600}
+  .cap code{background:rgba(255,255,255,.08);padding:1px 5px;border-radius:4px;font-size:11px}
+</style>
+</head>
+<body>
+  <div class="bar">
+    <span class="dot"></span>
+    <h1>KwizBox — live phone preview</h1>
+    <button class="on" data-w="412" data-h="915">Pixel 7</button>
+    <button data-w="393" data-h="851">Pixel 5</button>
+    <button data-w="360" data-h="740">Galaxy S8</button>
+    <button data-w="320" data-h="640">Small 320</button>
+    <button id="reload">↻ Reload</button>
+    <span class="meta" id="dim">412 × 915</span>
+  </div>
+
+  <div class="wrap">
+    <div>
+      <div class="phone">
+        <div class="cam"></div>
+        <div class="status">
+          <span>9:41</span>
+          <span class="r">
+            <svg width="13" height="10" viewBox="0 0 13 10" fill="#fff"><rect x="0" y="7" width="2.2" height="3" rx=".6"/><rect x="3.4" y="5" width="2.2" height="5" rx=".6"/><rect x="6.8" y="2.6" width="2.2" height="7.4" rx=".6"/><rect x="10.2" y="0" width="2.2" height="10" rx=".6"/></svg>
+            <span class="batt"></span>
+          </span>
+        </div>
+        <div class="screen" id="screen">
+          <iframe id="app" src="http://localhost:5173/" title="KwizBox"></iframe>
+        </div>
+        <div class="gest"></div>
+      </div>
+      <p class="cap"><b>Live app</b> — the real KwizBox UI in a Pixel-sized viewport. Click, scroll and type directly in it.<br>Needs the dev server on <code>localhost:5173</code>.</p>
+    </div>
+  </div>
+
+<script>
+  const app = document.getElementById('app');
+  const screen = document.getElementById('screen');
+  const dim = document.getElementById('dim');
+  function size(w,h){
+    app.style.width = w+'px';
+    app.style.height = h+'px';
+    screen.style.width = w+'px';
+    screen.style.height = h+'px';
+    dim.textContent = w + ' × ' + h;
+  }
+  size(412,915);
+  document.querySelectorAll('button[data-w]').forEach(b=>{
+    b.addEventListener('click',()=>{
+      document.querySelectorAll('button[data-w]').forEach(x=>x.classList.remove('on'));
+      b.classList.add('on');
+      size(+b.dataset.w, +b.dataset.h);
+      app.src = app.src;
+    });
+  });
+  document.getElementById('reload').addEventListener('click',()=>{ app.src = app.src; });
+</script>
+</body>
+</html>
