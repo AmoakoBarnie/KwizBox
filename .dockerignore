@@ -1,0 +1,38 @@
+# Python
+backend/venv/
+backend/**/__pycache__/
+backend/**/*.pyc
+backend/**/*.pyo
+
+# Local databases (not needed in container)
+backend/trivia.db
+backend/trivia.db.bak_*
+
+# Logs
+backend/*.log
+backend/backend_run.log
+
+# Frontend build (dist IS needed in container, node_modules is not)
+frontend/node_modules/
+
+# Git
+.git/
+.gitignore
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Hermes
+.hermes/
+
+# Backup
+_backup/
+
+# Docs
+*.md
+!README.md
