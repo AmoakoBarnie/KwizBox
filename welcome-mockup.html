@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KwizBox — Welcome</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+
+  .phone-frame {
+    width: 390px;
+    height: 844px;
+    background: #ffffff;
+    border-radius: 44px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.15), 0 0 0 1px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Status bar */
+  .status-bar {
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 28px;
+    flex-shrink: 0;
+  }
+  .status-bar .time {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a1a;
+    letter-spacing: -0.3px;
+  }
+  .status-bar .icons {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+  .status-bar .icons svg {
+    width: 18px;
+    height: 18px;
+    fill: #1a1a1a;
+  }
+
+  /* Main content */
+  .content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0 32px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Decorative grid lines */
+  .grid-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .grid-lines::before {
+    content: '';
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #e8e8e8;
+  }
+  .grid-lines::after {
+    content: '';
+    position: absolute;
+    top: 180px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #e8e8e8;
+  }
+
+  /* Illustrations */
+  .illustrations {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Quiz card stack */
+  .quiz-cards {
+    position: absolute;
+    top: 80px;
+    left: -10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transform: rotate(-6deg);
+  }
+  .quiz-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 10px 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border: 1.5px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 140px;
+  }
+  .quiz-card:nth-child(2) { transform: rotate(3deg) translateX(12px); }
+  .quiz-card:nth-child(3) { transform: rotate(-2deg) translateX(6px); }
+  .quiz-card:nth-child(4) { transform: rotate(4deg) translateX(16px); }
+  .quiz-card .card-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .quiz-card .card-text {
+    font-size: 11px;
+    font-weight: 600;
+    color: #333;
+    line-height: 1.2;
+  }
+  .quiz-card .card-chevron {
+    margin-left: auto;
+    color: #ccc;
+    font-size: 10px;
+  }
+
+  .card-green { background: #e8f5e9; color: #006B3F; }
+  .card-gold { background: #fff8e1; color: #b8860b; }
+  .card-red { background: #ffebee; color: #CE1126; }
+  .card-blue { background: #e3f2fd; color: #1565c0; }
+
+  /* Comet / sparkle */
+  .comet {
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+  }
+  .comet-core {
+    width: 24px;
+    height: 24px;
+    background: #FCD116;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    box-shadow: 0 0 20px rgba(252, 209, 22, 0.4);
+  }
+  .comet-trail {
+    position: absolute;
+    top: 8px;
+    right: 28px;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+  }
+  .comet-trail span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #FCD116;
+  }
+  .comet-trail span:nth-child(1) { opacity: 0.9; }
+  .comet-trail span:nth-child(2) { opacity: 0.6; }
+  .comet-trail span:nth-child(3) { opacity: 0.3; }
+
+  /* Orbit ring */
+  .orbit {
+    position: absolute;
+    top: 140px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+  }
+  .orbit-ring {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #006B3F;
+    border-radius: 50%;
+    opacity: 0.3;
+    position: absolute;
+  }
+  .orbit-dot {
+    width: 12px;
+    height: 12px;
+    background: #006B3F;
+    border-radius: 50%;
+    position: absolute;
+    top: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* Question mark decoration */
+  .q-mark {
+    position: absolute;
+    top: 200px;
+    left: 20px;
+    font-size: 48px;
+    font-weight: 800;
+    color: #FCD116;
+    opacity: 0.15;
+    transform: rotate(-15deg);
+    font-family: 'Playfair Display', serif;
+  }
+
+  /* Star decoration */
+  .star {
+    position: absolute;
+    top: 260px;
+    right: 40px;
+    font-size: 24px;
+    color: #FCD116;
+    opacity: 0.2;
+  }
+
+  /* Headline */
+  .headline {
+    position: relative;
+    z-index: 2;
+    margin-top: 120px;
+    text-align: center;
+  }
+  .headline .line {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-weight: 800;
+    font-size: 52px;
+    line-height: 1.05;
+    color: #1a1a1a;
+    letter-spacing: -1px;
+  }
+  .headline .line-indent {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 1.1;
+    color: #006B3F;
+    margin-left: 60px;
+    margin-top: -4px;
+    font-style: italic;
+  }
+  .headline .line-accent {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 56px;
+    line-height: 1.05;
+    color: #1a1a1a;
+    letter-spacing: -1px;
+    position: relative;
+  }
+  .headline .line-accent::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 8px;
+    background: #FCD116;
+    opacity: 0.3;
+    z-index: -1;
+    border-radius: 4px;
+  }
+
+  /* Subheadline */
+  .subheadline {
+    position: relative;
+    z-index: 2;
+    margin-top: 24px;
+    text-align: center;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #666;
+    font-weight: 400;
+    max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* CTA Zone */
+  .cta-zone {
+    position: relative;
+    z-index: 2;
+    margin-top: auto;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .btn-primary {
+    width: 100%;
+    max-width: 320px;
+    height: 56px;
+    background: #006B3F;
+    border: none;
+    border-radius: 28px;
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+    cursor: pointer;
+    box-shadow: 0 4px 0 #004d2b, 0 8px 20px rgba(0, 107, 63, 0.25);
+    transition: all 0.15s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(255,255,255,0.1) 0%, transparent 50%);
+    border-radius: 28px;
+  }
+  .btn-primary:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 #004d2b, 0 4px 10px rgba(0, 107, 63, 0.2);
+  }
+
+  .btn-secondary {
+    background: none;
+    border: none;
+    color: #1a1a1a;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 8px 16px;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: #ccc;
+  }
+
+  /* Ghana flag stripe */
+  .flag-stripe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg,
+      #CE1126 0%, #CE1126 33.33%,
+      #FCD116 33.33%, #FCD116 66.66%,
+      #006B3F 66.66%, #006B3F 100%
+    );
+    z-index: 10;
+  }
+
+  /* Bottom safe area */
+  .bottom-bar {
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .bottom-bar .home-indicator {
+    width: 134px;
+    height: 5px;
+    background: #1a1a1a;
+    border-radius: 3px;
+    opacity: 0.2;
+  }
+
+  /* Floating elements animation */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-6px); }
+  }
+  .float-1 { animation: float 3s ease-in-out infinite; }
+  .float-2 { animation: float 4s ease-in-out infinite 0.5s; }
+  .float-3 { animation: float 3.5s ease-in-out infinite 1s; }
+
+  /* Sparkle animation */
+  @keyframes sparkle {
+    0%, 100% { opacity: 0.2; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(1.1); }
+  }
+  .sparkle { animation: sparkle 2s ease-in-out infinite; }
+</style>
+</head>
+<body>
+
+<div class="phone-frame">
+  <!-- Ghana flag stripe -->
+  <div class="flag-stripe"></div>
+
+  <!-- Status bar -->
+  <div class="status-bar">
+    <span class="time">9:41</span>
+    <div class="icons">
+      <svg viewBox="0 0 24 24"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3c-1.65-1.66-4.34-1.66-6 0zm-4-4l2 2c2.76-2.76 7.24-2.76 10 0l2-2C15.14 9.14 8.87 9.14 5 13z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M12 21l3.5-4.5c-.7-.55-2.15-1-3.5-1s-2.8.45-3.5 1L12 21zm0-18C7.44 3 3.22 4.62.36 7.39l1.42 1.42C4.1 6.49 7.82 5 12 5s7.9 1.49 10.22 3.81l1.42-1.42C20.78 4.62 16.56 3 12 3zm0 6c-3.03 0-5.78 1.23-7.78 3.22l1.42 1.42C7.07 12.21 9.41 11 12 11s4.93 1.21 6.36 2.64l1.42-1.42C17.78 10.23 15.03 9 12 9z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M15.67 4H14V2h-4v2H8.33C7.6 4 7 4.6 7 5.33v15.33C7 21.4 7.6 22 8.33 22h7.33c.74 0 1.34-.6 1.34-1.33V5.33C17 4.6 16.4 4 15.67 4z"/></svg>
+    </div>
+  </div>
+
+  <!-- Main content -->
+  <div class="content">
+    <!-- Decorative grid lines -->
+    <div class="grid-lines"></div>
+
+    <!-- Illustrations -->
+    <div class="illustrations">
+      <!-- Quiz card stack -->
+      <div class="quiz-cards float-1">
+        <div class="quiz-card">
+          <div class="card-icon card-green">Q</div>
+          <div class="card-text">What is 2+2?</div>
+          <span class="card-chevron">▼</span>
+        </div>
+        <div class="quiz-card">
+          <div class="card-icon card-gold">★</div>
+          <div class="card-text">Keep growing</div>
+          <span class="card-chevron">▼</span>
+        </div>
+        <div class="quiz-card">
+          <div class="card-icon card-red">!</div>
+          <div class="card-text">Challenge a friend</div>
+          <span class="card-chevron">▼</span>
+        </div>
+        <div class="quiz-card">
+          <div class="card-icon card-blue">?</div>
+          <div class="card-text">Daily quiz</div>
+          <span class="card-chevron">▼</span>
+        </div>
+      </div>
+
+      <!-- Comet -->
+      <div class="comet float-2">
+        <div class="comet-trail">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="comet-core"></div>
+      </div>
+
+      <!-- Orbit -->
+      <div class="orbit float-3">
+        <div class="orbit-ring"></div>
+        <div class="orbit-dot"></div>
+      </div>
+
+      <!-- Question mark -->
+      <div class="q-mark sparkle">?</div>
+
+      <!-- Star -->
+      <div class="star sparkle">✦</div>
+    </div>
+
+    <!-- Headline -->
+    <h1 class="headline">
+      <span class="line">Think.</span>
+      <span class="line-indent">Play.</span>
+      <span class="line-accent">Win.</span>
+    </h1>
+
+    <!-- Subheadline -->
+    <p class="subheadline">
+      Ghana's favourite STEM quiz app. Challenge friends, climb the leaderboard, and master Science, Maths &amp; Computing — one question at a time.
+    </p>
+
+    <!-- CTA Zone -->
+    <div class="cta-zone">
+      <button class="btn-primary">Start Playing</button>
+      <button class="btn-secondary">Sign in</button>
+    </div>
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="bottom-bar">
+    <div class="home-indicator"></div>
+  </div>
+</div>
+
+</body>
+</html>
