@@ -13,3 +13,4 @@ psycopg2-binary==2.9.13
 
 # Rate limiting
 slowapi==0.1.9
+asyncpg==0.30.0

@@ -4,6 +4,7 @@ from sqlalchemy.orm import sessionmaker, Session
 from .config import settings
 
 connect_args = {"check_same_thread": False} if settings.database_url.startswith("sqlite") else {}
+
 engine = create_engine(settings.database_url, connect_args=connect_args)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
@@ -48,20 +49,12 @@ def _migrate_avatar_and_streak_columns():
         qs_cols = {c["name"] for c in insp.get_columns("quiz_sessions")}
         if "max_streak" not in qs_cols:
             conn.execute(text("ALTER TABLE quiz_sessions ADD COLUMN max_streak INTEGER NOT NULL DEFAULT 0"))
-    # give existing sessions a sensible max_streak so compare cards don't all show 0
     with engine.begin() as conn:
-        conn.execute(text(
-            "UPDATE quiz_sessions SET max_streak = 0 WHERE max_streak IS NULL"
-        ))
+        conn.execute(text("UPDATE quiz_sessions SET max_streak = 0 WHERE max_streak IS NULL"))
 
 
 def _migrate_question_columns():
-    """Idempotent SQLite ALTER for columns create_all will not add to an existing DB.
-
-    Keeps the live question bank (backend/trivia.db) intact. New installs just
-    get the columns from create_all; this path only runs when the table already
-    exists without question_type / image_url.
-    """
+    """Idempotent SQLite ALTER for columns create_all will not add to an existing DB."""
     if not str(settings.database_url).startswith("sqlite"):
         return
     insp = inspect(engine)
@@ -70,20 +63,11 @@ def _migrate_question_columns():
     cols = {c["name"] for c in insp.get_columns("questions")}
     with engine.begin() as conn:
         if "question_type" not in cols:
-            conn.execute(text(
-                "ALTER TABLE questions ADD COLUMN question_type VARCHAR(20) DEFAULT 'mcq'"
-            ))
+            conn.execute(text("ALTER TABLE questions ADD COLUMN question_type VARCHAR(20) DEFAULT 'mcq'"))
         if "image_url" not in cols:
-            conn.execute(text(
-                "ALTER TABLE questions ADD COLUMN image_url VARCHAR(500)"
-            ))
-        conn.execute(text(
-            "UPDATE questions SET question_type = 'mcq' "
-            "WHERE question_type IS NULL OR question_type = ''"
-        ))
-        conn.execute(text(
-            "CREATE INDEX IF NOT EXISTS ix_questions_question_type ON questions (question_type)"
-        ))
+            conn.execute(text("ALTER TABLE questions ADD COLUMN image_url VARCHAR(500)"))
+        conn.execute(text("UPDATE questions SET question_type = 'mcq' WHERE question_type IS NULL OR question_type = ''"))
+        conn.execute(text("CREATE INDEX IF NOT EXISTS ix_questions_question_type ON questions (question_type)"))
 
 
 def _ensure_demo_typed_questions():
