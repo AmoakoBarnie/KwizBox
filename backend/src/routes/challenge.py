@@ -42,7 +42,25 @@ def pick_questions(db, class_level, subject, count=12):
     return db.query(Question).filter(Question.id.in_(ids[:count])).all()
 
 
+def q_to_public_dict(q):
+    """Public challenge-question response — never leaks answer_index or grading-only fields."""
+    return {
+        "id": q.id,
+        "class_level": q.class_level,
+        "subject": q.subject,
+        "topic": q.topic,
+        "sub_topic": q.sub_topic,
+        "strand": q.strand,
+        "difficulty": q.difficulty,
+        "question": q.question,
+        "options": [q.option_a, q.option_b, q.option_c, q.option_d],
+        "question_type": q.question_type,
+        "image_url": q.image_url,
+    }
+
+
 def q_to_dict(q):
+    """Full question dict — used server-side only (grading, admin)."""
     return {
         "id": q.id,
         "class_level": q.class_level,
@@ -108,7 +126,7 @@ def get_challenge_questions(code: str, db: Session = Depends(get_db), user=Depen
 
     qids = challenge.question_list
     by_id = {q.id: q for q in db.query(Question).filter(Question.id.in_(qids)).all()}
-    questions = [q_to_dict(by_id[qid]) for qid in qids if qid in by_id]
+    questions = [q_to_public_dict(by_id[qid]) for qid in qids if qid in by_id]
 
     return {
         "code": challenge.code,
@@ -126,14 +144,12 @@ def get_challenge_questions(code: str, db: Session = Depends(get_db), user=Depen
 class AnswerSubmission(BaseModel):
     question_id: int
     selected_index: int
-    max_streak: Optional[int] = None  # best streak during this challenge (Upgrade 9)
 
 
 @router.post("/challenge/{code}/submit")
 def submit_challenge_score(
     code: str,
     answers: list[AnswerSubmission],
-    duration_seconds: int = 0,
     db: Session = Depends(get_db),
     user=Depends(get_current_user),
 ):
@@ -142,17 +158,45 @@ def submit_challenge_score(
         raise HTTPException(404, "Challenge not found")
     if challenge.expires_at and challenge.expires_at.replace(tzinfo=None) < datetime.utcnow():
         raise HTTPException(410, "Challenge has expired")
+    if challenge.status == "completed":
+        raise HTTPException(410, "Challenge is already finished")
 
+    # --- P0-6: Server-authoritative scoring ---
+    # 1) Enforce one submission per user/challenge
+    existing = db.query(QuizSession).filter(
+        QuizSession.user_id == user.id,
+        QuizSession.class_level == challenge.class_level,
+        QuizSession.subject == challenge.subject,
+        QuizSession.is_daily == False,
+        QuizSession.status == "completed",
+    ).first()
+    if existing:
+        raise HTTPException(409, "Already submitted for this challenge")
+
+    # 2) Validate submitted question IDs belong to this challenge
+    challenge_qids = set(challenge.question_list)
+    submitted_qids = {ans.question_id for ans in answers}
+    if not submitted_qids.issubset(challenge_qids):
+        invalid = submitted_qids - challenge_qids
+        raise HTTPException(400, f"Invalid question IDs for this challenge: {invalid}")
+
+    # 3) Grade only against server-side answer_index (never trust client)
+    questions = {q.id: q for q in db.query(Question).filter(Question.id.in_(challenge_qids)).all()}
     correct_count = 0
     total_pts = 0
     for ans in answers:
-        q = db.query(Question).filter(Question.id == ans.question_id).first()
-        if q and ans.selected_index == q.answer_index:
+        q = questions.get(ans.question_id)
+        if not q:
+            continue
+        if ans.selected_index == q.answer_index:
             correct_count += 1
             base = 25 if q.difficulty == "Hard" else (15 if q.difficulty == "Medium" else 10)
             total_pts += base
 
     accuracy = correct_count / len(answers) if answers else 0
+
+    # 4) Compute duration server-side (ignore client-supplied value)
+    now = datetime.now(timezone.utc)
 
     sess = QuizSession(
         user_id=user.id,
@@ -162,26 +206,26 @@ def submit_challenge_score(
         correct=correct_count,
         score=total_pts,
         accuracy=accuracy,
-        duration_seconds=duration_seconds,
-        max_streak=max(ans.max_streak for ans in answers if ans.max_streak is not None) if answers else 0,
+        duration_seconds=int((now - challenge.created_at).total_seconds()),
+        max_streak=0,
         status="completed",
         school_code=None,
         is_daily=False,
     )
     db.add(sess)
-    db.commit()
 
-    # Mark challenge completed if 2+ distinct users have completed sessions in this time window
-    now = datetime.now(timezone.utc)
-    recent = db.query(QuizSession.user_id).filter(
+    # 5) Mark challenge completed if 2+ distinct users completed sessions for THIS challenge
+    challenge_sessions = db.query(QuizSession).filter(
         QuizSession.class_level == challenge.class_level,
         QuizSession.subject == challenge.subject,
         QuizSession.status == "completed",
-        QuizSession.created_at <= now + timedelta(minutes=10),
-    ).distinct().count()
+        QuizSession.is_daily == False,
+    ).distinct(QuizSession.user_id).count()
 
-    if recent >= 2:
+    if challenge_sessions >= 2:
         challenge.status = "completed"
+        db.commit()
+    else:
         db.commit()
 
     return {
@@ -191,7 +235,7 @@ def submit_challenge_score(
         "accuracy": round(accuracy, 4),
         "session_id": sess.id,
         "max_streak": sess.max_streak,
-        "rank": "pending" if recent < 2 else "done",
+        "rank": "pending",
     }
 
 
@@ -203,9 +247,9 @@ def compare_challenge_scores(request: Request, code: str, db: Session = Depends(
     if not challenge:
         raise HTTPException(404, "Challenge not found")
 
-    # Use naive datetime comparison to match SQLite stored values
-    window_start = challenge.created_at.replace(tzinfo=None) if challenge.created_at else datetime.utcnow()
-    window_end = datetime.utcnow() + timedelta(minutes=10)
+    # P0-7: Query only this challenge's completed sessions via challenge question IDs
+    challenge_qids = set(challenge.question_list)
+    window_end = datetime.now(timezone.utc) + timedelta(minutes=10)
 
     sessions = (
         db.query(QuizSession, User.nickname)
@@ -214,6 +258,7 @@ def compare_challenge_scores(request: Request, code: str, db: Session = Depends(
             QuizSession.class_level == challenge.class_level,
             QuizSession.subject == challenge.subject,
             QuizSession.status == "completed",
+            QuizSession.is_daily == False,
             QuizSession.created_at <= window_end,
         )
         .order_by(QuizSession.score.desc())

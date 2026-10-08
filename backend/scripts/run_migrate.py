@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Migrate SQLite → Supabase Postgres (psycopg2 over IPv6)."""
+"""Migrate SQLite → Supabase Postgres (psycopg2 over IPv6, fast path)."""
 import sqlite3, sys, time
 
 sys.path.insert(0, "/home/stephen/Desktop/KwizBoz Andriod/backend")
@@ -19,14 +19,6 @@ def main():
     dst = psycopg2.connect(DSN)
     dst.autocommit = False
     print(f"[{time.time()-t0:.1f}s] Connected to Supabase")
-
-    # Create schema
-    from src.models import Base
-    from sqlalchemy import create_engine
-    engine = create_engine("postgresql+psycopg2://postgres:Peswablack%401307@db.gfjcoowxijvmmkdwciwq.supabase.co:5432/postgres")
-    Base.metadata.create_all(bind=engine)
-    engine.dispose()
-    print(f"[{time.time()-t0:.1f}s] Schema created")
 
     src = sqlite3.connect(SQLITE)
     src.row_factory = sqlite3.Row
@@ -59,24 +51,24 @@ def main():
         val_str = ", ".join(["%s"] * len(cols))
         sql = f'INSERT INTO "{tbl}" ({col_str}) VALUES ({val_str}) ON CONFLICT DO NOTHING'
 
-        batch_size = 200
-        inserted = 0
-        for i in range(0, len(insert_rows), batch_size):
-            batch = insert_rows[i:i+batch_size]
-            try:
-                cur.executemany(sql, batch)
-                inserted += len(batch)
-            except Exception:
-                for row in batch:
-                    try:
-                        cur.execute(sql, row)
-                        inserted += 1
-                    except Exception:
-                        pass
+        # Single executemany — much faster than batch loop
+        try:
+            cur.executemany(sql, insert_rows)
+            inserted = len(insert_rows)
+        except Exception as e:
+            print(f"    executemany failed: {e}, falling back to one-by-one")
+            inserted = 0
+            for row in insert_rows:
+                try:
+                    cur.execute(sql, row)
+                    inserted += 1
+                except Exception:
+                    pass
         dst.commit()
         total += inserted
         print(f"  {tbl}: {inserted}/{len(rows)} [{time.time()-t0:.1f}s]")
 
+    # Reset sequences
     for tbl in TABLE_ORDER:
         try:
             cur.execute(f"""

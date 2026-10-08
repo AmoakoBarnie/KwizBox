@@ -79,7 +79,7 @@ def register(request: Request, body: RegisterRequest, db: Session = Depends(get_
 @limiter.limit("15/minute")
 def login(request: Request, body: LoginRequest, db: Session = Depends(get_db)):
     user = db.query(User).filter(
-        User.nickname == body.nickname, User.is_guest.is_(False)
+        User.nickname == body.nickname, User.is_active.is_(True), User.is_guest.is_(False)
     ).first()
     if user and user.password_hash and verify_password(body.password, user.password_hash):
         from ..auth import create_token as mk_token

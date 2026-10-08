@@ -3,7 +3,7 @@
   "appName": "KwizBox",
   "webDir": "dist",
   "server": {
-    "androidScheme": "http",
-    "cleartext": true
+    "url": "${VITE_API_URL}",
+    "scheme": "https"
   }
 }

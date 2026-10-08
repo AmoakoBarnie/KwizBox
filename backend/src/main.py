@@ -47,9 +47,10 @@ app.add_middleware(
 )
 
 # Trust InfinityFree reverse proxy headers for HTTPS
+# Only trust the actual proxy IP — never wildcard "*"
 app.add_middleware(
     ProxyHeadersMiddleware,
-    trusted_hosts=["*"],
+    trusted_hosts=["10.0.2.2", "127.0.0.1", "::1"],
 )
 
 app.include_router(auth.router)

@@ -39,8 +39,6 @@ export const api = {
   login: (data) => request('POST', '/auth/login', data),
   guest: (data) => request('POST', '/auth/guest', data),
   avatar: (data, token) => request('PATCH', '/auth/me/avatar', data, token),
-  resetQuestion: (data) => request('POST', '/auth/reset/question', data),
-  resetVerify: (data) => request('POST', '/auth/reset/verify', data),
   updateAvatar: (data, token) => request('PATCH', '/auth/me/avatar', data, token),
   curriculum: {
     manifest: () => request('GET', '/curriculum/manifest'),

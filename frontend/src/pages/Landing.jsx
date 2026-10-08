@@ -19,11 +19,9 @@ export default function Landing() {
   const location = useLocation()
   // If we arrived from a guest game ("log in to continue"), open the Login tab.
   const [tab, setTab] = useState(location?.state?.openTab || null)
-  const [form, setForm] = useState({ nickname: '', password: '', class_level: 'B4', school_code: '', security_question: api.securityQuestions[0], security_answer: '' })
+  const [form, setForm] = useState({ nickname: '', password: '', class_level: 'B4', school_code: '' })
   const [err, setErr] = useState('')
   const [busy, setBusy] = useState(false)
-  const [resetStep, setResetStep] = useState(0) // 0: hidden, 1: ask answer, 2: new password
-  const [reset, setReset] = useState({ nickname: '', question: '', answer: '', new_password: '' })
 
   function set(k, v) { setForm((f) => ({ ...f, [k]: v })) }
 
@@ -39,28 +37,8 @@ export default function Landing() {
   }
   async function doSignup(e) {
     e.preventDefault(); setErr(''); setBusy(true)
-    try { await register({ nickname: form.nickname, password: form.password, class_level: form.class_level, school_code: form.school_code || undefined, security_question: form.security_question, security_answer: form.security_answer }); nav('/play') }
+    try { await register({ nickname: form.nickname, password: form.password, class_level: form.class_level, school_code: form.school_code || undefined }); nav('/play') }
     catch (e) { setErr(e.message) } finally { setBusy(false) }
-  }
-
-  async function startReset(e) {
-    e.preventDefault(); setErr(''); setBusy(true)
-    try {
-      const r = await api.resetQuestion({ nickname: reset.nickname })
-      if (!r.has_security_question) { setErr('No account found with that nickname, or no security question set.'); return }
-      setReset((s) => ({ ...s, question: r.security_question }))
-      setResetStep(2)
-    } catch (e) { setErr(e.message) } finally { setBusy(false) }
-  }
-  async function finishReset(e) {
-    e.preventDefault(); setErr(''); setBusy(true)
-    try {
-      const r = await api.resetVerify({ nickname: reset.nickname, security_answer: reset.answer, new_password: reset.new_password })
-      setResetStep(0); setErr('')
-      // auto-login with the returned token
-      login({ nickname: reset.nickname, password: reset.new_password })
-      nav('/play')
-    } catch (e) { setErr(e.message) } finally { setBusy(false) }
   }
 
   return (
@@ -153,7 +131,6 @@ export default function Landing() {
                     <input type="password" value={form.password} onChange={(e) => set('password', e.target.value)} required />
                   </label>
                   <button type="submit" className="btn primary" disabled={busy}>Login</button>
-                  <button type="button" className="link" onClick={() => { setReset((s) => ({ ...s, nickname: form.nickname })); setResetStep(1); setErr('') }}>Forgot password?</button>
                 </form>
               )}
 
@@ -173,44 +150,10 @@ export default function Landing() {
                   <label>School code (optional)
                     <input value={form.school_code} onChange={(e) => set('school_code', e.target.value)} placeholder="e.g. ADIS-7" />
                   </label>
-                  <label>Security question (for password recovery)
-                    <select value={form.security_question} onChange={(e) => set('security_question', e.target.value)}>
-                      {api.securityQuestions.map((q) => <option key={q} value={q}>{q}</option>)}
-                    </select>
-                  </label>
-                  <label>Your answer
-                    <input value={form.security_answer} onChange={(e) => set('security_answer', e.target.value)} placeholder="Answer to your question" required />
-                  </label>
                   <button type="submit" className="btn primary" disabled={busy}>Create account</button>
                 </form>
               )}
 
-              {resetStep > 0 && (
-                <form onSubmit={resetStep === 1 ? startReset : finishReset} className="form card" style={{ marginTop: 12, borderColor: 'var(--gold)' }}>
-                  <p style={{ fontWeight: 800, marginTop: 0 }}>Reset your password</p>
-                  {resetStep === 1 && (
-                    <>
-                      <label>Nickname
-                        <input value={reset.nickname} onChange={(e) => setReset((s) => ({ ...s, nickname: e.target.value }))} required />
-                      </label>
-                      <button className="btn primary" disabled={busy}>Continue</button>
-                    </>
-                  )}
-                  {resetStep === 2 && reset.question && (
-                    <>
-                      <p style={{ margin: '4px 0' }}><b>{reset.question}</b></p>
-                      <label>Your answer
-                        <input value={reset.answer} onChange={(e) => setReset((s) => ({ ...s, answer: e.target.value }))} required />
-                      </label>
-                      <label>New password
-                        <input type="password" value={reset.new_password} onChange={(e) => setReset((s) => ({ ...s, new_password: e.target.value }))} required minLength={4} />
-                      </label>
-                      <button className="btn primary" disabled={busy}>Reset password</button>
-                    </>
-                  )}
-                  <button type="button" className="link" onClick={() => setResetStep(0)}>Cancel</button>
-                </form>
-              )}
               {err && <p className="err">{err}</p>}
             </motion.div>
           )}
