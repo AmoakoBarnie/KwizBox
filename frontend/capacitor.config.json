@@ -1,9 +1,5 @@
 {
   "appId": "com.kwizbox.app",
   "appName": "KwizBox",
-  "webDir": "dist",
-  "server": {
-    "url": "${VITE_API_URL}",
-    "scheme": "https"
-  }
+  "webDir": "dist"
 }

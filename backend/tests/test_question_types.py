@@ -15,6 +15,7 @@ sys.path.insert(0, str(BACKEND))
 _fd, _DB = tempfile.mkstemp(suffix=".db")
 os.close(_fd)
 os.environ["DATABASE_URL"] = "sqlite:///" + _DB.replace("\\", "/")
+os.environ.setdefault("ADMIN_PASSWORD", "test-admin-password")
 
 from fastapi.testclient import TestClient  # noqa: E402
 from src.main import app  # noqa: E402
@@ -134,6 +135,7 @@ class QuestionTypeTests(unittest.TestCase):
         body = {
             "class_level": "B9", "subject": "Science", "difficulty": "Easy",
             "topic": "TFGradeProbe",
+            "question_ids": [qid],
             "answers": [{"question_id": qid, "selected_index": 0}],
         }
         ok = self.client.post("/quiz/submit", json=body).json()

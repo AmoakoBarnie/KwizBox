@@ -71,11 +71,6 @@ app.mount(
 
 DIST_DIR = Path(__file__).resolve().parent.parent.parent / "frontend" / "dist"
 
-# Cache-busting version — changes every restart so browsers never cache
-import time
-_CACHE_BUST = str(int(time.time() * 1000))
-
-
 def _no_cache(response: HTMLResponse) -> HTMLResponse:
     response.headers["Cache-Control"] = "no-store, no-cache, must-revalidate, max-age=0"
     response.headers["Pragma"] = "no-cache"
@@ -148,18 +143,9 @@ async def serve_frontend(request: Request, full_path: str = ""):
         resp.headers["Pragma"] = "no-cache"
         return resp
 
-    # index.html — inject SW-kill + cache-bust asset URLs
+    # index.html — inject SW-kill. The response is no-store, so asset hashes
+    # remain owned by the build tool instead of stale hardcoded names.
     index_html = (DIST_DIR / "index.html").read_text(encoding="utf-8")
-
-    # Add cache-busting query param to JS and CSS URLs
-    index_html = index_html.replace(
-        'src="/assets/index-_Whnn0pU.js"',
-        f'src="/assets/index-_Whnn0pU.js?v={_CACHE_BUST}"'
-    )
-    index_html = index_html.replace(
-        'href="/assets/index-Ct1LAUFI.css"',
-        f'href="/assets/index-Ct1LAUFI.css?v={_CACHE_BUST}"'
-    )
 
     # Inject SW-kill + cache-clear script as the FIRST thing in <head>
     sw_kill = (

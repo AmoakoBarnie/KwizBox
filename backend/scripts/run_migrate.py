@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Migrate SQLite → Supabase Postgres (psycopg2 over IPv6, fast path)."""
-import sqlite3, sys, time
-
-sys.path.insert(0, "/home/stephen/Desktop/KwizBoz Andriod/backend")
+import os
+import sqlite3
+import time
+from pathlib import Path
 
 TABLE_ORDER = [
     "users", "questions", "school_codes", "admin_users", "system_settings",
@@ -10,17 +11,19 @@ TABLE_ORDER = [
     "leaderboard_periods", "audit_logs", "challenges", "challenge_sessions",
 ]
 
-DSN = "host=2a05:d018:65a:e200:f5b2:c419:51b9:9f88 port=5432 user=postgres password=Peswablack@1307 dbname=postgres sslmode=require connect_timeout=10"
-SQLITE = "/home/stephen/Desktop/KwizBoz Andriod/backend/trivia.db"
+DSN = os.environ.get("SUPABASE_DATABASE_URL")
+SQLITE = Path(os.environ.get("SQLITE_PATH", Path(__file__).resolve().parents[1] / "trivia.db"))
 
 def main():
     t0 = time.time()
+    if not DSN:
+        raise SystemExit("SUPABASE_DATABASE_URL must be set; refusing to migrate without an explicit destination")
     import psycopg2
     dst = psycopg2.connect(DSN)
     dst.autocommit = False
     print(f"[{time.time()-t0:.1f}s] Connected to Supabase")
 
-    src = sqlite3.connect(SQLITE)
+    src = sqlite3.connect(str(SQLITE))
     src.row_factory = sqlite3.Row
     cur = dst.cursor()
 

@@ -1,6 +1,8 @@
 # dependencies
 node_modules/
 frontend/node_modules/
+__pycache__/
+*.py[cod]
 
 # build output
 frontend/dist/
@@ -12,15 +14,22 @@ venv/
 
 # local db (regenerable)
 backend/trivia.db
+backend/*.db.bak*
 
 # env
 .env
 *.local
+frontend/.env.development
+frontend/.env.*.bak*
 
 # OS / editor
 .DS_Store
 Thumbs.db
 *.log
+*.apk
+*.tar.gz
+*.bak
+*.bak_*
 
 # vite PWA caches
 frontend/dist/sw.js

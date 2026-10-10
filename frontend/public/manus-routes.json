@@ -1,0 +1,18 @@
+{
+  "routes": [
+    { "path": "/", "title": "KwizBox" },
+    { "path": "/choose-quiz", "title": "Choose Quiz" },
+    { "path": "/play", "title": "Play" },
+    { "path": "/challenge", "title": "Challenge" },
+    { "path": "/quiz", "title": "Quiz" },
+    { "path": "/summary", "title": "Quiz Summary" },
+    { "path": "/leaderboard", "title": "Leaderboard" },
+    { "path": "/profile", "title": "Profile" },
+    { "path": "/settings", "title": "Settings" },
+    { "path": "/admin", "title": "Admin" },
+    { "path": "/privacy-policy", "title": "Privacy Policy" },
+    { "path": "/terms-and-conditions", "title": "Terms and Conditions" },
+    { "path": "/cookie-policy", "title": "Cookie Policy" },
+    { "path": "/thembekile", "title": "Privacy Policy" }
+  ]
+}

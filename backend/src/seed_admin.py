@@ -9,7 +9,6 @@ Env overrides:
   ADMIN_FULLNAME  (default: Super Admin)
 """
 import os
-import sys
 
 from sqlalchemy import func
 from .database import SessionLocal
@@ -21,8 +20,10 @@ def seed_super_admin():
     username = os.environ.get("ADMIN_USERNAME", "admin")
     password = os.environ.get("ADMIN_PASSWORD")
     if not password:
-        print("[seed] ERROR: ADMIN_PASSWORD env var is required. Refusing to seed with a default.", file=sys.stderr)
-        sys.exit(1)
+        # Deployments can provision the initial admin explicitly with
+        # ADMIN_PASSWORD; missing it must not terminate the API process.
+        print("[seed] ADMIN_PASSWORD not set; skipping initial admin seed")
+        return
     fullname = os.environ.get("ADMIN_FULLNAME", "Super Admin")
     db = SessionLocal()
     try:
