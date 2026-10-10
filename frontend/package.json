@@ -13,11 +13,14 @@
   "dependencies": {
     "@capacitor/android": "8.5.3",
     "@capacitor/core": "8.5.3",
+    "@react-three/drei": "^9.117.3",
+    "@react-three/fiber": "^8.17.10",
     "framer-motion": "^13.1.0",
     "react": "^18.3.1",
     "react-confetti": "^6.4.0",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^7.18.4"
+    "react-router-dom": "^7.18.4",
+    "three": "^0.177.0"
   },
   "devDependencies": {
     "@capacitor/cli": "^8.5.3",
