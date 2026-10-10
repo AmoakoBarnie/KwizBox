@@ -10,6 +10,9 @@ const PHRASES = {
   encourage: 'Almost — keep learning!'
 }
 
+const assetAvailability = new Map()
+const assetChecks = new Map()
+
 function assetFor(classLevel) {
   return /^S[1-3]$/.test(classLevel || '')
     ? '/mascots/kwizbox-senior.glb'
@@ -17,12 +20,21 @@ function assetFor(classLevel) {
 }
 
 function useAssetAvailable(path) {
-  const [available, setAvailable] = useState(null)
+  const [available, setAvailable] = useState(() => assetAvailability.has(path) ? assetAvailability.get(path) : null)
   useEffect(() => {
     let active = true
-    fetch(path, { method: 'HEAD', cache: 'no-store' })
-      .then((response) => active && setAvailable(response.ok))
-      .catch(() => active && setAvailable(false))
+    if (assetAvailability.has(path)) {
+      setAvailable(assetAvailability.get(path))
+      return () => { active = false }
+    }
+    const check = assetChecks.get(path) || fetch(path, { method: 'HEAD', cache: 'no-store' })
+      .then((response) => response.ok)
+      .catch(() => false)
+    assetChecks.set(path, check)
+    check.then((result) => {
+      assetAvailability.set(path, result)
+      if (active) setAvailable(result)
+    })
     return () => { active = false }
   }, [path])
   return available

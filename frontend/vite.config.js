@@ -15,6 +15,7 @@ export default defineConfig({
   allowedHosts: [
       'localhost',
       '127.0.0.1',
+      '.us4.manus.computer',
       '.trycloudflare.com',
     ],
     proxy: {
