@@ -299,9 +299,11 @@ def list_questions(
 
 
 def _q_out(x: Question):
-    rate = round(x.times_correct / x.times_answered, 4) if x.times_answered else None
+    rate = round(x.times_correct / x.times_answered, 4) if (x.times_answered and x.times_correct) else None
     return QuestionOut(
-        id=x.id, class_level=x.class_level, subject=x.subject, topic=x.topic, strand=x.strand,
+        id=x.id, class_level=x.class_level, subject=x.subject, topic=x.topic,
+        sub_topic=getattr(x, "sub_topic", None),
+        strand=x.strand,
         difficulty=x.difficulty, question=x.question,
         options=options_from_question(x), answer_index=x.answer_index,
         explanation=x.explanation, is_active=x.is_active, times_answered=x.times_answered or 0,

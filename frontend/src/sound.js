@@ -16,6 +16,7 @@
 
 let ctx = null
 let muted = false
+let volume = 0.18 // Global volume control 0.0 - 1.0
 
 function getCtx() {
   if (!ctx) {

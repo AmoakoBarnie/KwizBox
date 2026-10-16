@@ -10,18 +10,64 @@ dist/
 backend/venv/
 venv/
 
-# local db (regenerable)
+# local db (regenerable from seed)
 backend/trivia.db
 
-# env
-.env
-*.local
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+*.pyo
+.Python
 
-# OS / editor
+# pip
+*.egg-info/
+.eggs/
+*.egg
+
+# IDE / editor
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
 .DS_Store
 Thumbs.db
-*.log
 
-# vite PWA caches
+# Environment
+.env
+*.local
+*.production.local
+
+# Logs
+*.log
+logs/
+
+# Vite PWA caches
 frontend/dist/sw.js
 frontend/dist/workbox-*.js
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Test outputs
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# Vite specific
+.vite/
+
+# Coverage reports
+coverage/
+*.cover
+.replace

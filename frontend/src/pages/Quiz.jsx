@@ -6,8 +6,6 @@ import { api, mediaUrl } from '../api.js'
 import Mascot from '../components/Mascot.jsx'
 import { correct, wrong, streak as streakSfx, combo as comboSfx, click } from '../sound.js'
 
-// Module-level seen-set: keeps track of question IDs seen this browser session
-// so guests (who have no server-side history) also get fresh questions each quiz.
 const sessionSeen = new Set()
 
 export default function Quiz() {
@@ -17,26 +15,28 @@ export default function Quiz() {
   const [pack, setPack] = useState(null)
   const [idx, setIdx] = useState(0)
   const [selected, setSelected] = useState(null)
-  const [reveal, setReveal] = useState(null) // 'correct' | 'wrong' | null
+  const [reveal, setReveal] = useState(null)
   const [locked, setLocked] = useState(false)
   const [answers, setAnswers] = useState([])
   const [err, setErr] = useState('')
   const [loading, setLoading] = useState(true)
   const [submitting, setSubmitting] = useState(false)
   const [startedAt, setStartedAt] = useState(null)
-  const [questionStartedAt, setQuestionStartedAt] = useState(null) // per-question timer
-  const [elapsed, setElapsed] = useState(0) // visible seconds for current question
+  const [questionStartedAt, setQuestionStartedAt] = useState(null)
+  const [elapsed, setElapsed] = useState(0)
   const [mascot, setMascot] = useState('thinking')
-  // B: live streak + combo
   const [streak, setStreak] = useState(0)
   const [combo, setCombo] = useState(1)
-  const [popScore, setPopScore] = useState(null) // C: floating +pts overlay
+  const [popScore, setPopScore] = useState(null)
+  const [hasSeenReveal, setHasSeenReveal] = useState(false)
 
   const cfg = {
     class_level: params.get('class_level') || 'B4',
     subject: params.get('subject') || 'Mathematics',
     topic: params.get('topic') || undefined,
+    sub_topic: params.get('sub_topic') || undefined,
     count: 12,
+    daily: params.get('daily') === 'true',
   }
 
   async function load() {
@@ -46,25 +46,17 @@ export default function Quiz() {
       try {
         p = await api.pack({ ...cfg, exclude_ids: [...sessionSeen] }, token)
       } catch (e) {
-        // If every question in this selection was already seen this session,
-        // reset the seen-set and fetch a fresh mix so the user is never blocked.
         if (/No questions found|404/.test(e.message) && sessionSeen.size) {
           sessionSeen.clear()
           p = await api.pack(cfg, token)
-        } else {
-          throw e
-        }
+        } else { throw e }
       }
-      // remember these so the next quiz in this session skips them
       p.forEach((q) => sessionSeen.add(q.id))
       setPack(p); setStartedAt(Date.now())
     } catch (e) { setErr(e.message) } finally { setLoading(false) }
   }
-  useEffect(() => { load() }, []) // eslint-disable-line
+  useEffect(() => { load() }, [])
 
-  // Per-question timer: records when the current question appeared and ticks a
-  // visible (non-punishing) clock. Nothing auto-advances — the player answers
-  // whenever they're ready; only the SPEED BONUS is affected by how fast they are.
   useEffect(() => {
     if (!pack) return
     setQuestionStartedAt(Date.now())
@@ -80,50 +72,40 @@ export default function Quiz() {
   const q = pack[idx]
   const isLast = idx === pack.length - 1
   const answered = answers.length > idx
+  const isTF = q.question_type === 'true_false' || q.options.length === 2
 
-  // A + B + C: on tap, check correctness, reveal, animate, advance
   async function choose(i) {
     if (locked || answered || reveal) return
     setSelected(i)
-    click() // UI tick
+    click()
     setLocked(true)
     try {
-      const { is_correct } = await api.check({ question_id: q.id, selected_index: i }, token)
+      const { is_correct, correct_index } = await api.check({ question_id: q.id, selected_index: i }, token)
       const pts = is_correct ? (q.difficulty === 'Hard' ? 25 : q.difficulty === 'Medium' ? 15 : 10) * combo : 0
       if (is_correct) {
         const newStreak = streak + 1
         const newCombo = newStreak >= 3 ? Math.min(2, 1 + Math.floor(newStreak / 3)) : 1
         setStreak(newStreak); setCombo(newCombo)
         setMascot('celebrate')
-        setReveal('correct')
+        setReveal({ is_correct: true, correct_index })
         correct()
         if (newStreak >= 3) streakSfx(newStreak)
         if (newCombo > 1) comboSfx(newCombo)
-        if (pts > 0) {
-          setPopScore({ pts, combo: newCombo })
-          setTimeout(() => setPopScore(null), 900)
-        }
+        if (pts > 0) { setPopScore({ pts, combo: newCombo }); setTimeout(() => setPopScore(null), 900) }
       } else {
         setStreak(0); setCombo(1)
         setMascot('encourage')
-        setReveal('wrong')
+        setReveal({ is_correct: false, correct_index })
         wrong()
       }
       const seconds_taken = questionStartedAt ? (Date.now() - questionStartedAt) / 1000 : null
-      const next = [...answers, { question_id: q.id, selected_index: i, seconds_taken }]
-      setAnswers(next)
-      setTimeout(() => {
-        setLocked(false); setSelected(null); setReveal(null); setMascot('thinking')
-        if (isLast) submit(next)
-        else setIdx((cur) => cur + 1)
-      }, 950)
+      setAnswers((prev) => [...prev, { question_id: q.id, selected_index: i, seconds_taken }])
+      setHasSeenReveal(true)
     } catch (e) {
-      // If check fails, fall back to silent advance (no leak, no crash)
       const seconds_taken = questionStartedAt ? (Date.now() - questionStartedAt) / 1000 : null
-      const next = [...answers, { question_id: q.id, selected_index: i, seconds_taken }]
-      setAnswers(next)
-      setLocked(false); setSelected(null)
-      if (isLast) submit(next)
+      setAnswers((prev) => [...prev, { question_id: q.id, selected_index: i, seconds_taken }])
+      setLocked(false); setSelected(null); setHasSeenReveal(true)
+      if (idx === pack.length - 1) submit(answers)
       else setIdx((cur) => cur + 1)
     }
   }
@@ -132,33 +114,103 @@ export default function Quiz() {
     setSubmitting(true); setErr('')
     const duration_seconds = startedAt ? Math.round((Date.now() - startedAt) / 1000) : undefined
     try {
-      const res = await api.submit({ ...cfg, answers: finalAnswers, duration_seconds }, token)
-      nav('/summary', { state: { result: res, cfg, liveStreak: streak }, replace: true })
+      const res = await api.submit({ ...cfg, question_ids: finalAnswers.map(a => a.question_id), answers: finalAnswers, duration_seconds }, token)
+      try { localStorage.setItem('stem_last_result', JSON.stringify(res)) } catch (e) {}
+      try { localStorage.setItem('stem_last_cfg', JSON.stringify(cfg)) } catch (e) {}
+      nav('/summary', { state: { result: res, cfg } })
     } catch (e) { setErr(e.message); setSubmitting(false) }
   }
 
   const progress = ((idx + 1) / pack.length) * 100
-  const isTF = q.question_type === 'true_false' || q.options.length === 2
 
   return (
     <div className="screen quiz">
-      {/* B: live streak + combo bar */}
+      {/* Top: back, progress, counter, timer */}
       <div className="quiz-top">
         <button className="back" onClick={() => nav('/play')}>‹</button>
-        <div className="progress"><motion.div className="progress-bar kente-progress" animate={{ width: `${progress}%` }} transition={{ ease: 'easeOut', duration: 0.35 }} /></div>
+        <div className="progress-wrap">
+          <div className="progress-track">
+            <motion.div className="progress-fill" animate={{ width: `${progress}%` }} transition={{ ease: 'easeOut', duration: 0.35 }} />
+          </div>
+          <motion.div className="progress-ticks">
+            {Array.from({ length: pack.length }, (_, i) => (
+              <span key={i} className={`tick${i <= idx ? ' done' : ''}`} />
+            ))}
+          </motion.div>
+        </div>
         <span className="qcount">{idx + 1}/{pack.length}</span>
-        <span className={`q-timer${elapsed <= 6 ? ' fast' : ''}`} title="Answer fast for a speed bonus!">⏱ {elapsed}s{elapsed <= 6 ? ' ⚡' : ''}</span>
+        <span className={`q-timer${elapsed <= 6 ? ' fast' : ''}`} title="Answer fast for a speed bonus!">
+          ⏱ {elapsed}s{elapsed <= 6 ? ' ⚡' : ''}
+        </span>
       </div>
+
+      {/* Streak + combo bar */}
       <div className="streak-bar">
-        <motion.span
-          key={streak}
-          className="streak-flame"
-          initial={{ scale: 0.6, opacity: 0 }}
-          animate={{ scale: streak > 0 ? [1, 1.25, 1] : 1, opacity: streak > 0 ? 1 : 0.3 }}
-          transition={{ type: 'spring', stiffness: 300, damping: 12 }}
-        >🔥 {streak}</motion.span>
+        <div className={`streak-wrap${streak >= 5 ? ' intense' : streak > 0 ? ' active' : ''}`}>
+          {streak > 0 && (
+            <motion.span
+              key={`flame-${streak}`}
+              className="streak-flame"
+              initial={{ scale: 0.4, opacity: 0 }}
+              animate={{
+                scale: streak >= 5 ? [1, 1.4, 0.95, 1.3, 1] : [1, 1.2, 1],
+                opacity: streak >= 5 ? [0.7, 1, 0.85, 1, 0.9] : 1,
+              }}
+              transition={{
+                type: 'spring',
+                stiffness: streak >= 5 ? 400 : 300,
+                damping: streak >= 5 ? 8 : 12,
+                repeat: streak >= 5 ? Infinity : 0,
+                repeatDelay: 0.15,
+              }}
+              style={streak >= 5 ? { textShadow: '0 0 20px rgba(255,210,63,0.8), 0 0 40px rgba(255,210,63,0.4)' } : {}}
+            >🔥</motion.span>
+          )}
+          {streak > 0 && (
+            <motion.span
+              key={`flame2-${streak}`}
+              className="streak-flame streak-flame-2"
+              initial={{ scale: 0.3, opacity: 0, rotate: -20 }}
+              animate={{
+                scale: streak >= 5 ? [0.8, 1.1, 0.7, 1.05, 0.8] : [0.9, 1.05, 0.9],
+                opacity: streak >= 5 ? [0.5, 0.9, 0.6, 0.85, 0.5] : 0.7,
+                rotate: streak >= 5 ? [-15, 10, -20, 5, -15] : [-5, 5, -5],
+              }}
+              transition={{
+                type: 'spring',
+                stiffness: streak >= 5 ? 350 : 250,
+                damping: streak >= 5 ? 10 : 14,
+                repeat: streak >= 5 ? Infinity : 0,
+                repeatDelay: 0.1,
+                delay: 0.05,
+              }}
+              style={streak >= 5 ? { textShadow: '0 0 16px rgba(255,179,1,0.7)' } : {}}
+            >🔥</motion.span>
+          )}
+          <motion.span
+            key={streak}
+            className="streak-count"
+            initial={{ scale: 0.6, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 12 }}
+            style={{ color: streak >= 5 ? 'var(--gold)' : 'var(--ink)', fontWeight: streak >= 5 ? 800 : 700 }}
+          >
+            {streak}
+          </motion.span>
+          {streak >= 5 && (
+            <motion.span
+              className="streak-label"
+              initial={{ opacity: 0, x: -8 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2, type: 'spring', stiffness: 300, damping: 14 }}
+            >
+              {streak >= 8 ? 'ON FIRE! 🔥🔥' : 'HOT STREAK!'}
+            </motion.span>
+          )}
+        </div>
         {combo > 1 && (
           <motion.span
+            key={combo}
             className="combo-badge"
             initial={{ scale: 0, rotate: -8 }}
             animate={{ scale: 1, rotate: 0 }}
@@ -167,63 +219,101 @@ export default function Quiz() {
         )}
       </div>
 
+      {/* Question card */}
       <AnimatePresence mode="wait">
-        <motion.div key={q.id}
-          initial={{ opacity: 0, x: 24 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -24 }}
-          transition={{ duration: 0.25 }}
-          className="question"
+        <motion.div
+          key={q.id}
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -14 }}
+          transition={{ duration: 0.28 }}
+          className="question-card"
         >
-          <span className="badge">{q.subject} · {q.difficulty}{q.topic ? ` · ${q.topic}` : ''}</span>
+          <span className="badge">{q.subject} · {q.difficulty}{q.topic ? ` · ${q.topic}` : ''}{q.sub_topic && q.sub_topic !== 'General' && q.sub_topic !== q.topic ? ` › ${q.sub_topic}` : ''}</span>
           {q.image_url && (
             <div className="q-image-wrap">
               <img className="q-image" src={mediaUrl(q.image_url)} alt="Question diagram" />
             </div>
           )}
           <h2>{q.question}</h2>
+
           <div className={`options${isTF ? ' tf' : ''}`}>
             {q.options.map((opt, i) => {
               const isPicked = selected === i
-              const showCorrect = reveal === 'correct' && isPicked
-              const showWrong = reveal === 'wrong' && isPicked
+              const correctIdx = reveal?.correct_index
+              const showCorrect = reveal && reveal.is_correct && isPicked
+              const showWrong = reveal && !reveal.is_correct && isPicked
+              const showCorrectAnswer = reveal && !reveal.is_correct && i === correctIdx && i !== selected
               const tfClass = isTF ? (i === 0 ? ' tf-true' : ' tf-false') : ''
               return (
                 <motion.button
                   key={i}
-                  className={`option${tfClass}${isPicked ? ' picked' : ''}${showCorrect ? ' correct' : ''}${showWrong ? ' wrong' : ''}`}
-                  onClick={() => choose(i)} disabled={locked || answered || !!reveal}
-                  initial={{ opacity: 0, x: -18, scale: 0.96 }}
-                  animate={showCorrect ? { opacity: 1, x: 0, scale: [1, 1.05, 1] }
-                            : showWrong ? { opacity: 1, x: [0, -8, 8, -5, 0], scale: 1 }
-                            : { opacity: 1, x: 0, scale: 1 }}
-                  transition={{ duration: showCorrect || showWrong ? 0.3 : 0.3, delay: (showCorrect || showWrong) ? 0 : 0.04 * i, type: 'spring', stiffness: 260, damping: 20 }}
+                  className={`option${tfClass}${isPicked ? ' picked' : ''}${showCorrect ? ' correct' : ''}${showWrong ? ' wrong' : ''}${showCorrectAnswer ? ' correct' : ''}`}
+                  onClick={() => choose(i)}
+                  disabled={locked || answered || !!reveal}
+                  initial={{ opacity: 0, x: -20, scale: 0.96 }}
+                  animate={showCorrect
+                    ? { opacity: 1, x: 0, scale: [1, 1.05, 1] }
+                    : showWrong
+                    ? { opacity: 1, x: [0, -8, 8, -5, 0], scale: 1 }
+                    : showCorrectAnswer
+                    ? { opacity: 1, x: 0, scale: [1, 1.02, 1] }
+                    : { opacity: 1, x: 0, scale: 1 }}
+                  transition={{
+                    duration: showCorrect || showWrong ? 0.3 : 0.25,
+                    delay: (showCorrect || showWrong) ? 0 : 0.04 * i,
+                    type: 'spring', stiffness: 280, damping: 18
+                  }}
                   whileTap={{ scale: 0.96 }}
                 >
                   {!isTF && <span className="opt-key">{String.fromCharCode(65 + i)}</span>}
                   <span className="opt-text">
                     {opt}
-                    {showCorrect && <span className="opt-mark"> ✓</span>}
-                    {showWrong && <span className="opt-mark"> ✗</span>}
+                    {showCorrect && <span className="opt-mark good"> ✓</span>}
+                    {showWrong && <span className="opt-mark bad"> ✗</span>}
+                    {showCorrectAnswer && <span className="opt-mark good"> ✓</span>}
                   </span>
                 </motion.button>
               )
             })}
           </div>
+
           <AnimatePresence>
             {reveal && (
-              <motion.p
-                className={`feedback-line ${reveal}`}
-                initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}
+              <motion.div
+                className="feedback-line-wrap"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 10 }}
+                transition={{ duration: 0.22 }}
               >
-                {reveal === 'correct' ? '✅ Nice! Correct!' : '❌ Not quite — see the answer at the end.'}
-              </motion.p>
+                <motion.p
+                  className={`feedback-line ${reveal.is_correct ? 'correct' : 'wrong'}`}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                >
+                  {reveal.is_correct
+                    ? '✅ Nice! Correct!'
+                    : '❌ Not quite — see the answer at the end.'}
+                </motion.p>
+                {!reveal.is_correct && (
+                  <motion.p
+                    className="feedback-hint"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                  >
+                    The correct answer will be highlighted. We'll show the full explanation on the results page.
+                  </motion.p>
+                )}
+              </motion.div>
             )}
           </AnimatePresence>
         </motion.div>
       </AnimatePresence>
 
-      {/* C: floating +pts overlay */}
+      {/* Floating +pts overlay */}
       <AnimatePresence>
         {popScore && (
           <motion.div
@@ -238,9 +328,27 @@ export default function Quiz() {
         )}
       </AnimatePresence>
 
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} style={{ alignSelf: 'center', marginTop: 4 }}>
-        <Mascot state={mascot} size={84} gender="female" classLevel={cfg.class_level} />
-      </motion.div>
+      {/* Mascot — always visible */}
+      <div className="mascot-anchor">
+        <Mascot state={mascot} size={76} gender="female" classLevel={cfg.class_level} />
+      </div>
+
+      {/* Next / See results button */}
+      {hasSeenReveal && (
+        <motion.div className="next-row" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.12, type: 'spring', stiffness: 300, damping: 16 }}>
+          <motion.button
+            className="btn primary big next-btn"
+            onClick={() => {
+              setLocked(false); setSelected(null); setReveal(null); setMascot('thinking'); setHasSeenReveal(false)
+              if (isLast) submit(answers)
+              else setIdx((cur) => cur + 1)
+            }}
+            whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}
+          >
+            {isLast ? 'See results 🎯' : 'Next question →'}
+          </motion.button>
+        </motion.div>
+      )}
 
       {submitting && <div className="spinner" />}
     </div>

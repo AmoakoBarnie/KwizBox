@@ -1,90 +1,282 @@
-# Ghana STEM Trivia
+# KwizBox — Ghana STEM Trivia
 
-Fun, curriculum-aligned STEM trivia for Ghanaian learners (Primary 4 / B4 → JHS 3 / B9).
-Built foundation-first: backend + 200-question seed verified before the UI.
+Fun, curriculum-aligned STEM trivia for Ghanaian learners (Primary 4 / B4 → JHS 3 / B9). A React + FastAPI app with JWT authentication, quiz battles, and progress tracking.
 
 ## Stack
-- **Frontend:** React + Vite (PWA via `vite-plugin-pwa`). Mobile-first, low-data.
-- **Backend:** FastAPI + SQLite. JWT auth (registered + guest).
-- **Content:** 200 questions parsed from the product brief's PDF, tagged by
-  class • subject • strand/topic • difficulty, each with a 1–4 sentence explanation.
+
+- **Frontend:** React 18 + Vite 5 (PWA via `vite-plugin-pwa`). Mobile-first, low-data.
+- **Backend:** FastAPI 0.115 + SQLite 3. Features JWT auth (registered + guest users), CORS, and static/media serving.
+- **Design:** Dark/light themes, Ghana flag colors (Green `#00B36B`, Gold `#FFD23F`, Red `#CE1126`), glassmorphism cards, Kente patterns, animated mascot.
+- **Content:** 3,230 questions across **Mathematics (1,620)** · **Science (955)** · **Computing (655)**, tagged by class (B4–B9) · subject · topic/sub-topic · difficulty. Each question includes a 1–4 sentence explanation.
+- **Question Types:** MCQ (3,154) | True/False (2) | Image MCQ (74) with 10 hand-drawn SVG diagrams
 
 ## Layout
+
 ```
-ghana-stem-trivia/
-├── backend/
-│   ├── src/
-│   │   ├── main.py          # FastAPI app + CORS
-│   │   ├── config.py        # settings (DB url, JWT secret)
-│   │   ├── database.py      # engine/session
-│   │   ├── models.py        # User, Question, QuizSession, SchoolCode
-│   │   ├── auth.py          # JWT, password hashing
-│   │   ├── schemas.py       # Pydantic request/response models
-│   │   ├── scoring.py       # points rules
-│   │   └── routes/          # auth.py, quiz.py
-│   ├── scripts/seed.py      # loads ../scripts/questions.json into SQLite
-│   ├── trivia.db            # SQLite data (seeded)
-│   └── requirements.txt
-├── frontend/
-│   ├── src/
-│   │   ├── api.js           # fetch client (/api proxy in dev)
-│   │   ├── auth.jsx         # AuthContext (token in localStorage)
-│   │   ├── App.jsx          # routes
-│   │   └── pages/           # Landing, Play, Quiz, Summary, Leaderboard, Profile
-│   ├── public/              # favicon.svg, icon-192/512.png (PWA)
-│   ├── vite.config.js       # PWA + /api proxy -> :8001
-│   └── package.json
-└── scripts/parse_questions.py   # PDF text -> questions.json
+backend/
+├── src/
+│   ├── main.py          # FastAPI app + CORS + static/media serving
+│   ├── config.py        # settings (DB url, JWT secret, pack size)
+│   ├── database.py      # engine/session, idempotent SQLite ALTER migrations
+│   ├── models.py        # 15 models: User, Question, QuizSession, SubjectProgress,
+│   │                      #   TopicProgress, LeaderboardPeriod, SchoolCode,
+│   │                      #   UserQuestionSeen, AdminUser, AuditLog, SystemSetting,
+│   │                      #   Challenge, ChallengeSession
+│   ├── auth.py          # JWT creation/validation, password hashing, optional/guest user
+│   ├── schemas.py       # Pydantic request/response models (auth, quiz)
+│   ├── schemas_admin.py # Admin-specific Pydantic schemas
+│   ├── question_types.py# mcq | true_false | image_mcq helpers + demo seed
+│   ├── mastery.py       # topic mastery score calculation
+│   ├── periods.py       # weekly/monthly period bucketing
+│   ├── progress.py      # per-subject + per-topic progress builder
+│   ├── seed_admin.py    # seeds super admin account on startup
+│   └── routes/
+│       ├── auth.py      # register, login, guest, me, password reset
+│       ├── quiz.py      # pack, check, submit, leaderboard, progress
+│       ├── admin.py     # dashboard, users, questions CRUD, school codes,
+│       │                #   settings, audit, monitor, exports
+│       ├── curriculum.py# GET /curriculum/manifest + /topics
+│       └── challenge.py # POST /create, GET /{code}/questions,
+│       │                #   POST /{code}/submit, GET /{code}/compare
+│   └── static/questions/ # 10 SVGs for image_mcq (lever, food chain, etc.)
+├── trivia.db            # SQLite — 3,230 questions, 99 users, 565+ sessions
+└── requirements.txt     # Python deps (FastAPI 0.115, SQLAlchemy 2.0, etc.)
+frontend/
+├── src/
+│   ├── main.jsx         # React entry, ErrorBoundary, Google Fonts
+│   ├── App.jsx          # React Router + AnimatePresence page transitions
+│   ├── api.js           # fetch client — calls backend directly via VITE_API_URL
+│   ├── auth.jsx         # AuthContext (JWT in localStorage, auto-validate on mount)
+│   ├── styles.css       # Complete design system — dark/light themes, glass cards,
+│   │                      #   Ghana flag accents, night sky background, ~752 lines
+│   ├── subjects.js      # SUBJECTS list (15 subjects) + BADGE_SUBJECT_MAP
+│   ├── sound.js         # SFX hooks: correct, wrong, streak, combo, click
+│   ├── badges.js        # 24 badge definitions + evaluateBadges + loadBadges/saveBadges
+│   └── components/
+│       ├── HeroStage.jsx# Animated hero letter interaction (landing page)
+│       ├── Mascot.jsx   # KwizBox mascot — gender + class level variants,
+│       │                #   states: thinking/celebrate/encourage/sad/thinking
+│       ├── Mascot.css   # Mascot component styles
+│       ├── AnimatedBg.jsx# Gradient blob background (orbs + sparkles)
+│       ├── KenteFrame.jsx# Kente-pattern decorative frame
+│       ├── SoundToggle.jsx# Sound on/off toggle button
+│       ├── ThemeToggle.jsx# Dark/light theme toggle button
+│       ├── Confetti.jsx # Confetti overlay for quiz results
+│       └── PesewaBody.jsx# Body mascot character
+│   └── pages/
+│       ├── Landing.jsx  # Home: login, signup, guest play, password reset
+│       ├── ChooseQuiz.jsx# Quiz selection — class, subject, topic, sub-topic,
+│       │                  #   challenge mode. Inline expandable sections.
+│       ├── Challenge.jsx# Friend challenge: create/join/compare with 6-letter code
+│       ├── Play.jsx     # Redirect stub → /choose-quiz
+│       ├── Quiz.jsx     # Active quiz: 12 questions, timer, streak, combo,
+│       │                #   live feedback, mascot reactions
+│       ├── Summary.jsx  # Results: score, accuracy, breakdown, confetti,
+│       │                #   ShareCard modal, badge evaluation
+│       ├── Leaderboard.jsx# Global/class/school/weekly/monthly boards
+│       ├── Profile.jsx  # User progress, badges, stats, mastery
+│       └── Admin.jsx    # Admin dashboard (questions, users, settings, audit)
+├── public/              # favicon.svg, icon-192.png, icon-512.png (PWA icons)
+├── dist/                # Production build output (sw.js, workbox, built JS/CSS)
+├── vite.config.js       # Vite: PWA config, port 5173, /api + /media proxy
+├── .env                 # VITE_API_URL=http://localhost:8001 (bypasses proxy)
+├── index.html           # Entry HTML
+└── package.json         # React 18, React Router 6, Framer Motion 13, React Confetti 6
+├── scripts/             # Question parsers, generators, importers, vetters
+├── docs/
+│   ├── APP_DOCUMENTATION.md # Complete app documentation (features, API, run guide)
+│   └── ...
+└── README.md            # This file
 ```
 
 ## Run (local dev)
-Backend (port 8001):
-```
+
+### Backend (port 8001)
+
+```bash
 cd backend
-python -m venv venv && source venv/Scripts/activate
-pip install -r requirements.txt
-python scripts/seed.py          # only needed once / on content change
-uvicorn src.main:app --host 0.0.0.0 --port 8001
+./venv/bin/python -m uvicorn src.main:app --host 0.0.0.0 --port 8001
 ```
-Frontend (dev picks next free port, usually 5174 because MusicApp uses 5173):
-```
+
+**Health check:** `curl http://localhost:8001/health` → `{"status":"ok","service":"ghana-stem-trivia"}`
+
+### Frontend (port 5173)
+
+```bash
 cd frontend
-npm install
 npm run dev
 ```
-Open the printed URL (e.g. http://localhost:5174). Vite proxies `/api/*` to the backend.
 
-## Seed content from the PDF
+Open `http://localhost:5173`. The `.env` file tells the frontend to call the backend directly (bypasses Vite proxy) — backend has `CORS allow_origins=["*"]`.
+
+## Test credentials
+
+| Nickname | Password | Role |
+|---|---|---|
+| admin | Admin@1234 | Admin (full dashboard) |
+| peswa | password123 | Regular user |
+| testuser | password123 | Regular user |
+| logintest | password123 | Regular user |
+| stephen | stephen123 | Regular user |
+
+Guest mode: any nickname + class level → temporary session (device-only storage).
+
+## Features
+
+### Authentication
+- Register with nickname, password, class level (B4–B9), school code, security question
+- Login with nickname + password → JWT (30-day expiry)
+- Guest mode: temporary session, no persistence
+- Password reset via security question
+- Token in localStorage, auto-validated on app load
+
+### Quiz Selection (`/choose-quiz`)
+- Select class (B4–B9) → subject (15) → topic → sub-topic
+- Inline expandable sections (no popup overlay)
+- Challenge mode toggle (Free play / Daily challenge)
+- Animated mascot + Kente title
+- Start button with green glow
+
+### Friend Challenge / Head-to-Head (`/challenge`)
+- **Create** a challenge: pick class + subject → get a 6-letter code (e.g., `UHAYGK`)
+- **Share** the code with a friend
+- **Join** with the code → get the exact same 12 questions
+- **Play** simultaneously, then **compare** scores on a leaderboard
+- Codes expire after 24 hours
+- Deterministic question selection (same code + class + subject = same questions)
+
+### Quiz Gameplay
+- 12 questions per session (configurable)
+- Topics/sub-topics loaded live from database curriculum
+- Daily challenge: same 12 questions for everyone, seeded by UTC date
+- Questions don't repeat for logged-in users (until pool exhausted)
+- Timer per question (speed bonus for fast answers)
+- Immediate correct/incorrect feedback after each answer
+- Points: Easy=10, Medium=15, Hard=25 × combo multiplier
+- Streak system with flame animation (3+ streak = combo x2)
+- Mascot reacts: thinking → celebrate (correct) / encourage (wrong)
+
+### Results Summary (`/summary`)
+- Score, accuracy, letter grade, stat rings
+- Action buttons: Play Again / Leaderboard / Share Result
+- **Share Result Card modal:** full card with score, grade, stats, accuracy bar, date
+- Copy to clipboard, share via Web Share API, close button
+- Badge evaluation on quiz completion
+
+### Badges (`/profile`)
+- **24 badges** defined and fully wired
+- Categories: first quiz, streaks, perfect scores, subjects, difficulty
+- `evaluateBadges()` called on quiz completion
+- Badge grid with earned (gold glow) vs locked (40% opacity)
+- BadgeToast popup when a new badge is earned
+- Stored in localStorage per device
+
+### Progress & Leaderboards
+- Lifetime score, total questions, current/longest streak
+- Per-subject progress (questions answered, correct count)
+- Per-topic mastery scores (accuracy + volume)
+- 5 leaderboard scopes: global, class, school, weekly, monthly
+- Weekly/monthly points buckets reset each period
+
+### Admin Dashboard (`/admin`, login as admin)
+- Dashboard: total users, questions, active sessions, today's activity
+- User management: view, activate/deactivate, set class level/school code
+- Question management: full CRUD, activate/deactivate, search/filter
+- School code management: create, update codes
+- Leaderboard view with all scopes
+- Live monitor: who's playing right now
+- Settings: app-wide configuration
+- Audit log: track admin actions
+- Export: CSV downloads for questions, users, sessions
+
+## Question counts (trivia.db)
+
 ```
-cd scripts
-cp "<pdf extracted txt>" extracted_py.txt
-python parse_questions.py       # writes questions.json (200 Qs, cross-checks answer key)
-cd ../backend && python scripts/seed.py
+Total: 3,230 questions
+By subject:  Mathematics 1,620  |  Science 955  |  Computing 655
+By class:    B4: 526  |  B5: 553  |  B6: 544  |  B7: 507  |  B8: 511  |  B9: 589
+By type:     MCQ: 3,154  |  True/False: 2  |  Image MCQ: 74
 ```
 
-## API quick reference
-- POST `/auth/register`  `{nickname,password,class_level?,school_code?}` → token
-- POST `/auth/login`     `{nickname,password}` → token
-- POST `/auth/guest`     `{nickname?,class_level?,school_code?}` → token (no persistence)
-- GET  `/auth/me`        (Bearer) → profile
-- POST `/quiz/pack`      `{class_level,subject,Mixed?,difficulty,count,topic?}` → questions (no answer leaked). Each item includes `question_type` (`mcq` | `true_false` | `image_mcq`) and `image_url` (or null). `true_false` options are length 2.
-- POST `/quiz/submit`    `{class_level,subject,difficulty,answers:[{question_id,selected_index}],duration_seconds?}` → graded result + feedback (2-option T/F and 4-option MCQ)
-- GET  `/media/questions/...`  placeholder diagrams for `image_mcq` (e.g. `/media/questions/lever.svg`)
-- GET  `/quiz/leaderboard?scope=global|class&class_level=&school_code=&limit=` → board
+## Class levels (Ghana Education Service)
 
-## Question types
-- `mcq` (default) — 4 options, `answer_index` 0–3. All existing seed rows stay this type.
-- `true_false` — options A/B are True/False; C/D stored empty; `answer_index` 0 or 1. Pack responses send only 2 options.
-- `image_mcq` — 4 options plus `image_url` (public path such as `/media/questions/lever.svg`).
+- B4 = Primary 4 (Grade 4)
+- B5 = Primary 5 (Grade 5)
+- B6 = Primary 6 (Grade 6)
+- B7 = JHS 1 (Grade 7)
+- B8 = JHS 2 (Grade 8)
+- B9 = JHS 3 (Grade 9)
 
-SQLite: `create_all` does not add columns to an existing `questions` table. On startup the API runs an idempotent `ALTER TABLE ... ADD COLUMN` for `question_type` (default `mcq`) and `image_url`, then backfills `mcq`. Live `backend/trivia.db` is kept. Restart the backend once after pulling this change.
+## Subjects (15)
 
-Demo T/F + image questions (B4 Science / Computing, Easy) are inserted on startup if missing. Play **B4 → Science → Easy** (or Computing) a few times, or create items in Admin → Questions (type selector + image URL). Placeholder SVGs live in `backend/static/questions/`.
+Mathematics, Science, Computing, English, Social Studies, French, Ghanaian Language, History, Our World and Our People, Creative Arts, Physical Education, Religious and Moral Education, Career Technology, Arabic, Mixed
 
-JSON seed: `question_type` / `image_url` are optional (default `mcq`). Tests: `cd backend && venv/Scripts/python -m pytest tests/test_question_types.py -q`.
+## Image MCQ Diagrams (10 SVGs)
 
-## Notes / pitfalls
-- `bcrypt` is pinned to `4.0.1` — newer bcrypt breaks `passlib` at import on this host.
-- Port 8000 is taken by the MusicApp backend; Trivia backend uses **8001**.
-- Guest mode: progress/scores are NOT persisted (per plan). Sign-up persists + joins leaderboards.
-- Phase 1 MVP only: no adaptive difficulty, offline packs, badges, or school codes yet.
+- `lever.svg` — Levers and simple machines
+- `food-chain.svg` — Food chains and ecosystems
+- `circuit.svg` — Electrical circuits
+- `plant-parts.svg` — Plant anatomy
+- `water-cycle.svg` — Water cycle
+- `desktop-computer.svg` — Computer hardware
+- `motherboard-cpu.svg` — Motherboard and CPU
+- `open-circuit.svg` — Open vs closed circuits
+- `body-organs.svg` — Human body organs
+- `computer-parts.svg` — Computer parts
+
+## Questions / Pitfalls
+
+- `bcrypt` is pinned to `4.0.1` — newer bcrypt breaks `passlib` at import.
+- Port 8000 is taken by MusicApp backend; Trivia backend uses **8001**.
+- Frontend uses `.env` with `VITE_API_URL=http://localhost:8001` — this bypasses the Vite proxy. If you remove it, update `vite.config.js` proxy to cover all routes (`/auth/*`, `/quiz/*`, `/admin/*`, `/curriculum/*`, `/media/*`, `/health`).
+- Guest mode: progress/scores are NOT persisted across devices/browsers. Sign-up persists.
+- SQLite `create_all()` does NOT add columns to existing tables. On startup the API runs an idempotent `ALTER TABLE ... ADD COLUMN` for `question_type` and `image_url`.
+- Always start Vite from the `frontend/` directory — starting from project root serves 404s.
+- The `trivia.db` file is the question bank (3.2 MB, 3,230 questions). Keep it safe.
+- Both servers must be running for the app to work. Backend `:8001`, Frontend `:5173`.
+
+## API Quick Reference
+
+Base URL: `http://localhost:8001`
+
+### Auth
+- `POST /auth/register` → `{nickname,password,class_level?,school_code?,security_question,security_answer}` → token
+- `POST /auth/login` → `{nickname,password}` → token
+- `POST /auth/guest` → `{nickname?,class_level?,school_code?}` → token
+- `GET /auth/me` → profile (Bearer)
+- `POST /auth/reset-password` → `{nickname,security_answer,new_password}` → token
+
+### Quiz
+- `POST /quiz/pack` → `{class_level,subject,topic?,sub_topic?,difficulty?,count?,exclude_ids?,daily?}` → questions (no answers)
+- `POST /quiz/submit` → `{session_id,answers:[{question_id,selected_index}]}` → results with feedback
+- `GET /quiz/leaderboard?scope=global|class|school&class_level=&school_code=&limit=` → board
+- `GET /quiz/progress` → per-subject + per-topic progress (Bearer)
+- `GET /curriculum/manifest` → subjects → classlevels → topics → [sub_topics] (Bearer optional)
+
+### Admin (requires admin token from `POST /admin/token`)
+- `POST /admin/token` → `{nickname,password}` → admin token
+- `GET /admin/dashboard` → stats
+- `GET /admin/users?...` → users
+- `POST /admin/users/{id}/status` → update user status
+- `GET/POST /admin/questions?...` → list/create questions
+- `PUT/DELETE /admin/questions/{id}` → update/delete
+- `POST /admin/questions/{id}/active` → toggle active status
+- `GET/POST /admin/school-codes` → list/create school codes
+- `PATCH /admin/school-codes/{id}` → update
+- `GET /admin/leaderboard?...` → all scopes
+- `GET /admin/monitor` → currently playing users
+- `GET/PUT /admin/settings/{key}` → app settings
+- `GET /admin/audit?...` → audit log
+- `GET /admin/export/users` → CSV
+- `GET /admin/export/questions` → CSV
+
+## Deployment Notes
+
+- Backend and frontend can be run locally as shown above
+- For production, use NGINX as reverse proxy to serve both ports
+- SQLite file should be backed up regularly
+- Consider containerizing with Docker for easier deployment
+
+## License
+
+This project is open source and available under the MIT License.

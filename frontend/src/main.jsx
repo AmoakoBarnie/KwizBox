@@ -4,6 +4,27 @@ import { BrowserRouter } from 'react-router-dom'
 import App from './App.jsx'
 import './styles.css'
 
+// Error boundary to surface React crashes
+class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { error: null, info: null }
+  }
+  componentDidCatch(error, info) {
+    this.setState({ error, info })
+  }
+  render() {
+    if (this.state.error) {
+      return React.createElement('div', { style: { padding: 20, fontFamily: 'monospace', background: '#fee', color: '#900', position: 'fixed', inset: 0, zIndex: 9999, overflow: 'auto' } },
+        React.createElement('h2', null, 'React Error'),
+        React.createElement('pre', null, String(this.state.error?.stack || this.state.error)),
+        this.state.info && React.createElement('pre', null, this.state.info.componentStack)
+      )
+    }
+    return this.props.children
+  }
+}
+
 // Respect system reduced-motion preference on load
 if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   document.documentElement.classList.add('no-motion')
@@ -21,8 +42,10 @@ document.head.appendChild(fontLink)
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
-      <a href="#main-content" className="skip-nav">Skip to content</a>
-      <App />
+      <ErrorBoundary>
+        <a href="#main-content" className="skip-nav">Skip to content</a>
+        <App />
+      </ErrorBoundary>
     </BrowserRouter>
-  </React.StrictMode>
+  </React.StrictMode>,
 )

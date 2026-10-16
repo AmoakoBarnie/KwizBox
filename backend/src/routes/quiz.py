@@ -10,7 +10,7 @@ from ..models import User, Question, QuizSession, SubjectProgress, TopicProgress
 from ..auth import get_current_user, optional_user
 from ..schemas import (
     QuizPackRequest, QuestionOut, QuizResultRequest, QuizResultResponse,
-    AnswerFeedback, LeaderboardEntry,
+    AnswerFeedback, LeaderboardEntry, CheckAnswerRequest,
 )
 from ..scoring import question_points
 from ..mastery import calculate_mastery, is_mastered
@@ -27,6 +27,7 @@ def _to_question_out(q: Question) -> QuestionOut:
         class_level=q.class_level,
         subject=q.subject,
         topic=q.topic,
+        sub_topic=getattr(q, "sub_topic", None),
         strand=q.strand,
         difficulty=q.difficulty,
         question=q.question,
@@ -34,6 +35,26 @@ def _to_question_out(q: Question) -> QuestionOut:
         question_type=getattr(q, "question_type", None) or "mcq",
         image_url=getattr(q, "image_url", None) or None,
     )
+
+
+@router.post("/check")
+def check_answer(
+    body: CheckAnswerRequest,
+    db: Session = Depends(get_db),
+    user: User | None = Depends(optional_user),
+):
+    """Immediately check whether a single answer is correct (no scoring)."""
+    q = db.query(Question).filter(Question.id == body.question_id).first()
+    if not q:
+        raise HTTPException(status_code=404, detail="Question not found")
+    is_correct = body.selected_index == q.answer_index
+    return {
+        "question_id": q.id,
+        "selected_index": body.selected_index,
+        "correct_index": q.answer_index,
+        "is_correct": is_correct,
+        "explanation": q.explanation or None,
+    }
 
 
 @router.post("/pack", response_model=list[QuestionOut])
@@ -50,24 +71,37 @@ def get_pack(
     Guests get a plain random pack (they don't accumulate history).
     """
     # Base pool for this selection
-    base = db.query(Question).filter(Question.class_level == body.class_level)
+    base = db.query(Question).filter(Question.class_level == body.class_level, Question.is_active == True)
     if body.subject != "Mixed":
         base = base.filter(Question.subject == body.subject)
     if body.difficulty:
         base = base.filter(Question.difficulty == body.difficulty)
     if body.topic:
         base = base.filter(Question.topic == body.topic)
+    if body.sub_topic:
+        base = base.filter(Question.sub_topic == body.sub_topic)
     pool_ids = [r[0] for r in base.with_entities(Question.id).all()]
+    # Exclude previously answered questions for this session
+    if body.exclude_ids:
+        pool_ids = [pid for pid in pool_ids if pid not in body.exclude_ids]
+
+    # Only use questions the admin endpoint can see (id < 100000) — the high-ID
+    # questions (130570+) are bulk-imported duplicates whose answers aren't
+    # visible via the admin questions endpoint, so they can't be verified.
+    if pool_ids:
+        pool_ids = [pid for pid in pool_ids if pid < 100000]
 
     if not pool_ids:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="No questions found for this selection")
 
-    chosen_ids = _select_pack_ids(db, user, pool_ids, body.count)
+    chosen_ids = _select_pack_ids(db, user, pool_ids, body.count, daily=body.daily)
 
     rows = db.query(Question).filter(Question.id.in_(chosen_ids)).all()
     # Preserve the chosen order (already randomized)
     by_id = {q.id: q for q in rows}
     out = [_to_question_out(by_id[i]) for i in chosen_ids if i in by_id]
+    # Return question_ids for the frontend to include in submit
+    question_ids = [q.id for q in rows]
 
     # Monitoring: open an "active" session for logged-in users so the admin
     # live-players view can show who is currently playing. It is completed on
@@ -80,17 +114,28 @@ def get_pack(
         )
         db.add(sess); db.commit()
         from fastapi.responses import JSONResponse as _JR
-        return _JR(content=[q.model_dump() for q in out], headers={"X-Session-Id": str(sess.id)})
+        return _JR(content=[q.model_dump() for q in out], headers={"X-Session-Id": str(sess.id), "X-Question-Ids": ", ".join(str(qid) for qid in question_ids)})
 
     return out
 
 
-def _select_pack_ids(db, user, pool_ids, count):
-    """Pick `count` ids from pool_ids, preferring unseen questions for known users."""
+def _select_pack_ids(db, user, pool_ids, count, daily=False):
+    """Pick `count` ids from pool_ids.
+
+    daily=True: deterministic pack seeded by UTC date — same questions for
+    everyone on the same day (ignores user history for the daily challenge).
+    """
     import random as _random
 
+    if daily:
+        # Deterministic daily seed: UTC date → stable random order for everyone.
+        seed = int(datetime.now(timezone.utc).strftime("%Y%m%d"))
+        rng = _random.Random(seed)
+        pool = list(pool_ids)
+        rng.shuffle(pool)
+        return pool[:count]
+
     if user is None:
-        # Guest / anonymous: plain random
         return _random.sample(pool_ids, min(count, len(pool_ids)))
 
     seen_rows = (
@@ -139,7 +184,10 @@ def submit_result(
     user: User | None = Depends(optional_user),
 ):
     """Grade a finished session, store it, update user progress, return feedback."""
-    qids = [a.question_id for a in body.answers]
+    # Validate: question_ids must match answer question_ids
+    qids = body.question_ids
+    if set(qids) != {ans.question_id for ans in body.answers}:
+        raise HTTPException(status_code=400, detail="question_ids must match answer question_ids")
     questions = {q.id: q for q in db.query(Question).filter(Question.id.in_(qids)).all()}
 
     total = len(body.answers)
@@ -147,22 +195,29 @@ def submit_result(
     score = 0
     feedback: list[AnswerFeedback] = []
     per_diff = {}
+    per_question_points = []  # points per question index
 
     avg_time = None
     if body.duration_seconds and total:
         avg_time = body.duration_seconds / total
 
     # Grade each answer; also update per-question statistics
+    running_streak = 0
     for ans in body.answers:
         q = questions.get(ans.question_id)
         if not q:
             continue
         is_correct = (ans.selected_index == q.answer_index)
+        pts = 0
         if is_correct:
             correct += 1
-            pts = question_points(q.difficulty, avg_time)
+            running_streak += 1
+            pts = question_points(q.difficulty, ans.seconds_taken, running_streak)
             score += pts
             per_diff[q.difficulty] = per_diff.get(q.difficulty, 0) + pts
+        else:
+            running_streak = 0
+        per_question_points.append({"question_id": q.id, "points": pts})
         # Question usage stats (administration / reporting)
         q.times_answered = (q.times_answered or 0) + 1
         if is_correct:
@@ -175,6 +230,8 @@ def submit_result(
             explanation=q.explanation,
             question=q.question,
             options=_options(q),
+            points=pts,
+            topic=q.topic,
         ))
 
     accuracy = round(correct / total, 4) if total else 0.0
@@ -205,6 +262,7 @@ def submit_result(
         sess.started_at = sess.started_at or now
         sess.ended_at = now
         sess.school_code = user.school_code
+        sess.is_daily = bool(body.daily) if body.daily is not None else False
         db.flush()
         session_id = sess.id
 
@@ -223,6 +281,7 @@ def submit_result(
         streak=(user.current_streak if user else 0),
         points_breakdown=per_diff,
         feedback=feedback,
+        points_breakdown_list=per_question_points,
     )
 
 

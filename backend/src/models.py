@@ -46,6 +46,7 @@ class Question(Base):
     class_level = Column(String(4), nullable=False, index=True)
     subject = Column(String(20), nullable=False, index=True)
     topic = Column(String(60), nullable=False)
+    sub_topic = Column(String(60), nullable=True)  # e.g. "Fractions, Decimals and Percentages" when topic="Number"
     strand = Column(String(60), nullable=False)
     difficulty = Column(String(10), nullable=False, index=True)
     question = Column(Text, nullable=False)
@@ -84,6 +85,7 @@ class QuizSession(Base):
     started_at = Column(DateTime, default=utcnow)
     ended_at = Column(DateTime, nullable=True)
     school_code = Column(String(20), nullable=True)
+    is_daily = Column(Boolean, default=False, nullable=False)  # true if this was a daily challenge
     created_at = Column(DateTime, default=utcnow)
 
     user = relationship("User", back_populates="sessions")

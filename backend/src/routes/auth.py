@@ -3,7 +3,7 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 
 from ..database import get_db
-from ..models import User
+from ..models import User, AdminUser
 from ..auth import hash_password, verify_password, create_token, get_current_user
 from ..progress import build_progress
 from ..schemas import (
@@ -57,12 +57,43 @@ def register(body: RegisterRequest, db: Session = Depends(get_db)):
 
 @router.post("/login", response_model=TokenResponse)
 def login(body: LoginRequest, db: Session = Depends(get_db)):
+
+    # 1. Registered (non-guest) user lookup by nickname
     user = db.query(User).filter(
         User.nickname == body.nickname, User.is_guest.is_(False)
     ).first()
-    if not user or not user.password_hash or not verify_password(body.password, user.password_hash):
-        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid nickname or password")
-    return TokenResponse(access_token=create_token(user.id), user=to_public(user, db))
+    if user and user.password_hash and verify_password(body.password, user.password_hash):
+        from ..auth import create_token as mk_token
+        return TokenResponse(
+            access_token=mk_token(user.id),
+            user=to_public(user, db)
+        )
+
+    # 2. Admin user lookup by username (admin_users table)
+    admin = db.query(AdminUser).filter(
+        AdminUser.username == body.nickname
+    ).first()
+    if admin and admin.password_hash and verify_password(body.password, admin.password_hash):
+        from ..auth import create_admin_token as mk_token
+        # Build a minimal PublicUser for admin login
+        return TokenResponse(
+            access_token=mk_token(admin.id),
+            user=PublicUser(
+                id=admin.id,
+                nickname=admin.username,
+                class_level=None,
+                school_code=None,
+                is_guest=False,
+                lifetime_score=0,
+                total_questions=0,
+                total_correct=0,
+                current_streak=0,
+                longest_streak=0,
+                progress=None,
+            )
+        )
+
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid nickname or password")
 
 
 @router.post("/guest", response_model=TokenResponse)

@@ -1,6 +1,6 @@
 // Thin API client. Talks to the backend via the Vite /api proxy in dev,
 // and directly in prod (set VITE_API_URL to the backend origin).
-const BASE = import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace(/\/$/, '') : '/api'
+const BASE = import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace(/\/$/, '') : '/'
 
 /** Resolve a question image_url so /media/... hits the API (Vite proxies /media in dev). */
 export function mediaUrl(path) {
@@ -41,6 +41,10 @@ export const api = {
   me: (token) => request('GET', '/auth/me', undefined, token),
   resetQuestion: (data) => request('POST', '/auth/reset/question', data),
   resetVerify: (data) => request('POST', '/auth/reset/verify', data),
+  curriculum: {
+    manifest: () => request('GET', '/curriculum/manifest'),
+    topics: () => request('GET', '/curriculum/topics'),
+  },
   securityQuestions: [
     "What is your favourite subject in school?",
     "What is the name of your best friend?",
