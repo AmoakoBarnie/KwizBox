@@ -83,15 +83,15 @@ export default function Landing() {
         <motion.div className="flag-stripe" variants={fadeUp} custom={0} />
         <HeroStage />
         <motion.p className="subtitle" variants={fadeUp} custom={3}>
-          Practice Science, Maths &amp; Computing — Primary 4 to JHS 3 (B4–B9)
+          Practice all NaCCA subjects — Primary 4 to JHS 3 (B4–B9)
         </motion.p>
         <motion.div className="hero-badge" variants={fadeUp} custom={4}>
-          <span className="dot" /> NaCCA-aligned · Low-data · Works on any phone
+          <span className="dot" /> Curriculum-aligned · Low-data · Works on any phone
         </motion.div>
         <motion.div className="feature-row" variants={fadeUp} custom={5}>
-          <div className="feature"><span className="fi">🔬</span><b>Science</b></div>
-          <div className="feature"><span className="fi">➗</span><b>Maths</b></div>
-          <div className="feature"><span className="fi">💻</span><b>Computing</b></div>
+          <div className="feature"><span className="fi">📘</span><b>All Subjects</b></div>
+          <div className="feature"><span className="fi">🎯</span><b>By Topic</b></div>
+          <div className="feature"><span className="fi">🏆</span><b>Progress</b></div>
         </motion.div>
       </motion.div>
 

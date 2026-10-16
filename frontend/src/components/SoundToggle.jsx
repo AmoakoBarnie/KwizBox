@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { isMuted, toggleMute, setMuted } from '../sound.js'
+import { isMuted, toggleMute, setMuted, initSound } from '../sound.js'
 
 const MUTE_KEY = 'stem_mute'
 
@@ -19,6 +19,7 @@ export default function SoundToggle() {
   }, [muted])
 
   const handleClick = useCallback(() => {
+    initSound() // Initialize AudioContext on first user interaction
     toggleMute()
     setMutedState(isMuted())
   }, [])

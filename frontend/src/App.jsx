@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
+import { Routes, Route, Navigate, useLocation, useRoutes } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import { AuthProvider } from './auth.jsx'
 import AnimatedBg from './components/AnimatedBg.jsx'
@@ -46,8 +46,7 @@ export default function App() {
           <Route path="/summary" element={<Page><Summary /></Page>} />
           <Route path="/leaderboard" element={<Page><Leaderboard /></Page>} />
           <Route path="/profile" element={<Page><Profile /></Page>} />
-          <Route path="/admin" element={<Admin />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
+          <Route path="/admin" element={<Page><Admin /></Page>} />
         </Routes>
       </AnimatePresence>
     </AuthProvider>

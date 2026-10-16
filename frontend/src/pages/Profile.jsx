@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useAuth } from '../auth.jsx'
 import { BADGES, loadBadges, saveBadges, evaluateBadges } from '../badges.js'
+import { SUBJECTS } from '../subjects.js'
 import { levelUp } from '../sound.js'
 
 const fadeUp = {

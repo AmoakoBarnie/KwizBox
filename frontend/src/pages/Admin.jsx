@@ -201,7 +201,7 @@ function Questions({ token }) {
     <div>
       <input placeholder="Search…" value={search} onChange={e=>setSearch(e.target.value)} />
       <select value={f.class_level||''} onChange={e=>setF({...f,class_level:e.target.value||undefined})}><option value="">All classes</option>{['B4','B5','B6','B7','B8','B9'].map(c=><option key={c}>{c}</option>)}</select>
-      <select value={f.subject||''} onChange={e=>setF({...f,subject:e.target.value||undefined})}><option value="">All subjects</option>{['Mathematics','Science','Computing'].map(c=><option key={c}>{c}</option>)}</select>
+      <select value={f.subject||''} onChange={e=>setF({...f,subject:e.target.value||undefined})}><option value="">All subjects</option>{['Mathematics','Science','Computing','English','Social Studies','French','Ghanaian Language','History','Our World and Our People','Creative Arts','Physical Education','Religious and Moral Education','Career Technology','Arabic','Mixed'].map(c=><option key={c}>{c}</option>)}</select>
       <select value={f.question_type||''} onChange={e=>setF({...f,question_type:e.target.value||undefined})}><option value="">All types</option><option value="mcq">MCQ</option><option value="true_false">True/False</option><option value="image_mcq">Image MCQ</option></select>
       <button className="btn primary" onClick={()=>setEditing({class_level:'B4',subject:'Mathematics',topic:'',strand:'',difficulty:'Easy',question:'',options:['','','',''],answer_index:0,explanation:'',question_type:'mcq',image_url:''})}>+ New Question</button>
       {msg && <p className="hint">{msg}</p>}
@@ -260,7 +260,7 @@ function QuestionEditor({ q, onSave, onCancel }) {
       <div className="row">
         <label>Answer: <select value={d.answer_index} onChange={e=>set('answer_index',+e.target.value)}>{shown.map((_,i)=><option key={i} value={i}>{isTF ? (i===0?'True':'False') : (i+1)}</option>)}</select></label>
         <label>Class: <select value={d.class_level} onChange={e=>set('class_level',e.target.value)}>{['B4','B5','B6','B7','B8','B9'].map(c=><option key={c}>{c}</option>)}</select></label>
-        <label>Subject: <select value={d.subject} onChange={e=>set('subject',e.target.value)}>{['Mathematics','Science','Computing'].map(c=><option key={c}>{c}</option>)}</select></label>
+        <label>Subject: <select value={d.subject} onChange={e=>set('subject',e.target.value)}>{['Mathematics','Science','Computing','English','Social Studies','French','Ghanaian Language','History','Our World and Our People','Creative Arts','Physical Education','Religious and Moral Education','Career Technology','Arabic','Mixed'].map(c=><option key={c}>{c}</option>)}</select></label>
         <label>Difficulty: <select value={d.difficulty} onChange={e=>set('difficulty',e.target.value)}>{['Easy','Medium','Hard'].map(c=><option key={c}>{c}</option>)}</select></label>
       </div>
       <input value={d.topic} onChange={e=>set('topic',e.target.value)} placeholder="Topic" />

@@ -81,6 +81,7 @@ class QuestionOut(BaseModel):
     class_level: str
     subject: str
     topic: str
+    sub_topic: Opt[str] = None
     strand: str
     difficulty: str
     question: str
@@ -97,8 +98,9 @@ class QuestionOut(BaseModel):
 
 class QuestionCreate(BaseModel):
     class_level: str = Field(pattern="^(B4|B5|B6|B7|B8|B9)$")
-    subject: str = Field(pattern="^(Mathematics|Science|Computing)$")
+    subject: str = Field(pattern="^(Mathematics|Science|Computing|English|Social Studies|French|Ghanaian Language|History|Our World and Our People|Creative Arts|Physical Education|Religious and Moral Education|Career Technology|Arabic|Mixed)$")
     topic: str
+    sub_topic: Opt[str] = None
     strand: str = ""
     difficulty: str = Field(pattern="^(Easy|Medium|Hard)$")
     question: str
