@@ -109,17 +109,21 @@ npm run dev
 
 Open `http://localhost:5173`. The `.env` file tells the frontend to call the backend directly (bypasses Vite proxy) — backend has `CORS allow_origins=["*"]`.
 
-## Test credentials
+## Setup
 
-| Nickname | Password | Role |
-|---|---|---|
-| admin | Admin@1234 | Admin (full dashboard) |
-| peswa | password123 | Regular user |
-| testuser | password123 | Regular user |
-| logintest | password123 | Regular user |
-| stephen | stephen123 | Regular user |
+### Development Mode
 
-Guest mode: any nickname + class level → temporary session (device-only storage).
+1. Start the backend server (see above)
+2. The backend automatically creates a default admin account on startup
+3. Use the admin credentials to access `/admin` in the frontend
+4. Guest mode: Enter any nickname + class level to play without signing up
+
+### Production Mode
+
+- Use Docker containers or deploy the backend + frontend separately
+- Set proper `VITE_API_URL` environment variable
+- Configure reverse proxy (NGINX) for SSL and routing
+- Backup `backend/trivia.db` regularly
 
 ## Features
 
