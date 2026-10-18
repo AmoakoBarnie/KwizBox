@@ -19,7 +19,7 @@ os.environ["DATABASE_URL"] = "sqlite:///" + _DB.replace("\\", "/")
 from fastapi.testclient import TestClient  # noqa: E402
 from src.main import app  # noqa: E402
 from src.database import SessionLocal  # noqa: E402
-from src.models import Question  # noqa: E402
+from src.models import Question, QuizSession  # noqa: E402
 
 
 def _insert(**kwargs):
@@ -124,6 +124,43 @@ class QuestionTypeTests(unittest.TestCase):
         self.assertEqual(len(item["options"]), 4)
         self.assertNotIn("answer_index", item)
 
+    def test_question_diagram_is_served_from_media_path(self):
+        response = self.client.get("/media/questions/lever.svg")
+        self.assertEqual(response.status_code, 200)
+        self.assertIn("image/svg+xml", response.headers.get("content-type", ""))
+        self.assertIn("<svg", response.text)
+
+    def test_offline_pack_returns_answer_key_without_creating_a_session(self):
+        qid = _insert(
+            subject="Mathematics", topic="OfflinePackProbe",
+            question="What is 3 + 4?",
+            option_a="5", option_b="6", option_c="7", option_d="8",
+            answer_index=2, explanation="Add 3 and 4 to get 7.",
+        )
+        selection = {
+            "class_level": "B9", "subject": "Mathematics",
+            "difficulty": "Easy", "topic": "OfflinePackProbe", "count": 5,
+        }
+
+        standard = self.client.post("/quiz/pack", json=selection)
+        self.assertEqual(standard.status_code, 200)
+        standard_item = next(item for item in standard.json() if item["id"] == qid)
+        self.assertNotIn("answer_index", standard_item)
+        self.assertNotIn("explanation", standard_item)
+
+        offline = self.client.post("/quiz/offline-pack", json=selection)
+        self.assertEqual(offline.status_code, 200)
+        offline_item = next(item for item in offline.json() if item["id"] == qid)
+        self.assertEqual(offline_item["answer_index"], 2)
+        self.assertEqual(offline_item["explanation"], "Add 3 and 4 to get 7.")
+        self.assertEqual(offline_item["options"], ["5", "6", "7", "8"])
+
+        db = SessionLocal()
+        try:
+            self.assertEqual(db.query(QuizSession).count(), 0)
+        finally:
+            db.close()
+
     def test_submit_grades_true_false(self):
         qid = _insert(
             subject="Science", topic="TFGradeProbe",
@@ -134,6 +171,7 @@ class QuestionTypeTests(unittest.TestCase):
         body = {
             "class_level": "B9", "subject": "Science", "difficulty": "Easy",
             "topic": "TFGradeProbe",
+            "question_ids": [qid],
             "answers": [{"question_id": qid, "selected_index": 0}],
         }
         ok = self.client.post("/quiz/submit", json=body).json()

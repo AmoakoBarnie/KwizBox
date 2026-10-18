@@ -9,7 +9,7 @@ from ..database import get_db
 from ..models import User, Question, QuizSession, SubjectProgress, TopicProgress, LeaderboardPeriod, UserQuestionSeen
 from ..auth import get_current_user, optional_user
 from ..schemas import (
-    QuizPackRequest, QuestionOut, QuizResultRequest, QuizResultResponse,
+    QuizPackRequest, QuestionOut, OfflineQuestionOut, QuizResultRequest, QuizResultResponse,
     AnswerFeedback, LeaderboardEntry, CheckAnswerRequest,
 )
 from ..scoring import question_points
@@ -117,6 +117,52 @@ def get_pack(
         return _JR(content=[q.model_dump() for q in out], headers={"X-Session-Id": str(sess.id), "X-Question-Ids": ", ".join(str(qid) for qid in question_ids)})
 
     return out
+
+
+@router.post("/offline-pack", response_model=list[OfflineQuestionOut])
+def get_offline_pack(
+    body: QuizPackRequest,
+    db: Session = Depends(get_db),
+    user: User | None = Depends(optional_user),
+):
+    """Return one explicitly requested offline pack, including its local answer key.
+
+    The regular /pack endpoint continues to omit answers. Downloading this pack
+    does not create a live QuizSession, update progress, or mark questions seen.
+    """
+    base = db.query(Question).filter(
+        Question.class_level == body.class_level,
+        Question.is_active == True,
+    )
+    if body.subject != "Mixed":
+        base = base.filter(Question.subject == body.subject)
+    if body.difficulty:
+        base = base.filter(Question.difficulty == body.difficulty)
+    if body.topic:
+        base = base.filter(Question.topic == body.topic)
+    if body.sub_topic:
+        base = base.filter(Question.sub_topic == body.sub_topic)
+
+    pool_ids = [row[0] for row in base.with_entities(Question.id).all()]
+    if body.exclude_ids:
+        excluded = set(body.exclude_ids)
+        pool_ids = [question_id for question_id in pool_ids if question_id not in excluded]
+    pool_ids = [question_id for question_id in pool_ids if question_id < 100000]
+    if not pool_ids:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="No questions found for this selection")
+
+    chosen_ids = _select_pack_ids(db, user, pool_ids, body.count, daily=body.daily)
+    rows = db.query(Question).filter(Question.id.in_(chosen_ids)).all()
+    by_id = {question.id: question for question in rows}
+    return [
+        OfflineQuestionOut(
+            **_to_question_out(by_id[question_id]).model_dump(),
+            answer_index=by_id[question_id].answer_index,
+            explanation=by_id[question_id].explanation or "",
+        )
+        for question_id in chosen_ids
+        if question_id in by_id
+    ]
 
 
 def _select_pack_ids(db, user, pool_ids, count, daily=False):

@@ -5,6 +5,7 @@ import { useAuth } from '../auth.jsx'
 import { api, mediaUrl } from '../api.js'
 import Mascot from '../components/Mascot.jsx'
 import { correct, wrong, streak as streakSfx, combo as comboSfx, click } from '../sound.js'
+import { buildOfflineResult, getOfflinePack, offlineQuestionPoints } from '../offlinePractice.js'
 
 const sessionSeen = new Set()
 
@@ -29,8 +30,11 @@ export default function Quiz() {
   const [combo, setCombo] = useState(1)
   const [popScore, setPopScore] = useState(null)
   const [hasSeenReveal, setHasSeenReveal] = useState(false)
+  const [offlineConfig, setOfflineConfig] = useState(null)
 
-  const cfg = {
+  const offlineMode = params.get('offline') === 'true'
+
+  const cfg = offlineConfig || {
     class_level: params.get('class_level') || 'B4',
     subject: params.get('subject') || 'Mathematics',
     topic: params.get('topic') || undefined,
@@ -42,6 +46,17 @@ export default function Quiz() {
   async function load() {
     setLoading(true); setErr('')
     try {
+      if (offlineMode) {
+        const saved = await getOfflinePack()
+        if (!saved?.questions?.length) {
+          throw new Error('No offline pack is saved on this device. Connect to the internet and download one from the quiz selection screen.')
+        }
+        setOfflineConfig(saved.config)
+        setPack(saved.questions)
+        setStartedAt(Date.now())
+        return
+      }
+
       let p
       try {
         p = await api.pack({ ...cfg, exclude_ids: [...sessionSeen] }, token)
@@ -79,6 +94,31 @@ export default function Quiz() {
     setSelected(i)
     click()
     setLocked(true)
+    if (offlineMode) {
+      const is_correct = i === q.answer_index
+      const seconds_taken = questionStartedAt ? (Date.now() - questionStartedAt) / 1000 : null
+      if (is_correct) {
+        const newStreak = streak + 1
+        const newCombo = newStreak >= 3 ? Math.min(2, 1 + Math.floor(newStreak / 3)) : 1
+        const pts = offlineQuestionPoints(q.difficulty, seconds_taken, newStreak)
+        setStreak(newStreak); setCombo(newCombo)
+        setMascot('celebrate')
+        setReveal({ is_correct: true, correct_index: q.answer_index })
+        correct()
+        if (newStreak >= 3) streakSfx(newStreak)
+        if (newCombo > 1) comboSfx(newCombo)
+        if (pts > 0) { setPopScore({ pts, combo: newCombo }); setTimeout(() => setPopScore(null), 900) }
+      } else {
+        setStreak(0); setCombo(1)
+        setMascot('encourage')
+        setReveal({ is_correct: false, correct_index: q.answer_index })
+        wrong()
+      }
+      setAnswers((prev) => [...prev, { question_id: q.id, selected_index: i, seconds_taken }])
+      setHasSeenReveal(true)
+      return
+    }
+
     try {
       const { is_correct, correct_index } = await api.check({ question_id: q.id, selected_index: i }, token)
       const pts = is_correct ? (q.difficulty === 'Hard' ? 25 : q.difficulty === 'Medium' ? 15 : 10) * combo : 0
@@ -112,6 +152,17 @@ export default function Quiz() {
 
   async function submit(finalAnswers) {
     setSubmitting(true); setErr('')
+    if (offlineMode) {
+      try {
+        const result = buildOfflineResult(pack, finalAnswers)
+        nav('/summary', { state: { result, cfg, offline: true } })
+      } catch (e) {
+        setErr(e.message)
+        setSubmitting(false)
+      }
+      return
+    }
+
     const duration_seconds = startedAt ? Math.round((Date.now() - startedAt) / 1000) : undefined
     try {
       const res = await api.submit({ ...cfg, question_ids: finalAnswers.map(a => a.question_id), answers: finalAnswers, duration_seconds }, token)
@@ -143,6 +194,12 @@ export default function Quiz() {
           ⏱ {elapsed}s{elapsed <= 6 ? ' ⚡' : ''}
         </span>
       </div>
+
+      {offlineMode && (
+        <div className="offline-practice-banner" role="status">
+          Offline practice · this result stays on this device and is not added to your account or leaderboard.
+        </div>
+      )}
 
       {/* Streak + combo bar */}
       <div className="streak-bar">

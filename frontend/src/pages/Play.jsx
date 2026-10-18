@@ -5,6 +5,8 @@ import { useAuth } from '../auth.jsx'
 import Mascot from '../components/Mascot.jsx'
 import { SUBJECTS } from '../subjects.js'
 import { api } from '../api.js'
+import { cacheOfflineMedia, clearOfflinePack, getOfflinePack, saveOfflinePack } from '../offlinePractice.js'
+import '../offlinePractice.css'
 
 const CLASSES = ['B4', 'B5', 'B6', 'B7', 'B8', 'B9']
 
@@ -15,7 +17,7 @@ const item = {
 }
 
 export default function Play() {
-  const { user } = useAuth()
+  const { user, token } = useAuth()
   const nav = useNavigate()
   const [cls, setCls] = useState(user?.class_level || '')
   const [subject, setSubject] = useState('')
@@ -26,9 +28,31 @@ export default function Play() {
   const [subTopics, setSubTopics] = useState([])
   const [loadingTopics, setLoadingTopics] = useState(false)
   const [loadingSubTopics, setLoadingSubTopics] = useState(false)
+  const [offlinePack, setOfflinePack] = useState(null)
+  const [loadingOfflinePack, setLoadingOfflinePack] = useState(true)
+  const [savingOfflinePack, setSavingOfflinePack] = useState(false)
+  const [offlineMessage, setOfflineMessage] = useState('')
+  const [isOnline, setIsOnline] = useState(() => typeof navigator === 'undefined' || navigator.onLine)
 
   // Popup state — each section opens its own popup
   const [popup, setPopup] = useState(null) // 'class' | 'subject' | 'topic' | 'subtopic' | null
+
+  useEffect(() => {
+    let active = true
+    getOfflinePack()
+      .then((saved) => { if (active) setOfflinePack(saved) })
+      .catch(() => {})
+      .finally(() => { if (active) setLoadingOfflinePack(false) })
+
+    const updateOnline = () => setIsOnline(navigator.onLine)
+    window.addEventListener('online', updateOnline)
+    window.addEventListener('offline', updateOnline)
+    return () => {
+      active = false
+      window.removeEventListener('online', updateOnline)
+      window.removeEventListener('offline', updateOnline)
+    }
+  }, [])
 
   // Fetch topics from DB
   useEffect(() => {
@@ -94,6 +118,49 @@ export default function Play() {
     if (subTopic) params.set('sub_topic', subTopic)
     if (daily) params.set('daily', 'true')
     nav(`/quiz?${params.toString()}`)
+  }
+
+  async function downloadOfflinePack() {
+    if (!cls || !subject) {
+      setOfflineMessage('Choose your class and subject before downloading a pack.')
+      return
+    }
+    if (!isOnline) {
+      setOfflineMessage('You are offline. Reconnect to download a question pack.')
+      return
+    }
+
+    setSavingOfflinePack(true)
+    setOfflineMessage('')
+    try {
+      const config = { class_level: cls, subject, count: 12, daily }
+      if (topic) config.topic = topic
+      if (subTopic) config.sub_topic = subTopic
+      const questions = await api.offlinePack(config, token)
+      const saved = { config, questions, created_at: new Date().toISOString() }
+      await saveOfflinePack(saved)
+      try { await cacheOfflineMedia(questions) } catch {}
+      setOfflinePack(saved)
+      setOfflineMessage(`${questions.length} questions saved on this device and ready for offline practice.`)
+    } catch (error) {
+      setOfflineMessage(`Could not save an offline pack: ${error.message}`)
+    } finally {
+      setSavingOfflinePack(false)
+    }
+  }
+
+  function startOfflinePractice() {
+    if (!offlinePack?.questions?.length) {
+      setOfflineMessage('Download a question pack while online before starting offline practice.')
+      return
+    }
+    nav('/quiz?offline=true')
+  }
+
+  async function removeOfflinePack() {
+    await clearOfflinePack()
+    setOfflinePack(null)
+    setOfflineMessage('Saved questions and their cached images were removed from this device.')
   }
 
   // Render the popup content for each section
@@ -438,6 +505,51 @@ export default function Play() {
       >
         Start quiz 🚀
       </motion.button>
+
+      <section className="offline-practice-card" aria-labelledby="offline-practice-title">
+        <div className="offline-practice-copy">
+          <span className="offline-practice-icon" aria-hidden="true">⇩</span>
+          <div>
+            <h3 id="offline-practice-title">Practice offline</h3>
+            <p>Save 12 questions now so you can practise without a connection. Offline results stay on this device and are not added to your account or leaderboard.</p>
+          </div>
+        </div>
+        <div className="offline-practice-actions">
+          <button
+            className="btn"
+            onClick={downloadOfflinePack}
+            disabled={!cls || !subject || !isOnline || savingOfflinePack}
+          >
+            {savingOfflinePack ? 'Saving questions…' : offlinePack ? 'Replace saved pack' : 'Download offline pack'}
+          </button>
+          {offlinePack?.questions?.length > 0 && (
+            <button className="btn primary" onClick={startOfflinePractice}>
+              Practice saved pack →
+            </button>
+          )}
+          {offlinePack?.questions?.length > 0 && (
+            <button className="btn offline-remove-btn" onClick={removeOfflinePack}>
+              Remove saved pack
+            </button>
+          )}
+        </div>
+        {offlinePack?.questions?.length > 0 && (
+          <p className="offline-pack-summary">
+            Saved: Class {offlinePack.config?.class_level} · {offlinePack.config?.subject} · {offlinePack.questions.length} questions
+          </p>
+        )}
+        <p className={`offline-practice-status${!isOnline ? ' offline' : ''}`} role="status" aria-live="polite">
+          {offlineMessage || (loadingOfflinePack
+            ? 'Checking this device for a saved pack…'
+            : !isOnline && !offlinePack
+              ? 'You are offline and no pack is saved yet. Reconnect once to download one.'
+              : !isOnline
+                ? 'You are offline. Your saved pack is ready to use.'
+                : offlinePack
+                  ? 'One saved pack is kept on this device; downloading another replaces it.'
+                  : 'Choose a class and subject, then download while online.')}
+        </p>
+      </section>
     </div>
   )
 }
