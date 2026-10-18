@@ -8458,5 +8458,3245 @@
     "answer": "B",
     "answer_index": 1,
     "explanation": "ML = Machine Learning"
+  },
+  {
+    "id": 546,
+    "class_level": "B4",
+    "subject": "Mathematics",
+    "topic": "Place value in larger whole numbers",
+    "strand": "Number and Algebra",
+    "difficulty": "Easy",
+    "question": "A number has 7 thousands, 4 hundreds, 0 tens and 2 ones. Which number is it?",
+    "options": [
+      "7,402",
+      "7,042",
+      "7,420",
+      "7,204"
+    ],
+    "answer": "A",
+    "answer_index": 0,
+    "explanation": "7 thousands is 7,000, 4 hundreds is 400, 0 tens is 0, and 2 ones is 2; their sum is 7,402."
+  },
+  {
+    "id": 547,
+    "class_level": "B4",
+    "subject": "Mathematics",
+    "topic": "Two-step addition and subtraction with regrouping",
+    "strand": "Number and Algebra",
+    "difficulty": "Easy",
+    "question": "A school collected 168 bottles on Monday and 157 on Tuesday. After sending 189 away, how many were left?",
+    "options": [
+      "126 bottles",
+      "146 bottles",
+      "325 bottles",
+      "136 bottles"
+    ],
+    "answer": "D",
+    "answer_index": 3,
+    "explanation": "Add 168 and 157 to get 325, then subtract 189: 325 − 189 = 136 bottles."
+  },
+  {
+    "id": 548,
+    "class_level": "B4",
+    "subject": "Mathematics",
+    "topic": "Multiplication and division in equal groups",
+    "strand": "Number and Algebra",
+    "difficulty": "Easy",
+    "question": "A teacher puts 18 pencils into bundles of 3. How many bundles are made?",
+    "options": [
+      "3 bundles",
+      "5 bundles",
+      "6 bundles",
+      "9 bundles"
+    ],
+    "answer": "C",
+    "answer_index": 2,
+    "explanation": "Equal groups give 18 ÷ 3 = 6, so the pencils make 6 bundles."
+  },
+  {
+    "id": 549,
+    "class_level": "B4",
+    "subject": "Mathematics",
+    "topic": "Fractions as parts of a set",
+    "strand": "Number and Algebra",
+    "difficulty": "Medium",
+    "question": "A basket has 20 fruits and 8 are bananas. What fraction of the fruits are bananas, written in simplest form?",
+    "options": [
+      "3/5",
+      "2/5",
+      "2/3",
+      "8/20"
+    ],
+    "answer": "B",
+    "answer_index": 1,
+    "explanation": "The banana share is 8/20; dividing numerator and denominator by 4 gives 2/5 in simplest form."
+  },
+  {
+    "id": 550,
+    "class_level": "B4",
+    "subject": "Mathematics",
+    "topic": "Equivalent fractions using models",
+    "strand": "Number and Algebra",
+    "difficulty": "Medium",
+    "question": "A strip has 2 of 4 equal parts shaded. Which matching strip shows the same amount?",
+    "options": [
+      "3 of 6 equal parts shaded.",
+      "2 of 6 equal parts shaded.",
+      "3 of 4 equal parts shaded.",
+      "1 of 4 equal parts shaded."
+    ],
+    "answer": "A",
+    "answer_index": 0,
+    "explanation": "Both 2/4 and 3/6 equal one-half, so 3 of 6 shaded parts matches the strip."
+  },
+  {
+    "id": 551,
+    "class_level": "B4",
+    "subject": "Mathematics",
+    "topic": "Ghana cedi change and money calculations",
+    "strand": "Number and Algebra",
+    "difficulty": "Medium",
+    "question": "A snack costs GH₵6.75 and Kojo pays GH₵10. How much change does he receive?",
+    "options": [
+      "GH₵3.15",
+      "GH₵2.25",
+      "GH₵3.35",
+      "GH₵3.25"
+    ],
+    "answer": "D",
+    "answer_index": 3,
+    "explanation": "Change is the amount paid minus the cost: GH₵10.00 − GH₵6.75 = GH₵3.25."
+  },
+  {
+    "id": 552,
+    "class_level": "B4",
+    "subject": "Mathematics",
+    "topic": "Tenths and hundredths in decimals",
+    "strand": "Number and Algebra",
+    "difficulty": "Medium",
+    "question": "Which ribbon is longer: one measuring 0.6 m or one measuring 0.58 m?",
+    "options": [
+      "The 0.58 m ribbon.",
+      "They are the same length.",
+      "The 0.6 m ribbon.",
+      "It cannot be decided."
+    ],
+    "answer": "C",
+    "answer_index": 2,
+    "explanation": "Write 0.6 as 0.60; 60 hundredths is greater than 58 hundredths, so the 0.6 m ribbon is longer."
+  },
+  {
+    "id": 553,
+    "class_level": "B4",
+    "subject": "Mathematics",
+    "topic": "Elapsed time using clock times",
+    "strand": "Number and Algebra",
+    "difficulty": "Medium",
+    "question": "An assembly runs from 8:45 a.m. to 9:20 a.m. How long is it?",
+    "options": [
+      "25 minutes",
+      "35 minutes",
+      "45 minutes",
+      "1 hour 25 minutes"
+    ],
+    "answer": "B",
+    "answer_index": 1,
+    "explanation": "From 8:45 to 9:00 is 15 minutes and from 9:00 to 9:20 is 20 minutes; total 35 minutes."
+  },
+  {
+    "id": 554,
+    "class_level": "B4",
+    "subject": "Mathematics",
+    "topic": "Metric length or mass conversion",
+    "strand": "Number and Algebra",
+    "difficulty": "Hard",
+    "question": "A store has 2 kg 350 g and 1 kg 850 g of groundnuts. What is the total in grams?",
+    "options": [
+      "4,200 g",
+      "3,200 g",
+      "4,100 g",
+      "5,200 g"
+    ],
+    "answer": "A",
+    "answer_index": 0,
+    "explanation": "2 kg 350 g is 2,350 g and 1 kg 850 g is 1,850 g; together they total 4,200 g."
+  },
+  {
+    "id": 555,
+    "class_level": "B4",
+    "subject": "Mathematics",
+    "topic": "Rectangle perimeter",
+    "strand": "Number and Algebra",
+    "difficulty": "Hard",
+    "question": "A rectangle has perimeter 26 m and a longer side of 8 m. What is each shorter side?",
+    "options": [
+      "3 m",
+      "9 m",
+      "13 m",
+      "5 m"
+    ],
+    "answer": "D",
+    "answer_index": 3,
+    "explanation": "The two 8 m sides use 16 m of the 26 m perimeter, leaving 10 m for two equal sides; each is 5 m."
+  },
+  {
+    "id": 556,
+    "class_level": "B4",
+    "subject": "Science",
+    "topic": "Plant-part functions",
+    "strand": "Science and Environment",
+    "difficulty": "Easy",
+    "question": "Which plant part holds leaves upright and carries water from roots towards them?",
+    "options": [
+      "Root",
+      "Stem",
+      "Flower",
+      "Leaf"
+    ],
+    "answer": "B",
+    "answer_index": 1,
+    "explanation": "The stem supports the leaves and carries water upward from roots, so the plant part is the stem."
+  },
+  {
+    "id": 557,
+    "class_level": "B4",
+    "subject": "Science",
+    "topic": "Animal habitats",
+    "strand": "Science and Environment",
+    "difficulty": "Easy",
+    "question": "Which place is a suitable habitat for a tilapia?",
+    "options": [
+      "A freshwater pond",
+      "A dry field",
+      "A tree branch",
+      "An anthill"
+    ],
+    "answer": "A",
+    "answer_index": 0,
+    "explanation": "Tilapia are freshwater fish, so a freshwater pond supplies the suitable habitat."
+  },
+  {
+    "id": 558,
+    "class_level": "B4",
+    "subject": "Science",
+    "topic": "Material properties",
+    "strand": "Science and Environment",
+    "difficulty": "Easy",
+    "question": "Why does a plastic sheet help keep books dry in rain?",
+    "options": [
+      "It absorbs water quickly.",
+      "It lets water pass through.",
+      "It dissolves in rainwater.",
+      "It resists water."
+    ],
+    "answer": "D",
+    "answer_index": 3,
+    "explanation": "Plastic resists water, so rain cannot soak through it to the books."
+  },
+  {
+    "id": 559,
+    "class_level": "B4",
+    "subject": "Science",
+    "topic": "States of matter",
+    "strand": "Science and Environment",
+    "difficulty": "Medium",
+    "question": "A wooden spoon, cooking oil and air in a balloon are respectively what states?",
+    "options": [
+      "Liquid, solid, gas.",
+      "Solid, gas, liquid.",
+      "Solid, liquid, gas.",
+      "Gas, liquid, solid."
+    ],
+    "answer": "C",
+    "answer_index": 2,
+    "explanation": "A wooden spoon keeps its shape (solid), oil flows (liquid), and air fills the balloon (gas)."
+  },
+  {
+    "id": 560,
+    "class_level": "B4",
+    "subject": "Science",
+    "topic": "Weather observation",
+    "strand": "Science and Environment",
+    "difficulty": "Medium",
+    "question": "A weather-vane arrowhead points north. From which direction is the wind coming?",
+    "options": [
+      "Towards the north.",
+      "From the north.",
+      "From the south.",
+      "From the east."
+    ],
+    "answer": "B",
+    "answer_index": 1,
+    "explanation": "A weather-vane arrow points into the wind; pointing north means the wind comes from the north."
+  },
+  {
+    "id": 561,
+    "class_level": "B4",
+    "subject": "Science",
+    "topic": "Push and pull forces",
+    "strand": "Science and Environment",
+    "difficulty": "Medium",
+    "question": "A rope is tied to a box. Which action uses a pull to bring the box closer to you?",
+    "options": [
+      "Pull the rope towards yourself.",
+      "Push the rope away from yourself.",
+      "Press the rope down.",
+      "Hold the rope still."
+    ],
+    "answer": "A",
+    "answer_index": 0,
+    "explanation": "Pulling the rope toward yourself applies a force that brings the tied box closer."
+  },
+  {
+    "id": 562,
+    "class_level": "B4",
+    "subject": "Science",
+    "topic": "Safe water and hygiene",
+    "strand": "Science and Environment",
+    "difficulty": "Medium",
+    "question": "How should treated drinking water be stored until needed?",
+    "options": [
+      "In an uncovered basin.",
+      "In an open container.",
+      "In a rinsed pesticide bottle.",
+      "In a clean, covered container, poured with a clean cup."
+    ],
+    "answer": "D",
+    "answer_index": 3,
+    "explanation": "A clean covered container and clean cup keep dust, insects and germs from contaminating treated water."
+  },
+  {
+    "id": 563,
+    "class_level": "B4",
+    "subject": "Science",
+    "topic": "Waste sorting",
+    "strand": "Science and Environment",
+    "difficulty": "Medium",
+    "question": "Which clean-up item belongs in a compost container?",
+    "options": [
+      "A plastic sachet",
+      "A glass bottle",
+      "A banana peel",
+      "A metal can"
+    ],
+    "answer": "C",
+    "answer_index": 2,
+    "explanation": "A banana peel is organic plant waste that decomposes into compost; plastic, glass and metal do not."
+  },
+  {
+    "id": 564,
+    "class_level": "B4",
+    "subject": "Science",
+    "topic": "Food needs of living things",
+    "strand": "Science and Environment",
+    "difficulty": "Hard",
+    "question": "How does a green maize plant get food while a goat eats its leaves?",
+    "options": [
+      "The maize takes ready-made food from soil; the goat uses sunlight.",
+      "The maize makes food using sunlight, water and air; the goat eats the maize.",
+      "Both make food by drinking soil water.",
+      "The maize eats soil; the goat gets food from sunlight."
+    ],
+    "answer": "B",
+    "answer_index": 1,
+    "explanation": "Green maize makes food using sunlight, water and carbon dioxide from air; the goat gets food by eating the maize."
+  },
+  {
+    "id": 565,
+    "class_level": "B4",
+    "subject": "Science",
+    "topic": "Heating and cooling changes",
+    "strand": "Science and Environment",
+    "difficulty": "Hard",
+    "question": "Drops form on a cool lid above heated water because water vapour does what?",
+    "options": [
+      "Cools and condenses into liquid water.",
+      "Liquid water gains heat and evaporates.",
+      "Vapour freezes into ice.",
+      "It changes into a different material."
+    ],
+    "answer": "A",
+    "answer_index": 0,
+    "explanation": "Heating makes vapour, and contact with the cool lid removes heat so the vapour condenses into liquid drops."
+  },
+  {
+    "id": 566,
+    "class_level": "B4",
+    "subject": "Computing",
+    "topic": "Input and output devices",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Easy",
+    "question": "Ama records a voice and plays it back. Which device sends the voice into the computer?",
+    "options": [
+      "Speaker",
+      "Monitor",
+      "Microphone",
+      "Printer"
+    ],
+    "answer": "C",
+    "answer_index": 2,
+    "explanation": "A microphone captures sound and sends it into the computer, making it an input device."
+  },
+  {
+    "id": 567,
+    "class_level": "B4",
+    "subject": "Computing",
+    "topic": "Storage devices",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Easy",
+    "question": "Which device can keep a digital camera picture for later viewing?",
+    "options": [
+      "Keyboard",
+      "Memory card",
+      "Speaker",
+      "Monitor"
+    ],
+    "answer": "B",
+    "answer_index": 1,
+    "explanation": "A memory card stores the camera picture so it can be kept and viewed later."
+  },
+  {
+    "id": 568,
+    "class_level": "B4",
+    "subject": "Computing",
+    "topic": "Hardware and software",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Easy",
+    "question": "Which statement correctly distinguishes a phone screen and calculator app?",
+    "options": [
+      "The screen is hardware; the app is software.",
+      "The screen is software; the app is hardware.",
+      "Both are hardware.",
+      "Both are software."
+    ],
+    "answer": "A",
+    "answer_index": 0,
+    "explanation": "The screen is a physical, touchable component (hardware), while the calculator app is instructions (software)."
+  },
+  {
+    "id": 569,
+    "class_level": "B4",
+    "subject": "Computing",
+    "topic": "Computer posture",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Medium",
+    "question": "Which posture is safest while typing?",
+    "options": [
+      "Bend very close to the screen.",
+      "Twist sideways to reach the keyboard.",
+      "Let both feet hang off the chair.",
+      "Sit upright with back supported, shoulders relaxed and feet flat."
+    ],
+    "answer": "D",
+    "answer_index": 3,
+    "explanation": "An upright supported back, relaxed shoulders and feet flat on the floor reduce strain while typing."
+  },
+  {
+    "id": 570,
+    "class_level": "B4",
+    "subject": "Computing",
+    "topic": "Keyboard keys",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Medium",
+    "question": "Which key removes the character immediately left of the cursor?",
+    "options": [
+      "Enter",
+      "Spacebar",
+      "Backspace",
+      "Shift"
+    ],
+    "answer": "C",
+    "answer_index": 2,
+    "explanation": "Backspace removes the character immediately to the left of the cursor; the other keys have different functions."
+  },
+  {
+    "id": 571,
+    "class_level": "B4",
+    "subject": "Computing",
+    "topic": "File and folder organization",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Medium",
+    "question": "How can Ama keep class-garden photos together and separate from family photos?",
+    "options": [
+      "Open each photo without organizing.",
+      "Create a named folder and move the project photos into it.",
+      "Delete the family photos.",
+      "Give every photo the same name."
+    ],
+    "answer": "B",
+    "answer_index": 1,
+    "explanation": "A named folder groups the class-garden photos without deleting or confusing family photos."
+  },
+  {
+    "id": 572,
+    "class_level": "B4",
+    "subject": "Computing",
+    "topic": "Device care",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Medium",
+    "question": "What should Kojo do with a cup of water beside a computer?",
+    "options": [
+      "Move the cup away from the computer.",
+      "Put it on the computer case.",
+      "Leave it uncovered beside the keyboard.",
+      "Rest it against the screen."
+    ],
+    "answer": "A",
+    "answer_index": 0,
+    "explanation": "Moving water away reduces the risk of a spill damaging the computer or keyboard."
+  },
+  {
+    "id": 573,
+    "class_level": "B4",
+    "subject": "Computing",
+    "topic": "Computer uses",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Medium",
+    "question": "A health worker reopens a patient's earlier visit details. What use of a computer is shown?",
+    "options": [
+      "Preparing a duty roster.",
+      "Counting medicines only.",
+      "Sending messages only.",
+      "Keeping and finding records."
+    ],
+    "answer": "D",
+    "answer_index": 3,
+    "explanation": "Reopening an earlier visit shows the computer storing and retrieving records."
+  },
+  {
+    "id": 574,
+    "class_level": "B4",
+    "subject": "Computing",
+    "topic": "Algorithms",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Hard",
+    "question": "Which order works for reaching a password-protected desktop?",
+    "options": [
+      "Power on; type password; wait for sign-in; press Enter; wait for desktop.",
+      "Wait for sign-in; press Enter; type password; power on; wait for desktop.",
+      "Power on; wait for sign-in; type password; press Enter; wait for desktop.",
+      "Power on; wait for desktop; type password; wait for sign-in; press Enter."
+    ],
+    "answer": "C",
+    "answer_index": 2,
+    "explanation": "The computer must power on, show sign-in, accept the password, then display the desktop after successful sign-in."
+  },
+  {
+    "id": 575,
+    "class_level": "B4",
+    "subject": "Computing",
+    "topic": "Personal-data protection",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Hard",
+    "question": "A drawing game does not need a tablet's location. What is the safest choice?",
+    "options": [
+      "Allow location all the time.",
+      "Do not allow location access.",
+      "Allow precise location while playing.",
+      "Enter a home address instead."
+    ],
+    "answer": "B",
+    "answer_index": 1,
+    "explanation": "Because the game does not need location, refusing location access protects private information."
+  },
+  {
+    "id": 576,
+    "class_level": "B5",
+    "subject": "Mathematics",
+    "topic": "Factors and multiples",
+    "strand": "Number and Algebra",
+    "difficulty": "Easy",
+    "question": "Which number is a factor of 24?",
+    "options": [
+      "5",
+      "6",
+      "7",
+      "9"
+    ],
+    "answer": "B",
+    "answer_index": 1,
+    "explanation": "A factor divides exactly; 24 ÷ 6 = 4 with no remainder, so 6 is a factor of 24."
+  },
+  {
+    "id": 577,
+    "class_level": "B5",
+    "subject": "Mathematics",
+    "topic": "Like-denominator fractions",
+    "strand": "Number and Algebra",
+    "difficulty": "Easy",
+    "question": "Akosua has 7/8 m of ribbon and uses 2/8 m. How much remains?",
+    "options": [
+      "5/8 m",
+      "5/16 m",
+      "9/8 m",
+      "2/8 m"
+    ],
+    "answer": "A",
+    "answer_index": 0,
+    "explanation": "With like denominators, subtract numerators: 7/8 − 2/8 = 5/8 m."
+  },
+  {
+    "id": 578,
+    "class_level": "B5",
+    "subject": "Mathematics",
+    "topic": "Addition and subtraction of decimals",
+    "strand": "Number and Algebra",
+    "difficulty": "Easy",
+    "question": "A 3.00 m ribbon loses 1.45 m then gains 0.35 m. What length remains?",
+    "options": [
+      "1.55 m",
+      "1.80 m",
+      "2.00 m",
+      "1.90 m"
+    ],
+    "answer": "D",
+    "answer_index": 3,
+    "explanation": "Subtract the loss then add the gain: 3.00 − 1.45 = 1.55, and 1.55 + 0.35 = 1.90 m."
+  },
+  {
+    "id": 579,
+    "class_level": "B5",
+    "subject": "Mathematics",
+    "topic": "Fractions and decimals",
+    "strand": "Number and Algebra",
+    "difficulty": "Medium",
+    "question": "Which common fraction equals 0.75?",
+    "options": [
+      "1/2",
+      "2/5",
+      "3/4",
+      "4/5"
+    ],
+    "answer": "C",
+    "answer_index": 2,
+    "explanation": "0.75 is 75/100; dividing both parts by 25 gives 3/4."
+  },
+  {
+    "id": 580,
+    "class_level": "B5",
+    "subject": "Mathematics",
+    "topic": "Percentages of quantities",
+    "strand": "Number and Algebra",
+    "difficulty": "Medium",
+    "question": "What is 25% of 84 exercise books?",
+    "options": [
+      "16 books",
+      "21 books",
+      "42 books",
+      "24 books"
+    ],
+    "answer": "B",
+    "answer_index": 1,
+    "explanation": "25% is one quarter, and 84 ÷ 4 = 21 books."
+  },
+  {
+    "id": 581,
+    "class_level": "B5",
+    "subject": "Mathematics",
+    "topic": "Classifying angles",
+    "strand": "Number and Algebra",
+    "difficulty": "Medium",
+    "question": "How is a 125° angle classified?",
+    "options": [
+      "Obtuse angle",
+      "Acute angle",
+      "Right angle",
+      "Straight angle"
+    ],
+    "answer": "A",
+    "answer_index": 0,
+    "explanation": "125° is greater than 90° and less than 180°, so it is obtuse."
+  },
+  {
+    "id": 582,
+    "class_level": "B5",
+    "subject": "Mathematics",
+    "topic": "Area and perimeter of rectangles",
+    "strand": "Number and Algebra",
+    "difficulty": "Medium",
+    "question": "A rectangle has area 48 cm² and length 8 cm. What is its perimeter?",
+    "options": [
+      "24 cm",
+      "14 cm",
+      "48 cm",
+      "28 cm"
+    ],
+    "answer": "D",
+    "answer_index": 3,
+    "explanation": "The width is 48 ÷ 8 = 6 cm; perimeter is 2(8 + 6) = 28 cm."
+  },
+  {
+    "id": 583,
+    "class_level": "B5",
+    "subject": "Mathematics",
+    "topic": "Metric unit conversion",
+    "strand": "Number and Algebra",
+    "difficulty": "Medium",
+    "question": "What is 2 kg 350 g expressed in grams?",
+    "options": [
+      "2,035 g",
+      "2,300 g",
+      "2,350 g",
+      "2,530 g"
+    ],
+    "answer": "C",
+    "answer_index": 2,
+    "explanation": "2 kg equals 2,000 g; adding 350 g gives 2,350 g."
+  },
+  {
+    "id": 584,
+    "class_level": "B5",
+    "subject": "Mathematics",
+    "topic": "Table statistics",
+    "strand": "Number and Algebra",
+    "difficulty": "Hard",
+    "question": "The numbers of books borrowed from a library on seven days were 24, 17, 29, 21, 26, 18 and 31. What was the median number of books borrowed per day?",
+    "options": [
+      "21 books",
+      "24 books",
+      "26 books",
+      "29 books"
+    ],
+    "answer": "B",
+    "answer_index": 1,
+    "explanation": "Sorting gives 17, 18, 21, 24, 26, 29, 31; the fourth of seven values is the median, 24 books."
+  },
+  {
+    "id": 585,
+    "class_level": "B5",
+    "subject": "Mathematics",
+    "topic": "Number patterns",
+    "strand": "Number and Algebra",
+    "difficulty": "Hard",
+    "question": "What comes next: 5, 9, 18, 22, 44, __, alternating +4 and ×2?",
+    "options": [
+      "48",
+      "46",
+      "88",
+      "52"
+    ],
+    "answer": "A",
+    "answer_index": 0,
+    "explanation": "The alternating steps are +4 and ×2; after 44 the next step is +4, giving 48."
+  },
+  {
+    "id": 586,
+    "class_level": "B5",
+    "subject": "Science",
+    "topic": "Seed germination",
+    "strand": "Science and Environment",
+    "difficulty": "Easy",
+    "question": "In an experiment, why is the cotton wool around bean seeds kept moist?",
+    "options": [
+      "It supplies food made by leaves.",
+      "It helps roots absorb sunlight.",
+      "Water helps the seeds begin germination.",
+      "It stops air reaching seeds."
+    ],
+    "answer": "C",
+    "answer_index": 2,
+    "explanation": "Moisture supplies water so the bean seed can swell and begin germination; cotton wool does not supply food."
+  },
+  {
+    "id": 587,
+    "class_level": "B5",
+    "subject": "Science",
+    "topic": "Plant life cycle",
+    "strand": "Science and Environment",
+    "difficulty": "Easy",
+    "question": "A sprouted bean with a small stem and leaves is at which stage?",
+    "options": [
+      "Flowering plant",
+      "Seedling",
+      "Seed",
+      "Fruit"
+    ],
+    "answer": "B",
+    "answer_index": 1,
+    "explanation": "A sprouted bean with a stem and leaves is a young plant called a seedling."
+  },
+  {
+    "id": 588,
+    "class_level": "B5",
+    "subject": "Science",
+    "topic": "Water-cycle condensation",
+    "strand": "Science and Environment",
+    "difficulty": "Easy",
+    "question": "What change helps water vapour form cloud droplets?",
+    "options": [
+      "The surrounding air cools.",
+      "The air warms.",
+      "Vapour freezes directly.",
+      "Wind carries vapour sideways."
+    ],
+    "answer": "A",
+    "answer_index": 0,
+    "explanation": "Cooling causes water vapour to condense into tiny liquid droplets that gather as clouds."
+  },
+  {
+    "id": 589,
+    "class_level": "B5",
+    "subject": "Science",
+    "topic": "Food-chain roles",
+    "strand": "Science and Environment",
+    "difficulty": "Medium",
+    "question": "In maize → grasshopper → lizard → hawk, what is the grasshopper?",
+    "options": [
+      "Producer",
+      "Secondary consumer",
+      "Decomposer",
+      "Primary consumer"
+    ],
+    "answer": "D",
+    "answer_index": 3,
+    "explanation": "Maize is the producer and the grasshopper eats it, so the grasshopper is the primary consumer."
+  },
+  {
+    "id": 590,
+    "class_level": "B5",
+    "subject": "Science",
+    "topic": "Sound vibration",
+    "strand": "Science and Environment",
+    "difficulty": "Medium",
+    "question": "What does a plucked rubber band show about sound?",
+    "options": [
+      "Air alone makes the sound.",
+      "The box must shake.",
+      "Vibration produces the sound.",
+      "Fingers produce it without vibration."
+    ],
+    "answer": "C",
+    "answer_index": 2,
+    "explanation": "Plucking makes the rubber band vibrate, and that vibration produces the sound."
+  },
+  {
+    "id": 591,
+    "class_level": "B5",
+    "subject": "Science",
+    "topic": "Heat transfer",
+    "strand": "Science and Environment",
+    "difficulty": "Medium",
+    "question": "In water heated from below, which movement carries heat?",
+    "options": [
+      "Cool water rises as warm water sinks.",
+      "Warm water rises as cooler water sinks.",
+      "Water stays still.",
+      "Water moves down and stays by the flame."
+    ],
+    "answer": "B",
+    "answer_index": 1,
+    "explanation": "Water warmed near the flame rises while cooler, denser water sinks; this convection carries heat."
+  },
+  {
+    "id": 592,
+    "class_level": "B5",
+    "subject": "Science",
+    "topic": "Soil conservation",
+    "strand": "Science and Environment",
+    "difficulty": "Medium",
+    "question": "Which action best prevents erosion on a sloping field?",
+    "options": [
+      "Plant grass or cover crops.",
+      "Leave soil bare.",
+      "Remove plants.",
+      "Channel runoff straight downhill."
+    ],
+    "answer": "A",
+    "answer_index": 0,
+    "explanation": "Roots hold soil and plant cover slows runoff, reducing soil loss on a slope."
+  },
+  {
+    "id": 593,
+    "class_level": "B5",
+    "subject": "Science",
+    "topic": "Balanced food groups",
+    "strand": "Science and Environment",
+    "difficulty": "Medium",
+    "question": "Rice and beans are served. Which extra food would add a fruit to the meal?",
+    "options": [
+      "Kontomire",
+      "Grilled tilapia",
+      "Extra rice",
+      "An orange"
+    ],
+    "answer": "D",
+    "answer_index": 3,
+    "explanation": "An orange is a fruit; the other choices are a leafy vegetable, fish, or extra staple food."
+  },
+  {
+    "id": 594,
+    "class_level": "B5",
+    "subject": "Science",
+    "topic": "Separating mixtures",
+    "strand": "Science and Environment",
+    "difficulty": "Hard",
+    "question": "A mixture contains iron filings, sand and salt. Which steps will separate all three materials?",
+    "options": [
+      "Dissolve the mixture and filter it to collect both sand and salt together.",
+      "Sieve out the salt, then dissolve the iron and sand.",
+      "Use a magnet to remove the iron; dissolve the salt in water; filter and dry the sand; then evaporate the salt water.",
+      "Evaporate the mixture first, then use a magnet to collect the salt."
+    ],
+    "answer": "C",
+    "answer_index": 2,
+    "explanation": "A magnet removes iron, dissolving separates salt from sand, filtration collects sand, and evaporation recovers salt."
+  },
+  {
+    "id": 595,
+    "class_level": "B5",
+    "subject": "Science",
+    "topic": "Water conservation",
+    "strand": "Science and Environment",
+    "difficulty": "Hard",
+    "question": "How can a school collect and store rainwater from its roof for use during a later dry spell?",
+    "options": [
+      "Measure it and let it flow away.",
+      "Repair the gutters and direct the runoff into a clean, covered tank.",
+      "Spread it on a sunny playground.",
+      "Leave it in shallow, open trays."
+    ],
+    "answer": "B",
+    "answer_index": 1,
+    "explanation": "Repairing gutters directs roof runoff into a clean covered tank for later use; stored water needs treatment before drinking."
+  },
+  {
+    "id": 596,
+    "class_level": "B5",
+    "subject": "Computing",
+    "topic": "Text formatting",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Easy",
+    "question": "Which formatting makes selected letters thicker and darker?",
+    "options": [
+      "Italic",
+      "Underline",
+      "Page orientation",
+      "Bold"
+    ],
+    "answer": "D",
+    "answer_index": 3,
+    "explanation": "Bold formatting makes selected letters thicker and darker; the other choices slant, underline, or change page layout."
+  },
+  {
+    "id": 597,
+    "class_level": "B5",
+    "subject": "Computing",
+    "topic": "Presentation slides",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Easy",
+    "question": "How can a recycling slide be placed before a sweeping slide?",
+    "options": [
+      "Delete and recreate it.",
+      "Change the background.",
+      "Drag its thumbnail before the sweeping slide.",
+      "Put the word in notes."
+    ],
+    "answer": "C",
+    "answer_index": 2,
+    "explanation": "Dragging a slide thumbnail changes its order, so moving recycling before sweeping places it first."
+  },
+  {
+    "id": 598,
+    "class_level": "B5",
+    "subject": "Computing",
+    "topic": "Spreadsheet cells",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Easy",
+    "question": "Which address is at column C and row 4?",
+    "options": [
+      "4C",
+      "C4",
+      "C3",
+      "D4"
+    ],
+    "answer": "B",
+    "answer_index": 1,
+    "explanation": "Spreadsheet addresses put the column letter before the row number; column C, row 4 is C4."
+  },
+  {
+    "id": 599,
+    "class_level": "B5",
+    "subject": "Computing",
+    "topic": "Saving files",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Medium",
+    "question": "Which filename best describes B5 plant class notes?",
+    "options": [
+      "B5_Plants_Class_Notes",
+      "New file",
+      "My work",
+      "Document1"
+    ],
+    "answer": "A",
+    "answer_index": 0,
+    "explanation": "B5_Plants_Class_Notes names the class, subject and file content, making it more useful than a generic filename."
+  },
+  {
+    "id": 600,
+    "class_level": "B5",
+    "subject": "Computing",
+    "topic": "Web searching",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Medium",
+    "question": "Which search is most specific for keeping exercise books dry in rainy season?",
+    "options": [
+      "rain",
+      "rainy season",
+      "my home address, school name, and rain",
+      "how to keep exercise books dry in the rainy season"
+    ],
+    "answer": "D",
+    "answer_index": 3,
+    "explanation": "The specific phrase names both the desired advice and the rainy-season context without exposing private information."
+  },
+  {
+    "id": 601,
+    "class_level": "B5",
+    "subject": "Computing",
+    "topic": "Passwords and privacy",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Medium",
+    "question": "Which password choice is strongest?",
+    "options": [
+      "Name and birth year.",
+      "Short word plus 123.",
+      "A long phrase of unrelated words, unique to the account.",
+      "Reuse a game password."
+    ],
+    "answer": "C",
+    "answer_index": 2,
+    "explanation": "A long unrelated phrase unique to the account is harder to guess and avoids reuse across accounts."
+  },
+  {
+    "id": 602,
+    "class_level": "B5",
+    "subject": "Computing",
+    "topic": "Email communication",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Medium",
+    "question": "Which email to a teacher is polite and safe?",
+    "options": [
+      "Teacher, answer me now.",
+      "Good afternoon, Madam. Should our class bring our exercise books tomorrow? Thank you, Akosua.",
+      "Include the family's absence schedule.",
+      "Include the school-account password."
+    ],
+    "answer": "B",
+    "answer_index": 1,
+    "explanation": "The second email is polite, asks a clear school question, and shares no password or unnecessary private details."
+  },
+  {
+    "id": 603,
+    "class_level": "B5",
+    "subject": "Computing",
+    "topic": "Digital footprint",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Medium",
+    "question": "Which statement best describes a digital footprint?",
+    "options": [
+      "A trail of information about a person created by their online activities, such as posts and comments.",
+      "A browser used to open websites.",
+      "A secret word used to protect an account.",
+      "A harmful program that can damage a computer."
+    ],
+    "answer": "A",
+    "answer_index": 0,
+    "explanation": "A digital footprint is the wider trail of information left by online activity, including posts and comments."
+  },
+  {
+    "id": 604,
+    "class_level": "B5",
+    "subject": "Computing",
+    "topic": "Program sequencing",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Hard",
+    "question": "Which sequence displays 13 after starting at 5, doubling and adding 3?",
+    "options": [
+      "Double → set 5 → add 3 → display.",
+      "Set 5 → double → display → add 3.",
+      "Set 5 → add 3 → double → display.",
+      "Set 5 → double → add 3 → display."
+    ],
+    "answer": "D",
+    "answer_index": 3,
+    "explanation": "Set 5, double to 10, add 3 to reach 13, and display only after both calculations."
+  },
+  {
+    "id": 605,
+    "class_level": "B5",
+    "subject": "Computing",
+    "topic": "Software selection",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Hard",
+    "question": "A teacher enters pupils’ marks in a table and wants the computer to calculate each pupil’s total and sort the pupils’ records. Which software is best for this task?",
+    "options": [
+      "A word processor",
+      "A presentation program",
+      "A spreadsheet program",
+      "A graphics program"
+    ],
+    "answer": "C",
+    "answer_index": 2,
+    "explanation": "A spreadsheet supports tabular data, formulas for totals, and sorting records; the other programs do not combine those tasks."
+  },
+  {
+    "id": 606,
+    "class_level": "B6",
+    "subject": "Mathematics",
+    "topic": "Sharing quantities in a ratio",
+    "strand": "Number and Algebra",
+    "difficulty": "Easy",
+    "question": "Oranges are shared 2:3. If Ama receives 8, how many does Kojo receive?",
+    "options": [
+      "6 oranges",
+      "10 oranges",
+      "12 oranges",
+      "16 oranges"
+    ],
+    "answer": "C",
+    "answer_index": 2,
+    "explanation": "In a 2:3 ratio, Ama’s 2 parts equal 8, so one part is 4 and Kojo’s 3 parts equal 12 oranges."
+  },
+  {
+    "id": 607,
+    "class_level": "B6",
+    "subject": "Mathematics",
+    "topic": "Fractions decimals and percentages",
+    "strand": "Number and Algebra",
+    "difficulty": "Easy",
+    "question": "Which percentage equals 0.6?",
+    "options": [
+      "6%",
+      "60%",
+      "0.6%",
+      "600%"
+    ],
+    "answer": "B",
+    "answer_index": 1,
+    "explanation": "Multiply the decimal by 100: 0.6 × 100 = 60%, not 6% or 600%."
+  },
+  {
+    "id": 608,
+    "class_level": "B6",
+    "subject": "Mathematics",
+    "topic": "Ordering and adding integers",
+    "strand": "Number and Algebra",
+    "difficulty": "Easy",
+    "question": "Final temperatures are A 1°C, B 3°C, C −3°C. Which order is lowest to highest?",
+    "options": [
+      "C, A, B",
+      "A, C, B",
+      "B, A, C",
+      "C, B, A"
+    ],
+    "answer": "A",
+    "answer_index": 0,
+    "explanation": "−3°C is below 1°C and 3°C, so the order from lowest to highest is C, A, B."
+  },
+  {
+    "id": 609,
+    "class_level": "B6",
+    "subject": "Mathematics",
+    "topic": "Percentage increase or decrease",
+    "strand": "Number and Algebra",
+    "difficulty": "Medium",
+    "question": "A water tank level falls from 80 L to 68 L. What is the percentage decrease?",
+    "options": [
+      "12%",
+      "18%",
+      "20%",
+      "15%"
+    ],
+    "answer": "D",
+    "answer_index": 3,
+    "explanation": "The decrease is 80 − 68 = 12 L; 12/80 × 100% = 15%."
+  },
+  {
+    "id": 610,
+    "class_level": "B6",
+    "subject": "Mathematics",
+    "topic": "Area of parallelograms",
+    "strand": "Number and Algebra",
+    "difficulty": "Medium",
+    "question": "A parallelogram has area 72 m² and base 9 m. What is its height?",
+    "options": [
+      "6 m",
+      "7 m",
+      "8 m",
+      "9 m"
+    ],
+    "answer": "C",
+    "answer_index": 2,
+    "explanation": "Parallelogram area is base × perpendicular height, so height = 72 ÷ 9 = 8 m."
+  },
+  {
+    "id": 611,
+    "class_level": "B6",
+    "subject": "Mathematics",
+    "topic": "Volume of rectangular prisms",
+    "strand": "Number and Algebra",
+    "difficulty": "Medium",
+    "question": "A box is 8 cm by 5 cm with volume 240 cm³. What is its height?",
+    "options": [
+      "4 cm",
+      "6 cm",
+      "8 cm",
+      "12 cm"
+    ],
+    "answer": "B",
+    "answer_index": 1,
+    "explanation": "Volume is 8 × 5 × height; height = 240 ÷ 40 = 6 cm."
+  },
+  {
+    "id": 612,
+    "class_level": "B6",
+    "subject": "Mathematics",
+    "topic": "One-step equations",
+    "strand": "Number and Algebra",
+    "difficulty": "Medium",
+    "question": "Solve n + 17 = 42.",
+    "options": [
+      "25",
+      "59",
+      "35",
+      "17"
+    ],
+    "answer": "A",
+    "answer_index": 0,
+    "explanation": "Subtract 17 from 42: n = 42 − 17 = 25, and 25 + 17 checks."
+  },
+  {
+    "id": 613,
+    "class_level": "B6",
+    "subject": "Mathematics",
+    "topic": "Coordinate grids",
+    "strand": "Number and Algebra",
+    "difficulty": "Medium",
+    "question": "Point (2,3) moves 3 right and 2 up. New coordinates?",
+    "options": [
+      "(3, 5)",
+      "(5, 1)",
+      "(2, 5)",
+      "(5, 5)"
+    ],
+    "answer": "D",
+    "answer_index": 3,
+    "explanation": "Add 3 to the x-coordinate and 2 to the y-coordinate: (2 + 3, 3 + 2) = (5,5)."
+  },
+  {
+    "id": 614,
+    "class_level": "B6",
+    "subject": "Mathematics",
+    "topic": "Mean median mode and range",
+    "strand": "Number and Algebra",
+    "difficulty": "Hard",
+    "question": "In 4,7,5,7,9,4,6,9,7,4,8, what are the modes?",
+    "options": [
+      "4 only",
+      "7 only",
+      "4 and 7",
+      "4, 7 and 9"
+    ],
+    "answer": "C",
+    "answer_index": 2,
+    "explanation": "4 and 7 each occur three times, more than any other value, so both are modes."
+  },
+  {
+    "id": 615,
+    "class_level": "B6",
+    "subject": "Mathematics",
+    "topic": "Probability",
+    "strand": "Number and Algebra",
+    "difficulty": "Hard",
+    "question": "What is the probability that two fair dice sum to more than 9?",
+    "options": [
+      "1/4",
+      "1/6",
+      "1/3",
+      "5/6"
+    ],
+    "answer": "B",
+    "answer_index": 1,
+    "explanation": "There are 36 dice outcomes; sums 10, 11 and 12 have 3 + 2 + 1 = 6 outcomes, giving 6/36 = 1/6."
+  },
+  {
+    "id": 616,
+    "class_level": "B6",
+    "subject": "Science",
+    "topic": "Simple machines",
+    "strand": "Science and Environment",
+    "difficulty": "Easy",
+    "question": "Which simple machine is used by a bottle opener to lift a cap?",
+    "options": [
+      "Pulley",
+      "Inclined plane",
+      "Wheel and axle",
+      "Lever"
+    ],
+    "answer": "D",
+    "answer_index": 3,
+    "explanation": "A bottle opener is a lever: the rim is the fulcrum and the handle lifts the cap."
+  },
+  {
+    "id": 617,
+    "class_level": "B6",
+    "subject": "Science",
+    "topic": "Conductors and insulators",
+    "strand": "Science and Environment",
+    "difficulty": "Easy",
+    "question": "Which object completes a circuit gap so a bulb lights?",
+    "options": [
+      "A dry wooden stick",
+      "A plastic ruler",
+      "A short copper wire",
+      "A rubber band"
+    ],
+    "answer": "C",
+    "answer_index": 2,
+    "explanation": "Copper conducts electricity and completes the circuit gap; wood, plastic and rubber are insulators."
+  },
+  {
+    "id": 618,
+    "class_level": "B6",
+    "subject": "Science",
+    "topic": "Complete circuits",
+    "strand": "Science and Environment",
+    "difficulty": "Easy",
+    "question": "Which arrangement makes a complete path through the bulb so it can light?",
+    "options": [
+      "A wire joins the cell terminals directly, leaving the bulb out.",
+      "One cell terminal is connected to one bulb terminal, and the other bulb terminal to the other cell terminal, with no gaps.",
+      "One wire connects the cell to the bulb, but the bulb’s other terminal is left unconnected.",
+      "Both bulb terminals are connected to the same cell terminal, with no connection to the other terminal."
+    ],
+    "answer": "B",
+    "answer_index": 1,
+    "explanation": "Only the arrangement placing the bulb between the two cell terminals with no gap makes a complete path through the bulb."
+  },
+  {
+    "id": 619,
+    "class_level": "B6",
+    "subject": "Science",
+    "topic": "Friction",
+    "strand": "Science and Environment",
+    "difficulty": "Medium",
+    "question": "A toy car rolls on a rough mat and stops sooner than it does on a smooth tile. What is the main reason?",
+    "options": [
+      "The rough mat creates greater friction that opposes the car’s motion.",
+      "The rough mat creates less friction, so the car slows down faster.",
+      "Friction pushes the car forward and makes it stop.",
+      "The car stops because it turns by itself."
+    ],
+    "answer": "A",
+    "answer_index": 0,
+    "explanation": "The rough mat creates greater friction opposing the car’s motion, so it stops sooner."
+  },
+  {
+    "id": 620,
+    "class_level": "B6",
+    "subject": "Science",
+    "topic": "Human body systems",
+    "strand": "Science and Environment",
+    "difficulty": "Medium",
+    "question": "What does the small intestine mainly do?",
+    "options": [
+      "Carry food to stomach.",
+      "Pump blood.",
+      "Remove carbon dioxide.",
+      "Absorb digested nutrients into the blood."
+    ],
+    "answer": "D",
+    "answer_index": 3,
+    "explanation": "The small intestine absorbs digested nutrients through its wall into the blood."
+  },
+  {
+    "id": 621,
+    "class_level": "B6",
+    "subject": "Science",
+    "topic": "Ecosystem relationships",
+    "strand": "Science and Environment",
+    "difficulty": "Medium",
+    "question": "In a simple ecosystem, snakes eat rats and frogs. If the number of snakes decreases and other conditions stay the same, what may happen first to the rat and frog populations?",
+    "options": [
+      "Both populations may decrease.",
+      "Only the rat population may change.",
+      "Both populations may increase.",
+      "Neither population can change."
+    ],
+    "answer": "C",
+    "answer_index": 2,
+    "explanation": "With fewer snakes hunting them, rats and frogs may initially increase if other conditions stay the same."
+  },
+  {
+    "id": 622,
+    "class_level": "B6",
+    "subject": "Science",
+    "topic": "Water purification",
+    "strand": "Science and Environment",
+    "difficulty": "Medium",
+    "question": "After muddy water settles, why filter through cloth?",
+    "options": [
+      "Dissolve settled mud.",
+      "To trap remaining suspended particles.",
+      "Kill all germs.",
+      "Remove dissolved salt."
+    ],
+    "answer": "B",
+    "answer_index": 1,
+    "explanation": "Settling removes much mud, and a clean cloth traps smaller suspended particles that remain."
+  },
+  {
+    "id": 623,
+    "class_level": "B6",
+    "subject": "Science",
+    "topic": "Soil erosion prevention",
+    "strand": "Science and Environment",
+    "difficulty": "Medium",
+    "question": "What best reduces soil loss on a sloping farm?",
+    "options": [
+      "Plant dense grass strips across the slope.",
+      "Rows straight downhill.",
+      "Remove plant cover.",
+      "Burn plant remains."
+    ],
+    "answer": "A",
+    "answer_index": 0,
+    "explanation": "Dense grass strips slow runoff and roots hold soil, reducing erosion on the slope."
+  },
+  {
+    "id": 624,
+    "class_level": "B6",
+    "subject": "Science",
+    "topic": "Heat transfer",
+    "strand": "Science and Environment",
+    "difficulty": "Hard",
+    "question": "A metal spoon’s handle becomes hot when one end is placed in hot soup; heated water circulates; sunlight warms the ground. Which methods of heat transfer occur in these three cases, in order?",
+    "options": [
+      "Convection, conduction, radiation.",
+      "Radiation, convection, conduction.",
+      "Conduction, radiation, convection.",
+      "Conduction, convection, radiation."
+    ],
+    "answer": "D",
+    "answer_index": 3,
+    "explanation": "Heat moves through metal by conduction, circulates in water by convection, and sunlight transfers energy by radiation."
+  },
+  {
+    "id": 625,
+    "class_level": "B6",
+    "subject": "Science",
+    "topic": "Energy transformations",
+    "strand": "Science and Environment",
+    "difficulty": "Hard",
+    "question": "What energy sequence powers a dry-cell torch?",
+    "options": [
+      "Light → chemical → bulb light.",
+      "Electrical → chemical → sound.",
+      "Chemical → electrical → mainly light, with some heat.",
+      "Heat → sound → electrical."
+    ],
+    "answer": "C",
+    "answer_index": 2,
+    "explanation": "A dry cell changes chemical energy to electrical energy; the bulb changes it mainly to light and some heat."
+  },
+  {
+    "id": 626,
+    "class_level": "B6",
+    "subject": "Computing",
+    "topic": "Algorithms",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Easy",
+    "question": "Which algorithm correctly uses sequence and selection for a raincoat?",
+    "options": [
+      "Check rain; if yes take coat, else leave it; then walk.",
+      "Walk, then check rain.",
+      "Take no coat when raining.",
+      "Always take coat regardless."
+    ],
+    "answer": "A",
+    "answer_index": 0,
+    "explanation": "First test whether it is raining, choose the coat or no-coat branch, and then walk; that combines selection with sequence."
+  },
+  {
+    "id": 627,
+    "class_level": "B6",
+    "subject": "Computing",
+    "topic": "Flowcharts",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Easy",
+    "question": "A flowchart takes a number, adds 2, then displays the result. If the input is 6, what number is displayed?",
+    "options": [
+      "6",
+      "2",
+      "12",
+      "8"
+    ],
+    "answer": "D",
+    "answer_index": 3,
+    "explanation": "The flowchart adds 2 to 6, so the displayed result is 8."
+  },
+  {
+    "id": 628,
+    "class_level": "B6",
+    "subject": "Computing",
+    "topic": "Spreadsheet formulas",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Easy",
+    "question": "Which formula in B5 sums B2, B3 and B4?",
+    "options": [
+      "=SUM(B2:B3)",
+      "=SUM(B3:B4)",
+      "=SUM(B2:B4)",
+      "=SUM(B2:B5)"
+    ],
+    "answer": "C",
+    "answer_index": 2,
+    "explanation": "In B5, =SUM(B2:B4) includes exactly B2, B3 and B4, not B5 itself."
+  },
+  {
+    "id": 629,
+    "class_level": "B6",
+    "subject": "Computing",
+    "topic": "Email attachments",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Medium",
+    "question": "Before sending an email with homework attached, you notice that the file contains phone numbers that are not needed for the homework. What should you do?",
+    "options": [
+      "Send it because the teacher is trusted.",
+      "Check that it is the correct homework file and remove the unnecessary private information.",
+      "Forward it to the whole class.",
+      "Rename the file and send it without checking."
+    ],
+    "answer": "B",
+    "answer_index": 1,
+    "explanation": "Check the attachment and remove unrelated phone numbers before sending so unnecessary private information is not shared."
+  },
+  {
+    "id": 630,
+    "class_level": "B6",
+    "subject": "Computing",
+    "topic": "LAN and WAN",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Medium",
+    "question": "What network links school campuses in different cities?",
+    "options": [
+      "A WAN linking their LANs.",
+      "A LAN in one campus.",
+      "A printer cable.",
+      "An offline folder."
+    ],
+    "answer": "A",
+    "answer_index": 0,
+    "explanation": "A WAN links LANs across distant cities; a LAN is limited to one local area."
+  },
+  {
+    "id": 631,
+    "class_level": "B6",
+    "subject": "Computing",
+    "topic": "Suspicious links",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Medium",
+    "question": "Which address is a suspicious lookalike for akua.edu.gh?",
+    "options": [
+      "https://akua.edu.gh/library",
+      "https://akua.edu.gh/portal",
+      "https://akua.edu.gh/news",
+      "https://akua.edu.gh.loginhelp.com/library"
+    ],
+    "answer": "D",
+    "answer_index": 3,
+    "explanation": "The hostname ends in loginhelp.com, so the inserted akua.edu.gh is only a lookalike subdomain."
+  },
+  {
+    "id": 632,
+    "class_level": "B6",
+    "subject": "Computing",
+    "topic": "Hardware troubleshooting",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Medium",
+    "question": "A monitor shows “No signal” after the computer equipment has been moved. Which check should be done first?",
+    "options": [
+      "Check the speaker volume.",
+      "Check whether the printer has paper.",
+      "Check that the display cable is firmly connected at both ends.",
+      "Check the Caps Lock light."
+    ],
+    "answer": "C",
+    "answer_index": 2,
+    "explanation": "Moving equipment can loosen the display cable, so check its connection at both monitor and computer first."
+  },
+  {
+    "id": 633,
+    "class_level": "B6",
+    "subject": "Computing",
+    "topic": "File organization",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Medium",
+    "question": "Which filename best identifies a B6 science water-cycle report?",
+    "options": [
+      "Untitled.docx",
+      "B6_Science_Water_Cycle_Report.docx",
+      "B6_Science_Water_Cycle_Slides.pptx",
+      "B6_Maths_Fractions_Report.docx"
+    ],
+    "answer": "B",
+    "answer_index": 1,
+    "explanation": "The filename identifies B6, Science, Water Cycle and a document report, matching the requested file."
+  },
+  {
+    "id": 634,
+    "class_level": "B6",
+    "subject": "Computing",
+    "topic": "Presentation design",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Hard",
+    "question": "What design best suits young pupils seated far from a screen?",
+    "options": [
+      "Large high-contrast phrases, relevant pictures and ordered steps.",
+      "Tiny text on one slide.",
+      "Many decorative effects.",
+      "Out-of-order steps and unrelated pictures."
+    ],
+    "answer": "A",
+    "answer_index": 0,
+    "explanation": "Large high-contrast text is visible at a distance, while relevant pictures and ordered steps support understanding."
+  },
+  {
+    "id": 635,
+    "class_level": "B6",
+    "subject": "Computing",
+    "topic": "Digital citizenship",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Hard",
+    "question": "A classmate shares a private, embarrassing screenshot that shows someone’s phone number in a class chat. What is the safest response?",
+    "options": [
+      "Forward it to more classmates.",
+      "Crop the screenshot and repost it.",
+      "Do nothing because classmates have already seen it.",
+      "Do not forward it; ask the sender to delete it, and tell a trusted teacher if it keeps spreading."
+    ],
+    "answer": "D",
+    "answer_index": 3,
+    "explanation": "Do not forward the private screenshot; request deletion and tell a trusted teacher if it continues spreading."
+  },
+  {
+    "id": 636,
+    "class_level": "B7",
+    "subject": "Mathematics",
+    "topic": "Positive and negative integers",
+    "strand": "Number and Algebra",
+    "difficulty": "Easy",
+    "question": "What is (−4) × 3?",
+    "options": [
+      "12",
+      "−7",
+      "7",
+      "−12"
+    ],
+    "answer": "D",
+    "answer_index": 3,
+    "explanation": "A negative multiplied by a positive is negative, and 4 × 3 = 12, so the product is −12."
+  },
+  {
+    "id": 637,
+    "class_level": "B7",
+    "subject": "Mathematics",
+    "topic": "Simplifying fractions and ratios",
+    "strand": "Number and Algebra",
+    "difficulty": "Easy",
+    "question": "Simplify 6/8 to lowest terms.",
+    "options": [
+      "2/3",
+      "4/6",
+      "3/4",
+      "6/4"
+    ],
+    "answer": "C",
+    "answer_index": 2,
+    "explanation": "Divide numerator and denominator of 6/8 by 2 to obtain 3/4, with no common factor left."
+  },
+  {
+    "id": 638,
+    "class_level": "B7",
+    "subject": "Mathematics",
+    "topic": "Algebraic expressions",
+    "strand": "Number and Algebra",
+    "difficulty": "Easy",
+    "question": "If x=5, find 2x+7.",
+    "options": [
+      "12",
+      "17",
+      "19",
+      "24"
+    ],
+    "answer": "B",
+    "answer_index": 1,
+    "explanation": "Substitute x = 5: 2×5 + 7 = 10 + 7 = 17."
+  },
+  {
+    "id": 639,
+    "class_level": "B7",
+    "subject": "Mathematics",
+    "topic": "Linear equations",
+    "strand": "Number and Algebra",
+    "difficulty": "Medium",
+    "question": "Solve 4x+7=2x+19.",
+    "options": [
+      "x=6",
+      "x=4",
+      "x=13",
+      "x=3"
+    ],
+    "answer": "A",
+    "answer_index": 0,
+    "explanation": "Subtract 2x and then 7: 2x = 12, so x = 6."
+  },
+  {
+    "id": 640,
+    "class_level": "B7",
+    "subject": "Mathematics",
+    "topic": "Angles in quadrilaterals",
+    "strand": "Number and Algebra",
+    "difficulty": "Medium",
+    "question": "A quadrilateral has angles 85°,95°,110° and x. Find x.",
+    "options": [
+      "60°",
+      "80°",
+      "110°",
+      "70°"
+    ],
+    "answer": "D",
+    "answer_index": 3,
+    "explanation": "A quadrilateral totals 360°; 85 + 95 + 110 = 290°, leaving x = 70°."
+  },
+  {
+    "id": 641,
+    "class_level": "B7",
+    "subject": "Mathematics",
+    "topic": "Grid transformations",
+    "strand": "Number and Algebra",
+    "difficulty": "Medium",
+    "question": "Reflect (5,2) in the line x=3.",
+    "options": [
+      "(5,2)",
+      "(3,2)",
+      "(1,2)",
+      "(1,4)"
+    ],
+    "answer": "C",
+    "answer_index": 2,
+    "explanation": "The point is 2 units right of x = 3, so its reflection is 2 units left at (1,2)."
+  },
+  {
+    "id": 642,
+    "class_level": "B7",
+    "subject": "Mathematics",
+    "topic": "Practical percentages",
+    "strand": "Number and Algebra",
+    "difficulty": "Medium",
+    "question": "A GH₵150 schoolbag has a 20% discount. Sale price?",
+    "options": [
+      "GH₵30",
+      "GH₵120",
+      "GH₵130",
+      "GH₵180"
+    ],
+    "answer": "B",
+    "answer_index": 1,
+    "explanation": "A 20% discount is GH₵30, so GH₵150 − GH₵30 = GH₵120."
+  },
+  {
+    "id": 643,
+    "class_level": "B7",
+    "subject": "Mathematics",
+    "topic": "Grouped data",
+    "strand": "Number and Algebra",
+    "difficulty": "Medium",
+    "question": "A grouped table shows the number of books read by pupils: 10–14 books has frequency 7, and 15–19 books has frequency 3. How many pupils read at least 10 books?",
+    "options": [
+      "10 pupils",
+      "7 pupils",
+      "16 pupils",
+      "25 pupils"
+    ],
+    "answer": "A",
+    "answer_index": 0,
+    "explanation": "Both intervals are at least 10 books; add their frequencies 7 + 3 = 10 pupils."
+  },
+  {
+    "id": 644,
+    "class_level": "B7",
+    "subject": "Mathematics",
+    "topic": "Compound-shape area and perimeter",
+    "strand": "Number and Algebra",
+    "difficulty": "Hard",
+    "question": "A rectangle is 12 m long and 9 m wide. A rectangular piece measuring 4 m by 3 m is cut from one corner. What are the area and perimeter of the remaining shape?",
+    "options": [
+      "96 m² and 34 m",
+      "108 m² and 42 m",
+      "84 m² and 42 m",
+      "96 m² and 42 m"
+    ],
+    "answer": "D",
+    "answer_index": 3,
+    "explanation": "The original area is 12×9 = 108 m²; remove 4×3 = 12 m², leaving 96 m². A corner cut leaves the perimeter 42 m."
+  },
+  {
+    "id": 645,
+    "class_level": "B7",
+    "subject": "Mathematics",
+    "topic": "Coordinate geometry",
+    "strand": "Number and Algebra",
+    "difficulty": "Hard",
+    "question": "On a coordinate grid, a rectangle is 7 grid units long and 3 grid units wide. If each grid unit represents 2 m, what is the rectangle’s perimeter?",
+    "options": [
+      "32 m",
+      "36 m",
+      "40 m",
+      "44 m"
+    ],
+    "answer": "C",
+    "answer_index": 2,
+    "explanation": "The side lengths are 7×2 = 14 m and 3×2 = 6 m; perimeter is 2(14+6) = 40 m."
+  },
+  {
+    "id": 646,
+    "class_level": "B7",
+    "subject": "Science",
+    "topic": "Cell parts",
+    "strand": "Science and Environment",
+    "difficulty": "Easy",
+    "question": "Which cell part controls materials entering and leaving?",
+    "options": [
+      "Cell membrane",
+      "Nucleus",
+      "Cell wall",
+      "Chloroplast"
+    ],
+    "answer": "A",
+    "answer_index": 0,
+    "explanation": "The cell membrane regulates what enters and leaves; the nucleus, wall and chloroplast have different roles."
+  },
+  {
+    "id": 647,
+    "class_level": "B7",
+    "subject": "Science",
+    "topic": "Separating mixtures",
+    "strand": "Science and Environment",
+    "difficulty": "Easy",
+    "question": "Which method recovers salt from salt water?",
+    "options": [
+      "Filtration",
+      "Sieving",
+      "Magnetism",
+      "Evaporation"
+    ],
+    "answer": "D",
+    "answer_index": 3,
+    "explanation": "Evaporation removes water as vapour and leaves dissolved salt behind; filtration cannot remove dissolved salt."
+  },
+  {
+    "id": 648,
+    "class_level": "B7",
+    "subject": "Science",
+    "topic": "Photosynthesis",
+    "strand": "Science and Environment",
+    "difficulty": "Easy",
+    "question": "Photosynthesis uses sunlight, water and carbon dioxide. What does it make?",
+    "options": [
+      "Oxygen and carbon dioxide",
+      "Water and glucose",
+      "Glucose and oxygen",
+      "Sunlight and water"
+    ],
+    "answer": "C",
+    "answer_index": 2,
+    "explanation": "Photosynthesis uses light, water and carbon dioxide to make glucose and release oxygen."
+  },
+  {
+    "id": 649,
+    "class_level": "B7",
+    "subject": "Science",
+    "topic": "Forces and motion",
+    "strand": "Science and Environment",
+    "difficulty": "Medium",
+    "question": "A toy car is given the same push on two mats. It travels a shorter distance on the rough mat than on the smooth mat. Which force mainly makes it slow down sooner on the rough mat?",
+    "options": [
+      "Gravity pulling it downward.",
+      "Friction opposing its motion.",
+      "Magnetic force pushing it forward.",
+      "Air pressure pushing it forward."
+    ],
+    "answer": "B",
+    "answer_index": 1,
+    "explanation": "The rough mat causes more friction opposing motion, so the car loses speed and travels a shorter distance."
+  },
+  {
+    "id": 650,
+    "class_level": "B7",
+    "subject": "Science",
+    "topic": "Energy transformations",
+    "strand": "Science and Environment",
+    "difficulty": "Medium",
+    "question": "What energy transformation takes place when a wind turbine generates electricity?",
+    "options": [
+      "Kinetic energy of moving air to mechanical energy, then to electrical energy.",
+      "Chemical energy in fuel to heat energy.",
+      "Electrical energy to kinetic energy of the wind.",
+      "Light energy to sound energy."
+    ],
+    "answer": "A",
+    "answer_index": 0,
+    "explanation": "Moving air gives kinetic energy to turbine blades as mechanical rotation, and a generator converts that to electricity."
+  },
+  {
+    "id": 651,
+    "class_level": "B7",
+    "subject": "Science",
+    "topic": "Animal life cycles",
+    "strand": "Science and Environment",
+    "difficulty": "Medium",
+    "question": "What is the correct butterfly life-cycle order?",
+    "options": [
+      "Egg → pupa → caterpillar → adult.",
+      "Caterpillar → egg → pupa → adult.",
+      "Egg → caterpillar → adult → pupa.",
+      "Egg → caterpillar → pupa → adult."
+    ],
+    "answer": "D",
+    "answer_index": 3,
+    "explanation": "Butterflies develop in order from egg to caterpillar, pupa or chrysalis, then adult."
+  },
+  {
+    "id": 652,
+    "class_level": "B7",
+    "subject": "Science",
+    "topic": "Human body systems",
+    "strand": "Science and Environment",
+    "difficulty": "Medium",
+    "question": "What does the circulatory system do with nutrients absorbed in the intestine?",
+    "options": [
+      "Breaks food down.",
+      "Exchanges gases in lungs.",
+      "Carries them in blood to body cells.",
+      "Removes urea."
+    ],
+    "answer": "C",
+    "answer_index": 2,
+    "explanation": "The circulatory system carries absorbed nutrients in blood to body cells for energy, growth and repair."
+  },
+  {
+    "id": 653,
+    "class_level": "B7",
+    "subject": "Science",
+    "topic": "Soil and farming",
+    "strand": "Science and Environment",
+    "difficulty": "Medium",
+    "question": "Which farming practice best reduces soil erosion on a hillside?",
+    "options": [
+      "Plant crops in straight rows running downhill.",
+      "Plant crops in rows that follow level curves across the slope.",
+      "Leave the soil bare between crops.",
+      "Burn the vegetation before planting."
+    ],
+    "answer": "B",
+    "answer_index": 1,
+    "explanation": "Rows following level curves slow downhill runoff and reduce the amount of topsoil carried away."
+  },
+  {
+    "id": 654,
+    "class_level": "B7",
+    "subject": "Science",
+    "topic": "Habitat adaptations",
+    "strand": "Science and Environment",
+    "difficulty": "Hard",
+    "question": "Why do mangrove aerial roots project above waterlogged mud?",
+    "options": [
+      "They take oxygen from air for underground tissues.",
+      "They absorb sunlight.",
+      "They remove all salt.",
+      "They are only deep anchors."
+    ],
+    "answer": "A",
+    "answer_index": 0,
+    "explanation": "Aerial roots project above waterlogged mud so oxygen from air can reach underground tissues."
+  },
+  {
+    "id": 655,
+    "class_level": "B7",
+    "subject": "Science",
+    "topic": "Changes of state",
+    "strand": "Science and Environment",
+    "difficulty": "Hard",
+    "question": "At normal atmospheric pressure, why can a mixture of melting ice and water remain at 0°C while heat is supplied?",
+    "options": [
+      "The thermometer is faulty.",
+      "The water is boiling.",
+      "The ice changes into a different chemical substance.",
+      "The supplied energy changes ice into liquid water until all the ice melts."
+    ],
+    "answer": "D",
+    "answer_index": 3,
+    "explanation": "During melting, supplied energy changes ice to liquid rather than raising temperature, so the mixture stays at 0°C until melting ends."
+  },
+  {
+    "id": 656,
+    "class_level": "B7",
+    "subject": "Computing",
+    "topic": "Sequence and variables",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Easy",
+    "question": "What value is displayed by SET beans=4; add 3; subtract 2?",
+    "options": [
+      "3",
+      "5",
+      "7",
+      "9"
+    ],
+    "answer": "B",
+    "answer_index": 1,
+    "explanation": "Start at 4, add 3 to get 7, then subtract 2 to get the displayed final value 5."
+  },
+  {
+    "id": 657,
+    "class_level": "B7",
+    "subject": "Computing",
+    "topic": "File extensions",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Easy",
+    "question": "Which extension is a PowerPoint presentation?",
+    "options": [
+      ".pptx",
+      ".docx",
+      ".xlsx",
+      ".mp3"
+    ],
+    "answer": "A",
+    "answer_index": 0,
+    "explanation": "The .pptx extension identifies a PowerPoint presentation; .docx, .xlsx and .mp3 identify other file types."
+  },
+  {
+    "id": 658,
+    "class_level": "B7",
+    "subject": "Computing",
+    "topic": "Search engines",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Easy",
+    "question": "Which search phrase is most likely to find instructions for growing tomatoes in pots?",
+    "options": [
+      "tomatoes",
+      "plants",
+      "Ghana news today",
+      "steps for growing tomatoes in pots"
+    ],
+    "answer": "D",
+    "answer_index": 3,
+    "explanation": "The phrase specifies both the crop and the requested method, so it is more useful than broad or unrelated searches."
+  },
+  {
+    "id": 659,
+    "class_level": "B7",
+    "subject": "Computing",
+    "topic": "LAN and WAN",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Medium",
+    "question": "A network connects the local area networks (LANs) of schools in different towns over a large area. What type of network is it?",
+    "options": [
+      "A LAN within one school building.",
+      "A web browser.",
+      "A WAN connecting the schools’ LANs.",
+      "A wireless LAN within one school building."
+    ],
+    "answer": "C",
+    "answer_index": 2,
+    "explanation": "A WAN connects local networks over a large area such as different towns; a LAN is local to one site."
+  },
+  {
+    "id": 660,
+    "class_level": "B7",
+    "subject": "Computing",
+    "topic": "System and application software",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Medium",
+    "question": "Which pair lists a system software example first and an application software example second?",
+    "options": [
+      "A word processor, then an operating system.",
+      "An operating system, then a word processor.",
+      "An operating system, then a device driver.",
+      "A word processor, then a spreadsheet program."
+    ],
+    "answer": "B",
+    "answer_index": 1,
+    "explanation": "An operating system manages hardware and other programs, while a word processor is application software."
+  },
+  {
+    "id": 661,
+    "class_level": "B7",
+    "subject": "Computing",
+    "topic": "Cyberbullying response",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Medium",
+    "question": "What is safest response to a hurtful class-group message?",
+    "options": [
+      "Do not forward; tell a trusted adult and report it.",
+      "Forward it.",
+      "Insult the sender.",
+      "React with laughter."
+    ],
+    "answer": "A",
+    "answer_index": 0,
+    "explanation": "Do not forward the hurtful message; tell a trusted adult and report it so the harm can be addressed."
+  },
+  {
+    "id": 662,
+    "class_level": "B7",
+    "subject": "Computing",
+    "topic": "Document tables",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Medium",
+    "question": "In Microsoft Word, with the cursor in a Tuesday cell of a table, which command adds a new column immediately to its right for Wednesday?",
+    "options": [
+      "Insert Below.",
+      "Merge Cells.",
+      "Type below the table.",
+      "Insert Right in a Tuesday cell."
+    ],
+    "answer": "D",
+    "answer_index": 3,
+    "explanation": "Insert Right while in the Tuesday cell adds a new column immediately to its right."
+  },
+  {
+    "id": 663,
+    "class_level": "B7",
+    "subject": "Computing",
+    "topic": "Computer generations",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Medium",
+    "question": "What change marked second-generation computers?",
+    "options": [
+      "Gears replaced electronics.",
+      "Transistors replaced microprocessors.",
+      "Vacuum tubes were replaced by transistors.",
+      "Screens replaced punched cards."
+    ],
+    "answer": "C",
+    "answer_index": 2,
+    "explanation": "Second-generation computers replaced vacuum tubes with smaller, lower-power transistors."
+  },
+  {
+    "id": 664,
+    "class_level": "B7",
+    "subject": "Computing",
+    "topic": "Input-process-output",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Hard",
+    "question": "A learner types 18 and 23 into a computer, the computer adds them, and then displays 41. Which option correctly matches each action to its IPO stage?",
+    "options": [
+      "Input: add 18 and 23; process: type the numbers; output: display 41.",
+      "Input: type 18 and 23; process: add them; output: display 41.",
+      "Input: display 41; process: type the numbers; output: add them.",
+      "Input: display the answer; process: type 18 and 23; output: add them."
+    ],
+    "answer": "B",
+    "answer_index": 1,
+    "explanation": "Typing is input, adding is processing, and displaying 41 is output."
+  },
+  {
+    "id": 665,
+    "class_level": "B7",
+    "subject": "Computing",
+    "topic": "Algorithm debugging",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Hard",
+    "question": "A loop starts with number = 1, adds number to a running total, then increases number by 1. Its condition is number < 5, so it stops before adding 5. Which change makes it add all the numbers from 1 to 5?",
+    "options": [
+      "Change the condition to number <= 5.",
+      "Start the total at 1.",
+      "Increase number by 2 each time.",
+      "Output number instead of adding it to the total."
+    ],
+    "answer": "A",
+    "answer_index": 0,
+    "explanation": "Changing the condition to number <= 5 lets the loop execute when number is 5, so 1 through 5 are included."
+  },
+  {
+    "id": 666,
+    "class_level": "B8",
+    "subject": "Mathematics",
+    "topic": "Rational-number operations",
+    "strand": "Number and Algebra",
+    "difficulty": "Easy",
+    "question": "A jug has 3/4 L and loses 1/2 L. How much remains?",
+    "options": [
+      "1/4 L",
+      "1/2 L",
+      "1/3 L",
+      "1/8 L"
+    ],
+    "answer": "A",
+    "answer_index": 0,
+    "explanation": "Convert 1/2 to 2/4, then 3/4 − 2/4 = 1/4 L."
+  },
+  {
+    "id": 667,
+    "class_level": "B8",
+    "subject": "Mathematics",
+    "topic": "Linear equations",
+    "strand": "Number and Algebra",
+    "difficulty": "Easy",
+    "question": "A rectangle has a length of 6 m and a perimeter of 28 m. What is its width?",
+    "options": [
+      "5 m",
+      "6 m",
+      "10 m",
+      "8 m"
+    ],
+    "answer": "D",
+    "answer_index": 3,
+    "explanation": "Perimeter 28 gives 2(6+w)=28, so 6+w=14 and the width is 8 m."
+  },
+  {
+    "id": 668,
+    "class_level": "B8",
+    "subject": "Mathematics",
+    "topic": "Factorising expressions",
+    "strand": "Number and Algebra",
+    "difficulty": "Easy",
+    "question": "Factorise 6x+12.",
+    "options": [
+      "6(x+12)",
+      "2(3x+12)",
+      "6(x+2)",
+      "12(x+2)"
+    ],
+    "answer": "C",
+    "answer_index": 2,
+    "explanation": "Take the common factor 6: 6x+12 = 6(x+2)."
+  },
+  {
+    "id": 669,
+    "class_level": "B8",
+    "subject": "Mathematics",
+    "topic": "Pythagorean theorem",
+    "strand": "Number and Algebra",
+    "difficulty": "Medium",
+    "question": "A 17 m ladder has foot 8 m from wall. Height?",
+    "options": [
+      "9 m",
+      "15 m",
+      "13 m",
+      "25 m"
+    ],
+    "answer": "B",
+    "answer_index": 1,
+    "explanation": "The ladder is the hypotenuse; height² = 17² − 8² = 225, so height is 15 m."
+  },
+  {
+    "id": 670,
+    "class_level": "B8",
+    "subject": "Mathematics",
+    "topic": "Direct proportion",
+    "strand": "Number and Algebra",
+    "difficulty": "Medium",
+    "question": "A bus travels 48 km in 2 h. How far in 3.5 h at same speed?",
+    "options": [
+      "84 km",
+      "72 km",
+      "96 km",
+      "108 km"
+    ],
+    "answer": "A",
+    "answer_index": 0,
+    "explanation": "Speed is 48/2 = 24 km/h; in 3.5 h the distance is 24×3.5 = 84 km."
+  },
+  {
+    "id": 671,
+    "class_level": "B8",
+    "subject": "Mathematics",
+    "topic": "Coordinate transformations",
+    "strand": "Number and Algebra",
+    "difficulty": "Medium",
+    "question": "Translate (−2,3) 4 right and 5 down.",
+    "options": [
+      "(2,8)",
+      "(−6,−2)",
+      "(2,3)",
+      "(2,−2)"
+    ],
+    "answer": "D",
+    "answer_index": 3,
+    "explanation": "Right adds 4 to x and down subtracts 5 from y: (−2+4, 3−5) = (2,−2)."
+  },
+  {
+    "id": 672,
+    "class_level": "B8",
+    "subject": "Mathematics",
+    "topic": "Mean or range",
+    "strand": "Number and Algebra",
+    "difficulty": "Medium",
+    "question": "Attendance values 36,42,29,51,42,37. What is the range?",
+    "options": [
+      "12 pupils",
+      "23 pupils",
+      "22 pupils",
+      "80 pupils"
+    ],
+    "answer": "C",
+    "answer_index": 2,
+    "explanation": "Range is greatest minus least: 51 − 29 = 22 pupils."
+  },
+  {
+    "id": 673,
+    "class_level": "B8",
+    "subject": "Mathematics",
+    "topic": "Simple probability",
+    "strand": "Number and Algebra",
+    "difficulty": "Medium",
+    "question": "A fair spinner has 8 equal sections numbered 1 to 8. What is the probability that it lands on a number greater than 5?",
+    "options": [
+      "1/8",
+      "3/8",
+      "5/8",
+      "3/5"
+    ],
+    "answer": "B",
+    "answer_index": 1,
+    "explanation": "The favourable sections are 6, 7 and 8, three of eight equal outcomes, so probability is 3/8."
+  },
+  {
+    "id": 674,
+    "class_level": "B8",
+    "subject": "Mathematics",
+    "topic": "Polygon angles",
+    "strand": "Number and Algebra",
+    "difficulty": "Hard",
+    "question": "Interior angles of a polygon total 1,440°. Number of sides?",
+    "options": [
+      "10",
+      "8",
+      "9",
+      "12"
+    ],
+    "answer": "A",
+    "answer_index": 0,
+    "explanation": "For n sides, (n−2)180 = 1,440; n−2=8, hence n=10."
+  },
+  {
+    "id": 675,
+    "class_level": "B8",
+    "subject": "Mathematics",
+    "topic": "Financial calculations",
+    "strand": "Number and Algebra",
+    "difficulty": "Hard",
+    "question": "A bag sells for GH₵510 after 15% discount. Marked price?",
+    "options": [
+      "GH₵540",
+      "GH₵585",
+      "GH₵675",
+      "GH₵600"
+    ],
+    "answer": "D",
+    "answer_index": 3,
+    "explanation": "After a 15% discount, GH₵510 is 85% of the marked price; 510 ÷ 0.85 = GH₵600."
+  },
+  {
+    "id": 676,
+    "class_level": "B8",
+    "subject": "Science",
+    "topic": "Series and parallel circuits",
+    "strand": "Science and Environment",
+    "difficulty": "Easy",
+    "question": "One parallel-circuit bulb is removed and the other stays lit. Why?",
+    "options": [
+      "Both share one series path.",
+      "Each bulb has a separate path.",
+      "No current flows.",
+      "It is a short circuit."
+    ],
+    "answer": "B",
+    "answer_index": 1,
+    "explanation": "In parallel, each bulb has its own branch; removing one branch does not break the other bulb’s complete path."
+  },
+  {
+    "id": 677,
+    "class_level": "B8",
+    "subject": "Science",
+    "topic": "Speed",
+    "strand": "Science and Environment",
+    "difficulty": "Easy",
+    "question": "A runner covers 180 m in 1 minute. Average speed?",
+    "options": [
+      "3 m/s",
+      "30 m/s",
+      "60 m/s",
+      "180 m/s"
+    ],
+    "answer": "A",
+    "answer_index": 0,
+    "explanation": "Convert 1 minute to 60 seconds; average speed is 180/60 = 3 m/s."
+  },
+  {
+    "id": 678,
+    "class_level": "B8",
+    "subject": "Science",
+    "topic": "Density",
+    "strand": "Science and Environment",
+    "difficulty": "Easy",
+    "question": "A wooden block floats and equal-size metal block sinks. Why?",
+    "options": [
+      "Same density.",
+      "Water pushes only wood.",
+      "Metal is less dense.",
+      "Wood is less dense than water; metal is denser."
+    ],
+    "answer": "D",
+    "answer_index": 3,
+    "explanation": "The floating wood is less dense than water, while the sinking metal is denser than water."
+  },
+  {
+    "id": 679,
+    "class_level": "B8",
+    "subject": "Science",
+    "topic": "Liquid pressure",
+    "strand": "Science and Environment",
+    "difficulty": "Medium",
+    "question": "Water from equal holes near surface and bottom comes out more strongly where?",
+    "options": [
+      "Only upper hole.",
+      "Equally from both.",
+      "The lower hole.",
+      "Upper hole."
+    ],
+    "answer": "C",
+    "answer_index": 2,
+    "explanation": "The lower hole has a taller column of water above it, so pressure and outflow are greater at greater depth."
+  },
+  {
+    "id": 680,
+    "class_level": "B8",
+    "subject": "Science",
+    "topic": "Refraction",
+    "strand": "Science and Environment",
+    "difficulty": "Medium",
+    "question": "Why does a partly submerged straight straw appear bent?",
+    "options": [
+      "Water bends the straw.",
+      "Light changes direction from water into air.",
+      "Reflection makes a second straw.",
+      "Water absorbs the light."
+    ],
+    "answer": "B",
+    "answer_index": 1,
+    "explanation": "Light changes direction at the water–air boundary, making the straight submerged part appear shifted."
+  },
+  {
+    "id": 681,
+    "class_level": "B8",
+    "subject": "Science",
+    "topic": "Gas exchange",
+    "strand": "Science and Environment",
+    "difficulty": "Medium",
+    "question": "In the lungs, during gas exchange at the air sacs (alveoli), which way do oxygen and carbon dioxide move?",
+    "options": [
+      "Oxygen moves from the alveoli into the blood; carbon dioxide moves from the blood into the alveoli.",
+      "Oxygen moves from the blood into the alveoli; carbon dioxide moves from the alveoli into the blood.",
+      "Both oxygen and carbon dioxide move from the alveoli into the blood.",
+      "Both oxygen and carbon dioxide move from the blood into the alveoli."
+    ],
+    "answer": "A",
+    "answer_index": 0,
+    "explanation": "Oxygen diffuses from alveoli into blood, while carbon dioxide diffuses from blood into alveoli."
+  },
+  {
+    "id": 682,
+    "class_level": "B8",
+    "subject": "Science",
+    "topic": "Soil fertility",
+    "strand": "Science and Environment",
+    "difficulty": "Medium",
+    "question": "How do crop residues help soil fertility?",
+    "options": [
+      "They increase erosion.",
+      "Stop all weeds forever.",
+      "Turn clay into sand.",
+      "They shield soil and slow runoff, reducing topsoil loss."
+    ],
+    "answer": "D",
+    "answer_index": 3,
+    "explanation": "Residues shield soil, slow runoff and can add organic matter as they decay, helping retain fertile topsoil."
+  },
+  {
+    "id": 683,
+    "class_level": "B8",
+    "subject": "Science",
+    "topic": "Nervous-system responses",
+    "strand": "Science and Environment",
+    "difficulty": "Medium",
+    "question": "Why does a pupil quickly pull a hand away after touching a hot pot?",
+    "options": [
+      "The heart detects the heat and moves the hand.",
+      "The brain must first make a conscious decision before any response occurs.",
+      "Skin receptors send a signal to the spinal cord, which quickly sends a signal to the arm muscles.",
+      "The skin makes the muscles contract without nerves."
+    ],
+    "answer": "C",
+    "answer_index": 2,
+    "explanation": "Heat receptors send signals to the spinal cord, which quickly signals arm muscles in a withdrawal reflex."
+  },
+  {
+    "id": 684,
+    "class_level": "B8",
+    "subject": "Science",
+    "topic": "Climate effects",
+    "strand": "Science and Environment",
+    "difficulty": "Hard",
+    "question": "Sparse grass and heavier storms on slopes most likely cause what?",
+    "options": [
+      "Almost no soil moves.",
+      "Runoff carries exposed topsoil into streams.",
+      "Storm restores grass first.",
+      "Nutrients move uphill."
+    ],
+    "answer": "B",
+    "answer_index": 1,
+    "explanation": "Sparse cover and heavy rain increase runoff, carrying exposed topsoil into streams."
+  },
+  {
+    "id": 685,
+    "class_level": "B8",
+    "subject": "Science",
+    "topic": "Microorganisms and prevention",
+    "strand": "Science and Environment",
+    "difficulty": "Hard",
+    "question": "Which practice best prevents microorganisms on raw chicken from being transferred to ready-to-eat fruit during food preparation?",
+    "options": [
+      "Use a separate clean board and knife for the fruit.",
+      "Wipe the knife and reuse the same board.",
+      "Rinse the fruit only after it has touched the raw chicken.",
+      "Cover the fruit after it has touched the raw chicken."
+    ],
+    "answer": "A",
+    "answer_index": 0,
+    "explanation": "A separate clean board and knife prevent direct cross-contamination from raw chicken to ready-to-eat fruit."
+  },
+  {
+    "id": 686,
+    "class_level": "B8",
+    "subject": "Computing",
+    "topic": "Database fields and records",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Easy",
+    "question": "What does a field called Class represent in a learner database?",
+    "options": [
+      "A learner row.",
+      "The whole table.",
+      "A column storing one type of detail.",
+      "One value such as B8."
+    ],
+    "answer": "C",
+    "answer_index": 2,
+    "explanation": "A field is a column representing one type of detail; each learner’s row contains a value such as B8 in that field."
+  },
+  {
+    "id": 687,
+    "class_level": "B8",
+    "subject": "Computing",
+    "topic": "HTML structure",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Easy",
+    "question": "Where does visible paragraph text go in HTML?",
+    "options": [
+      "Inside <head>.",
+      "Inside the <body> section.",
+      "After </html>.",
+      "Inside <title>."
+    ],
+    "answer": "B",
+    "answer_index": 1,
+    "explanation": "Visible paragraph content belongs inside the HTML body; the head and title store page metadata."
+  },
+  {
+    "id": 688,
+    "class_level": "B8",
+    "subject": "Computing",
+    "topic": "Phishing",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Easy",
+    "question": "You receive an unexpected message with a link asking you to enter your password. What is the safest action?",
+    "options": [
+      "Do not open the link; tell your teacher and check the message through a trusted contact method.",
+      "Open the link if the message shows a familiar logo.",
+      "Forward the link to classmates so they can check it.",
+      "Reply to the message with your password."
+    ],
+    "answer": "A",
+    "answer_index": 0,
+    "explanation": "An unexpected password link may be phishing, so do not open it and verify through a trusted contact method."
+  },
+  {
+    "id": 689,
+    "class_level": "B8",
+    "subject": "Computing",
+    "topic": "Algorithm debugging",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Medium",
+    "question": "An algorithm should count every score that is 50 or higher. It uses the test `mark > 50`, so a score of exactly 50 is not counted. Which change fixes this?",
+    "options": [
+      "Start count at 1.",
+      "Subtract from count.",
+      "Output mark instead.",
+      "Change the test to `mark >= 50`."
+    ],
+    "answer": "D",
+    "answer_index": 3,
+    "explanation": "The >= operator includes exactly 50 as well as higher scores, unlike > 50."
+  },
+  {
+    "id": 690,
+    "class_level": "B8",
+    "subject": "Computing",
+    "topic": "Spreadsheet formulas",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Medium",
+    "question": "In a spreadsheet, cell C4 contains the formula =A4*B4. If you copy it one row down into cell C5, what formula appears in C5?",
+    "options": [
+      "=A4*B4",
+      "=A5+B5",
+      "=A5*B5",
+      "=A4*B5"
+    ],
+    "answer": "C",
+    "answer_index": 2,
+    "explanation": "Copying one row down shifts relative references A4 and B4 to A5 and B5, preserving multiplication."
+  },
+  {
+    "id": 691,
+    "class_level": "B8",
+    "subject": "Computing",
+    "topic": "HTTPS",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Medium",
+    "question": "When you see HTTPS in a website address, what does it tell you about your connection?",
+    "options": [
+      "The telecommunications company has approved the website.",
+      "Your connection to the website is encrypted; this does not prove the website is trustworthy.",
+      "Files downloaded from the website are free of viruses.",
+      "The website does not collect any information."
+    ],
+    "answer": "B",
+    "answer_index": 1,
+    "explanation": "HTTPS encrypts data in transit but does not prove the site is trustworthy or its downloads are safe."
+  },
+  {
+    "id": 692,
+    "class_level": "B8",
+    "subject": "Computing",
+    "topic": "Network components",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Medium",
+    "question": "Which device connects several wired computers in a local area network and forwards each data frame to the computer identified by its address?",
+    "options": [
+      "A network switch",
+      "A router",
+      "A modem",
+      "A wireless access point"
+    ],
+    "answer": "A",
+    "answer_index": 0,
+    "explanation": "A switch forwards frames between wired devices on a LAN using their destination addresses."
+  },
+  {
+    "id": 693,
+    "class_level": "B8",
+    "subject": "Computing",
+    "topic": "Backups",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Medium",
+    "question": "Why keep a second copy of a project?",
+    "options": [
+      "Original cannot change.",
+      "Privacy is guaranteed.",
+      "Laptop becomes faster.",
+      "It can recover work if the original is lost or damaged."
+    ],
+    "answer": "D",
+    "answer_index": 3,
+    "explanation": "A backup is an extra copy that lets you restore work if the original is lost, deleted or damaged."
+  },
+  {
+    "id": 694,
+    "class_level": "B8",
+    "subject": "Computing",
+    "topic": "Copyright licences",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Hard",
+    "question": "What must you do when using a photo licensed under CC BY after cropping it?",
+    "options": [
+      "Use it without giving credit.",
+      "Claim that you created the original photo.",
+      "Credit the creator, link to the licence, and say that you cropped it.",
+      "Avoid using it because CC BY never allows edits."
+    ],
+    "answer": "C",
+    "answer_index": 2,
+    "explanation": "CC BY permits the crop if the creator is credited, the licence is linked, and the modification is noted."
+  },
+  {
+    "id": 695,
+    "class_level": "B8",
+    "subject": "Computing",
+    "topic": "Problem decomposition",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Hard",
+    "question": "Which plan best decomposes a fundraiser report?",
+    "options": [
+      "Guess after printing.",
+      "Collect inputs; calculate each sale and total; compare quantities; display results.",
+      "Add prices to quantities.",
+      "Guess from prices."
+    ],
+    "answer": "B",
+    "answer_index": 1,
+    "explanation": "The plan decomposes the report into inputs, calculations, comparison and output in a sensible order."
+  },
+  {
+    "id": 696,
+    "class_level": "B9",
+    "subject": "Mathematics",
+    "topic": "Simultaneous equations",
+    "strand": "Number and Algebra",
+    "difficulty": "Easy",
+    "question": "Solve 2x+y=11 and x+y=7.",
+    "options": [
+      "x=3, y=4",
+      "x=4, y=3",
+      "x=5, y=1",
+      "x=2, y=5"
+    ],
+    "answer": "B",
+    "answer_index": 1,
+    "explanation": "Subtract the equations: (2x+y)−(x+y)=11−7, so x=4; then y=3."
+  },
+  {
+    "id": 697,
+    "class_level": "B9",
+    "subject": "Mathematics",
+    "topic": "Factorising and expanding",
+    "strand": "Number and Algebra",
+    "difficulty": "Easy",
+    "question": "Factorise fully 6x²+9x.",
+    "options": [
+      "3x(2x+3)",
+      "3(2x²+3x)",
+      "x(6x+9)",
+      "3x(2x+9)"
+    ],
+    "answer": "A",
+    "answer_index": 0,
+    "explanation": "The common factor is 3x, giving 6x²+9x = 3x(2x+3)."
+  },
+  {
+    "id": 698,
+    "class_level": "B9",
+    "subject": "Mathematics",
+    "topic": "Circle radius and diameter",
+    "strand": "Number and Algebra",
+    "difficulty": "Easy",
+    "question": "A circular lid is 18 cm across through its centre. Radius?",
+    "options": [
+      "36 cm",
+      "18 cm",
+      "6 cm",
+      "9 cm"
+    ],
+    "answer": "D",
+    "answer_index": 3,
+    "explanation": "The 18 cm distance across the centre is the diameter, so the radius is 18÷2 = 9 cm."
+  },
+  {
+    "id": 699,
+    "class_level": "B9",
+    "subject": "Mathematics",
+    "topic": "Bearings",
+    "strand": "Number and Algebra",
+    "difficulty": "Medium",
+    "question": "A bearing of 325° turns clockwise through 120°. What is the new bearing?",
+    "options": [
+      "205°",
+      "035°",
+      "085°",
+      "120°"
+    ],
+    "answer": "C",
+    "answer_index": 2,
+    "explanation": "Add the clockwise turn: 325°+120°=445°; subtract 360° to write the bearing as 085°."
+  },
+  {
+    "id": 700,
+    "class_level": "B9",
+    "subject": "Mathematics",
+    "topic": "Pythagorean theorem in practice",
+    "strand": "Number and Algebra",
+    "difficulty": "Medium",
+    "question": "A garden is triangular, with side lengths 6 m, 8 m and 10 m. What is the angle opposite the 10 m side?",
+    "options": [
+      "Not a right angle.",
+      "A right angle.",
+      "A right angle because 6 + 8 = 10.",
+      "Not right because the two shorter sides have different lengths."
+    ],
+    "answer": "B",
+    "answer_index": 1,
+    "explanation": "6²+8²=10², so the triangle is right-angled and the angle opposite 10 m is 90°."
+  },
+  {
+    "id": 701,
+    "class_level": "B9",
+    "subject": "Mathematics",
+    "topic": "Profit loss and discount",
+    "strand": "Number and Algebra",
+    "difficulty": "Medium",
+    "question": "A school bag sells for GH₵240 after 20% discount. Original price?",
+    "options": [
+      "GH₵300",
+      "GH₵288",
+      "GH₵280",
+      "GH₵320"
+    ],
+    "answer": "A",
+    "answer_index": 0,
+    "explanation": "A 20% discount leaves 80% of the original; GH₵240 ÷ 0.8 = GH₵300."
+  },
+  {
+    "id": 702,
+    "class_level": "B9",
+    "subject": "Mathematics",
+    "topic": "Data statistics",
+    "strand": "Number and Algebra",
+    "difficulty": "Medium",
+    "question": "Masses are 15,18,23,27 kg. Range?",
+    "options": [
+      "8 kg",
+      "10 kg",
+      "42 kg",
+      "12 kg"
+    ],
+    "answer": "D",
+    "answer_index": 3,
+    "explanation": "Range is maximum minus minimum: 27−15 = 12 kg."
+  },
+  {
+    "id": 703,
+    "class_level": "B9",
+    "subject": "Mathematics",
+    "topic": "Sample-space probability",
+    "strand": "Number and Algebra",
+    "difficulty": "Medium",
+    "question": "A fair coin is tossed and a fair spinner with three equal sections numbered 1, 2 and 3 is spun. What is the probability of getting tails or having the spinner land on 3?",
+    "options": [
+      "1/3",
+      "1/2",
+      "2/3",
+      "5/6"
+    ],
+    "answer": "C",
+    "answer_index": 2,
+    "explanation": "There are six equal outcomes; tails gives three and spinner 3 adds H3, so 4/6 = 2/3."
+  },
+  {
+    "id": 704,
+    "class_level": "B9",
+    "subject": "Mathematics",
+    "topic": "Ratio and direct proportion",
+    "strand": "Number and Algebra",
+    "difficulty": "Hard",
+    "question": "A 21 L drink mixture serves 48 people. To serve 72 people, the mixture is increased in the same proportion. If water makes up 5/7 of the mixture, how many litres of water are needed?",
+    "options": [
+      "18 L",
+      "22.5 L",
+      "24 L",
+      "31.5 L"
+    ],
+    "answer": "B",
+    "answer_index": 1,
+    "explanation": "Scale 21 L by 72/48 to get 31.5 L; 5/7 of 31.5 L is 22.5 L."
+  },
+  {
+    "id": 705,
+    "class_level": "B9",
+    "subject": "Mathematics",
+    "topic": "Formula rearrangement",
+    "strand": "Number and Algebra",
+    "difficulty": "Hard",
+    "question": "For a trapezium, A = ½(a + b)h. If its area A is 84 cm² and its parallel sides a and b are 10 cm and 18 cm, respectively, find its height h.",
+    "options": [
+      "6 cm",
+      "3 cm",
+      "12 cm",
+      "28 cm"
+    ],
+    "answer": "A",
+    "answer_index": 0,
+    "explanation": "Rearrange h=2A/(a+b); h=168/(10+18)=168/28=6 cm."
+  },
+  {
+    "id": 706,
+    "class_level": "B9",
+    "subject": "Science",
+    "topic": "Inheritance",
+    "strand": "Science and Environment",
+    "difficulty": "Easy",
+    "question": "A young goat resembles parents in coat pattern because of what?",
+    "options": [
+      "It learned the pattern.",
+      "Grass caused it.",
+      "It inherited features from its parents.",
+      "Soil changed it."
+    ],
+    "answer": "C",
+    "answer_index": 2,
+    "explanation": "A coat pattern is inherited from parents; it is not learned or caused by grass or soil."
+  },
+  {
+    "id": 707,
+    "class_level": "B9",
+    "subject": "Science",
+    "topic": "Ecosystem balance",
+    "strand": "Science and Environment",
+    "difficulty": "Easy",
+    "question": "In a grassland food chain, snakes eat rats and rats eat seeds. If many snakes are removed, what is the most likely first effect?",
+    "options": [
+      "Rat numbers fall.",
+      "More rats may survive and eat more seeds.",
+      "More snakes are born.",
+      "Seed supply increases."
+    ],
+    "answer": "B",
+    "answer_index": 1,
+    "explanation": "With fewer snakes predating rats, more rats may survive and eat more seeds, assuming other conditions stay similar."
+  },
+  {
+    "id": 708,
+    "class_level": "B9",
+    "subject": "Science",
+    "topic": "Plant transport",
+    "strand": "Science and Environment",
+    "difficulty": "Easy",
+    "question": "Which tissue carries water from roots up to leaves?",
+    "options": [
+      "Xylem vessels",
+      "Phloem tubes",
+      "Stomata",
+      "Root hairs"
+    ],
+    "answer": "A",
+    "answer_index": 0,
+    "explanation": "Xylem vessels transport water upward from roots to leaves; phloem transports sugars."
+  },
+  {
+    "id": 709,
+    "class_level": "B9",
+    "subject": "Science",
+    "topic": "Respiration",
+    "strand": "Science and Environment",
+    "difficulty": "Medium",
+    "question": "At the alveoli in the lungs, in which directions do oxygen and carbon dioxide move during gas exchange?",
+    "options": [
+      "Oxygen moves from the blood into the alveoli, and carbon dioxide moves into the blood.",
+      "Both gases move from the alveoli into the blood.",
+      "Neither gas crosses between the alveoli and the blood.",
+      "Oxygen moves from the alveoli into the blood, and carbon dioxide moves from the blood into the alveoli."
+    ],
+    "answer": "D",
+    "answer_index": 3,
+    "explanation": "At alveoli, oxygen moves into blood and carbon dioxide moves from blood into alveolar air."
+  },
+  {
+    "id": 710,
+    "class_level": "B9",
+    "subject": "Science",
+    "topic": "Energy efficiency",
+    "strand": "Science and Environment",
+    "difficulty": "Medium",
+    "question": "Lamp A receives 100 J of electrical energy and gives 25 J as useful light. Lamp B receives the same 100 J and gives 60 J as useful light. Which lamp is more efficient at producing light?",
+    "options": [
+      "Lamp A, because more energy is wasted as heat.",
+      "Both, because they receive the same energy input.",
+      "Lamp B, because a greater share of its input becomes useful light.",
+      "Both, because they produce only sound."
+    ],
+    "answer": "C",
+    "answer_index": 2,
+    "explanation": "Lamp A is 25/100=25% efficient for light; Lamp B is 60/100=60%, so B is more efficient."
+  },
+  {
+    "id": 711,
+    "class_level": "B9",
+    "subject": "Science",
+    "topic": "Liquid pressure",
+    "strand": "Science and Environment",
+    "difficulty": "Medium",
+    "question": "Why is lower wall of water tank under greater pressure?",
+    "options": [
+      "Tank weight only.",
+      "More water above it creates greater liquid pressure.",
+      "Water is denser below.",
+      "Air pressure acts only below."
+    ],
+    "answer": "B",
+    "answer_index": 1,
+    "explanation": "The lower wall has a taller water column above it, and the weight of that water creates greater pressure."
+  },
+  {
+    "id": 712,
+    "class_level": "B9",
+    "subject": "Science",
+    "topic": "Climate mitigation",
+    "strand": "Science and Environment",
+    "difficulty": "Medium",
+    "question": "What best mitigates forest-clearing climate effects?",
+    "options": [
+      "Protect remaining forest and restore cleared areas.",
+      "Clear and burn more.",
+      "Cut and abandon.",
+      "Only clean a stream."
+    ],
+    "answer": "A",
+    "answer_index": 0,
+    "explanation": "Protecting forests and restoring cleared land keeps carbon stored and allows more carbon dioxide uptake."
+  },
+  {
+    "id": 713,
+    "class_level": "B9",
+    "subject": "Science",
+    "topic": "Sustainable agriculture",
+    "strand": "Science and Environment",
+    "difficulty": "Medium",
+    "question": "Which practice protects soil and adds organic matter after maize harvest?",
+    "options": [
+      "Burn residues.",
+      "Remove all remains.",
+      "Plough up and down slope.",
+      "Spread chopped residues as mulch."
+    ],
+    "answer": "D",
+    "answer_index": 3,
+    "explanation": "Mulch shields soil from raindrops, slows runoff and adds organic matter as it decomposes."
+  },
+  {
+    "id": 714,
+    "class_level": "B9",
+    "subject": "Science",
+    "topic": "Circuit protection",
+    "strand": "Science and Environment",
+    "difficulty": "Hard",
+    "question": "A circuit breaker trips when too many appliances are being used on a circuit. What is the safest response?",
+    "options": [
+      "Fit a breaker with a higher current rating.",
+      "Hold the breaker switch on so it cannot trip.",
+      "Reduce the load and ask a qualified electrician to check the circuit; do not fit a higher-rated breaker.",
+      "Keep resetting the breaker while the appliances are still connected."
+    ],
+    "answer": "C",
+    "answer_index": 2,
+    "explanation": "Reduce the appliance load and obtain a qualified electrician; bypassing or upsizing the breaker can be dangerous."
+  },
+  {
+    "id": 715,
+    "class_level": "B9",
+    "subject": "Science",
+    "topic": "Waste management",
+    "strand": "Science and Environment",
+    "difficulty": "Hard",
+    "question": "During heavy rain, rubbish blocks a stormwater culvert. What is the most likely effect on the area nearby?",
+    "options": [
+      "Stormwater flows through the culvert faster.",
+      "Water backs up and may flood nearby land.",
+      "The rubbish absorbs all the stormwater.",
+      "The stormwater becomes clean as it passes the rubbish."
+    ],
+    "answer": "B",
+    "answer_index": 1,
+    "explanation": "A blocked culvert restricts drainage, so stormwater backs up and may flood nearby land."
+  },
+  {
+    "id": 716,
+    "class_level": "B9",
+    "subject": "Computing",
+    "topic": "Loops and conditionals",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Easy",
+    "question": "What does IF/ELSE do when checking scores ≥50?",
+    "options": [
+      "Repeats 50 times.",
+      "Stores the score.",
+      "Adds 50.",
+      "Chooses the message based on the condition."
+    ],
+    "answer": "D",
+    "answer_index": 3,
+    "explanation": "IF/ELSE tests a condition and selects the true or false message branch; it does not repeat or add 50."
+  },
+  {
+    "id": 717,
+    "class_level": "B9",
+    "subject": "Computing",
+    "topic": "HTML links",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Easy",
+    "question": "Which HTML code is a working, descriptive timetable link?",
+    "options": [
+      "<p href=\"timetable.html\">View timetable</p>",
+      "<a>View timetable</a>",
+      "<a href=\"timetable.html\">View the class timetable</a>",
+      "<a href=\"timetable.html\">Click here</a>"
+    ],
+    "answer": "C",
+    "answer_index": 2,
+    "explanation": "The anchor element with href supplies the destination, and descriptive text tells the reader it opens the class timetable."
+  },
+  {
+    "id": 718,
+    "class_level": "B9",
+    "subject": "Computing",
+    "topic": "Two-step authentication",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Easy",
+    "question": "Why can a one-time code make signing in more secure when used with a password?",
+    "options": [
+      "It replaces all passwords.",
+      "It adds another check, so a password alone may not be enough.",
+      "It exposes account details.",
+      "It prevents password changes."
+    ],
+    "answer": "B",
+    "answer_index": 1,
+    "explanation": "A one-time code is a second check, so a stolen password alone may not be enough to sign in."
+  },
+  {
+    "id": 719,
+    "class_level": "B9",
+    "subject": "Computing",
+    "topic": "Database sorting and filtering",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Medium",
+    "question": "How should a database show available books alphabetically?",
+    "options": [
+      "Filter Available, then sort Title A to Z.",
+      "Sort only.",
+      "Filter then sort Z to A.",
+      "Filter Borrowed then A to Z."
+    ],
+    "answer": "A",
+    "answer_index": 0,
+    "explanation": "Filter records whose status is Available, then sort the Title field A to Z."
+  },
+  {
+    "id": 720,
+    "class_level": "B9",
+    "subject": "Computing",
+    "topic": "Robot sensors",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Medium",
+    "question": "A robot is programmed to stop when it detects an obstacle 20 cm ahead. Which sequence correctly describes how it does this?",
+    "options": [
+      "The wheels detect the obstacle and tell the sensor to stop the robot.",
+      "The controller detects the obstacle without using a sensor.",
+      "The motors measure the distance and decide when to stop.",
+      "The distance sensor sends a reading to the controller, which checks it against the 20 cm limit and signals the motors to stop."
+    ],
+    "answer": "D",
+    "answer_index": 3,
+    "explanation": "The distance sensor reports the reading, the controller compares it with 20 cm, and the motors are told to stop."
+  },
+  {
+    "id": 721,
+    "class_level": "B9",
+    "subject": "Computing",
+    "topic": "Digital privacy",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Medium",
+    "question": "Before posting classmates’ group photo publicly, what should Kojo do?",
+    "options": [
+      "Post immediately.",
+      "Tag everyone with school.",
+      "Ask consent and check for personal details.",
+      "Send to another public group."
+    ],
+    "answer": "C",
+    "answer_index": 2,
+    "explanation": "Ask classmates’ permission and check the image/caption for private details before public posting."
+  },
+  {
+    "id": 722,
+    "class_level": "B9",
+    "subject": "Computing",
+    "topic": "Electronic waste",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Medium",
+    "question": "What is the safest way to dispose of a removable rechargeable battery?",
+    "options": [
+      "Household rubbish.",
+      "Keep it separate and take it to a permitted e-waste or battery collection centre.",
+      "Mixed recycling.",
+      "Burn it."
+    ],
+    "answer": "B",
+    "answer_index": 1,
+    "explanation": "Keep the battery separate and use an approved collection point because damaged or mismanaged batteries can pollute or cause fires."
+  },
+  {
+    "id": 723,
+    "class_level": "B9",
+    "subject": "Computing",
+    "topic": "AI limitations",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Medium",
+    "question": "How should Kojo use an AI-generated fact he doubts?",
+    "options": [
+      "Check it against a reliable source or ask a teacher.",
+      "Trust it without checking.",
+      "Accept it because it is written confidently.",
+      "Ask the same AI tool again and accept its reply."
+    ],
+    "answer": "A",
+    "answer_index": 0,
+    "explanation": "AI can be wrong even when confident, so check the claim against a reliable source or ask a teacher."
+  },
+  {
+    "id": 724,
+    "class_level": "B9",
+    "subject": "Computing",
+    "topic": "Client-server networks",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Hard",
+    "question": "A school intranet page is hosted on one server. That server is switched off, but the router and other network devices remain on. What is most likely to happen?",
+    "options": [
+      "The router serves the page automatically.",
+      "All communication on the network stops.",
+      "Every PC becomes a server.",
+      "The hosted page is unavailable, though services on other working devices may still be available."
+    ],
+    "answer": "D",
+    "answer_index": 3,
+    "explanation": "Only the page hosted on the switched-off server is unavailable; routing and services on other working devices may continue."
+  },
+  {
+    "id": 725,
+    "class_level": "B9",
+    "subject": "Computing",
+    "topic": "Program testing and debugging",
+    "strand": "Computing and Digital Citizenship",
+    "difficulty": "Hard",
+    "question": "A program should find the lowest of three soil readings. Which test would reveal a bug that ignores the third reading?",
+    "options": [
+      "7, 12, 14",
+      "12, 8, 14",
+      "12, 14, 7",
+      "12, 14, 16"
+    ],
+    "answer": "C",
+    "answer_index": 2,
+    "explanation": "The third value 7 is the lowest in 12, 14, 7; ignoring the third reading would incorrectly choose 12."
   }
 ]
