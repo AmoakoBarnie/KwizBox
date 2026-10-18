@@ -1,10 +1,12 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useAuth } from '../auth.jsx'
 import { api } from '../api.js'
 import HeroStage from '../components/HeroStage.jsx'
 import Mascot from '../components/Mascot.jsx'
+import { getOfflinePack } from '../offlinePractice.js'
+import '../offlinePractice.css'
 
 const CLASSES = ['B4', 'B5', 'B6', 'B7', 'B8', 'B9']
 
@@ -22,8 +24,17 @@ export default function Landing() {
   const [form, setForm] = useState({ nickname: '', password: '', class_level: 'B4', school_code: '', security_question: api.securityQuestions[0], security_answer: '' })
   const [err, setErr] = useState('')
   const [busy, setBusy] = useState(false)
+  const [offlinePack, setOfflinePack] = useState(null)
   const [resetStep, setResetStep] = useState(0) // 0: hidden, 1: ask answer, 2: new password
   const [reset, setReset] = useState({ nickname: '', question: '', answer: '', new_password: '' })
+
+  useEffect(() => {
+    let active = true
+    getOfflinePack()
+      .then((saved) => { if (active) setOfflinePack(saved) })
+      .catch(() => {})
+    return () => { active = false }
+  }, [])
 
   function set(k, v) { setForm((f) => ({ ...f, [k]: v })) }
 
@@ -94,6 +105,23 @@ export default function Landing() {
           <div className="feature"><span className="fi">🏆</span><b>Progress</b></div>
         </motion.div>
       </motion.div>
+
+      {offlinePack?.questions?.length > 0 && (
+        <section className="offline-practice-card offline-landing-entry" aria-label="Saved offline practice">
+          <div className="offline-practice-copy">
+            <span className="offline-practice-icon" aria-hidden="true">⇩</span>
+            <div>
+              <h3>Your saved practice pack is ready</h3>
+              <p>Class {offlinePack.config?.class_level} · {offlinePack.config?.subject} · {offlinePack.questions.length} questions. You can start without signing in or connecting.</p>
+            </div>
+          </div>
+          <div className="offline-practice-actions">
+            <button className="btn primary" onClick={() => nav('/quiz?offline=true')}>
+              Practice saved pack →
+            </button>
+          </div>
+        </section>
+      )}
 
       {user ? (
         <motion.div className="card center" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>

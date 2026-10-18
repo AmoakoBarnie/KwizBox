@@ -135,9 +135,9 @@ function useTopicDiagnostics(feedback) {
   }, [feedback])
 }
 
-function renderSummary({ result, cfg, nav, user, isGuest, fromStorage = false }) {
+function renderSummary({ result, cfg, nav, user, isGuest, fromStorage = false, offline = false }) {
   // Evaluate & award badges
-  if (user && !isGuest) {
+  if (user && !isGuest && !offline) {
     const existingBadges = JSON.parse(localStorage.getItem('stem_badges') || '[]')
     const { newBadges, newlyAwarded } = evaluateBadges(result, cfg, existingBadges)
     if (newBadges.length > existingBadges.length) {
@@ -189,6 +189,12 @@ function renderSummary({ result, cfg, nav, user, isGuest, fromStorage = false })
         </motion.h2>
       </div>
 
+      {offline && (
+        <p className="offline-practice-banner summary-offline-banner" role="status">
+          Offline practice result · saved on this device only; no account progress or leaderboard points were recorded.
+        </p>
+      )}
+
       {/* MAIN GRID: mascot + stats on left, review on right (stacked on mobile) */}
       <div className="summary-grid">
         {/* LEFT COLUMN */}
@@ -222,7 +228,7 @@ function renderSummary({ result, cfg, nav, user, isGuest, fromStorage = false })
                 animate={{ scale: 1, rotate: 0 }}
                 transition={{ delay: 0.35, type: 'spring', stiffness: 300, damping: 14 }}
               >
-                ☀️ Daily Challenge
+                {offline ? '☀️ Saved daily pack' : '☀️ Daily Challenge'}
               </motion.span>
             )}
           </motion.p>
@@ -301,36 +307,40 @@ function renderSummary({ result, cfg, nav, user, isGuest, fromStorage = false })
             </motion.div>
           </div>
 
-          {/* PERSISTENT PLAY AGAIN + LEADERBOARD BUTTONS — visible to everyone */}
+          {/* Persistent actions — online results can also open the leaderboard. */}
           <div className="summary-actions">
             <motion.button
               className="action-btn primary"
-              onClick={() => nav('/play')}
+              onClick={() => nav(offline ? '/quiz?offline=true' : '/play')}
               whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.95 }}
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.45, type: 'spring', stiffness: 250, damping: 14 }}
             >
               <span className="action-icon">🔁</span>
-              Play Again
+              {offline ? 'Practice Again' : 'Play Again'}
             </motion.button>
 
-            <motion.button
-              className="action-btn"
-              onClick={() => nav('/leaderboard')}
-              whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.95 }}
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.55, type: 'spring', stiffness: 250, damping: 14 }}
-            >
-              <span className="action-icon">🏅</span>
-              Leaderboard
-            </motion.button>
+            {!offline && (
+              <motion.button
+                className="action-btn"
+                onClick={() => nav('/leaderboard')}
+                whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.95 }}
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.55, type: 'spring', stiffness: 250, damping: 14 }}
+              >
+                <span className="action-icon">🏅</span>
+                Leaderboard
+              </motion.button>
+            )}
 
             <motion.button
               className="action-btn share-btn"
               onClick={async () => {
-                const text = `I just scored ${score} pts and got ${pct}% on Ghana STEM Trivia! 🎓`
+                const text = offline
+                  ? `I practised offline and got ${pct}% on Ghana STEM Trivia! 🎓`
+                  : `I just scored ${score} pts and got ${pct}% on Ghana STEM Trivia! 🎓`
                 if (navigator.share) {
                   try { await navigator.share({ title: 'Ghana STEM Trivia', text }) } catch {}
                 } else {
@@ -349,7 +359,7 @@ function renderSummary({ result, cfg, nav, user, isGuest, fromStorage = false })
           </div>
 
           {/* Guest nudge — only when signed-in guest */}
-          {user && isGuest && (
+          {user && isGuest && !offline && (
             <motion.div className="guest-nudge"
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
@@ -440,5 +450,5 @@ export default function Summary() {
     )
   }
 
-  return renderSummary({ result: displayResult, cfg: displayCfg, nav, user, isGuest })
+  return renderSummary({ result: displayResult, cfg: displayCfg, nav, user, isGuest, offline: !!(state?.offline || displayResult?.offline) })
 }

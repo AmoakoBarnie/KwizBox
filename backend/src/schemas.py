@@ -77,6 +77,11 @@ class QuestionOut(BaseModel):
     image_url: Optional[str] = None
 
 
+class OfflineQuestionOut(QuestionOut):
+    answer_index: int
+    explanation: Optional[str] = None
+
+
 class QuizPackRequest(BaseModel):
     class_level: Literal["B4", "B5", "B6", "B7", "B8", "B9"]
     subject: str

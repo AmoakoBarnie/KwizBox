@@ -29,13 +29,9 @@ app.include_router(curriculum_routes.router)
 STATIC_DIR = Path(__file__).resolve().parent.parent / "static"
 STATIC_DIR.mkdir(parents=True, exist_ok=True)
 (STATIC_DIR / "questions").mkdir(parents=True, exist_ok=True)
+app.mount("/media", StaticFiles(directory=str(STATIC_DIR)), name="media")
 
 DIST_DIR = Path(__file__).resolve().parent.parent.parent / "frontend" / "dist"
-
-# Cache-busting version — changes every restart so browsers never cache
-import time
-_CACHE_BUST = str(int(time.time() * 1000))
-
 
 def _no_cache(response: HTMLResponse) -> HTMLResponse:
     response.headers["Cache-Control"] = "no-store, no-cache, must-revalidate, max-age=0"
@@ -51,30 +47,44 @@ def health():
 
 @app.get("/sw.js")
 def block_sw(request: Request):
-    """Any browser requesting sw.js gets a harmless no-op."""
-    resp = HTMLResponse(
-        "self.addEventListener('fetch', e => e.respondWith(fetch(e.request)))",
-        media_type="text/javascript",
-    )
+    """Serve Vite's generated offline service worker when the frontend is built."""
+    worker_path = DIST_DIR / "sw.js"
+    if worker_path.is_file():
+        resp = FileResponse(worker_path, media_type="text/javascript")
+    else:
+        resp = HTMLResponse(
+            "self.addEventListener('fetch', e => e.respondWith(fetch(e.request)))",
+            media_type="text/javascript",
+        )
     resp.headers["Cache-Control"] = "no-store, no-cache, must-revalidate, max-age=0"
     return resp
 
 
 @app.get("/workbox-{version:str}.js")
 def block_workbox(request: Request, version: str):
-    """Trap workbox requests — return no-op."""
-    resp = HTMLResponse(
-        "self.addEventListener('fetch', e => e.respondWith(fetch(e.request)))",
-        media_type="text/javascript",
-    )
+    """Serve Vite's matching Workbox runtime instead of the old no-op response."""
+    workbox_path = DIST_DIR / f"workbox-{version}.js"
+    if workbox_path.is_file():
+        resp = FileResponse(workbox_path, media_type="text/javascript")
+    else:
+        resp = HTMLResponse(
+            "self.addEventListener('fetch', e => e.respondWith(fetch(e.request)))",
+            media_type="text/javascript",
+        )
     resp.headers["Cache-Control"] = "no-store, no-cache, must-revalidate, max-age=0"
     return resp
 
 
 @app.get("/manifest.webmanifest")
 def block_manifest(request: Request):
-    """Return minimal manifest — no SW registration hint."""
-    import json
+    """Serve the generated install manifest, with a fallback for an unbuilt frontend."""
+    manifest_path = DIST_DIR / "manifest.webmanifest"
+    if manifest_path.is_file():
+        return FileResponse(
+            manifest_path,
+            media_type="application/manifest+json",
+            headers={"Cache-Control": "no-store, no-cache, must-revalidate, max-age=0"},
+        )
     return JSONResponse(
         {
             "name": "Ghana Stem Trivia",
@@ -92,7 +102,7 @@ def block_manifest(request: Request):
 @app.get("/")
 @app.get("/{full_path:path}")
 async def serve_frontend(request: Request, full_path: str = ""):
-    """Serve the SPA. All responses are cache-busted."""
+    """Serve the SPA shell and built static assets."""
     # API paths
     if full_path.startswith("api/") or full_path.startswith("auth/") or \
        full_path.startswith("quiz/") or full_path.startswith("admin/") or \
@@ -108,46 +118,8 @@ async def serve_frontend(request: Request, full_path: str = ""):
         resp.headers["Pragma"] = "no-cache"
         return resp
 
-    # index.html — inject SW-kill + cache-bust asset URLs
+    # index.html
     index_html = (DIST_DIR / "index.html").read_text(encoding="utf-8")
-
-    # Add cache-busting query param to JS and CSS URLs
-    index_html = index_html.replace(
-        'src="/assets/index-_Whnn0pU.js"',
-        f'src="/assets/index-_Whnn0pU.js?v={_CACHE_BUST}"'
-    )
-    index_html = index_html.replace(
-        'href="/assets/index-Ct1LAUFI.css"',
-        f'href="/assets/index-Ct1LAUFI.css?v={_CACHE_BUST}"'
-    )
-
-    # Inject SW-kill + cache-clear script as the FIRST thing in <head>
-    # Must clear ALL caches + unregister SW + hard reload to break the SW cycle
-    sw_kill = (
-        '<script>'
-        "(function(){"
-        "if(typeof navigator==='undefined')return;"
-        "if(navigator.serviceWorker&&navigator.serviceWorker.controller){"
-        "  // SW is active — clear every cache, unregister, then hard-reload"
-        "  Promise.all(["
-        "    navigator.serviceWorker.getRegistrations().then(r=>{r.forEach(s=>s.unregister());}),"
-        "    (async()=>{"
-        "      const keys=await caches.keys();"
-        "      await Promise.all(keys.map(k=>caches.delete(k)));"
-        "    })()"
-        "  ]).then(()=>{"
-        "    // Force a fresh navigation that bypasses any remaining SW cache"
-        "    const bust=Date.now()+Math.random().toString(36).slice(2);"
-        "    window.location.href=window.location.pathname+'?v='+bust+window.location.hash;"
-        "  }).catch(()=>{"
-        "    // Fallback: just reload"
-        "    window.location.reload();"
-        "  });"
-        "}"
-        "})();"
-        "</script>"
-    )
-    index_html = index_html.replace("<head>", "<head>" + sw_kill, 1)
 
     resp = HTMLResponse(content=index_html, media_type="text/html")
     resp.headers["Cache-Control"] = "no-store, no-cache, must-revalidate, max-age=0"

@@ -45,7 +45,7 @@ frontend/
 ├── src/
 │   ├── main.jsx         # React entry, ErrorBoundary, Google Fonts
 │   ├── App.jsx          # React Router + AnimatePresence page transitions
-│   ├── api.js           # fetch client — calls backend directly via VITE_API_URL
+│   ├── api.js           # fetch client — VITE_API_URL or the Vite /api proxy
 │   ├── auth.jsx         # AuthContext (JWT in localStorage, auto-validate on mount)
 │   ├── styles.css       # Complete design system — dark/light themes, glass cards,
 │   │                      #   Ghana flag accents, night sky background, ~752 lines
@@ -118,6 +118,13 @@ Open `http://localhost:5173`. The `.env` file tells the frontend to call the bac
 3. Use the admin credentials to access `/admin` in the frontend
 4. Guest mode: Enter any nickname + class level to play without signing up
 
+### Tests
+
+```bash
+cd frontend && npm test
+cd ../backend && pip install -r requirements-dev.txt && python -m unittest discover -s tests -p 'test_*.py' -v
+```
+
 ### Production Mode
 
 - Use Docker containers or deploy the backend + frontend separately
@@ -159,6 +166,12 @@ Open `http://localhost:5173`. The `.env` file tells the frontend to call the bac
 - Points: Easy=10, Medium=15, Hard=25 × combo multiplier
 - Streak system with flame animation (3+ streak = combo x2)
 - Mascot reacts: thinking → celebrate (correct) / encourage (wrong)
+
+### Offline Practice
+- While online, choose a class and subject on the quiz selection screen and download a 12-question pack to this device.
+- The app shell is cached as a PWA; the saved pack and any question images are stored locally so the quiz can be reopened without a connection.
+- Offline answers are checked on the device. Offline results are practice-only: they are not synced to the account, badges, progress, sessions, or leaderboard.
+- One pack is kept at a time; downloading another replaces it. Use **Remove saved pack** to clear the questions and cached images from the device.
 
 ### Results Summary (`/summary`)
 - Score, accuracy, letter grade, stat rings
@@ -232,7 +245,7 @@ Mathematics, Science, Computing, English, Social Studies, French, Ghanaian Langu
 
 - `bcrypt` is pinned to `4.0.1` — newer bcrypt breaks `passlib` at import.
 - Port 8000 is taken by MusicApp backend; Trivia backend uses **8001**.
-- Frontend uses `.env` with `VITE_API_URL=http://localhost:8001` — this bypasses the Vite proxy. If you remove it, update `vite.config.js` proxy to cover all routes (`/auth/*`, `/quiz/*`, `/admin/*`, `/curriculum/*`, `/media/*`, `/health`).
+- Frontend may use `.env` with `VITE_API_URL=http://localhost:8001` to call the backend directly. Without it, the API client uses the Vite `/api` proxy in development and same-origin backend routes in production.
 - Guest mode: progress/scores are NOT persisted across devices/browsers. Sign-up persists.
 - SQLite `create_all()` does NOT add columns to existing tables. On startup the API runs an idempotent `ALTER TABLE ... ADD COLUMN` for `question_type` and `image_url`.
 - Always start Vite from the `frontend/` directory — starting from project root serves 404s.
@@ -252,6 +265,7 @@ Base URL: `http://localhost:8001`
 
 ### Quiz
 - `POST /quiz/pack` → `{class_level,subject,topic?,sub_topic?,difficulty?,count?,exclude_ids?,daily?}` → questions (no answers)
+- `POST /quiz/offline-pack` → same selection body → downloadable questions with answer keys and explanations for explicitly requested device-only practice; does not create a quiz session or update progress
 - `POST /quiz/submit` → `{session_id,answers:[{question_id,selected_index}]}` → results with feedback
 - `GET /quiz/leaderboard?scope=global|class|school&class_level=&school_code=&limit=` → board
 - `GET /quiz/progress` → per-subject + per-topic progress (Bearer)

@@ -1,6 +1,8 @@
 // Thin API client. Talks to the backend via the Vite /api proxy in dev,
 // and directly in prod (set VITE_API_URL to the backend origin).
-const BASE = import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace(/\/$/, '') : '/'
+const BASE = import.meta.env.VITE_API_URL
+  ? import.meta.env.VITE_API_URL.replace(/\/$/, '')
+  : import.meta.env.DEV ? '/api' : ''
 
 /** Resolve a question image_url so /media/... hits the API (Vite proxies /media in dev). */
 export function mediaUrl(path) {
@@ -56,6 +58,7 @@ export const api = {
     "What town or village were you born in?",
   ],
   pack: (data, token) => request('POST', '/quiz/pack', data, token),
+  offlinePack: (data, token) => request('POST', '/quiz/offline-pack', data, token),
   check: (data, token) => request('POST', '/quiz/check', data, token),
   submit: (data, token) => request('POST', '/quiz/submit', data, token),
   leaderboard: (params) => request('GET', `/quiz/leaderboard?${new URLSearchParams(params)}`),
