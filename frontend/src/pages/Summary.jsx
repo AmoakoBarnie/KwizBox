@@ -193,7 +193,7 @@ function renderSummary({ result, cfg, nav, user, isGuest, fromStorage = false })
       <div className="summary-grid">
         {/* LEFT COLUMN */}
         <div className="summary-left">
-          {/* Mascot — walking when celebrate, standing otherwise */}
+          {/* Give every completed quiz a quick hop; the expression reflects the score. */}
           <motion.div className="mascot-frame"
             initial={{ opacity: 0, scale: 0.8, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -204,7 +204,7 @@ function renderSummary({ result, cfg, nav, user, isGuest, fromStorage = false })
               size={130}
               gender="female"
               classLevel={cfg?.class_level}
-              walking={celebrate}
+              jumping={true}
             />
           </motion.div>
 
