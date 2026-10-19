@@ -1,0 +1,124 @@
+.offline-practice-card {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 18px auto 12px;
+  padding: 18px;
+  border: 1px solid rgba(0, 170, 105, 0.35);
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(0, 122, 75, 0.14), rgba(255, 255, 255, 0.055));
+  color: var(--ink, inherit);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+}
+
+.offline-practice-copy {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.offline-practice-icon {
+  display: grid;
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border-radius: 12px;
+  background: rgba(0, 170, 105, 0.16);
+  color: #087949;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.offline-practice-copy h3 {
+  margin: 0 0 5px;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.offline-practice-copy p,
+.offline-pack-summary,
+.offline-practice-status {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.5;
+  opacity: 0.82;
+}
+
+.offline-practice-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 14px;
+}
+
+.offline-practice-actions .btn {
+  min-height: 40px;
+  padding: 9px 14px;
+  border: 1px solid rgba(0, 122, 75, 0.42);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.12);
+  color: inherit;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.offline-practice-actions .btn.primary {
+  border-color: #087949;
+  background: #087949;
+  color: #fff;
+}
+
+.offline-practice-actions .btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.52;
+}
+
+.offline-pack-summary {
+  margin-top: 10px;
+  font-weight: 700;
+}
+
+.offline-practice-status {
+  margin-top: 9px;
+  min-height: 18px;
+}
+
+.offline-practice-status.offline {
+  color: #a44700;
+  opacity: 1;
+  font-weight: 700;
+}
+
+@media (max-width: 520px) {
+  .offline-practice-card { padding: 15px; }
+  .offline-practice-actions { flex-direction: column; }
+  .offline-practice-actions .btn { width: 100%; }
+}
+
+.offline-practice-banner {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 8px 0 12px;
+  padding: 10px 13px;
+  border: 1px solid rgba(0, 122, 75, 0.32);
+  border-radius: 12px;
+  background: rgba(0, 122, 75, 0.1);
+  color: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.45;
+  text-align: center;
+}
+
+.summary-offline-banner {
+  max-width: 920px;
+  margin: 0 auto 14px;
+}
+
+.offline-practice-actions .offline-remove-btn {
+  border-color: rgba(180, 55, 55, 0.42);
+  color: #a93232;
+  background: rgba(180, 55, 55, 0.07);
+}
