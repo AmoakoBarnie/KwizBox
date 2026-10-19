@@ -347,8 +347,8 @@ export default function Quiz() {
       {/* Mascot — static reaction mascot */}
       <div className="mascot-anchor">
         {typeof cfg.class_level === 'string' && ['S1', 'S2', 'S3'].includes(cfg.class_level)
-          ? <Mascot type="shs" state={mascot} size={76} gender="female" classLevel={cfg.class_level} avatar={user?.avatar} />
-          : <Mascot type="youth" state={mascot} size={76} gender="female" classLevel={cfg.class_level} avatar={user?.avatar} />
+          ? <Mascot type="shs" state={mascot} size={76} gender={user?.avatar?.gender} classLevel={cfg.class_level} avatar={user?.avatar} />
+          : <Mascot type="youth" state={mascot} size={76} gender={user?.avatar?.gender} classLevel={cfg.class_level} avatar={user?.avatar} />
         }
       </div>
 
