@@ -3,6 +3,7 @@ import { useAnimations, useGLTF } from '@react-three/drei'
 import { clone as cloneSkeleton } from 'three/examples/jsm/utils/SkeletonUtils.js'
 import { Suspense, useEffect, useLayoutEffect, useMemo, useRef } from 'react'
 import * as THREE from 'three'
+import { MeshoptDecoder } from 'three/examples/jsm/libs/meshopt_decoder.module.js'
 import './Mascot3D.css'
 
 const MODEL_PATHS = {
@@ -28,7 +29,10 @@ const FILL_RATIO = 0.82 // fraction of the vertical FOV the model should occupy
 
 function FramedModel({ path, state, walking, onReady }) {
   const root = useRef()
-  const model = useGLTF(path)
+  const model = useGLTF(path, undefined, (loader) => {
+    // Attach the meshopt decoder to drei's loader instance.
+    loader.setMeshoptDecoder?.(MeshoptDecoder)
+  })
   const clone = useMemo(() => cloneSkeleton(model.scene), [model.scene])
   const { actions } = useAnimations(model.animations, root)
   const { camera } = useThree()
@@ -77,9 +81,8 @@ function FramedModel({ path, state, walking, onReady }) {
   }, [camera, onReady])
 
   useFrame((_, delta) => {
-    // Keep the character UPRIGHT. rotation.z must stay 0 — the previous value
-    // (-PI/2) tipped the model onto its side, which is why the mascot rendered
-    // as a flat sliver instead of a standing character.
+    // Keep the character UPRIGHT. rotation.z must stay 0 — a non-zero value (the
+    // previous -PI/2) lays the model on its side and it renders as a flat sliver.
     if (root.current) root.current.rotation.z = 0
   })
 
