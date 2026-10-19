@@ -4,7 +4,20 @@ import { useAuth } from '../auth.jsx'
 import Mascot from './Mascot.jsx'
 
 const TITLE = 'KwizBox'
+
+// Locomotion constants. TRACK is the percentage distance of one crossing; the
+// walk clip is 1.0 s per stride cycle, so a natural pace is a fixed seconds-per-
+// crossing rather than a distance-derived one. The previous code divided elapsed
+// seconds by TRACK, which made a crossing take 200 seconds.
 const TRACK = 100
+const SECONDS_PER_CROSSING = 9
+
+// Walk-cycle bob: two steps per stride cycle, so the bounce frequency is twice
+// the clip rate. Amplitude is a real walk bob (a few px), not a hop.
+const STEP_RATE = 2          // bobs per stride cycle
+const BOB_AMPLITUDE = 3      // px
+const LEAN_MAX = 3           // deg, forward lean while walking
+const TURN_SECONDS = 0.45    // how long a direction change takes
 
 function DustParticle({ x, strength }) {
   return (
@@ -35,71 +48,80 @@ function WalkingMascot({ gender, y, speed, delay = 0, onPass, avatar, type = 'yo
   const x = useMotionValue(0)
   const bobY = useMotionValue(0)
   const lean = useMotionValue(0)
-  const squashX = useMotionValue(1)
-  const squashY = useMotionValue(1)
+  const facing = useMotionValue(1) // 1 = right, -1 = left; smoothed through turns
 
-  const spring = useRef({ pos: 0, vel: 0 })
   const phase = useRef(delay)
   const lastBucket = useRef(-1)
-  const direction = useRef(1)
-  const jumpCount = useRef(0)
-  const lastJumpTime = useRef(0)
+  const turnFrom = useRef(1)
+  const turnStart = useRef(0)
+  const facingTarget = useRef(1)
+  const lastStep = useRef(0)
   const [dust, setDust] = useState([])
 
-  const STIFFNESS = 190
-  const DAMPING = 12
-  const MASS = 1
-  const BASE_FORCE = -32
-  const STRONG_FORCE = -52
-  const JUMP_INTERVAL = 0.68
+  // Honour the OS reduced-motion preference. The CSS `no-motion` rule only
+  // neutralises CSS animations; this locomotion is JS-driven, so it needs its
+  // own guard. With motion reduced the mascot stands still, facing forward.
+  const reduceMotion = useRef(false)
+  useEffect(() => {
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const apply = () => {
+      reduceMotion.current = mq.matches
+      if (mq.matches) {
+        x.set(0)
+        bobY.set(0)
+        lean.set(0)
+        facing.current = 1
+      }
+    }
+    apply()
+    mq.addEventListener('change', apply)
+    return () => mq.removeEventListener('change', apply)
+  }, [x, bobY, lean])
 
   useAnimationFrame((t, delta) => {
-    const dt = Math.min(delta / 1000, 0.032)
+    if (reduceMotion.current) return
+    const dt = Math.min(delta / 1000, 0.05)
     const time = (t / 1000 + phase.current) * speed
 
-    const cycle = (time / TRACK) % 2
-    const tri = Math.abs(cycle - 1)
+    // --- horizontal position: one crossing every SECONDS_PER_CROSSING ---
+    const cycle = (time / SECONDS_PER_CROSSING) % 2
+    const tri = Math.abs(cycle - 1)          // 0 -> 1 -> 0
     const px = tri * TRACK
-    direction.current = cycle < 1 ? 1 : -1
+    const dir = cycle < 1 ? 1 : -1           // direction of travel
     x.set(px)
 
-    if (time - lastJumpTime.current > JUMP_INTERVAL) {
-      jumpCount.current += 1
-      const isStrong = jumpCount.current % 3 === 0
-      spring.current.vel += isStrong ? STRONG_FORCE : BASE_FORCE
-      lastJumpTime.current = time
+    // --- facing: turn over TURN_SECONDS instead of snapping ---
+    if (dir !== facingTarget.current) {
+      facingTarget.current = dir
+      turnFrom.current = facing.current ?? 1
+      turnStart.current = time
     }
+    const turnT = Math.min(1, (time - turnStart.current) / TURN_SECONDS)
+    // ease in-out so the turn reads as the body swinging round, not a flip
+    const eased = turnT < 0.5 ? 2 * turnT * turnT : 1 - Math.pow(-2 * turnT + 2, 2) / 2
+    facing.current = turnFrom.current + (dir - turnFrom.current) * eased
 
-    const { pos, vel } = spring.current
-    const force = -STIFFNESS * pos - DAMPING * vel
-    const acc = force / MASS
-    spring.current.vel = vel + acc * dt
-    spring.current.pos = pos + spring.current.vel * dt
+    // --- walk bob: two bounces per stride cycle, no jumping ---
+    const stepPhase = (time * STEP_RATE) % 1
+    // a raised foot at the top of each step, feet together at the bottom
+    const bob = -Math.abs(Math.sin(stepPhase * Math.PI)) * BOB_AMPLITUDE
+    bobY.set(bob)
 
-    if (spring.current.pos > 0) {
-      spring.current.pos = 0
-      if (Math.abs(spring.current.vel) > 8) {
-        const id = Date.now()
-        setDust((d) => [...d.slice(-6), { id, x: px, strength: Math.min(Math.abs(spring.current.vel) / 40, 1) }])
-        setTimeout(() => setDust((d) => d.filter((p) => p.id !== id)), 600)
-      }
-      spring.current.vel *= -0.32
+    // lean into the direction of travel; settles to 0 mid-turn
+    const leanAmount = Math.abs(facing.current) >= 1
+      ? LEAN_MAX * Math.sign(facing.current)
+      : LEAN_MAX * facing.current
+    lean.set(leanAmount)
+
+    // --- footfall dust: once per step, on the down-stroke ---
+    if (stepPhase < lastStep.current) {
+      const id = Date.now() + Math.random()
+      setDust((d) => [...d.slice(-6), { id, x: px, strength: 0.5 }])
+      setTimeout(() => setDust((d) => d.filter((p) => p.id !== id)), 600)
     }
+    lastStep.current = stepPhase
 
-    bobY.set(spring.current.pos)
-    lean.set(spring.current.vel * -0.16 * direction.current)
-
-    const speedY = Math.abs(spring.current.vel)
-    const stretch = 1 + speedY * 0.009
-    const squash = spring.current.pos > -2 ? 1 + Math.min(speedY * 0.012, 0.25) : 1
-    if (spring.current.pos > -4 && spring.current.vel > 0) {
-      squashX.set(squash)
-      squashY.set(2 - squash)
-    } else {
-      squashX.set(2 - stretch)
-      squashY.set(stretch)
-    }
-
+    // --- tell the title which letter we are over ---
     const bucket = Math.floor((px / TRACK) * TITLE.length)
     if (bucket !== lastBucket.current) {
       lastBucket.current = bucket
@@ -108,7 +130,7 @@ function WalkingMascot({ gender, y, speed, delay = 0, onPass, avatar, type = 'yo
   })
 
   const left = useTransform(x, (v) => `${v}%`)
-  const scaleXDir = useTransform(x, () => direction.current)
+  const scaleX = useTransform(facing, (f) => f)
 
   return (
     <>
@@ -120,8 +142,7 @@ function WalkingMascot({ gender, y, speed, delay = 0, onPass, avatar, type = 'yo
           width: 150,
           height: 150,
           y: bobY,
-          scaleX: useTransform([scaleXDir, squashX], ([dir, sx]) => dir * sx),
-          scaleY: squashY,
+          scaleX,
           rotate: lean,
           zIndex: 5,
           transformOrigin: '50% 100%',
