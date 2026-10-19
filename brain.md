@@ -100,6 +100,29 @@ Replace `[PASSWORD]`, ensure port is **5432** (not 6543). Paste it here.
 - **Clip names are load-bearing.** `idle`/`celebrate`/`encourage`/`walk`/`blink` must
   match exactly — a missing clip is a silent no-op, not an error. `walk` is exported
   bare; the others carry an armature suffix (`idle_youth_Mascot_Rig`).
+- **Mascot locomotion lives in `HeroStage.jsx`, not the GLB.** The clip plays in place;
+  `WalkingMascot` drives position, facing, bob and lean with Framer Motion motion values
+  in `useAnimationFrame`. Three things were wrong and are now fixed (commit `b32e896`):
+  1. `TRACK = 100` was used as *both* the crossing distance and the time divisor, so a
+     full traverse took 200 s — measured 97 px of travel in 16 s. Replaced with a fixed
+     `SECONDS_PER_CROSSING`.
+  2. **Facing never flipped.** `direction = cycle < 1 ? 1 : -1` only changes after 100 s,
+     so sampling `scaleX` over 217 frames showed 0 flips — the mascots had no directional
+     sense. Facing now turns over `TURN_SECONDS` with easing instead of snapping.
+  3. The spring hop read as jumping, not walking. Replaced with a 3 px bob at 2× the
+     stride rate plus a small forward lean.
+- **A shared distance/time constant is a trap.** Reusing one number for both a distance
+  and a period produces a value that looks plausible in each place and is wrong in both.
+- **`useTransform` must not be called inside the `style` object** — it creates a new
+  transform on every render.
+- **The CSS `no-motion` rule does not stop JS-driven motion.** It only neutralises CSS
+  animations and transitions; `useAnimationFrame` locomotion needs its own
+  `prefers-reduced-motion` guard in the component.
+- **Verify locomotion by measuring, and select the right elements.** `.mascot-track > div`
+  also matches the dust-particle divs, which sit at `x=0` and read as "static mascots".
+  Filter to elements containing a `canvas`. `tests/measure-locomotion.mjs` asserts
+  traverse span, facing flips and bob amplitude; `tests/verify-reduced-motion.mjs`
+  asserts the mascots hold still under reduced motion.
 
 ## Full docs
 
