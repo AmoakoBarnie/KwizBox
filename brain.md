@@ -19,7 +19,7 @@ STEM trivia app for Ghanaian learners (Primary 4 / B4 → JHS 3 / B9), NaCCA-ali
 | **Database** | `backend/trivia.db` — SQLite (3.2 MB, 7,318 questions) |
 | **Migration script** | `backend/scripts/migrate_sqlite_to_pg.py` |
 | **APKs** | `_backup/preview/KwizBox-{emulator,phone}.apk` |
-| **3D mascot models** | `models/` — 4 character masters + animation clips + renders |
+| **3D mascot models** | `models/` — 4 character masters + animation clips + renders + `models/scripts/` (the Blender jobs) |
 | **Mascot runtime path** | `frontend/public/assets/mascots-v2/animated/` (byte-identical to `models/models/`) |
 | **Deploy configs** | `backend/Dockerfile`, `railway.toml` |
 
@@ -38,6 +38,9 @@ STEM trivia app for Ghanaian learners (Primary 4 / B4 → JHS 3 / B9), NaCCA-ali
 - ✅ Supabase project created (`gfjcoowxijvmmkdwciwq`, Europe, free tier)
 - ✅ Credentials sanitized in backup files
 - ✅ Project relocated to `KwizBoz Andriod/`
+- ✅ Mascots fully rigged and walking (commit `b7e3e39`) — males bound to the
+  armature for the first time, females rigged, procedural walk cycle, meshopt
+  decoder wired. Verified 2/2 canvases animating in the browser.
 
 ## What's blocked
 
@@ -72,14 +75,31 @@ Replace `[PASSWORD]`, ensure port is **5432** (not 6543). Paste it here.
 - **JWT secret** must be set in env — no default (prevents accidental prod use)
 - **Guests excluded** from leaderboard (by design)
 - **No answer leak** in `/quiz/pack` responses (by design)
-- **Female mascots unrigged** — `shs_female` / `youth_female` have no skin and no
-  clips, but `Mascot3D.jsx` maps them into the same state machine → selecting a
-  female mascot shows a static pose. Fix is a Blender pass in `animate_mascots.py`
-  (currently loops only `youth`/`shs`), then `gltfpack -cc -kn -km -ke`.
+- **Mascots are fully rigged now** (as of commit `b7e3e39`). The two real bugs were:
+  1. **Male models were never skinned** — they carried a 14-joint glTF `skin` but the
+     mesh primitive had no `JOINTS_0`/`WEIGHTS_0`, so the mesh rendered in bind pose
+     and the walk clip had no visible effect. Pre-existing, not introduced by the walk
+     work. Fixed with `models/scripts/skin_unskinned.py`.
+  2. **Female models shipped unrigged** — no skin, no clips. Fixed with
+     `models/scripts/rig_female.py`.
+  The symptom looked like a per-gender bug (one mascot animated, one froze) because
+  the females were bound correctly and the males were not.
+- **Walk cycle is procedural** (`models/scripts/make_realistic_walk.py`). Measured
+  targets: stride ≥ 0.30, swing 25–40 % of leg length, arm opposition −1.0. The old
+  clip had stride 0.004 and arm opposition +1.0 (arms swung in unison). The cycle
+  walks in place — `HeroStage.jsx` moves it along the track with Framer Motion.
+- **Mascot GLBs are meshopt-compressed** (`EXT_meshopt_compression`, gltfpack `-c`).
+  `Mascot3D.jsx` must attach `MeshoptDecoder` or the mesh fails to load silently.
+  Do not use `-cf` (splits a fallback `.bin` and breaks the GLB) or `-cc` (Draco —
+  no `DRACOLoader` configured).
+- **Blender cannot read meshopt glTF** — author from the uncompressed GLB and
+  compress as the last step. Any "verified in Blender" claim must say which file was
+  actually opened.
 - **`models/` ≠ runtime path.** Browser loads `frontend/public/assets/mascots-v2/animated/`;
   replacing a master in `models/models/` has no effect until copied there.
 - **Clip names are load-bearing.** `idle`/`celebrate`/`encourage`/`walk`/`blink` must
-  match exactly — a missing clip is a silent no-op, not an error.
+  match exactly — a missing clip is a silent no-op, not an error. `walk` is exported
+  bare; the others carry an armature suffix (`idle_youth_Mascot_Rig`).
 
 ## Full docs
 
