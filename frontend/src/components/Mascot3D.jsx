@@ -16,12 +16,22 @@ const MODEL_PATHS = {
   },
 }
 
+// Manus-style framing: normalise every model to a fixed display height so
+// characters look the same size regardless of how they were exported, centre
+// on the bounding box, then place the camera so the WHOLE body is in frame.
+//
+// This replaces the older FOV-derived distance, which sized the model from its
+// raw height and left the upper body outside the frustum.
+const DISPLAY_HEIGHT = 2.9
+const CAMERA_FOV = 35
+const FILL_RATIO = 0.82 // fraction of the vertical FOV the model should occupy
+
 function FramedModel({ path, state, walking, onReady }) {
   const root = useRef()
   const model = useGLTF(path)
   const clone = useMemo(() => cloneSkeleton(model.scene), [model.scene])
   const { actions } = useAnimations(model.animations, root)
-  const { camera, size: viewport } = useThree()
+  const { camera } = useThree()
   const active = walking ? 'walk' : (state === 'thinking' ? 'idle' : state)
 
   useEffect(() => {
@@ -36,31 +46,41 @@ function FramedModel({ path, state, walking, onReady }) {
 
   useLayoutEffect(() => {
     if (!root.current) return
-    // Center the model at the origin and fit the camera to its bounds.
+
+    // Measure the model at its native scale, then normalise to DISPLAY_HEIGHT
+    // so a 4.9-unit model and a 0.98-unit model render at the same size.
+    const native = new THREE.Box3().setFromObject(root.current)
+    const nativeSize = native.getSize(new THREE.Vector3())
+    if (nativeSize.y <= 0) return
+    const scale = DISPLAY_HEIGHT / nativeSize.y
+    root.current.scale.setScalar(scale)
+
+    // Re-centre after scaling: feet on y=0, centred on the origin.
+    root.current.updateWorldMatrix(true, true)
     const bounds = new THREE.Box3().setFromObject(root.current)
     const center = bounds.getCenter(new THREE.Vector3())
-    const height = bounds.max.y - bounds.min.y
     root.current.position.x -= center.x
     root.current.position.y -= bounds.min.y
     root.current.position.z -= center.z
     root.current.updateWorldMatrix(true, true)
 
-    // Use dynamic camera framing for both walking and static
-    // Walking movement is handled by Framer Motion moving the container div,
-    // not by the 3D model moving in space
-    const fov = THREE.MathUtils.degToRad(camera.fov || 28)
-    const distance = (height / 2) / Math.tan(fov / 2) * 1.18
-    camera.position.set(distance, height * 0.52, 0)
-    camera.near = Math.max(0.01, height / 100)
-    camera.far = height * 10
-    camera.lookAt(0, height * 0.52, 0)
+    // Camera back far enough that the full height fits inside the vertical FOV.
+    const fov = THREE.MathUtils.degToRad(CAMERA_FOV)
+    const distance = (DISPLAY_HEIGHT / FILL_RATIO) / 2 / Math.tan(fov / 2)
+    camera.fov = CAMERA_FOV
+    camera.position.set(0, DISPLAY_HEIGHT * 0.5, distance)
+    camera.near = Math.max(0.001, DISPLAY_HEIGHT / 100)
+    camera.far = DISPLAY_HEIGHT * 100
+    camera.lookAt(0, DISPLAY_HEIGHT * 0.5, 0)
     camera.updateProjectionMatrix()
     onReady?.()
-  }, [camera, onReady, viewport.width, viewport.height])
+  }, [camera, onReady])
 
   useFrame((_, delta) => {
-    if (root.current && state === 'encourage') root.current.rotation.z = Math.sin(performance.now() * 0.002) * 0.018 - Math.PI / 2
-    if (root.current && state !== 'encourage') root.current.rotation.z = -Math.PI / 2
+    // Keep the character UPRIGHT. rotation.z must stay 0 — the previous value
+    // (-PI/2) tipped the model onto its side, which is why the mascot rendered
+    // as a flat sliver instead of a standing character.
+    if (root.current) root.current.rotation.z = 0
   })
 
   return <group ref={root}><primitive object={clone} /></group>
