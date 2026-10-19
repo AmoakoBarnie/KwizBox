@@ -1,0 +1,15 @@
+.mascot-3d {
+  position: relative;
+  flex: 0 0 auto;
+  display: block;
+  overflow: visible;
+  cursor: pointer;
+  contain: layout paint;
+}
+
+.mascot-3d canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  overflow: visible;
+}

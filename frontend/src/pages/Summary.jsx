@@ -2,7 +2,6 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useAuth } from '../auth.jsx'
 import Mascot from '../components/Mascot.jsx'
-import SHSMascot from '../components/SHSMascot.jsx'
 import Confetti from '../components/Confetti.jsx'
 import { evaluateBadges } from '../badges.js'
 import { levelUp } from '../sound.js'
@@ -337,24 +336,15 @@ function renderSummary({ result, cfg, nav, user, isGuest, fromStorage = false, s
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ delay: 0.18, type: 'spring', stiffness: 200, damping: 14 }}
           >
-            {isSHS
-              ? <SHSMascot
-                state={celebrate ? 'celebrate' : 'encourage'}
-                size={130}
-                gender="female"
-                classLevel={cfg?.class_level}
-                walking={celebrate}
-                avatar={user?.avatar}
-              />
-              : <Mascot
-                state={celebrate ? 'celebrate' : 'encourage'}
-                size={130}
-                gender="female"
-                classLevel={cfg?.class_level}
-                walking={celebrate}
-                avatar={user?.avatar}
-              />
-            }
+            <Mascot
+              type={isSHS ? 'shs' : 'youth'}
+              state={celebrate ? 'celebrate' : 'encourage'}
+              size={130}
+              gender="female"
+              classLevel={cfg?.class_level}
+              walking={celebrate}
+              avatar={user?.avatar}
+            />
           </motion.div>
 
           {/* Score — with optional daily badge */}

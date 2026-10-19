@@ -2,7 +2,6 @@ import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { useAuth } from '../auth.jsx'
 import Mascot from '../components/Mascot.jsx'
-import SHSMascot from '../components/SHSMascot.jsx'
 
 export default function Play() {
   const { user } = useAuth()
@@ -26,8 +25,8 @@ export default function Play() {
         style={{ display: 'flex', justifyContent: 'center', margin: '6px 0 18px' }}
       >
         {isSHS
-          ? <SHSMascot state="thinking" size={100} classLevel={user?.class_level || 'S1'} avatar={user?.avatar} />
-          : <Mascot state="thinking" size={100} classLevel={user?.class_level || 'B4'} avatar={user?.avatar} />
+          ? <Mascot type="shs" state="thinking" size={100} classLevel={user?.class_level || 'S1'} avatar={user?.avatar} />
+          : <Mascot type="youth" state="thinking" size={100} classLevel={user?.class_level || 'B4'} avatar={user?.avatar} />
         }
       </motion.div>
       <motion.button

@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useEffect, useRef } from 'react'
 import './Mascot.css'
+import Mascot3D from './Mascot3D.jsx'
 
 /**
  * Mascot: friendly Ghana basic-school learners in uniform (Kente).
@@ -41,13 +42,20 @@ function pickPhrase(state, young) {
 const CONFETTI_COLORS = ['#00d27e', '#ffd23f', '#ff4d5e', '#00b36b', '#f0b400', '#ffffff']
 const EMOJI = { thinking: '💭', celebrate: '🎉', encourage: '🌟' }
 
-export default function Mascot({ state = 'thinking', size = 120, gender = 'male', classLevel = 'B7', walking = false, avatar }) {
+export default function Mascot({ state = 'thinking', size = 120, gender = 'male', classLevel = 'B7', walking = false, avatar, render3d = true }) {
+  if (render3d) {
+    return <Mascot3D type="youth" state={state} size={size} gender={avatar?.gender || gender} walking={walking} />
+  }
   // Upgrade 8: avatar object takes precedence over legacy gender prop
   const av = avatar || {}
   const avatarSkin = av.skin || 'warm'
   const avatarHat = av.hat || 'none'
   const avatarAccessory = av.accessory || 'none'
   const avatarGender = av.gender || gender || 'male'
+  // Keep the full tall mascot visible in compact cards and mobile layouts.
+  // The artwork is 120x140, so a modest scale-down prevents shoes or effects
+  // from being clipped when callers request a large square size.
+  const displaySize = Math.max(48, Math.min(96, Math.round(Number(size) * 0.78)))
 
   // skin tone palette — used for head + hands + makeup
   const SKIN = {
@@ -157,13 +165,13 @@ export default function Mascot({ state = 'thinking', size = 120, gender = 'male'
       onClick={react}
       whileHover={{ scale: 1.06 }}
       whileTap={{ scale: 0.92 }}
-      style={{ width: size, height: size, position: 'relative', cursor: 'pointer' }}
+      style={{ width: displaySize, height: displaySize, position: 'relative', cursor: 'pointer' }}
       aria-hidden="true"
     >
       <motion.svg
         viewBox="0 0 120 140"
-        width={size}
-        height={size}
+        width={displaySize}
+        height={displaySize}
         variants={bodyVariants}
         animate={walking ? 'walking' : state}
         style={{ overflow: 'visible' }}
