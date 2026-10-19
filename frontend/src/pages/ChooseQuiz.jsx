@@ -239,8 +239,8 @@ export default function ChooseQuiz() {
 
       <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} style={{ display: 'flex', justifyContent: 'center', marginBottom: 4 }}>
         {['S1', 'S2', 'S3'].includes(cls)
-          ? <Mascot type="shs" state="thinking" size={80} classLevel={cls} />
-          : <Mascot type="youth" state="thinking" size={80} classLevel={cls || 'B4'} />
+          ? <Mascot type="shs" state="thinking" size={80} gender={user?.avatar?.gender} avatar={user?.avatar} classLevel={cls} />
+          : <Mascot type="youth" state="thinking" size={80} gender={user?.avatar?.gender} avatar={user?.avatar} classLevel={cls || 'B4'} />
         }
       </motion.div>
 

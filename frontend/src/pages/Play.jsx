@@ -25,8 +25,8 @@ export default function Play() {
         style={{ display: 'flex', justifyContent: 'center', margin: '6px 0 18px' }}
       >
         {isSHS
-          ? <Mascot type="shs" state="thinking" size={100} classLevel={user?.class_level || 'S1'} avatar={user?.avatar} />
-          : <Mascot type="youth" state="thinking" size={100} classLevel={user?.class_level || 'B4'} avatar={user?.avatar} />
+          ? <Mascot type="shs" state="thinking" size={100} gender={user?.avatar?.gender} classLevel={user?.class_level || 'S1'} avatar={user?.avatar} />
+          : <Mascot type="youth" state="thinking" size={100} gender={user?.avatar?.gender} classLevel={user?.class_level || 'B4'} avatar={user?.avatar} />
         }
       </motion.div>
       <motion.button
