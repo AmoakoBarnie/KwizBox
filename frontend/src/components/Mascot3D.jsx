@@ -23,11 +23,20 @@ const MODEL_PATHS = {
 //
 // This replaces the older FOV-derived distance, which sized the model from its
 // raw height and left the upper body outside the frustum.
-const DISPLAY_HEIGHT = 2.9
+// The model is auto-scaled so its height is DISPLAY_HEIGHT world units, then the
+// camera is placed to fit DISPLAY_HEIGHT/fill of the vertical FOV. Raising
+// DISPLAY_HEIGHT therefore makes the character larger on screen without
+// changing the framing ratio — this is what makes the stride legible.
+// Measured: at 2.9 the stride was ~5px of leg-width swing; the walk clip's
+// stride is 0.46 units against a 4.89-unit-tall model (9.4%), so the character
+// needs to be roughly 2x taller on screen for a clear stride.
+const DISPLAY_HEIGHT = 5.6
 const CAMERA_FOV = 35
+// See HeroStage.jsx: the mascots are authored facing +X but the camera is at +Z.
+const MODEL_FACING = -Math.PI / 2
 const FILL_RATIO = 0.82 // fraction of the vertical FOV the model should occupy
 
-function FramedModel({ path, state, walking, onReady }) {
+function FramedModel({ path, state, walking, onReady, fill = FILL_RATIO }) {
   const root = useRef()
   const model = useGLTF(path, undefined, (loader) => {
     // Attach the meshopt decoder to drei's loader instance.
@@ -70,7 +79,7 @@ function FramedModel({ path, state, walking, onReady }) {
 
     // Camera back far enough that the full height fits inside the vertical FOV.
     const fov = THREE.MathUtils.degToRad(CAMERA_FOV)
-    const distance = (DISPLAY_HEIGHT / FILL_RATIO) / 2 / Math.tan(fov / 2)
+    const distance = (DISPLAY_HEIGHT / fill) / 2 / Math.tan(fov / 2)
     camera.fov = CAMERA_FOV
     camera.position.set(0, DISPLAY_HEIGHT * 0.5, distance)
     camera.near = Math.max(0.001, DISPLAY_HEIGHT / 100)
@@ -78,23 +87,38 @@ function FramedModel({ path, state, walking, onReady }) {
     camera.lookAt(0, DISPLAY_HEIGHT * 0.5, 0)
     camera.updateProjectionMatrix()
     onReady?.()
-  }, [camera, onReady])
+  }, [camera, onReady, fill])
 
-  useFrame((_, delta) => {
+  useFrame(() => {
     // Keep the character UPRIGHT. rotation.z must stay 0 — a non-zero value (the
     // previous -PI/2) lays the model on its side and it renders as a flat sliver.
-    if (root.current) root.current.rotation.z = 0
+    if (!root.current) return
+    root.current.rotation.z = 0
+
+    // Face the camera. The models are authored facing +X (their toes point along
+    // +X, measured from the lower-leg bone tails) but the camera sits at +Z, so
+    // without this the character is seen in profile and the walk cycle's stride
+    // swings toward/away from the viewer instead of across the screen — which
+    // reads as walking backwards. Rotating PI/2 about Y turns its +X forward onto
+    // the +Z the camera looks down.
+    const target = walking ? MODEL_FACING : 0
+    root.current.rotation.y += (target - root.current.rotation.y) * 0.12
   })
 
   return <group ref={root}><primitive object={clone} /></group>
 }
 
 export default function Mascot3D({
-  type = 'youth', gender = 'male', state = 'thinking', size = 96, walking = false,
+  type = 'youth', gender = 'male', state = 'thinking', size = 96, walking = false, fill,
 }) {
   const modelGender = gender === 'female' ? 'female' : 'male'
   const path = MODEL_PATHS[type === 'shs' ? 'shs' : 'youth'][modelGender]
-  const displaySize = Math.max(48, Math.min(96, Math.round(Number(size) * 0.78)))
+  // HeroStage passes an explicit pixel size for the walking mascots; the old
+  // 0.78 * clamp(48,96) formula capped them at 75px, which is why the stride was
+  // invisible. Only fall back to that heuristic when no size is given.
+  const displaySize = size
+    ? Math.round(Number(size))
+    : Math.max(48, Math.min(96, Math.round(Number(size) * 0.78)))
 
   return (
     <div className="mascot-3d" style={{ width: displaySize, height: displaySize }} aria-hidden="true">
@@ -109,7 +133,7 @@ export default function Mascot3D({
         <directionalLight position={[4, 7, 5]} intensity={2.4} color="#fff4df" />
         <directionalLight position={[-3, 3, -4]} intensity={1.0} color="#8ed8ff" />
         <Suspense fallback={null}>
-          <FramedModel path={path} state={state} walking={walking} />
+          <FramedModel path={path} state={state} walking={walking} fill={fill} />
         </Suspense>
       </Canvas>
     </div>
