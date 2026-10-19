@@ -134,6 +134,7 @@ class QuestionTypeTests(unittest.TestCase):
         body = {
             "class_level": "B9", "subject": "Science", "difficulty": "Easy",
             "topic": "TFGradeProbe",
+            "question_ids": [qid],
             "answers": [{"question_id": qid, "selected_index": 0}],
         }
         ok = self.client.post("/quiz/submit", json=body).json()
