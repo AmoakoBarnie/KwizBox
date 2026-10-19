@@ -37,4 +37,5 @@ preview-assets/
 mascot-preview.html
 frontend/debug-test.mjs
 frontend/public/mascot-test.html
-frontend/tests/
+frontend/tests/mascot-verify.mjs
+frontend/tests/pixel_probe.mjs
