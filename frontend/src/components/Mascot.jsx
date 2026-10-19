@@ -42,9 +42,12 @@ function pickPhrase(state, young) {
 const CONFETTI_COLORS = ['#00d27e', '#ffd23f', '#ff4d5e', '#00b36b', '#f0b400', '#ffffff']
 const EMOJI = { thinking: '💭', celebrate: '🎉', encourage: '🌟' }
 
-export default function Mascot({ state = 'thinking', size = 120, gender = 'male', classLevel = 'B7', walking = false, avatar, render3d = true }) {
+export default function Mascot({ state = 'thinking', size = 120, gender = 'male', classLevel = 'B7', walking = false, avatar, render3d = true, type = 'youth' }) {
   if (render3d) {
-    return <Mascot3D type="youth" state={state} size={size} gender={avatar?.gender || gender} walking={walking} />
+    // Honour the caller's type so SHS students get the SHS mascots.
+    // This was previously hardcoded to "youth", which meant every page
+    // (quiz, play, profile, settings) always rendered the youth model.
+    return <Mascot3D type={type} state={state} size={size} gender={avatar?.gender || gender} walking={walking} />
   }
   // Upgrade 8: avatar object takes precedence over legacy gender prop
   const av = avatar || {}

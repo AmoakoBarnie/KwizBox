@@ -31,7 +31,7 @@ function DustParticle({ x, strength }) {
   )
 }
 
-function WalkingMascot({ gender, y, speed, delay = 0, onPass, avatar }) {
+function WalkingMascot({ gender, y, speed, delay = 0, onPass, avatar, type = 'youth' }) {
   const x = useMotionValue(0)
   const bobY = useMotionValue(0)
   const lean = useMotionValue(0)
@@ -117,8 +117,8 @@ function WalkingMascot({ gender, y, speed, delay = 0, onPass, avatar }) {
           position: 'absolute',
           left,
           bottom: y,
-          width: 64,
-          height: 64,
+          width: 150,
+          height: 150,
           y: bobY,
           scaleX: useTransform([scaleXDir, squashX], ([dir, sx]) => dir * sx),
           scaleY: squashY,
@@ -127,7 +127,7 @@ function WalkingMascot({ gender, y, speed, delay = 0, onPass, avatar }) {
           transformOrigin: '50% 100%',
         }}
       >
-        <Mascot type="youth" state="celebrate" size={64} gender={gender} classLevel="B4" walking={true} avatar={avatar} />
+        <Mascot type={type} state="celebrate" size={150} gender={gender} classLevel={type === 'shs' ? 'S2' : 'B4'} walking={true} avatar={avatar} />
       </motion.div>
       {dust.map((p) => (
         <DustParticle key={p.id} x={p.x} strength={p.strength} />
@@ -163,12 +163,12 @@ export default function HeroStage({ user }) {
       <div className="mascot-track">
         {user?.class_level && ['S1', 'S2', 'S3'].includes(user.class_level)
           ? <>
-              <WalkingMascot gender="male" y={4} speed={1.15} delay={0} onPass={setHop} avatar={user?.avatar} SHS={true} />
-              <WalkingMascot gender="female" y={2} speed={0.85} delay={3.4} onPass={setHop} avatar={user?.avatar} SHS={true} />
+              <WalkingMascot gender="male" y={4} speed={1.15} delay={0} onPass={setHop} avatar={user?.avatar} type="shs" />
+              <WalkingMascot gender="female" y={2} speed={0.85} delay={3.4} onPass={setHop} avatar={user?.avatar} type="shs" />
             </>
           : <>
-              <WalkingMascot gender="male" y={4} speed={1.15} delay={0} onPass={setHop} avatar={user?.avatar} />
-              <WalkingMascot gender="female" y={2} speed={0.85} delay={3.4} onPass={setHop} avatar={user?.avatar} />
+              <WalkingMascot gender="male" y={4} speed={1.15} delay={0} onPass={setHop} avatar={user?.avatar} type="youth" />
+              <WalkingMascot gender="female" y={2} speed={0.85} delay={3.4} onPass={setHop} avatar={user?.avatar} type="youth" />
             </>
         }
       </div>
