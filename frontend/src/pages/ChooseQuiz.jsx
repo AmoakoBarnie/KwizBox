@@ -5,7 +5,6 @@ import { useAuth } from '../auth.jsx'
 import { api } from '../api.js'
 import { SUBJECTS } from '../subjects.js'
 import Mascot from '../components/Mascot.jsx'
-import SHSMascot from '../components/SHSMascot.jsx'
 
 const CLASSES = ['B4', 'B5', 'B6', 'B7', 'B8', 'B9', 'S1', 'S2', 'S3']
 
@@ -240,8 +239,8 @@ export default function ChooseQuiz() {
 
       <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} style={{ display: 'flex', justifyContent: 'center', marginBottom: 4 }}>
         {['S1', 'S2', 'S3'].includes(cls)
-          ? <SHSMascot state="thinking" size={80} classLevel={cls} />
-          : <Mascot state="thinking" size={80} classLevel={cls || 'B4'} />
+          ? <Mascot type="shs" state="thinking" size={80} classLevel={cls} />
+          : <Mascot type="youth" state="thinking" size={80} classLevel={cls || 'B4'} />
         }
       </motion.div>
 

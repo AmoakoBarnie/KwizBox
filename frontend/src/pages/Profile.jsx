@@ -5,7 +5,6 @@ import { useAuth } from '../auth.jsx'
 import { BADGES, loadBadges, saveBadges, evaluateBadges } from '../badges.js'
 import { levelUp } from '../sound.js'
 import Mascot from '../components/Mascot.jsx'
-import SHSMascot from '../components/SHSMascot.jsx'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 14 },
@@ -77,7 +76,7 @@ export default function Profile() {
   }
 
   const isSHS = ['S1', 'S2', 'S3'].includes(user.class_level)
-  const MascotComp = isSHS ? SHSMascot : Mascot
+  const MascotComp = Mascot
 
   const p = user.progress
   const overall = p?.overall

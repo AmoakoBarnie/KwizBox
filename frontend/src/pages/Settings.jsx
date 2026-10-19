@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useAuth } from '../auth.jsx'
 import { api } from '../api.js'
 import Mascot from '../components/Mascot.jsx'
-import SHSMascot from '../components/SHSMascot.jsx'
+import Mascot3D from '../components/Mascot3D.jsx'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 16 },
@@ -63,7 +63,7 @@ export default function Settings() {
   }
 
   const isSHS = user.class_level && ['S1', 'S2', 'S3'].includes(user.class_level)
-  const MascotComp = isSHS ? SHSMascot : Mascot
+  const MascotComp = Mascot3D
 
   async function handleChangePassword(e) {
     e.preventDefault()
@@ -127,7 +127,7 @@ export default function Settings() {
       {/* Header — shows user's actual avatar */}
       <motion.div className="profile-header" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}>
         <div className="profile-avatar-ring">
-          <MascotComp avatar={user.avatar} size={72} state="thinking" classLevel={user.class_level || (isSHS ? 'S2' : 'B7')} />
+          <Mascot type={isSHS ? 'shs' : 'youth'} gender={user.avatar?.gender} avatar={user.avatar} size={72} state="thinking" classLevel={user.class_level || (isSHS ? 'S2' : 'B7')} />
         </div>
         <div className="profile-identity">
           <h2 className="profile-name">{user.nickname}</h2>

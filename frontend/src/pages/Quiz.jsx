@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useAuth } from '../auth.jsx'
 import { api, mediaUrl } from '../api.js'
 import Mascot from '../components/Mascot.jsx'
-import SHSMascot from '../components/SHSMascot.jsx'
+import WalkingMascot from '../components/WalkingMascot.jsx'
 import { correct, wrong, streak as streakSfx, combo as comboSfx, click } from '../sound.js'
 
 const sessionSeen = new Set()
@@ -330,11 +330,25 @@ export default function Quiz() {
         )}
       </AnimatePresence>
 
-      {/* Mascot — always visible. Use SHSMascot for SHS students, regular Mascot for JHS. */}
+      {/* Walking Mascot — walks across the bottom of the screen during quiz */}
+      <div className="quiz-mascot-track">
+        <WalkingMascot
+          type={['S1', 'S2', 'S3'].includes(cfg.class_level) ? 'shs' : 'youth'}
+          gender={user?.avatar?.gender || 'female'}
+          size={56}
+          speed={mascot === 'celebrate' ? 1.3 : mascot === 'encourage' ? 0.8 : 1}
+          y={8}
+          walking={true}
+          avatar={user?.avatar}
+          classLevel={cfg.class_level}
+        />
+      </div>
+
+      {/* Mascot — static reaction mascot */}
       <div className="mascot-anchor">
         {typeof cfg.class_level === 'string' && ['S1', 'S2', 'S3'].includes(cfg.class_level)
-          ? <SHSMascot state={mascot} size={76} gender="female" classLevel={cfg.class_level} avatar={user?.avatar} />
-          : <Mascot state={mascot} size={76} gender="female" classLevel={cfg.class_level} avatar={user?.avatar} />
+          ? <Mascot type="shs" state={mascot} size={76} gender="female" classLevel={cfg.class_level} avatar={user?.avatar} />
+          : <Mascot type="youth" state={mascot} size={76} gender="female" classLevel={cfg.class_level} avatar={user?.avatar} />
         }
       </div>
 

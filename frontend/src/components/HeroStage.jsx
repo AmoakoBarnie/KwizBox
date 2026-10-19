@@ -127,7 +127,7 @@ function WalkingMascot({ gender, y, speed, delay = 0, onPass, avatar }) {
           transformOrigin: '50% 100%',
         }}
       >
-        <Mascot state="celebrate" size={64} gender={gender} classLevel="B4" walking={true} avatar={avatar} />
+        <Mascot type="youth" state="celebrate" size={64} gender={gender} classLevel="B4" walking={true} avatar={avatar} />
       </motion.div>
       {dust.map((p) => (
         <DustParticle key={p.id} x={p.x} strength={p.strength} />
