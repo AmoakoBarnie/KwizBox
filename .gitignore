@@ -25,3 +25,16 @@ Thumbs.db
 # vite PWA caches
 frontend/dist/sw.js
 frontend/dist/workbox-*.js
+
+# 3D mascot scratch / superseded builds
+# The canonical library is models/. These are stale duplicates of the same GLBs
+# (mascots/ and frontend/public/mascots/ are byte-identical to each other) plus
+# standalone preview pages and their vendored three.js copies. Not runtime paths —
+# the app loads frontend/public/assets/mascots-v2/animated/.
+mascots/
+frontend/public/mascots/
+preview-assets/
+mascot-preview.html
+frontend/debug-test.mjs
+frontend/public/mascot-test.html
+frontend/tests/
