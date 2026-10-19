@@ -5,19 +5,39 @@ import Mascot from './Mascot.jsx'
 
 const TITLE = 'KwizBox'
 
-// Locomotion constants. TRACK is the percentage distance of one crossing; the
-// walk clip is 1.0 s per stride cycle, so a natural pace is a fixed seconds-per-
-// crossing rather than a distance-derived one. The previous code divided elapsed
-// seconds by TRACK, which made a crossing take 200 seconds.
+// Locomotion constants. The walk clip is 1.0 s per stride cycle. The crossing
+// pace is a fixed duration: the previous code divided elapsed seconds by the
+// distance constant, which made a crossing take 200 seconds.
 const TRACK = 100
-const SECONDS_PER_CROSSING = 9
+const SECONDS_PER_CROSSING = 16
 
 // Walk-cycle bob: two steps per stride cycle, so the bounce frequency is twice
 // the clip rate. Amplitude is a real walk bob (a few px), not a hop.
 const STEP_RATE = 2          // bobs per stride cycle
-const BOB_AMPLITUDE = 3      // px
-const LEAN_MAX = 3           // deg, forward lean while walking
-const TURN_SECONDS = 0.45    // how long a direction change takes
+const BOB_AMPLITUDE = 5      // px
+const LEAN_MAX = 2.5         // deg, forward lean while walking
+const TURN_SECONDS = 0.6     // how long a direction change takes
+
+// The model faces +X and the camera sits at +Z, so it is seen in PROFILE. That
+// is correct and must be kept: in profile the stride swings left/right across
+// the screen, which is what makes a walk readable. Rotating the model to face
+// the camera instead turns the stride into depth (toward/away from the viewer)
+// and the legs stop moving on screen — measured at 0px of leg-width swing.
+// Direction is handled by mirroring with scaleX, not by rotating the model.
+const MODEL_FACING = 0
+
+// The hero mascots were 64px, then 96px. At that size the stride is a couple of
+// pixels — invisible, which is why the walk read as a slide. The 3D view is
+// auto-scaled to fill the canvas, so a larger canvas makes the stride legible
+// without touching the model or the camera maths.
+//
+// Measured: the model is 4.89 units tall and its stride is 0.46 units, so the
+// stride is 9.4% of the character's height. For that to read as a clear stride
+// the character needs to be ~180px tall on screen.
+const MASCOT_PX = 320
+// fill = fraction of the vertical FOV the model occupies. 0.62 puts the whole
+// character in frame with headroom; the canvas is square so the width is fine.
+const MASCOT_FILL = 0.80
 
 function DustParticle({ x, strength }) {
   return (
@@ -84,10 +104,14 @@ function WalkingMascot({ gender, y, speed, delay = 0, onPass, avatar, type = 'yo
     const time = (t / 1000 + phase.current) * speed
 
     // --- horizontal position: one crossing every SECONDS_PER_CROSSING ---
+    // px runs 0 -> 100 -> 0, so the character moves RIGHT on the first half and
+    // LEFT on the second. Facing must match the direction of travel, which is
+    // the sign of the *change* in px — deriving it from the triangle's position
+    // alone gives the opposite sign and the character walks backwards.
     const cycle = (time / SECONDS_PER_CROSSING) % 2
     const tri = Math.abs(cycle - 1)          // 0 -> 1 -> 0
     const px = tri * TRACK
-    const dir = cycle < 1 ? 1 : -1           // direction of travel
+    const dir = cycle < 1 ? 1 : -1           // +1 moving right, -1 moving left
     x.set(px)
 
     // --- facing: turn over TURN_SECONDS instead of snapping ---
@@ -139,8 +163,8 @@ function WalkingMascot({ gender, y, speed, delay = 0, onPass, avatar, type = 'yo
           position: 'absolute',
           left,
           bottom: y,
-          width: 150,
-          height: 150,
+          width: MASCOT_PX,
+          height: MASCOT_PX,
           y: bobY,
           scaleX,
           rotate: lean,
@@ -148,7 +172,7 @@ function WalkingMascot({ gender, y, speed, delay = 0, onPass, avatar, type = 'yo
           transformOrigin: '50% 100%',
         }}
       >
-        <Mascot type={type} state="celebrate" size={150} gender={gender} classLevel={type === 'shs' ? 'S2' : 'B4'} walking={true} avatar={avatar} />
+        <Mascot type={type} state="celebrate" size={MASCOT_PX} gender={gender} classLevel={type === 'shs' ? 'S2' : 'B4'} walking={true} avatar={avatar} fill={MASCOT_FILL} />
       </motion.div>
       {dust.map((p) => (
         <DustParticle key={p.id} x={p.x} strength={p.strength} />
