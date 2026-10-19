@@ -1,0 +1,281 @@
+{
+  "generated_from": "/home/stephen/Desktop/3d models",
+  "characters": [
+    "shs",
+    "shs_female",
+    "shs_male",
+    "youth",
+    "youth_female",
+    "youth_male"
+  ],
+  "assets": [
+    {
+      "src": "shs_front.glb",
+      "dst": "models/models/shs_male.glb",
+      "bytes": 1344624,
+      "md5": "f76e517da4201a65ef1f643cee9907e7",
+      "role": "master",
+      "character": "shs_male",
+      "source_of_truth": "compressed export (_front)",
+      "rigged": true,
+      "joints": 14,
+      "clips": [
+        "blink",
+        "celebrate",
+        "encourage",
+        "idle",
+        "walk"
+      ]
+    },
+    {
+      "src": "shs_female_mascot_compressed.glb",
+      "dst": "models/models/shs_female.glb",
+      "bytes": 1313528,
+      "md5": "714d26f0b2b7b10fbc82250bf19c09c4",
+      "role": "master",
+      "character": "shs_female",
+      "source_of_truth": "compressed export",
+      "rigged": false,
+      "joints": 0,
+      "clips": []
+    },
+    {
+      "src": "youth_mascot_compressed.glb",
+      "dst": "models/models/youth_male.glb",
+      "bytes": 1380108,
+      "md5": "2870180c04ad4de6b1e9dafb62a02a3e",
+      "role": "master",
+      "character": "youth_male",
+      "source_of_truth": "compressed export",
+      "rigged": true,
+      "joints": 14,
+      "clips": [
+        "blink",
+        "celebrate",
+        "encourage",
+        "idle",
+        "walk"
+      ]
+    },
+    {
+      "src": "youth_female_mascot_compressed.glb",
+      "dst": "models/models/youth_female.glb",
+      "bytes": 1375744,
+      "md5": "85880c2e6675aca82433a59f8765fd24",
+      "role": "master",
+      "character": "youth_female",
+      "source_of_truth": "compressed export",
+      "rigged": false,
+      "joints": 0,
+      "clips": []
+    },
+    {
+      "src": "shs_clips/idle_compressed.glb",
+      "dst": "models/clips/shs_idle.glb",
+      "bytes": 1294624,
+      "md5": "da0e07f9f24bd41107e6e84ebbc38d13",
+      "role": "clip",
+      "character": "shs",
+      "clip": "idle",
+      "animation": "Animation"
+    },
+    {
+      "src": "shs_clips/celebrate_compressed.glb",
+      "dst": "models/clips/shs_celebrate.glb",
+      "bytes": 1295648,
+      "md5": "286600c652d1c8876a213ea0d4069428",
+      "role": "clip",
+      "character": "shs",
+      "clip": "celebrate",
+      "animation": "Animation"
+    },
+    {
+      "src": "shs_clips/encourage_compressed.glb",
+      "dst": "models/clips/shs_encourage.glb",
+      "bytes": 1295364,
+      "md5": "8980f0e11dd081166ecfa5a86b1972a0",
+      "role": "clip",
+      "character": "shs",
+      "clip": "encourage",
+      "animation": "Animation"
+    },
+    {
+      "src": "shs_clips/walk_compressed.glb",
+      "dst": "models/clips/shs_walk.glb",
+      "bytes": 1293784,
+      "md5": "dc3475000bd34cb30a330c02697d85a0",
+      "role": "clip",
+      "character": "shs",
+      "clip": "walk",
+      "animation": "Animation"
+    },
+    {
+      "src": "shs_clips/blink_compressed.glb",
+      "dst": "models/clips/shs_blink.glb",
+      "bytes": 1292376,
+      "md5": "4565eea7a18c37f98b8d64540eb43f9e",
+      "role": "clip",
+      "character": "shs",
+      "clip": "blink",
+      "animation": "Animation"
+    },
+    {
+      "src": "youth_clips/idle_compressed.glb",
+      "dst": "models/clips/youth_idle.glb",
+      "bytes": 1330112,
+      "md5": "c0a0bbda70d49cca68e0c06fbc8ea2c9",
+      "role": "clip",
+      "character": "youth",
+      "clip": "idle",
+      "animation": "Animation"
+    },
+    {
+      "src": "youth_clips/celebrate_compressed.glb",
+      "dst": "models/clips/youth_celebrate.glb",
+      "bytes": 1331136,
+      "md5": "de76b631a91de3f88f9d49c13f0b1088",
+      "role": "clip",
+      "character": "youth",
+      "clip": "celebrate",
+      "animation": "Animation"
+    },
+    {
+      "src": "youth_clips/encourage_compressed.glb",
+      "dst": "models/clips/youth_encourage.glb",
+      "bytes": 1330852,
+      "md5": "62f4bdcba730181ba0a4828b230e1b3e",
+      "role": "clip",
+      "character": "youth",
+      "clip": "encourage",
+      "animation": "Animation"
+    },
+    {
+      "src": "youth_clips/walk_compressed.glb",
+      "dst": "models/clips/youth_walk.glb",
+      "bytes": 1329272,
+      "md5": "31df5f7535363d21b8b18c421bf156af",
+      "role": "clip",
+      "character": "youth",
+      "clip": "walk",
+      "animation": "Animation"
+    },
+    {
+      "src": "youth_clips/blink_compressed.glb",
+      "dst": "models/clips/youth_blink.glb",
+      "bytes": 1327864,
+      "md5": "bb10ac164e05efcc5f27bffc01334f6f",
+      "role": "clip",
+      "character": "youth",
+      "clip": "blink",
+      "animation": "Animation"
+    },
+    {
+      "src": "final/shs_front.png",
+      "dst": "models/previews/shs_male/front.png",
+      "bytes": 847001,
+      "md5": "7ddd71f4f19265dc49122a770a3e52ab",
+      "role": "render",
+      "character": "shs_male",
+      "angle": "front"
+    },
+    {
+      "src": "final/shs_profile.png",
+      "dst": "models/previews/shs_male/profile.png",
+      "bytes": 754069,
+      "md5": "97727bd0a3b4d4754cbc32e7edbbd4ca",
+      "role": "render",
+      "character": "shs_male",
+      "angle": "profile"
+    },
+    {
+      "src": "final/shs_threequarter.png",
+      "dst": "models/previews/shs_male/threequarter.png",
+      "bytes": 822595,
+      "md5": "3f34290362152180af7d3c95e390fb2c",
+      "role": "render",
+      "character": "shs_male",
+      "angle": "threequarter"
+    },
+    {
+      "src": "final/youth_front.png",
+      "dst": "models/previews/youth_male/front.png",
+      "bytes": 868909,
+      "md5": "ffccd93516de43e4a882c6164d927ea5",
+      "role": "render",
+      "character": "youth_male",
+      "angle": "front"
+    },
+    {
+      "src": "final/youth_profile.png",
+      "dst": "models/previews/youth_male/profile.png",
+      "bytes": 792843,
+      "md5": "df37d67982b802443589eb1f9eb2d11c",
+      "role": "render",
+      "character": "youth_male",
+      "angle": "profile"
+    },
+    {
+      "src": "final/youth_threequarter.png",
+      "dst": "models/previews/youth_male/threequarter.png",
+      "bytes": 861114,
+      "md5": "10db9484d11738d66797155b584cf43e",
+      "role": "render",
+      "character": "youth_male",
+      "angle": "threequarter"
+    },
+    {
+      "src": "female-final/shs_female_front.png",
+      "dst": "models/previews/shs_female/front.png",
+      "bytes": 831185,
+      "md5": "9397464b79f261c911df07ae19b61350",
+      "role": "render",
+      "character": "shs_female",
+      "angle": "front"
+    },
+    {
+      "src": "female-final/shs_female_profile.png",
+      "dst": "models/previews/shs_female/profile.png",
+      "bytes": 812919,
+      "md5": "7a26715ed269097fc1c0dd1f1b5f6226",
+      "role": "render",
+      "character": "shs_female",
+      "angle": "profile"
+    },
+    {
+      "src": "female-final/shs_female_threequarter.png",
+      "dst": "models/previews/shs_female/threequarter.png",
+      "bytes": 829376,
+      "md5": "0015270cbae2f7ddd3e96433f404d476",
+      "role": "render",
+      "character": "shs_female",
+      "angle": "threequarter"
+    },
+    {
+      "src": "female-final/youth_female_front.png",
+      "dst": "models/previews/youth_female/front.png",
+      "bytes": 888902,
+      "md5": "12abeffec4614b830501d39c3fbfdb12",
+      "role": "render",
+      "character": "youth_female",
+      "angle": "front"
+    },
+    {
+      "src": "female-final/youth_female_profile.png",
+      "dst": "models/previews/youth_female/profile.png",
+      "bytes": 797985,
+      "md5": "4c9fe9f3d778756cd7edc68ba169b26d",
+      "role": "render",
+      "character": "youth_female",
+      "angle": "profile"
+    },
+    {
+      "src": "female-final/youth_female_threequarter.png",
+      "dst": "models/previews/youth_female/threequarter.png",
+      "bytes": 881326,
+      "md5": "4ac1905d772cb45bd43f484c0d7eb0f6",
+      "role": "render",
+      "character": "youth_female",
+      "angle": "threequarter"
+    }
+  ]
+}

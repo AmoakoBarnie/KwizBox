@@ -57,6 +57,9 @@ MY APP/
 │   │       ├── Mascot.jsx   # KwizBox mascot — gender + class level variants,
 │   │       │                #   states: thinking/celebrate/encourage/sad/thinking
 │   │       ├── Mascot.css   # Mascot component styles
+│   │       ├── Mascot3D.jsx # R3F 3D mascot — loads models/, state-driven clips
+│   │       ├── Mascot3D.css # 3D mascot container styles
+│   │       ├── WalkingMascot.jsx # Mascot with locomotion (walk clip)
 │   │       ├── AnimatedBg.jsx# Gradient blob background (orbs + sparkles)
 │   │       ├── KenteFrame.jsx# Kente-pattern decorative frame
 │   │       ├── SoundToggle.jsx# Sound on/off toggle button
@@ -83,6 +86,12 @@ MY APP/
 │   ├── index.html           # Entry HTML
 │   └── package.json         # React 18, React Router 6, Framer Motion 13, React Confetti 6
 ├── scripts/                 # Question parsers, generators, importers, vetters
+├── models/                  # 3D mascot source library (masters + clips + renders)
+│   ├── models/              # 4 canonical rigged masters (.glb)
+│   ├── clips/               # Per-clip animation GLBs (idle/celebrate/encourage/walk/blink)
+│   ├── previews/            # Reference renders (front / profile / three-quarter)
+│   ├── manifest.json        # Provenance: source path, md5, rig + clip inventory
+│   └── README.md            # Rig contract, load paths, regeneration
 ├── docs/
 │   ├── APP_DOCUMENTATION.md # Complete app documentation (features, API, run guide)
 │   └── ...
@@ -200,6 +209,35 @@ Guest mode: any nickname + class level → temporary session (device-only storag
 - Shooting star every ~12 seconds
 - All hidden on light theme
 
+### Mascot 3D (`models/`)
+
+The mascot is a real-time 3D character (React Three Fiber), not a sprite or GIF.
+
+**Characters** — 4 variants, class level × gender:
+
+| Slug | File | Rigged | Clips |
+|---|---|---|---|
+| `shs_male` | `models/models/shs_male.glb` | ✅ 14 joints | idle, celebrate, encourage, walk, blink |
+| `youth_male` | `models/models/youth_male.glb` | ✅ 14 joints | idle, celebrate, encourage, walk, blink |
+| `shs_female` | `models/models/shs_female.glb` | ❌ **unrigged** | none |
+| `youth_female` | `models/models/youth_female.glb` | ❌ **unrigged** | none |
+
+**Animation contract** — the component maps app state to clip names, so clip
+names must match exactly or the mascot freezes:
+
+| App state | Clip | Loop |
+|---|---|---|
+| `thinking` | `idle` | yes |
+| `celebrate` | `celebrate` | no (returns to idle) |
+| `encourage` | `encourage` | yes |
+| `walking` | `walk` | yes |
+| *(random)* | `blink` | no |
+
+**Load path** — `Mascot3D.jsx` serves from `frontend/public/assets/mascots-v2/animated/`,
+which is byte-identical to `models/models/`. `models/` is the source library
+(masters + split clips + renders); the `public/` copy is what the browser fetches.
+See `models/README.md` for the full rig contract and how to regenerate.
+
 ### UI/UX
 - Dark theme default, light theme toggle (sun/moon icon, top-right)
 - Ghana flag colors as accents: Green `#00B36B`, Gold `#FFD23F`, Red `#CE1126`
@@ -302,3 +340,13 @@ Physical Education, Religious and Moral Education, Career Technology, Arabic, Mi
 - Always start Vite from the `frontend/` directory — starting from project root serves 404s.
 - The `trivia.db` file is the question bank (1.9 MB, 3,230 questions). Keep it safe.
 - Both servers must be running for the app to work. Backend `:8001`, Frontend `:5173`.
+- **Female mascots are not rigged.** `shs_female` and `youth_female` in `models/models/`
+  carry no skin and no animation clips, but `Mascot3D.jsx` maps them into the same
+  state machine as the males — so selecting a female mascot renders a static pose
+  (the `idle`/`celebrate`/`encourage` lookups find no clip and silently no-op).
+  Rigging them is a Blender job: `animate_mascots.py` currently loops only
+  `youth` and `shs`, so it needs a female pass before the clips can be authored.
+- **`models/` is a source library, not a runtime path.** The browser loads
+  `frontend/public/assets/mascots-v2/animated/`. If you replace a master in
+  `models/models/`, you must also copy it to that `public/` path or the change
+  will never reach the app. `models/manifest.json` records md5s for both sides.

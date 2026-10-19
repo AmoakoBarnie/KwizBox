@@ -19,6 +19,8 @@ STEM trivia app for Ghanaian learners (Primary 4 / B4 → JHS 3 / B9), NaCCA-ali
 | **Database** | `backend/trivia.db` — SQLite (3.2 MB, 7,318 questions) |
 | **Migration script** | `backend/scripts/migrate_sqlite_to_pg.py` |
 | **APKs** | `_backup/preview/KwizBox-{emulator,phone}.apk` |
+| **3D mascot models** | `models/` — 4 character masters + animation clips + renders |
+| **Mascot runtime path** | `frontend/public/assets/mascots-v2/animated/` (byte-identical to `models/models/`) |
 | **Deploy configs** | `backend/Dockerfile`, `railway.toml` |
 
 ## What's running right now
@@ -70,8 +72,17 @@ Replace `[PASSWORD]`, ensure port is **5432** (not 6543). Paste it here.
 - **JWT secret** must be set in env — no default (prevents accidental prod use)
 - **Guests excluded** from leaderboard (by design)
 - **No answer leak** in `/quiz/pack` responses (by design)
+- **Female mascots unrigged** — `shs_female` / `youth_female` have no skin and no
+  clips, but `Mascot3D.jsx` maps them into the same state machine → selecting a
+  female mascot shows a static pose. Fix is a Blender pass in `animate_mascots.py`
+  (currently loops only `youth`/`shs`), then `gltfpack -cc -kn -km -ke`.
+- **`models/` ≠ runtime path.** Browser loads `frontend/public/assets/mascots-v2/animated/`;
+  replacing a master in `models/models/` has no effect until copied there.
+- **Clip names are load-bearing.** `idle`/`celebrate`/`encourage`/`walk`/`blink` must
+  match exactly — a missing clip is a silent no-op, not an error.
 
 ## Full docs
 
 - **[project-log.md](./project-log.md)** — append-only history: what was asked, decided, shipped
 - **[roadmap.md](./roadmap.md)** — visual roadmap: Now / Next / Done / Later / Blocked
+- **[models/README.md](./models/README.md)** — 3D mascot rig contract, clip names, regeneration
