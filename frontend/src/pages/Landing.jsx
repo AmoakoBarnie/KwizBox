@@ -7,6 +7,12 @@ import HeroStage from '../components/HeroStage.jsx'
 import Mascot from '../components/Mascot.jsx'
 
 const CLASSES = ['B4', 'B5', 'B6', 'B7', 'B8', 'B9']
+const AGES = Array.from({ length: 95 }, (_, i) => i + 5) // 5..99
+const SEXES = [
+  { value: 'male', label: 'Male' },
+  { value: 'female', label: 'Female' },
+  { value: 'other', label: 'Other' },
+]
 
 const fadeUp = {
   hidden: { opacity: 0, y: 18 },
@@ -19,7 +25,7 @@ export default function Landing() {
   const location = useLocation()
   // If we arrived from a guest game ("log in to continue"), open the Login tab.
   const [tab, setTab] = useState(location?.state?.openTab || null)
-  const [form, setForm] = useState({ nickname: '', password: '', class_level: 'B4', school_code: '' })
+  const [form, setForm] = useState({ nickname: '', password: '', class_level: 'B4', school_code: '', age: '', gender: '' })
   const [err, setErr] = useState('')
   const [busy, setBusy] = useState(false)
 
@@ -27,7 +33,7 @@ export default function Landing() {
 
   async function doGuest(e) {
     e.preventDefault(); setErr(''); setBusy(true)
-    try { await guestLogin({ nickname: form.nickname || 'Guest', class_level: form.class_level, school_code: form.school_code || undefined }); nav('/play') }
+    try { await guestLogin({ nickname: form.nickname || 'Guest', class_level: form.class_level, school_code: form.school_code || undefined, age: form.age, gender: form.gender || undefined }); nav('/play') }
     catch (e) { setErr(e.message) } finally { setBusy(false) }
   }
   async function doLogin(e) {
@@ -37,7 +43,7 @@ export default function Landing() {
   }
   async function doSignup(e) {
     e.preventDefault(); setErr(''); setBusy(true)
-    try { await register({ nickname: form.nickname, password: form.password, class_level: form.class_level, school_code: form.school_code || undefined }); nav('/play') }
+    try { await register({ nickname: form.nickname, password: form.password, class_level: form.class_level, school_code: form.school_code || undefined, age: form.age, gender: form.gender || undefined }); nav('/play') }
     catch (e) { setErr(e.message) } finally { setBusy(false) }
   }
 
@@ -114,6 +120,29 @@ export default function Landing() {
                       {CLASSES.map((c) => <option key={c} value={c}>{c}</option>)}
                     </select>
                   </label>
+                  <label>Your age
+                    <select value={form.age} onChange={(e) => set('age', e.target.value)}>
+                      <option value="">Select age</option>
+                      {AGES.map((a) => <option key={a} value={a}>{a}</option>)}
+                    </select>
+                  </label>
+                  <fieldset className="form-fieldset">
+                    <legend>Sex</legend>
+                    <div className="sex-row">
+                      {SEXES.map((s) => (
+                        <label key={s.value} className={form.gender === s.value ? 'sex-chip selected' : 'sex-chip'}>
+                          <input
+                            type="radio"
+                            name="guest-sex"
+                            value={s.value}
+                            checked={form.gender === s.value}
+                            onChange={(e) => set('gender', e.target.value)}
+                          />
+                          {s.label}
+                        </label>
+                      ))}
+                    </div>
+                  </fieldset>
                   <label>School code (optional)
                     <input value={form.school_code} onChange={(e) => set('school_code', e.target.value)} placeholder="e.g. ADIS-7" />
                   </label>
@@ -147,6 +176,29 @@ export default function Landing() {
                       {CLASSES.map((c) => <option key={c} value={c}>{c}</option>)}
                     </select>
                   </label>
+                  <label>Your age
+                    <select value={form.age} onChange={(e) => set('age', e.target.value)}>
+                      <option value="">Select age</option>
+                      {AGES.map((a) => <option key={a} value={a}>{a}</option>)}
+                    </select>
+                  </label>
+                  <fieldset className="form-fieldset">
+                    <legend>Sex</legend>
+                    <div className="sex-row">
+                      {SEXES.map((s) => (
+                        <label key={s.value} className={form.gender === s.value ? 'sex-chip selected' : 'sex-chip'}>
+                          <input
+                            type="radio"
+                            name="signup-sex"
+                            value={s.value}
+                            checked={form.gender === s.value}
+                            onChange={(e) => set('gender', e.target.value)}
+                          />
+                          {s.label}
+                        </label>
+                      ))}
+                    </div>
+                  </fieldset>
                   <label>School code (optional)
                     <input value={form.school_code} onChange={(e) => set('school_code', e.target.value)} placeholder="e.g. ADIS-7" />
                   </label>

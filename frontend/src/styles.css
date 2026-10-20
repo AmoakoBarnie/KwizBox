@@ -317,3 +317,65 @@
   bottom: 0;
   pointer-events: none;
 }
+
+/* ===== Age + sex on the landing form ===== */
+.form-fieldset {
+  border: 1px solid var(--glass-border);
+  border-radius: 14px;
+  padding: 12px 14px 14px;
+  margin: 0;
+  background: var(--glass);
+}
+.form-fieldset legend {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  padding: 0 6px;
+}
+.sex-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.sex-chip {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 13px 8px;
+  border-radius: 14px;
+  border: 1px solid var(--glass-border);
+  background: var(--glass);
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform .08s cubic-bezier(.23,1,.32,1), background .2s,
+              border-color .2s, box-shadow .2s;
+}
+.sex-chip:hover {
+  background: #ffffff14;
+  border-color: #00d27e66;
+}
+.sex-chip:active {
+  transform: scale(.97);
+}
+.sex-chip input {
+  /* The chip itself is the control; keep the real input available to SR/keyboard. */
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
+.sex-chip.selected {
+  background: var(--grad);
+  color: #042;
+  border-color: transparent;
+  box-shadow: var(--shadow-glow);
+}
+.sex-chip:focus-within {
+  box-shadow: var(--focus-ring);
+}
