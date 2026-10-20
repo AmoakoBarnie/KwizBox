@@ -38,6 +38,8 @@ def to_public(user: User, db=None) -> PublicUser:
         class_level=user.class_level,
         school_code=user.school_code,
         is_guest=user.is_guest,
+        age=user.age,
+        gender=user.gender,
         lifetime_score=user.lifetime_score or 0,
         total_questions=user.total_questions or 0,
         total_correct=user.total_correct or 0,
@@ -67,6 +69,8 @@ def register(request: Request, body: RegisterRequest, db: Session = Depends(get_
         school_code=body.school_code,
         is_guest=False,
         password_hash=hash_password(body.password),
+        age=body.age,
+        gender=body.gender,
         last_ip=_client_ip(request),
     )
     db.add(user)
@@ -113,6 +117,8 @@ def guest(request: Request, body: GuestRequest, db: Session = Depends(get_db)):
         school_code=body.school_code,
         is_guest=True,
         is_active=True,
+        age=body.age,
+        gender=body.gender,
         last_ip=_client_ip(request),
     )
     db.add(user)

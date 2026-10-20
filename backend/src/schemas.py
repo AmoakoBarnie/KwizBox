@@ -33,11 +33,20 @@ DIFFICULTIES = ["Easy", "Medium", "Hard"]
 
 
 # ---------- Auth ----------
+# Age + sex are captured at account creation (and for guests) so the profile
+# carries them. Both are optional: age is a plain int validated 5-99, sex is one
+# of the three literal values.
+AGE_MIN, AGE_MAX = 5, 99
+SEX_VALUES = ("male", "female", "other")
+
+
 class RegisterRequest(BaseModel):
     nickname: str = Field(min_length=2, max_length=40)
     password: str = Field(min_length=6, max_length=100)
     class_level: Optional[str] = Field(default=None, pattern="^(B[4-9]|S[1-3])?$")
     school_code: Optional[str] = None
+    age: Optional[int] = Field(default=None, ge=AGE_MIN, le=AGE_MAX)
+    gender: Optional[str] = Field(default=None, pattern="^(male|female|other)$")
 
 
 class LoginRequest(BaseModel):
@@ -49,6 +58,8 @@ class GuestRequest(BaseModel):
     nickname: Optional[str] = "Guest"
     class_level: Optional[str] = Field(default=None, pattern="^(B[4-9]|S[1-3])?$")
     school_code: Optional[str] = None
+    age: Optional[int] = Field(default=None, ge=AGE_MIN, le=AGE_MAX)
+    gender: Optional[str] = Field(default=None, pattern="^(male|female|other)$")
 
 
 class TokenResponse(BaseModel):
@@ -63,6 +74,8 @@ class PublicUser(BaseModel):
     class_level: Optional[str]
     school_code: Optional[str]
     is_guest: bool
+    age: Optional[int] = None
+    gender: Optional[str] = None
     lifetime_score: int
     total_questions: int
     total_correct: int

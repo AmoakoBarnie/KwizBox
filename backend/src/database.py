@@ -35,6 +35,9 @@ def _migrate_avatar_and_streak_columns():
             ("last_login", "DATETIME"),
             ("security_question", "VARCHAR(160)"),
             ("security_answer_hash", "VARCHAR(200)"),
+            # Profile fields: age + sex, captured at sign-up / guest creation.
+            ("age", "INTEGER"),
+            ("gender", "VARCHAR(20)"),
         ]:
             if col not in cols:
                 conn.execute(text(f"ALTER TABLE users ADD COLUMN {col} {col_type}"))

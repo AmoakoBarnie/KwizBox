@@ -25,6 +25,10 @@ class User(Base):
     is_guest = Column(Boolean, default=False)
     password_hash = Column(String(200), nullable=True)
     is_active = Column(Boolean, default=True, nullable=False)
+    # ---- Profile: age + sex, captured at sign-up and for guests ----
+    # age is a plain int (validated 5-99); sex is 'male' | 'female' | 'other'.
+    age = Column(Integer, nullable=True)
+    gender = Column(String(20), nullable=True)
     created_at = Column(DateTime, default=utcnow)
     lifetime_score = Column(Integer, default=0)
     total_questions = Column(Integer, default=0)
