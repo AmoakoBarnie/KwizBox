@@ -6,42 +6,49 @@ export default function TermsAndConditions() {
     <div className="policy-page">
       <div className="policy-hero">
         <h1 className="policy-title">Terms and Conditions</h1>
-        <p className="policy-sub">KwizBox — last updated 12 September 2026</p>
+        <p className="policy-sub">KwizBox — last updated 19 October 2026</p>
       </div>
 
       <div className="policy-body">
         <section className="policy-section">
           <h2 className="policy-h2">1. Acceptance of terms</h2>
           <p>
-            By accessing or using KwizBox (the "App"), you agree to be bound by
-            these Terms and Conditions. If you do not accept them, do not use the App.
+            By accessing or using KwizBox (the "App"), you agree to be bound by these Terms and
+            Conditions. If you do not accept them, do not use the App. If you are under 18, you
+            confirm that a parent or guardian has reviewed these terms with you.
           </p>
         </section>
 
         <section className="policy-section">
           <h2 className="policy-h2">2. Description of the service</h2>
           <p>
-            KwizBox is a free, curriculum-aligned educational quiz application
-            covering Science, Technology, Engineering, and Mathematics (STEM) topics for
-            Ghanaian learners from Primary 4 (B4) to JHS 3 (B9). The content is aligned to
-            the NaCCA curriculum where applicable.
+            KwizBox is a free, curriculum-aligned educational quiz application for Ghanaian
+            learners from Primary 4 (B4) to SHS 3 (S3). Content is aligned to the NaCCA
+            curriculum where applicable, and covers the three core STEM subjects — Science,
+            Mathematics, and Computing — alongside a wider range of basic-school and senior-high
+            subjects.
+          </p>
+          <p>
+            The App is provided free of charge. There is no paid tier, no advertising, and no
+            in-app purchase.
           </p>
         </section>
 
         <section className="policy-section">
-          <h2 className="policy-h2">3. Eligibility</h2>
+          <h2 className="policy-h2">3. Eligibility and age</h2>
           <p>
-            The App is intended for learners, teachers, and anyone interested in Ghanaian STEM
-            education. There is no minimum age to use the App in guest mode. Registration is
-            optional and open to any user who accepts these terms.
+            The App is intended for learners, teachers, and anyone interested in Ghanaian
+            education. You may use it in guest mode at any age. When you register, or when you
+            start a guest session, you may optionally select an age between 5 and 99; this is
+            not verified and does not gate access to any part of the App.
           </p>
         </section>
 
         <section className="policy-section">
           <h2 className="policy-h2">4. User accounts</h2>
           <p>
-            When you register, you choose a nickname. You are responsible for keeping your
-            password confidential. You agree not to:
+            When you register, you choose a nickname and a password. You are responsible for
+            keeping your password confidential. You agree not to:
           </p>
           <ul className="policy-list">
             <li>create more than one account for the purpose of manipulating the leaderboard;</li>
@@ -57,14 +64,25 @@ export default function TermsAndConditions() {
         <section className="policy-section">
           <h2 className="policy-h2">5. Guest usage</h2>
           <p>
-            You may use the App without creating an account. In guest mode, quiz results are
-            graded in your browser and are not saved to the server. Leaderboard participation
-            requires a registered account.
+            You may use the App without creating an account. Guest sessions do not require a
+            password. Note that starting a guest session does create a lightweight record on our
+            server (nickname, class, optional age and sex, and IP address) — see the Privacy
+            Policy for exactly what is stored. Leaderboard participation requires a registered
+            account.
           </p>
         </section>
 
         <section className="policy-section">
-          <h2 className="policy-h2">6. Academic integrity</h2>
+          <h2 className="policy-h2">6. Your data</h2>
+          <p>
+            What we collect, how long it is kept, and how to delete your account are set out in
+            the Privacy Policy and the Cookies and Tracking Policy, both of which form part of
+            these terms. By using the App you agree to those policies.
+          </p>
+        </section>
+
+        <section className="policy-section">
+          <h2 className="policy-h2">7. Academic integrity</h2>
           <p>
             The App is designed as a learning and practice tool. Users are encouraged to use it
             to learn and revise. Any use of the App to gain an unfair advantage in a formal
@@ -73,7 +91,7 @@ export default function TermsAndConditions() {
         </section>
 
         <section className="policy-section">
-          <h2 className="policy-h2">7. Content and copyright</h2>
+          <h2 className="policy-h2">8. Content and copyright</h2>
           <p>
             The quiz questions, explanations, and app design are the responsibility of the app
             operator. They are provided for educational use. You may not reproduce the full
@@ -86,18 +104,18 @@ export default function TermsAndConditions() {
         </section>
 
         <section className="policy-section">
-          <h2 className="policy-h2">8. Disclaimer of warranties</h2>
+          <h2 className="policy-h2">9. Disclaimer of warranties</h2>
           <p>
             The App is provided "as is" and "as available" for educational purposes, without
-            warranty of any kind, express or implied, including accuracy, completeness,
-            fitness for a particular purpose, or non-infringement. Quiz content is prepared to
-            the best of the operator's ability but is not a substitute for formal curriculum
-            materials or teacher instruction.
+            warranty of any kind, express or implied, including accuracy, completeness, fitness
+            for a particular purpose, or non-infringement. Quiz content is prepared to the best
+            of the operator's ability but is not a substitute for formal curriculum materials or
+            teacher instruction.
           </p>
         </section>
 
         <section className="policy-section">
-          <h2 className="policy-h2">9. Limitation of liability</h2>
+          <h2 className="policy-h2">10. Limitation of liability</h2>
           <p>
             To the fullest extent permitted by law, the operator shall not be liable for any
             indirect, incidental, special, or consequential loss or damage arising from your use
@@ -107,16 +125,21 @@ export default function TermsAndConditions() {
         </section>
 
         <section className="policy-section">
-          <h2 className="policy-h2">10. Termination</h2>
+          <h2 className="policy-h2">11. Termination and account deletion</h2>
           <p>
-            Your right to use the App may be terminated by you at any time (simply stop using it)
-            or by the operator at any time, with or without notice, for violation of these terms
-            or for operational reasons.
+            Your right to use the App may be terminated by you at any time (simply stop using
+            it) or by the operator at any time, with or without notice, for violation of these
+            terms or for operational reasons.
+          </p>
+          <p>
+            You may delete your account at any time from the app's settings. Deleting your
+            account removes your progress, badges, and quiz history along with the account
+            itself.
           </p>
         </section>
 
         <section className="policy-section">
-          <h2 className="policy-h2">11. Changes to these terms</h2>
+          <h2 className="policy-h2">12. Changes to these terms</h2>
           <p>
             These terms may be updated from time to time. The "last updated" date at the top
             shows the most recent revision. Continued use of the App after a change constitutes
@@ -125,7 +148,7 @@ export default function TermsAndConditions() {
         </section>
 
         <section className="policy-section">
-          <h2 className="policy-h2">12. Governing law</h2>
+          <h2 className="policy-h2">13. Governing law</h2>
           <p>
             These terms are governed by the laws of Ghana. Any dispute arising from them shall
             be resolved in the courts of Ghana to the extent that a court has jurisdiction.

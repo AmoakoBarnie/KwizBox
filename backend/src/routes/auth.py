@@ -195,7 +195,10 @@ def change_password(
 
 # ============ ACCOUNT DELETION ============
 class DeleteAccountRequest(BaseModel):
-    password: str
+    # Optional because guest accounts have no password: the route skips the
+    # password check for them, so requiring the field here would make guest
+    # self-deletion impossible (it returned 422 instead of 204).
+    password: Optional[str] = None
 
 
 @router.delete("/me", status_code=status.HTTP_204_NO_CONTENT)
@@ -211,7 +214,7 @@ def delete_account(
     else:
         if not user.password_hash:
             raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="No password set for this account")
-        if not verify_password(body.password, user.password_hash):
+        if not body.password or not verify_password(body.password, user.password_hash):
             raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Password is incorrect")
 
     # Delete related data (cascade should handle most, but be explicit for safety)
