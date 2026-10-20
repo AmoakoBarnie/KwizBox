@@ -1,6 +1,7 @@
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 export default function CookiePolicy() {
+  const nav = useNavigate()
   return (
     <div className="policy-page">
       <div className="policy-hero">
@@ -142,7 +143,7 @@ export default function CookiePolicy() {
       </div>
 
       <div className="policy-nav">
-        <Link to="/cookie-policy" className="policy-back">← Back to app</Link>
+        <button type="button" className="back" onClick={() => nav('/')}>← Back to app</button>
       </div>
     </div>
   )
