@@ -20,7 +20,29 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
+        debug {
+            signingConfig signingConfigs.debug
+        }
+    }
+}
+
+signingConfigs {
+    debug {
+        storeFile file('debug.keystore')
+        storePassword 'android'
+        keyAlias 'androiddebugkey'
+        keyPassword 'android'
+    }
+    release {
+        // TODO: create a real release keystore and DO NOT commit it to git.
+        // Recommended location: frontend/android/app/keystore/release.keystore
+        // Then set these values or load them from local.properties / env.
+        storeFile file('keystore/release.keystore')
+        storePassword System.getenv('KWIZBOX_KEYSTORE_PASSWORD') ?: ''
+        keyAlias System.getenv('KWIZBOX_KEY_ALIAS') ?: ''
+        keyPassword System.getenv('KWIZBOX_KEY_PASSWORD') ?: ''
     }
 }
 
