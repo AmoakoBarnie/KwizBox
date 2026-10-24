@@ -82,17 +82,16 @@ export default function CookiePolicy() {
               you have earned, stored so they persist across sessions.
             </li>
             <li>
-              <strong>Theme preference</strong> (<code>stem_mode</code>): whether you prefer
-              dark or light mode, so the app remembers your choice.
+              <strong>Theme preference</strong> (<code>stem_mode</code>, <code>stem_theme</code>):
+              whether you prefer dark or light mode, so the app remembers your choice.
             </li>
             <li>
-              <strong>Sound preference</strong> (<code>stem_mute</code>): whether sound
+              <strong>Sound preference</strong> (<code>stem_sound</code>): whether sound
               effects are muted.
             </li>
             <li>
-              <strong>Admin session token</strong> (<code>ghana_admin_token</code>) and
-              <strong>admin panel info</strong> (<code>ghana_admin_info</code>): used only by
-              the administrator panel. Admin tokens expire after 2 hours.
+              <strong>App mode</strong> (<code>app_mode</code>): tracks whether the app is
+              being used in a standalone/PWA context or a normal browser tab.
             </li>
           </ul>
           <p>
@@ -160,6 +159,18 @@ export default function CookiePolicy() {
             reflects the most recent revision. Any change that introduces cookies or tracking
             would be noted here.
           </p>
+        </section>
+
+        <section className="policy-section">
+          <h2 className="policy-h2">10. Contact</h2>
+          <p>
+            If you have questions about this Cookies and Tracking Policy, you can contact the
+            operator here:
+          </p>
+          <ul className="policy-list">
+            <li>Email: <strong>amoakobarnie@gmail.com</strong></li>
+            <li>App: KwizBox — Ghana STEM Trivia</li>
+          </ul>
         </section>
       </div>
 

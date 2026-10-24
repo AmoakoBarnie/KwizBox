@@ -154,6 +154,23 @@ export default function TermsAndConditions() {
             be resolved in the courts of Ghana to the extent that a court has jurisdiction.
           </p>
         </section>
+
+        <section className="policy-section">
+          <h2 className="policy-h2">14. Contact</h2>
+          <p>
+            If you have questions about these terms, the Privacy Policy, or the App itself,
+            you can contact the operator here:
+          </p>
+          <ul className="policy-list">
+            <li>Email: <strong>amoakobarnie@gmail.com</strong></li>
+            <li>App: KwizBox — Ghana STEM Trivia</li>
+          </ul>
+          <p>
+            We aim to respond to reasonable inquiries within a reasonable time. This contact
+            channel is for app-related questions only; account deletion requests can also be
+            submitted from within the App via Settings.
+          </p>
+        </section>
       </div>
 
       <div className="policy-nav">
