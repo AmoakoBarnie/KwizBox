@@ -38,7 +38,9 @@ def _to_question_out(q: Question) -> QuestionOut:
 
 
 @router.post("/check")
+@limiter.limit("30/minute")
 def check_answer(
+    request: Request,
     body: CheckAnswerRequest,
     db: Session = Depends(get_db),
     user: User | None = Depends(optional_user),
@@ -369,7 +371,9 @@ def _add_period_points(db, user_id, kind, period, delta):
 
 
 @router.get("/leaderboard", response_model=list[LeaderboardEntry])
+@limiter.limit("20/minute")
 def leaderboard(
+    request: Request,
     scope: str = "global",          # global | class | school | weekly | monthly
     class_level: str | None = None,
     school_code: str | None = None,
@@ -423,7 +427,9 @@ def build_leaderboard(db, scope="global", class_level=None, school_code=None, li
 
 
 @router.get("/progress", response_model=dict)
+@limiter.limit("20/minute")
 def get_progress(
+    request: Request,
     db: Session = Depends(get_db),
     user: User = Depends(get_current_user),
 ):

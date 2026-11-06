@@ -1,5 +1,7 @@
 """Auth + user routes: register, login, guest, profile, account deletion."""
 from fastapi import APIRouter, Depends, HTTPException, status, Request
+from fastapi.responses import JSONResponse
+from fastapi.encoders import jsonable_encoder
 from sqlalchemy.orm import Session
 from sqlalchemy import func
 from pydantic import BaseModel, Field
@@ -55,7 +57,7 @@ def to_public(user: User, db=None) -> PublicUser:
     )
 
 
-@router.post("/register", response_model=TokenResponse)
+@router.post("/register")
 @limiter.limit("10/minute")
 def register(request: Request, body: RegisterRequest, db: Session = Depends(get_db)):
     existing = db.query(User).filter(
@@ -76,10 +78,10 @@ def register(request: Request, body: RegisterRequest, db: Session = Depends(get_
     db.add(user)
     db.commit()
     db.refresh(user)
-    return TokenResponse(access_token=create_token(user.id), user=to_public(user, db))
+    return _token_response(create_token(user.id), to_public(user, db))
 
 
-@router.post("/login", response_model=TokenResponse)
+@router.post("/login")
 @limiter.limit("15/minute")
 def login(request: Request, body: LoginRequest, db: Session = Depends(get_db)):
     user = db.query(User).filter(
@@ -90,25 +92,19 @@ def login(request: Request, body: LoginRequest, db: Session = Depends(get_db)):
         user.last_ip = _client_ip(request)
         user.last_login = datetime.now(timezone.utc)
         db.commit()
-        return TokenResponse(
-            access_token=mk_token(user.id),
-            user=to_public(user, db)
-        )
+        return _token_response(mk_token(user.id), to_public(user, db))
     admin = db.query(AdminUser).filter(AdminUser.username == body.nickname).first()
     if admin and admin.password_hash and verify_password(body.password, admin.password_hash):
         from ..auth import create_admin_token as mk_token
-        return TokenResponse(
-            access_token=mk_token(admin.id),
-            user=PublicUser(
-                id=admin.id, nickname=admin.username, class_level=None, school_code=None,
-                is_guest=False, lifetime_score=0, total_questions=0, total_correct=0,
-                current_streak=0, longest_streak=0, progress=None,
-            )
-        )
+        return _token_response(mk_token(admin.id), PublicUser(
+            id=admin.id, nickname=admin.username, class_level=None, school_code=None,
+            is_guest=False, lifetime_score=0, total_questions=0, total_correct=0,
+            current_streak=0, longest_streak=0, progress=None,
+        ))
     raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid nickname or password")
 
 
-@router.post("/guest", response_model=TokenResponse)
+@router.post("/guest")
 @limiter.limit("20/minute")
 def guest(request: Request, body: GuestRequest, db: Session = Depends(get_db)):
     user = User(
@@ -124,7 +120,7 @@ def guest(request: Request, body: GuestRequest, db: Session = Depends(get_db)):
     db.add(user)
     db.commit()
     db.refresh(user)
-    return TokenResponse(access_token=create_token(user.id, is_guest=True), user=to_public(user, db))
+    return _token_response(create_token(user.id, is_guest=True), to_public(user, db))
 
 
 @router.get("/me", response_model=PublicUser)
@@ -167,6 +163,23 @@ def update_avatar(body: AvatarUpdateRequest, user: User = Depends(get_current_us
         db.commit()
         db.refresh(user)
     return to_public(user, db)
+
+
+def _token_response(token: str, user) -> JSONResponse:
+    """Return a JSON response carrying the JWT in an HttpOnly, Secure, SameSite cookie."""
+    response = JSONResponse(
+        content=jsonable_encoder({"detail": "ok", "user": user})
+    )
+    response.set_cookie(
+        key="kwizbox_access",
+        value=token,
+        httponly=True,
+        secure=True,
+        samesite="strict",
+        max_age=60 * 60 * 24 * 30,
+        path="/",
+    )
+    return response
 
 
 # ============ PASSWORD CHANGE ============

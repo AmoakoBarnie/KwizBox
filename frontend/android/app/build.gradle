@@ -18,7 +18,8 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.release
         }
@@ -36,13 +37,24 @@ signingConfigs {
         keyPassword 'android'
     }
     release {
-        // TODO: create a real release keystore and DO NOT commit it to git.
-        // Recommended location: frontend/android/app/keystore/release.keystore
-        // Then set these values or load them from local.properties / env.
-        storeFile file('keystore/release.keystore')
-        storePassword System.getenv('KWIZBOX_KEYSTORE_PASSWORD') ?: ''
-        keyAlias System.getenv('KWIZBOX_KEY_ALIAS') ?: ''
-        keyPassword System.getenv('KWIZBOX_KEY_PASSWORD') ?: ''
+        // Fail-closed: a real release keystore MUST be supplied via CI secrets.
+        // Generate it with:
+        //   keytool -genkey -v -keystore release.keystore -keyalg RSA -keysize 4096
+        //             -validity 10000 -alias release
+        // Then set KWIZBOX_KEYSTORE_PATH, KWIZBOX_KEYSTORE_PASSWORD,
+        // KWIZBOX_KEY_ALIAS, KWIZBOX_KEY_PASSWORD as env/secrets.
+        def keystorePath = System.getenv('KWIZBOX_KEYSTORE_PATH') ?: 'keystore/release.keystore'
+        def storePassword = System.getenv('KWIZBOX_KEYSTORE_PASSWORD')
+        def keyAlias = System.getenv('KWIZBOX_KEY_ALIAS')
+        def keyPassword = System.getenv('KWIZBOX_KEY_PASSWORD')
+        if (storePassword == null || keyAlias == null || keyPassword == null) {
+            throw new GradleException(
+                'release-keystore incomplete: supply KWIZBOX_KEYSTORE_PASSWORD, KWIZBOX_KEY_ALIAS and KWIZBOX_KEY_PASSWORD')
+        }
+        storeFile file(keystorePath)
+        storePassword storePassword
+        keyAlias keyAlias
+        keyPassword keyPassword
     }
 }
 

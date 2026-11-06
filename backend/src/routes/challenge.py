@@ -11,7 +11,7 @@ from sqlalchemy.orm import Session
 from ..rate_limit import limiter
 
 from ..database import get_db
-from ..models import Challenge, Question, QuizSession, User
+from ..models import Challenge, Question, QuizSession, User, ChallengeSession
 from ..auth import get_current_user, optional_user
 
 router = APIRouter(prefix="/quiz", tags=["challenge"])
@@ -84,7 +84,10 @@ class CreateChallengeReq(BaseModel):
 
 
 @router.post("/challenge/create")
-def create_challenge(body: CreateChallengeReq, db: Session = Depends(get_db), user=Depends(get_current_user)):
+@limiter.limit("15/minute")
+def create_challenge(
+    request: Request,
+    body: CreateChallengeReq, db: Session = Depends(get_db), user=Depends(get_current_user)):
     code = generate_code(db)
     expires_at = datetime.now(timezone.utc) + timedelta(hours=CHALLENGE_LIFETIME_HOURS)
     questions = pick_questions(db, body.class_level, body.subject, 12)
@@ -115,7 +118,10 @@ def create_challenge(body: CreateChallengeReq, db: Session = Depends(get_db), us
 
 # ============ JOIN (GET questions for a code) ============
 @router.get("/challenge/{code}/questions")
-def get_challenge_questions(code: str, db: Session = Depends(get_db), user=Depends(optional_user)):
+@limiter.limit("15/minute")
+def get_challenge_questions(
+    request: Request,
+    code: str, db: Session = Depends(get_db), user=Depends(optional_user)):
     challenge = db.query(Challenge).filter(Challenge.code == code.upper()).first()
     if not challenge:
         raise HTTPException(404, "Challenge not found")
@@ -123,6 +129,16 @@ def get_challenge_questions(code: str, db: Session = Depends(get_db), user=Depen
         raise HTTPException(410, "Challenge has expired")
     if challenge.status == "completed":
         raise HTTPException(410, "Challenge is already finished")
+
+    # P0-6: Bind the player to the challenge at join time (logged-in users only).
+    if user is not None and user.id is not None:
+        existing = db.query(ChallengeSession).filter(
+            ChallengeSession.challenge_code == code.upper(),
+            ChallengeSession.player_id == user.id,
+        ).first()
+        if not existing:
+            db.add(ChallengeSession(challenge_code=code.upper(), player_id=user.id, status="pending"))
+            db.commit()
 
     qids = challenge.question_list
     by_id = {q.id: q for q in db.query(Question).filter(Question.id.in_(qids)).all()}
@@ -147,7 +163,9 @@ class AnswerSubmission(BaseModel):
 
 
 @router.post("/challenge/{code}/submit")
+@limiter.limit("15/minute")
 def submit_challenge_score(
+    request: Request,
     code: str,
     answers: list[AnswerSubmission],
     db: Session = Depends(get_db),
@@ -162,15 +180,12 @@ def submit_challenge_score(
         raise HTTPException(410, "Challenge is already finished")
 
     # --- P0-6: Server-authoritative scoring ---
-    # 1) Enforce one submission per user/challenge
-    existing = db.query(QuizSession).filter(
-        QuizSession.user_id == user.id,
-        QuizSession.class_level == challenge.class_level,
-        QuizSession.subject == challenge.subject,
-        QuizSession.is_daily == False,
-        QuizSession.status == "completed",
+    # 1) Enforce one submission per (challenge, player) via ChallengeSession
+    existing_cs = db.query(ChallengeSession).filter(
+        ChallengeSession.challenge_code == code.upper(),
+        ChallengeSession.player_id == user.id,
     ).first()
-    if existing:
+    if existing_cs and existing_cs.status == "completed":
         raise HTTPException(409, "Already submitted for this challenge")
 
     # 2) Validate submitted question IDs belong to this challenge
@@ -195,8 +210,9 @@ def submit_challenge_score(
 
     accuracy = correct_count / len(answers) if answers else 0
 
-    # 4) Compute duration server-side (ignore client-supplied value)
-    now = datetime.now(timezone.utc)
+    # 4) Compute duration server-side (ignore client-supplied value). SQLite stores
+    #    created_at as a naive datetime, so use a naive 'now' too.
+    now = datetime.now()
 
     sess = QuizSession(
         user_id=user.id,
@@ -208,21 +224,23 @@ def submit_challenge_score(
         accuracy=accuracy,
         duration_seconds=int((now - challenge.created_at).total_seconds()),
         max_streak=0,
+        challenge_code=code,
         status="completed",
         school_code=None,
         is_daily=False,
     )
     db.add(sess)
 
-    # 5) Mark challenge completed if 2+ distinct users completed sessions for THIS challenge
-    challenge_sessions = db.query(QuizSession).filter(
-        QuizSession.class_level == challenge.class_level,
-        QuizSession.subject == challenge.subject,
-        QuizSession.status == "completed",
-        QuizSession.is_daily == False,
-    ).distinct(QuizSession.user_id).count()
+    # 5) Mark this challenge completed when 2+ distinct players completed sessions for it
+    if existing_cs:
+        existing_cs.status = "completed"
+        existing_cs.completed_at = datetime.now(timezone.utc)
 
-    if challenge_sessions >= 2:
+    completed_sessions = db.query(ChallengeSession).filter(
+        ChallengeSession.challenge_code == code.upper(),
+        ChallengeSession.status == "completed",
+    ).all()
+    if len({cs.player_id for cs in completed_sessions}) >= 2:
         challenge.status = "completed"
         db.commit()
     else:
@@ -247,16 +265,14 @@ def compare_challenge_scores(request: Request, code: str, db: Session = Depends(
     if not challenge:
         raise HTTPException(404, "Challenge not found")
 
-    # P0-7: Query only this challenge's completed sessions via challenge question IDs
-    challenge_qids = set(challenge.question_list)
+    # P0-7: Query only THIS challenge's players (challenge_code filter)
     window_end = datetime.now(timezone.utc) + timedelta(minutes=10)
 
     sessions = (
         db.query(QuizSession, User.nickname)
         .join(User, User.id == QuizSession.user_id)
         .filter(
-            QuizSession.class_level == challenge.class_level,
-            QuizSession.subject == challenge.subject,
+            QuizSession.challenge_code == code.upper(),
             QuizSession.status == "completed",
             QuizSession.is_daily == False,
             QuizSession.created_at <= window_end,

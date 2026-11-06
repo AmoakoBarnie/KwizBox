@@ -1,6 +1,6 @@
 """JWT auth + password helpers."""
 from datetime import datetime, timedelta, timezone
-from fastapi import Depends, HTTPException, status
+from fastapi import Depends, HTTPException, status, Request
 from fastapi.security import OAuth2PasswordBearer
 from jose import JWTError, jwt
 from passlib.context import CryptContext
@@ -15,6 +15,17 @@ SECRET = settings.jwt_secret
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="auth/token", auto_error=False)
+
+
+def get_token(request: Request) -> str:
+    """Bearer token from the HttpOnly cookie (set at login) or the Authorization header."""
+    token = request.cookies.get("kwizbox_access")
+    if token:
+        return token
+    auth = request.headers.get("Authorization", "")
+    if auth.startswith("Bearer "):
+        return auth[7:]
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Not authenticated")
 
 
 def hash_password(p: str) -> str:
@@ -41,7 +52,7 @@ def decode_token(token: str | None):
 
 
 def get_current_user(
-    token: str | None = Depends(oauth2_scheme),
+    token: str = Depends(get_token),
     db: Session = Depends(get_db),
 ) -> User:
     cred_exc = HTTPException(
@@ -63,7 +74,7 @@ def get_current_user(
 
 
 def optional_user(
-    token: str | None = Depends(oauth2_scheme),
+    token: str = Depends(get_token),
     db: Session = Depends(get_db),
 ) -> User | None:
     """Returns the user if a valid token is present, else None (guest/visitor)."""
@@ -88,7 +99,7 @@ def create_admin_token(admin_id: int) -> str:
 
 
 def get_current_admin(
-    token: str | None = Depends(oauth2_scheme),
+    token: str = Depends(get_token),
     db: Session = Depends(get_db),
 ) -> AdminUser:
     cred_exc = HTTPException(

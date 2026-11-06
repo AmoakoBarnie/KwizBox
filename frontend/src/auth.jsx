@@ -7,47 +7,43 @@ const TOKEN_KEY = 'kwizbox_token'
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null)
-  const [token, setToken] = useState(() => localStorage.getItem(TOKEN_KEY))
+  const [token, setToken] = useState(null)
   const [loading, setLoading] = useState(true)
 
-  // On mount, validate stored token
+  // On mount, validate the session (cookies are read server-side, never by JS).
   useEffect(() => {
     let active = true
     async function load() {
-      if (!token) { setLoading(false); return }
       try {
-        const me = await api.me(token)
+        const me = await api.me()
         if (active) setUser(me)
       } catch (_) {
-        localStorage.removeItem(TOKEN_KEY)
-        if (active) setToken(null)
+        if (active) setUser(null)
       } finally {
         if (active) setLoading(false)
       }
     }
     load()
     return () => { active = false }
-  }, [token])
+  }, [])
 
-  function persist(tok, usr) {
-    if (tok) localStorage.setItem(TOKEN_KEY, tok)
-    else localStorage.removeItem(TOKEN_KEY)
-    setToken(tok)
+  function persist(usr) {
     setUser(usr)
+    setToken(null)
   }
 
   const value = {
     user, token, loading,
     isAuthed: !!user && !user.is_guest,
     isGuest: !!user && user.is_guest,
-    async register(data) { const r = await api.register(data); persist(r.access_token, r.user); return r },
-    async login(data) { const r = await api.login(data); persist(r.access_token, r.user); return r },
-    async guestLogin(data) { const r = await api.guest(data); persist(r.access_token, r.user); return r },
+    async register(data) { const r = await api.register(data); persist(r.user); return r },
+    async login(data) { const r = await api.login(data); persist(r.user); return r },
+    async guestLogin(data) { const r = await api.guest(data); persist(r.user); return r },
     logout() { persist(null, null) },
     // Upgrade 8: update avatar customization
     async updateAvatar(data) {
-      const r = await api.updateAvatar(data, token)
-      if (r) persist(token, r)
+      const r = await api.updateAvatar(data)
+      if (r) persist(r)
       return r
     },
   }

@@ -1,0 +1,94 @@
+name: KwizBox CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+# KwizBox hardening gate
+# - frontend-build:        make sure the app still builds after cookie/auth changes
+# - smoke:                 backend smoke test of cookie auth, security headers,
+#                          rate limits and admin token endpoints
+# - secret-scan:           gitleaks — refuse commits that inject secrets
+jobs:
+  frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install frontend dependencies
+        run: cd frontend && npm ci
+
+      - name: Build frontend
+        run: cd frontend && npm run build
+
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install backend dependencies
+        run: |
+          cd backend
+          python -m venv .venv
+          ./.venv/bin/pip install --upgrade pip
+          ./.venv/bin/pip install -r requirements.txt
+
+      - name: Start backend (temporary SQLite DB)
+        env:
+          DATABASE_URL: sqlite:////tmp/kwizbox-smoke.db
+          JWT_SECRET: smoke-secret-not-for-ci
+        run: |
+          cd backend
+          ./.venv/bin/python -m uvicorn src.main:app --host 127.0.0.1 --port 8001 > /tmp/kwizbox-smoke-backend.log 2>&1 &
+          echo $! > /tmp/kwizbox-smoke-backend.pid
+          for _ in $(seq 1 40); do
+            if curl -fs http://127.0.0.1:8001/health >/dev/null 2>&1; then
+              echo "backend up"
+              break
+            fi
+            sleep 1
+          done
+          if ! curl -fs http://127.0.0.1:8001/health >/dev/null 2>&1; then
+            echo "backend failed to start; log:"
+            cat /tmp/kwizbox-smoke-backend.log
+            exit 1
+          fi
+
+      - name: Run smoke test
+        run: node frontend/tests/smoke-auth.mjs
+
+      - name: Stop backend
+        run: |
+          if [ -f /tmp/kwizbox-smoke-backend.pid ]; then
+            kill "$(cat /tmp/kwizbox-smoke-backend.pid)" 2>/dev/null || true
+            wait "$(cat /tmp/kwizbox-smoke-backend.pid)" 2>/dev/null || true
+          fi
+
+  secret-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install gitleaks
+        run: |
+          curl -sSL https://github.com/gitleaks/gitleaks/releases/download/v8.18.0/gitleaks_8.18.0_linux_amd64.tar.gz | tar xz
+          sudo mv gitleaks /usr/local/bin/
+
+      - name: Scan for secrets
+        run: gitleaks detect --source . -v

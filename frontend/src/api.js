@@ -18,11 +18,13 @@ export function mediaUrl(path) {
 async function request(method, path, body, token) {
   const headers = {}
   if (body) headers['Content-Type'] = 'application/json'
-  if (token) headers['Authorization'] = `Bearer ${token}`
+  // User auth is now via HttpOnly cookie (credentials: 'include'), the token
+  // argument is retained for backward compatibility only and is not sent.
   const res = await fetch(`${BASE}${path}`, {
     method,
     headers,
     body: body ? JSON.stringify(body) : undefined,
+    credentials: 'include',
   })
   if (!res.ok) {
     let detail = `Request failed (${res.status})`

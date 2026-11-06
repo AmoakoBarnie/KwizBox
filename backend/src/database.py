@@ -73,6 +73,31 @@ def _migrate_question_columns():
         conn.execute(text("CREATE INDEX IF NOT EXISTS ix_questions_question_type ON questions (question_type)"))
 
 
+def _migrate_challenge_columns():
+    """Idempotent SQLite ALTER for quiz_sessions.challenge_code (challenge audit col)."""
+    if not str(settings.database_url).startswith("sqlite"):
+        return
+    insp = inspect(engine)
+    if "users" not in insp.get_table_names():
+        return
+    qs_cols = {c["name"] for c in insp.get_columns("quiz_sessions")}
+    if "challenge_code" not in qs_cols:
+        with engine.begin() as conn:
+            conn.execute(text("ALTER TABLE quiz_sessions ADD COLUMN challenge_code VARCHAR(6)"))
+
+    # Unique (challenge_code, player_id): enforce one join per player per challenge
+    # even on pre-existing tables (create_all will not touch them).
+    insp2 = inspect(engine)
+    if "challenge_sessions" in insp2.get_table_names():
+        idxs = {i["name"] for i in insp2.get_indexes("challenge_sessions")}
+        if "ix_challenge_session_player" not in idxs:
+            with engine.begin() as conn:
+                conn.execute(text(
+                    "CREATE UNIQUE INDEX ix_challenge_session_player "
+                    "ON challenge_sessions (challenge_code, player_id)"
+                ))
+
+
 def _ensure_demo_typed_questions():
     """Insert 1 T/F + 2 image_mcq placeholders if they are not already present."""
     from .models import Question
@@ -94,4 +119,5 @@ def init_db():
     Base.metadata.create_all(bind=engine)
     _migrate_avatar_and_streak_columns()
     _migrate_question_columns()
+    _migrate_challenge_columns()
     _ensure_demo_typed_questions()

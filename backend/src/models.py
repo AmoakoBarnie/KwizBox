@@ -94,6 +94,7 @@ class QuizSession(Base):
     school_code = Column(String(20), nullable=True)
     is_daily = Column(Boolean, default=False, nullable=False)
     created_at = Column(DateTime, default=utcnow)
+    challenge_code = Column(String(6), ForeignKey("challenges.code"), nullable=True, index=True)
     user = relationship("User", back_populates="sessions")
 
 
@@ -241,3 +242,6 @@ class ChallengeSession(Base):
     status = Column(String(12), nullable=False, default="pending")  # pending|completed
     started_at = Column(DateTime, default=utcnow)
     completed_at = Column(DateTime, nullable=True)
+    __table_args__ = (
+        UniqueConstraint("challenge_code", "player_id", name="uq_challenge_session_player"),
+    )

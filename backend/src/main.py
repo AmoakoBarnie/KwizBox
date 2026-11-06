@@ -40,10 +40,9 @@ app.add_middleware(
         "capacitor://localhost",
         *_extra_origins,
     ],
-    allow_origin_regex=r"^(https?://(localhost|10\.0\.2\.2|192\.168\.\d+\.\d+)(:\d+)?|capacitor://localhost)$",
     allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_methods=["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allow_headers=["Content-Type", "Authorization", "X-Requested-With", "Accept", "Origin"],
 )
 
 # Trust InfinityFree reverse proxy headers for HTTPS
@@ -53,6 +52,23 @@ app.add_middleware(
     trusted_hosts=["10.0.2.2", "127.0.0.1", "::1"],
 )
 
+
+@app.middleware("http")
+async def _security_headers(request, call_next):
+    response = await call_next(request)
+    response.headers["Content-Security-Policy"] = (
+        "default-src 'self'; script-src 'self' 'unsafe-eval'; "
+        "style-src 'self' 'unsafe-inline'; img-src 'self' data:; "
+        "font-src 'self' data:; connect-src 'self'; frame-ancestors 'none'"
+    )
+    response.headers["Strict-Transport-Security"] = "max-age=31536000; includeSubDomains"
+    response.headers["X-Content-Type-Options"] = "nosniff"
+    response.headers["X-Frame-Options"] = "DENY"
+    response.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
+    response.headers["Permissions-Policy"] = "geolocation=(), microphone=(), camera=()"
+    response.headers["Cross-Origin-Opener-Policy"] = "same-origin"
+    response.headers["Cross-Origin-Embedder-Policy"] = "require-corp"
+    return response
 app.include_router(auth.router)
 app.include_router(quiz.router)
 app.include_router(admin.router)

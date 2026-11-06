@@ -8,7 +8,7 @@ from datetime import datetime, timezone, timedelta
 from typing import Optional
 import csv, io, secrets, random, string
 
-from fastapi import APIRouter, Depends, HTTPException, status, Query, Response
+from fastapi import APIRouter, Depends, HTTPException, status, Query, Response, Request
 from sqlalchemy.orm import Session
 from sqlalchemy import func, desc
 
@@ -22,6 +22,7 @@ from ..auth import (
     get_current_admin, require_permission, create_admin_token,
     hash_password, verify_password,
 )
+from ..rate_limit import limiter
 from ..schemas_admin import (
     AdminLogin, AdminTokenOut, DashboardStats, UserOut, UserDetailOut,
     SetUserStatus, QuestionOut, QuestionCreate, QuestionUpdate,
@@ -59,7 +60,9 @@ def record_from_session(s):
 
 # ===================== AUTH =====================
 @router.post("/token", response_model=AdminTokenOut)
-def admin_login(body: AdminLogin, db: Session = Depends(get_db), response: Response = None):
+@limiter.limit("5/minute")
+def admin_login(
+    request: Request,body: AdminLogin, db: Session = Depends(get_db), response: Response = None):
     admin = db.query(AdminUser).filter(AdminUser.username == body.username).first()
     if not admin or not admin.is_active or not verify_password(body.password, admin.password_hash):
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid admin credentials")
@@ -104,7 +107,9 @@ def list_admins(
 
 
 @router.post("/admins")
+@limiter.limit("10/minute")
 def create_admin(
+    request: Request,
     body: AdminCreate,
     admin: AdminUser = Depends(require_permission("settings")),  # only super_admin by default
     db: Session = Depends(get_db),
@@ -184,7 +189,9 @@ def dashboard(
 
 # ===================== USER MANAGEMENT =====================
 @router.get("/users", response_model=list[UserOut])
+@limiter.limit("30/minute")
 def list_users(
+    request: Request,
     admin: AdminUser = Depends(require_permission("users")),
     db: Session = Depends(get_db),
     search: Optional[str] = Query(None),
@@ -249,7 +256,9 @@ def user_detail(
 
 
 @router.post("/users/{user_id}/status")
+@limiter.limit("10/minute")
 def set_user_status(
+    request: Request,
     user_id: int, body: SetUserStatus,
     admin: AdminUser = Depends(require_permission("users")),
     db: Session = Depends(get_db),
@@ -270,7 +279,9 @@ def set_user_status(
 
 # ===================== QUESTION MANAGEMENT =====================
 @router.get("/questions", response_model=list[QuestionOut])
+@limiter.limit("30/minute")
 def list_questions(
+    request: Request,
     admin: AdminUser = Depends(require_permission("questions")),
     db: Session = Depends(get_db),
     search: Optional[str] = Query(None),
@@ -314,7 +325,9 @@ def _q_out(x: Question):
 
 
 @router.post("/questions", response_model=QuestionOut)
+@limiter.limit("10/minute")
 def create_question(
+    request: Request,
     body: QuestionCreate,
     admin: AdminUser = Depends(require_permission("questions")),
     db: Session = Depends(get_db),
@@ -336,7 +349,9 @@ def create_question(
 
 
 @router.put("/questions/{qid}", response_model=QuestionOut)
+@limiter.limit("10/minute")
 def update_question(
+    request: Request,
     qid: int, body: QuestionUpdate,
     admin: AdminUser = Depends(require_permission("questions")),
     db: Session = Depends(get_db),
@@ -375,7 +390,9 @@ def update_question(
 
 
 @router.delete("/questions/{qid}")
+@limiter.limit("10/minute")
 def delete_question(
+    request: Request,
     qid: int,
     admin: AdminUser = Depends(require_permission("questions")),
     db: Session = Depends(get_db),
@@ -389,7 +406,9 @@ def delete_question(
 
 
 @router.post("/questions/{qid}/active")
+@limiter.limit("10/minute")
 def set_question_active(
+    request: Request,
     qid: int, body: SetUserStatus,  # reuse {is_active: bool}
     admin: AdminUser = Depends(require_permission("questions")),
     db: Session = Depends(get_db),
@@ -412,7 +431,9 @@ def gen_code(db):
 
 
 @router.post("/school-codes", response_model=list[SchoolCodeOut])
+@limiter.limit("10/minute")
 def create_school_codes(
+    request: Request,
     body: SchoolCodeCreate,
     admin: AdminUser = Depends(require_permission("schools")),
     db: Session = Depends(get_db),
@@ -449,7 +470,9 @@ def list_school_codes(
 
 
 @router.patch("/school-codes/{code_id}", response_model=SchoolCodeOut)
+@limiter.limit("10/minute")
 def update_school_code(
+    request: Request,
     code_id: int, body: SchoolCodeUpdate,
     admin: AdminUser = Depends(require_permission("schools")),
     db: Session = Depends(get_db),
@@ -556,7 +579,9 @@ def get_settings(
 
 
 @router.put("/settings/{key}")
+@limiter.limit("10/minute")
 def update_setting(
+    request: Request,
     key: str, body: SettingUpdate,
     admin: AdminUser = Depends(require_permission("settings")),
     db: Session = Depends(get_db),
@@ -654,7 +679,9 @@ def export_questions(
 
 # ===================== GUEST CLEANUP =====================
 @router.delete("/cleanup/guests")
+@limiter.limit("10/minute")
 def cleanup_guests(
+    request: Request,
     admin: AdminUser = Depends(require_permission("users")),
     db: Session = Depends(get_db),
     days_old: int = Query(default=7, ge=1, le=365),

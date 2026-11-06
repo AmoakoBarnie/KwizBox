@@ -6,7 +6,7 @@
 
 ## What is KwizBox?
 
-STEM trivia app for Ghanaian learners (Primary 4 / B4 → JHS 3 / B9), NaCCA-aligned. React + Vite PWA wrapped in Capacitor for Android. FastAPI backend with JWT auth, 7,318 questions, leaderboards, guest mode.
+STEM trivia app for Ghanaian learners (Primary 4 / B4 → JHS 3 / B9), NaCCA-aligned. React + Vite PWA wrapped in Capacitor for Android. FastAPI backend with JWT auth, 7,710 questions, leaderboards, guest mode.
 
 ## Where things are
 
@@ -16,18 +16,19 @@ STEM trivia app for Ghanaian learners (Primary 4 / B4 → JHS 3 / B9), NaCCA-ali
 | **Backend** | `backend/` — FastAPI + SQLAlchemy, port 8001 |
 | **Frontend** | `frontend/` — React + Vite, port 5173 |
 | **Android** | `frontend/android/` — Capacitor, `com.kwizbox.app` |
-| **Database** | `backend/trivia.db` — SQLite (3.2 MB, 7,318 questions) |
+| **Database** | `backend/trivia.db` — SQLite (3.3 MB, 7,710 questions) |
 | **Migration script** | `backend/scripts/migrate_sqlite_to_pg.py` |
 | **APKs** | `_backup/preview/KwizBox-{emulator,phone}.apk` |
 | **3D mascot models** | `models/` — 4 character masters + animation clips + renders + `models/scripts/` (the Blender jobs) |
 | **Mascot runtime path** | `frontend/public/assets/mascots-v2/animated/` (byte-identical to `models/models/`) |
 | **Deploy configs** | `backend/Dockerfile`, `railway.toml` |
 
-## What's running right now
+## What's running right now (dev)
 
 - Backend on `:8001` (SQLite) — health check returns `{"status":"ok"}`
 - Emulator `kwizbox_a11` (Android 11, TCG mode) — stopped, snapshot `kwizbox_ready` saved
-- No Postgres running (embedded `pgserver` stops with its process)
+- No local Postgres (`pgserver`) — target DB is Supabase (`gfjcoowxijvmmkdwciwq`), see 'What's blocked'
+- `frontend/tests/` — 17 Playwright-style scripts (e2e, policy-check, mascot, stride, offline)
 
 ## What's done
 
@@ -41,6 +42,9 @@ STEM trivia app for Ghanaian learners (Primary 4 / B4 → JHS 3 / B9), NaCCA-ali
 - ✅ Mascots fully rigged and walking (commit `b7e3e39`) — males bound to the
   armature for the first time, females rigged, procedural walk cycle, meshopt
   decoder wired. Verified 2/2 canvases animating in the browser.
+- ✅ Release hardening in progress (P0 items: answer-key leak closed, disabled-login guard,
+  cleartext/cleartext Android config, credentials rotated). See `HARDENING_LOG.md`.
+- ✅ `frontend/tests/` Playwright suite added + `frontend/tests/policy-check.mjs` && `policy-facts.mjs` (child-safety / GDPR).
 
 ## What's blocked
 
