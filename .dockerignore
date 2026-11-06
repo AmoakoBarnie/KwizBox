@@ -1,19 +1,24 @@
+# Frontend build artifacts (not needed in multi-stage build)
+frontend/dist/
+frontend/node_modules/
+
+# 3D mascot source files
+models/
+
+# Archived / packaged files
+*.tar.gz
+backend_deploy.tar.gz
+
+# Logs
+*.log
+
 # Python
 backend/venv/
 backend/**/__pycache__/
 backend/**/*.pyc
 backend/**/*.pyo
-
-# Local databases (not needed in container)
 backend/trivia.db
 backend/trivia.db.bak_*
-
-# Logs
-backend/*.log
-backend/backend_run.log
-
-# Frontend build (dist IS needed in container, node_modules is not)
-frontend/node_modules/
 
 # Git
 .git/

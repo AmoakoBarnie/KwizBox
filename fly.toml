@@ -1,15 +1,16 @@
-# fly.toml app configuration file generated for kwizbox on 2026-10-05T15:02:40Z
+# fly.toml app configuration file generated for kwizbox-still-bush-3080 on 2026-10-24T17:25:18Z
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'kwizbox'
+app = 'kwizbox-still-bush-3080'
 primary_region = 'ams'
 
 [build]
+  dockerfile = "Dockerfile"
 
 [http_service]
-  internal_port = 8080
+  internal_port = 8000
   force_https = true
   auto_stop_machines = 'stop'
   auto_start_machines = true
@@ -17,7 +18,6 @@ primary_region = 'ams'
   processes = ['app']
 
 [[vm]]
-  memory = '1gb'
-  cpu_kind = 'shared'
+  memory = '256mb'
   cpus = 1
   memory_mb = 256

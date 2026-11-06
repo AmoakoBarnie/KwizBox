@@ -12,5 +12,5 @@ python-multipart==0.0.12
 psycopg2-binary==2.9.13
 
 # Rate limiting
-slowapi==0.4.1
+slowapi==0.1.10
 asyncpg==0.30.0
