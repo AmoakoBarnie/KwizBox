@@ -139,8 +139,12 @@ Guest mode: any nickname + class level → temporary session (device-only storag
 - Register with nickname, password, class level (B4–B9), school code, security question
 - Login with nickname + password → JWT (30-day expiry)
 - Guest mode: temporary session, no persistence
-- Password reset via security question
 - Token in localStorage, auto-validated on app load
+
+> **Dead-end (documented):** password reset is intentionally **not shipped** in
+> this release. There is no `/auth/reset/question` or `/auth/reset/verify`
+> endpoint implementation; registration still asks for a security answer but it is
+> never used for recovery. Do not rely on password reset.
 
 ### Quiz Selection (`/choose-quiz`)
 - Select class (B4–B9) → subject (15) → topic → sub-topic
@@ -267,8 +271,12 @@ Base URL: `http://localhost:8001`
 - `POST /auth/login` → `{nickname,password}` → token
 - `POST /auth/guest` → `{nickname?,class_level?,school_code?}` → token (is_guest=true)
 - `GET /auth/me` (Bearer) → user profile
-- `POST /auth/reset/question` → `{nickname}` → `{has_security_question, security_question?}`
-- `POST /auth/reset/verify` → `{nickname, security_answer, new_password}` → token
+
+> **Dead-end (documented):** `POST /auth/reset/question` and
+> `POST /auth/reset/verify` are advertised in this doc but no endpoint is
+> implemented on the server. Registration still collects a security question and
+> answer, but it is never used to reset or recover a password. Treat password
+> reset as unavailable in this release.
 
 **Quiz:**
 - `POST /quiz/pack` → `{class_level, subject, topic?, sub_topic?, difficulty?, count?, daily?, exclude_ids?}` (Bearer) → questions

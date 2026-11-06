@@ -139,8 +139,12 @@ Guest mode: any nickname + class level → temporary session.
 - Register: nickname, password, class level (B4–B9), school code, security question
 - Login: nickname + password → JWT (30-day expiry)
 - Guest mode: temporary session, no persistence
-- Password reset via security question
 - Token stored in localStorage, auto-validated on app load
+
+> **Dead-end (documented):** password reset via security question is intentionally
+> **not shipped** in this release. No `/auth/reset/question` or `/auth/reset/verify`
+> endpoint exists on the server, even though registration still collects a security
+> answer. Treat password reset as unavailable.
 
 ### 2. Quiz Selection (`/choose-quiz`)
 - Class picker (B4–B9) via inline expandable sections
@@ -267,8 +271,11 @@ Guest mode: any nickname + class level → temporary session.
 | `/auth/login` | POST | `{nickname, password}` | `{token, user}` |
 | `/auth/guest` | POST | `{nickname?, class_level?, school_code?}` | `{token, user}` |
 | `/auth/me` | GET | — | `{user}` |
-| `/auth/reset/question` | POST | `{nickname}` | `{has_security_question, security_question?}` |
-| `/auth/reset/verify` | POST | `{nickname, security_answer, new_password}` | `{token}` |
+
+> **Dead-end (documented):** `/auth/reset/question` and `/auth/reset/verify` are
+> advertised here but no endpoint is implemented on the server. Registration still
+> collects a security question and answer, but it is never used to reset or recover
+> a password. Treat password reset as unavailable in this release.
 
 ### Quiz
 | Endpoint | Method | Body | Response |
