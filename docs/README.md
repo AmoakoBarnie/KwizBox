@@ -1,3 +1,11 @@
+# KwizBox — historical development README
+
+> ⚠️ **HISTORICAL DOCUMENT (superseded).** This file describes the project as it
+> was during the early MVP (200-question seed, Phase-1 scope, old layout). It is
+> kept for archaeology only. Current truth: the root `README.md`, `CLAUDE.md`,
+> `brain.md`, and the `docs/01`–`docs/07` governance tree (added 2026-11-10).
+> Do not follow instructions from this file.
+
 # KwizBox
 
 Fun, curriculum-aligned STEM trivia for Ghanaian learners (Primary 4 / B4 → JHS 3 / B9).

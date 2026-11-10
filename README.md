@@ -1,7 +1,32 @@
 # KwizBox
 
-Fun, curriculum-aligned STEM trivia for Ghanaian learners (Primary 4 / B4 → JHS 3 / B9).
-Built foundation-first: backend + 3,230-question seed verified before the UI.
+Fun, curriculum-aligned STEM trivia for Ghanaian learners — Primary 4 / B4 through
+JHS 3 / B9, plus senior levels S1–S3 and SHS 1–3. NaCCA-aligned. 7,710 questions
+across 16 subjects. Built foundation-first: backend + question bank verified before the UI.
+
+> **Working repository:** `/media/stephen/FILES/My Projects/KwizBox` ·
+> **Remote:** `github.com/AmoakoBarnie/KwizBox` (branch `main`)
+
+## Project organization & documentation map
+
+Start with **`AGENTS.md`** — it defines how work is done here (read-first protocol,
+verification rules, feature workflow, security rules). Then:
+
+| Path | Purpose |
+|---|---|
+| `AGENTS.md` | Operating rules for AI agents and developers — **read first** |
+| `PROJECT_STATUS.md` | Current phase, milestones, blockers, pending decisions |
+| `SESSION_HANDOFF.md` | Continuity: what the last session did, next exact actions |
+| `CHANGELOG.md` / `CONTRIBUTING.md` | Notable changes · how to contribute |
+| `brain.md` / `CLAUDE.md` / `project-log.md` / `roadmap.md` | Accumulated technical knowledge · runbook · append-only history · day-to-day board |
+| `docs/01-project-planning/` | Brief, discovery, requirements (REQ-IDs), scope, milestone roadmap |
+| `docs/02-architecture/` | As-built system, technology stack, DB schema (13 tables), API (52 routes), security |
+| `docs/03-design/` | User flows, UI/UX guidelines |
+| `docs/04-development/` | Implementation plan, coding standards, module map, dependencies, traceability |
+| `docs/05-testing/` | Test strategy, results evidence log, bug tracker |
+| `docs/06-deployment/` | Deployment, environment setup, backup & recovery |
+| `docs/07-project-history/` | Decision log, ADRs (`decisions/`), lessons learned |
+| `backend/` · `frontend/` · `scripts/` · `models/` | FastAPI API · React PWA + Android · question tooling · 3D mascot library |
 
 ## Stack
 - **Frontend:** React + Vite (PWA via `vite-plugin-pwa`). Mobile-first, low-data.
@@ -102,18 +127,20 @@ MY APP/
 
 ### Backend (port 8001)
 ```bash
-cd /home/stephen/Desktop/MY APP/backend
+cd "/media/stephen/FILES/My Projects/KwizBox/backend"
 ./venv/bin/python -m uvicorn src.main:app --host 0.0.0.0 --port 8001
 ```
 **Health check:** `curl http://localhost:8001/health` → `{"status":"ok","service":"kwizbox"}`
 
-### Frontend (port 5173)
+### Frontend (port 5173; auto-bumps to 5174 when 5173 is busy)
 ```bash
-cd /home/stephen/Desktop/MY APP/frontend
+cd "/media/stephen/FILES/My Projects/KwizBox/frontend"
 npm run dev
 ```
-Open `http://localhost:5173`. The `.env` file tells the frontend to call the backend
-directly (bypasses Vite proxy) — backend has `CORS allow_origins=["*"]`.
+Open the printed URL (usually `http://localhost:5173`, sometimes `:5174`). The
+`.env` file tells the frontend which backend to call (`VITE_API_URL`); CORS is
+driven by the backend's `ALLOWED_ORIGINS` env. First-time setup:
+`docs/06-deployment/ENVIRONMENT_SETUP.md`.
 
 Guest mode: any nickname + class level → temporary session (device-only storage).
 
@@ -310,13 +337,19 @@ Base URL: `http://localhost:8001`
 - `GET /admin/audit?...` → audit log
 - `GET/POST /admin/admins` → list/create
 
-## Question counts (trivia.db)
+## Question counts (trivia.db — verified 2026-11-10)
 ```
-Total: 3,230 questions
-By subject:  Mathematics 1,620  |  Science 955  |  Computing 655
-By class:    B4: 526  |  B5: 553  |  B6: 544  |  B7: 507  |  B8: 511  |  B9: 589
-By type:     MCQ: 3,154  |  True/False: 2  |  Image MCQ: 74
+Total: 7,710 questions (16 subjects)
+By subject:  Math 3,335 | Science 1,355 | Physics 794 | Computing 664 | Chemistry 302
+             ICT 242 | Biology 185 | English 131 | Social Studies 128 | Economics 116
+             French 99 | Geography 96 | Agric Science 87 | Government 75 | RME 71 | Elective Math 30
+By class:    B4 529 | B5 556 | B6 565 | B7 870 | B8 544 | B9 614
+             S1 808 | S2 360 | S3 413 | SHS 1 1,877 | SHS 2 450 | SHS 3 124
+By type:     MCQ: 7,636  |  Image MCQ: 74  (true_false supported by code, none in DB)
 ```
+> Earlier revisions of this file said 3,230 questions / B4–B9 only — the bank has
+> since grown and senior levels were added. `CLAUDE.md` and the live DB are the
+> source of truth.
 
 ## Class levels (Ghana Education Service)
 - B4 = Primary 4 (Grade 4)
