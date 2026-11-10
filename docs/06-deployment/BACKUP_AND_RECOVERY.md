@@ -7,7 +7,7 @@
 
 | Asset | Location | Why |
 |---|---|---|
-| **Question bank + live user data** | `backend/trivia.db` (7,710 questions, 38 users, 141 sessions — 2026-11-10) | Gitignored; NOT in GitHub; hand-crafted over months |
+| **Question bank + live user data** | `backend/trivia.db` (7,890 questions, 38 users, 141 sessions — 2026-11-10) | Gitignored; NOT in GitHub; hand-crafted over months |
 | Git history | local repo + `github.com/AmoakoBarnie/KwizBox` | Only remote copy of the project |
 | Secrets | `backend/.env`, `frontend/.env`, Fly/GitHub secret stores | Cannot be recovered if lost — must be rotated |
 | Android signing keystore | (to be created in M3 — not yet on disk) | Losing it permanently breaks Play Store updates |
@@ -15,11 +15,19 @@
 
 ## Current backup state (2026-11-10)
 
-- **Remote:** GitHub has everything except the 5 newest commits (local-only
-  until pushed — owner approval pending) and except gitignored files.
+- **Remote:** GitHub has all pushed history (post-purge rewrite, 2026-11-10;
+  see SECURITY_ARCHITECTURE.md). Gitignored files are not in GitHub.
 - **Frozen snapshot:** `~/Desktop/KwizBoz Andriod` — a complete pre-relocation
   copy including `trivia.db`, `.env` files, venv, node_modules. Treat as a
-  one-time safety net; it will age.
+  one-time safety net; it will age. **Note:** it also contains the pre-purge
+  Git history (with the DB backups) — keep private, never republish.
+- **Pre-purge history bundle** (contains the sensitive files by design —
+  keep OFF-repo, never upload):
+  `/media/stephen/FILES/KwizBox-pre-purge-20261110.bundle`
+  (85 MB, md5 `7f9f31d5e242430fe10f0f6479f553cd`, complete pre-rewrite
+  history of all branches, 2026-11-10). Companion info file:
+  `KwizBox-prepurge-info-20261110.txt` (pre-purge SHAs, purge scope,
+  exposed-secret record for the GitHub Support request).
 - **No automated backups exist yet.**
 
 ## Backup procedures

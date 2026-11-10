@@ -185,3 +185,42 @@
 - ✅ CI run #2 on `a3a32b2`: all three jobs green in 32s
 - ⏳ BUG-007 purge not executed (approval pending); M1 still deferred;
   Supabase connection string still missing
+
+---
+
+## 2026-11-10 — BUG-007 purge executed + Fly Deploy removed (continuation 2)
+
+### Asked
+- Owner: "remove password from public" — explicit approval of the BUG-007
+  history purge (force-push included)
+- Owner: "delete the deployment not working" — remove the Fly Deploy
+  workflow
+
+### Decided & Why
+- Purge executed with expanded scope: pre-flight scan (mandatory before any
+  rewrite) found 5 sensitive paths, not 1 — including a 50 MB
+  `backend_deploy.tar.gz` holding a `backend/.env` byte-identical to the
+  live one, i.e. the live JWT_SECRET had been public for ~a month
+  (committed 2026-10-08). Compressed binaries are invisible to gitleaks —
+  path/blob scanning is the only reliable pre-flight
+- Fly Deploy deleted outright (owner instruction) rather than kept gated
+- JWT_SECRET rotated immediately after the purge — the leaked value must be
+  assumed compromised since 2026-10-08
+- Admin password reset left to the owner (requires their choice of new
+  password)
+
+### Shipped
+- ✅ Safety bundle (85 MB, md5-verified) + info file with pre-purge SHAs,
+  both off-repo
+- ✅ `git-filter-repo v2.47.0 --sensitive-data-removal` over 5 paths; all 6
+  branches rewritten; 63 commits preserved
+- ✅ Force-pushed all branches; verified 0 commits touch any purged path
+  (local + GitHub API); live DB/.env untouched
+- ✅ JWT_SECRET rotated in gitignored backend/.env
+- ✅ `.github/workflows/fly-deploy.yml` deleted (never worked; hosting
+  deferred); configs kept for M2
+- ✅ Docs synced: SECURITY_ARCHITECTURE (execution record), BUG_TRACKER
+  (resolved), TEST_RESULTS (evidence), BACKUP_AND_RECOVERY (bundle record),
+  STATUS/HANDOFF/CHANGELOG
+- ⚠️ Residue: refs/pull/1/head pins old commits on GitHub — support request
+  drafted (owner action); PR #2 ref verified clean

@@ -62,16 +62,42 @@ does not use semantic versioning yet (pre-1.0, unreleased).
   rejects bad credentials; no real credential is used).
 - Result: CI run #2 fully green (frontend build + backend smoke + gitleaks).
 
+**Security — 2026-11-10: sensitive history purge (BUG-007, owner-approved)**
+- **Executed** the Option C history rewrite with `git-filter-repo` after a
+  pre-flight scan expanded the scope from 1 to **5 paths**: the documented
+  Aug DB backup, two additional DB copies under `_backup/`, and
+  `backend_deploy.tar.gz` (50 MB) which contained a `backend/.env`
+  **byte-identical to the live one** — the live `JWT_SECRET` had been public
+  since ~2026-10-08, invisible to gitleaks inside the compressed archive.
+- All 6 branches rewritten and force-pushed (gh-pages kept its SHA — clean
+  lineage). Verified: 0 commits touch any purged path (local + GitHub API);
+  63 commits preserved; safety bundle kept off-repo (md5-verified).
+- **`JWT_SECRET` rotated** in the live gitignored `backend/.env` (old value
+  invalidates any forged tokens; backend not deployed, so no user impact).
+- Residue: `refs/pull/1/head` still pins old commits on GitHub — support
+  request drafted in SESSION_HANDOFF.md (owner action).
+- Follow-up: reset the 4 admin-account passwords in the live DB (hashes were
+  public in the purged DBs).
+
+**Removed**
+- `.github/workflows/fly-deploy.yml` (owner: "delete the deployment not
+  working") — its only ever run failed at 14s (`FLY_API_TOKEN` never
+  configured; nothing was ever deployed) and hosting work is deferred.
+  Deployment configs (`Dockerfile`, `fly.toml`) are kept for M2; the
+  workflow remains recoverable from git history.
+
 **Changed (deploy gating)**
-- `fly-deploy.yml`: deploy-on-push disabled; workflow is manual-only
-  (`workflow_dispatch`) until hosting work starts (owner decision). Its only
-  ever run failed at auth (`FLY_API_TOKEN` never configured) — nothing was
-  ever deployed. Restore instructions are in the workflow header comment.
+- ~~`fly-deploy.yml`: deploy-on-push disabled; workflow is manual-only~~
+  (superseded the same day by full removal — see Removed above).
 
 **Notes**
 - `backend/trivia.db`, `backend/.env`, `frontend/.env` were copied outside Git
   (gitignored by design — live data / secrets) and verified by checksum.
 - Nothing was deleted; the old project location remains as a frozen snapshot.
 - Push history: 9 commits fast-forward `9077758..e0366a9` (authorized), then
-  `b2dd269` + `a3a32b2` (CI repair + deploy gate). No force-push has ever
-  been used.
+  `b2dd269` + `a3a32b2` (CI repair + deploy gate), then the 2026-11-10
+  owner-approved history rewrite (force-push of all branches — the only
+  force-push ever used) and subsequent normal pushes.
+- **Commit SHAs:** every SHA quoted in pre-2026-11-10-purge documents refers
+  to the pre-rewrite history; the old→new map is kept locally
+  (`.git/filter-repo/commit-map`) and in the off-repo safety bundle.

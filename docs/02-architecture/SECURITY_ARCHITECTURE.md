@@ -88,11 +88,13 @@ submission (integrity of competition).
 
 ---
 
-## Remediation plan: tracked legacy DB backup (BUG-007) — planned 2026-11-10
+## Remediation: tracked DB backups + leaked JWT secret (BUG-007) — EXECUTED 2026-11-10
 
-> **Status: PLANNED — not yet executed.** Requires owner approval of a history
-> rewrite plus push authorization (both currently deferred). This section is
-> the approved plan of record.
+> **Status: EXECUTED** (owner-approved 2026-11-10, "remove password from
+> public"). Full history purge via `git-filter-repo`, force-push of all
+> branches, live `JWT_SECRET` rotated. The scope grew beyond the original
+> finding during pre-flight verification — see the execution record at the
+> end of this section.
 
 ### Finding
 
@@ -155,3 +157,67 @@ PR #2 was merged locally **before** any purge, so its commit (`3cc3ba7`) is
 safely inside `main`'s history; the feature branch itself becomes disposable
 after the purge + push. Executing the purge during the first authorized push
 window avoids a second force-push later.
+
+### Execution record — 2026-11-10
+
+**Scope expansion found at pre-flight:** a full-history scan (paths matching
+db/bak/env patterns + all large blobs) revealed more than the one documented
+file. Final purge list — all in *pushed* (public) history:
+
+| Path | What was exposed |
+|---|---|
+| `backend/trivia.db.bak_20260819_081244` | 22 users (19 bcrypt hashes) + **4 admin password hashes**, school codes |
+| `_backup/backend/trivia.db` | 1 user hash + **4 admin hashes**, 1,701 audit rows, 7 school codes |
+| `_backup/backend/trivia.db.bak_20260819_081244` | duplicate of the first file |
+| `backend_deploy.tar.gz` (50 MB) | **contained the live `backend/.env` with the `JWT_SECRET`** — byte-identical to the live secret; committed 2026-10-08. Invisible to gitleaks (compressed binary) — the scan had passed clean |
+| `trivia.db` (repo root) | empty file (hygiene) |
+
+Env-file audit: every other `.env*` in history is a template or contains only
+`VITE_API_URL` values (public URLs). No text blob in history contains the
+JWT secret — only the tarball did.
+
+**Steps executed** (per the Option C plan above, owner-approved):
+
+1. Safety bundle first: `KwizBox-pre-purge-20261110.bundle` (85 MB, md5
+   `7f9f31d5e242430fe10f0f6479f553cd`, complete history; kept OFF-repo at
+   `/media/stephen/FILES/`). Pre-purge SHAs + exposed-secret record saved to
+   `KwizBox-prepurge-info-20261110.txt` (same location, off-repo).
+2. Local branches created for all 6 remote branches so the rewrite covered
+   every public branch.
+3. `git filter-repo --force --sensitive-data-removal --replace-refs
+   delete-no-add --invert-paths --path <each of the 5 paths>` (v2.47.0).
+4. Force-pushed all branches in one window. New heads: `main` `5d906a1`,
+   `feature/question-types-tf-image` `2d7fd7b`, `flyio-new-files` `d29729a`,
+   `gh-pages` `4ee8059` (unchanged — its lineage never contained the purged
+   paths), `manus/add-180-questions-546-725` `d23a339`,
+   `mascot-3d-and-models` `1d61b55`.
+5. Verified: 0 commits on any branch touch any purged path (local `git log
+   --all` and GitHub API both); the three sensitive blobs are unreachable;
+   63 commits preserved (62 + the Fly-Deploy deletion commit).
+6. **`JWT_SECRET` rotated** in the live, gitignored `backend/.env`. The old
+   value had been public since ~2026-10-08; rotation invalidates anything an
+   attacker could have forged with it. No user impact (backend not deployed).
+
+**Known residue (GitHub-side — owner action required):**
+
+- `refs/pull/1/head` (`8ec1f3a`) is an immutable PR ref that still pins the
+  OLD lineage: both the DB backup and the tarball remain downloadable at old
+  SHAs (verified post-purge: raw HTTP 200 at `8c0dd77` for both files).
+  `refs/pull/2/head` is clean — 404 on the purged paths.
+- Remediation options: (a) contact GitHub Support to remove the PR ref /
+  run GC (draft message in SESSION_HANDOFF.md; old SHAs in the off-repo info
+  file), or (b) delete + recreate the repository (nuclear; loses PR records
+  and Actions history).
+- **JWT residue is defanged** by the rotation; remaining residue risk is the
+  bcrypt hashes (crack-resistant, no contact PII attached).
+
+**Owner follow-ups:** reset the 4 admin-account passwords in the live DB
+(hashes were public; the live DB may still use the same passwords) — needs
+the M1 runtime or a direct DB edit; decide on the support ticket vs repo
+recreation; optionally delete the failed Fly Deploy run from the Actions UI.
+
+**Note on commit SHAs in other documents:** the rewrite changed every SHA
+from the first purged commit onward. Pre-purge SHAs quoted in older docs
+refer to the pre-rewrite history; the full old→new map is in
+`.git/filter-repo/commit-map` (local only, deliberately not published) and in
+the safety bundle.

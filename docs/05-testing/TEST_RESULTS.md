@@ -62,6 +62,27 @@ The session's verifications were repository-level:
 > workflows had never run before this push, and nothing reads
 > `scripts/questions.json` at backend startup (verified by code read).
 
+## 2026-11-10 — BUG-007 history purge (owner-approved "remove password from public")
+
+| Check | Command / method | Result |
+|---|---|---|
+| Full-history sensitive-path scan (pre-flight) | `git log --all --name-only` filtered for db/bak/env + large-blob listing | found 5 sensitive paths, not 1: the known Aug backup, `_backup/backend/trivia.db` (user + 4 admin hashes, 1,701 audit rows), a `_backup/` duplicate of the Aug backup, `backend_deploy.tar.gz` (50 MB), root `trivia.db` (empty) |
+| Tarball content inspection | `git cat-file blob` → `tar tzf` / extract | tarball contains `backend/.env` with `JWT_SECRET` **byte-identical to the live secret** (md5 match) + a copy of the Aug DB backup; committed 2026-10-08 — gitleaks never saw it (compressed binary) |
+| Other env files in history | `git cat-file blob` on every `.env*` blob | all templates or `VITE_API_URL`-only (public URLs); no other secrets |
+| Secret-in-text check | `git grep <JWT value> $(git rev-list --all)` | no matches — the secret existed only inside the tarball |
+| Safety bundle | `git bundle create … --all` + `git bundle verify` + md5 | complete history, 85 MB, md5 `7f9f31d5e242430fe10f0f6479f553cd` (off-repo) |
+| History rewrite | `git filter-repo v2.47.0 --sensitive-data-removal --replace-refs delete-no-add --invert-paths --path ×5` | completed; 63 commits preserved; 6 branches rewritten (gh-pages kept its SHA — clean lineage) |
+| Local post-purge verification | `git log --all --oneline -- <5 paths>`; `git cat-file -e <3 blobs>` | all empty / all blobs unreachable; live `trivia.db` + `backend/.env` untouched on disk |
+| Force-push (approved) | `git push origin --force --all` | all 5 rewritten branches landed (`main` `d0dd420`→`5d906a1`, feature/question-types-tf-image→`2d7fd7b`, flyio-new-files→`d29729a`, manus/…→`d23a339`, mascot…→`1d61b55`; gh-pages no-op) |
+| GitHub-side verification | API `commits?path=backend/trivia.db.bak_20260819_081244` | **0 commits** touch the purged path |
+| JWT rotation | new 256-bit hex in gitignored `backend/.env` (temp copy removed) | old secret (public ~1 month) now invalid; format validated; `git status` confirms .env untracked |
+| Residue check | raw.githubusercontent at old SHAs + API commit lookups | `refs/pull/2/head` clean (404 on purged paths); **`refs/pull/1/head` still pins old lineage — DB backup + tarball downloadable at `8c0dd77` (HTTP 200)** → GitHub Support request pending (owner) |
+
+> Also this session: Fly Deploy workflow deleted (owner: "delete the
+> deployment not working") — the file never worked (FLY_API_TOKEN never
+> configured; nothing ever deployed) and hosting is deferred. Deployment
+> configs (`Dockerfile`, `fly.toml`) kept for M2.
+
 ## Historical results (from git/brain.md evidence — not re-run today)
 
 | Claim | Evidence | Date |
