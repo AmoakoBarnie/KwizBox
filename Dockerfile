@@ -19,6 +19,7 @@ COPY frontend/package.json frontend/package-lock.json* ./
 RUN npm ci
 COPY frontend/vite.config.js /app/frontend/
 COPY frontend/src /app/frontend/src
+COPY frontend/index.html /app/frontend/index.html
 RUN npm run build
 
 FROM python:3.11-slim
