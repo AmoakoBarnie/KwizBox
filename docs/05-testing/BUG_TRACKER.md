@@ -7,6 +7,7 @@
 
 | ID | Sev | Status | Issue |
 |---|---|---|---|
+| BUG-007 | P2 | Open — **remediation planned** | Tracked legacy DB backup `backend/trivia.db.bak_20260819_081244` is public on GitHub (22 users incl. 19 bcrypt password hashes + school codes; **no emails/phones/names** — verified 2026-11-10). Plan of record: full history purge + credential rotation (Option C) in `docs/02-architecture/SECURITY_ARCHITECTURE.md`; execution awaits push authorization + explicit approval of the history rewrite. Prevention done: `.gitignore` excludes `trivia.db.bak_*`. |
 | BUG-001 | P2 | Open | Account recovery gap: password-reset flow retired (P0-3, `de496c2`) because security-question reset was weak; users who forget passwords have no recovery path. Decision needed (email-based? admin-assisted?). |
 | BUG-002 | P2 | Open | JWT-in-localStorage legacy path remains alongside cookie auth; full client migration to cookie-only is pending hardening work (see SECURITY_ARCHITECTURE accepted risks). |
 | BUG-003 | P3 | Open | `backend/src/models.py.bak_before_pg` tracked in git — stale backup file in source tree; remove in a `chore:` commit (harmless but confusing). |

@@ -7,7 +7,7 @@ React + Vite PWA wrapped in Capacitor for Android. FastAPI + SQLite backend, JWT
 - **Frontend:** `frontend/` — React 18 + Vite + vite-plugin-pwa. Mobile-first, low-data
   for low-end Android/3G. Playwright test suite in `frontend/tests/`.
 - **Backend:** `backend/src/` — FastAPI + SQLAlchemy 2.0. JWT auth (registered + guest).
-- **Content:** 7,710 questions (Math 3,335 · Science 1,355 · Computing 664 + Physics 794 ·
+- **Content:** 7,890 questions (Math 3,395 · Science 1,415 · Computing 724 + Physics 794 ·
   ICT 242 · Biology 185 · Chemistry 302 + …), tagged class (B4–B9 / S1–S3 / SHS 1–3) • subject
   • strand • difficulty, each with a 1–4 sentence explanation.
 

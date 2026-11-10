@@ -6,7 +6,7 @@
 
 ## What is KwizBox?
 
-STEM trivia app for Ghanaian learners (Primary 4 / B4 → JHS 3 / B9), NaCCA-aligned. React + Vite PWA wrapped in Capacitor for Android. FastAPI backend with JWT auth, 7,710 questions, leaderboards, guest mode.
+STEM trivia app for Ghanaian learners (Primary 4 / B4 → JHS 3 / B9), NaCCA-aligned. React + Vite PWA wrapped in Capacitor for Android. FastAPI backend with JWT auth, 7,890 questions (180 added from PR #2 on 2026-11-10), leaderboards, guest mode.
 
 ## Where things are
 
@@ -16,7 +16,7 @@ STEM trivia app for Ghanaian learners (Primary 4 / B4 → JHS 3 / B9), NaCCA-ali
 | **Backend** | `backend/` — FastAPI + SQLAlchemy, port 8001 |
 | **Frontend** | `frontend/` — React + Vite, port 5173 |
 | **Android** | `frontend/android/` — Capacitor, `com.kwizbox.app` |
-| **Database** | `backend/trivia.db` — SQLite (3.3 MB, 7,710 questions) |
+| **Database** | `backend/trivia.db` — SQLite (3.5 MB, **7,890 questions**) |
 | **Migration script** | `backend/scripts/migrate_sqlite_to_pg.py` |
 | **APKs** | `_backup/preview/KwizBox-{emulator,phone}.apk` |
 | **3D mascot models** | `models/` — 4 character masters + animation clips + renders + `models/scripts/` (the Blender jobs) |

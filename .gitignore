@@ -13,6 +13,8 @@ venv/
 
 # local db (regenerable)
 backend/trivia.db
+# db backups — NEVER commit: they contain live user data (see BUG-007 / SECURITY_ARCHITECTURE)
+backend/trivia.db.bak_*
 
 # env
 .env

@@ -85,3 +85,73 @@ submission (integrity of competition).
 2. `git log -p` + gitleaks history scan if a commit is implicated.
 3. Record the incident in `docs/07-project-history/LESSONS_LEARNED.md` and, if
    architectural, an ADR.
+
+---
+
+## Remediation plan: tracked legacy DB backup (BUG-007) — planned 2026-11-10
+
+> **Status: PLANNED — not yet executed.** Requires owner approval of a history
+> rewrite plus push authorization (both currently deferred). This section is
+> the approved plan of record.
+
+### Finding
+
+`backend/trivia.db.bak_20260819_081244` is **tracked in Git and public on
+GitHub** (in pushed history). Contents verified 2026-11-10 by direct query:
+
+- 669 questions; 64 quiz sessions
+- 22 users: 19 registered (nicknames, **bcrypt password hashes**, class
+  levels, school codes, play stats, 1 security-answer hash) + 3 guests
+- **No emails, no phone numbers, no full names** (columns exist but empty);
+  the file predates the `age`/`gender` columns
+
+### Risk assessment
+
+**Low-to-medium.** Bcrypt hashes are computationally expensive to crack;
+identifiers are pseudonymous nicknames; no contact PII; snapshot ~3 months
+stale. Not an emergency — but this app serves children, and password hashes
+plus school codes should not be publicly downloadable.
+
+### Options considered
+
+| Option | Description | Assessment |
+|---|---|---|
+| A | Accept and monitor | Zero cost, permanent exposure — not recommended |
+| B | Forward removal only (`git rm`) | File leaves HEAD, remains in history — cosmetic |
+| C | **Full history purge + credential rotation** | **Recommended** — steps below |
+| D | C + notify affected users | Not feasible directly (no contact data exists); an in-app notice is possible later if judged necessary |
+
+### Option C — execution steps (on approval)
+
+1. **Safety first:** `git bundle create <external-path>/kwizbox-pre-purge.bundle --all`
+   (full backup of all refs outside the repo — see BACKUP_AND_RECOVERY.md).
+2. `git rm backend/trivia.db.bak_20260819_081244` (remove from tracking; the
+   working-tree file can stay).
+3. Install `git-filter-repo`, then:
+   `git filter-repo --path backend/trivia.db.bak_20260819_081244 --invert-paths`
+   (rewrites every branch/tag to drop the file from all history).
+4. Re-add the remote, then force-push all branches + tags in one coordinated
+   window: `git push --force --all && git push --force --tags`.
+   ⚠️ Destructive operation — explicit owner approval required (AGENTS.md §9).
+   No one clones during the window.
+5. Verify on GitHub: `git log --all -- backend/trivia.db.bak_20260819_081244`
+   is empty; repo has **0 forks** (verified 2026-11-10), so exposure is
+   limited to public clones/caches — contact GitHub Support to clear cached
+   views if desired.
+6. **Defense-in-depth rotations:** `JWT_SECRET` (all tokens invalidate; users
+   simply log in again), admin password, and DB credentials once created (M1).
+   The 19 user password hashes stay bcrypt-protected; a forced password reset
+   would need app work — defer and revisit during M5 hardening.
+
+### Prevention (already done, 2026-11-10)
+
+- `.gitignore` now excludes `backend/trivia.db.bak_*` (future snapshots can't
+  be committed accidentally).
+- Backup procedure requires checksum recording (BACKUP_AND_RECOVERY.md).
+
+### Sequencing note
+
+PR #2 was merged locally **before** any purge, so its commit (`3cc3ba7`) is
+safely inside `main`'s history; the feature branch itself becomes disposable
+after the purge + push. Executing the purge during the first authorized push
+window avoids a second force-push later.

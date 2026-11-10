@@ -48,7 +48,7 @@ Legend: ✅ verified · ⚠️ implemented, check not automated · ⬜ pending m
 |---|---|---|---|
 | REQ-CURR-001 manifest | `GET /curriculum/manifest` | `route-smoke.mjs` | ✅ |
 | REQ-CURR-002 topics | `GET /curriculum/topics` | route-smoke | ✅ |
-| REQ-CURR-003 bank coverage | DB verified 7,710 Q / 16 subjects / 12 levels | DB counts (recorded 2026-11-10) | ✅ |
+| REQ-CURR-003 bank coverage | DB verified 7,890 Q / 16 subjects / 12 levels | DB counts (recorded 2026-11-10, incl. PR #2 import) | ✅ |
 | REQ-CONT-001 question types | `question_types.py` + `backend/tests/test_question_types.py` | pytest | ✅ |
 | REQ-CONT-002 explanations | `questions.explanation` (NOT NULL) | schema | ✅ |
 | REQ-CONT-003 image questions | `/media/questions/*.svg` | e2e image question rendering ⚠️ | ⚠️ |

@@ -125,3 +125,32 @@
 2. **Deploy backend** to Railway/Render with `DATABASE_URL` + `JWT_SECRET`
 3. **Rebuild APK** pointing at public backend URL
 4. **Submit to Play Store**
+
+---
+
+## 2026-11-10 — Professionalization, relocation, and PR #2 merge (new repo home)
+
+### Asked
+- Initialize the project professionally (owner master prompt); relocate to
+  `/media/stephen/FILES/My Projects/KwizBox`; everything on the FILES drive
+- Review and merge PR #2's 180 questions; plan cleanup of the tracked DB
+  backup privacy issue; do NOT push yet; wait on M1
+
+### Decided & Why
+- M0 (initialization) **approved** by owner
+- Push deferred ("not yet") — 8 commits remain local-only until authorized
+- PR #2 merged after QA: 0 duplicates vs the live bank, 180/180 structurally
+  valid, 12-question sample review passed
+- DB-backup privacy (BUG-007): Option C plan written (history purge +
+  credential rotation) — execution awaits push window + explicit approval
+- M1 (env setup + Supabase prep) explicitly deferred by owner
+
+### Shipped
+- ✅ Repo relocated with full history; gitignored data copied + md5-verified
+- ✅ Governance/docs system established (ADR-001..005, requirements,
+  traceability, test strategy, security plan) — commit `70bbd75`
+- ✅ PR #2 merged locally — commit `40e155d` (clean, 3,241 insertions)
+- ✅ 180 questions imported into live DB: **7,710 → 7,890**
+  (`scripts/import_pr2_180.py`; backup taken first, md5 recorded)
+- ✅ `.gitignore` hardened: `backend/trivia.db.bak_*` excluded
+- ⏳ Not pushed (owner decision); BUG-007 purge planned, not executed

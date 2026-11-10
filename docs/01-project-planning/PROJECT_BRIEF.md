@@ -8,9 +8,10 @@
 **KwizBox** — a mobile-first STEM trivia application for Ghanaian learners,
 aligned to the NaCCA curriculum. Learners pick their class level and subject,
 answer quiz rounds (typically 12 questions), earn points with streak/combo
-mechanics, collect badges, climb leaderboards, and challenge friends
+collect badges, climb leaderboards, and challenge friends
 head-to-head with shareable codes. A 3D mascot character reacts to their
-answers.
+answers. The question bank stands at **7,890 reviewed questions** (grew from
+3,230 → 7,710 → 7,890; PR #2's 180 merged 2026-11-10).
 
 ## Why we are building it
 

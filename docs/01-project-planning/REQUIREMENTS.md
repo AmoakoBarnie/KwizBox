@@ -51,7 +51,7 @@
 |---|---|---|
 | REQ-CURR-001 | Curriculum manifest endpoint: subjects → class levels → topics → sub-topics | Implemented |
 | REQ-CURR-002 | Topics endpoint for quiz selection UI | Implemented |
-| REQ-CURR-003 | Content covers B4–B9, S1–S3, SHS 1–3 across 16 subjects, tagged strand/topic/difficulty | Implemented (7,710 questions verified) |
+| REQ-CURR-003 | Content covers B4–B9, S1–S3, SHS 1–3 across 16 subjects, tagged strand/topic/difficulty | Implemented (7,890 questions verified 2026-11-10; +180 from PR #2) |
 
 ## Functional requirements — ADM (admin)
 

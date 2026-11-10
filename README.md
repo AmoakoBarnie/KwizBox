@@ -1,7 +1,7 @@
 # KwizBox
 
 Fun, curriculum-aligned STEM trivia for Ghanaian learners — Primary 4 / B4 through
-JHS 3 / B9, plus senior levels S1–S3 and SHS 1–3. NaCCA-aligned. 7,710 questions
+JHS 3 / B9, plus senior levels S1–S3 and SHS 1–3. NaCCA-aligned. 7,890 questions
 across 16 subjects. Built foundation-first: backend + question bank verified before the UI.
 
 > **Working repository:** `/media/stephen/FILES/My Projects/KwizBox` ·
@@ -337,19 +337,19 @@ Base URL: `http://localhost:8001`
 - `GET /admin/audit?...` → audit log
 - `GET/POST /admin/admins` → list/create
 
-## Question counts (trivia.db — verified 2026-11-10)
+## Question counts (trivia.db — verified 2026-11-10, after PR #2 import)
 ```
-Total: 7,710 questions (16 subjects)
-By subject:  Math 3,335 | Science 1,355 | Physics 794 | Computing 664 | Chemistry 302
+Total: 7,890 questions (16 subjects)
+By subject:  Math 3,395 | Science 1,415 | Physics 794 | Computing 724 | Chemistry 302
              ICT 242 | Biology 185 | English 131 | Social Studies 128 | Economics 116
              French 99 | Geography 96 | Agric Science 87 | Government 75 | RME 71 | Elective Math 30
-By class:    B4 529 | B5 556 | B6 565 | B7 870 | B8 544 | B9 614
+By class:    B4 559 | B5 586 | B6 595 | B7 900 | B8 574 | B9 644
              S1 808 | S2 360 | S3 413 | SHS 1 1,877 | SHS 2 450 | SHS 3 124
-By type:     MCQ: 7,636  |  Image MCQ: 74  (true_false supported by code, none in DB)
+By type:     MCQ: 7,816  |  Image MCQ: 74  (true_false supported by code, none in DB)
 ```
 > Earlier revisions of this file said 3,230 questions / B4–B9 only — the bank has
-> since grown and senior levels were added. `CLAUDE.md` and the live DB are the
-> source of truth.
+> since grown (PR #2 added 180 on 2026-11-10) and senior levels were added.
+> `CLAUDE.md` and the live DB are the source of truth.
 
 ## Class levels (Ghana Education Service)
 - B4 = Primary 4 (Grade 4)

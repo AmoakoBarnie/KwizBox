@@ -23,12 +23,28 @@ does not use semantic versioning yet (pre-1.0, unreleased).
   workflow (`.github/workflows/fly-deploy.yml`), Dockerfile tweak,
   `frontend/.env.production` pointing at the Fly backend, promo/mascot test
   scripts (`promo-shots.mjs`, `record-mascots.mjs`).
+- **PR #2 merged locally** (`40e155d`): 180 reviewed questions for B4–B9
+  added to `scripts/questions.json` (Math/Science/Computing × 60; Easy 54 /
+  Medium 90 / Hard 36).
+- **Live question bank grew 7,710 → 7,890**: the 180 questions imported into
+  `backend/trivia.db` via new `scripts/import_pr2_180.py` (idempotent,
+  normalized-text duplicate guard; pre-import backup taken, md5 recorded).
+- Privacy remediation plan of record for BUG-007 (tracked legacy DB backup
+  on public GitHub): full history purge + credential rotation — documented
+  in `docs/02-architecture/SECURITY_ARCHITECTURE.md`, execution deferred
+  until push authorization.
 
 **Changed**
 - `README.md`: added the project organization map; corrected stale facts
-  (question bank is 7,710, not 3,230; run paths now point at the new repo home).
+  (question bank is 7,890 after PR #2, not 3,230; run paths now point at the
+  new repo home).
 - `docs/README.md` marked as a historical artifact (describes the 200-question
   MVP era).
+- `.gitignore`: excludes `backend/trivia.db.bak_*` (prevents accidental
+  commits of live-data snapshots — see BUG-007).
+- Question counts synchronized across `brain.md`, `CLAUDE.md`,
+  `docs/` (database schema, requirements, traceability) to the verified
+  post-import values.
 
 **Fixed (repository)**
 - Local `main` was mis-tracking `origin/mascot-3d-and-models`; now correctly

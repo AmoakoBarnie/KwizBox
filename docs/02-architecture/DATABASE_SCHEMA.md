@@ -31,8 +31,8 @@ The bank: `class_level`, `subject`, `topic`, `sub_topic`, `strand`,
 `explanation`, `question_type` (`mcq` | `true_false` | `image_mcq`),
 `image_url`, `is_active`, usage stats (`times_answered`, `times_correct`).
 Composite index `(class_level, subject, difficulty)`.
-**Live counts (2026-11-10):** 7,710 total — 7,636 mcq, 74 image_mcq; 16
-subjects; 12 class levels (B4–B9, S1–S3, SHS 1–3).
+**Live counts (2026-11-10, after PR #2 import):** 7,890 total — 7,816 mcq,
+74 image_mcq; 16 subjects; 12 class levels (B4–B9, S1–S3, SHS 1–3).
 
 ### quiz_sessions
 One row per completed quiz: `user_id` FK, filters used, `total`, `correct`,
