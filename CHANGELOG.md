@@ -50,7 +50,28 @@ does not use semantic versioning yet (pre-1.0, unreleased).
 - Local `main` was mis-tracking `origin/mascot-3d-and-models`; now correctly
   tracks `origin/main`.
 
+**Fixed (CI) — 2026-11-10, after the first-ever CI run failed**
+- `ci.yml` secret-scan: gitleaks 8.18.0 download URL requested a nonexistent
+  `linux_amd64` release asset (404). Corrected to `linux_x64`.
+- `ci.yml` secret-scan: checkout upgraded to `fetch-depth: 0` — the default
+  shallow clone would have limited gitleaks to the latest commit instead of
+  the full history (verified: depth-1 scans 1 of 52 commits).
+- `ci.yml` smoke: the backend exited at startup because the job set no
+  `ADMIN_PASSWORD` and `seed_super_admin()` refuses to run without it. The
+  job now sets a throwaway value (the smoke test only asserts `/admin/token`
+  rejects bad credentials; no real credential is used).
+- Result: CI run #2 fully green (frontend build + backend smoke + gitleaks).
+
+**Changed (deploy gating)**
+- `fly-deploy.yml`: deploy-on-push disabled; workflow is manual-only
+  (`workflow_dispatch`) until hosting work starts (owner decision). Its only
+  ever run failed at auth (`FLY_API_TOKEN` never configured) — nothing was
+  ever deployed. Restore instructions are in the workflow header comment.
+
 **Notes**
 - `backend/trivia.db`, `backend/.env`, `frontend/.env` were copied outside Git
   (gitignored by design — live data / secrets) and verified by checksum.
 - Nothing was deleted; the old project location remains as a frozen snapshot.
+- Push history: 9 commits fast-forward `9077758..e0366a9` (authorized), then
+  `b2dd269` + `a3a32b2` (CI repair + deploy gate). No force-push has ever
+  been used.

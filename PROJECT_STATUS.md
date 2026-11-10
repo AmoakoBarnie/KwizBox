@@ -1,27 +1,32 @@
 # PROJECT_STATUS.md
 
 > Snapshot of where the project is. Updated at the end of every working session.
-> Last updated: 2026-11-10 (post PR #2 merge)
+> Last updated: 2026-11-10 (post push + CI repair)
 
 ## Current phase
 
-**Initialization COMPLETE & APPROVED. PR #2 merged. Awaiting owner go-aheads.**
-The owner approved the initialization report on 2026-11-10, directed a full
-review + merge of PR #2 (done), a privacy-cleanup **plan** for BUG-007 (written,
-not executed), deferred pushing to GitHub ("not yet"), and deferred starting
-M1 ("let's wait"). **No new work should start without the owner's go-ahead.**
+**Initialization COMPLETE & APPROVED. PR #2 merged AND pushed. CI green. Hosting deferred.**
+The owner approved the initialization report on 2026-11-10, directed the PR #2
+review + merge (done, pushed), authorized the push to GitHub (done — 11
+commits total, fast-forward, no force), and deferred hosting work ("we will
+work on the hosting later" → Fly deploy workflow gated to manual-only). M1
+remains deferred ("let's wait"). **No new work should start without the
+owner's go-ahead.**
 
 ## Repository state (verified 2026-11-10)
 
 - **Location:** `/media/stephen/FILES/My Projects/KwizBox` (authoritative working copy)
-- **Remote:** `github.com/AmoakoBarnie/KwizBox` — local `main` is **8 commits
-  ahead**, 0 behind (4 release-hardening + relocation capture `cf1d9be` +
-  governance `70bbd75` + PR #2 merge `40e155d` + this session's import/docs
-  commit). **Not pushed — owner said "not yet" (standing decision).**
-- Working tree: clean after this session's commit.
-- PR #2 **merged locally** (`40e155d`, clean 'ort' merge). GitHub still shows
-  the PR as open until the merge commit is pushed; closing it on GitHub is a
-  post-push step.
+- **Remote:** `github.com/AmoakoBarnie/KwizBox` — local `main` **in sync** with
+  `origin/main` at `a3a32b2` (9 commits pushed `9077758..e0366a9`, then 2
+  CI-repair commits `b2dd269` + `a3a32b2`). Fast-forward only; no force-push
+  has ever been used. Working tree: clean.
+- **CI: green** (run #2 on `a3a32b2` — frontend build, backend smoke test,
+  gitleaks full-history scan all pass). Run #1 failed on two latent workflow
+  bugs, fixed in `b2dd269` (see `docs/05-testing/TEST_RESULTS.md`).
+- **Fly Deploy: gated manual-only** (`workflow_dispatch`) per owner's hosting
+  deferral — pushes trigger no deploy; no deployment has ever happened (the
+  one run failed at auth: `FLY_API_TOKEN` was never configured).
+- PR #2: **closed as Merged on GitHub** (auto-recognized when `40e155d` landed).
 - `backend/trivia.db`: **7,890 questions** (7,710 + 180 from PR #2). Pre-import
   backup taken and md5-verified (`trivia.db.bak_20261110_110311_pre_pr2`,
   gitignored).
@@ -31,9 +36,9 @@ M1 ("let's wait"). **No new work should start without the owner's go-ahead.**
 | ID | Milestone | Status |
 |---|---|---|
 | M0 | Project initialization & governance | ✅ Done & **approved** 2026-11-10 |
-| M0.5 | PR #2 merge + question import | ✅ Done 2026-11-10 (local only; unpushed) |
+| M0.5 | PR #2 merge + question import | ✅ Done 2026-11-10 (merged, imported, **pushed**; CI green) |
 | M1 | SQLite → Postgres (Supabase) migration | ⏸ Deferred by owner ("let's wait"); also blocked on Supabase connection string |
-| M2 | Backend deployment (Fly.io) | Not started; configs exist (`Dockerfile`, `fly.toml`, workflow) |
+| M2 | Backend deployment (Fly.io) | Deferred by owner ("hosting later"); deploy workflow gated manual-only; configs exist (`Dockerfile`, `fly.toml`) |
 | M3 | Android APK rebuild against public backend | Not started |
 | M4 | Play Store submission | Not started; needs $25 developer account + identity verification |
 | M5 | Post-launch stabilization & feature work | Not started |
@@ -63,15 +68,28 @@ M1 ("let's wait"). **No new work should start without the owner's go-ahead.**
    excludes `backend/trivia.db.bak_*`.
 8. ✅ All documentation synchronized to the new reality (7,890 questions,
    PR #2 merge, BUG-007 plan, evidence log, changelog, project log).
+9. ✅ **Pushed to GitHub** (owner-authorized): 9 commits fast-forward
+   `9077758..e0366a9`; no secrets/DB files in the pushed set (verified
+   pre-push); PR #2 auto-marked Merged on GitHub.
+10. ✅ **Diagnosed and fixed the first-ever CI failures** (both latent
+    workflow bugs, not PR #2 regressions): gitleaks download URL used a
+    nonexistent `linux_amd64` asset (→ `linux_x64`); smoke job lacked
+    `ADMIN_PASSWORD` so `seed_super_admin()` exited the backend at startup
+    (→ throwaway value added). Also upgraded the secret-scan checkout to
+    `fetch-depth: 0` — the default shallow clone would have scanned only the
+    latest commit. Local full-history gitleaks scan first confirmed the
+    pushed history is clean (52 commits, 0 leaks).
+11. ✅ **Gated Fly Deploy to manual-only** (`workflow_dispatch`) per the
+    owner's hosting deferral; verified pushes no longer trigger it.
 
 ## Outstanding tasks (all gated on owner decisions)
 
-- [ ] **Push the 8 local commits to GitHub** — owner said "not yet"; fastest
-      path is `git push origin main` (fast-forward) once authorized. The
-      BUG-007 purge (if executed) should happen in that same window.
-- [ ] **BUG-007 execution** — needs push authorization + explicit approval of
-      the history rewrite (force-push). Plan of record ready.
-- [ ] Close PR #2 on GitHub after push (it is merged locally already).
+- [ ] **BUG-007 execution** — needs a NEW push window (the first push is done)
+      + the owner's explicit approval of the history rewrite (force-push).
+      Plan of record ready in `docs/02-architecture/SECURITY_ARCHITECTURE.md`.
+      Note: GitHub retains old commit SHAs via API/PR references after a
+      rewrite; the plan includes the follow-ups (support request / repo
+      re-check) for that.
 - [ ] **M1 start** — deferred by owner. When authorized: regenerate dev
       environment (`backend/venv`, `frontend/node_modules`), run local smoke
       tests to prove relocation + import broke nothing, then Supabase
@@ -82,6 +100,8 @@ M1 ("let's wait"). **No new work should start without the owner's go-ahead.**
 - [ ] App-level tests of the 180 imported questions — none run yet (no runtime
       environment exists; DB-level verification only). First task when M1 env
       setup is authorized.
+- [ ] (Optional, cosmetic) GitHub repo description is stale ("3,230+
+      questions… 15+ subjects") — owner can update it in repo Settings.
 
 ## Known bugs / issues (see `docs/05-testing/BUG_TRACKER.md`)
 
@@ -101,17 +121,19 @@ M1 ("let's wait"). **No new work should start without the owner's go-ahead.**
 
 ## Pending decisions (owner)
 
-1. Push the 8 local commits to GitHub (standing: "not yet").
-2. Approve executing the BUG-007 history purge during the push window.
-3. Start M1 (dev environment + Supabase migration prep).
-4. Stale-copy handling (~6 legacy copies; archival recommended).
+1. Execute the BUG-007 history purge (force-push — needs explicit approval
+   and its own push window).
+2. Start M1 (dev environment + Supabase migration prep).
+3. Stale-copy handling (~6 legacy copies; archival recommended).
+4. When to start hosting/M2 (deploy workflow is ready but manual-only).
 
 ## Next recommended actions
 
-1. Owner decides push + BUG-007 execution + M1 start (items above).
-2. When push is authorized: optionally execute the BUG-007 purge first
-   (bundle backup → filter-repo → force-push all branches in one window),
-   then push; close PR #2 on GitHub.
+1. Owner decides BUG-007 execution + M1 start (items above).
+2. If BUG-007 is approved: follow Option C in
+   `docs/02-architecture/SECURITY_ARCHITECTURE.md` exactly (bundle backup →
+   `git-filter-repo` → force-push all branches in one window → credential
+   rotations → GitHub-side residue check).
 3. When M1 is authorized: environment setup per
    `docs/06-deployment/ENVIRONMENT_SETUP.md`, run `smoke-auth.mjs` +
    `route-smoke.mjs` + a quiz-pack spot check (verify PR #2 questions are

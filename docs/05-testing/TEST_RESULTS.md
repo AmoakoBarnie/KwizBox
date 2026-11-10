@@ -39,6 +39,29 @@ The session's verifications were repository-level:
 > verification only. Run `smoke-auth.mjs` + a quiz-pack spot check when M1
 > environment setup is authorized.
 
+## 2026-11-10 — First GitHub push, first CI run, CI repair
+
+| Check | Command / method | Result |
+|---|---|---|
+| Push 9 local commits to GitHub | `git push origin main` (after pre-flight: ahead 9 / behind 0, no `.env`/DB files in diff) | fast-forward `9077758..e0366a9`; local `main` = `origin/main` |
+| PR #2 state on GitHub | PR page check | auto-marked **Merged** (closed) once `40e155d` landed — no manual close needed |
+| CI run #1 (first-ever run of `ci.yml`) | Actions run `42805071620` on `e0366a9` | **failure** — `frontend` ✅ build; `secret-scan` ❌ at "Install gitleaks" (0s); `smoke` ❌ at "Start backend" (~41s health-poll timeout) |
+| gitleaks asset name | GitHub release API for v8.18.0 | no `linux_amd64` asset exists → download 404; actual asset is `linux_x64` |
+| smoke root cause | code read: `seed_admin.py` + `ci.yml` env block | `seed_super_admin()` calls `sys.exit(1)` when `ADMIN_PASSWORD` unset; job set only `DATABASE_URL` + `JWT_SECRET` → backend exited at startup, health poll exhausted its 40×1s |
+| Local gitleaks full-history scan | `/tmp/opencode/gitleaks detect --source . -v` (binary sha256 `6e19050a…` verified against official checksums; v8.18.0) | **52 commits scanned, no leaks found**, exit 0 — pushed history contains no gitleaks-detectable secrets |
+| Shallow-checkout scan coverage | depth-1 clone + same gitleaks command | only **1 commit** scanned → CI checkout needs `fetch-depth: 0` (added) or the gate covers just the latest commit |
+| Fly Deploy run #1 (first-ever run) | Actions run `42805071750` | failed after 14s — `FLY_API_TOKEN` repo secret never configured; **nothing was deployed** (failed at auth, pre-deploy) |
+| Workflow YAML validity after edits | `python3 -c "yaml.safe_load(…)"` | both `ci.yml` and `fly-deploy.yml` valid |
+| CI run #2 (fix commits `b2dd269` + `a3a32b2`) | Actions run `42805908080` | **success** in 32s — all 3 jobs green: frontend build ✅; smoke ✅ (backend started with throwaway `ADMIN_PASSWORD`, all smoke checks passed); secret-scan ✅ (gitleaks installed + full scan clean) |
+| Fly Deploy gate effective | Actions API: runs of `fly-deploy.yml` | push of `a3a32b2` triggered **no** deploy run (workflow is now manual-only, `workflow_dispatch`) |
+
+> Fixes shipped as `b2dd269` (ci.yml: `linux_x64` asset name, `fetch-depth: 0`,
+> throwaway `ADMIN_PASSWORD` for the smoke job) and `a3a32b2` (fly-deploy.yml
+> gated to `workflow_dispatch` — hosting deferred by owner). Both CI failures
+> were **latent workflow bugs, not regressions from the PR #2 merge**: these
+> workflows had never run before this push, and nothing reads
+> `scripts/questions.json` at backend startup (verified by code read).
+
 ## Historical results (from git/brain.md evidence — not re-run today)
 
 | Claim | Evidence | Date |

@@ -154,3 +154,34 @@
   (`scripts/import_pr2_180.py`; backup taken first, md5 recorded)
 - ✅ `.gitignore` hardened: `backend/trivia.db.bak_*` excluded
 - ⏳ Not pushed (owner decision); BUG-007 purge planned, not executed
+
+---
+
+## 2026-11-10 — First push to GitHub, first CI run, CI repair (continuation)
+
+### Asked
+- Owner: push now ("1 push"), hosting later ("we will work on the hosting
+  later")
+
+### Decided & Why
+- Push authorized and executed: 9 commits fast-forward `9077758..e0366a9`;
+  PR #2 auto-marked Merged on GitHub (closed itself — no manual step)
+- Hosting (M2) deferred by owner → Fly Deploy workflow gated manual-only
+- CI failures diagnosed as latent workflow bugs (workflows had never run
+  before this push), fixed rather than reverted — the hardening they encode
+  (secret scan, smoke test) is wanted
+- BUG-007 purge still plan-only: force-push needs explicit approval and now
+  a fresh push window (first push is done)
+
+### Shipped
+- ✅ 9 commits pushed (no secrets/DB files in the pushed set — verified first)
+- ✅ CI run #1 diagnosed: gitleaks 404 (wrong asset name `linux_amd64` →
+  `linux_x64`) + smoke backend exit (missing `ADMIN_PASSWORD` env) — commit
+  `b2dd269`; also `fetch-depth: 0` so gitleaks scans all 52 commits, not 1
+- ✅ Local pre-verification: gitleaks 8.18.0 (sha256-checked) over full
+  history → 0 leaks
+- ✅ Fly Deploy gated to `workflow_dispatch` — commit `a3a32b2`; verified the
+  fix push triggered no deploy run
+- ✅ CI run #2 on `a3a32b2`: all three jobs green in 32s
+- ⏳ BUG-007 purge not executed (approval pending); M1 still deferred;
+  Supabase connection string still missing
