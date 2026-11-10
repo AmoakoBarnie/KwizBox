@@ -1,11 +1,20 @@
 # See https://fly.io/docs/app-guides/continuous-deployment-with-github-actions/
+#
+# GATED 2026-11-10: deploy-on-push disabled — owner deferred hosting work
+# ("we will work on the hosting later"). Trigger is manual-only until M2.
+# Before the first manual run: set the FLY_API_TOKEN repository secret
+# (Fly.io dashboard → Account → API tokens) and verify fly.toml/app state.
+# To re-enable continuous deployment, restore the `push: branches` trigger
+# below (kept here for reference):
+#   on:
+#     push:
+#       branches:
+#         - main
+#         - master
 
 name: Fly Deploy
 on:
-  push:
-    branches:
-      - main
-      - master
+  workflow_dispatch:
 jobs:
   deploy:
     name: Deploy app
