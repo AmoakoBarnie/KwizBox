@@ -53,6 +53,10 @@ jobs:
         env:
           DATABASE_URL: sqlite:////tmp/kwizbox-smoke.db
           JWT_SECRET: smoke-secret-not-for-ci
+          # seed_super_admin() refuses to start without ADMIN_PASSWORD (no
+          # default credentials in code). Throwaway value: the smoke test only
+          # checks that /admin/token REJECTS bad credentials (401).
+          ADMIN_PASSWORD: ci-admin-throwaway-not-for-prod
         run: |
           cd backend
           ./.venv/bin/python -m uvicorn src.main:app --host 127.0.0.1 --port 8001 > /tmp/kwizbox-smoke-backend.log 2>&1 &
@@ -83,11 +87,16 @@ jobs:
   secret-scan:
     runs-on: ubuntu-latest
     steps:
+      # Full history — gitleaks must scan every commit, not just the latest.
+      # (Default checkout is shallow: fetch-depth 1, which weakens the gate.)
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Install gitleaks
         run: |
-          curl -sSL https://github.com/gitleaks/gitleaks/releases/download/v8.18.0/gitleaks_8.18.0_linux_amd64.tar.gz | tar xz
+          # v8.18.0 release asset is linux_x64 (there is no linux_amd64 asset — 404).
+          curl -sSL https://github.com/gitleaks/gitleaks/releases/download/v8.18.0/gitleaks_8.18.0_linux_x64.tar.gz | tar xz
           sudo mv gitleaks /usr/local/bin/
 
       - name: Scan for secrets
