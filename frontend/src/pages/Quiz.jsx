@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useNavigate, useSearchParams } from 'react-router-dom'
+import { useNavigate, useSearchParams, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useAuth } from '../auth.jsx'
 import { api, mediaUrl } from '../api.js'
@@ -13,6 +13,13 @@ export default function Quiz() {
   const { token, user } = useAuth()
   const nav = useNavigate()
   const [params] = useSearchParams()
+  const location = useLocation()
+  // Challenge mode: the Challenge page hands us the exact questions for a
+  // shared code through nav state, and mirrors the code into ?challenge=CODE
+  // so a page refresh can re-fetch the same deterministic pack. Both players
+  // get the same questions and the final score is submitted to the challenge
+  // endpoint (server-authoritative).
+  const [challenge, setChallenge] = useState(() => location.state?.challenge || null)
   const [pack, setPack] = useState(null)
   const [idx, setIdx] = useState(0)
   const [selected, setSelected] = useState(null)
@@ -30,19 +37,45 @@ export default function Quiz() {
   const [combo, setCombo] = useState(1)
   const [popScore, setPopScore] = useState(null)
   const [hasSeenReveal, setHasSeenReveal] = useState(false)
+  // Challenge mode helpers: best in-quiz streak (the `streak` state resets on a
+  // wrong answer, so the maximum must be tracked separately) and per-question
+  // review data — the challenge submit endpoint grades server-side but returns
+  // no feedback, so the client collects it from /quiz/check as it plays.
+  const [bestStreak, setBestStreak] = useState(0)
+  const [review, setReview] = useState([])
 
   const cfg = {
-    class_level: params.get('class_level') || 'B4',
-    subject: params.get('subject') || 'Mathematics',
+    class_level: challenge ? challenge.class_level : (params.get('class_level') || 'B4'),
+    subject: challenge ? challenge.subject : (params.get('subject') || 'Mathematics'),
     topic: params.get('topic') || undefined,
     sub_topic: params.get('sub_topic') || undefined,
-    count: 12,
+    count: challenge ? (challenge.questions?.length || 12) : 12,
     daily: params.get('daily') === 'true',
   }
 
   async function load() {
     setLoading(true); setErr('')
     try {
+      // Challenge mode: use the questions that came with the navigation state
+      // (same 12 questions for every player holding the code).
+      if (challenge) {
+        const qs = challenge.questions || []
+        if (!qs.length) throw new Error('This challenge has no questions')
+        setPack(qs); setStartedAt(Date.now())
+        return
+      }
+      // Refreshed mid-challenge (nav state is gone): re-fetch the pack from
+      // the ?challenge= code left in the URL — it is deterministic, so this
+      // returns the exact same questions.
+      const codeParam = params.get('challenge')
+      if (codeParam) {
+        const res = await api.challenge.questions(codeParam.toUpperCase(), token)
+        const c = { code: res.code, class_level: res.class_level, subject: res.subject, questions: res.questions || [] }
+        if (!c.questions.length) throw new Error('This challenge has no questions')
+        setChallenge(c)
+        setPack(c.questions); setStartedAt(Date.now())
+        return
+      }
       let p
       try {
         p = await api.pack({ ...cfg, exclude_ids: [...sessionSeen] }, token)
@@ -81,12 +114,13 @@ export default function Quiz() {
     click()
     setLocked(true)
     try {
-      const { is_correct, correct_index } = await api.check({ question_id: q.id, selected_index: i }, token)
+      const { is_correct, correct_index, explanation } = await api.check({ question_id: q.id, selected_index: i }, token)
       const pts = is_correct ? (q.difficulty === 'Hard' ? 25 : q.difficulty === 'Medium' ? 15 : 10) * combo : 0
       if (is_correct) {
         const newStreak = streak + 1
         const newCombo = newStreak >= 3 ? Math.min(2, 1 + Math.floor(newStreak / 3)) : 1
         setStreak(newStreak); setCombo(newCombo)
+        setBestStreak((b) => Math.max(b, newStreak))
         setMascot('celebrate')
         setReveal({ is_correct: true, correct_index })
         correct()
@@ -99,14 +133,32 @@ export default function Quiz() {
         setReveal({ is_correct: false, correct_index })
         wrong()
       }
+      // Challenge mode: collect review data now. The challenge submit endpoint
+      // re-grades server-side but returns no per-question feedback, so the
+      // Summary review list is built from these check responses. Points use
+      // the same base rule the server grades with (10/15/25, no combo) so the
+      // review total matches the official score.
+      if (challenge) {
+        setReview((prev) => [...prev, {
+          question_id: q.id,
+          selected_index: i,
+          correct_index,
+          is_correct,
+          explanation: explanation || null,
+          question: q.question,
+          options: q.options,
+          points: is_correct ? (q.difficulty === 'Hard' ? 25 : q.difficulty === 'Medium' ? 15 : 10) : 0,
+        }])
+      }
       const seconds_taken = questionStartedAt ? (Date.now() - questionStartedAt) / 1000 : null
       setAnswers((prev) => [...prev, { question_id: q.id, selected_index: i, seconds_taken }])
       setHasSeenReveal(true)
     } catch (e) {
       const seconds_taken = questionStartedAt ? (Date.now() - questionStartedAt) / 1000 : null
-      setAnswers((prev) => [...prev, { question_id: q.id, selected_index: i, seconds_taken }])
+      const nextAnswers = [...answers, { question_id: q.id, selected_index: i, seconds_taken }]
+      setAnswers(nextAnswers)
       setLocked(false); setSelected(null); setHasSeenReveal(true)
-      if (idx === pack.length - 1) submit(answers)
+      if (idx === pack.length - 1) submit(nextAnswers)
       else setIdx((cur) => cur + 1)
     }
   }
@@ -114,7 +166,55 @@ export default function Quiz() {
   async function submit(finalAnswers) {
     setSubmitting(true); setErr('')
     const duration_seconds = startedAt ? Math.round((Date.now() - startedAt) / 1000) : undefined
-    const max_streak = Math.max(...answers.map(a => a.streak || 0), streak)
+    // Best in-quiz streak: `streak` only holds the current run (0 after a wrong
+    // answer), so use the tracked maximum — `answers` has no per-answer streak.
+    const max_streak = Math.max(bestStreak, streak)
+    if (challenge) {
+      try {
+        // Server-authoritative: the challenge endpoint re-grades every answer
+        // against the stored answer keys; client points are never trusted.
+        const res = await api.challenge.submit({
+          code: challenge.code,
+          answers: finalAnswers.map((a) => ({ question_id: a.question_id, selected_index: a.selected_index })),
+        }, token)
+        const result = {
+          session_id: res.session_id ?? 0,
+          total: res.total,
+          correct: res.correct,
+          accuracy: res.accuracy,
+          score: res.score,
+          streak: max_streak,
+          feedback: review,
+          challenge: { code: challenge.code },
+        }
+        try { localStorage.setItem('kwizbox_last_result', JSON.stringify(result)) } catch {}
+        try { localStorage.setItem('kwizbox_last_cfg', JSON.stringify(cfg)) } catch {}
+        nav('/summary', { state: { result, cfg } })
+      } catch (e) {
+        // Could not submit (challenge expired, already submitted, signed out…).
+        // Still show the player their answers as an unofficial client-graded
+        // result so the review is not lost — it just won't enter the challenge
+        // leaderboard.
+        const graded = review.filter((f) => f.is_correct).length
+        const total = finalAnswers.length
+        const result = {
+          session_id: 0,
+          total,
+          correct: graded,
+          accuracy: total ? graded / total : 0,
+          score: review.reduce((s, f) => s + (f.points || 0), 0),
+          streak: max_streak,
+          feedback: review,
+          challenge: { code: challenge.code },
+          unofficial: true,
+          unofficial_reason: e.message || 'Challenge score could not be submitted',
+        }
+        try { localStorage.setItem('kwizbox_last_result', JSON.stringify(result)) } catch {}
+        try { localStorage.setItem('kwizbox_last_cfg', JSON.stringify(cfg)) } catch {}
+        nav('/summary', { state: { result, cfg } })
+      }
+      return
+    }
     try {
       const res = await api.submit({ ...cfg, question_ids: finalAnswers.map(a => a.question_id), answers: finalAnswers.map(a => ({ ...a, max_streak })), duration_seconds, max_streak }, token)
       try { localStorage.setItem('kwizbox_last_result', JSON.stringify(res)) } catch (e) {}
@@ -129,7 +229,7 @@ export default function Quiz() {
     <div className="screen quiz">
       {/* Top: back, progress, counter, timer */}
       <div className="quiz-top">
-        <button className="back" onClick={() => nav('/play')}>‹</button>
+        <button className="back" onClick={() => nav(challenge ? '/challenge' : '/play')}>‹</button>
         <div className="progress-wrap">
           <div className="progress-track">
             <motion.div className="progress-fill" animate={{ width: `${progress}%` }} transition={{ ease: 'easeOut', duration: 0.35 }} />

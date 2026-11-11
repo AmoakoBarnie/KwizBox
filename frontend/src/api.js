@@ -65,7 +65,8 @@ export const api = {
   deleteAccount: (data, token) => request('DELETE', '/auth/me', data, token),
   challenge: {
     create: (data, token) => request('POST', '/quiz/challenge/create', data, token),
-    join: (code, token) => request('POST', `/quiz/challenge/${code}/join`, undefined, token),
+    // NOTE: there is no /quiz/challenge/{code}/join endpoint — joining simply
+    // means fetching the challenge's deterministic question pack:
     compare: (code) => request('GET', `/quiz/challenge/${code}/compare`),
     questions: (code, token) => request('GET', `/quiz/challenge/${code}/questions`, undefined, token),
     submit: (data, token) => request('POST', `/quiz/challenge/${data.code}/submit`, data, token),

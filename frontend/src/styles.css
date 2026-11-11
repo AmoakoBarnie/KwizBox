@@ -379,3 +379,8 @@
 .sex-chip:focus-within {
   box-shadow: var(--focus-ring);
 }
+
+/* Challenge result chips (Summary) */
+.daily-badge{display:inline-block;margin-left:10px;vertical-align:middle;background:var(--grad-gold);color:#3a2c00;border-radius:999px;padding:3px 11px;font-size:12px;font-weight:800;letter-spacing:.3px}
+.unofficial-note{margin:8px 0 0;font-size:13px;color:var(--gold);font-weight:600}
+.unofficial-note .linklike{background:none;border:none;color:var(--green-dark);text-decoration:underline;cursor:pointer;padding:0 2px;font-size:13px;font-weight:700}

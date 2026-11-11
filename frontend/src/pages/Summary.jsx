@@ -364,6 +364,26 @@ function renderSummary({ result, cfg, nav, user, isGuest, fromStorage = false, s
                 ☀️ Daily Challenge
               </motion.span>
             )}
+            {result?.challenge?.code && (
+              <motion.span
+                className="daily-badge"
+                initial={{ scale: 0, rotate: -20 }}
+                animate={{ scale: 1, rotate: 0 }}
+                transition={{ delay: 0.4, type: 'spring', stiffness: 300, damping: 14 }}
+              >
+                ⚔️ Challenge {result.challenge.code}
+              </motion.span>
+            )}
+            {result?.unofficial && (
+              <motion.p
+                className="unofficial-note"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.45 }}
+              >
+                ⚠️ Unofficial result — {result.unofficial_reason || 'not saved to the challenge leaderboard'}. <button className="linklike" onClick={() => nav('/challenge')}>Challenge hub</button>
+              </motion.p>
+            )}
           </motion.p>
 
           {/* Stats — uniform cards (matches Profile) */}

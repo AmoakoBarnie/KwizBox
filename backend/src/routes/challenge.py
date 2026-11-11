@@ -13,6 +13,7 @@ from ..rate_limit import limiter
 from ..database import get_db
 from ..models import Challenge, Question, QuizSession, User, ChallengeSession
 from ..auth import get_current_user, optional_user
+from ..question_types import options_from_question
 
 router = APIRouter(prefix="/quiz", tags=["challenge"])
 
@@ -53,7 +54,9 @@ def q_to_public_dict(q):
         "strand": q.strand,
         "difficulty": q.difficulty,
         "question": q.question,
-        "options": [q.option_a, q.option_b, q.option_c, q.option_d],
+        # Same option packing as /quiz/pack: true/false collapses to 2 options
+        # (raw option_c/option_d columns hold empty strings for those rows).
+        "options": options_from_question(q),
         "question_type": q.question_type,
         "image_url": q.image_url,
     }
@@ -235,6 +238,20 @@ def submit_challenge_score(
     if existing_cs:
         existing_cs.status = "completed"
         existing_cs.completed_at = datetime.now(timezone.utc)
+    else:
+        # A player who submits without having joined (e.g. restored tab that
+        # never re-fetched questions): treat the submission as join + complete.
+        db.add(ChallengeSession(
+            challenge_code=code.upper(),
+            player_id=user.id,
+            status="completed",
+            completed_at=datetime.now(timezone.utc),
+        ))
+    # Sessions are created with autoflush=False (database.py), so the pending
+    # status change above is INVISIBLE to queries until flushed explicitly —
+    # without this flush the completed-player count misses this very request
+    # and the challenge never flips to "completed" on the second submission.
+    db.flush()
 
     completed_sessions = db.query(ChallengeSession).filter(
         ChallengeSession.challenge_code == code.upper(),

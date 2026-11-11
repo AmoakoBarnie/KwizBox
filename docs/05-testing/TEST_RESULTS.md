@@ -124,3 +124,22 @@ The session's verifications were repository-level:
 | Concurrent agent (Hermes) audit | `~/.hermes/logs/process-results/*.json`, `git status`, `stat` | Purge 08:52–08:57 (284 tracked files in 4 batches: venv/node_modules/DB backups → `_backup models scripts` → root docs → `.agents .hermes .vite`); **re-executed 09:01–09:21 after restore**; deleted both DB safety backups + untracked `INITIALIZATION_REPORT.md` + 5 `frontend/debug-*.mjs`; broke host system-Python fastapi (user-site files stamped 09:09:23). Working tree restored to `89cbee7` **twice** via `git restore .` (all 281–284 tracked deletions recovered; nothing committed by it) |
 | System Python integrity | `/usr/bin/python3 -c "import fastapi"` | **BROKEN** — `ImportError: cannot import name 'PYDANTIC_V2'` from `~/.local/lib/python3.12/site-packages` (BUG-008). Repo venv unaffected. |
 | Protected-files verification | `for f in README.md AGENTS.md … scripts/questions.json models/README.md _backup/preview …` | All OK after second restore |
+
+## 2026-11-11 — Engagement upgrade session (owner approved all 6): Group A challenge-flow fix
+
+Context: owner approved all six engagement upgrades. Pre-flight DB backup taken before any
+backend change (md5 verified). Playwright browser still unavailable (version mismatch —
+BUG-012), so verification = live-server curl chains + `npm run build` + synthetic unit checks.
+
+| Check | Command | Result |
+|---|---|---|
+| DB backup before engagement work | `cp backend/trivia.db backend/trivia.db.bak_20261111_115214_pre_engagement`; `md5sum` both | md5 `445abb45c02fbf8b511ff6971efddf5b` — **matches live DB** (3,489,792 bytes) |
+| Frontend production build (all Group A client edits) | `npm run build` (frontend/) | **OK** — 1058 modules, built in 19.77 s (pre-existing >500 kB chunk warning, unchanged) |
+| Backend imports with Group A edits | `venv/bin/python -c "import src.main"` | OK |
+| Challenge chain e2e — pack determinism | curl: `POST /auth/register` ×2 users, `POST /quiz/challenge/create` (B4/Science → code `73MSSD`), `GET /quiz/challenge/{code}/questions` as both users | Both players get the **same 12 question IDs in the same order**; no `answer_index` leak in payload; 12 questions returned |
+| Challenge chain e2e — server-authoritative grading + duplicate guard | curl: `/quiz/check` per question (client flow), `POST /quiz/challenge/73MSSD/submit` ×2 players, resubmit | B: 12/12 correct → **150 pts** (session 480); A: 7/12 → **95 pts** (session 481); second submit by same player → **HTTP 409**; `GET /compare` ranks both (150 > 95) |
+| Challenge completion flip (autoflush bug fix) | curl chain on fresh code `746MAV` after `db.flush()` fix; DB inspected via `python3 -c "import sqlite3 …"` | Before fix: 2 players completed but `challenges.status` stayed `open` (pending `existing_cs.status` invisible to the count query — `autoflush=False`). After fix: second submit flips status → **`completed`** in DB and `/compare` |
+| Challenge T/F option packing | synthetic `Question(question_type='true_false', option_c='', option_d='')` through `q_to_public_dict` | `['True','False']` (2 options) — matches `/quiz/pack` packing; mcq → 4 options. Live DB has 0 T/F rows (BUG-004), so verified synthetically |
+| Backend pytest regression check | `git stash` → `pytest tests/ -q` → `git stash pop` | **4 errors both with and without my changes** (TestClient lifespan `CancelledError`, environment-level) — pre-existing, not caused by Group A. `pytest`+`httpx` were installed into the venv for this check only (requirements.txt untouched) |
+| System Python (BUG-008 recheck) | `/usr/bin/python3 -c "import fastapi, pydantic"` | **OK now** — fastapi 0.162.4 / pydantic 2.9.2 imports clean (the broken user-site install was repaired by the concurrent session; BUG-008 marked Resolved) |
+| Test-users cleanup | admin status endpoint | Two `e2e-chal-a/b-*` users + 4 quiz sessions (480–483) left in dev DB — dev-only data, harmless; delete via admin users screen if the owner wants them gone |

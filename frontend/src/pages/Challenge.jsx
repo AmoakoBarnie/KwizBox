@@ -111,9 +111,13 @@ export default function Challenge() {
     setLoading(true); setError('')
     try {
       const ccode = code.trim().toUpperCase()
-      const res = await api.challenge.join(ccode, token)
-      setCode(res.challenge_code || ccode)
-      setMyChallenge({ code: res.challenge_code, class_level: res.class_level, subject: res.subject })
+      // Join = fetch this challenge's questions (the pack is deterministic:
+      // everyone with the code gets the same questions). The old code POSTed to
+      // /quiz/challenge/{code}/join, an endpoint that does not exist — joining
+      // always failed with "Invalid or expired challenge code".
+      const res = await api.challenge.questions(ccode, token)
+      setCode(res.code || ccode)
+      setMyChallenge({ code: res.code || ccode, class_level: res.class_level, subject: res.subject })
       setQuestions(res.questions || [])
       setMode('play')
     } catch (e) {
@@ -128,7 +132,10 @@ export default function Challenge() {
     setLoading(true)
     try {
       const res = await api.challenge.questions(myChallenge.code, token)
-      setQuestions(res)
+      // The response is {code, class_level, subject, questions: [...]} — store
+      // the question array itself (previously the whole response object was
+      // stored, so `questions.length` was undefined and the play UI never showed).
+      setQuestions(res.questions || [])
       setMode('play')
     } catch (e) {
       setError(e.message || 'Could not load questions')
@@ -153,7 +160,25 @@ export default function Challenge() {
 
   function startQuiz() {
     if (questions.length === 0) return
-    nav('/quiz', { state: { challengeCode: myChallenge.code } })
+    // Pass the challenge (code + exact questions) to the quiz screen so both
+    // players answer the same questions and the score is submitted to the
+    // challenge endpoint — previously Quiz ignored the code entirely and
+    // started a fresh default B4/Mathematics pack. The code is mirrored into
+    // the URL (?challenge=CODE) so a page refresh can re-fetch the same
+    // deterministic pack.
+    nav(
+      { pathname: '/quiz', search: `?challenge=${encodeURIComponent(myChallenge.code)}` },
+      {
+        state: {
+          challenge: {
+            code: myChallenge.code,
+            class_level: myChallenge.class_level,
+            subject: myChallenge.subject,
+            questions,
+          },
+        },
+      }
+    )
   }
 
   return (
