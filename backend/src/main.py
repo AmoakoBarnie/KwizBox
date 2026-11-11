@@ -37,6 +37,8 @@ app.add_middleware(
         "https://www.kwizbox.infinityfree.io",
         "https://localhost",
         "http://localhost",
+        "http://localhost:5173",   # Vite dev frontend (dev)
+        "http://localhost:5174",   # Vite dev frontend (dev)
         "capacitor://localhost",
         *_extra_origins,
     ],

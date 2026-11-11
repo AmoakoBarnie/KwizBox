@@ -12,8 +12,10 @@ try {
   await page.waitForTimeout(700);
   const sels = page.locator('.popup-panel select');
   await page.locator('.popup-panel label',{hasText:'Nickname'}).locator('input').fill('GuestE2E');
-  await sels.nth(0).selectOption('B6');
-  await sels.nth(1).selectOption('11');
+  // Re-query selects AFTER the form is rendered (the old script used a stale locator)
+  const sel = page.locator('.popup-panel select');
+  await sel.nth(0).selectOption('B6');
+  await sel.nth(1).selectOption('11');
   await page.locator('.sex-chip',{hasText:/^Male$/}).click();
   await page.locator('.popup-panel button[type="submit"]').click();
   await page.waitForURL('**/play',{timeout:20000});
