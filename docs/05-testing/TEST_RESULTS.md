@@ -112,3 +112,15 @@ The session's verifications were repository-level:
 > **Rule for future sessions:** every test run gets a row here with the exact
 > command, the date, and the real outcome (including failures). Screenshots/
 > logs for release milestones may be committed under `docs/05-testing/artifacts/`.
+
+## 2026-11-11 — Environment repair, concurrent-agent audit, early e2e findings
+
+| Check | Command | Result |
+|---|---|---|
+| Dev env rebuilt (after concurrent agent deleted venv/node_modules) | `backend/venv/bin/pip install -r requirements.txt` | OK — fastapi 0.115.0, **bcrypt 4.0.1 pin honored** |
+| Backend started | `ADMIN_PASSWORD=<throwaway> ./venv/bin/python -m uvicorn src.main:app --host 0.0.0.0 --port 8001` | UP on 8001; `/health` → `{"status":"ok","service":"KwizBox"}` (docs record `"kwizbox"` — case mismatch, cosmetic) |
+| DB backup before e2e | `cp trivia.db → trivia.db.bak_20261111_091514_pre_e2e`; md5 | md5 `c22ca0788cae366550f7ab3fbbb54952` (matches live DB; 3,489,792 bytes; 7,890 questions, 4 admin accounts verified present) |
+| Backend pytest | `ADMIN_PASSWORD=<throwaway> ./venv/bin/python -m pytest tests/ -q` | **4/4 FAILED** — `/quiz/pack` and `/quiz/submit` return **401 "Not authenticated"** to cookie-less callers (live curl confirms submit 401); one response-shape mismatch (`KeyError: 'correct'`); tests also need `pytest`+`httpx` installed manually (absent from requirements.txt). Probable link to the 2026-11-10 guest-form submit bug → BUG-009. Full e2e paused at owner request |
+| Concurrent agent (Hermes) audit | `~/.hermes/logs/process-results/*.json`, `git status`, `stat` | Purge 08:52–08:57 (284 tracked files in 4 batches: venv/node_modules/DB backups → `_backup models scripts` → root docs → `.agents .hermes .vite`); **re-executed 09:01–09:21 after restore**; deleted both DB safety backups + untracked `INITIALIZATION_REPORT.md` + 5 `frontend/debug-*.mjs`; broke host system-Python fastapi (user-site files stamped 09:09:23). Working tree restored to `89cbee7` **twice** via `git restore .` (all 281–284 tracked deletions recovered; nothing committed by it) |
+| System Python integrity | `/usr/bin/python3 -c "import fastapi"` | **BROKEN** — `ImportError: cannot import name 'PYDANTIC_V2'` from `~/.local/lib/python3.12/site-packages` (BUG-008). Repo venv unaffected. |
+| Protected-files verification | `for f in README.md AGENTS.md … scripts/questions.json models/README.md _backup/preview …` | All OK after second restore |

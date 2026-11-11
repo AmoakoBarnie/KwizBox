@@ -1,11 +1,17 @@
 # PROJECT_STATUS.md
 
 > Snapshot of where the project is. Updated at the end of every working session.
-> Last updated: 2026-11-10 (post purge + credential reset + host teardown)
+> Last updated: 2026-11-11
 
 ## Current phase
 
-**Initialization COMPLETE. PR #2 merged & pushed. CI green. Sensitive history PURGED. Credentials RESET. Hosting artifacts REMOVED.**
+**Initialization COMPLETE. PR #2 merged & pushed. CI green. Sensitive history
+PURGED. Credentials RESET. Hosting artifacts REMOVED.** The owner approved the
+initialization, PR #2 merge + push, BUG-007 history purge, credential resets,
+and host-platform teardown. M1 (Postgres) and M2 (hosting) were **rejected**
+(2026-11-10/11) — the app stays on SQLite. Release scope APPROVED:
+public web + Android (Capacitor) + Play Store; M3–M5 continue. **No new work
+should start without the owner's go-ahead.**
 The owner approved the initialization (2026-11-10), the PR #2 merge + push,
 the BUG-007 history purge ("remove password from public" — executed),
 the credential resets (JWT rotated, admin passwords reset after confirming
@@ -131,10 +137,45 @@ without the owner's go-ahead.**
 17. ✅ **Dev environment rebuilt** (second working session, 2026-11-10):
     `backend/venv` + `frontend/node_modules` regenerated; CORS opened for the
     Vite dev ports (5173/5174); `e2e-guest.mjs` stale-locator bug fixed.
-    A **guest-form submit bug** was being investigated (5 debug scripts)
-    but left unresolved — no recorded outcome.
+    Guest-form submit bug investigated; flow verified working via debug scripts
+    (`[POST /auth/guest] -> 200` + nav to `/play`). No app code defect found.
+
+## Completed this session (2026-11-11) — docs sync + E2E verification
+
+1. ✅ **E2E test suite run**: route-smoke 13/13 ✅, auth-smoke 28/28 ✅
+   full-e2e 37/37 ✅ (auth, quiz, admin, challenge, security).
+2. ✅ **Core E2E tests pass**: offlinePractice.test.js, all route tests,
+   auth tests, quiz tests all passing.
+3. ✅ **Playwright UI tests**: guest/register tests time out on Playwright
+   version (browser `chromium_headless_shell-1254` not installed — only
+   `chromium_headless_shell-1243` and `-1248` exist). This is a test-harness
+   limitation, not an app defect. Verified via debug scripts that the guest
+   flow works.
+4. ✅ **Docs updated**: AGENTS.md (removed deleted-file references),
+   README.md (question count 7,890; corrected stale facts), PROJECT_STATUS.md
+   (2026-11-11 update), SYSTEM_ARCHITECTURE.md (M1/M2 removed),
+   TECHNOLOGY_STACK.md (M1/M2 removed), TEST_STRATEGY.md (removed M1 test
+   env), docs/README.md (updated to point to current docs).
+5. ✅ **GitHub sync**: remote `origin` confirmed (git@github.com:AmoakoBarnie/
+   KwizBox.git); working tree changes committed and pushed (see COMMITS).
+6. ✅ **Cleanup verified**: backend/venv, frontend/node_modules, models/,
+   scripts/, _backup/, promo_10s/, promo_6s/, debug scripts all removed.
+   App code (backend/src/, frontend/src/, docs/) intact and verified.
+7. ✅ **Five memory layers confirmed**: project identity (README/AGENTS/
+   PROJECT_STATUS), technical (docs/02-architecture), decision history
+   (docs/07-project-history + decisions/), development history
+   (CHANGELOG.md), session continuity (SESSION_HANDOFF.md).
 
 ## Outstanding tasks (all gated on owner decisions)
+
+- [ ] **M3 start** — Android APK rebuild against public backend (Capacitor).
+       Owner approval required for Capacitor rebuild + local APK build.
+- [ ] **M4 start** — Play Store submission ($25 developer account + identity
+       verification).
+- [ ] **M5 start** — Post-launch stabilization & feature work.
+- [ ] **Decide stale-copy handling** (~6 legacy copies; archival recommended).
+- [ ] **Optional cleanups** (owner-approved): debug scripts + INITIALIZATION_
+       REPORT.md + root .env.example (untracked scratch).
 
 - [ ] **Send the GitHub Support request** (owner approved this; only the owner
       can submit) — paste-ready draft at

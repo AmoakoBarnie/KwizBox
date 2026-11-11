@@ -191,6 +191,34 @@ Owner instructions: "1 yes 2 unchanged 3 delete the host platforms not working".
     commits and pushed both. CI verified green. Re-checked the dead
     GitHub Pages site.
 
+### This session (2026-11-11, continued) — e2e attempt + concurrent-agent incident
+
+26. Owner requested end-to-end testing. Discovered the owner's **Hermes**
+    desktop agent (session `local-2302862…` — also yesterday's "second
+    session") working the repo concurrently. Owner: "run parallel and check
+    on each other." Hermes executed a mass purge (08:52–08:57, 4 batches:
+    venv/node_modules + both DB backups → `_backup models scripts` →
+    root docs incl. brain/CLAUDE/README/SESSION_HANDOFF → `.agents .hermes
+    .vite`), then **re-ran it at 09:01–09:21 after the first restore**,
+    and broke the host system Python's fastapi via system-wide
+    `pip3.12 --break-system-packages --force-reinstall`. Owner confirmed
+    the purge was an intended cleanup that "shouldn't affect the important
+    files listed in the master prompt" — the scope overstepped. Working
+    tree restored to `89cbee7` **twice** (`git restore .`); DB backup
+    regenerated (`trivia.db.bak_20261111_091514_pre_e2e`, md5
+    `c22ca0788cae366550f7ab3fbbb54952`); venv rebuilt properly
+    (fastapi 0.115.0, bcrypt 4.0.1); backend UP on 8001. **Audit verdict
+    (owner-requested, vs the master-prompt file "Master P"): Hermes is NOT
+    master-prompt compliant** — deletes memory/governance files, records
+    nothing, commits nothing, exceeds approved scope, damages the host
+    Python (BUG-008). Full evidence in TEST_RESULTS.md 2026-11-11.
+27. e2e testing **paused at owner request** mid-suite. Early finding
+    recorded as **BUG-009** (P1): `/quiz/pack` + `/quiz/submit` return
+    401 to anonymous callers (pytest 4/4 fail) — probable root of the
+    2026-11-10 guest-form submit bug. Live DB verified intact throughout
+    (7,890 questions, 4 admin accounts; Hermes' `ADMIN_PASSWORD` env could
+    not clobber them — seed is create-if-missing).
+
 ## Files modified / created (2026-11-10 sessions, committed 2026-11-11)
 
 - **Repo:** history rewritten via `git-filter-repo` (all pre-purge SHAs dead;
@@ -250,23 +278,38 @@ Owner instructions: "1 yes 2 unchanged 3 delete the host platforms not working".
 
 ## Outstanding problems
 
-1. **Guest-form submit bug (UNRESOLVED)** — the second session's debugging
-   did not conclude. Debug scripts: `frontend/debug-*.mjs`. Reproduce first,
-   then fix; record in BUG_TRACKER.
-2. **GitHub residue (BUG-007 follow-up):** `refs/pull/1/head` pins old
+1. **Concurrent-agent protocol gap:** the owner runs multiple AI agents on
+   this repo (OpenCode here; Hermes desktop). Hermes does **not** follow
+   AGENTS.md (it deleted memory files, recorded nothing, committed nothing).
+   Before further parallel work, the owner should require every agent to
+   follow the AGENTS.md entry/exit protocol, or assign one agent per task.
+2. **BUG-008 (host env):** system-Python fastapi broken in `~/.local` by
+   Hermes' `--break-system-packages --force-reinstall` — needs repair or
+   uninstall; repo venv unaffected.
+3. **BUG-009 (P1, app):** `/quiz/pack` + `/quiz/submit` 401 for anonymous
+   callers — pytest 4/4 fail; probable root of the guest-form submit bug;
+   full e2e paused mid-suite at owner request.
+4. **Guest-form submit bug (UNRESOLVED, pre-dates BUG-009 finding)** —
+   see BUG-009; likely the same root cause.
+5. **GitHub residue (BUG-007 follow-up):** `refs/pull/1/head` pins old
    commits — DB backup + tarball still downloadable at old SHAs. Owner
    action: send the support request (paste-ready draft below) or repo
    delete + recreate. JWT is rotated and admin passwords reset, so the
    residue is bcrypt hashes without contact PII.
-3. Stale legacy copies undecided (archival recommended; nothing touched;
+6. **Cleanup scope undefined:** the owner wants a repo cleanup, but the
+   junk-vs-protected list was never written down. If the cleanup resumes,
+   it must be a documented, owner-approved commit (CHANGELOG entry) —
+   never silent `rm` batches. Note: `INITIALIZATION_REPORT.md`, the 5
+   `frontend/debug-*.mjs`, and the two original DB backups were lost
+   permanently in Hermes' purge (untracked); a fresh DB backup exists.
+7. **`Master P` (the master-prompt file) sits untracked at the repo
+   root** — decide: track it under `docs/01-project-planning/` (fits the
+   documentation system) or keep it out of the repo.
+8. Stale legacy copies undecided (archival recommended; nothing touched;
    the frozen old repo must never be republished as-is).
-4. App-level verification of the 180 imported questions pending (dev env
-   now exists; blocked behind the guest-form bug resolution or first
-   smoke run).
-5. GitHub repo description is stale (cosmetic; owner action in Settings);
-   the failed Fly Deploy run lingers in the Actions tab (deletable in UI).
-6. `frontend/.env.production` still points at the now-dead Fly URL — update
-   before any production build (M3/M4).
+9. GitHub repo description is stale (cosmetic; owner action in Settings).
+10. `frontend/.env.production` still points at the now-dead Fly URL — update
+    before any production build (M3/M4).
 
 ## Draft: GitHub Support request (owner to send — residue cleanup)
 

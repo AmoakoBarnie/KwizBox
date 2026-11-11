@@ -36,7 +36,6 @@
 ## Test environments
 
 - **Local dev:** backend `:8001` (SQLite), frontend `:5173/5174`.
-- **Postgres test (M1):** backend on temp port (8002) with `DATABASE_URL`.
 - **CI:** GitHub Actions — fresh SQLite at `/tmp/kwizbox-smoke.db`, Node 20,
   Python 3.11, gitleaks.
 - **Emulator:** Android 11 AVD `kwizbox_a11` (snapshot `kwizbox_ready`),

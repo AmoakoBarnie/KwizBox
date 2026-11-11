@@ -1,11 +1,17 @@
 # AGENTS.md — Operating Rules for AI Agents and Developers
 
-> **This file is the entry point for anyone (human or AI) working on KwizBox.**
-> Read it before doing anything. It defines how work is done here, how truth is
+> This file is the entry point for anyone (human or AI) working on KwizBox. Read
+> it before doing anything. It defines how work is done here, how truth is
 > established, and how project memory is maintained.
 >
-> Companion files: `brain.md` (technical knowledge base), `CLAUDE.md` (runbook),
-> `PROJECT_STATUS.md` (where we are), `SESSION_HANDOFF.md` (what happened last).
+> Companion files (all at project root): `README.md` (project map), `PROJECT_STATUS.md`
+> (where we are), `SESSION_HANDOFF.md` (what happened last).
+>
+> Documentation (all under `docs/`): `docs/01`–`docs/07` documentation tree, plus
+> `docs/README.md` (index pointing to the right files).
+>
+> Master prompt: `Master P` — the professional AI-assisted software development
+> system initialization (the governance framework for this project).
 
 ---
 

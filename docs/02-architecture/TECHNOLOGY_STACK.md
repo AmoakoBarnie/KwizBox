@@ -16,7 +16,7 @@
 | passlib + bcrypt | 1.7.4 / **4.0.1 pinned** | Password hashing | Standard, proven | argon2 | **bcrypt must stay pinned at 4.0.1** — newer bcrypt breaks passlib at import (verified on this host) |
 | slowapi | 0.1.10 | Rate limiting | FastAPI-native rate limiting | Nginx-level limiting | In-app only; deploy proxy limits still advisable |
 | psycopg2-binary / asyncpg | 2.9.13 / 0.30.0 | Postgres drivers | Required for `DATABASE_URL=postgresql://` | — | Two drivers present; used by different paths (migration script vs async runtime) |
-| SQLite | (stdlib) | Current DB | Zero-ops, single file, perfect for dev + early live use | Postgres from day one | Write concurrency caps; migration to Postgres in flight (M1) |
+|| SQLite | (stdlib) | Current DB | Zero-ops, single file, perfect for dev + early live use | Write concurrency caps; **no migration planned** (M1 rejected) |
 
 ## Frontend
 
@@ -34,14 +34,11 @@
 
 ## Infrastructure
 
-| Technology | Purpose | Why | Alternatives | Trade-offs |
-|---|---|---|---|---|
+|| Technology | Purpose | Why | Alternatives | Trade-offs |
+|---|---|---|---|---|---|
 | Docker (multi-stage) | Backend packaging | Reproducible deploys; existing hardened Dockerfile | Bare-metal deploys | Image maintenance |
-| Fly.io | Backend hosting (M2) | Simple container deploys, generous free tier, `fly.toml` already present | Railway, Render, Koyeb | Vendor lock-in low (Docker image portable) |
-| Supabase | Managed Postgres (M1) | Free tier, Europe region, standard Postgres | Neon, Railway PG, self-hosted | Free-tier limits; connection pooling via port 6543 vs direct 5432 (use 5432 for migration) |
-| GitHub Actions | CI + deploy | `ci.yml` (build, smoke, gitleaks), `fly-deploy.yml` | GitLab CI, local scripts | — |
-| GitHub Pages | Legacy frontend host (`gh-pages` branch) | Historical | — | Superseded by planned final hosting decision in M2 |
-| gitleaks (CI) | Secret scanning | Prevents credential leaks in history | trufflehog | — |
+| GitHub Actions | CI + deploy | `ci.yml` (build, smoke, gitleaks) | GitLab CI, local scripts | — |
+| gitleaks (CI) | Secret scanning | Prevents credential leaks in history | trufflehog | —
 
 ## Maintenance implications summary
 

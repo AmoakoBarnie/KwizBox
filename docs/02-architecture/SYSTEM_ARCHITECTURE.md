@@ -2,12 +2,16 @@
 
 > Part of `docs/02-architecture/`. The **as-built** architecture, verified
 > against the code 2026-11-10. Change this document whenever the architecture
-> changes — via an ADR first if the change is significant.
+> changes — via an ADR first if the change is significant. M1 (Postgres) and
+> M2 (hosting) were **rejected** by the owner on 2026-11-10/11. The app stays on
+> SQLite. Android (Capacitor) is the only approved post-launch platform.
 
 ## Overview
 
 Two-tier client-server application with a static frontend talking to a
 stateless REST API, plus an Android wrapper that reuses the same frontend.
+
+```
 
 ```
                 ┌────────────────────────────────────────────┐
@@ -33,18 +37,13 @@ stateless REST API, plus an Android wrapper that reuses the same frontend.
                 └───────┬──────────────────┬─────────────────┘
                         │                  │
                         ▼                  ▼
-              ┌──────────────┐   ┌────────────────────┐
-              │ SQLite       │   │ Static /media      │
-              │ trivia.db    │   │ (question SVGs)   │
-              │ (dev/live)   │   └────────────────────┘
-              └──────┬───────┘
-                     │ migrate_sqlite_to_pg.py (M1)
-                     ▼
-              ┌──────────────────┐        ┌───────────────────┐
-              │ Supabase Postgres│        │ Fly.io deploy      │
-              │ (M1 target)      │        │ (M2 target)        │
-              └──────────────────┘        └───────────────────┘
-```
+                      ┌──────────────┐   ┌────────────────────┐
+                      │ SQLite       │   │ Static /media      │
+                      │ trivia.db    │   │ (question SVGs)   │
+                      │ (dev/live)   │   └────────────────────┘
+                      └──────────────┘
+
+                ## Frontend (`frontend/`)
 
 ## Frontend (`frontend/`)
 
@@ -76,8 +75,9 @@ stateless REST API, plus an Android wrapper that reuses the same frontend.
 
 ## Database
 
-- **Today:** SQLite (`backend/trivia.db`) — 13 tables, 7,710 questions, 38
-  users, 141 sessions. Live data + question bank in one file.
+- **Today:** SQLite (`backend/trivia.db`) — 13 tables, **7,890 questions**
+  (7,710 pre-PR #2 + 180 from PR #2 + 180 additional via DB direct import),
+  users and sessions live data. Live data + question bank in one file.
 - **Target:** Supabase Postgres (M1). Migration script proven; connection string
   pending. Schema documented in `DATABASE_SCHEMA.md`.
 
@@ -115,7 +115,8 @@ stateless REST API, plus an Android wrapper that reuses the same frontend.
 ## Known architectural limitations (honest view)
 
 - Single-process API + SQLite caps concurrent writes; fine for current scale
-  (tens of users), addressed by M1.
+  (tens of users). M1 (Postgres migration) was **rejected** by the owner
+  (2026-11-10/11) — the app stays on SQLite.
 - Badges live in `localStorage` (frontend) — device-bound, not server-authoritative.
 - `models.py.bak_before_pg` exists in `backend/src/` — historical backup file;
   candidate for cleanup (tracked in BUG_TRACKER as housekeeping).

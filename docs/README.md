@@ -1,10 +1,17 @@
-# KwizBox — historical development README
+# KwizBox — project documentation index
 
-> ⚠️ **HISTORICAL DOCUMENT (superseded).** This file describes the project as it
-> was during the early MVP (200-question seed, Phase-1 scope, old layout). It is
-> kept for archaeology only. Current truth: the root `README.md`, `CLAUDE.md`,
-> `brain.md`, and the `docs/01`–`docs/07` governance tree (added 2026-11-10).
-> Do not follow instructions from this file.
+> This file was the original project README. It describes the project as it was
+> during the early MVP (200-question seed, Phase-1 scope, old layout) and is kept
+> for **archaeology only**. **Do not follow instructions from this file.**
+>
+> **Current truth, in priority order (read first):**
+> 1. Root `README.md` — project map, stack, run guide, API quick reference
+> 2. `AGENTS.md` — operating rules for AI agents and developers (read first)
+> 3. `PROJECT_STATUS.md` — where the project is right now
+> 4. `SESSION_HANDOFF.md` — what happened last, what's next
+> 5. `docs/01`–`docs/07` — detailed architecture, planning, testing, deployment
+> 6. `CONTRIBUTING.md` — how to contribute (humans and AI)
+> 7. `Master P` — the master prompt (project initialization system)
 
 # KwizBox
 

@@ -31,8 +31,9 @@ verification rules, feature workflow, security rules). Then:
 ## Stack
 - **Frontend:** React + Vite (PWA via `vite-plugin-pwa`). Mobile-first, low-data.
 - **Backend:** FastAPI + SQLite. JWT auth (registered + guest).
-- **Content:** 3,230 questions across **Mathematics (1,620)** · **Science (955)** · **Computing (655)**,
-  tagged by class (B4–B9) · subject · strand/topic · difficulty, each with a 1–4 sentence explanation.
+- **Content:** 7,890 questions across 16 subjects (13 subjects + Mixed), tagged by
+  class (B4–B9) · subject · strand/topic · difficulty, each with a 1–4 sentence
+  explanation. 7,710 + 180 from PR #2 (imported 2026-11-10).
 
 ## Layout
 ```
@@ -63,7 +64,7 @@ MY APP/
 │   │       └── challenge.py # POST /create, GET /{code}/questions,
 │   │       │                  #   POST /{code}/submit, GET /{code}/compare
 │   │   └── static/questions/ # 10 SVGs for image_mcq (lever, food chain, etc.)
-│   ├── trivia.db            # SQLite — 3,230 questions, 99 users, 565+ sessions
+│   ├── trivia.db            # SQLite — 7,890 questions, 99 users, 565+ sessions
 │   ├── trivia.db.bak_*      # backup snapshots
 │   └── requirements.txt     # Python deps (FastAPI 0.115, SQLAlchemy 2.0, etc.)
 ├── frontend/
@@ -386,7 +387,7 @@ Physical Education, Religious and Moral Education, Career Technology, Arabic, Mi
 - SQLite `create_all()` does NOT add columns to existing tables. On startup the API runs
   an idempotent `ALTER TABLE ... ADD COLUMN` for `question_type` and `image_url`.
 - Always start Vite from the `frontend/` directory — starting from project root serves 404s.
-- The `trivia.db` file is the question bank (1.9 MB, 3,230 questions). Keep it safe.
+- The `trivia.db` file is the question bank (7,890 questions). Keep it safe.
 - Both servers must be running for the app to work. Backend `:8001`, Frontend `:5173`.
 - **Female mascots are not rigged.** `shs_female` and `youth_female` in `models/models/`
   carry no skin and no animation clips, but `Mascot3D.jsx` maps them into the same
