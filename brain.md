@@ -21,13 +21,17 @@ STEM trivia app for Ghanaian learners (Primary 4 / B4 → JHS 3 / B9), NaCCA-ali
 | **APKs** | `_backup/preview/KwizBox-{emulator,phone}.apk` |
 | **3D mascot models** | `models/` — 4 character masters + animation clips + renders + `models/scripts/` (the Blender jobs) |
 | **Mascot runtime path** | `frontend/public/assets/mascots-v2/animated/` (byte-identical to `models/models/`) |
-| **Deploy configs** | `backend/Dockerfile`, `railway.toml` |
+| **Deploy configs** | removed 2026-11-10 (Fly/Railway artifacts deleted; hosting deferred to M2 — recreate when M2 starts) |
 
 ## What's running right now (dev)
 
-- Backend on `:8001` (SQLite) — health check returns `{"status":"ok"}`
+- **Nothing running** (2026-11-11: ports 8001/5173/5174 all dead)
+- Dev environment exists again (rebuilt 2026-11-10): `backend/venv` +
+  `frontend/node_modules` — start the backend on :8001 per
+  `docs/06-deployment/ENVIRONMENT_SETUP.md`; Vite dev server on 5173
+  (auto-bumps to 5174 if busy)
 - Emulator `kwizbox_a11` (Android 11, TCG mode) — stopped, snapshot `kwizbox_ready` saved
-- No local Postgres (`pgserver`) — target DB is Supabase (`gfjcoowxijvmmkdwciwq`), see 'What's blocked'
+- **Postgres migration REJECTED by owner (2026-11-11)** — the app stays on SQLite
 - `frontend/tests/` — 17 Playwright-style scripts (e2e, policy-check, mascot, stride, offline)
 
 ## What's done
@@ -35,7 +39,7 @@ STEM trivia app for Ghanaian learners (Primary 4 / B4 → JHS 3 / B9), NaCCA-ali
 - ✅ Android app builds and runs (Capacitor, Android 11, TCG mode)
 - ✅ Full E2E flow verified (guest login → quiz → submit → leaderboard)
 - ✅ SQLite → Postgres migration script proven (9,276 rows, 3 bugs fixed)
-- ✅ Deploy configs ready (Dockerfile, railway.toml, .env.example)
+- ✅ Deploy configs removed 2026-11-10 (hosting deferred; old Fly app destroyed)
 - ✅ Supabase project created (`gfjcoowxijvmmkdwciwq`, Europe, free tier)
 - ✅ Credentials sanitized in backup files
 - ✅ Project relocated to `KwizBoz Andriod/`
@@ -48,25 +52,19 @@ STEM trivia app for Ghanaian learners (Primary 4 / B4 → JHS 3 / B9), NaCCA-ali
 
 ## What's blocked
 
-**🔴 Supabase connection string** — the one thing needed to finish the migration.
+**Nothing external.** M1 (Postgres/Supabase migration) and M2 (hosting)
+were **rejected by the owner** (confirmed 2026-11-11) — the app stays on
+SQLite; no hosting is planned. The Supabase project exists but is out of
+scope now.
 
-User needs to go to: **Settings ⚙️ → Database → Connection string → URI tab**
+## What happens next
 
-Format needed:
-```
-postgresql://postgres.gfjcoowxijvmmkdwciwq:[PASSWORD]@aws-0-eu-central-1.pooler.supabase.com:5432/postgres
-```
-
-Replace `[PASSWORD]`, ensure port is **5432** (not 6543). Paste it here.
-
-## What happens next (once connection string arrives)
-
-1. Run migration: `venv/bin/python scripts/migrate_sqlite_to_pg.py "postgresql://..."`
-2. Verify all 13 table counts match
-3. Test API against Supabase (port 8002)
-4. Deploy backend to Railway/Render with `DATABASE_URL` + `JWT_SECRET`
-5. Rebuild APK with public backend URL
-6. Submit to Play Store
+1. Resolve the guest-form submit bug (under investigation since 2026-11-10)
+2. App-level smoke tests (smoke-auth, route-smoke, quiz-pack incl. PR #2)
+3. M3: Android APK rebuild via Capacitor (decide the target backend first —
+   no hosting exists)
+4. M4: Play Store submission
+5. M5: post-launch stabilization
 
 ## Key technical notes
 

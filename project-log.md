@@ -224,3 +224,49 @@
   STATUS/HANDOFF/CHANGELOG
 - ⚠️ Residue: refs/pull/1/head pins old commits on GitHub — support request
   drafted (owner action); PR #2 ref verified clean
+
+---
+
+## 2026-11-10 (continuation 3) — Admin reset + host teardown + a second session
+
+### Asked
+- Owner: "1 yes 2 unchanged 3 delete the host platforms not working"
+  1 = send the GitHub support request; 2 = admin passwords unchanged from
+  the leak (→ compromised); 3 = delete the non-working host platforms
+
+### Decided & Why
+- All 4 admin accounts reset to one new strong password — live hashes were
+  verified byte-identical to the leaked DBs before resetting (proof of
+  compromise, recorded in TEST_RESULTS); pre-reset DB backup + md5 taken
+- Stale live Fly app destroyed (was running pre-relocation code with the
+  leaked JWT secret since 2026-11-04 — actively exploitable; no volumes)
+- 76 host-platform files removed from the repo + remote gh-pages /
+  flyio-new-files branches deleted (all recoverable from git history)
+- Later that day (a separate working session): **M1 (Postgres) REJECTED**,
+  **M2 (hosting) REJECTED**, **release scope APPROVED** (public web app +
+  Android Capacitor + Play Store; M3–M5). Dev env rebuilt; guest-form submit
+  bug debugged but left unresolved
+
+### Shipped
+- ✅ Support request (paste-ready, off-repo) + admin credentials file
+- ✅ Admin reset verified with bcrypt.checkpw (bcrypt 4.0.1, rounds 12)
+- ✅ Fly app destroyed via flyctl (URL verified dead)
+- ✅ 76 files git-rm'd; remote branches deleted (local copies kept)
+- ⚠️ Guest-form submit bug unresolved — 5 debug scripts, no recorded outcome
+
+## 2026-11-11 — Session start: reconciliation + commits
+
+### Asked
+- Owner: "we are about to start working read the things you have to read"
+- Confirmed via direct questions: the M1/M2 rejections + release scope are
+  FINAL; commit both work layers then push; today's work to be specified
+
+### Shipped
+- ✅ Full entry-protocol read; discovered the second session's undocumented
+  work (dev env, CORS/e2e fixes, debug scripts, decision records) sitting
+  uncommitted alongside the interrupted teardown commit
+- ✅ All docs reconciled to the owner-confirmed decisions (PROJECT_STATUS
+  milestones/blockers/pending, SESSION_HANDOFF standing decisions/records,
+  CHANGELOG decisions/fixed/removed/notes)
+- ✅ Pushed as two clean commits: (1) host-platform teardown + docs sync,
+  (2) dev fixes (CORS origins + e2e stale-locator fix) — CI verified green

@@ -74,26 +74,58 @@ does not use semantic versioning yet (pre-1.0, unreleased).
   63 commits preserved; safety bundle kept off-repo (md5-verified).
 - **`JWT_SECRET` rotated** in the live gitignored `backend/.env` (old value
   invalidates any forged tokens; backend not deployed, so no user impact).
-- Residue: `refs/pull/1/head` still pins old commits on GitHub — support
-  request drafted in SESSION_HANDOFF.md (owner action).
-- Follow-up: reset the 4 admin-account passwords in the live DB (hashes were
-  public in the purged DBs).
+- Residue: `refs/pull/1/head` still pins old commits on GitHub — paste-ready
+  support request written off-repo for the owner to submit
+  (`/media/stephen/FILES/GitHub-support-request-20261110.md`).
+- **All 4 admin passwords reset** (follow-up executed the same day): the
+  live admin hashes were verified byte-identical to the leaked DBs, backed
+  up, and reset with bcrypt 4.0.1 (rounds 12); credentials stored off-repo.
+- **Stale live deployment destroyed**: the Fly app `kwizbox-still-bush-3080`
+  (deployed 2026-11-04, running pre-relocation code with the leaked JWT
+  secret) was found still live and destroyed via flyctl — no volumes, no
+  data lost.
 
-**Removed**
-- `.github/workflows/fly-deploy.yml` (owner: "delete the deployment not
-  working") — its only ever run failed at 14s (`FLY_API_TOKEN` never
-  configured; nothing was ever deployed) and hosting work is deferred.
-  Deployment configs (`Dockerfile`, `fly.toml`) are kept for M2; the
-  workflow remains recoverable from git history.
+**Decisions — 2026-11-10 (owner-confirmed 2026-11-11): owner advanced the project**
+- **M1 (Postgres migration) — REJECTED**: no Postgres migration planned;
+  the app stays on SQLite.
+- **M2 (hosting/deployment) — REJECTED**: no hosting deployment planned
+  (workflow + configs removed; recoverable from git history).
+- **Release scope — APPROVED**: public web app + Android (Capacitor) +
+  Play Store remain in scope; M3, M4, M5 continue.
+
+**Removed — 2026-11-10: host platforms (owner: "delete the host platforms not working")**
+- `.github/workflows/fly-deploy.yml` — its only ever run failed at 14s
+  (`FLY_API_TOKEN` never configured; nothing was ever deployed).
+- **76 host-platform files** (all recoverable from git history): `fly.toml`,
+  root `Dockerfile`, `backend/Dockerfile`, `.dockerignore`, `railway.toml`,
+  root `.htaccess`, `_backup/php-backend/` (the dead InfinityFree platform —
+  its domain no longer resolves), `_backup/vercel.json`,
+  `frontend/.env.production.bak_kwizbox`, `frontend/.env.production.lan_bak`.
+- Remote branches `gh-pages` (served a stale pre-rename build via GitHub
+  Pages) and `flyio-new-files` deleted; local copies retained.
 
 **Changed (deploy gating)**
 - ~~`fly-deploy.yml`: deploy-on-push disabled; workflow is manual-only~~
   (superseded the same day by full removal — see Removed above).
 
+**Fixed (dev) — 2026-11-10, second working session**
+- `backend/src/main.py`: CORS now allows the Vite dev origins
+  (`http://localhost:5173`, `http://localhost:5174`) so the locally served
+  frontend can call the API during development.
+- `frontend/tests/e2e-guest.mjs`: re-query the guest-form selects after the
+  form renders (the old script held a stale locator, breaking option
+  selection).
+- Dev environment rebuilt in the new repo home (`backend/venv`,
+  `frontend/node_modules`).
+
 **Notes**
 - `backend/trivia.db`, `backend/.env`, `frontend/.env` were copied outside Git
   (gitignored by design — live data / secrets) and verified by checksum.
-- Nothing was deleted; the old project location remains as a frozen snapshot.
+- The old project location remains as a frozen snapshot (nothing was deleted
+  from it; it contains PRE-PURGE history — keep private). The 2026-11-10
+  teardown removed only non-working host platforms: repo files are
+  recoverable from git history, and the stale Fly app was destroyed with no
+  data loss (no volumes).
 - Push history: 9 commits fast-forward `9077758..e0366a9` (authorized), then
   `b2dd269` + `a3a32b2` (CI repair + deploy gate), then the 2026-11-10
   owner-approved history rewrite (force-push of all branches — the only

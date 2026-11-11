@@ -1,7 +1,8 @@
 # DEPLOYMENT_GUIDE.md
 
 > Part of `docs/06-deployment/`. How KwizBox is (and will be) deployed.
-> Status: local dev today; Fly.io target in M2.
+> Status: local dev only — hosting deferred to M2 (platform artifacts
+> removed 2026-11-10; nothing is deployed anywhere).
 
 ## Local development (the only currently running mode)
 
@@ -18,37 +19,45 @@ npm run dev
 
 First-time environment setup: `ENVIRONMENT_SETUP.md`.
 
-## Production target (M2) — Fly.io
+## Production target (M2) — hosting deferred
 
-Components:
-- **Dockerfile** (root) — multi-stage build (hardened in `c3de450`).
-- **fly.toml** — Fly app config (app `kwizbox-still-bush-3080`).
-- **.github/workflows/fly-deploy.yml** — deploy on push (uses GitHub secret
-  `FLY_API_TOKEN`).
+> **2026-11-10: all host-platform artifacts were removed from the repo and the
+> stale deployments were torn down** (owner instruction: "delete the host
+> platforms not working"): the Fly.io app `kwizbox-still-bush-3080` was
+> destroyed via flyctl (it was a stale Nov-4 deployment running the leaked
+> pre-rotation JWT secret), `fly.toml`, both Dockerfiles, `.dockerignore`,
+> `railway.toml`, the InfinityFree `_backup/php-backend/`, root `.htaccess`,
+> Vercel configs, and the stale env backups were deleted, and the
+> `gh-pages` / `flyio-new-files` remote branches were removed (local copies
+> retained). Everything is recoverable from git history (`git log --all --
+> <path>`) and the pre-purge bundle.
 
-Required secrets (Fly): `DATABASE_URL` (Supabase URI), `JWT_SECRET`,
-`ALLOWED_ORIGINS` (deployed frontend origin; finalize and remove localhost
-entries in M2).
+When M2 starts, choose a host fresh:
 
-Steps (M2):
-1. `fly secrets set DATABASE_URL=… JWT_SECRET=… ALLOWED_ORIGINS=…`
-2. Deploy via workflow push or `fly deploy`.
-3. Verify `https://<app>.fly.dev/health` returns 200 publicly.
+1. Recreate a deploy workflow (the old one is in git history:
+   `git log --all -- .github/workflows/fly-deploy.yml`) or deploy manually.
+2. Set secrets on the platform: `DATABASE_URL` (Supabase URI), `JWT_SECRET`,
+   `ALLOWED_ORIGINS` (deployed frontend origin; remove localhost entries).
+3. Verify `/health` returns 200 publicly.
 4. Run `smoke-auth.mjs` against the public URL; record in TEST_RESULTS.
+
+Note: `frontend/.env.production` still points at the (now dead) Fly URL —
+update it during M2/M3 before building for production.
 
 ## Frontend hosting
 
 - **Android (primary):** Capacitor build from `frontend/`, `VITE_API_URL`
   pointing at the public backend (M3 rebuild).
 - **Web PWA:** static build (`npm run build`) — final hosting decided in M2
-  (GitHub Pages `gh-pages` branch exists as a legacy deploy of an older build;
-  treat as historical, not current).
+  (the legacy `gh-pages` branch was removed 2026-11-10; it served a stale
+  pre-rename build).
 
 ## Legacy / dev-only infrastructure (do not use for production)
 
 - `cloudflared.yml`, `cloudflared-trivia.yml`, `current_tunnel_url.txt`,
   `keepalive*.sh` — Cloudflare quick tunnels used to expose local dev.
-- `railway.toml` — Railway alternative considered; Fly chosen.
+- ~~`railway.toml`~~ — Railway alternative; removed 2026-11-10 with the other
+  host-platform artifacts.
 
 ## Rollback
 

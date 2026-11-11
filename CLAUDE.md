@@ -14,11 +14,11 @@ React + Vite PWA wrapped in Capacitor for Android. FastAPI + SQLite backend, JWT
 ## Release status
 - Android (Capacitor) builds + emulator-tested (Android 11, TCG mode, no KVM). APKs in
   `backend/_backup/preview/`.
-- Postgres target: Supabase (`gfjcoowxijvmmkdwciwq`, Europe) or Railway/Render + `Dockerfile`
+- Postgres target: Supabase (`gfjcoowxijvmmkdwciwq`, Europe); hosting deferred to M2 (all platform configs removed 2026-11-10)
   + `railway.toml` + `backend/.env.example`.
 - Release hardening: `REMEDIATION_PLAN.md` (P0/P1/P2), `HARDENING_LOG.md` (in progress),
   `roadmap.md` (Now / Next / Done / Later / Blocked).
-- CI deploy: `.github/workflows/fly-deploy.yml` (Fly.io).
+- CI: `.github/workflows/ci.yml` (build + smoke + secret scan). No deploy workflow — hosting deferred to M2 (old workflow recoverable from git history).
 
 ## Run (dev)
 - Backend :8001: `cd backend && ./venv/bin/python -m uvicorn src.main:app --host 0.0.0.0 --port 8001`

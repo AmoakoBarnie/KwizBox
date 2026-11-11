@@ -83,6 +83,21 @@ The session's verifications were repository-level:
 > configured; nothing ever deployed) and hosting is deferred. Deployment
 > configs (`Dockerfile`, `fly.toml`) kept for M2.
 
+## 2026-11-10 — Admin password reset + host-platform teardown (owner directives)
+
+| Check | Command / method | Result |
+|---|---|---|
+| Compromise confirmation (live vs leaked) | direct hash comparison live DB vs both leaked DB blobs (extracted from the pre-purge bundle) | ALL 4 live admin hashes (`admin`, `mod1`, `qm1`, `Pblack`) **identical to the leaked initial-commit DB**; `mod1`/`qm1` also identical to the Aug backup → all 4 compromised |
+| Pre-reset backup (mandatory) | `cp trivia.db trivia.db.bak_20261110_114608_pre_admin_reset` + `md5sum` | identical `07ae3e4669ab1d7b808f88d83c1e9a22` (pre-reset state preserved; gitignored) |
+| Password reset | sqlite UPDATE via python + system bcrypt **4.0.1** (the pinned version), rounds=12 | 4 accounts reset to one new strong password; `bcrypt.checkpw` verified against the on-disk DB for all 4 |
+| Credentials stored off-repo | `/media/stephen/FILES/KwizBox-admin-credentials-20261110.txt` | written (not committed; DB itself is gitignored) |
+| Stale Fly deployment discovered | `curl https://kwizbox-still-bush-3080.fly.dev/health` | **200 — a live KwizBox backend was still running**, deployed 2026-11-04 (pre-relocation code, pre-rotation JWT secret → forgeable tokens); no volumes (no data at risk) |
+| Fly app destroyed (owner: "delete the host platforms not working") | `flyctl apps destroy kwizbox-still-bush-3080 --yes` (flyctl authenticated as owner) | "Destroyed app kwizbox-still-bush-3080"; URL now dead (curl 000). A suspended `fly-builder-*` app remains (harmless Fly infrastructure) |
+| Host-platform artifacts removed from repo | `git rm` (76 files) | `fly.toml`, root `Dockerfile`, `backend/Dockerfile`, `.dockerignore`, `railway.toml`, root `.htaccess`, `_backup/php-backend/` (dead InfinityFree/PHP platform — its domain no longer resolves), `_backup/vercel.json`, `frontend/.env.production.bak_kwizbox`, `frontend/.env.production.lan_bak` |
+| Dead-platform URL checks | curl | infinityfree.io: 000 (dead); fly.dev: destroyed (was 200) |
+| Host-platform remote branches deleted | `git push origin --delete gh-pages flyio-new-files` | both deleted (local copies retained; gh-pages served a stale pre-rename "KwizBoz" build via GitHub Pages) |
+| Docs synced to removal | DEPLOYMENT_GUIDE, brain.md, CLAUDE.md updated | no doc still claims Fly/Railway configs exist |
+
 ## Historical results (from git/brain.md evidence — not re-run today)
 
 | Claim | Evidence | Date |

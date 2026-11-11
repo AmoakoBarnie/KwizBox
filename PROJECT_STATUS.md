@@ -1,37 +1,51 @@
 # PROJECT_STATUS.md
 
 > Snapshot of where the project is. Updated at the end of every working session.
-> Last updated: 2026-11-10 (post BUG-007 purge + deploy removal)
+> Last updated: 2026-11-10 (post purge + credential reset + host teardown)
 
 ## Current phase
 
-**Initialization COMPLETE. PR #2 merged & pushed. CI green. Sensitive history PURGED. Hosting deferred.**
+**Initialization COMPLETE. PR #2 merged & pushed. CI green. Sensitive history PURGED. Credentials RESET. Hosting artifacts REMOVED.**
 The owner approved the initialization (2026-11-10), the PR #2 merge + push,
-then directed: **"remove password from public"** (BUG-007 purge — executed:
-full history rewrite, all branches force-pushed, live JWT secret rotated) and
-**"delete the deployment not working"** (Fly Deploy workflow deleted).
-M1 remains deferred ("let's wait"). **No new work should start without the
-owner's go-ahead.**
+the BUG-007 history purge ("remove password from public" — executed),
+the credential resets (JWT rotated, admin passwords reset after confirming
+"unchanged"), and the host-platform teardown ("delete the host platforms
+not working" — stale Fly app destroyed, 76 platform files removed, Pages /
+flyio branches deleted). M1 remains deferred. **No new work should start
+without the owner's go-ahead.**
 
 ## Repository state (verified 2026-11-10)
 
 - **Location:** `/media/stephen/FILES/My Projects/KwizBox` (authoritative working copy)
 - **Remote:** `github.com/AmoakoBarnie/KwizBox` — local `main` **in sync** with
-  `origin/main` at `5d906a1`. **History rewritten 2026-11-10** (BUG-007 purge,
+  `origin/main` (fast-forward pushes only since the purge). **History rewritten
+  2026-11-10** (BUG-007 purge,
   owner-approved force-push): every pre-purge commit has a new SHA (map kept
   locally at `.git/filter-repo/commit-map`); safety bundle off-repo
-  (`KwizBox-pre-purge-20261110.bundle`, md5-verified). Working tree: clean.
+  (`KwizBox-pre-purge-20261110.bundle`, md5-verified). Working tree: no pending
+  tracked changes (untracked scratch: `frontend/debug-*.mjs`,
+  `INITIALIZATION_REPORT.md`, root `.env.example`).
 - **CI: green.** The gitleaks full-history scan now scans the clean,
   post-purge history (the sensitive blobs are unreachable).
-- **Fly Deploy workflow: DELETED** (owner instruction — it never worked;
-  `FLY_API_TOKEN` was never configured and nothing was ever deployed).
-  `Dockerfile` + `fly.toml` remain for M2; the workflow is recoverable from
-  git history.
+- **Fly Deploy workflow + ALL host-platform artifacts: DELETED** (owner:
+  "delete the host platforms not working"). The stale live Fly app
+  `kwizbox-still-bush-3080` (deployed 2026-11-04, running pre-relocation code
+  with the leaked JWT secret) was **destroyed via flyctl**; 76 platform files
+  removed from the repo (fly.toml, both Dockerfiles, .dockerignore,
+  railway.toml, .htaccess, `_backup/php-backend/`, Vercel configs, stale env
+  backups); remote `gh-pages` (stale pre-rename Pages site) and
+  `flyio-new-files` branches deleted (local copies retained). Everything
+  recoverable from git history. `frontend/.env.production` kept (its Fly URL
+  is dead — update at M2/M3).
 - PR #2: **closed as Merged on GitHub** (merge commit recognized).
 - `backend/trivia.db`: **7,890 questions** (7,710 + 180 from PR #2),
   gitignored, untouched by the purge. Pre-import backup md5-verified.
 - **JWT_SECRET rotated** in the live `backend/.env` (old value was public in
   a committed tarball since ~2026-10-08).
+- **Admin passwords RESET** (all 4 accounts; live hashes had been identical
+  to the leak). New password in
+  `/media/stephen/FILES/KwizBox-admin-credentials-20261110.txt`; pre-reset
+  backup md5-recorded.
 
 ## Milestones
 
@@ -40,8 +54,8 @@ owner's go-ahead.**
 | M0 | Project initialization & governance | ✅ Done & **approved** 2026-11-10 |
 | M0.5 | PR #2 merge + question import | ✅ Done 2026-11-10 (merged, imported, pushed; CI green) |
 | M0.7 | BUG-007 purge (sensitive history removal) | ✅ **Executed 2026-11-10** — 5 paths purged from all branches; JWT rotated; GitHub residue cleanup pending (owner) |
-| M1 | SQLite → Postgres (Supabase) migration | ⏸ Deferred by owner ("let's wait"); also blocked on Supabase connection string |
-| M2 | Backend deployment (Fly.io) | Deferred by owner ("hosting later"); deploy workflow deleted; configs exist (`Dockerfile`, `fly.toml`) |
+| M1 | SQLite → Postgres (Supabase) migration | ❌ **Rejected by owner** (confirmed 2026-11-11) — removed from scope; no migration planned |
+| M2 | Backend deployment (hosting) | ❌ **Rejected by owner** (confirmed 2026-11-11) — no hosting deployment planned |
 | M3 | Android APK rebuild against public backend | Not started |
 | M4 | Play Store submission | Not started; needs $25 developer account + identity verification |
 | M5 | Post-launch stabilization & feature work | Not started |
@@ -92,43 +106,61 @@ owner's go-ahead.**
     any purged path (locally and via the GitHub API); **live `JWT_SECRET`
     rotated** (old value public since ~2026-10-08).
 13. ✅ **Fly Deploy workflow deleted** (owner: "delete the deployment not
-    working") — it never worked and hosting is deferred; deployment configs
-    kept for M2.
+    working") — it never worked and hosting is deferred (deployment configs
+    were kept at this point; removed later in item 15).
+14. ✅ **Admin passwords RESET** (owner confirmed "unchanged" → all 4 were
+    compromised): verified all 4 live admin hashes were identical to the
+    leaked initial-commit DB (and `mod1`/`qm1` also matched the Aug backup),
+    backed up the DB first (md5 recorded), reset all 4 accounts with bcrypt
+    4.0.1 (the pinned version, rounds 12), verified with `bcrypt.checkpw`;
+    credentials stored off-repo at
+    `/media/stephen/FILES/KwizBox-admin-credentials-20261110.txt`.
+15. ✅ **Host platforms torn down** (owner: "delete the host platforms not
+    working"): discovered the Fly app `kwizbox-still-bush-3080` was **still
+    live** (deployed 2026-11-04, running pre-relocation code with the leaked
+    JWT secret — actively exploitable until now) and **destroyed it** via
+    flyctl (URL verified dead); removed 76 host-platform files from the repo
+    (fly.toml, both Dockerfiles, .dockerignore, railway.toml, .htaccess,
+    dead InfinityFree `_backup/php-backend/`, Vercel configs, stale env
+    backups); deleted the remote `gh-pages` (stale Pages site) and
+    `flyio-new-files` branches (local copies retained); synced all docs.
+16. ✅ **Owner decisions recorded (2026-11-10, confirmed 2026-11-11)**:
+    **M1 (Postgres migration) REJECTED**, **M2 (hosting) REJECTED** — both
+    removed from scope. **Release scope APPROVED**: public web app + Android
+    (Capacitor) + Play Store; M3–M5 continue.
+17. ✅ **Dev environment rebuilt** (second working session, 2026-11-10):
+    `backend/venv` + `frontend/node_modules` regenerated; CORS opened for the
+    Vite dev ports (5173/5174); `e2e-guest.mjs` stale-locator bug fixed.
+    A **guest-form submit bug** was being investigated (5 debug scripts)
+    but left unresolved — no recorded outcome.
 
 ## Outstanding tasks (all gated on owner decisions)
 
-- [ ] **GitHub-side residue cleanup (BUG-007 follow-up)** — `refs/pull/1/head`
-      still pins the old lineage, so the DB backup + tarball remain
-      downloadable at old SHAs. Fix: GitHub Support request (draft in
-      SESSION_HANDOFF.md; old SHAs in the off-repo info file) or delete +
-      recreate the repo. The rotated JWT secret already defangs the tarball
-      leak; remaining residue is bcrypt hashes without contact PII.
-- [ ] **Reset the 4 admin-account passwords** in the live DB (their hashes
-      were public in the purged DBs; the live DB may still use the same
-      passwords). Needs M1 runtime or a direct DB edit — ask the owner for a
-      new password first.
-- [ ] **M1 start** — deferred by owner. When authorized: regenerate dev
-      environment (`backend/venv`, `frontend/node_modules`), run local smoke
-      tests to prove relocation + import broke nothing, then Supabase
-      migration when the connection string arrives.
-- [ ] M1 blocker: obtain Supabase connection string (owner action:
-      Supabase → Settings ⚙️ → Database → Connection string → URI, port 5432).
-- [ ] Decide stale-copy handling (~6 legacy copies; nothing touched). Note:
-      the frozen `~/Desktop/KwizBoz Andriod` copy contains the PRE-PURGE
-      history — keep private, never republish.
-- [ ] App-level tests of the 180 imported questions — none run yet (no runtime
-      environment exists; DB-level verification only). First task when M1 env
-      setup is authorized.
-- [ ] (Optional, cosmetic) GitHub repo description is stale ("3,230+
-      questions… 15+ subjects") — owner can update it in repo Settings. The
-      failed Fly Deploy run also lingers in the Actions tab; deletable via
-      the GitHub UI.
+- [ ] **Send the GitHub Support request** (owner approved this; only the owner
+      can submit) — paste-ready draft at
+      `/media/stephen/FILES/GitHub-support-request-20261110.md`; submit at
+      https://support.github.com/request. It asks GitHub to drop
+      `refs/pull/1/head` (which still pins the old lineage, keeping the DB
+      backup + tarball downloadable at old SHAs) and garbage-collect the
+      unreachable commits. The rotated JWT + reset admin passwords already
+      defang the leaks; remaining residue is bcrypt hashes without contact
+      PII. After sending, verify residue is gone (checks in TEST_RESULTS).
+- [ ] **M3 start** — Android APK rebuild against the public backend (Capacitor). Owner approval required for Capacitor rebuild + local APK build.
+- [ ] **M4 start** — Play Store submission ($25 developer account + identity verification).
+- [ ] **M5 start** — Post-launch stabilization & feature work.
+- [ ] Decide stale-copy handling (~6 legacy copies; nothing touched). Note: the frozen `~/Desktop/KwizBoz Andriod` copy contains the PRE-PURGE history — keep private, never republish.
+- [ ] App-level tests of the 180 imported questions — none run yet (a dev
+      environment now exists — built 2026-11-10 — so this is runnable; only
+      DB-level verification done so far). Includes resolving the guest-form
+      submit bug under investigation since 2026-11-10.
+- [ ] (Optional, cosmetic) GitHub repo description is stale — owner can update.
 
 ## Known bugs / issues (see `docs/05-testing/BUG_TRACKER.md`)
 
 - **BUG-007: RESOLVED 2026-11-10** — sensitive history purged (5 paths, all
-  branches force-pushed), JWT secret rotated. Open follow-ups: GitHub
-  residue cleanup + admin password reset (see outstanding tasks).
+  branches force-pushed), JWT secret rotated, **all 4 admin passwords reset**
+  (live hashes had been identical to the leak). Remaining follow-up: GitHub
+  residue cleanup (owner sends the drafted support request).
 - Password reset flow retired as a documented dead-end (P0-3, commit `de496c2`);
   `security_question` columns remain in the schema.
 - `bcrypt` must stay pinned at 4.0.1 (passlib incompatibility).
@@ -137,26 +169,33 @@ owner's go-ahead.**
 
 ## Technical blockers
 
-- **Supabase connection string** — the single external blocker for the Postgres
-  migration (M1). Everything downstream (deploy, APK, Play Store) waits on it.
+- **None.** M1 (Postgres) and M2 (hosting) were rejected by the owner
+  (confirmed 2026-11-11), which removes the Supabase connection-string
+  blocker. The app runs on SQLite; nothing external is gated anymore.
 
 ## Pending decisions (owner)
 
-1. GitHub residue cleanup: support ticket (draft ready) vs delete-and-
-   recreate the repo vs accept the residue (JWT already rotated).
-2. Reset the 4 admin passwords (provide a new admin password, or defer).
-3. Start M1 (dev environment + Supabase migration prep).
-4. Stale-copy handling (~6 legacy copies; archival recommended).
-5. When to start hosting/M2 (workflow deleted; configs kept).
+1. GitHub residue cleanup: send the drafted support request (recommended)
+   vs delete-and-recreate the repo vs accept the residue (JWT rotated; only
+   bcrypt hashes without contact PII remain downloadable at old SHAs).
+2. Stale-copy handling (~6 legacy copies; archival recommended).
+3. M3 — Android APK rebuild (Capacitor): with hosting (M2) rejected, decide
+   what backend the APK targets (local/LAN backend now, or revisit hosting
+   later) before building.
+4. M4 — Play Store submission: approve and confirm $25 developer account
+   + identity verification.
 
 ## Next recommended actions
 
-1. Owner files the GitHub Support request (or picks another residue option) —
-   draft message in SESSION_HANDOFF.md; old SHAs in
+1. Owner sends the GitHub Support request — paste-ready message at
+   `/media/stephen/FILES/GitHub-support-request-20261110.md` (submit at
+   https://support.github.com/request); old SHAs in
    `/media/stephen/FILES/KwizBox-prepurge-info-20261110.txt`.
-2. Owner provides a new admin password → reset the 4 admin hashes in the live
-   DB (or defer to M1).
-3. When M1 is authorized: environment setup per
-   `docs/06-deployment/ENVIRONMENT_SETUP.md`, run `smoke-auth.mjs` +
-   `route-smoke.mjs` + a quiz-pack spot check (verify PR #2 questions are
-   served), record in TEST_RESULTS; then migration when the URI arrives.
+2. Owner picks today's work (e.g. the unresolved guest-form submit bug from
+   2026-11-10, or M3 planning).
+3. Owner approves M3: Android APK rebuild via Capacitor (update `backend/.env`,
+   `frontend/android`, verify `VITE_API_URL` points to the chosen backend),
+   build APK, test on device.
+4. Owner approves M4: Play Store submission — $25 developer account, identity
+   verification, app listing + APK upload.
+5. Owner approves M5: post-launch stabilization & feature work.
