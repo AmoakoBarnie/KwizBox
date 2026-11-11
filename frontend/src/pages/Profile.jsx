@@ -43,7 +43,7 @@ function BadgeToast({ badge, onDone }) {
 
 export default function Profile() {
   const nav = useNavigate()
-  const { user, isAuthed, logout } = useAuth()
+  const { user, isAuthed, logout, updateAvatar } = useAuth()
   const [earned, setEarned] = useState(() => loadBadges())
   const [toast, setToast] = useState(null)
 
@@ -82,6 +82,27 @@ export default function Profile() {
   const overall = p?.overall
   const subjects = p?.subjects || []
   const masteredCount = p?.topics_mastered || 0
+  // Engagement payload (backend/src/progress.py): XP level from lifetime
+  // points, weekly league, and daily activity for the streak calendar.
+  const xp = p?.xp || null
+  const league = p?.league || null
+  const activity = p?.activity || []
+
+  // Streak-calendar cells: the last 56 days (8 weeks), keyed by UTC date to
+  // match the backend's func.date(created_at) aggregation. Each cell is one
+  // day; intensity buckets by points scored that day.
+  const actMap = {}
+  activity.forEach((a) => { if (a && a.day) actMap[a.day] = a })
+  const heatCells = []
+  for (let i = 55; i >= 0; i--) {
+    const d = new Date()
+    d.setUTCDate(d.getUTCDate() - i)
+    const day = d.toISOString().slice(0, 10)
+    const a = actMap[day]
+    const score = a ? a.score || 0 : 0
+    const level = score === 0 ? 0 : score < 40 ? 1 : score < 100 ? 2 : 3
+    heatCells.push({ day, score, level })
+  }
 
   const statCards = [
     {v: overall?.lifetime_score ?? user.lifetime_score,          l: 'Total points',        icon: '⭐'},
@@ -119,18 +140,25 @@ export default function Profile() {
   ]
   const [avatar, setAvatar] = useState(user.avatar || { skin: 'warm', hat: 'none', accessory: 'none', gender: 'male' })
   const [saving, setSaving] = useState(false)
+  const [saveErr, setSaveErr] = useState('')
 
-  async function saveAvatar() {
-    setSaving(true)
+  // PATCH the avatar and refresh the auth context. The NEXT avatar object is
+  // passed in explicitly: reading `avatar` here would save the previous
+  // choice (setAvatar doesn't land until the next render), and calling the
+  // useAuth() hook inside this handler — as the old code did — is an invalid
+  // hook call that throws before the request is ever sent.
+  async function saveAvatar(next) {
+    setSaving(true); setSaveErr('')
     try {
-      await useAuth().updateAvatar(avatar)
-    } catch (e) { /* optimistic — keep local choice */ }
-    finally { setSaving(false) }
+      await updateAvatar(next)
+    } catch (e) {
+      setSaveErr(e.message || 'Could not save your look — check your connection')
+    } finally { setSaving(false) }
   }
 
-  const pickSkin = (s) => { setAvatar(a => ({ ...a, skin: s })); saveAvatar() }
-  const pickHat  = (h) => { setAvatar(a => ({ ...a, hat: h }));      saveAvatar() }
-  const pickAcc  = (ac)=> { setAvatar(a => ({ ...a, accessory: ac })); saveAvatar() }
+  const pickSkin = (s) => { const next = { ...avatar, skin: s }; setAvatar(next); saveAvatar(next) }
+  const pickHat  = (h) => { const next = { ...avatar, hat: h }; setAvatar(next); saveAvatar(next) }
+  const pickAcc  = (ac)=> { const next = { ...avatar, accessory: ac }; setAvatar(next); saveAvatar(next) }
 
   return (
     <motion.div className="screen profile"
@@ -161,6 +189,40 @@ export default function Profile() {
         >⚙️</motion.button>
       </motion.div>
 
+      {/* ---- Level & league (engagement) ---- */}
+      {xp && (
+        <motion.div className="subjects" initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.22 }}>
+          <div className="section-header">
+            <h3 className="section-title">{xp.icon} Level {xp.level} — {xp.name}</h3>
+            <span className="section-hint">
+              {league ? `${league.icon} ${league.name} league` : ''}
+            </span>
+          </div>
+          <div className="xp-bar-wrap">
+            <div className="xp-bar" role="progressbar"
+              aria-valuenow={Math.round((xp.progress || 0) * 100)} aria-valuemin={0} aria-valuemax={100}
+              aria-label={`Level ${xp.level} progress`}>
+              <div className="xp-bar-fill" style={{ width: `${Math.round((xp.progress || 0) * 100)}%` }} />
+            </div>
+            <span className="xp-bar-label">
+              {xp.next_threshold != null
+                ? `${xp.points} / ${xp.next_threshold} pts → Level ${xp.level + 1}`
+                : `${xp.points} pts — max level! 👑`}
+            </span>
+          </div>
+          {league && (
+            <div className="league-row">
+              <span className="league-chip">{league.icon} {league.name}</span>
+              <span className="league-sub">
+                {league.next_name
+                  ? `${league.weekly_points} pts this week · ${league.points_to_next} more to ${league.next_name} ${league.next_name ? '' : ''}`
+                  : `${league.weekly_points} pts this week — top league! 💎`}
+              </span>
+            </div>
+          )}
+        </motion.div>
+      )}
+
       {/* ---- Avatar customization (Upgrade 8) ---- */}
       <motion.div className="subjects" initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.25 }}>
         <div className="section-header">
@@ -186,6 +248,9 @@ export default function Profile() {
           <p className="hint" style={{ textAlign: 'center', margin: '6px 0 0' }}>
             Tap the mascot to react
           </p>
+          {saveErr && (
+            <p className="avatar-save-err" role="alert">⚠️ {saveErr}</p>
+          )}
         </div>
 
         <div className="avatar-group">
@@ -253,6 +318,25 @@ export default function Profile() {
           ))}
         </div>
       </motion.div>
+
+      {/* ---- Streak calendar (engagement): last 8 weeks ---- */}
+      {activity.length > 0 && (
+        <motion.div className="subjects" initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.33 }}>
+          <div className="section-header">
+            <h3 className="section-title">📅 Daily streak</h3>
+            <span className="section-hint">
+              {overall?.current_streak ?? user.current_streak ?? 0}🔥 day streak · last 8 weeks
+            </span>
+          </div>
+          <div className="heat-grid" aria-label="Days played in the last 8 weeks">
+            {heatCells.map((c) => (
+              <span key={c.day} className={`heat-cell h${c.level}`}
+                title={c.score ? `${c.day}: ${c.score} pts` : c.day} />
+            ))}
+          </div>
+          <p className="hint">Every square is a day — the brighter it glows, the more points you scored 🎮</p>
+        </motion.div>
+      )}
 
       {/* ---- Badges section ---- */}
       <motion.div className="subjects" initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35 }}>

@@ -157,6 +157,10 @@ class QuizResultResponse(BaseModel):
     points_breakdown: dict
     feedback: list[AnswerFeedback]
     points_breakdown_list: list[dict] = Field(default_factory=list)  # [{question_id, points}, ...] for per-question display
+    # ---- Engagement (Group B) ----
+    best_streak: int = 0          # best in-quiz answer streak this session (server-computed)
+    daily_streak: int = 0         # consecutive days played (after this session)
+    lifetime_score: int = 0      # total points after this session
 
 
 # ---------- Leaderboard ----------

@@ -15,6 +15,10 @@ sys.path.insert(0, str(BACKEND))
 _fd, _DB = tempfile.mkstemp(suffix=".db")
 os.close(_fd)
 os.environ["DATABASE_URL"] = "sqlite:///" + _DB.replace("\\", "/")
+# seed_super_admin() refuses to run (sys.exit) without ADMIN_PASSWORD, which
+# kills the TestClient lifespan with a confusing CancelledError — set a
+# throwaway value for the isolated temp DB only.
+os.environ.setdefault("ADMIN_PASSWORD", "test-only")
 
 from fastapi.testclient import TestClient  # noqa: E402
 from src.main import app  # noqa: E402

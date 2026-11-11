@@ -6,7 +6,7 @@ from datetime import datetime, timezone
 
 from ..database import get_db
 from ..rate_limit import limiter
-from ..models import User, Question, QuizSession, SubjectProgress, TopicProgress, LeaderboardPeriod, UserQuestionSeen
+from ..models import User, Question, QuizSession, SubjectProgress, TopicProgress, LeaderboardPeriod, UserQuestionSeen, SchoolCode
 from ..auth import get_current_user, optional_user
 from ..schemas import (
     QuizPackRequest, QuestionOut, QuizResultRequest, QuizResultResponse,
@@ -208,6 +208,7 @@ def submit_result(
 
     # Grade each answer; also update per-question statistics
     running_streak = 0
+    best_streak = 0  # best in-quiz streak this session (persisted on the session row)
     for ans in body.answers:
         q = questions.get(ans.question_id)
         if not q:
@@ -217,6 +218,7 @@ def submit_result(
         if is_correct:
             correct += 1
             running_streak += 1
+            best_streak = max(best_streak, running_streak)
             pts = question_points(q.difficulty, ans.seconds_taken, running_streak)
             score += pts
             per_diff[q.difficulty] = per_diff.get(q.difficulty, 0) + pts
@@ -263,6 +265,7 @@ def submit_result(
         sess.accuracy = accuracy
         sess.duration_seconds = body.duration_seconds
         sess.status = "completed"
+        sess.max_streak = best_streak
         sess.started_at = sess.started_at or now
         sess.ended_at = now
         sess.school_code = user.school_code
@@ -286,6 +289,9 @@ def submit_result(
         points_breakdown=per_diff,
         feedback=feedback,
         points_breakdown_list=per_question_points,
+        best_streak=best_streak,
+        daily_streak=(user.current_streak if user else 0),
+        lifetime_score=(user.lifetime_score if user else 0),
     )
 
 
@@ -435,3 +441,69 @@ def get_progress(
 ):
     """Detailed progress: overall + per-subject + per-topic with mastery."""
     return build_progress(db, user)
+
+
+@router.get("/leaderboard/schools")
+@limiter.limit("20/minute")
+def schools_leaderboard(
+    request: Request,
+    limit: int = 20,
+    db: Session = Depends(get_db),
+):
+    """School-vs-school competition: this month's points aggregated per school code.
+
+    Every signed-in player contributes their monthly LeaderboardPeriod points to
+    their school (set at sign-up / profile via school_code). Guest scores never
+    count. Ranked by school total; each row also names the school's top player.
+    Public like /quiz/leaderboard (only nicknames that the player boards already
+    expose) — no auth dependency.
+    """
+    period = month_period()
+    rows = (
+        db.query(
+            User.school_code.label("code"),
+            func.sum(LeaderboardPeriod.points).label("pts"),
+            func.count(LeaderboardPeriod.user_id.distinct()).label("players"),
+        )
+        .join(LeaderboardPeriod, LeaderboardPeriod.user_id == User.id)
+        .filter(
+            LeaderboardPeriod.kind == "monthly",
+            LeaderboardPeriod.period == period,
+            LeaderboardPeriod.points > 0,
+            User.is_guest.is_(False),
+            User.is_active.is_(True),
+            User.school_code.isnot(None),
+            User.school_code != "",
+        )
+        .group_by(User.school_code)
+        .order_by(func.sum(LeaderboardPeriod.points).desc())
+        .limit(limit)
+        .all()
+    )
+    out = []
+    for i, (code, pts, players) in enumerate(rows, 1):
+        school = db.query(SchoolCode).filter(SchoolCode.code == code).first()
+        top = (
+            db.query(User.nickname, LeaderboardPeriod.points)
+            .join(LeaderboardPeriod, LeaderboardPeriod.user_id == User.id)
+            .filter(
+                LeaderboardPeriod.kind == "monthly",
+                LeaderboardPeriod.period == period,
+                LeaderboardPeriod.points > 0,
+                User.school_code == code,
+                User.is_guest.is_(False),
+                User.is_active.is_(True),
+            )
+            .order_by(LeaderboardPeriod.points.desc())
+            .first()
+        )
+        out.append({
+            "rank": i,
+            "school_code": code,
+            "school_name": (school.name if school else None) or code,
+            "points": int(pts or 0),
+            "players": int(players or 0),
+            "top_player": {"nickname": top[0], "points": int(top[1])} if top else None,
+            "period": period,
+        })
+    return out

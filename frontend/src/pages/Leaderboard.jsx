@@ -5,7 +5,8 @@ import { api } from '../api.js'
 
 const SCOPES = [
   { key: 'global', label: '🌍 Global' },
-  { key: 'class', label: '🏫 By class' },
+  { key: 'class', label: '🎓 By class' },
+  { key: 'schools', label: '🏫 Schools' },
   { key: 'weekly', label: '📅 This week' },
   { key: 'monthly', label: '🗓️ This month' },
 ]
@@ -20,16 +21,25 @@ export default function Leaderboard() {
   const [scope, setScope] = useState('global')
   const [classLevel, setClassLevel] = useState('B4')
   const [rows, setRows] = useState([])
+  const [schoolRows, setSchoolRows] = useState([])
   const [loading, setLoading] = useState(true)
 
   async function load() {
     setLoading(true)
     try {
-      const params = { scope, limit: 50 }
-      if (scope === 'class') params.class_level = classLevel
-      const r = await api.leaderboard(params)
-      setRows(r)
-    } catch (e) { setRows([]) } finally { setLoading(false) }
+      if (scope === 'schools') {
+        // School-vs-school competition: monthly points aggregated per school
+        const r = await api.leaderboardSchools(20)
+        setSchoolRows(r)
+        setRows([])
+      } else {
+        const params = { scope, limit: 50 }
+        if (scope === 'class') params.class_level = classLevel
+        const r = await api.leaderboard(params)
+        setRows(r)
+        setSchoolRows([])
+      }
+    } catch (e) { setRows([]); setSchoolRows([]) } finally { setLoading(false) }
   }
   useEffect(() => { load() }, [scope, classLevel]) // eslint-disable-line
 
@@ -37,7 +47,7 @@ export default function Leaderboard() {
     <div className="screen leaderboard">
       <button className="back" onClick={() => nav('/')}>‹ Back</button>
       <h2>Leaderboard</h2>
-      <div className="tabs tabs-4">
+      <div className="tabs tabs-5">
         {SCOPES.map((s) => (
           <button key={s.key} className={scope === s.key ? 'tab active' : 'tab'} onClick={() => setScope(s.key)}>{s.label}</button>
         ))}

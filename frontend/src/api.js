@@ -60,6 +60,8 @@ export const api = {
   check: (data, token) => request('POST', '/quiz/check', data, token),
   submit: (data, token) => request('POST', '/quiz/submit', data, token),
   leaderboard: (params) => request('GET', `/quiz/leaderboard?${new URLSearchParams(params)}`),
+  // School-vs-school competition: monthly points aggregated per school code
+  leaderboardSchools: (limit = 20) => request('GET', `/quiz/leaderboard/schools?${new URLSearchParams({ limit })}`),
   me: (token) => request('GET', '/auth/me', undefined, token),
   changePassword: (data, token) => request('PUT', '/auth/me/password', data, token),
   deleteAccount: (data, token) => request('DELETE', '/auth/me', data, token),

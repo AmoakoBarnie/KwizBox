@@ -74,10 +74,23 @@ def get_current_user(
 
 
 def optional_user(
-    token: str = Depends(get_token),
+    request: Request,
     db: Session = Depends(get_db),
 ) -> User | None:
-    """Returns the user if a valid token is present, else None (guest/visitor)."""
+    """Returns the user if a valid token is present, else None (guest/visitor).
+
+    Never raises: anonymous callers simply get None (each route then decides
+    whether that is acceptable). Reads the HttpOnly cookie first, then the
+    Authorization header — same order as get_token, but a missing credential
+    is "no user" instead of 401 (BUG-009: the old Depends(get_token) made
+    /quiz/pack, /quiz/check, /quiz/submit and the challenge GETs reject
+    every cookie-less caller).
+    """
+    token = request.cookies.get("kwizbox_access")
+    if not token:
+        auth_header = request.headers.get("Authorization", "")
+        if auth_header.startswith("Bearer "):
+            token = auth_header[7:]
     payload = decode_token(token)
     if payload is None:
         return None
