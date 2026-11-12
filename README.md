@@ -165,9 +165,9 @@ Guest mode: any nickname + class level → temporary session (device-only storag
 
 ### Authentication
 - Register with nickname, password, class level (B4–B9), school code, security question
-- Login with nickname + password → JWT (30-day expiry)
+- Login with nickname + password → JWT in an HttpOnly `Secure` `SameSite=Strict` cookie (30-day expiry)
 - Guest mode: temporary session, no persistence
-- Token in localStorage, auto-validated on app load
+- Session cookie is auto-validated on app load; JavaScript never reads the token
 
 > **Dead-end (documented):** password reset is intentionally **not shipped** in
 > this release. There is no `/auth/reset/question` or `/auth/reset/verify`
@@ -186,6 +186,10 @@ Guest mode: any nickname + class level → temporary session (device-only storag
 - **Share** the code with a friend
 - **Join** with the code → get the exact same 12 questions
 - **Play** simultaneously, then **compare** scores on a leaderboard
+- **Live duel room**: both players join a display-only WebSocket keyed by the
+  code — the lobby shows who is connected, and Quiz shows the rival's progress
+  (`1/12 · N ✓`) and `Finished` state. Scores still come only from the
+  server-authoritative challenge submit.
 - Codes expire after 24 hours
 - Deterministic question selection (same code + class + subject = same questions)
 
@@ -318,6 +322,10 @@ Base URL: `http://localhost:8001`
 - `GET /quiz/challenge/{code}/questions` → `{questions: [...]}` (same 12 questions for all)
 - `POST /quiz/challenge/{code}/submit` → `{score, correct, total, accuracy}` (Bearer)
 - `GET /quiz/challenge/{code}/compare` → `{leaderboard, player_count, my_rank}`
+
+**Live duel (display-only WebSocket):**
+- `WS /ws/duel/{code}?nickname=…` → presence, `progress`, `finished`, `left`
+- Never carries answers or official scores; see `docs/adr/0002-live-duel-relay.md`
 
 **Curriculum:**
 - `GET /curriculum/manifest` (Bearer optional) → subjects → classlevels → topics → [sub_topics]
