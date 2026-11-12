@@ -57,6 +57,19 @@
 | `POST /quiz/challenge/{code}/submit` | Submit challenge score | Bearer |
 | `GET /quiz/challenge/{code}/compare` | Challenge leaderboard + my rank | — |
 
+### Live duel relay (`routes/duel.py` — WebSocket)
+
+| Endpoint | Purpose | Auth |
+|---|---|---|
+| `WS /ws/duel/{code}?nickname=…` | Display-only room for a friend challenge: presence, progress and finish events | Session cookie preferred; sanitised nickname fallback |
+
+Messages are JSON and never carry answers or official scores. Accepted client
+types: `progress` (`index`, `total`, `correct`, `score`), `finished`
+(`score`, `correct`, `total`) and `ping`. Server events: `joined`, `presence`,
+`progress`, `finished`, `left`, `pong`. The relay grades nothing — the official
+result is still `POST /quiz/challenge/{code}/submit`. See
+`docs/adr/0002-live-duel-relay.md`.
+
 ## Curriculum (`routes/curriculum.py` — prefix `/curriculum`)
 
 | Method & path | Purpose | Auth |

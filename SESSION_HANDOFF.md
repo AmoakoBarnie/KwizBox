@@ -2,8 +2,7 @@
 
 > Written so that a completely fresh AI agent (or developer) can continue this
 > project **without access to any previous conversation**.
-> Last updated: 2026-11-11 (morning session: docs sync + commits after the
-> purge/teardown day and a second working session)
+> Last updated: 2026-11-12 (engagement Groups A–D complete and pushed)
 
 ## Read first
 
@@ -31,6 +30,43 @@
    owner sends the GitHub support request (paste-ready draft off-repo).
    Never re-publish the old history (the frozen `~/Desktop/KwizBoz Andriod`
    copy and the pre-purge bundle contain it).
+
+## Latest session (2026-11-12) — engagement upgrades Groups A–D
+
+`main` is at `e80a951` (pushed). All six owner-approved engagement upgrades are
+delivered:
+
+1. **Group A (`dfb915b`)** — friend challenges work end to end.
+2. **Group B (`175bbb0`, `92c9fa0`)** — XP/levels/leagues, streak calendar,
+   lifetime best streak, Schools leaderboard.
+3. **Full E2E (`289d31b`, `1cc6599`)** — same-origin dev cookie auth, Playwright
+   headless shell, BUG-013 Profile hook-order fix.
+4. **Group C (`3a3e087`)** — 3D mascot clips actually play; Profile 3D/2D +
+   gender pickers; Summary PNG share card (`shareCard.js`, 1080×1350).
+5. **Group D (`e80a951`)** — live duel room `/ws/duel/{code}` (display-only;
+   scores still via challenge submit), Challenge lobby + Quiz rival strip,
+   BUG-016 challenge-creation fix.
+
+**How to run the dev stack**
+- Backend (needs `ADMIN_PASSWORD`): from `backend/`,
+  `./venv/bin/python -m uvicorn src.main:app --host 0.0.0.0 --port 8001`.
+- Frontend: from `frontend/`, `npm run dev -- --port 5174` (keep
+  `VITE_API_URL=` empty in `.env.development` so cookies stay first-party).
+- Node is only on PATH via `/home/stephen/.hermes/node/bin`.
+- Restart the backend after relay changes and Vite after `vite.config.js`
+  changes (the `/ws` proxy must be active).
+
+**Verification evidence** — `docs/05-testing/TEST_RESULTS.md` (2026-11-12):
+backend pytest 7/7, duel e2e 13/13, engagement 18/18, mascot/share 18/18,
+routes 13/13, register 15/15, build OK. ADR: `docs/adr/0002-live-duel-relay.md`.
+
+**Still open**
+- Owner has not answered the question about the 298 tracked files deleted from
+  the working tree (affects doc-sync only).
+- Final docs pass: README still references deleted `models/`/`scripts/` paths
+  and the dead Fly URL `https://kwizbox-still-bush-3080.fly.dev`;
+  `frontend/.env.production` still targets that dead URL.
+- M3 (Android APK) waits for owner approval; M1/M2 remain rejected.
 
 ## What the previous session accomplished
 

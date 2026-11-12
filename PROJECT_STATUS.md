@@ -1,7 +1,31 @@
 # PROJECT_STATUS.md
 
 > Snapshot of where the project is. Updated at the end of every working session.
-> Last updated: 2026-11-11
+> Last updated: 2026-11-12
+
+## Current development status (2026-11-12)
+
+All owner-approved engagement upgrades are implemented, tested and pushed to
+`main`:
+
+| Group | What shipped | Commit |
+|---|---|---|
+| A | Friend-challenge flow repaired end to end (join = deterministic pack, full challenge Quiz, server-authoritative submit, refresh recovery) | `dfb915b` |
+| B | XP levels, weekly leagues, streak calendar, lifetime best streak, Schools leaderboard | `175bbb0`, `92c9fa0` |
+| — | Full E2E pass + same-origin dev cookie auth + Playwright fix | `289d31b` |
+| — | BUG-013 Profile hook-order crash | `1cc6599` |
+| C | 3D mascot clip playback fixed, 3D/2D + gender pickers, 1080×1350 PNG share card | `3a3e087` |
+| D | Live duel WebSocket room (display-only), lobby + in-quiz rival strip, BUG-016 challenge-creation fix | `e80a951` |
+
+Verification at `e80a951`: backend pytest **7/7**, duel browser e2e **13/13**,
+engagement **18/18**, mascot/share **18/18**, routes **13/13**, register
+**15/15**, production build OK (`npm run build`). Evidence is append-only in
+`docs/05-testing/TEST_RESULTS.md`; bugs BUG-009/012/013/014/015/016 are resolved.
+
+**Next:** final documentation sync (README stale paths/dead Fly URL, architecture
+notes), answer the pending owner question about the 298 tracked files deleted
+from the working tree, then M3 (Android APK) when the owner approves. M1/M2 stay
+rejected.
 
 ## Current phase
 
