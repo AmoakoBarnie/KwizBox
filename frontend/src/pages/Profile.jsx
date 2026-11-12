@@ -46,6 +46,18 @@ export default function Profile() {
   const { user, isAuthed, logout, updateAvatar } = useAuth()
   const [earned, setEarned] = useState(() => loadBadges())
   const [toast, setToast] = useState(null)
+  // Avatar state must be declared here — BEFORE the `!user` early return below.
+  // Declaring it after the return meant the first render (user still loading)
+  // called 3 hooks and the next render called 6: "Rendered more hooks than
+  // during the previous render", which crashed the whole profile page.
+  const [avatar, setAvatar] = useState(() => user?.avatar || { skin: 'warm', hat: 'none', accessory: 'none', gender: 'male' })
+  const [saving, setSaving] = useState(false)
+  const [saveErr, setSaveErr] = useState('')
+
+  // Pull the server's saved avatar in once the session loads (or after a save).
+  useEffect(() => {
+    if (user?.avatar) setAvatar(user.avatar)
+  }, [user?.avatar?.skin, user?.avatar?.hat, user?.avatar?.accessory, user?.avatar?.gender])
 
   useEffect(() => { saveBadges(earned) }, [earned])
 
@@ -138,9 +150,6 @@ export default function Profile() {
     { value: 'school_bag',  label: 'School bag' },
     { value: 'bow_tie',     label: 'Bow tie' },
   ]
-  const [avatar, setAvatar] = useState(user.avatar || { skin: 'warm', hat: 'none', accessory: 'none', gender: 'male' })
-  const [saving, setSaving] = useState(false)
-  const [saveErr, setSaveErr] = useState('')
 
   // PATCH the avatar and refresh the auth context. The NEXT avatar object is
   // passed in explicitly: reading `avatar` here would save the previous

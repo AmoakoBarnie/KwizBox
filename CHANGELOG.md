@@ -10,6 +10,40 @@ does not use semantic versioning yet (pre-1.0, unreleased).
 
 ## [Unreleased]
 
+### 2026-11-11 → 2026-11-12 — Engagement upgrades (Groups A & B) + full end-to-end pass
+
+**Added**
+- Friend-challenge flow repaired end to end (BUG-010/011): join fetches the
+  deterministic question pack, Quiz plays it and submits server-authoritative
+  scores, refresh recovery via `?challenge=CODE`, duplicate-submit guard, and
+  challenges now flip to `completed` (explicit `db.flush()`).
+- Progress payload now includes XP level (`backend/src/xp.py`, 10 levels),
+  weekly league (Bronze→Diamond), 56-day activity calendar, weekly/monthly
+  points, and lifetime best streak; quiz submit returns `best_streak`,
+  `daily_streak`, `lifetime_score`.
+- Profile: XP level bar, league chip, streak heat-map; avatar save fixed
+  (explicit next-value PATCH) and new engagement badges (streak/day-streak,
+  daily player, level 5/10).
+- Leaderboard: fifth **Schools** tab — monthly points aggregated per
+  `school_code` with top player and player count (`GET /quiz/leaderboard/schools`).
+- Summary: server-computed Best-streak card + day-streak chip.
+- Browser e2e suites: `e2e-engagement.mjs` (new), refreshed `e2e-register.mjs`
+  / `e2e-guest.mjs` (cookie auth), env-driven admin credentials in
+  `full-e2e.mjs`, and the matching Playwright headless-shell build.
+
+**Fixed**
+- BUG-009: anonymous `/quiz/pack`, `/quiz/check`, `/quiz/submit`, and challenge
+  compare no longer 401 — `optional_user` returns `None` when no session exists.
+- BUG-012: Playwright/browser version mismatch unblocked.
+- BUG-013: Profile crashed with “Rendered more hooks than during the previous
+  render” — avatar state hooks now sit above the `!user` early return.
+- Dev API calls use the same-origin Vite proxy (`VITE_API_URL=` empty) so the
+  HttpOnly `Secure` session cookie is first-party and actually stored.
+
+**Verified** — see `docs/05-testing/TEST_RESULTS.md` (2026-11-12): backend
+pytest 4/4, production build OK, route smoke 13/13, UI register 15/15, guest
+5/5, engagement 18/18, API e2e 37/37.
+
 ### 2026-11-10 — Project professionalization & relocation
 
 **Added**

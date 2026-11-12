@@ -143,3 +143,30 @@ BUG-012), so verification = live-server curl chains + `npm run build` + syntheti
 | Backend pytest regression check | `git stash` → `pytest tests/ -q` → `git stash pop` | **4 errors both with and without my changes** (TestClient lifespan `CancelledError`, environment-level) — pre-existing, not caused by Group A. `pytest`+`httpx` were installed into the venv for this check only (requirements.txt untouched) |
 | System Python (BUG-008 recheck) | `/usr/bin/python3 -c "import fastapi, pydantic"` | **OK now** — fastapi 0.162.4 / pydantic 2.9.2 imports clean (the broken user-site install was repaired by the concurrent session; BUG-008 marked Resolved) |
 | Test-users cleanup | admin status endpoint | Two `e2e-chal-a/b-*` users + 4 quiz sessions (480–483) left in dev DB — dev-only data, harmless; delete via admin users screen if the owner wants them gone |
+
+## 2026-11-12 — Full end-to-end test pass (owner request: "test the app end to end")
+
+Context: Group B (XP/levels/leagues, streak calendar, school leaderboard, avatar fix) was
+code-complete but unverified in a browser. Playwright was unblocked by installing the
+matching headless-shell build. Dev API access moved to the **same-origin Vite proxy**
+(`VITE_API_URL=` empty) because Chrome drops the cross-site `Secure` cookie between
+`localhost:5174` and `127.0.0.1:8001` — the app appeared to register but had no session.
+
+| Check | Command | Result |
+|---|---|---|
+| Backend test suite | `backend/venv/bin/python -m pytest tests/ -q` | **4 passed** (5 warnings) — BUG-009 regression coverage now green |
+| Frontend production build | `npm run build` (frontend/) | **OK**, 1,371.13 kB JS / 38.91 kB CSS (pre-existing >500 kB chunk warning only) |
+| Route smoke — all pages render, no fatal errors | `node tests/route-smoke.mjs http://localhost:5174` | **13/13 routes** (landing, chooser, play, challenge, quiz, summary, leaderboard, profile, settings, admin, 3 policy pages) |
+| UI journey — register → play → summary | `node tests/e2e-register.mjs http://localhost:5174` | **15/15 PASS** — sign-up with class/age/sex, `/auth/me` cookie session, 9 questions answered, summary rendered |
+| UI journey — guest | `node tests/e2e-guest.mjs http://localhost:5174` | **5/5 PASS** — guest session, age/gender persisted, `is_guest` |
+| UI journey — engagement surfaces | `node tests/e2e-engagement.mjs http://localhost:5174` | **18/18 PASS** — Best-streak card + day-streak chip; Profile XP bar (`20 / 100 pts → Level 2`), Bronze league chip, 56-cell streak calendar with today lit; new badges listed; avatar PATCH 200 + persisted `skin=deep` + selected after reload; 5 leaderboard tabs; Schools board rows; **0 page errors** |
+| API end-to-end | `KWIZBOX_ADMIN_USERNAME=Pblack KWIZBOX_ADMIN_PASSWORD=… node tests/full-e2e.mjs` | **37/37 PASS** — register/login cookies (HttpOnly/Secure/SameSite=Strict), `/auth/me`, guest, anonymous 401 guard, 7 security headers, register rate-limit 429, quiz pack/check, admin token (good + bad creds), full challenge create→questions→submit→compare |
+| Dev-cookie origin fix | `curl -X POST http://localhost:5174/auth/register` | 200 through the Vite proxy with `Set-Cookie: kwizbox_access=…; HttpOnly; SameSite=strict; Secure` — session stored first-party, browser `/auth/me` 200 |
+| New bug found during the pass | Playwright page-error capture | **BUG-013**: `/profile` crashed with *"Rendered more hooks than during the previous render"* — `useState` calls sat below the `if (!user) return` early exit. Fixed by hoisting avatar state above the return and syncing it from `user.avatar`; re-ran the engagement suite 18/18 |
+| Suite re-run after the fix | route-smoke + all 4 UI/API suites + build + pytest | All green as recorded above |
+
+Notes:
+- Admin credentials are no longer hardcoded in `full-e2e.mjs`; supply `KWIZBOX_ADMIN_USERNAME` / `KWIZBOX_ADMIN_PASSWORD`. The dev DB's `admin` account has an older local password, so the run used the `Pblack` super-admin account from the 2026-11-10 reset.
+- Rate-limited suites need a ~60 s quiet window before re-running (register 10/min, admin token 5/min).
+- Test users created this session: `e2e_mwdo…`, `e2e_eng_…`, `dbg…`, `proxytest_…` in the dev DB (harmless; dev-only).
+
