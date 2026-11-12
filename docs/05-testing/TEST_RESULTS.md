@@ -189,3 +189,32 @@ is bare — confirming why every non-walking 3D mascot T-posed (BUG-015).
 | Production build | `npm run build` | **OK** (same pre-existing chunk warning) |
 
 
+
+## 2026-11-12 — Engagement Group D: live duel room (display-only WebSocket)
+
+Context: a duel reuses the existing challenge code and deterministic question
+pack. The new `/ws/duel/{code}` relay carries presence/progress/finish only;
+scores remain server-authoritative via `/quiz/challenge/{code}/submit` (see
+`docs/adr/0002-live-duel-relay.md`).
+
+| Check | Command | Result |
+|---|---|---|
+| Duel relay backend tests | `./venv/bin/python -m pytest tests/test_duel_ws.py -q` | **3/3 PASS** — two clients share presence; progress/finished relayed to the rival only; numeric fields clamped; a late `progress` cannot un-finish a player; `joined` snapshot includes peers' last progress; `<script> Ada` sanitises to `script Ada`; invalid room code closes with 1008 |
+| Full backend suite | `./venv/bin/python -m pytest tests/ -q` | **7 passed** (4 existing + 3 duel) |
+| Two-player browser e2e | `node tests/e2e-duel.mjs http://localhost:5174` | **13/13 PASS** — two isolated contexts register; creator makes code `39EJQE`; creator lobby goes live and waits; joiner sees creator; creator sees joiner arrive; 2 lobby avatars; both enter the quiz and see each other in `.duel-strip`; rival advance reads `1/12`; after the joiner answers all 12 and reaches Summary the creator sees `🏁 … Finished · 8/12`; **0 page errors** |
+| Dev transport | Vite proxy `/ws → ws://127.0.0.1:8001` (`ws: true`) | Handshake is same-origin so the HttpOnly `kwizbox_access` cookie authenticates the room; nickname comes from the account, not the query string |
+| New bug found (BUG-016) | browser repro | Creator page showed **“Not signed in”** despite a valid cookie session: `Challenge.jsx` still checked the now-always-null `token` state. Guard removed; creator flow green in the e2e above |
+| Regression — engagement UI | `node tests/e2e-engagement.mjs` | **18/18 PASS** |
+| Regression — mascot/share UI | `node tests/e2e-mascot-share.mjs` | **18/18 PASS** |
+| Regression — routes | `node tests/route-smoke.mjs` | **13/13 PASS** |
+| Regression — register journey | `node tests/e2e-register.mjs` | **15/15 PASS**, exit 0 |
+| Production build | `npm run build` | **OK** (same pre-existing >500 kB chunk warning) |
+
+Notes:
+- Restart the backend after deploying: the relay lives in process memory and is
+  registered in `main.py`. Restart Vite after editing `vite.config.js` so the
+  `/ws` proxy is active.
+- Rooms are single-worker by design; a multi-worker deployment would need a
+  shared pub/sub layer (documented in the ADR).
+- Test users from this pass: `e2e_duel_a_…`, `e2e_duel_b_…`, `dbg_duel_…`
+  (dev-only, harmless).

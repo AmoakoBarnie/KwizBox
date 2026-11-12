@@ -3,6 +3,7 @@ import { useNavigate, useSearchParams, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useAuth } from '../auth.jsx'
 import { api, mediaUrl } from '../api.js'
+import { useDuelRoom } from '../duel.js'
 import Mascot from '../components/Mascot.jsx'
 import WalkingMascot from '../components/WalkingMascot.jsx'
 import { correct, wrong, streak as streakSfx, combo as comboSfx, click } from '../sound.js'
@@ -43,6 +44,14 @@ export default function Quiz() {
   // no feedback, so the client collects it from /quiz/check as it plays.
   const [bestStreak, setBestStreak] = useState(0)
   const [review, setReview] = useState([])
+
+  // Duel mode: the same challenge code opens a display-only WebSocket room so
+  // each player can see the other's progress. The official score still comes
+  // from the challenge submit endpoint — never from this socket.
+  const roomCode = (challenge?.code || params.get('challenge') || '').toUpperCase() || null
+  const duel = useDuelRoom(roomCode, user?.nickname)
+  const liveCorrect = review.reduce((n, f) => n + (f.is_correct ? 1 : 0), 0)
+  const liveScore = review.reduce((n, f) => n + (f.points || 0), 0)
 
   const cfg = {
     class_level: challenge ? challenge.class_level : (params.get('class_level') || 'B4'),
@@ -98,6 +107,17 @@ export default function Quiz() {
     const t = setInterval(() => setElapsed((e) => e + 1), 1000)
     return () => clearInterval(t)
   }, [idx, pack])
+
+  // Broadcast display progress after every answer / question change.
+  useEffect(() => {
+    if (!roomCode || !pack) return
+    duel.sendProgress({
+      index: idx,
+      total: pack.length,
+      correct: liveCorrect,
+      score: liveScore,
+    })
+  }, [roomCode, pack, idx, liveCorrect, liveScore, duel.sendProgress])
 
   if (loading) return <div className="screen center"><div className="spinner" /> <p>Loading questions…</p></div>
   if (err) return <div className="screen center"><p className="err">{err}</p><button className="btn" onClick={() => nav('/play')}>Back to selection</button></div>
@@ -177,6 +197,13 @@ export default function Quiz() {
           code: challenge.code,
           answers: finalAnswers.map((a) => ({ question_id: a.question_id, selected_index: a.selected_index })),
         }, token)
+        // Tell the rival we finished (display only; res is the official score).
+        duel.sendFinished({
+          index: finalAnswers.length,
+          total: res.total,
+          correct: res.correct,
+          score: res.score,
+        })
         const result = {
           session_id: res.session_id ?? 0,
           total: res.total,
@@ -197,12 +224,16 @@ export default function Quiz() {
         // leaderboard.
         const graded = review.filter((f) => f.is_correct).length
         const total = finalAnswers.length
+        const unofficialScore = review.reduce((s, f) => s + (f.points || 0), 0)
+        duel.sendFinished({
+          index: total, total, correct: graded, score: unofficialScore,
+        })
         const result = {
           session_id: 0,
           total,
           correct: graded,
           accuracy: total ? graded / total : 0,
-          score: review.reduce((s, f) => s + (f.points || 0), 0),
+          score: unofficialScore,
           streak: max_streak,
           feedback: review,
           challenge: { code: challenge.code },
@@ -224,6 +255,11 @@ export default function Quiz() {
   }
 
   const progress = ((idx + 1) / pack.length) * 100
+  const oppTotal = duel.opponent?.total || pack.length || 1
+  const oppDone = duel.opponent?.finished
+    ? oppTotal
+    : Math.min(duel.opponent?.index ?? 0, oppTotal)
+  const oppPct = Math.max(0, Math.min(100, Math.round((oppDone / oppTotal) * 100)))
 
   return (
     <div className="screen quiz">
@@ -245,6 +281,33 @@ export default function Quiz() {
           ⏱ {elapsed}s{elapsed <= 6 ? ' ⚡' : ''}
         </span>
       </div>
+
+      {/* Live duel strip — rival progress, display only */}
+      {roomCode && (
+        <div className={`duel-strip ${duel.status}`}>
+          <span className={`duel-dot ${duel.status}`} aria-hidden="true" />
+          {duel.opponent ? (
+            <>
+              <span className="duel-rival">
+                {duel.opponent.finished ? '🏁' : '⚔️'} {duel.opponent.nickname}
+              </span>
+              <span className="duel-rival-progress">
+                {duel.opponent.finished
+                  ? `Finished · ${duel.opponent.correct ?? 0}/${oppTotal}`
+                  : `${oppDone}/${oppTotal} · ${duel.opponent.correct ?? 0} ✓`}
+              </span>
+              <span className="duel-mini-track" aria-hidden="true">
+                <span className="duel-mini-fill" style={{ width: `${oppPct}%` }} />
+              </span>
+            </>
+          ) : (
+            <span className="duel-waiting">
+              🔗 Share code <b>{roomCode}</b> — waiting for your friend to join…
+            </span>
+          )}
+          {duel.status !== 'open' && <span className="duel-offline">reconnecting…</span>}
+        </div>
+      )}
 
       {/* Streak + combo bar */}
       <div className="streak-bar">

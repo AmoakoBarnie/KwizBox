@@ -3,6 +3,7 @@ import { useNavigate, useSearchParams, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useAuth } from '../auth.jsx'
 import { api } from '../api.js'
+import { useDuelRoom } from '../duel.js'
 import Mascot from '../components/Mascot.jsx'
 
 const fadeUp = {
@@ -78,6 +79,35 @@ function CodeDisplay({ code }) {
   )
 }
 
+function DuelLobby({ duel, others }) {
+  const live = duel.status === 'open'
+  return (
+    <div className={`duel-lobby ${duel.status}`}>
+      <span className={`duel-dot ${duel.status}`} aria-hidden="true" />
+      <div className="duel-lobby-text">
+        <strong>{live ? '🟢 Live duel room' : duel.status === 'connecting' ? 'Connecting to duel room…' : 'Duel room offline'}</strong>
+        <p className="hint" style={{ margin: '2px 0 0' }}>
+          {!live
+            ? 'Retrying automatically — your quiz still works either way.'
+            : others.length
+              ? `${others.join(', ')} ${others.length === 1 ? 'is' : 'are'} here. Start together for a live race!`
+              : 'Waiting for your friend to enter the code…'}
+        </p>
+      </div>
+      {live && duel.players.length > 0 && (
+        <div className="duel-avatars" aria-label={`${duel.players.length} players in the room`}>
+          {duel.players.slice(0, 4).map((name, i) => (
+            <span key={`${name}-${i}`} className={`duel-avatar${name === others[0] ? ' rival' : ''}`} title={name}>
+              {name.charAt(0).toUpperCase()}
+            </span>
+          ))}
+          {duel.players.length > 4 && <span className="duel-more">+{duel.players.length - 4}</span>}
+        </div>
+      )}
+    </div>
+  )
+}
+
 export default function Challenge() {
   const nav = useNavigate()
   const { user, token, isGuest } = useAuth()
@@ -91,9 +121,14 @@ export default function Challenge() {
   const [questions, setQuestions] = useState([])
   const [compare, setCompare] = useState(null)
 
+  // Live duel room keyed by the challenge code. Connecting here lets the
+  // creator see the friend arrive before either starts, and lets the joiner
+  // see they are in the right room. Display-only — scoring never goes via WS.
+  const duel = useDuelRoom(myChallenge?.code, user?.nickname)
+  const others = duel.players.filter((name) => name !== user?.nickname)
+
   async function createChallenge() {
     if (isGuest) { setError('Sign in to create a challenge'); return }
-    if (!token) { setError('Not signed in'); return }
     setLoading(true); setError('')
     try {
       const res = await api.challenge.create({ class_level: classLevel, subject }, token)
@@ -270,6 +305,7 @@ export default function Challenge() {
           <motion.div variants={fadeUp} custom={2} initial="hidden" animate="show">
             <p className="hint" style={{ margin: '0 0 8px' }}>Your challenge is ready! Share this code with your friend:</p>
             <CodeDisplay code={myChallenge.code} />
+            <DuelLobby duel={duel} others={others} />
             <div className="challenge-meta">
               <span>🏫 Class {myChallenge.class_level}</span>
               <span>📚 {myChallenge.subject}</span>
@@ -296,6 +332,7 @@ export default function Challenge() {
               You have {questions.length} {myChallenge?.subject} questions for Class {myChallenge?.class_level}.
               Your friend uses the same code to get the exact same questions.
             </p>
+            <DuelLobby duel={duel} others={others} />
             <div className="row">
               <button className="btn primary" onClick={startQuiz} whileTap={{ scale: 0.97 }}>
                 ▶ Start my quiz

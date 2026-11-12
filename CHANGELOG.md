@@ -44,6 +44,32 @@ does not use semantic versioning yet (pre-1.0, unreleased).
 pytest 4/4, production build OK, route smoke 13/13, UI register 15/15, guest
 5/5, engagement 18/18, API e2e 37/37.
 
+### 2026-11-12 — Engagement Group D: live duels (display-only WebSocket relay)
+
+**Added**
+- `GET /ws/duel/{code}` relay (`backend/src/routes/duel.py`): in-memory room per
+  challenge code carrying presence, per-question progress, score-so-far and
+  finish events. Scores never travel through the socket — challenge submit
+  stays server-authoritative. Account nickname is taken from the HttpOnly
+  session cookie; guest names are sanitised. Clamped numbers, 4 KB message cap,
+  32-player rooms, cleanup on disconnect.
+- `frontend/src/duel.js`: `useDuelRoom()` hook with same-origin WS URL,
+  reconnect/backoff and display state; Vite `/ws` proxy for cookie auth.
+- Challenge lobby shows the live room, connected players and avatars; Quiz shows
+  a rival strip (`1/12 · N ✓`, mini progress bar, `Finished`).
+- ADR `docs/adr/0002-live-duel-relay.md` documenting the display-only boundary,
+  auth, single-worker limitation and verification.
+- Tests: `backend/tests/test_duel_ws.py` (3) and `frontend/tests/e2e-duel.mjs`
+  (two isolated browser contexts, 13 checks).
+
+**Fixed**
+- BUG-016: creating a challenge always failed with “Not signed in” because
+  `Challenge.jsx` still required the removed client token; the cookie session is
+  sufficient. Creator flow now works (`39EJQE` in the e2e).
+
+**Verified** — duel e2e 13/13, backend 7/7, plus regression: engagement 18/18,
+mascot/share 18/18, routes 13/13, register 15/15, build OK.
+
 ### 2026-11-12 — Engagement Group C: mascot animation, 3D/2D style, PNG share card
 
 **Added**

@@ -43,6 +43,9 @@ export default defineConfig({
       '/curriculum': { target: 'http://127.0.0.1:8001', changeOrigin: true },
       '/health': { target: 'http://127.0.0.1:8001', changeOrigin: true },
       '/media': { target: 'http://127.0.0.1:8001', changeOrigin: true },
+      // Live duel relay (WebSocket). Same-origin in dev so the HttpOnly auth
+      // cookie is sent on the handshake, exactly like the fetch API.
+      '/ws': { target: 'ws://127.0.0.1:8001', ws: true, changeOrigin: true },
     },
   },
   build: { outDir: 'dist' }

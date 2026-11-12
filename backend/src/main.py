@@ -12,7 +12,12 @@ from slowapi.errors import RateLimitExceeded
 
 from .database import init_db
 from .rate_limit import limiter
-from .routes import auth, quiz, admin, curriculum as curriculum_routes, challenge as challenge_routes
+from .routes import (
+    auth, quiz, admin,
+    curriculum as curriculum_routes,
+    challenge as challenge_routes,
+    duel as duel_routes,
+)
 from .seed_admin import seed_super_admin
 
 app = FastAPI(title="KwizBox", version="1.0.0")
@@ -76,6 +81,7 @@ app.include_router(quiz.router)
 app.include_router(admin.router)
 app.include_router(curriculum_routes.router)
 app.include_router(challenge_routes.router)
+app.include_router(duel_routes.router)
 
 # Static question diagrams served at /media/questions/<file>.svg
 STATIC_DIR = Path(__file__).resolve().parent.parent / "static"

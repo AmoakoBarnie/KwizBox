@@ -404,3 +404,25 @@
 /* ---- Engagement Group C: PNG share card + mascot style picker ---- */
 .share-action:disabled{opacity:.6;cursor:wait}
 .share-png-err{margin:10px 0 0;text-align:center;font-size:13px;font-weight:700;color:#ff6b7a}
+
+/* ---- Engagement Group D: live duel room + in-quiz rival strip ---- */
+.duel-lobby{display:flex;align-items:center;gap:12px;margin:12px 0 4px;padding:12px 14px;border-radius:14px;background:var(--glass);border:1px solid var(--glass-border);text-align:left}
+.duel-lobby-text{flex:1;min-width:0;font-size:14px}
+.duel-dot{width:10px;height:10px;border-radius:50%;flex:0 0 10px;background:var(--muted)}
+.duel-dot.open{background:var(--green-dark);box-shadow:0 0 0 0 #00d27e99;animation:duel-pulse 2s infinite}
+.duel-dot.connecting{background:var(--gold);animation:duel-pulse 1.2s infinite}
+.duel-dot.closed{background:var(--red)}
+@keyframes duel-pulse{0%{box-shadow:0 0 0 0 #00d27e99}70%{box-shadow:0 0 0 8px #00d27e00}100%{box-shadow:0 0 0 0 #00d27e00}}
+.duel-avatars{display:flex;align-items:center;gap:-6}
+.duel-avatar{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;margin-left:-6px;font-weight:800;font-size:13px;color:#042;background:var(--grad);border:2px solid var(--bg-0)}
+.duel-avatar.rival{background:var(--grad-gold);color:#3a2c00}
+.duel-more{margin-left:4px;font-size:12px;font-weight:700;color:var(--muted)}
+.duel-strip{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding:9px 12px;border-radius:12px;background:#00d27e12;border:1px solid #00d27e33;font-size:13px;font-weight:700;color:var(--ink)}
+.duel-strip.closed{background:#ff4d5e12;border-color:#ff4d5e33}
+.duel-rival{white-space:nowrap;max-width:46%;overflow:hidden;text-overflow:ellipsis}
+.duel-rival-progress{font-size:12px;font-weight:600;color:var(--muted);white-space:nowrap}
+.duel-mini-track{flex:1;min-width:64px;height:6px;border-radius:999px;background:#0000003d;overflow:hidden}
+.duel-mini-fill{display:block;height:100%;border-radius:999px;background:var(--grad-gold);transition:width .4s cubic-bezier(.22,1,.36,1)}
+.duel-waiting{font-weight:600;color:var(--muted);font-size:12.5px}
+.duel-waiting b{color:var(--gold);letter-spacing:.5px}
+.duel-offline{font-size:11px;font-weight:700;color:var(--red);margin-left:auto}
