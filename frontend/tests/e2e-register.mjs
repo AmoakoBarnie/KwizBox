@@ -8,7 +8,7 @@
  */
 import { chromium } from 'playwright';
 
-const BASE = process.argv[2] ?? 'http://127.0.0.1:5174';
+const BASE = process.argv[2] ?? 'http://localhost:5174';
 const NICK = `e2e_${Date.now().toString(36)}`;
 const browser = await chromium.launch({
   args: ['--no-sandbox', '--use-gl=swiftshader', '--enable-unsafe-swiftshader'],
@@ -53,19 +53,16 @@ try {
   const greeting = await page.locator('.hi').first().innerText().catch(() => '');
   check(greeting.includes(NICK), `greeting shows "${greeting.trim()}"`);
 
+  // Auth is HttpOnly-cookie based and, in dev, the app calls the API through
+  // the same-origin Vite proxy — so verify the session with a same-origin
+  // fetch from the page (this is exactly what the app itself does).
   const me = await page.evaluate(async () => {
-    const keys = Object.keys(localStorage);
-    const tok = keys.map(k => localStorage.getItem(k)).find(v => v && v.length > 60);
-    if (!tok) return { err: 'no token in localStorage' };
-    const r = await fetch('/auth/me', { headers: { Authorization: `Bearer ${tok}` } });
+    const r = await fetch('/auth/me', { credentials: 'include' });
     return { status: r.status, body: await r.json() };
   });
-  if (me.err) check(false, me.err);
-  else {
-    check(me.status === 200, '/auth/me 200');
-    check(me.body.age === 13, `age persisted: ${me.body.age}`);
-    check(me.body.gender === 'female', `gender persisted: ${me.body.gender}`);
-  }
+  check(me.status === 200, '/auth/me 200');
+  check(me.body.age === 13, `age persisted: ${me.body.age}`);
+  check(me.body.gender === 'female', `gender persisted: ${me.body.gender}`);
 
   // ---------- PLAY A QUIZ ----------
   await page.goto(BASE + '/choose-quiz', { waitUntil: 'load', timeout: 30000 });

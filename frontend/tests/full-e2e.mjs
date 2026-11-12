@@ -114,7 +114,7 @@ console.log('7. rate limits');
   check('register burst → 429', got429, 'no 429 in 15 rapid calls');
 
   // admin token bad creds → 401 (rate-limit + auth protection on admin)
-  const atbad = await request('POST', '/admin/token', { username: 'admin', password: 'WrongPass!' });
+  const atbad = await request('POST', '/admin/token', { username: process.env.KWIZBOX_ADMIN_USERNAME || 'admin', password: 'WrongPass!' });
   check('admin token bad creds 401', atbad.status === 401, `got ${atbad.status}`);
 }
 
@@ -139,11 +139,20 @@ console.log('9. quiz check');
 // ---- 10. Admin token ----
 console.log('10. admin token');
 {
-  const t1 = await request('POST', '/admin/token', { username: 'admin', password: 'SmokePassword!23' });
-  check('admin token good creds 200', t1.status === 200, `got ${t1.status}`);
+  // Never hardcode the admin password in the repo. Supply it via
+  // KWIZBOX_ADMIN_PASSWORD (+ optional KWIZBOX_ADMIN_USERNAME); without it the
+  // credential checks fail with a clear hint instead of silently using a value.
+  const adminUser = process.env.KWIZBOX_ADMIN_USERNAME || 'admin';
+  const adminPass = process.env.KWIZBOX_ADMIN_PASSWORD;
+  if (!adminPass) console.log('  (set KWIZBOX_ADMIN_PASSWORD to run the admin credential checks)');
+  const t1 = adminPass
+    ? await request('POST', '/admin/token', { username: adminUser, password: adminPass })
+    : { status: 0, json: async () => ({}) };
+  check('admin token good creds 200', t1.status === 200,
+        adminPass ? `got ${t1.status}` : 'KWIZBOX_ADMIN_PASSWORD not set');
   const tb = await t1.json();
   check('admin token body has token', !!(tb.access_token || tb.token), JSON.stringify(tb).slice(0, 80));
-  const t2 = await request('POST', '/admin/token', { username: 'admin', password: 'WrongPass!' });
+  const t2 = await request('POST', '/admin/token', { username: adminUser, password: 'WrongPass!' });
   check('admin token bad creds 401', t2.status === 401, `got ${t2.status}`);
 }
 
