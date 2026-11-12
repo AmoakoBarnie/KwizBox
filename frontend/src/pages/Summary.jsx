@@ -276,6 +276,11 @@ function renderSummary({ result, cfg, nav, user, isGuest, fromStorage = false, s
   }
 
   const { total, correct, accuracy, score, streak, feedback } = result
+  // `streak` on a normal submit is the DAY streak; the in-quiz best streak now
+  // comes back separately as `best_streak` (server-computed). Challenge-mode
+  // client results set streak = client-tracked best streak, hence the fallback.
+  const bestStreak = result.best_streak ?? streak
+  const dayStreak = result.daily_streak ?? 0
   const pct = Math.round(accuracy * 100)
   const mistakes = feedback.filter((f) => !f.is_correct)
   const gotRight = total - mistakes.length
@@ -364,6 +369,16 @@ function renderSummary({ result, cfg, nav, user, isGuest, fromStorage = false, s
                 ☀️ Daily Challenge
               </motion.span>
             )}
+            {result?.daily_streak > 0 && (
+              <motion.span
+                className="daily-badge"
+                initial={{ scale: 0, rotate: -20 }}
+                animate={{ scale: 1, rotate: 0 }}
+                transition={{ delay: 0.42, type: 'spring', stiffness: 300, damping: 14 }}
+              >
+                🔥 {result.daily_streak}-day streak
+              </motion.span>
+            )}
             {result?.challenge?.code && (
               <motion.span
                 className="daily-badge"
@@ -400,7 +415,7 @@ function renderSummary({ result, cfg, nav, user, isGuest, fromStorage = false, s
               variants={statFade} custom={1} initial="hidden" animate="show" transition={{ delay: 0.44 }}>
               <div className="stat-card-icon">🔥</div>
               <div className="stat-card-body">
-                <b className="stat-card-value">{streak}</b>
+                <b className="stat-card-value">{bestStreak}</b>
                 <span className="stat-card-label">Best streak</span>
               </div>
             </motion.div>

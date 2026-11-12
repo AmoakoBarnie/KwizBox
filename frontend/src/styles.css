@@ -384,3 +384,19 @@
 .daily-badge{display:inline-block;margin-left:10px;vertical-align:middle;background:var(--grad-gold);color:#3a2c00;border-radius:999px;padding:3px 11px;font-size:12px;font-weight:800;letter-spacing:.3px}
 .unofficial-note{margin:8px 0 0;font-size:13px;color:var(--gold);font-weight:600}
 .unofficial-note .linklike{background:none;border:none;color:var(--green-dark);text-decoration:underline;cursor:pointer;padding:0 2px;font-size:13px;font-weight:700}
+
+/* ---- Engagement Group B: XP bar, league chip, streak calendar ---- */
+.xp-bar-wrap{margin-top:10px}
+.xp-bar{height:14px;border-radius:999px;background:#00000047;border:1px solid var(--glass-border);overflow:hidden;position:relative}
+.xp-bar-fill{height:100%;border-radius:999px;background:var(--grad);box-shadow:0 0 14px #00d27e66;transition:width .6s cubic-bezier(.22,1,.36,1)}
+.xp-bar-label{display:block;margin-top:6px;font-size:12px;color:var(--muted);font-weight:600}
+.league-row{display:flex;align-items:center;gap:10px;margin-top:10px;flex-wrap:wrap}
+.league-chip{display:inline-flex;align-items:center;gap:5px;border-radius:999px;padding:5px 12px;font-weight:800;font-size:13px;background:var(--grad-gold);color:#3a2c00}
+.league-sub{font-size:12.5px;color:var(--muted);font-weight:600}
+.heat-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin-top:10px}
+.heat-cell{aspect-ratio:1;border-radius:5px;background:#ffffff0d;border:1px solid #ffffff0a}
+.heat-cell.h1{background:#00d27e33;border-color:#00d27e55}
+.heat-cell.h2{background:#00d27e77;border-color:#00d27e99}
+.heat-cell.h3{background:#00d27ecc;border-color:#00d27e;box-shadow:0 0 10px #00d27e55}
+.tabs-5 .tab{font-size:12px;padding:9px 4px}
+.avatar-save-err{margin:6px 0 0;text-align:center;font-size:12.5px;color:#ff6b7a;font-weight:700}
