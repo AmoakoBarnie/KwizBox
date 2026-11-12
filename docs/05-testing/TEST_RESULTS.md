@@ -170,3 +170,22 @@ Notes:
 - Rate-limited suites need a ~60 s quiet window before re-running (register 10/min, admin token 5/min).
 - Test users created this session: `e2e_mwdo…`, `e2e_eng_…`, `dbg…`, `proxytest_…` in the dev DB (harmless; dev-only).
 
+## 2026-11-12 — Engagement Group C: mascot animation/style/gender + PNG share card
+
+Context: the GLB clips were inspected directly before coding — the exports name
+clips `idle_youth_Mascot_Rig`, `celebrate_shs_Mascot_Rig`, … while only `walk`
+is bare — confirming why every non-walking 3D mascot T-posed (BUG-015).
+
+| Check | Command | Result |
+|---|---|---|
+| Clip-name resolver unit checks | `node tests/verify-mascot-clips.mjs` | **9/9 PASS** — exact `walk`, suffix `idle`/`celebrate`/`encourage`, `Armature|idle` style, case-insensitivity, null/empty safety |
+| GLB clip inventory | GLB JSON-chunk parse | `walk`; `idle_*_Mascot_Rig`; `celebrate_*`; `encourage_*`; `blink_*` in all four models (youth/shs × male/female) |
+| Group C browser e2e | `node tests/e2e-mascot-share.mjs http://localhost:5174` | **18/18 PASS** — 3D resolves `idle_youth_Mascot_Rig`; 2D toggle unmounts canvases, persists `kwiz_mascot_style=2d` across reload; back to 3D; gender PATCH 200 + server `female` + reload uses `data-model="female"`; Summary walking clip = `walk`; **Save PNG** downloads `kwizbox-<nick>-2026-11-12.png`, 658,479 bytes, signature PNG, **1080×1350**; **Share Image** falls back to download where File Share is unsupported; 0 page errors |
+| Summary refresh fallback (new bug BUG-014) | browser repro + rerun | Seeded `kwizbox_last_result` then opened `/summary`: previously rendered “No results to show.” because the component called `setTriedStorage()` during render (tree discarded) and its effects sat below the early return. Fixed with a lazy `useState` read + unconditional effects. Now renders and the PNG test above passes |
+| Regression — engagement UI | `node tests/e2e-engagement.mjs` | **18/18 PASS** |
+| Regression — routes | `node tests/route-smoke.mjs` | **13/13 PASS** |
+| Regression — register journey | `node tests/e2e-register.mjs` | **15/15 PASS** |
+| Regression — backend | `./venv/bin/python -m pytest tests/ -q` | **4 passed** |
+| Production build | `npm run build` | **OK** (same pre-existing chunk warning) |
+
+

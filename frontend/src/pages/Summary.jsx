@@ -5,6 +5,7 @@ import Mascot from '../components/Mascot.jsx'
 import Confetti from '../components/Confetti.jsx'
 import { evaluateBadges } from '../badges.js'
 import { levelUp } from '../sound.js'
+import { buildShareCardPng, downloadBlob, sharePngBlob, safeFilename } from '../shareCard.js'
 import { useState, useEffect } from 'react'
 
 const fadeUp = {
@@ -137,8 +138,10 @@ function buildShareText(result, cfg, user) {
 
 /**
  * Shareable result card shown in a modal before sharing.
+ * The text actions are unchanged; the PNG buttons render the same result on a
+ * canvas so it can be saved/shared as an image (WhatsApp, Instagram, etc.).
  */
-function ShareCard({ result, cfg, user, onClose, onCopy, onShare }) {
+function ShareCard({ result, cfg, user, onClose, onCopy, onShare, onToast }) {
   const { total, correct, accuracy, score, streak } = result
   const pct = Math.round(accuracy * 100)
   const grade = pct >= 90 ? "A" : pct >= 75 ? "B" : pct >= 60 ? "C" : pct >= 45 ? "D" : "F"
@@ -146,6 +149,35 @@ function ShareCard({ result, cfg, user, onClose, onCopy, onShare }) {
   const now = new Date()
   const dateStr = now.toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long", year: "numeric" })
   const initials = user && user.nickname ? user.nickname.charAt(0).toUpperCase() : "A"
+  const [pngBusy, setPngBusy] = useState(false)
+  const [pngErr, setPngErr] = useState('')
+
+  async function makePng() {
+    const blob = await buildShareCardPng({ result, cfg, user })
+    return { blob, filename: safeFilename(user?.nickname) }
+  }
+
+  async function handleSavePng() {
+    setPngBusy(true); setPngErr('')
+    try {
+      const { blob, filename } = await makePng()
+      downloadBlob(blob, filename)
+      onToast?.('Image saved — share it anywhere! 📷')
+    } catch (e) {
+      setPngErr(e.message || 'Could not create the image')
+    } finally { setPngBusy(false) }
+  }
+
+  async function handleSharePng() {
+    setPngBusy(true); setPngErr('')
+    try {
+      const { blob, filename } = await makePng()
+      const how = await sharePngBlob(blob, filename, buildShareText(result, cfg, user))
+      onToast?.(how === 'shared' ? 'Shared! 📤' : 'Image saved — share it anywhere! 📷')
+    } catch (e) {
+      if (e?.name !== 'AbortError') setPngErr(e.message || 'Could not create the image')
+    } finally { setPngBusy(false) }
+  }
 
   return (
     <motion.div
@@ -227,11 +259,21 @@ function ShareCard({ result, cfg, user, onClose, onCopy, onShare }) {
           <div className="share-actions">
             <motion.button
               className="share-action primary"
-              onClick={onShare}
+              onClick={handleSharePng}
+              disabled={pngBusy}
               whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.96 }}
             >
-              <span className="share-action-icon">📤</span>
-              Share Result
+              <span className="share-action-icon">🖼️</span>
+              {pngBusy ? 'Preparing image…' : 'Share Image'}
+            </motion.button>
+            <motion.button
+              className="share-action"
+              onClick={handleSavePng}
+              disabled={pngBusy}
+              whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.96 }}
+            >
+              <span className="share-action-icon">⬇️</span>
+              Save PNG
             </motion.button>
             <motion.button
               className="share-action"
@@ -242,6 +284,14 @@ function ShareCard({ result, cfg, user, onClose, onCopy, onShare }) {
               Copy Text
             </motion.button>
             <motion.button
+              className="share-action"
+              onClick={onShare}
+              whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.96 }}
+            >
+              <span className="share-action-icon">📤</span>
+              Share Text
+            </motion.button>
+            <motion.button
               className="share-action ghost"
               onClick={onClose}
               whileHover={{ scale: 1.03 }}
@@ -249,6 +299,7 @@ function ShareCard({ result, cfg, user, onClose, onCopy, onShare }) {
               Close
             </motion.button>
           </div>
+          {pngErr && <p className="share-png-err" role="alert">⚠️ {pngErr}</p>}
 
           {/* Footer */}
           <div className="share-card-footer">
@@ -288,6 +339,11 @@ function renderSummary({ result, cfg, nav, user, isGuest, fromStorage = false, s
   const celebrate = pct >= 50
   const highScore = pct >= 80
   const isSHS = typeof cfg?.class_level === 'string' && ['S1', 'S2', 'S3'].includes(cfg?.class_level)
+
+  const flash = (msg) => {
+    setShareToast(msg)
+    setTimeout(() => setShareToast(null), 2200)
+  }
 
   return (
     <motion.div className="screen summary"
@@ -462,27 +518,25 @@ function renderSummary({ result, cfg, nav, user, isGuest, fromStorage = false, s
                   cfg={cfg}
                   user={user}
                   onClose={() => setShowShareCard(false)}
+                  onToast={flash}
                   onCopy={() => {
                     const text = buildShareText(result, cfg, user)
-                    navigator.clipboard.writeText(text).then(() => {
-                      setShareToast("Copied to clipboard! 📋")
-                      setTimeout(() => setShareToast(null), 2000)
-                    }).catch(() => setShareToast("Copy failed"))
+                    navigator.clipboard.writeText(text)
+                      .then(() => flash("Copied to clipboard! 📋"))
+                      .catch(() => flash("Copy failed"))
                   }}
                   onShare={() => {
                     const text = buildShareText(result, cfg, user)
                     if (navigator.share) {
-                      navigator.share({ title: "KwizBox Result", text }).catch(() => {
-                        navigator.clipboard.writeText(text).then(() => {
-                          setShareToast("Shared! 📤")
-                          setTimeout(() => setShareToast(null), 2000)
+                      navigator.share({ title: "KwizBox Result", text })
+                        .then(() => flash("Shared! 📤"))
+                        .catch(() => {
+                          navigator.clipboard.writeText(text)
+                            .then(() => flash("Copied to clipboard! 📋"))
                         })
-                      })
                     } else {
-                      navigator.clipboard.writeText(text).then(() => {
-                        setShareToast("Copied to clipboard! 📋")
-                        setTimeout(() => setShareToast(null), 2000)
-                      })
+                      navigator.clipboard.writeText(text)
+                        .then(() => flash("Copied to clipboard! 📋"))
                     }
                   }}
                 />
@@ -558,40 +612,32 @@ export default function Summary() {
   const result = state?.result
   const cfg = state?.cfg
 
-  // SHS students get the older mascot; JHS gets the regular one
-  const isSHS = typeof cfg?.class_level === 'string' && ['S1', 'S2', 'S3'].includes(cfg.class_level)
-
-  // Try localStorage fallback on direct navigation/refresh
-  const [triedStorage, setTriedStorage] = useState(false)
   const [showShareCard, setShowShareCard] = useState(false)
   const [shareToast, setShareToast] = useState(null)
 
-  if (!result) {
-    if (!triedStorage) {
-      // Try to read from localStorage as last resort
-      try {
-        const savedResult = JSON.parse(localStorage.getItem('kwizbox_last_result') || 'null')
-        const savedCfg = JSON.parse(localStorage.getItem('kwizbox_last_cfg') || 'null')
-        if (savedResult) {
-          setTriedStorage(true)
-          return renderSummary({ result: savedResult, cfg: savedCfg, nav, user, isGuest, fromStorage: true, showShareCard, setShowShareCard, shareToast, setShareToast })
-        }
-      } catch {}
-      setTriedStorage(true)
+  // Refresh/direct-navigation fallback: read the cached result once, during the
+  // first render. The old code called setTriedStorage() while rendering and then
+  // returned the summary — React discards that tree on the render-phase update
+  // and re-renders into the "No results" branch, so the fallback never worked.
+  const [stored] = useState(() => {
+    try {
+      const savedResult = JSON.parse(localStorage.getItem('kwizbox_last_result') || 'null')
+      const savedCfg = JSON.parse(localStorage.getItem('kwizbox_last_cfg') || 'null')
+      return savedResult ? { result: savedResult, cfg: savedCfg } : null
+    } catch (_) {
+      return null
     }
-    return (
-      <div className="screen center">
-        <p>No results to show.</p>
-        <button className="btn primary" onClick={() => nav('/play')}>Play again</button>
-      </div>
-    )
-  }
+  })
+  const effectiveResult = result || stored?.result
+  const effectiveCfg = cfg ?? stored?.cfg
 
-  // Save to localStorage for future refreshes
+  // All hooks run unconditionally — the old effects sat below the `!result`
+  // early return, which changes hook order once a result arrives.
   useEffect(() => {
-    localStorage.setItem('kwizbox_last_result', JSON.stringify(result))
-    localStorage.setItem('kwizbox_last_cfg', JSON.stringify(cfg))
-  }, [result, cfg])
+    if (!effectiveResult) return
+    localStorage.setItem('kwizbox_last_result', JSON.stringify(effectiveResult))
+    localStorage.setItem('kwizbox_last_cfg', JSON.stringify(effectiveCfg))
+  }, [effectiveResult, effectiveCfg])
 
   // System preference auto-detect (if mode selector exists elsewhere, skip)
   useEffect(() => {
@@ -605,5 +651,20 @@ export default function Summary() {
     }
   }, [])
 
-  return renderSummary({ result, cfg, nav, user, isGuest, showShareCard, setShowShareCard, shareToast, setShareToast })
+  if (!effectiveResult) {
+    return (
+      <div className="screen center">
+        <p>No results to show.</p>
+        <button className="btn primary" onClick={() => nav('/play')}>Play again</button>
+      </div>
+    )
+  }
+
+  return renderSummary({
+    result: effectiveResult,
+    cfg: effectiveCfg,
+    nav, user, isGuest,
+    fromStorage: !result,
+    showShareCard, setShowShareCard, shareToast, setShareToast,
+  })
 }

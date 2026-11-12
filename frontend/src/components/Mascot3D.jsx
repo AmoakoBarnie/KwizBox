@@ -1,9 +1,10 @@
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { useAnimations, useGLTF } from '@react-three/drei'
 import { clone as cloneSkeleton } from 'three/examples/jsm/utils/SkeletonUtils.js'
-import { Suspense, useEffect, useLayoutEffect, useMemo, useRef } from 'react'
+import { Suspense, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import * as THREE from 'three'
 import { MeshoptDecoder } from 'three/examples/jsm/libs/meshopt_decoder.module.js'
+import { resolveClipName } from '../mascotClips.js'
 import './Mascot3D.css'
 
 const MODEL_PATHS = {
@@ -36,7 +37,7 @@ const CAMERA_FOV = 35
 const MODEL_FACING = -Math.PI / 2
 const FILL_RATIO = 0.82 // fraction of the vertical FOV the model should occupy
 
-function FramedModel({ path, state, walking, onReady, fill = FILL_RATIO }) {
+function FramedModel({ path, state, walking, onReady, onAction, fill = FILL_RATIO }) {
   const root = useRef()
   const model = useGLTF(path, undefined, (loader) => {
     // Attach the meshopt decoder to drei's loader instance.
@@ -45,17 +46,22 @@ function FramedModel({ path, state, walking, onReady, fill = FILL_RATIO }) {
   const clone = useMemo(() => cloneSkeleton(model.scene), [model.scene])
   const { actions } = useAnimations(model.animations, root)
   const { camera } = useThree()
-  const active = walking ? 'walk' : (state === 'thinking' ? 'idle' : state)
+  const wanted = walking ? 'walk' : (state === 'thinking' ? 'idle' : state)
+  // GLB clips are named `idle_<Rig>`, `celebrate_<Rig>`, … with only `walk`
+  // bare — so resolve by prefix instead of indexing with the logical state.
+  const clipNames = useMemo(() => Object.keys(actions || {}), [actions])
+  const actionName = useMemo(() => resolveClipName(clipNames, wanted), [clipNames, wanted])
 
   useEffect(() => {
-    const action = actions?.[active]
+    const action = actionName ? actions?.[actionName] : null
+    onAction?.(actionName || null)
     if (!action) return
     Object.values(actions).forEach((candidate) => {
       if (candidate !== action) candidate.fadeOut(0.12)
     })
     action.reset().fadeIn(0.12).play()
     return () => action.fadeOut(0.08)
-  }, [actions, active])
+  }, [actions, actionName, onAction])
 
   useLayoutEffect(() => {
     if (!root.current) return
@@ -113,6 +119,8 @@ export default function Mascot3D({
 }) {
   const modelGender = gender === 'female' ? 'female' : 'male'
   const path = MODEL_PATHS[type === 'shs' ? 'shs' : 'youth'][modelGender]
+  // Which glTF clip actually started — exposed for debugging and e2e assertions.
+  const [anim, setAnim] = useState(null)
   // HeroStage passes an explicit pixel size for the walking mascots; the old
   // 0.78 * clamp(48,96) formula capped them at 75px, which is why the stride was
   // invisible. Only fall back to that heuristic when no size is given.
@@ -121,7 +129,8 @@ export default function Mascot3D({
     : Math.max(48, Math.min(96, Math.round(Number(size) * 0.78)))
 
   return (
-    <div className="mascot-3d" style={{ width: displaySize, height: displaySize }} aria-hidden="true">
+    <div className="mascot-3d" data-anim={anim || undefined} data-model={modelGender}
+         style={{ width: displaySize, height: displaySize }} aria-hidden="true">
       <Canvas
         dpr={[1, 1.5]}
         gl={{ alpha: true, antialias: true, powerPreference: 'high-performance' }}
@@ -133,7 +142,7 @@ export default function Mascot3D({
         <directionalLight position={[4, 7, 5]} intensity={2.4} color="#fff4df" />
         <directionalLight position={[-3, 3, -4]} intensity={1.0} color="#8ed8ff" />
         <Suspense fallback={null}>
-          <FramedModel path={path} state={state} walking={walking} fill={fill} />
+          <FramedModel path={path} state={state} walking={walking} fill={fill} onAction={setAnim} />
         </Suspense>
       </Canvas>
     </div>

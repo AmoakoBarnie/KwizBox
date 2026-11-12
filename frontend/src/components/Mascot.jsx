@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useEffect, useRef } from 'react'
 import './Mascot.css'
 import Mascot3D from './Mascot3D.jsx'
+import { useMascotStyle } from '../mascotPrefs.js'
 
 /**
  * Mascot: friendly Ghana basic-school learners in uniform (Kente).
@@ -42,18 +43,7 @@ function pickPhrase(state, young) {
 const CONFETTI_COLORS = ['#00d27e', '#ffd23f', '#ff4d5e', '#00b36b', '#f0b400', '#ffffff']
 const EMOJI = { thinking: '💭', celebrate: '🎉', encourage: '🌟' }
 
-export default function Mascot({ state = 'thinking', size = 120, gender, classLevel = 'B7', walking = false, avatar, render3d = true, type = 'youth', fill }) {
-  if (render3d) {
-    // Honour the caller's type so SHS students get the SHS mascots.
-    // This was previously hardcoded to "youth", which meant every page
-    // (quiz, play, profile, settings) always rendered the youth model.
-    //
-    // Gender: `gender` is intentionally optional (no default) so we can tell
-    // "caller did not specify" from "caller wants male". An explicit gender
-    // wins; otherwise fall back to the avatar's gender, then male.
-    const effectiveGender = gender || avatar?.gender || 'male'
-    return <Mascot3D type={type} state={state} size={size} gender={effectiveGender} walking={walking} fill={fill} />
-  }
+function Mascot2D({ state = 'thinking', size = 120, gender, classLevel = 'B7', walking = false, avatar }) {
   // Upgrade 8: avatar object takes precedence over legacy gender prop
   const av = avatar || {}
   const avatarSkin = av.skin || 'warm'
@@ -167,6 +157,7 @@ export default function Mascot({ state = 'thinking', size = 120, gender, classLe
 
   return (
     <motion.div
+      className="mascot-2d"
       initial={{ opacity: 0, scale: 0.6 }}
       animate={{ opacity: 1, rotate: pop ? [0, -9, 9, -4, 0] : 0, scale: pop ? [1, 1.14, 1] : 1 }}
       transition={{ type: 'spring', stiffness: 200, damping: 14 }}
@@ -409,4 +400,31 @@ export default function Mascot({ state = 'thinking', size = 120, gender, classLe
       </AnimatePresence>
     </motion.div>
   )
+}
+
+/**
+ * Dispatcher: renders the 3D GLB mascot or the inline SVG one depending on the
+ * device-local style preference (`kwiz_mascot_style`). The preference is read
+ * through a hook, so switching 3D ↔ 2D updates every mounted mascot instantly.
+ *
+ * This component deliberately calls only one hook before branching — all 2D
+ * state lives in <Mascot2D>, so flipping styles can never change hook order.
+ */
+export default function Mascot({
+  state = 'thinking', size = 120, gender, classLevel = 'B7',
+  walking = false, avatar, render3d, type = 'youth', fill,
+}) {
+  const [style] = useMascotStyle()
+  const use3d = render3d !== false && style === '3d'
+
+  if (use3d) {
+    // Honour the caller's type so SHS students get the SHS mascots.
+    // Gender: explicit prop wins, then the avatar's gender, then male.
+    const effectiveGender = gender || avatar?.gender || 'male'
+    return <Mascot3D type={type} state={state} size={size} gender={effectiveGender}
+                     walking={walking} fill={fill} />
+  }
+
+  return <Mascot2D state={state} size={size} gender={gender}
+                   classLevel={classLevel} walking={walking} avatar={avatar} />
 }

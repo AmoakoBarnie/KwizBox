@@ -44,6 +44,29 @@ does not use semantic versioning yet (pre-1.0, unreleased).
 pytest 4/4, production build OK, route smoke 13/13, UI register 15/15, guest
 5/5, engagement 18/18, API e2e 37/37.
 
+### 2026-11-12 — Engagement Group C: mascot animation, 3D/2D style, PNG share card
+
+**Added**
+- Mascot style picker on Profile (**3D** GLB / **2D** SVG), persisted per device
+  in `kwiz_mascot_style`; gender picker (Boy/Girl) saved to the account avatar
+  and reflected in both renderers.
+- PNG result card on Summary: 1080×1350 canvas render with score, grade,
+  accuracy bar, correct/streak/mode tiles and Ghana kente trim. **Save PNG**
+  downloads it; **Share Image** uses the Web Share API with a download fallback.
+- `tests/e2e-mascot-share.mjs` (browser) and `tests/verify-mascot-clips.mjs`
+  (clip resolver unit checks).
+
+**Fixed**
+- BUG-015: 3D mascots T-posed outside walking — GLB clips are
+  `idle_<Rig>`/`celebrate_<Rig>`/`encourage_<Rig>` while only `walk` is bare;
+  added tolerant `resolveClipName()` matching and exposed `data-anim`.
+- BUG-014: Summary now restores `kwizbox_last_result` on refresh/direct
+  navigation (the old render-phase `setState` fallback always showed
+  “No results”), with all hooks above the early return.
+
+**Verified** — clip unit 9/9, mascot/share e2e 18/18 (PNG 1080×1350), plus
+regression: engagement 18/18, routes 13/13, register 15/15, pytest 4/4, build OK.
+
 ### 2026-11-10 — Project professionalization & relocation
 
 **Added**

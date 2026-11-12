@@ -400,3 +400,7 @@
 .heat-cell.h3{background:#00d27ecc;border-color:#00d27e;box-shadow:0 0 10px #00d27e55}
 .tabs-5 .tab{font-size:12px;padding:9px 4px}
 .avatar-save-err{margin:6px 0 0;text-align:center;font-size:12.5px;color:#ff6b7a;font-weight:700}
+
+/* ---- Engagement Group C: PNG share card + mascot style picker ---- */
+.share-action:disabled{opacity:.6;cursor:wait}
+.share-png-err{margin:10px 0 0;text-align:center;font-size:13px;font-weight:700;color:#ff6b7a}

@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useAuth } from '../auth.jsx'
 import { BADGES, loadBadges, saveBadges, evaluateBadges } from '../badges.js'
 import { levelUp } from '../sound.js'
+import { useMascotStyle } from '../mascotPrefs.js'
 import Mascot from '../components/Mascot.jsx'
 
 const fadeUp = {
@@ -53,6 +54,8 @@ export default function Profile() {
   const [avatar, setAvatar] = useState(() => user?.avatar || { skin: 'warm', hat: 'none', accessory: 'none', gender: 'male' })
   const [saving, setSaving] = useState(false)
   const [saveErr, setSaveErr] = useState('')
+  // Device-local 3D/2D preference (localStorage: kwiz_mascot_style).
+  const [mascotStyle, setMascotStylePref] = useMascotStyle()
 
   // Pull the server's saved avatar in once the session loads (or after a save).
   useEffect(() => {
@@ -168,6 +171,7 @@ export default function Profile() {
   const pickSkin = (s) => { const next = { ...avatar, skin: s }; setAvatar(next); saveAvatar(next) }
   const pickHat  = (h) => { const next = { ...avatar, hat: h }; setAvatar(next); saveAvatar(next) }
   const pickAcc  = (ac)=> { const next = { ...avatar, accessory: ac }; setAvatar(next); saveAvatar(next) }
+  const pickGender = (g) => { const next = { ...avatar, gender: g }; setAvatar(next); saveAvatar(next) }
 
   return (
     <motion.div className="screen profile"
@@ -260,6 +264,37 @@ export default function Profile() {
           {saveErr && (
             <p className="avatar-save-err" role="alert">⚠️ {saveErr}</p>
           )}
+        </div>
+
+        <div className="avatar-group">
+          <span className="avatar-group-label">Mascot style</span>
+          <div className="avatar-group-options">
+            <button
+              className={`avatar-text-btn${mascotStyle === '3d' ? ' selected' : ''}`}
+              onClick={() => setMascotStylePref('3d')}
+            >🧊 3D</button>
+            <button
+              className={`avatar-text-btn${mascotStyle === '2d' ? ' selected' : ''}`}
+              onClick={() => setMascotStylePref('2d')}
+            >🎨 2D</button>
+          </div>
+        </div>
+
+        <div className="avatar-group">
+          <span className="avatar-group-label">Mascot gender</span>
+          <div className="avatar-group-options">
+            {[
+              { value: 'male', label: '👦 Boy' },
+              { value: 'female', label: '👧 Girl' },
+            ].map((g) => (
+              <button key={g.value}
+                className={`avatar-text-btn${avatar.gender === g.value ? ' selected' : ''}`}
+                onClick={() => pickGender(g.value)}
+              >
+                {g.label}
+              </button>
+            ))}
+          </div>
         </div>
 
         <div className="avatar-group">
