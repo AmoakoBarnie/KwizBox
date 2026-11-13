@@ -9,8 +9,8 @@ from ..rate_limit import limiter
 from ..models import User, Question, QuizSession, SubjectProgress, TopicProgress, LeaderboardPeriod, UserQuestionSeen, SchoolCode
 from ..auth import get_current_user, optional_user
 from ..schemas import (
-    QuizPackRequest, QuestionOut, QuizResultRequest, QuizResultResponse,
-    AnswerFeedback, LeaderboardEntry, CheckAnswerRequest,
+    QuizPackRequest, QuestionOut, OfflineQuestionOut, QuizResultRequest,
+    QuizResultResponse, AnswerFeedback, LeaderboardEntry, CheckAnswerRequest,
 )
 from ..scoring import question_points
 from ..mastery import calculate_mastery, is_mastered
@@ -35,6 +35,30 @@ def _to_question_out(q: Question) -> QuestionOut:
         question_type=getattr(q, "question_type", None) or "mcq",
         image_url=getattr(q, "image_url", None) or None,
     )
+
+
+def _pool_ids(db: Session, body: QuizPackRequest) -> list[int]:
+    """Question ids matching a pack selection (shared by /pack and /offline-pack)."""
+    base = db.query(Question).filter(Question.class_level == body.class_level, Question.is_active == True)
+    if body.subject != "Mixed":
+        base = base.filter(Question.subject == body.subject)
+    if body.difficulty:
+        base = base.filter(Question.difficulty == body.difficulty)
+    if body.topic:
+        base = base.filter(Question.topic == body.topic)
+    if body.sub_topic:
+        base = base.filter(Question.sub_topic == body.sub_topic)
+    pool_ids = [r[0] for r in base.with_entities(Question.id).all()]
+    # Exclude previously answered questions for this session
+    if body.exclude_ids:
+        excluded = set(body.exclude_ids)
+        pool_ids = [pid for pid in pool_ids if pid not in excluded]
+
+    # Only use questions whose answers are visible via admin endpoint
+    # (filter out legacy bulk-imported duplicates: id >= 130570 and id < 100000)
+    if pool_ids:
+        pool_ids = [pid for pid in pool_ids if pid >= 100000 or pid < 130570]
+    return pool_ids
 
 
 @router.post("/check")
@@ -74,25 +98,7 @@ def get_pack(
     to fill the request do we recycle the *least-recently-seen* questions.
     Guests get a plain random pack (they don't accumulate history).
     """
-    # Base pool for this selection
-    base = db.query(Question).filter(Question.class_level == body.class_level, Question.is_active == True)
-    if body.subject != "Mixed":
-        base = base.filter(Question.subject == body.subject)
-    if body.difficulty:
-        base = base.filter(Question.difficulty == body.difficulty)
-    if body.topic:
-        base = base.filter(Question.topic == body.topic)
-    if body.sub_topic:
-        base = base.filter(Question.sub_topic == body.sub_topic)
-    pool_ids = [r[0] for r in base.with_entities(Question.id).all()]
-    # Exclude previously answered questions for this session
-    if body.exclude_ids:
-        pool_ids = [pid for pid in pool_ids if pid not in body.exclude_ids]
-
-    # Only use questions whose answers are visible via admin endpoint
-    # (filter out legacy bulk-imported duplicates: id >= 130570 and id < 100000)
-    if pool_ids:
-        pool_ids = [pid for pid in pool_ids if pid >= 100000 or pid < 130570]
+    pool_ids = _pool_ids(db, body)
 
     if not pool_ids:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="No questions found for this selection")
@@ -120,6 +126,45 @@ def get_pack(
         return _JR(content=[q.model_dump() for q in out], headers={"X-Session-Id": str(sess.id), "X-Question-Ids": ", ".join(str(qid) for qid in question_ids)})
 
     return out
+
+
+@router.post("/offline-pack", response_model=list[OfflineQuestionOut])
+@limiter.limit("20/minute")
+def get_offline_pack(
+    request: Request,
+    body: QuizPackRequest,
+    db: Session = Depends(get_db),
+    user: User | None = Depends(optional_user),
+):
+    """Return a practice pack with its answer key for device-local use.
+
+    Deliberate exception to REQ-QUIZ-002: offline grading needs the key on the
+    device. This endpoint creates no QuizSession, updates no progress and
+    marks no questions seen. Daily challenge packs are refused so a live
+    competition's answers cannot be downloaded ahead of time.
+    """
+    if body.daily:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Daily challenge packs cannot be downloaded for offline practice",
+        )
+
+    pool_ids = _pool_ids(db, body)
+    if not pool_ids:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="No questions found for this selection")
+
+    chosen_ids = _select_pack_ids(db, user, pool_ids, body.count, daily=False)
+    rows = db.query(Question).filter(Question.id.in_(chosen_ids)).all()
+    by_id = {q.id: q for q in rows}
+    return [
+        OfflineQuestionOut(
+            **_to_question_out(by_id[qid]).model_dump(),
+            answer_index=by_id[qid].answer_index,
+            explanation=by_id[qid].explanation or "",
+        )
+        for qid in chosen_ids
+        if qid in by_id
+    ]
 
 
 def _select_pack_ids(db, user, pool_ids, count, daily=False):

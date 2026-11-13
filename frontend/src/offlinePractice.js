@@ -126,6 +126,34 @@ export async function cacheOfflineMedia(questions) {
   }))
 }
 
+/**
+ * Resolve question images from the offline media cache as object URLs.
+ *
+ * Cache Storage is not a request interceptor on its own (the PWA service
+ * worker is currently disabled), so offline mode must read the cached
+ * responses explicitly. Callers revoke the returned object URLs on unmount.
+ */
+export async function offlineMediaUrls(questions) {
+  const map = {}
+  if (
+    typeof caches === 'undefined' ||
+    typeof location === 'undefined' ||
+    typeof URL === 'undefined' ||
+    typeof URL.createObjectURL !== 'function'
+  ) return map
+
+  await Promise.allSettled((questions || []).filter((question) => question?.image_url).map(async (question) => {
+    try {
+      const href = new URL(question.image_url, location.origin).href
+      const response = await caches.match(href)
+      if (response) map[question.id] = URL.createObjectURL(await response.blob())
+    } catch {
+      // A missing/blocked cache entry simply falls back to the network URL.
+    }
+  }))
+  return map
+}
+
 const DIFFICULTY_BASE = { Easy: 10, Medium: 15, Hard: 25 }
 const STREAK_MULTIPLIER = { 1: 1, 2: 1.1, 3: 1.25, 4: 1.5 }
 

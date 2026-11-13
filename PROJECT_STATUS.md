@@ -1,9 +1,9 @@
 # PROJECT_STATUS.md
 
 > Snapshot of where the project is. Updated at the end of every working session.
-> Last updated: 2026-11-12
+> Last updated: 2026-11-13
 
-## Current development status (2026-11-12)
+## Current development status (2026-11-13)
 
 All owner-approved engagement upgrades are implemented, tested and pushed to
 `main`:
@@ -16,16 +16,24 @@ All owner-approved engagement upgrades are implemented, tested and pushed to
 | — | BUG-013 Profile hook-order crash | `1cc6599` |
 | C | 3D mascot clip playback fixed, 3D/2D + gender pickers, 1080×1350 PNG share card | `3a3e087` |
 | D | Live duel WebSocket room (display-only), lobby + in-quiz rival strip, BUG-016 challenge-creation fix | `e80a951` |
+| — | Restore `models/` + `scripts/`; BUG-017 hardcoded admin password removed | `db1da79`, `98b69b9` |
+| E | Offline practice: `POST /quiz/offline-pack`, saved device pack, local grading, practice-only Summary | (offline-practice commit) |
 
 Verification at `e80a951`: backend pytest **7/7**, duel browser e2e **13/13**,
 engagement **18/18**, mascot/share **18/18**, routes **13/13**, register
 **15/15**, production build OK (`npm run build`). Evidence is append-only in
 `docs/05-testing/TEST_RESULTS.md`; bugs BUG-009/012/013/014/015/016 are resolved.
 
+Post-offline full regression (2026-11-13): **11/11 suites green** — backend
+**8/8**, offline unit **4/4**, build OK, routes **13/13**, offline e2e
+**19/19**, register **15/15**, guest **5/5**, engagement **18/18**, mascot/share
+**18/18**, duel **13/13**, full API **37/37**.
+
 **Next:** M3 (Android APK) when the owner approves. `models/` + `scripts/` were
-restored on 2026-11-13 and the docs synced to the current cookie-auth/duel
-architecture; `frontend/.env.production` still needs a real backend URL before
-store builds. M1/M2 stay rejected.
+restored on 2026-11-13, the docs synced to the current cookie-auth/duel
+architecture, and offline practice is shipped and regression-tested.
+`frontend/.env.production` still needs a real backend URL before store builds.
+M1/M2 stay rejected.
 
 ## Current phase
 

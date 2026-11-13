@@ -7,6 +7,7 @@ import { useDuelRoom } from '../duel.js'
 import Mascot from '../components/Mascot.jsx'
 import WalkingMascot from '../components/WalkingMascot.jsx'
 import { correct, wrong, streak as streakSfx, combo as comboSfx, click } from '../sound.js'
+import { buildOfflineResult, getOfflinePack, offlineMediaUrls, offlineQuestionPoints } from '../offlinePractice.js'
 
 const sessionSeen = new Set()
 
@@ -21,6 +22,11 @@ export default function Quiz() {
   // get the same questions and the final score is submitted to the challenge
   // endpoint (server-authoritative).
   const [challenge, setChallenge] = useState(() => location.state?.challenge || null)
+  // Offline mode: ?offline=true loads the pack saved on this device and grades
+  // locally. No /quiz/check, /quiz/submit, duel or challenge calls are made.
+  const offline = params.get('offline') === 'true'
+  const [offlinePack, setOfflinePack] = useState(null)
+  const [offlineMedia, setOfflineMedia] = useState({})
   const [pack, setPack] = useState(null)
   const [idx, setIdx] = useState(0)
   const [selected, setSelected] = useState(null)
@@ -53,18 +59,41 @@ export default function Quiz() {
   const liveCorrect = review.reduce((n, f) => n + (f.is_correct ? 1 : 0), 0)
   const liveScore = review.reduce((n, f) => n + (f.points || 0), 0)
 
-  const cfg = {
-    class_level: challenge ? challenge.class_level : (params.get('class_level') || 'B4'),
-    subject: challenge ? challenge.subject : (params.get('subject') || 'Mathematics'),
-    topic: params.get('topic') || undefined,
-    sub_topic: params.get('sub_topic') || undefined,
-    count: challenge ? (challenge.questions?.length || 12) : 12,
-    daily: params.get('daily') === 'true',
-  }
+  const cfg = offline
+    ? {
+        class_level: offlinePack?.config?.class_level || 'B4',
+        subject: offlinePack?.config?.subject || 'Mixed',
+        topic: offlinePack?.config?.topic || undefined,
+        sub_topic: offlinePack?.config?.sub_topic || undefined,
+        count: offlinePack?.questions?.length || 12,
+        daily: false,
+      }
+    : {
+        class_level: challenge ? challenge.class_level : (params.get('class_level') || 'B4'),
+        subject: challenge ? challenge.subject : (params.get('subject') || 'Mathematics'),
+        topic: params.get('topic') || undefined,
+        sub_topic: params.get('sub_topic') || undefined,
+        count: challenge ? (challenge.questions?.length || 12) : 12,
+        daily: params.get('daily') === 'true',
+      }
 
   async function load() {
     setLoading(true); setErr('')
     try {
+      // Offline mode: use the pack saved in IndexedDB/localStorage. Nothing is
+      // fetched from the API, so this works with the network switched off.
+      if (offline) {
+        const saved = await getOfflinePack()
+        const usable = saved?.questions?.length
+          && saved.questions.every((q) => Number.isInteger(q.answer_index))
+        if (!usable) {
+          throw new Error('No usable offline pack was found on this device. Download one while online first.')
+        }
+        setOfflinePack(saved)
+        setPack(saved.questions)
+        setStartedAt(Date.now())
+        return
+      }
       // Challenge mode: use the questions that came with the navigation state
       // (same 12 questions for every player holding the code).
       if (challenge) {
@@ -108,6 +137,27 @@ export default function Quiz() {
     return () => clearInterval(t)
   }, [idx, pack])
 
+  // Offline images come from Cache Storage (the PWA service worker is
+  // disabled, so the cache must be read explicitly). Object URLs are revoked
+  // when the pack changes or the screen unmounts.
+  useEffect(() => {
+    if (!offline || !pack) return
+    let cancelled = false
+    let objectUrls = []
+    offlineMediaUrls(pack).then((map) => {
+      if (cancelled) {
+        Object.values(map).forEach((url) => URL.revokeObjectURL(url))
+        return
+      }
+      objectUrls = Object.values(map)
+      setOfflineMedia(map)
+    }).catch(() => {})
+    return () => {
+      cancelled = true
+      objectUrls.forEach((url) => URL.revokeObjectURL(url))
+    }
+  }, [offline, pack])
+
   // Broadcast display progress after every answer / question change.
   useEffect(() => {
     if (!roomCode || !pack) return
@@ -133,6 +183,33 @@ export default function Quiz() {
     setSelected(i)
     click()
     setLocked(true)
+    if (offline) {
+      // Grade locally against the saved answer key. This is the only place the
+      // answer key is used; nothing is sent to the server.
+      const is_correct = i === q.answer_index
+      const seconds_taken = questionStartedAt ? (Date.now() - questionStartedAt) / 1000 : 0
+      const newStreak = is_correct ? streak + 1 : 0
+      const pts = is_correct ? offlineQuestionPoints(q.difficulty, seconds_taken, newStreak) : 0
+      if (is_correct) {
+        const newCombo = newStreak >= 3 ? Math.min(2, 1 + Math.floor(newStreak / 3)) : 1
+        setStreak(newStreak); setCombo(newCombo)
+        setBestStreak((b) => Math.max(b, newStreak))
+        setMascot('celebrate')
+        setReveal({ is_correct: true, correct_index: q.answer_index })
+        correct()
+        if (newStreak >= 3) streakSfx(newStreak)
+        if (newCombo > 1) comboSfx(newCombo)
+        if (pts > 0) { setPopScore({ pts, combo: newCombo }); setTimeout(() => setPopScore(null), 900) }
+      } else {
+        setStreak(0); setCombo(1)
+        setMascot('encourage')
+        setReveal({ is_correct: false, correct_index: q.answer_index })
+        wrong()
+      }
+      setAnswers((prev) => [...prev, { question_id: q.id, selected_index: i, seconds_taken }])
+      setHasSeenReveal(true)
+      return
+    }
     try {
       const { is_correct, correct_index, explanation } = await api.check({ question_id: q.id, selected_index: i }, token)
       const pts = is_correct ? (q.difficulty === 'Hard' ? 25 : q.difficulty === 'Medium' ? 15 : 10) * combo : 0
@@ -184,6 +261,19 @@ export default function Quiz() {
   }
 
   async function submit(finalAnswers) {
+    if (offline) {
+      setSubmitting(true); setErr('')
+      try {
+        const result = buildOfflineResult(pack, finalAnswers)
+        try { localStorage.setItem('kwizbox_last_result', JSON.stringify(result)) } catch {}
+        try { localStorage.setItem('kwizbox_last_cfg', JSON.stringify(cfg)) } catch {}
+        nav('/summary', { state: { result, cfg } })
+      } catch (e) {
+        setErr(e.message)
+        setSubmitting(false)
+      }
+      return
+    }
     setSubmitting(true); setErr('')
     const duration_seconds = startedAt ? Math.round((Date.now() - startedAt) / 1000) : undefined
     // Best in-quiz streak: `streak` only holds the current run (0 after a wrong
@@ -281,6 +371,12 @@ export default function Quiz() {
           ⏱ {elapsed}s{elapsed <= 6 ? ' ⚡' : ''}
         </span>
       </div>
+
+      {offline && (
+        <div className="offline-practice-banner" role="status">
+          📴 Offline practice · answers are checked on this device. Nothing is sent to your account.
+        </div>
+      )}
 
       {/* Live duel strip — rival progress, display only */}
       {roomCode && (
@@ -397,7 +493,7 @@ export default function Quiz() {
           <span className="badge">{q.subject} · {q.difficulty}{q.topic ? ` · ${q.topic}` : ''}{q.sub_topic && q.sub_topic !== 'General' && q.sub_topic !== q.topic ? ` › ${q.sub_topic}` : ''}</span>
           {q.image_url && (
             <div className="q-image-wrap">
-              <img className="q-image" src={mediaUrl(q.image_url)} alt="Question diagram" />
+              <img className="q-image" src={offline ? (offlineMedia[q.id] || mediaUrl(q.image_url)) : mediaUrl(q.image_url)} alt="Question diagram" />
             </div>
           )}
           <h2>{q.question}</h2>

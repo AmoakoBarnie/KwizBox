@@ -314,8 +314,12 @@ function ShareCard({ result, cfg, user, onClose, onCopy, onShare, onToast }) {
 
 
 function renderSummary({ result, cfg, nav, user, isGuest, fromStorage = false, showShareCard, setShowShareCard, shareToast, setShareToast }) {
+  // Offline results are device-local: never award badges/XP or imply that a
+  // server leaderboard was updated.
+  const offline = result.offline === true
+
   // Evaluate & award badges
-  if (user && !isGuest) {
+  if (user && !isGuest && !offline) {
     const existingBadges = JSON.parse(localStorage.getItem('kwizbox_badges') || '[]')
     const { newBadges, newlyAwarded } = evaluateBadges(result, cfg, existingBadges)
     if (newBadges.length > existingBadges.length) {
@@ -386,6 +390,12 @@ function renderSummary({ result, cfg, nav, user, isGuest, fromStorage = false, s
           </motion.div>
         )}
       </div>
+
+      {offline && (
+        <p className="offline-practice-banner summary-offline-banner" role="status">
+          📴 Offline practice result · saved on this device only. XP, badges and leaderboards were not updated.
+        </p>
+      )}
 
       {/* MAIN GRID: mascot + stats on left, review on right (stacked on mobile) */}
       <div className="summary-grid">
@@ -489,27 +499,29 @@ function renderSummary({ result, cfg, nav, user, isGuest, fromStorage = false, s
           <div className="summary-actions">
             <motion.button
               className="action-btn primary action-btn-wide"
-              onClick={() => nav('/play')}
+              onClick={() => nav(offline ? '/quiz?offline=true' : '/play')}
               whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.95 }}
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.45, type: 'spring', stiffness: 250, damping: 14 }}
             >
               <span className="action-icon">🔁</span>
-              Play Again
+              {offline ? 'Practise again' : 'Play Again'}
             </motion.button>
 
-            <motion.button
-              className="action-btn"
-              onClick={() => nav('/leaderboard')}
-              whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.95 }}
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.55, type: 'spring', stiffness: 250, damping: 14 }}
-            >
-              <span className="action-icon">🏅</span>
-              Leaderboard
-            </motion.button>
+            {!offline && (
+              <motion.button
+                className="action-btn"
+                onClick={() => nav('/leaderboard')}
+                whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.95 }}
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.55, type: 'spring', stiffness: 250, damping: 14 }}
+              >
+                <span className="action-icon">🏅</span>
+                Leaderboard
+              </motion.button>
+            )}
 
             <AnimatePresence>
               {showShareCard && (

@@ -101,6 +101,19 @@ class QuestionOut(BaseModel):
     image_url: Optional[str] = None
 
 
+class OfflineQuestionOut(QuestionOut):
+    """Question + answer key for device-local offline practice.
+
+    Deliberate exception to REQ-QUIZ-002: offline grading happens on the
+    device, so the key has to travel with the pack. Only `/quiz/offline-pack`
+    returns this shape; `/quiz/pack` continues to omit answers. Offline
+    results never create a QuizSession, XP or leaderboard entry.
+    """
+
+    answer_index: int
+    explanation: Optional[str] = None
+
+
 class QuizPackRequest(BaseModel):
     class_level: Literal["B4", "B5", "B6", "B7", "B8", "B9", "S1", "S2", "S3"]
     subject: str

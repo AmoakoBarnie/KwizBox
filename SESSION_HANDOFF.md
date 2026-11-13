@@ -2,7 +2,7 @@
 
 > Written so that a completely fresh AI agent (or developer) can continue this
 > project **without access to any previous conversation**.
-> Last updated: 2026-11-12 (engagement Groups A–D complete and pushed)
+> Last updated: 2026-11-13 (offline practice shipped and regression-tested)
 
 ## Read first
 
@@ -31,7 +31,63 @@
    Never re-publish the old history (the frozen `~/Desktop/KwizBoz Andriod`
    copy and the pre-purge bundle contain it).
 
-## Latest session (2026-11-12) — engagement upgrades Groups A–D
+## Latest session (2026-11-13) — offline practice
+
+The owner selected **offline practice** as the next upgrade. It is implemented,
+committed and verified by a full regression:
+
+1. **Backend** — `POST /quiz/offline-pack` returns a practice pack **with**
+   `answer_index` + `explanation` (the documented REQ-QUIZ-002 exception), reuses
+   `_pool_ids`, is rate limited to 20/min, and creates no session/seen/progress
+   rows. Daily challenge packs are refused (HTTP 400) so live answers cannot be
+   downloaded ahead of play. `/quiz/pack` still hides both fields.
+2. **Frontend** — offline card on `/choose-quiz` (save up to 12 questions, start,
+   remove, live online/offline state); `/quiz?offline=true` loads the saved pack
+   from IndexedDB (`kwizbox-offline-practice`), grades locally, caches diagrams
+   in `kwizbox-offline-media`, and makes no quiz/auth/duel requests; Summary
+   shows a device-only banner, skips badges/XP, hides the leaderboard action and
+   offers “Practise again”.
+3. **Tests** — backend 8/8 (new offline test), offline unit 4/4, production
+   build OK, offline browser e2e 19/19 (download → `setOffline(true)` → play the
+   whole pack → Summary; zero quiz/auth API calls offline).
+4. **Docs** — ADR `docs/adr/0003-offline-practice-answer-keys.md`; README,
+   APP/API docs, CHANGELOG, PROJECT_STATUS and this handoff updated.
+5. **Web caveat** — the PWA service worker is disabled, so an offline reload
+   needs a connection; native/Capacitor bundles the app shell.
+
+**How to run the dev stack**
+- Backend (needs `ADMIN_PASSWORD`): from `backend/`,
+  `./venv/bin/python -m uvicorn src.main:app --host 0.0.0.0 --port 8001`.
+- Frontend: from `frontend/`, `npm run dev -- --port 5174` (keep
+  `VITE_API_URL=` empty in `.env.development` so cookies stay first-party).
+- Node is only on PATH via `/home/stephen/.hermes/node/bin`.
+- Restart the backend after route changes and Vite after `vite.config.js`
+  changes (the `/ws` proxy must be active).
+
+**Verification evidence** — `docs/05-testing/TEST_RESULTS.md`: offline full
+regression (2026-11-13) is **11/11 suites green** — backend 8/8, offline unit
+4/4, build OK, routes 13/13, offline e2e 19/19, register 15/15, guest 5/5,
+engagement 18/18, mascot/share 18/18, duel 13/13, full API 37/37. The previous
+post-restore full pass (9/9) is above it in the same file.
+
+**Still open**
+- `frontend/.env.production` still targets the retired Fly URL
+  `https://kwizbox-still-bush-3080.fly.dev`; no replacement backend URL is
+  approved yet (set it before M3/M4 builds).
+- M3 (Android APK) waits for owner approval; M1/M2 remain rejected.
+
+**Resolved earlier this session (2026-11-13)**
+- Owner chose to restore `models/` + `scripts/` from before `e013937`; 70 files
+  are back (26 MB + 2.4 MB), the unrelated `.agents/skills` deletions stay.
+- BUG-017: hardcoded admin credentials removed from eight
+  `backend/curriculum/` scripts (env vars now).
+- Docs synced: README, `docs/README.md`, `docs/00-getting-started.md`,
+  API/APP docs and deployment guides now describe cookie auth, the same-origin
+  proxy + `/ws`, `ADMIN_PASSWORD`, the live duel and the restored paths.
+- `models/manifest.json` now checksum-matches all 26 committed assets; the four
+  masters keep `source_md5`/`source_bytes` for their original exports.
+
+## Previous session (2026-11-12) — engagement upgrades Groups A–D
 
 `main` is at `e80a951` (pushed). All six owner-approved engagement upgrades are
 delivered:
@@ -46,36 +102,6 @@ delivered:
 5. **Group D (`e80a951`)** — live duel room `/ws/duel/{code}` (display-only;
    scores still via challenge submit), Challenge lobby + Quiz rival strip,
    BUG-016 challenge-creation fix.
-
-**How to run the dev stack**
-- Backend (needs `ADMIN_PASSWORD`): from `backend/`,
-  `./venv/bin/python -m uvicorn src.main:app --host 0.0.0.0 --port 8001`.
-- Frontend: from `frontend/`, `npm run dev -- --port 5174` (keep
-  `VITE_API_URL=` empty in `.env.development` so cookies stay first-party).
-- Node is only on PATH via `/home/stephen/.hermes/node/bin`.
-- Restart the backend after relay changes and Vite after `vite.config.js`
-  changes (the `/ws` proxy must be active).
-
-**Verification evidence** — `docs/05-testing/TEST_RESULTS.md`: the 2026-11-13
-full regression (post-restore) is **9/9 suites green** — backend 7/7, build OK,
-routes 13/13, register 15/15, guest 5/5, engagement 18/18, mascot/share 18/18,
-duel 13/13, full API 37/37. The 2026-11-12 Group A–D evidence is above it in the
-same file. ADR: `docs/adr/0002-live-duel-relay.md`.
-
-**Still open**
-- `frontend/.env.production` still targets the retired Fly URL
-  `https://kwizbox-still-bush-3080.fly.dev`; no replacement backend URL is
-  approved yet (set it before M3/M4 builds).
-- M3 (Android APK) waits for owner approval; M1/M2 remain rejected.
-
-**Resolved this session (2026-11-13)**
-- Owner chose to restore `models/` + `scripts/` from before `e013937`; 70 files
-  are back (26 MB + 2.4 MB), the unrelated `.agents/skills` deletions stay.
-- Docs synced: README, `docs/README.md`, `docs/00-getting-started.md`,
-  API/APP docs and deployment guides now describe cookie auth, the same-origin
-  proxy + `/ws`, `ADMIN_PASSWORD`, the live duel and the restored paths.
-- `models/manifest.json` now checksum-matches all 26 committed assets; the four
-  masters keep `source_md5`/`source_bytes` for their original exports.
 
 ## What the previous session accomplished
 

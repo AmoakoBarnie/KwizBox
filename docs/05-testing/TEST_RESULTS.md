@@ -277,3 +277,72 @@ change since the last full pass). Test users created during this run:
 `e2e_duel_*`, plus full-e2e `fullci_*` (dev DB only, harmless).
 
 Raw log: `/tmp/opencode/e2e-2026-11-13.log` (local, not committed).
+
+## 2026-11-13 — Offline practice (device-local packs + local grading)
+
+Environment: dev stack with the offline changes — backend `:8001` (SQLite dev
+DB), Vite `:5174` (same-origin proxy incl. `/quiz/offline-pack`). The backend
+test suite uses an isolated temp SQLite DB, so the live dev DB is untouched.
+
+| Check | Command | Result |
+|---|---|---|
+| Backend suite (incl. new offline test) | `./venv/bin/python -m pytest tests/ -q` | **8 passed** (5.94 s first run; 2.06 s in the regression) |
+| Answer key only on the offline endpoint | `test_offline_pack_returns_answer_key_without_side_effects` | `/quiz/pack` has no `answer_index`/`explanation`; `/quiz/offline-pack` returns `answer_index=2` + explanation + 4 options |
+| No live side effects | same test, DB assertions | **0** `QuizSession` and **0** `UserQuestionSeen` rows after an authenticated download |
+| Daily challenge refusal | same test, `daily: true` | **HTTP 400** |
+| Frontend unit tests | `node --test tests/offlinePractice.test.js` | **4/4 pass** — scoring parity (base/speed/streak), result shape, unknown-question rejection, storage fallback |
+| Production build | `npm run build` | **OK** (7.55 s first run; 5.25 s in the regression; only the pre-existing >500 kB chunk warning) |
+| Offline browser e2e | `node tests/e2e-offline.mjs http://127.0.0.1:5174` | **19/19 PASS** |
+| Live endpoint spot check | `curl POST /quiz/offline-pack` | 200; keys include `answer_index` + `explanation`; `/quiz/pack` still leaks neither |
+
+Offline e2e details (headless Chromium, 412×915, one context):
+1. `/choose-quiz` renders the offline card; save downloads exactly one pack.
+2. The selected topic (B4 Mathematics / Algebraic Expressions) had **9**
+   questions, so the test asserts against the actual pack size, not a hardcoded
+   12.
+3. `context.setOffline(true)` switches the card status to offline; the saved
+   pack starts at `/quiz?offline=true` and shows the device-only banner.
+4. All 9 questions are answered and graded locally; Summary shows the offline
+   banner, lists all 9 reviews, shows a score (sample run: 20 pts), hides the
+   leaderboard action, and stores `offline: true` / `session_id: 0` / `total: 9`.
+5. **Zero** `/quiz/*` or `/auth/*` requests were made after going offline; no
+   uncaught page errors.
+
+Notes:
+- Storage: IndexedDB `kwizbox-offline-practice` / store `packs` / key `active`;
+  localStorage fallback `kwizbox_offline_practice_pack`; media cache
+  `kwizbox-offline-media` (removed by “Remove”).
+- Pack size is capped at 12 but depends on the pool; a topic may yield fewer.
+- Web caveat: with the PWA service worker disabled, an offline page reload needs
+  a connection even though an open app keeps working. Native/Capacitor bundles
+  the shell.
+- No product bugs found. The first e2e run failed only because the test assumed
+  12 questions; the assertion now uses the real pack size.
+
+## 2026-11-13 — Full end-to-end regression (offline practice)
+
+Environment: dev stack with the offline changes — backend `:8001` (SQLite dev
+DB), Vite `:5174` with the same-origin proxy incl. `/quiz/offline-pack` and
+`/ws`. Suites ran sequentially with 65 s gaps so the register rate limit
+(10/min) reset. Admin checks used `KWIZBOX_ADMIN_USERNAME=Pblack` +
+`KWIZBOX_ADMIN_PASSWORD` from the local credentials file.
+
+| # | Check | Command | Result |
+|---|---|---|---|
+| 1 | Backend unit/relay/offline tests | `./venv/bin/python -m pytest tests/ -q` | **8 passed** (2.06 s) |
+| 2 | Offline unit tests | `node --test tests/offlinePractice.test.js` | **4/4 pass** (63 ms) |
+| 3 | Production build | `npm run build` | **OK** (5.25 s; only the pre-existing >500 kB chunk warning) |
+| 4 | Route smoke | `node tests/route-smoke.mjs http://localhost:5174` | **13/13 routes**, no fatal errors |
+| 5 | Offline practice e2e | `node tests/e2e-offline.mjs http://localhost:5174` | **19/19 PASS** — download, `setOffline(true)`, 9-question pack played, Summary device-only banner, zero quiz/auth requests offline |
+| 6 | Register → quiz → summary | `node tests/e2e-register.mjs http://localhost:5174` | **15/15 PASS**, 0 page errors (`e2e_mweulfm2`) |
+| 7 | Guest journey | `node tests/e2e-guest.mjs http://localhost:5174` | **5/5 PASS** (cookie session, age/gender persisted, `is_guest`) |
+| 8 | Engagement surfaces | `node tests/e2e-engagement.mjs http://localhost:5174` | **18/18 PASS**, 0 page errors (`e2e_eng_mweupll7`) |
+| 9 | Mascot + PNG share | `node tests/e2e-mascot-share.mjs http://localhost:5174` | **18/18 PASS**, 0 page errors (`e2e_mascot_mweus9k1`) |
+| 10 | Live duel (two contexts) | `node tests/e2e-duel.mjs http://localhost:5174` | **13/13 PASS**; challenge `AAGXHE`; lobby presence, rival strip, `Finished`; 0 page errors |
+| 11 | Full API e2e | `KWIZBOX_TEST_URL=http://127.0.0.1:8001 node tests/full-e2e.mjs` | **37 passed, 0 failed** — “FULL APP END-TO-END PASSED” |
+
+**Outcome:** 11/11 suites green; no new bugs. Test users created this run:
+`e2e_mweulfm2`, `e2e_eng_mweupll7`, `e2e_mascot_mweus9k1`, duel pair
+`e2e_duel_*`, plus full-e2e `fullci_*` (dev DB only, harmless).
+
+Raw log: `/tmp/opencode/e2e-offline-2026-11-13.log` (local, not committed).

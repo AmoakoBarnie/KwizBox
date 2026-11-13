@@ -92,6 +92,7 @@ cd ../backend && python scripts/seed.py
 - POST `/auth/guest`     `{nickname?,class_level?,school_code?}` → guest cookie (no persistence)
 - GET  `/auth/me`        (session cookie) → profile
 - POST `/quiz/pack`      `{class_level,subject,Mixed?,difficulty,count,topic?}` → questions (no answer leaked). Each item includes `question_type` (`mcq` | `true_false` | `image_mcq`) and `image_url` (or null). `true_false` options are length 2.
+- POST `/quiz/offline-pack` → same body → questions **with** `answer_index` + `explanation` for device-local practice (no session/XP/seen writes; daily packs refused). See `docs/adr/0003-offline-practice-answer-keys.md`.
 - POST `/quiz/submit`    `{class_level,subject,difficulty,answers:[{question_id,selected_index}],duration_seconds?}` → graded result + feedback (2-option T/F and 4-option MCQ)
 - GET  `/media/questions/...`  placeholder diagrams for `image_mcq` (e.g. `/media/questions/lever.svg`)
 - GET  `/quiz/leaderboard?scope=global|class&class_level=&school_code=&limit=` → board
@@ -117,4 +118,5 @@ JSON seed: `question_type` / `image_url` are optional (default `mcq`). Tests: `c
   dev proxy keeps the cookie first-party.
 - Engagement features now exist: XP/levels, weekly leagues, streak calendar,
   badges, school codes and the Schools leaderboard, plus live duel rooms
-  (display-only WebSocket; see `docs/adr/0002-live-duel-relay.md`).
+  (display-only WebSocket; see `docs/adr/0002-live-duel-relay.md`) and
+  device-local offline practice (`docs/adr/0003-offline-practice-answer-keys.md`).

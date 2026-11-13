@@ -22,6 +22,7 @@ export default defineConfig({
       // served by Vite dev as SPA index.html; do NOT blanket-proxy /quiz/*.
       '/auth': { target: 'http://127.0.0.1:8001', changeOrigin: true },
       '/quiz/pack': { target: 'http://127.0.0.1:8001', changeOrigin: true },
+      '/quiz/offline-pack': { target: 'http://127.0.0.1:8001', changeOrigin: true },
       '/quiz/check': { target: 'http://127.0.0.1:8001', changeOrigin: true },
       '/quiz/submit': { target: 'http://127.0.0.1:8001', changeOrigin: true },
       '/quiz/leaderboard': { target: 'http://127.0.0.1:8001', changeOrigin: true },

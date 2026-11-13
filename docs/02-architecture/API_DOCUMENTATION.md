@@ -1,8 +1,8 @@
 # API_DOCUMENTATION.md
 
 > Part of `docs/02-architecture/`. Endpoint inventory — verified by scanning
-> route decorators (52 routes, 2026-11-10). Interactive docs: run the backend
-> and open `/docs` (FastAPI auto-generates OpenAPI).
+> route decorators (55 decorators incl. 1 WebSocket, 2026-11-13). Interactive
+> docs: run the backend and open `/docs` (FastAPI auto-generates OpenAPI).
 
 ## Base URL
 
@@ -18,7 +18,11 @@
   routes need a separate admin token from `POST /admin/token`.
 - Errors: standard HTTP status codes + FastAPI error bodies.
 - **Security invariant:** quiz pack responses never include `answer_index` or
-  `explanation` (REQ-QUIZ-002).
+  `explanation` (REQ-QUIZ-002). The single deliberate exception is
+  `POST /quiz/offline-pack`, which returns the answer key so a saved pack can
+  be graded on-device. Offline results are practice-only: no `QuizSession`,
+  XP, seen-history or leaderboard writes. Daily challenge packs are refused by
+  that endpoint. See `docs/adr/0003-offline-practice-answer-keys.md`.
 
 ## App-level routes (`main.py`)
 
@@ -48,9 +52,10 @@
 
 | Method & path | Purpose | Auth |
 |---|---|---|
-| `POST /quiz/pack` | Question pack by filters (no answers leaked) | Bearer |
-| `POST /quiz/check` | Grade a single answer + feedback | Bearer |
-| `POST /quiz/submit` | Grade + persist a session | Bearer |
+| `POST /quiz/pack` | Question pack by filters (no answers leaked) | Optional (cookie/Bearer) |
+| `POST /quiz/offline-pack` | Practice pack **with** answer key for device-local grading; no session/seen/progress writes; refuses daily packs | Optional (cookie/Bearer) |
+| `POST /quiz/check` | Grade a single answer + feedback | Optional (cookie/Bearer) |
+| `POST /quiz/submit` | Grade + persist a session | Optional (cookie/Bearer) |
 | `GET /quiz/leaderboard?scope=&class_level=&school_code=&limit=` | Leaderboards (global/class/school/weekly/monthly) | — |
 | `GET /quiz/progress` | Per-subject/topic progress + mastery | Bearer |
 | `POST /quiz/challenge/create` | Create head-to-head challenge → 6-letter code | Bearer |

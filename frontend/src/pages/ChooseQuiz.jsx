@@ -5,6 +5,8 @@ import { useAuth } from '../auth.jsx'
 import { api } from '../api.js'
 import { SUBJECTS } from '../subjects.js'
 import Mascot from '../components/Mascot.jsx'
+import { cacheOfflineMedia, clearOfflinePack, getOfflinePack, saveOfflinePack } from '../offlinePractice.js'
+import '../offlinePractice.css'
 
 const CLASSES = ['B4', 'B5', 'B6', 'B7', 'B8', 'B9', 'S1', 'S2', 'S3']
 
@@ -28,6 +30,10 @@ export default function ChooseQuiz() {
   const [loadingTopics, setLoadingTopics] = useState(false)
   const [loadingSubTopics, setLoadingSubTopics] = useState(false)
   const [open, setOpen] = useState(null) // 'class' | 'subject' | 'topic' | 'subtopic'
+  const [offlinePack, setOfflinePack] = useState(null)
+  const [offlineBusy, setOfflineBusy] = useState(false)
+  const [offlineMessage, setOfflineMessage] = useState('')
+  const [online, setOnline] = useState(() => (typeof navigator === 'undefined' ? true : navigator.onLine))
 
   // Load topics when class+subject change
   useEffect(() => {
@@ -76,6 +82,23 @@ export default function ChooseQuiz() {
     return () => { cancelled = true }
   }, [topic, subject, cls])
 
+  // Load any pack saved on this device and track connection changes.
+  useEffect(() => {
+    let cancelled = false
+    getOfflinePack()
+      .then((saved) => { if (!cancelled) setOfflinePack(saved) })
+      .catch(() => {})
+    const goOnline = () => setOnline(true)
+    const goOffline = () => setOnline(false)
+    window.addEventListener('online', goOnline)
+    window.addEventListener('offline', goOffline)
+    return () => {
+      cancelled = true
+      window.removeEventListener('online', goOnline)
+      window.removeEventListener('offline', goOffline)
+    }
+  }, [])
+
   function toggle(s) {
     if (s === 'topic' && (!cls || !subject)) return
     setOpen(open === s ? null : s)
@@ -91,6 +114,66 @@ export default function ChooseQuiz() {
   }
 
   const ready = cls && subject
+
+  function offlineConfig() {
+    const config = { class_level: cls, subject }
+    if (topic) config.topic = topic
+    if (subTopic) config.sub_topic = subTopic
+    return config
+  }
+
+  async function downloadOfflinePack() {
+    if (!ready) { setOfflineMessage('Pick a class and subject first.'); return }
+    if (!online) { setOfflineMessage('Connect to the internet once to save a pack.'); return }
+    setOfflineBusy(true)
+    setOfflineMessage('Saving questions…')
+    try {
+      const config = offlineConfig()
+      const questions = await api.offlinePack({ ...config, count: 12 })
+      if (!Array.isArray(questions) || questions.length === 0) {
+        throw new Error('No questions are available for this selection.')
+      }
+      const saved = { config, questions, created_at: new Date().toISOString() }
+      await saveOfflinePack(saved)
+      try { await cacheOfflineMedia(questions) } catch {}
+      setOfflinePack(saved)
+      setOfflineMessage(`${questions.length} questions saved on this device. You can practise without data.`)
+    } catch (e) {
+      setOfflineMessage(`Could not save an offline pack: ${e.message}`)
+    } finally {
+      setOfflineBusy(false)
+    }
+  }
+
+  function startOfflinePractice() {
+    if (!offlinePack?.questions?.length) {
+      setOfflineMessage('Save a pack while online first.')
+      return
+    }
+    nav('/quiz?offline=true')
+  }
+
+  async function removeOfflinePack() {
+    setOfflineBusy(true)
+    try {
+      await clearOfflinePack()
+      setOfflinePack(null)
+      setOfflineMessage('Saved pack removed from this device.')
+    } finally {
+      setOfflineBusy(false)
+    }
+  }
+
+  function formatSavedAt(value) {
+    if (!value) return ''
+    try {
+      return new Date(value).toLocaleString('en-GB', {
+        day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit',
+      })
+    } catch {
+      return ''
+    }
+  }
 
   /* ===== Inline expandable panel for each section ===== */
   function ClassPanel() {
@@ -318,6 +401,54 @@ export default function ChooseQuiz() {
         )}
       </div>
 
+      {/* Offline practice — save a pack while connected, then play with no data */}
+      <motion.div
+        className="offline-practice-card"
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.08 }}
+      >
+        <div className="offline-practice-copy">
+          <div className="offline-practice-icon" aria-hidden="true">📥</div>
+          <div>
+            <h3>Offline practice</h3>
+            <p>Save up to 12 questions for this class, subject and topic. Practise with no data — results stay on this device.</p>
+          </div>
+        </div>
+
+        {offlinePack?.questions?.length ? (
+          <p className="offline-pack-summary">
+            💾 {offlinePack.questions.length} questions · {offlinePack.config?.class_level || ''} {offlinePack.config?.subject || ''}
+            {offlinePack.config?.topic ? ` · ${offlinePack.config.topic}` : ''}
+            {offlinePack.created_at ? ` · saved ${formatSavedAt(offlinePack.created_at)}` : ''}
+          </p>
+        ) : null}
+
+        <div className="offline-practice-actions">
+          {offlinePack?.questions?.length ? (
+            <button className="btn primary" onClick={startOfflinePractice} disabled={offlineBusy}>
+              ▶ Practise offline
+            </button>
+          ) : null}
+          <button className="btn" onClick={downloadOfflinePack} disabled={!ready || !online || offlineBusy}>
+            {offlineBusy ? 'Saving…' : offlinePack?.questions?.length ? 'Save current selection' : 'Save for offline'}
+          </button>
+          {offlinePack?.questions?.length ? (
+            <button className="btn offline-remove-btn" onClick={removeOfflinePack} disabled={offlineBusy}>
+              Remove
+            </button>
+          ) : null}
+        </div>
+
+        <p className={`offline-practice-status${!online ? ' offline' : ''}`} role="status">
+          {!online
+            ? 'You are offline — saved packs work while the app stays open. Reconnect to download a new one.'
+            : offlineMessage || (offlinePack?.questions?.length
+                ? 'Ready for offline practice.'
+                : 'Download a pack before you lose signal.')}
+        </p>
+      </motion.div>
+
       {/* Challenge mode */}
       <motion.div variants={container} initial="hidden" animate="show" style={{ transitionDelay: '0.12s' }}>
         <motion.h3 variants={item} style={{ margin: '4px 0 8px', fontSize: 15, color: 'var(--muted)', fontWeight: 700 }}>Challenge mode</motion.h3>
@@ -332,7 +463,7 @@ export default function ChooseQuiz() {
       <motion.button
         className="btn primary big start-btn"
         onClick={start}
-        disabled={!ready}
+        disabled={!ready || !online}
         initial={{ opacity: 0, y: 14 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2 }}
@@ -343,7 +474,11 @@ export default function ChooseQuiz() {
       </motion.button>
 
       <p className="hint" style={{ textAlign: 'center', marginTop: 4 }}>
-        {!ready ? 'Pick a class and subject to begin' : `${cls} · ${subject}${topic ? ` · ${topic}` : ''} — 12 questions`}
+        {!online
+          ? 'You are offline — use a saved pack above.'
+          : !ready
+            ? 'Pick a class and subject to begin'
+            : `${cls} · ${subject}${topic ? ` · ${topic}` : ''} — 12 questions`}
       </p>
     </div>
   )

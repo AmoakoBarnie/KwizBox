@@ -187,6 +187,8 @@ Guest mode: any nickname + class level → temporary session (device-only storag
 - Select class (B4–B9) → subject (15) → topic → sub-topic
 - Inline expandable sections (no popup overlay)
 - Challenge mode toggle (Free play / Daily challenge)
+- **Offline practice card:** save up to 12 questions for the selected
+  class/subject/topic, start the saved pack, or remove it from the device
 - Animated mascot + Kente title
 - Start button with green glow
 
@@ -213,12 +215,31 @@ Guest mode: any nickname + class level → temporary session (device-only storag
 - Streak system with flame animation (3+ streak = combo x2)
 - Mascot reacts: thinking → celebrate (correct) / encourage (wrong)
 
+### Offline practice
+- Save up to 12 questions **with their answer key** to IndexedDB
+  (`kwizbox-offline-practice` / `packs` / `active`); localStorage fallback
+  `kwizbox_offline_practice_pack`
+- Question diagrams cached in Cache Storage (`kwizbox-offline-media`) and read
+  explicitly while offline
+- `?offline=true` loads the saved pack and grades locally — no `/quiz/check`,
+  `/quiz/submit`, duel or challenge requests
+- Practice-only: no XP, badges, streak, seen-history or leaderboard writes;
+  Summary shows a “saved on this device only” banner and hides the leaderboard
+  action
+- `POST /quiz/offline-pack` refuses daily challenge packs so a live
+  competition’s answers cannot be downloaded ahead of time
+- Web caveat: reloading the page while offline needs a connection because the
+  PWA service worker is currently disabled; Android/Capacitor bundles the app
+  shell locally
+- Design trade-off: `docs/adr/0003-offline-practice-answer-keys.md`
+
 ### Results Summary (`/summary`)
 - Score, accuracy, letter grade, stat rings
 - Action buttons: Play Again / Leaderboard / Share Result
 - **Share Result Card modal:** full card with score, grade, stats, accuracy bar, date
 - Copy to clipboard, share via Web Share API, close button
 - Badge evaluation on quiz completion
+- Offline results show a device-only banner and skip badge/leaderboard actions
 
 ### Badges (`/profile`)
 - **24 badges** defined and fully wired
@@ -301,30 +322,31 @@ See `models/README.md` for the full rig contract and how to regenerate.
 - Confetti celebration on quiz completion
 - Smooth page transitions (Framer Motion, spring physics)
 - Mobile-first responsive (works on phones)
-- PWA: installable as phone app, service worker caches app shell for offline use
+- PWA assets exist, but the service worker is currently disabled; offline
+  practice works while the app stays open (native builds bundle the app shell)
 - Accessibility: focus-visible rings, skip-nav link, reduced-motion support
 
 ## API quick reference
 Base URL: `http://localhost:8001`
 
 **Auth:**
-- `POST /auth/register` → `{nickname,password,class_level?,school_code?,security_question,security_answer}` → token
-- `POST /auth/login` → `{nickname,password}` → token
-- `POST /auth/guest` → `{nickname?,class_level?,school_code?}` → token (is_guest=true)
-- `GET /auth/me` (Bearer) → user profile
+- `POST /auth/register` → `{nickname,password,class_level?,school_code?,security_question,security_answer}` → sets HttpOnly session cookie
+- `POST /auth/login` → `{nickname,password}` → sets HttpOnly session cookie
+- `POST /auth/guest` → `{nickname?,class_level?,school_code?}` → guest session cookie (is_guest=true)
+- `GET /auth/me` (session cookie) → user profile
 
-> **Dead-end (documented):** `POST /auth/reset/question` and
-> `POST /auth/reset/verify` are advertised in this doc but no endpoint is
+> **Dead-end (documented):** password reset via security question is not
 > implemented on the server. Registration still collects a security question and
 > answer, but it is never used to reset or recover a password. Treat password
 > reset as unavailable in this release.
 
 **Quiz:**
-- `POST /quiz/pack` → `{class_level, subject, topic?, sub_topic?, difficulty?, count?, daily?, exclude_ids?}` (Bearer) → questions
-- `POST /quiz/check` → `{question_id, selected_index}` (Bearer) → `{is_correct, correct_index, explanation}`
+- `POST /quiz/pack` → `{class_level, subject, topic?, sub_topic?, difficulty?, count?, daily?, exclude_ids?}` (optional cookie/Bearer) → questions **without** answers
+- `POST /quiz/offline-pack` → same body (optional cookie/Bearer) → questions **with** `answer_index` + `explanation` for device-local practice; no session/seen/progress writes; daily packs refused
+- `POST /quiz/check` → `{question_id, selected_index}` (optional cookie/Bearer) → `{is_correct, correct_index, explanation}`
 - `POST /quiz/submit` → graded result + feedback
 - `GET /quiz/leaderboard?scope=&class_level=&school_code=&limit=` → ranked entries
-- `GET /quiz/progress` (Bearer) → detailed progress
+- `GET /quiz/progress` (cookie/Bearer) → detailed progress
 
 **Challenge:**
 - `POST /quiz/challenge/create` → `{code, class_level, subject, question_count}` (Bearer)

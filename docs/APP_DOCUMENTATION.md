@@ -1,8 +1,8 @@
 # KwizBox — App Documentation
 
 > Complete feature reference for the Ghana STEM Trivia application.
-> Working copy: `/home/stephen/Desktop/MY APP/`
-> Both servers running: Backend `:8001`, Frontend `:5173`
+> Working copy: `/media/stephen/FILES/My Projects/KwizBox/`
+> Dev servers: Backend `:8001`, Frontend `:5174`
 
 ---
 
@@ -138,9 +138,10 @@ Guest mode: any nickname + class level → temporary session.
 
 ### 1. Authentication
 - Register: nickname, password, class level (B4–B9), school code, security question
-- Login: nickname + password → JWT (30-day expiry)
+- Login: nickname + password → JWT (30-day expiry) in an HttpOnly `Secure`
+  `SameSite=Strict` cookie named `kwizbox_access`
 - Guest mode: temporary session, no persistence
-- Token stored in localStorage, auto-validated on app load
+- Session cookie auto-validated on app load; JavaScript never reads the token
 
 > **Dead-end (documented):** password reset via security question is intentionally
 > **not shipped** in this release. No `/auth/reset/question` or `/auth/reset/verify`
@@ -152,6 +153,8 @@ Guest mode: any nickname + class level → temporary session.
 - Subject picker (15 subjects) via inline expand
 - Topic & sub-topic from live DB curriculum via popup
 - Challenge mode toggle (Free play / Daily challenge)
+- **Offline practice card:** save up to 12 questions (with answer key) for the
+  selected class/subject/topic, start the saved pack, or remove it from the device
 - Animated mascot + Kente title
 - Start button with green glow
 
@@ -173,6 +176,9 @@ Guest mode: any nickname + class level → temporary session.
 - Streak system with flame animation (3+ streak = combo ×2)
 - Animated mascot reacts (thinking → celebrate / encourage)
 - Confetti on quiz completion
+- **Offline mode (`?offline=true`):** plays the saved pack, grades locally,
+  shows an “answers are checked on this device” banner, and makes no quiz/auth
+  API calls. Cached diagrams come from Cache Storage (`kwizbox-offline-media`).
 
 ### 5. Results Summary (`/summary`)
 - Score display with trophy animation + stat rings
@@ -181,6 +187,8 @@ Guest mode: any nickname + class level → temporary session.
 - Action buttons: Play Again / Leaderboard / Share Result
 - **Share Result Card modal:** Full card with score, grade, stats, accuracy bar, date, share text (Copy/Share/Close)
 - **Badge evaluation:** 24 badges evaluated on quiz completion, shown in Profile
+- **Offline results:** “saved on this device only” banner, no badge/XP writes,
+  leaderboard action hidden, “Practise again” replays the saved pack
 
 ### 6. Badges (`/profile`)
 - **24 badges** defined in `badges.js`
@@ -246,7 +254,8 @@ Guest mode: any nickname + class level → temporary session.
 - Confetti celebration on quiz completion
 - Smooth page transitions (Framer Motion, spring physics)
 - Mobile-first responsive design
-- PWA: installable as phone app, service worker caches app shell
+- PWA assets exist, but the service worker is currently disabled; offline
+  practice works while the app stays open (native builds bundle the app shell)
 - Accessibility: focus-visible rings, skip-nav link, reduced-motion support
 
 ### 13. Night Sky Background (Dark Theme)

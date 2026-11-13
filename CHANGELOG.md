@@ -10,6 +10,43 @@ does not use semantic versioning yet (pre-1.0, unreleased).
 
 ## [Unreleased]
 
+### 2026-11-13 — Offline practice (device-local packs + local grading)
+
+**Added**
+- `POST /quiz/offline-pack` (`backend/src/routes/quiz.py`): returns a practice
+  pack **including** `answer_index` and `explanation` so the device can grade
+  with no network. Same filters as `/quiz/pack` (shared `_pool_ids`), optional
+  cookie/Bearer auth, 20/min rate limit. It creates no `QuizSession`, writes no
+  progress and marks no questions seen. `daily: true` is refused with HTTP 400
+  so live daily-challenge answers cannot be downloaded ahead of time.
+- `OfflineQuestionOut` schema (`backend/src/schemas.py`) — the documented
+  exception to REQ-QUIZ-002; `/quiz/pack` still omits both fields.
+- Offline practice card on `/choose-quiz`: save up to 12 questions for the
+  selected class/subject/topic, see the saved pack summary, start it, or remove
+  it. The online/offline state is tracked live and the normal Start button is
+  disabled offline.
+- `/quiz?offline=true`: loads the saved pack from IndexedDB
+  (`kwizbox-offline-practice` / `packs` / `active`, with a
+  `kwizbox_offline_practice_pack` localStorage fallback), grades locally with
+  the server's base/speed/streak rules, and makes no quiz/auth/duel/challenge
+  requests. Question diagrams are cached in Cache Storage
+  (`kwizbox-offline-media`) and read back as object URLs.
+- Offline Summary: device-only banner, no badge/XP/leaderboard writes,
+  leaderboard action hidden, “Practise again” route.
+- `docs/adr/0003-offline-practice-answer-keys.md` records the answer-key
+  exception, no-side-effect rules and the web reload caveat.
+
+**Verified**
+- Backend `tests/test_question_types.py` 8/8 (new offline test asserts the key
+  is returned, `/quiz/pack` still hides it, no session/seen rows, daily → 400).
+- `frontend/tests/offlinePractice.test.js` 4/4; production build OK.
+- `frontend/tests/e2e-offline.mjs` 19/19: download → `context.setOffline(true)`
+  → play the whole pack → Summary, with zero quiz/auth API calls offline.
+- Full regression: **11/11 suites green** (backend 8/8, offline unit 4/4, build
+  OK, routes 13/13, offline e2e 19/19, register 15/15, guest 5/5, engagement
+  18/18, mascot/share 18/18, duel 13/13, full API 37/37). Evidence in
+  `docs/05-testing/TEST_RESULTS.md`.
+
 ### 2026-11-13 — Restore `models/` + `scripts/`, documentation sync
 
 **Restored** (owner decision; keeps the unrelated `.agents/skills` removals)

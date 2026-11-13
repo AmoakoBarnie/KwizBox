@@ -57,6 +57,9 @@ export const api = {
     "What town or village were you born in?",
   ],
   pack: (data, token) => request('POST', '/quiz/pack', data, token),
+  // Practice-only pack that includes answer keys so the device can grade
+  // offline. Never used for XP/leaderboards; see ADR 0003.
+  offlinePack: (data, token) => request('POST', '/quiz/offline-pack', data, token),
   check: (data, token) => request('POST', '/quiz/check', data, token),
   submit: (data, token) => request('POST', '/quiz/submit', data, token),
   leaderboard: (params) => request('GET', `/quiz/leaderboard?${new URLSearchParams(params)}`),

@@ -7,6 +7,7 @@ import os
 import sys
 import tempfile
 import unittest
+import uuid
 from pathlib import Path
 
 BACKEND = Path(__file__).resolve().parents[1]
@@ -22,8 +23,9 @@ os.environ.setdefault("ADMIN_PASSWORD", "test-only")
 
 from fastapi.testclient import TestClient  # noqa: E402
 from src.main import app  # noqa: E402
+from src.auth import create_token  # noqa: E402
 from src.database import SessionLocal  # noqa: E402
-from src.models import Question  # noqa: E402
+from src.models import Question, QuizSession, User, UserQuestionSeen  # noqa: E402
 
 
 def _insert(**kwargs):
@@ -127,6 +129,68 @@ class QuestionTypeTests(unittest.TestCase):
         self.assertEqual(item["image_url"], "/media/questions/lever.svg")
         self.assertEqual(len(item["options"]), 4)
         self.assertNotIn("answer_index", item)
+
+    def test_offline_pack_returns_answer_key_without_side_effects(self):
+        qid = _insert(
+            subject="Mathematics", topic="OfflinePackProbe",
+            question="What is 3 + 4?",
+            option_a="5", option_b="6", option_c="7", option_d="8",
+            answer_index=2, explanation="Add 3 and 4 to get 7.",
+        )
+        selection = {
+            "class_level": "B9", "subject": "Mathematics",
+            "difficulty": "Easy", "topic": "OfflinePackProbe", "count": 5,
+        }
+
+        # The normal pack must keep hiding the key.
+        standard = self.client.post("/quiz/pack", json=selection)
+        self.assertEqual(standard.status_code, 200)
+        standard_item = next(item for item in standard.json() if item["id"] == qid)
+        self.assertNotIn("answer_index", standard_item)
+        self.assertNotIn("explanation", standard_item)
+
+        # Authenticated download: offline packs carry the key but must not open
+        # a QuizSession or mark questions seen.
+        db = SessionLocal()
+        try:
+            user = User(
+                nickname=f"offline_probe_{uuid.uuid4().hex[:10]}",
+                class_level="B9", password_hash="test-only", is_guest=False,
+            )
+            db.add(user)
+            db.commit()
+            db.refresh(user)
+            user_id = user.id
+            token = create_token(user_id)
+        finally:
+            db.close()
+
+        headers = {"Authorization": f"Bearer {token}"}
+        offline = self.client.post("/quiz/offline-pack", json=selection, headers=headers)
+        self.assertEqual(offline.status_code, 200)
+        offline_item = next(item for item in offline.json() if item["id"] == qid)
+        self.assertEqual(offline_item["answer_index"], 2)
+        self.assertEqual(offline_item["explanation"], "Add 3 and 4 to get 7.")
+        self.assertEqual(offline_item["options"], ["5", "6", "7", "8"])
+
+        db = SessionLocal()
+        try:
+            self.assertEqual(
+                db.query(QuizSession).filter(QuizSession.user_id == user_id).count(), 0,
+                "offline download must not create a live QuizSession",
+            )
+            self.assertEqual(
+                db.query(UserQuestionSeen).filter(UserQuestionSeen.user_id == user_id).count(), 0,
+                "offline download must not mark questions seen",
+            )
+        finally:
+            db.close()
+
+        # Daily challenge packs are a live competition: refuse to leak their keys.
+        daily = self.client.post(
+            "/quiz/offline-pack", json={**selection, "daily": True}, headers=headers,
+        )
+        self.assertEqual(daily.status_code, 400)
 
     def test_submit_grades_true_false(self):
         qid = _insert(
