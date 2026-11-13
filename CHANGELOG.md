@@ -10,6 +10,25 @@ does not use semantic versioning yet (pre-1.0, unreleased).
 
 ## [Unreleased]
 
+### 2026-11-13 — Restore `models/` + `scripts/`, documentation sync
+
+**Restored** (owner decision; keeps the unrelated `.agents/skills` removals)
+- `models/` — 3D mascot source library: 4 masters, 10 clip GLBs, 12 preview
+  renders, `manifest.json`, README, and the Blender helper scripts (26 MB).
+- `scripts/` — question parsers, generators, importers and vetting data (2.4 MB).
+- `models/manifest.json` now verifies 26/26 assets against the committed files;
+  the four masters keep `source_md5`/`source_bytes` for their original exports,
+  and all four match `frontend/public/assets/mascots-v2/animated/` byte-for-byte.
+
+**Docs synced to the current architecture**
+- README, `docs/README.md`, `docs/00-getting-started.md`: cookie auth, the
+  same-origin Vite proxy + `/ws`, `ADMIN_PASSWORD`, `npm run dev -- --port 5174`,
+  live duel files/endpoints, restored `models/`/`scripts/` paths.
+- API/APP docs: cookie-first auth conventions; production base URL marked
+  undecided (M2 rejected) instead of the retired Fly URL.
+- Deployment guides: required `ADMIN_PASSWORD`, cookie-safe dev proxy, and a
+  warning that `.env.production` still needs a real backend URL before M3/M4.
+
 ### 2026-11-11 → 2026-11-12 — Engagement upgrades (Groups A & B) + full end-to-end pass
 
 **Added**

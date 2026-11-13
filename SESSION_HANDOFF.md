@@ -61,12 +61,19 @@ backend pytest 7/7, duel e2e 13/13, engagement 18/18, mascot/share 18/18,
 routes 13/13, register 15/15, build OK. ADR: `docs/adr/0002-live-duel-relay.md`.
 
 **Still open**
-- Owner has not answered the question about the 298 tracked files deleted from
-  the working tree (affects doc-sync only).
-- Final docs pass: README still references deleted `models/`/`scripts/` paths
-  and the dead Fly URL `https://kwizbox-still-bush-3080.fly.dev`;
-  `frontend/.env.production` still targets that dead URL.
+- `frontend/.env.production` still targets the retired Fly URL
+  `https://kwizbox-still-bush-3080.fly.dev`; no replacement backend URL is
+  approved yet (set it before M3/M4 builds).
 - M3 (Android APK) waits for owner approval; M1/M2 remain rejected.
+
+**Resolved this session (2026-11-13)**
+- Owner chose to restore `models/` + `scripts/` from before `e013937`; 70 files
+  are back (26 MB + 2.4 MB), the unrelated `.agents/skills` deletions stay.
+- Docs synced: README, `docs/README.md`, `docs/00-getting-started.md`,
+  API/APP docs and deployment guides now describe cookie auth, the same-origin
+  proxy + `/ws`, `ADMIN_PASSWORD`, the live duel and the restored paths.
+- `models/manifest.json` now checksum-matches all 26 committed assets; the four
+  masters keep `source_md5`/`source_bytes` for their original exports.
 
 ## What the previous session accomplished
 

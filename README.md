@@ -54,6 +54,7 @@ MY APP/
 │   │   ├── mastery.py       # topic mastery score calculation
 │   │   ├── periods.py       # weekly/monthly period bucketing
 │   │   ├── progress.py      # per-subject + per-topic progress builder
+│   │   ├── xp.py            # levels 1–10, weekly leagues, streak calendar
 │   │   ├── seed_admin.py    # seeds super admin account on startup
 │   │   └── routes/
 │   │       ├── auth.py      # register, login, guest, me, password reset
@@ -61,23 +62,29 @@ MY APP/
 │   │       ├── admin.py     # dashboard, users, questions CRUD, school codes,
 │   │       │                #   settings, audit, monitor, exports
 │   │       ├── curriculum.py# GET /curriculum/manifest + /topics
-│   │       └── challenge.py # POST /create, GET /{code}/questions,
+│   │       ├── challenge.py # POST /create, GET /{code}/questions,
 │   │       │                  #   POST /{code}/submit, GET /{code}/compare
+│   │       └── duel.py      # WS /ws/duel/{code} — display-only relay
 │   │   └── static/questions/ # 10 SVGs for image_mcq (lever, food chain, etc.)
-│   ├── trivia.db            # SQLite — 7,890 questions, 99 users, 565+ sessions
-│   ├── trivia.db.bak_*      # backup snapshots
+│   ├── trivia.db            # SQLite — questions, users, sessions (gitignored)
+│   ├── trivia.db.bak_*      # backup snapshots (gitignored)
+│   ├── tests/               # pytest: question types + duel relay
 │   └── requirements.txt     # Python deps (FastAPI 0.115, SQLAlchemy 2.0, etc.)
 ├── frontend/
 │   ├── src/
 │   │   ├── main.jsx         # React entry, ErrorBoundary, Google Fonts
 │   │   ├── App.jsx          # React Router + AnimatePresence page transitions
-│   │   ├── api.js           # fetch client — calls backend directly via VITE_API_URL
-│   │   ├── auth.jsx         # AuthContext (JWT in localStorage, auto-validate on mount)
+│   │   ├── api.js           # fetch client (credentials: 'include', same-origin proxy in dev)
+│   │   ├── auth.jsx         # AuthContext (HttpOnly cookie session, auto-validate on mount)
 │   │   ├── styles.css       # Complete design system — dark/light themes, glass cards,
 │   │   │                      #   Ghana flag accents, night sky background, ~752 lines
 │   │   ├── subjects.js      # SUBJECTS list (15 subjects) + BADGE_SUBJECT_MAP
 │   │   ├── sound.js         # SFX hooks: correct, wrong, streak, combo, click
 │   │   ├── badges.js        # 24 badge definitions + evaluateBadges + loadBadges/saveBadges
+│   │   ├── duel.js          # useDuelRoom — display-only live duel WebSocket hook
+│   │   ├── mascotPrefs.js   # 3D/2D mascot preference (localStorage, same-tab bus)
+│   │   ├── mascotClips.js   # resolves exported GLB clip names (idle_*_Mascot_Rig)
+│   │   ├── shareCard.js     # 1080×1350 PNG result card (canvas)
 │   │   └── components/
 │   │       ├── HeroStage.jsx# Animated hero letter interaction (landing page)
 │   │       ├── Mascot.jsx   # KwizBox mascot — gender + class level variants,
@@ -107,8 +114,9 @@ MY APP/
 │   │       └── Admin.jsx    # Admin dashboard (questions, users, settings, audit)
 │   ├── public/              # favicon.svg, icon-192.png, icon-512.png (PWA icons)
 │   ├── dist/                # Production build output (sw.js, workbox, built JS/CSS)
-│   ├── vite.config.js       # Vite: PWA config, port 5173, /api + /media proxy
-│   ├── .env                 # VITE_API_URL=http://localhost:8001 (bypasses proxy)
+│   ├── tests/               # Playwright e2e + unit checks
+│   ├── vite.config.js       # Vite: port 5173, per-route proxy + WebSocket /ws
+│   ├── .env.development     # VITE_API_URL= (empty → same-origin proxy, cookie-safe)
 │   ├── index.html           # Entry HTML
 │   └── package.json         # React 18, React Router 6, Framer Motion 13, React Confetti 6
 ├── scripts/                 # Question parsers, generators, importers, vetters
@@ -129,19 +137,20 @@ MY APP/
 ### Backend (port 8001)
 ```bash
 cd "/media/stephen/FILES/My Projects/KwizBox/backend"
-./venv/bin/python -m uvicorn src.main:app --host 0.0.0.0 --port 8001
+ADMIN_PASSWORD='<choose-one>' ./venv/bin/python -m uvicorn src.main:app --host 0.0.0.0 --port 8001
 ```
-**Health check:** `curl http://localhost:8001/health` → `{"status":"ok","service":"kwizbox"}`
+`ADMIN_PASSWORD` is required — startup seeds the super-admin and refuses to run without it.
+**Health check:** `curl http://localhost:8001/health` → `{"status":"ok","service":"KwizBox"}`
 
-### Frontend (port 5173; auto-bumps to 5174 when 5173 is busy)
+### Frontend (port 5174)
 ```bash
 cd "/media/stephen/FILES/My Projects/KwizBox/frontend"
-npm run dev
+npm run dev -- --port 5174 --strictPort
 ```
-Open the printed URL (usually `http://localhost:5173`, sometimes `:5174`). The
-`.env` file tells the frontend which backend to call (`VITE_API_URL`); CORS is
-driven by the backend's `ALLOWED_ORIGINS` env. First-time setup:
-`docs/06-deployment/ENVIRONMENT_SETUP.md`.
+Open `http://localhost:5174` (use `localhost`, not `127.0.0.1`). `.env.development`
+keeps `VITE_API_URL=` empty so the app calls its own origin and Vite proxies the
+API routes plus `/ws` to the backend — that keeps the HttpOnly session cookie
+first-party. First-time setup: `docs/06-deployment/ENVIRONMENT_SETUP.md`.
 
 Guest mode: any nickname + class level → temporary session (device-only storage).
 
@@ -388,9 +397,10 @@ Physical Education, Religious and Moral Education, Career Technology, Arabic, Mi
 ## Notes / pitfalls
 - `bcrypt` is pinned to `4.0.1` — newer bcrypt breaks `passlib` at import.
 - Port 8000 is taken by MusicApp backend; Trivia backend uses **8001**.
-- Frontend uses `.env` with `VITE_API_URL=http://localhost:8001` — this bypasses
-  the Vite proxy. If you remove it, update `vite.config.js` proxy to cover all routes
-  (`/auth/*`, `/quiz/*`, `/admin/*`, `/curriculum/*`, `/media/*`, `/health`).
+- Frontend uses `.env.development` with an empty `VITE_API_URL` — the app calls its
+  own origin and Vite proxies `/auth/*`, `/quiz/*`, `/admin/*`, `/curriculum/*`,
+  `/media/*`, `/health` and `/ws` to `:8001`. Pointing it directly at
+  `http://localhost:8001` makes Chrome drop the `Secure` session cookie.
 - Guest mode: progress/scores are NOT persisted across devices/browsers. Sign-up persists.
 - SQLite `create_all()` does NOT add columns to existing tables. On startup the API runs
   an idempotent `ALTER TABLE ... ADD COLUMN` for `question_type` and `image_url`.
@@ -406,4 +416,6 @@ Physical Education, Religious and Moral Education, Career Technology, Arabic, Mi
 - **`models/` is a source library, not a runtime path.** The browser loads
   `frontend/public/assets/mascots-v2/animated/`. If you replace a master in
   `models/models/`, you must also copy it to that `public/` path or the change
-  will never reach the app. `models/manifest.json` records md5s for both sides.
+  will never reach the app. `models/manifest.json` records the committed md5
+  (plus `source_md5` for the original exports); `models/README.md` has the
+  one-liner that verifies all 26 assets and the `cmp` loop for the shipped copies.

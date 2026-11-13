@@ -218,3 +218,22 @@ Notes:
   shared pub/sub layer (documented in the ADR).
 - Test users from this pass: `e2e_duel_a_…`, `e2e_duel_b_…`, `dbg_duel_…`
   (dev-only, harmless).
+
+## 2026-11-13 — Restore `models/` + `scripts/` and documentation sync
+
+Owner decision: restore the two documented source libraries from before
+`e013937` (the unrelated `.agents/skills` deletions stay deleted).
+
+| Check | Command | Result |
+|---|---|---|
+| Restored file count | `git checkout e013937^ -- models scripts` | **70 files** (26 MB models + 2.4 MB scripts), staged as additions; no other paths touched |
+| Manifest integrity | `models/README.md` verification one-liner | **26/26 assets OK** — after recording the committed md5/bytes for the four masters and preserving the export checksums as `source_md5`/`source_bytes` |
+| Runtime copy parity | `cmp models/models/<slug>.glb frontend/public/assets/mascots-v2/animated/<shipped>` | **4/4 identical** (`shs_male`, `shs_female`, `youth_male`, `youth_female`) |
+| Docs reference check | grep for `models/`, `scripts/`, `VITE_API_URL`, `localStorage` auth, Fly URL | All restored paths resolve; dev guides now describe cookie auth + same-origin proxy; only the known `.env.production` Fly URL remains, flagged for M3/M4 |
+| Code impact | none — assets/docs only | No backend/frontend source changed; earlier Group A–D test results remain valid |
+
+Notes:
+- `scripts/seed.py` was never at the repo root; it lives at `backend/scripts/seed.py`
+  and resolves `../scripts/questions.json`, which is back.
+- `frontend/.env.production` still points at the retired Fly URL; replacing it
+  requires an approved production backend URL.

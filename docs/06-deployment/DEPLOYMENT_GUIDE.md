@@ -7,14 +7,14 @@
 ## Local development (the only currently running mode)
 
 ```bash
-# Backend  (port 8001)
+# Backend  (port 8001) — ADMIN_PASSWORD is required
 cd "/media/stephen/FILES/My Projects/KwizBox/backend"
-./venv/bin/python -m uvicorn src.main:app --host 0.0.0.0 --port 8001
-# health: curl http://localhost:8001/health  → {"status":"ok","service":"kwizbox"}
+ADMIN_PASSWORD='<choose-one>' ./venv/bin/python -m uvicorn src.main:app --host 0.0.0.0 --port 8001
+# health: curl http://localhost:8001/health  → {"status":"ok","service":"KwizBox"}
 
-# Frontend (port 5173, auto-bumps to 5174 if busy)
+# Frontend (port 5174; same-origin proxy keeps the session cookie first-party)
 cd "/media/stephen/FILES/My Projects/KwizBox/frontend"
-npm run dev
+npm run dev -- --port 5174 --strictPort
 ```
 
 First-time environment setup: `ENVIRONMENT_SETUP.md`.

@@ -1,0 +1,1010 @@
+
+===== PAGE 1 =====
+Ghana STEM Trivia — 200 Question Bank
+Aligned to: NaCCA Primary Curriculum (B4–B6) and Common Core Programme (B7–B9)
+Subjects: Mathematics, Science, Computing/Technology Format: Each question has 4
+options, the correct answer, a short explanation, and tags (Class • Subject • Strand/Topic •
+Difficulty) — ready to import into a question bank or database.
+Note on images: This set is text-only. Per the product plan, image-based questions
+(diagrams of simple machines, computer parts, plant/animal pictures, etc.) are a Phase
+2/3 enhancement — happy to draft a shortlist of specific questions that need diagrams
+next, if useful.
+Distribution Summary
+Class
+Mathematics
+Science
+Computing
+Total
+B4 (Primary 4)
+14
+13
+6
+33
+B5 (Primary 5)
+14
+13
+6
+33
+B6 (Primary 6)
+15
+13
+6
+34
+B7 (JHS 1)
+14
+13
+6
+33
+B8 (JHS 2)
+14
+13
+6
+33
+B9 (JHS 3)
+15
+13
+6
+34
+Total
+86
+78
+36
+200
+B4 (Primary 4)
+Mathematics
+Q1 (Number • Easy) What is the value of the digit 7 in 4,732? A) 7 B) 70 C) 700 D) 7,000
+Answer: C Explanation: In 4,732, the digit 7 is in the hundreds place, so it stands for 700.
+Q2 (Number • Easy) Ama buys tomatoes for GHS 8 and onions for GHS 5 at the market.
+
+===== PAGE 2 =====
+How much did she spend in total? A) GHS 3 B) GHS 12 C) GHS 13 D) GHS 15 Answer: C
+Explanation: 8 + 5 = 13, so Ama spent GHS 13 in total.
+Q3 (Number • Easy) Kofi had 45 mangoes. He sold 18 of them. How many mangoes does he
+have left? A) 17 B) 27 C) 63 D) 37 Answer: B Explanation: 45 − 18 = 27 mangoes remain.
+Q4 (Number • Easy) What is 6 × 7? A) 36 B) 42 C) 48 D) 49 Answer: B Explanation: 6
+multiplied by 7 equals 42.
+Q5 (Number • Easy) What is 36 ÷ 4? A) 6 B) 8 C) 9 D) 12 Answer: C Explanation: 36
+divided by 4 equals 9, since 4 × 9 = 36.
+Q6 (Number/Fractions • Easy) A circle is shaded so that exactly half of it is coloured. What
+fraction is shaded? A) 1/4 B) 1/3 C) 1/2 D) 2/2 Answer: C Explanation: When a shape is split
+into 2 equal parts and one part is shaded, that part represents 1/2.
+Q7 (Number/Fractions • Medium) Which fraction is bigger: 1/2 or 1/4? A) 1/2 B) 1/4 C) They
+are equal D) Cannot tell Answer: A Explanation: 1/2 means one of two equal parts, which is
+a bigger portion than 1/4, one of four equal parts.
+Q8 (Number/Money • Medium) Efua has 3 coins of GHS 2 and 1 coin of GHS 1. How much
+money does she have? A) GHS 5 B) GHS 6 C) GHS 7 D) GHS 9 Answer: C Explanation: (3
+× GHS 2) + GHS 1 = GHS 6 + GHS 1 = GHS 7.
+Q9 (Geometry • Easy) How many sides does a triangle have? A) 2 B) 3 C) 4 D) 5 Answer: B
+Explanation: A triangle is a shape with exactly 3 straight sides.
+Q10 (Geometry • Easy) How many equal sides does a square have? A) 1 B) 2 C) 3 D) 4
+Answer: D Explanation: A square has 4 sides that are all equal in length.
+Q11 (Measurement • Medium) How many centimetres are there in 1 metre? A) 10 B) 100 C)
+1,000 D) 10,000 Answer: B Explanation: 1 metre is equal to 100 centimetres.
+Q12 (Measurement/Time • Medium) A clock shows 3:30. What time is this in words? A)
+Quarter past three B) Half past three C) Quarter to four D) Half past four Answer: B
+Explanation: When the minute hand points to 6 (30 minutes), we say “half past” the hour.
+Q13 (Data • Medium) In a class survey: 12 pupils like mango, 8 like orange, and 15 like
+banana. Which fruit is liked by the most pupils? A) Mango B) Orange C) Banana D) All are
+equal Answer: C Explanation: 15 is the highest number among 12, 8, and 15, so banana is
+the most liked fruit.
+Q14 (Algebra/Patterns • Medium) What is the next number in this pattern: 5, 10, 15, 20, __?
+A) 22 B) 24 C) 25 D) 30 Answer: C Explanation: The pattern increases by 5 each time, so
+after 20 comes 25.
+
+===== PAGE 3 =====
+Science
+Q15 (Diversity of Matter • Easy) Which of these is a living thing? A) Stone B) Chair C) Goat
+D) Table Answer: C Explanation: A goat can grow, breathe, feed, and reproduce, which are
+signs of life. Stones, chairs, and tables cannot.
+Q16 (Diversity of Matter • Easy) What is water called when it is in its solid form? A) Steam B)
+Ice C) Vapour D) Liquid Answer: B Explanation: When water freezes, it becomes a solid
+called ice.
+Q17 (Cycles • Medium) What is it called when water turns into vapour and rises into the air?
+A) Condensation B) Evaporation C) Precipitation D) Collection Answer: B Explanation:
+Evaporation is the process where the sun’s heat turns liquid water into water vapour.
+Q18 (Cycles • Medium) What mainly causes day and night? A) The moon moving B) The
+Earth spinning on its axis C) Clouds covering the sun D) The stars moving Answer: B
+Explanation: As the Earth rotates on its axis, different parts face the sun (day) or face away
+from it (night).
+Q19 (Systems • Easy) Which part of a plant absorbs water from the soil? A) Leaves B) Roots
+C) Flower D) Stem Answer: B Explanation: Roots grow into the soil and absorb water and
+nutrients for the plant.
+Q20 (Diversity of Matter • Easy) Which of these animals is a mammal? A) Fish B) Dog C)
+Snake D) Bird Answer: B Explanation: Mammals give birth to live young and feed them with
+milk; a dog is a mammal, unlike fish, snakes, or birds.
+Q21 (Systems • Easy) Which sense organ do we use to smell? A) Eyes B) Ears C) Nose D)
+Skin Answer: C Explanation: The nose contains receptors that detect smells in the air.
+Q22 (Humans and the Environment • Easy) How often should you brush your teeth for good
+hygiene? A) Once a week B) Once a day C) Twice a day D) Only when they hurt Answer: C
+Explanation: Brushing twice a day helps remove food particles and prevent tooth decay.
+Q23 (Humans and the Environment • Medium) Kenkey and rice mainly belong to which food
+group? A) Energy-giving foods (carbohydrates) B) Body-building foods C) Protective foods
+(vitamins) D) Fats only Answer: A Explanation: Kenkey and rice are starchy foods that give
+the body energy, so they are carbohydrates.
+Q24 (Forces and Energy • Medium) Opening a door by moving it away from you is an
+example of which force? A) Pull B) Push C) Gravity D) Friction Answer: B Explanation: A
+push is a force that moves an object away from you, like pushing a door open.
+Q25 (Cycles • Hard) Which instrument is used to measure how much rain has fallen? A)
+Thermometer B) Rain gauge C) Barometer D) Compass Answer: B Explanation: A rain
+
+===== PAGE 4 =====
+gauge collects and measures the amount of rainfall in an area.
+Q26 (Humans and the Environment • Easy) What should you do with litter such as sachet
+water bags? A) Throw it on the ground B) Throw it in a gutter C) Put it in a dustbin D) Burn it
+anywhere Answer: C Explanation: Putting litter in a dustbin keeps the environment clean
+and prevents blocked gutters and flooding.
+Q27 (Humans and the Environment • Medium) What is the best way to protect yourself from
+malaria at night? A) Wear sunglasses B) Sleep under a treated mosquito net C) Drink more
+water D) Stay indoors all day Answer: B Explanation: Sleeping under an insecticide-treated
+mosquito net protects you from mosquito bites that spread malaria.
+Computing
+Q28 (Introduction to Computing • Easy) Which part of the computer do you use to type
+letters and numbers? A) Monitor B) Keyboard C) Mouse D) Speaker Answer: B
+Explanation: The keyboard has keys for letters, numbers, and symbols that you press to
+type.
+Q29 (Introduction to Computing • Easy) Which part of the computer shows pictures and
+text so you can see them? A) Monitor B) Keyboard C) Mouse D) Printer Answer: A
+Explanation: The monitor is the screen that displays everything the computer is doing.
+Q30 (Introduction to Computing • Easy) Which device do you use to click and move a
+pointer on the screen? A) Keyboard B) Monitor C) Mouse D) Speaker Answer: C
+Explanation: A mouse lets you point, click, and select items on the computer screen.
+Q31 (Introduction to Computing • Easy) Which of these is NOT a common use of a
+computer? A) Writing a letter B) Cooking food C) Playing educational games D) Browsing
+the internet Answer: B Explanation: Computers cannot cook food; that is a physical task,
+while the others are things computers help with.
+Q32 (Digital Safety • Medium) If a stranger online asks for your home address, what should
+you do? A) Tell them right away B) Tell a trusted adult and not share it C) Ask them why they
+need it D) Give a fake address Answer: B Explanation: Personal information like your
+address should never be shared with strangers online; always tell a trusted adult first.
+Q33 (Productivity Software • Medium) Which type of computer program would you use to
+type a letter? A) A calculator app B) A word processor C) A music player D) A calendar app
+Answer: B Explanation: A word processor (such as Microsoft Word) is designed for typing
+and formatting text documents.
+B5 (Primary 5)
+
+===== PAGE 5 =====
+Mathematics
+Q34 (Number/Fractions • Easy) What is 1/4 + 1/4? A) 1/8 B) 1/2 C) 2/8 D) 1 Answer: B
+Explanation: Adding two quarters gives 2/4, which simplifies to 1/2.
+Q35 (Number/Fractions • Easy) What is 1/2 written as a decimal? A) 0.2 B) 0.25 C) 0.5 D) 1.2
+Answer: C Explanation: One half is the same as 0.5 in decimal form.
+Q36 (Number • Easy) Which is bigger: 0.6 or 0.45? A) 0.6 B) 0.45 C) They are equal D)
+Cannot tell Answer: A Explanation: 0.6 is the same as 0.60, which is greater than 0.45.
+Q37 (Algebra/Patterns • Easy) What comes next in the pattern: 3, 6, 9, 12, __? A) 13 B) 14
+C) 15 D) 16 Answer: C Explanation: The pattern adds 3 each time, so after 12 comes 15.
+Q38 (Algebra • Medium) If x + 5 = 12, what is x? A) 5 B) 6 C) 7 D) 17 Answer: C
+Explanation: Subtracting 5 from both sides: x = 12 − 5 = 7.
+Q39 (Geometry • Medium) An angle that is less than 90° is called what? A) Right angle B)
+Acute angle C) Obtuse angle D) Straight angle Answer: B Explanation: An acute angle is
+any angle smaller than 90°.
+Q40 (Geometry/Measurement • Medium) A rectangle has sides of 5 cm and 3 cm. What is
+its perimeter? A) 8 cm B) 15 cm C) 16 cm D) 30 cm Answer: C Explanation: Perimeter = 2
+× (length + width) = 2 × (5 + 3) = 16 cm.
+Q41 (Geometry/Measurement • Medium) A rectangle is 4 cm long and 3 cm wide. What is
+its area? A) 7 cm² B) 12 cm² C) 14 cm² D) 24 cm² Answer: B Explanation: Area of a
+rectangle = length × width = 4 × 3 = 12 cm².
+Q42 (Measurement • Medium) How many millilitres are there in 1 litre? A) 10 B) 100 C) 1,000
+D) 10,000 Answer: C Explanation: 1 litre is equal to 1,000 millilitres.
+Q43 (Measurement • Easy) How many grams are there in 1 kilogram? A) 10 B) 100 C) 1,000
+D) 10,000 Answer: C Explanation: 1 kilogram is equal to 1,000 grams.
+Q44 (Number/Money • Medium) A shirt costs GHS 20. The shop gives a discount of GHS 5.
+What is the new price? A) GHS 10 B) GHS 15 C) GHS 20 D) GHS 25 Answer: B Explanation:
+GHS 20 − GHS 5 = GHS 15 is the discounted price.
+Q45 (Data • Hard) In this list of scores: 2, 3, 3, 5, 3, 7 — what is the mode? A) 2 B) 3 C) 5 D)
+7 Answer: B Explanation: The mode is the number that appears most often; 3 appears
+three times, more than any other number.
+Q46 (Data • Hard) Find the range of this data set: 4, 9, 2, 15, 7. A) 7 B) 9 C) 11 D) 13
+Answer: D Explanation: Range = highest value − lowest value = 15 − 2 = 13.
+
+===== PAGE 6 =====
+Q47 (Number • Medium) A bag contains 24 oranges. How many oranges are in 6 such
+bags? A) 30 B) 120 C) 144 D) 148 Answer: C Explanation: 24 × 6 = 144 oranges in total.
+Science
+Q48 (Systems • Medium) What do we call a plant because it produces its own food? A)
+Consumer B) Producer C) Decomposer D) Predator Answer: B Explanation: Plants make
+their own food through photosynthesis, so they are called producers.
+Q49 (Cycles • Medium) What is the correct order of a butterfly’s life cycle? A) Egg → Pupa
+→ Larva → Adult B) Larva → Egg → Pupa → Adult C) Egg → Larva → Pupa → Adult D) Pupa
+→ Egg → Larva → Adult Answer: C Explanation: A butterfly begins as an egg, hatches into
+a larva (caterpillar), forms a pupa (chrysalis), then emerges as an adult butterfly.
+Q50 (Systems • Medium) Which organ produces acid to help digest food? A) Mouth B)
+Stomach C) Lungs D) Kidney Answer: B Explanation: The stomach produces acid and
+enzymes that break down food during digestion.
+Q51 (Forces and Energy • Easy) Which force pulls objects toward the Earth? A) Friction B)
+Gravity C) Magnetism D) Push Answer: B Explanation: Gravity is the force that pulls all
+objects toward the centre of the Earth.
+Q52 (Forces and Energy • Easy) Which of these is a natural source of light? A) Torch B) Bulb
+C) Sun D) Candle Answer: C Explanation: The sun is a natural source of light, while
+torches, bulbs, and candles are man-made sources.
+Q53 (Cycles • Medium) Soil is mainly formed from what? A) Melted plastic B) Weathered
+(broken down) rocks C) Pure water D) Sand from the sea only Answer: B Explanation: Over
+time, rocks break down through weathering to form the soil we see around us.
+Q54 (Cycles • Medium) What do we call it when water vapour turns into tiny droplets to
+form clouds? A) Evaporation B) Condensation C) Precipitation D) Collection Answer: B
+Explanation: Condensation is the process where water vapour cools and changes back into
+liquid droplets, forming clouds.
+Q55 (Cycles • Easy) Which of these insects is well known for helping in pollination? A)
+Mosquito B) Bee C) Housefly D) Cockroach Answer: B Explanation: Bees carry pollen from
+flower to flower as they collect nectar, helping plants reproduce.
+Q56 (Humans and the Environment • Medium) A balanced diet should contain the right
+amounts of which of these? A) Only carbohydrates B) Only proteins C) Carbohydrates,
+proteins, vitamins, and fats D) Only sugar and salt Answer: C Explanation: A balanced diet
+includes a mix of food groups so the body gets all the nutrients it needs.
+Q57 (Humans and the Environment • Medium) Cutting down forests without replanting trees
+
+===== PAGE 7 =====
+is called what, and what problem can it cause? A) Afforestation; more rainfall B)
+Deforestation; soil erosion C) Recycling; cleaner air D) Irrigation; flooding only Answer: B
+Explanation: Deforestation removes trees that hold soil in place, which can lead to soil
+erosion.
+Q58 (Forces and Energy • Medium) A see-saw at a playground is an example of which
+simple machine? A) Pulley B) Wheel and axle C) Lever D) Screw Answer: C Explanation: A
+see-saw balances and lifts on a pivot, which is how a lever works.
+Q59 (Diversity of Matter • Easy) Which of these metals is attracted to a magnet? A) Iron B)
+Gold C) Plastic bottle cap D) Wood Answer: A Explanation: Iron is a magnetic metal, while
+gold, plastic, and wood are not attracted to magnets.
+Q60 (Systems • Easy) Animals that eat only plants are called what? A) Carnivores B)
+Herbivores C) Omnivores D) Decomposers Answer: B Explanation: Herbivores are animals
+whose diet consists only of plants.
+Computing
+Q61 (Productivity Software • Medium) Which keyboard shortcut is commonly used to save a
+document? A) Ctrl+P B) Ctrl+S C) Ctrl+C D) Ctrl+V Answer: B Explanation: Ctrl+S is the
+standard shortcut for saving a file on most computers.
+Q62 (Productivity Software • Easy) In a presentation, a single page of content is called
+what? A) A sheet B) A slide C) A document D) A cell Answer: B Explanation: Each
+individual page in a presentation program like PowerPoint is called a slide.
+Q63 (Introduction to Computing • Easy) Which of these is a piece of hardware? A) Keyboard
+B) Microsoft Word C) A game app D) A website Answer: A Explanation: Hardware refers to
+physical parts of a computer, like the keyboard; the others are software or online content.
+Q64 (Digital Safety • Easy) A good password should be what? A) Shared with all your
+friends B) Kept secret and not shared C) The same as your name D) Written on your school
+bag Answer: B Explanation: Keeping a password secret helps protect your account from
+being accessed by others.
+Q65 (Introduction to Computing • Easy) Which of these devices can be used to store and
+transfer files between computers? A) USB flash drive B) Ruler C) Textbook D) Chalk
+Answer: A Explanation: A USB flash drive is a small storage device used to save and move
+digital files.
+Q66 (Productivity Software • Medium) What does the keyboard shortcut Ctrl+C usually do?
+A) Cut text B) Copy text C) Paste text D) Close a document Answer: B Explanation: Ctrl+C
+is the standard shortcut for copying selected text or items.
+
+===== PAGE 8 =====
+B6 (Primary 6)
+Mathematics
+Q67 (Number • Medium) What is 20% of 50? A) 5 B) 10 C) 15 D) 20 Answer: B
+Explanation: 20% means 20 out of 100, so 20% of 50 = (20/100) × 50 = 10.
+Q68 (Number • Medium) What is 3/4 written as a percentage? A) 34% B) 43% C) 75% D)
+80% Answer: C Explanation: 3 ÷ 4 = 0.75, and 0.75 as a percentage is 75%.
+Q69 (Number • Medium) What is 3.25 + 1.6? A) 3.85 B) 4.85 C) 4.65 D) 5.85 Answer: B
+Explanation: Lining up the decimal points: 3.25 + 1.60 = 4.85.
+Q70 (Algebra • Medium) If 2x = 14, what is x? A) 5 B) 6 C) 7 D) 12 Answer: C Explanation:
+Dividing both sides by 2: x = 14 ÷ 2 = 7.
+Q71 (Algebra/Patterns • Medium) What comes next in the pattern: 2, 4, 8, 16, __? A) 20 B)
+24 C) 30 D) 32 Answer: D Explanation: Each number is double the one before it, so after
+16 comes 32.
+Q72 (Geometry • Easy) A triangle with all three sides equal is called what? A) Scalene
+triangle B) Isosceles triangle C) Equilateral triangle D) Right triangle Answer: C
+Explanation: An equilateral triangle has all three sides (and angles) equal.
+Q73 (Geometry • Hard) How many lines of symmetry does a square have? A) 1 B) 2 C) 4 D)
+8 Answer: C Explanation: A square can be folded along 4 different lines (2 diagonals and 2
+through the midpoints of opposite sides) and still match perfectly.
+Q74 (Geometry/Measurement • Medium) A rectangle has a length of 8 cm and a width of 5
+cm. What is its area? A) 13 cm² B) 26 cm² C) 40 cm² D) 45 cm² Answer: C Explanation:
+Area = length × width = 8 × 5 = 40 cm².
+Q75 (Geometry/Measurement • Easy) A square has sides of 6 cm. What is its perimeter? A)
+6 cm B) 12 cm C) 24 cm D) 36 cm Answer: C Explanation: Perimeter of a square = 4 × side
+length = 4 × 6 = 24 cm.
+Q76 (Measurement • Medium) A class starts at 9:15 am and ends at 10:00 am. How long is
+the class? A) 30 minutes B) 40 minutes C) 45 minutes D) 1 hour Answer: C Explanation:
+From 9:15 to 10:00 is 45 minutes.
+Q77 (Data • Medium) Find the mean of these numbers: 4, 6, 8. A) 4 B) 6 C) 8 D) 18 Answer:
+B Explanation: Mean = (4 + 6 + 8) ÷ 3 = 18 ÷ 3 = 6.
+Q78 (Data • Medium) A farmer’s sales were: Monday GHS 10, Tuesday GHS 15, Wednesday
+
+===== PAGE 9 =====
+GHS 8. Which day had the highest sales? A) Monday B) Tuesday C) Wednesday D) All equal
+Answer: B Explanation: GHS 15 on Tuesday is higher than the sales on Monday and
+Wednesday.
+Q79 (Number/Ratio • Hard) Twenty mangoes are shared between two children in the ratio
+3:2. How many mangoes does the first child get? A) 8 B) 10 C) 12 D) 15 Answer: C
+Explanation: The ratio 3:2 has 5 total parts; each part = 20 ÷ 5 = 4. The first child gets 3
+parts = 3 × 4 = 12.
+Q80 (Number • Hard) A bag costs GHS 40. The shop gives a 10% discount. What is the new
+price? A) GHS 4 B) GHS 30 C) GHS 36 D) GHS 44 Answer: C Explanation: 10% of 40 = 4,
+so the new price is 40 − 4 = GHS 36.
+Q81 (Number • Medium) Which number is smaller: −3 or 2? A) −3 B) 2 C) They are equal D)
+Cannot tell Answer: A Explanation: Negative numbers are less than positive numbers, so
+−3 is smaller than 2.
+Science
+Q82 (Forces and Energy • Easy) Which of these is a form of energy? A) Light B) Heat C)
+Sound D) All of these Answer: D Explanation: Light, heat, and sound are all different forms
+of energy.
+Q83 (Systems • Easy) Which organ pumps blood around the body? A) Lungs B) Heart C)
+Brain D) Kidney Answer: B Explanation: The heart pumps blood through the blood vessels
+to every part of the body.
+Q84 (Systems • Easy) Which organs mainly help us breathe? A) Lungs B) Heart C) Stomach
+D) Liver Answer: A Explanation: The lungs take in oxygen and release carbon dioxide as we
+breathe.
+Q85 (Humans and the Environment • Medium) Cholera is mainly spread through what? A)
+Sunlight B) Contaminated water C) Clean air D) Loud noise Answer: B Explanation: Cholera
+spreads when people drink water or eat food contaminated with the cholera bacteria.
+Q86 (Humans and the Environment • Easy) Turning waste materials into new, useful
+products is called what? A) Composting B) Recycling C) Farming D) Mining Answer: B
+Explanation: Recycling processes waste materials so they can be reused to make new
+products.
+Q87 (Systems • Medium) An animal that eats both plants and other animals is called what?
+A) Herbivore B) Carnivore C) Omnivore D) Producer Answer: C Explanation: Omnivores eat
+a mix of plants and animals as part of their diet.
+Q88 (Cycles • Medium) Ghana mainly experiences which two seasons? A) Summer and
+
+===== PAGE 10 =====
+winter B) Rainy season and dry season C) Spring and autumn D) Only a dry season Answer:
+B Explanation: Ghana’s climate is generally divided into a rainy season and a dry season
+rather than four seasons.
+Q89 (Forces and Energy • Medium) Rubbing a balloon on your hair and having it stick to a
+wall is caused by what? A) Gravity B) Magnetism C) Static electricity D) Friction only
+Answer: C Explanation: Rubbing builds up static electricity, which creates a charge that
+attracts the balloon to the wall.
+Q90 (Forces and Energy • Medium) A device used to lift heavy loads using a rope over a
+wheel is called what? A) Lever B) Pulley C) Wedge D) Screw Answer: B Explanation: A
+pulley uses a wheel and rope to make lifting heavy objects easier.
+Q91 (Diversity of Matter • Easy) What do we call it when ice changes into water? A)
+Freezing B) Melting C) Evaporation D) Condensation Answer: B Explanation: Melting is the
+process of a solid (ice) changing into a liquid (water) as it warms up.
+Q92 (Humans and the Environment • Medium) Cocoa, one of Ghana’s major crops, grows
+best in which type of area? A) Dry, desert areas B) Forest areas with high rainfall C) Very
+cold, mountainous areas D) Salty coastal water Answer: B Explanation: Cocoa trees need a
+warm, humid climate with plenty of rainfall, found mainly in Ghana’s forest zones.
+Q93 (Humans and the Environment • Easy) Eating too many sugary foods can lead to what?
+A) Stronger bones B) Tooth decay C) Better eyesight D) Faster growth Answer: B
+Explanation: Sugar feeds bacteria in the mouth that produce acid, which can damage teeth
+and cause decay.
+Q94 (Systems • Hard) Besides sunlight and water, what else do plants need to make their
+own food? A) Carbon dioxide B) Salt C) Sugar D) Soap Answer: A Explanation: During
+photosynthesis, plants combine sunlight, water, and carbon dioxide to produce their own
+food.
+Computing
+Q95 (Productivity Software • Medium) Adding movement to text or pictures on a slide is
+called what? A) Formatting B) Animation C) Printing D) Saving Answer: B Explanation:
+Animation adds motion effects to elements on a presentation slide.
+Q96 (Communication Networks • Medium) Being respectful, kind, and safe while using the
+internet is called what? A) Digital citizenship B) Hardware maintenance C) Data entry D)
+Web design Answer: A Explanation: Digital citizenship refers to responsible and respectful
+behaviour when using technology and the internet.
+Q97 (Communication Networks • Medium) Before clicking a link from an unknown sender,
+what should you do? A) Click it immediately B) Verify it is safe or ask a trusted adult C)
+
+===== PAGE 11 =====
+Share it with friends first D) Reply with your password Answer: B Explanation: Unknown
+links can lead to unsafe websites or viruses, so it’s important to check first or ask an adult.
+Q98 (Productivity Software • Easy) A spreadsheet is made up of rows and what? A) Slides
+B) Columns C) Pages D) Chapters Answer: B Explanation: Spreadsheets are organized into
+rows and columns that form cells for data.
+Q99 (Introduction to Computing • Medium) Which of these helps protect a computer from
+viruses? A) Antivirus software B) A screensaver C) A louder speaker D) A bigger monitor
+Answer: A Explanation: Antivirus software scans for and removes harmful programs that
+could damage a computer.
+Q100 (Introduction to Computing • Medium) A printer is an example of what type of device?
+A) Input device B) Output device C) Storage device D) Processing device Answer: B
+Explanation: A printer produces (outputs) information from the computer onto paper.
+B7 (JHS 1)
+Mathematics
+Q101 (Number • Medium) What is −5 + 3? A) −8 B) −2 C) 2 D) 8 Answer: B Explanation:
+Adding 3 to −5 moves 3 steps toward zero and beyond, giving −2.
+Q102 (Number • Hard) What is 4 − (−6)? A) −10 B) −2 C) 2 D) 10 Answer: D Explanation:
+Subtracting a negative number is the same as adding its positive value: 4 + 6 = 10.
+Q103 (Number • Medium) Which is smaller: −1/2 or 1/4? A) −1/2 B) 1/4 C) They are equal D)
+Cannot tell Answer: A Explanation: Negative numbers are always smaller than positive
+numbers, so −1/2 is smaller than 1/4.
+Q104 (Algebra • Easy) Simplify: 3x + 2x. A) 5x B) 6x C) 5x² D) 6 Answer: A Explanation:
+Adding like terms: 3x + 2x = 5x.
+Q105 (Algebra • Medium) Solve for x: 2x + 3 = 11. A) 3 B) 4 C) 5 D) 7 Answer: B
+Explanation: 2x = 11 − 3 = 8, so x = 8 ÷ 2 = 4.
+Q106 (Geometry • Medium) An angle greater than 90° but less than 180° is called what? A)
+Acute angle B) Right angle C) Obtuse angle D) Reflex angle Answer: C Explanation:
+Obtuse angles measure between 90° and 180°.
+Q107 (Geometry • Easy) What is the sum of the interior angles of a triangle? A) 90° B) 180°
+C) 270° D) 360° Answer: B Explanation: The three interior angles of any triangle always
+add up to 180°.
+
+===== PAGE 12 =====
+Q108 (Geometry • Easy) Lines that never meet, no matter how far they extend, are called
+what? A) Perpendicular lines B) Parallel lines C) Intersecting lines D) Curved lines Answer: B
+Explanation: Parallel lines stay the same distance apart and never cross.
+Q109 (Number/Ratio • Medium) Simplify the ratio 8:12. A) 1:2 B) 2:3 C) 3:4 D) 4:6 Answer:
+B Explanation: Dividing both numbers by their highest common factor, 4, gives 8÷4 : 12÷4
+= 2:3.
+Q110 (Number/Ratio • Medium) If 3 pens cost GHS 9, how much would 5 pens cost at the
+same rate? A) GHS 12 B) GHS 15 C) GHS 18 D) GHS 20 Answer: B Explanation: Each pen
+costs GHS 9 ÷ 3 = GHS 3, so 5 pens cost 5 × GHS 3 = GHS 15.
+Q111 (Number • Hard) A price increases from GHS 50 to GHS 60. What is the percentage
+increase? A) 10% B) 15% C) 20% D) 25% Answer: C Explanation: Increase = GHS 10.
+Percentage increase = (10 ÷ 50) × 100 = 20%.
+Q112 (Data • Medium) Find the median of: 3, 7, 9, 2, 5. A) 3 B) 5 C) 7 D) 9 Answer: B
+Explanation: Arranged in order: 2, 3, 5, 7, 9. The middle value is 5.
+Q113 (Data • Medium) Find the range of: 12, 4, 9, 20. A) 8 B) 11 C) 16 D) 20 Answer: C
+Explanation: Range = highest − lowest = 20 − 4 = 16.
+Q114 (Number/Fractions • Hard) What is 1½ + 2¼? A) 3¼ B) 3½ C) 3¾ D) 4 Answer: C
+Explanation: Converting to quarters: 1½ = 1²⁄₄ and 2¼ stays the same. Adding: 1²⁄₄ + 2¼ =
+3¾.
+Science
+Q115 (Diversity of Matter • Medium) Which of these is a true property of most metals? A)
+They are good conductors of electricity B) They are always soft C) They cannot be shaped
+D) They dissolve in water Answer: A Explanation: Most metals conduct electricity and heat
+well, which is a key property that distinguishes them from non-metals.
+Q116 (Diversity of Matter • Medium) Separating sand from water is best done using which
+technique? A) Distillation B) Filtration C) Evaporation D) Magnetism Answer: B
+Explanation: Filtration uses a filter to trap solid particles like sand while letting the water
+pass through.
+Q117 (Diversity of Matter • Medium) Which part of a cell controls its activities? A) Cell wall
+B) Nucleus C) Cytoplasm D) Cell membrane Answer: B Explanation: The nucleus acts as
+the control centre of the cell, directing its growth and activities.
+Q118 (Cycles • Hard) Rocks formed when melted magma or lava cools and hardens are
+called what? A) Sedimentary rocks B) Metamorphic rocks C) Igneous rocks D) Fossil rocks
+Answer: C Explanation: Igneous rocks form directly from the cooling and solidifying of
+
+===== PAGE 13 =====
+molten rock.
+Q119 (Cycles • Easy) Which instrument is used to measure temperature? A) Rain gauge B)
+Thermometer C) Barometer D) Compass Answer: B Explanation: A thermometer measures
+how hot or cold something is.
+Q120 (Forces and Energy • Medium) A torchlight converts chemical energy from its
+batteries mainly into what? A) Sound energy B) Light energy C) Nuclear energy D) Wind
+energy Answer: B Explanation: The battery’s stored chemical energy is converted into light
+(and some heat) energy in the bulb.
+Q121 (Humans and the Environment • Easy) The “3 Rs” of waste management stand for
+what? A) Run, Rest, Repeat B) Reduce, Reuse, Recycle C) Read, Write, Recall D) Rinse,
+Repair, Return Answer: B Explanation: Reduce, reuse, and recycle are the three key
+actions used to manage waste responsibly.
+Q122 (Cycles • Medium) Cocoa trees, a major cash crop in Ghana, grow best in what kind of
+climate? A) Cold and dry B) Warm and humid with good rainfall C) Very hot and dry, like a
+desert D) Freezing mountain climate Answer: B Explanation: Cocoa needs a warm, humid
+climate with consistent rainfall, which is found in Ghana’s forest belt.
+Q123 (Cycles • Easy) Keeping and rearing chickens for eggs or meat is called what? A)
+Poultry farming B) Fish farming C) Crop farming D) Bee farming Answer: A Explanation:
+Poultry farming involves raising birds like chickens for eggs and meat.
+Q124 (Systems • Medium) Which organ filters waste from the blood? A) Heart B) Kidney C)
+Lungs D) Liver Answer: B Explanation: The kidneys filter waste and excess substances
+from the blood to form urine.
+Q125 (Diversity of Matter • Medium) Salt dissolved in water is an example of what? A) A
+compound B) An element C) A mixture D) A metal Answer: C Explanation: A mixture
+contains two or more substances (salt and water) that are combined but not chemically
+bonded.
+Q126 (Cycles • Easy) A cutlass is mainly used by farmers for what? A) Watering crops B)
+Clearing bush and weeding C) Measuring land D) Storing grain Answer: B Explanation: A
+cutlass is a farming tool used to cut through bush, grass, and weeds.
+Q127 (Cycles • Medium) What is it called when water vapour turns back into liquid water? A)
+Evaporation B) Condensation C) Precipitation D) Sublimation Answer: B Explanation:
+Condensation is the change from water vapour (gas) back into liquid water.
+Computing
+Q128 (Introduction to Computing • Medium) Which component is often called the “brain” of
+
+===== PAGE 14 =====
+the computer? A) Monitor B) CPU (Central Processing Unit) C) Keyboard D) Mouse Answer:
+B Explanation: The CPU processes instructions and carries out the computer’s calculations
+and tasks.
+Q129 (Introduction to Computing • Easy) Sitting too close to a computer screen for a long
+time can cause what? A) Eye strain B) Stronger vision C) Better hearing D) Faster typing
+Answer: A Explanation: Prolonged close screen use can tire and strain the eyes, which is
+why breaks and proper distance are recommended.
+Q130 (Introduction to Computing • Easy) Which of these technologies is commonly used for
+payments in Ghanaian markets today? A) Mobile money B) Fax machine C) Typewriter D)
+Telegram Answer: A Explanation: Mobile money is widely used in Ghana for quick,
+cashless payments and transfers.
+Q131 (Productivity Software • Easy) Changing text to bold or italic in a document is called
+what? A) Text formatting B) Data entry C) Programming D) Networking Answer: A
+Explanation: Formatting changes how text looks (bold, italic, colour, size) without changing
+its content.
+Q132 (Introduction to Computing • Hard) Today’s computers, which use microprocessors,
+mainly belong to which generation of computers? A) First generation B) Second generation
+C) Third generation D) Fourth (or later) generation Answer: D Explanation: Modern
+computers using microprocessors are considered fourth-generation (and later) computers.
+Q133 (Communication Networks • Medium) The trail of information you leave behind while
+using the internet is called what? A) A digital footprint B) A screenshot C) A firewall D) A
+browser tab Answer: A Explanation: Your digital footprint is the record of your online
+activity, such as posts, searches, and site visits.
+B8 (JHS 2)
+Mathematics
+Q134 (Number/Ratio • Medium) A recipe uses flour and sugar in the ratio 4:1. If 8 cups of
+flour are used, how many cups of sugar are needed? A) 1 B) 2 C) 3 D) 4 Answer: B
+Explanation: The ratio 4:1 means for every 4 cups of flour, 1 cup of sugar is used. 8 cups of
+flour is double 4, so sugar needed is also doubled: 2 cups.
+Q135 (Number/Ratio • Medium) If 5 books cost GHS 25, how much would 8 books cost at
+the same rate? A) GHS 32 B) GHS 35 C) GHS 40 D) GHS 45 Answer: C Explanation: Each
+book costs GHS 25 ÷ 5 = GHS 5, so 8 books cost 8 × GHS 5 = GHS 40.
+Q136 (Algebra • Medium) Solve for x: 3x − 4 = 11. A) 3 B) 4 C) 5 D) 7 Answer: C
+
+===== PAGE 15 =====
+Explanation: 3x = 11 + 4 = 15, so x = 15 ÷ 3 = 5.
+Q137 (Algebra • Medium) Solve the inequality: x + 3 < 7. A) x < 4 B) x > 4 C) x < 10 D) x < 3
+Answer: A Explanation: Subtracting 3 from both sides gives x < 4.
+Q138 (Geometry • Hard) Reflecting the point (2, 3) over the x-axis gives which new point?
+A) (2, 3) B) (−2, 3) C) (2, −3) D) (−2, −3) Answer: C Explanation: Reflecting over the x-axis
+keeps the x-coordinate the same and flips the sign of the y-coordinate.
+Q139 (Geometry • Medium) Rotating a shape by 180° about a point does what to the
+shape? A) Nothing changes B) It flips to face the opposite direction C) It becomes bigger D)
+It becomes smaller Answer: B Explanation: A 180° rotation turns the shape completely
+around, so it faces the opposite direction from where it started.
+Q140 (Data/Probability • Easy) What is the probability of getting heads when tossing a fair
+coin? A) 1/4 B) 1/3 C) 1/2 D) 1 Answer: C Explanation: A fair coin has two equally likely
+outcomes (heads or tails), so the probability of heads is 1 out of 2.
+Q141 (Data/Probability • Easy) The probability that the sun will rise tomorrow is best
+described as what? A) Impossible B) Unlikely C) Certain D) Cannot be determined Answer:
+C Explanation: An event that is sure to happen has a probability of 1, which we call
+“certain.”
+Q142 (Data • Medium) Find the mode of: 5, 7, 7, 9, 7, 3. A) 3 B) 5 C) 7 D) 9 Answer: C
+Explanation: 7 appears three times, more often than any other number, so it is the mode.
+Q143 (Data • Easy) Find the mean of: 10, 20, 30. A) 10 B) 15 C) 20 D) 30 Answer: C
+Explanation: Mean = (10 + 20 + 30) ÷ 3 = 60 ÷ 3 = 20.
+Q144 (Number • Medium) GHS 100 is invested at 10% simple interest per year. How much
+interest is earned after 1 year? A) GHS 1 B) GHS 10 C) GHS 100 D) GHS 110 Answer: B
+Explanation: Simple interest = (Principal × Rate × Time) ÷ 100 = (100 × 10 × 1) ÷ 100 = GHS
+10.
+Q145 (Number/Indices • Medium) What is 2³? A) 4 B) 6 C) 8 D) 9 Answer: C Explanation:
+2³ means 2 × 2 × 2 = 8.
+Q146 (Geometry • Hard) A line that divides an angle into two equal parts is called what? A)
+A perpendicular line B) An angle bisector C) A diagonal D) A tangent Answer: B
+Explanation: An angle bisector splits an angle exactly in half, creating two equal smaller
+angles.
+Q147 (Number • Medium) A trader buys goods for GHS 200 and sells them for GHS 250.
+What is the profit? A) GHS 30 B) GHS 40 C) GHS 50 D) GHS 60 Answer: C Explanation:
+Profit = Selling price − Cost price = GHS 250 − GHS 200 = GHS 50.
+
+===== PAGE 16 =====
+Science
+Q148 (Cycles • Easy) Adding manure or compost to soil mainly helps improve what? A) Soil
+colour only B) Soil fertility C) Soil temperature D) Soil weight Answer: B Explanation:
+Manure and compost add nutrients to the soil, improving its fertility for growing crops.
+Q149 (Cycles • Easy) Giving farm animals vaccines mainly helps to prevent what? A) Weight
+loss B) Diseases C) Faster growth D) Better appetite Answer: B Explanation: Vaccines help
+protect livestock from infectious diseases.
+Q150 (Systems • Easy) Which organ controls thinking and coordinates the activities of the
+body? A) Heart B) Brain C) Liver D) Stomach Answer: B Explanation: The brain is the
+control centre of the nervous system, responsible for thinking and coordinating the body.
+Q151 (Forces and Energy • Medium) Which electrical component is used to open or close a
+circuit to control the flow of current? A) Battery B) Switch C) Bulb D) Wire Answer: B
+Explanation: A switch allows you to turn a circuit on (closed) or off (open), controlling the
+current.
+Q152 (Forces and Energy • Medium) In a series circuit, if one bulb burns out, what happens
+to the other bulbs? A) They get brighter B) They also go off C) Nothing changes D) They
+flicker faster Answer: B Explanation: In a series circuit, all components share the same
+path, so if one breaks, the whole circuit is interrupted and all bulbs go off.
+Q153 (Forces and Energy • Medium) A car travels 120 km in 2 hours. What is its speed? A)
+40 km/h B) 60 km/h C) 100 km/h D) 120 km/h Answer: B Explanation: Speed = distance ÷
+time = 120 km ÷ 2 h = 60 km/h.
+Q154 (Forces and Energy • Easy) The force that opposes motion between two surfaces in
+contact is called what? A) Gravity B) Friction C) Magnetism D) Tension Answer: B
+Explanation: Friction acts against motion between surfaces that are touching and moving
+relative to each other.
+Q155 (Humans and the Environment • Medium) Proteins in our diet are mainly needed for
+what? A) Body growth and repair B) Only taste C) Only energy D) Only digestion Answer: A
+Explanation: Proteins help build and repair body tissues, such as muscles.
+Q156 (Humans and the Environment • Medium) Typhoid fever can mainly be prevented by
+what? A) Drinking clean water and practising good hygiene B) Eating more sugar C)
+Avoiding sunlight D) Wearing warm clothes Answer: A Explanation: Typhoid spreads
+through contaminated water and food, so clean water and hygiene greatly reduce the risk.
+Q157 (Cycles • Hard) A relationship where both organisms benefit from living together is
+called what? A) Predation B) Competition C) Mutualism D) Parasitism Answer: C
+Explanation: In mutualism, both species involved gain some benefit from the relationship.
+
+===== PAGE 17 =====
+Q158 (Cycles • Medium) Growing different crops in the same field in different seasons to
+protect soil nutrients is called what? A) Crop rotation B) Mono-cropping C) Deforestation D)
+Overgrazing Answer: A Explanation: Crop rotation helps prevent soil nutrients from being
+used up and reduces pest build-up.
+Q159 (Forces and Energy • Medium) The Akosombo Dam in Ghana generates electricity
+mainly using what type of energy? A) Solar energy B) Wind energy C) Hydroelectric (water)
+energy D) Fossil fuel energy Answer: C Explanation: Akosombo Dam uses the flow of
+water from the Volta River to generate hydroelectric power.
+Q160 (Cycles • Easy) Using tractors instead of manual labour to farm large areas of land is
+an example of what? A) Subsistence farming B) Mechanized farming C) Shifting cultivation
+D) Organic farming Answer: B Explanation: Mechanized farming uses machines like
+tractors to make farming faster and more efficient.
+Computing
+Q161 (Productivity Software • Medium) Which formula would you use in a spreadsheet to
+add the values in cells A1 to A5? A) =ADD(A1:A5) B) =SUM(A1:A5) C) =TOTAL(A1:A5) D)
+=PLUS(A1:A5) Answer: B Explanation: The SUM function adds up all the values within the
+given range of cells.
+Q162 (Communication Networks • Medium) A network that connects computers within a
+small area, like a single school, is called what? A) WAN (Wide Area Network) B) LAN (Local
+Area Network) C) MAN (Metropolitan Area Network) D) The internet Answer: B
+Explanation: A LAN connects computers within a limited area such as a school, office, or
+home.
+Q163 (Communication Networks • Easy) Which of these is a common use of the internet? A)
+Research and communication B) Physically repairing a computer C) Growing crops D)
+Cooking food Answer: A Explanation: The internet is widely used for finding information
+and communicating with others, unlike the other physical activities listed.
+Q164 (Communication Networks • Medium) Before posting personal information online,
+what should you do? A) Post it immediately B) Think carefully about whether it’s safe to
+share C) Share it with strangers first D) Post your home address for fun Answer: B
+Explanation: Personal information shared online can be seen by many people, so it’s
+important to think about safety and privacy first.
+Q165 (Computational Thinking • Medium) A step-by-step set of instructions used to solve a
+problem is called what? A) An algorithm B) A virus C) A browser D) A firewall Answer: A
+Explanation: An algorithm is an ordered sequence of steps designed to complete a task or
+solve a problem.
+
+===== PAGE 18 =====
+Q166 (Communication Networks • Easy) Which of these makes the strongest password? A)
+Your name B) “12345” C) A mix of letters, numbers, and symbols D) The word “password”
+Answer: C Explanation: Combining letters, numbers, and symbols makes a password much
+harder for others to guess.
+B9 (JHS 3)
+Mathematics
+Q167 (Number • Medium) Is 1/2 a rational or an irrational number? A) Rational B) Irrational
+C) Neither D) Both Answer: A Explanation: A rational number can be written as a fraction
+of two whole numbers, and 1/2 fits this definition.
+Q168 (Algebra • Medium) Solve for x: x/3 + 2 = 5. A) 3 B) 6 C) 9 D) 15 Answer: C
+Explanation: x/3 = 5 − 2 = 3, so x = 3 × 3 = 9.
+Q169 (Algebra • Medium) Expand: 3(x + 4). A) 3x + 4 B) 3x + 7 C) 3x + 12 D) x + 12
+Answer: C Explanation: Multiplying 3 by each term inside the brackets: 3 × x = 3x, and 3 ×
+4 = 12.
+Q170 (Algebra • Medium) Factorize: 4x + 8. A) 2(2x + 4) B) 4(x + 2) C) 4(x + 8) D) x(4 + 8)
+Answer: B Explanation: 4 is the highest common factor of 4x and 8, giving 4(x + 2).
+Q171 (Geometry • Hard) A right-angled triangle has legs of 3 cm and 4 cm. What is the
+length of the hypotenuse? A) 5 cm B) 6 cm C) 7 cm D) 12 cm Answer: A Explanation: By
+the Pythagorean theorem, hypotenuse² = 3² + 4² = 9 + 16 = 25, so hypotenuse = 5 cm.
+Q172 (Geometry • Hard) A circle has a radius of 7 cm. Using π ≈ 22/7, what is its area? A)
+44 cm² B) 88 cm² C) 154 cm² D) 308 cm² Answer: C Explanation: Area = π × r² = 22/7 × 7
+× 7 = 154 cm².
+Q173 (Geometry • Hard) A circle has a radius of 7 cm. Using π ≈ 22/7, what is its
+circumference? A) 22 cm B) 44 cm C) 88 cm D) 154 cm Answer: B Explanation:
+Circumference = 2 × π × r = 2 × 22/7 × 7 = 44 cm.
+Q174 (Data • Medium) Find the mean of: 4, 8, 6, 10, 7. A) 6 B) 7 C) 8 D) 10 Answer: B
+Explanation: Mean = (4 + 8 + 6 + 10 + 7) ÷ 5 = 35 ÷ 5 = 7.
+Q175 (Data • Medium) Find the median of: 3, 8, 5, 9, 1. A) 1 B) 3 C) 5 D) 8 Answer: C
+Explanation: Arranged in order: 1, 3, 5, 8, 9. The middle value is 5.
+Q176 (Data • Easy) Find the mode of: 2, 4, 4, 6, 4, 8. A) 2 B) 4 C) 6 D) 8 Answer: B
+Explanation: 4 appears three times, more than any other number, making it the mode.
+
+===== PAGE 19 =====
+Q177 (Data/Probability • Medium) A bag has 3 red balls and 2 blue balls. What is the
+probability of picking a red ball? A) 2/5 B) 1/2 C) 3/5 D) 3/2 Answer: C Explanation: There
+are 5 balls in total, 3 of which are red, so the probability is 3/5.
+Q178 (Number • Hard) An item costs GHS 100. A 10% discount is applied, then a 5% tax is
+added to the discounted price. What is the final price? A) GHS 90.00 B) GHS 94.50 C) GHS
+95.00 D) GHS 105.00 Answer: B Explanation: After a 10% discount, the price is GHS 90.
+Adding 5% tax on GHS 90 (GHS 4.50) gives a final price of GHS 94.50.
+Q179 (Number • Hard) Write 45,000 in standard form. A) 4.5 × 10³ B) 4.5 × 10⁴ C) 45 × 10³
+D) 4.5 × 10⁵ Answer: B Explanation: In standard form, 45,000 is written as 4.5 × 10⁴
+because moving the decimal point 4 places gives 4.5.
+Q180 (Number/Indices • Medium) Simplify: 2² × 2³. A) 2⁵ B) 2⁶ C) 4⁵ D) 2¹ Answer: A
+Explanation: When multiplying powers with the same base, you add the exponents: 2² × 2³
+= 2⁽²⁺³⁾ = 2⁵.
+Q181 (Geometry/Bearings • Medium) What is the bearing for due North? A) 090° B) 180° C)
+270° D) 000° (or 360°) Answer: D Explanation: Bearings are measured clockwise from
+North, so North itself is 000° (also written as 360°).
+Science
+Q182 (Systems • Easy) Which planet is closest to the Sun? A) Venus B) Earth C) Mercury D)
+Mars Answer: C Explanation: Mercury is the smallest and closest planet to the Sun in our
+solar system.
+Q183 (Systems • Medium) What mainly causes the different phases of the Moon that we
+see? A) The Moon changing size B) The Moon’s position relative to the Earth and Sun C)
+Clouds blocking the Moon D) The Moon spinning very fast Answer: B Explanation: As the
+Moon orbits the Earth, the amount of its sunlit side visible to us changes, creating the
+phases we observe.
+Q184 (Systems • Easy) The variety of living things found in an area is called what? A)
+Ecosystem B) Biodiversity C) Habitat D) Population Answer: B Explanation: Biodiversity
+refers to the range of different species of plants, animals, and organisms in a given
+environment.
+Q185 (Cycles • Medium) What is a main benefit of crop rotation? A) It uses more water B) It
+prevents soil nutrient depletion and reduces pests C) It makes crops grow faster only D) It
+removes the need for sunlight Answer: B Explanation: Rotating different crops helps
+maintain soil nutrients and can break the life cycles of pests specific to certain crops.
+Q186 (Humans and the Environment • Medium) Gases that trap heat in the Earth’s
+atmosphere, contributing to global warming, are called what? A) Noble gases B)
+
+===== PAGE 20 =====
+Greenhouse gases C) Inert gases D) Rare gases Answer: B Explanation: Greenhouse
+gases, such as carbon dioxide, trap heat from the sun in the atmosphere, warming the
+planet.
+Q187 (Humans and the Environment • Medium) Illegal small-scale mining (galamsey) in
+Ghana is a major cause of what environmental problem? A) Water pollution and land
+degradation B) Reduced temperatures C) Increased rainfall only D) Stronger soil fertility
+Answer: A Explanation: Galamsey activities often pollute water bodies with chemicals and
+destroy land, harming the environment.
+Q188 (Humans and the Environment • Medium) Old electronic devices that are thrown away
+are called what, and how should they be handled? A) E-waste; recycled properly, not
+dumped B) Bio-waste; buried in gardens C) Green waste; burned openly D) Hazard-free;
+thrown in any bin Answer: A Explanation: E-waste contains materials that can harm the
+environment if dumped carelessly, so it should be recycled through proper channels.
+Q189 (Cycles • Medium) The loss of water vapour from plant leaves is called what? A)
+Evaporation B) Condensation C) Transpiration D) Precipitation Answer: C Explanation:
+Transpiration is the process by which plants release water vapour into the air, mainly
+through their leaves.
+Q190 (Forces and Energy • Easy) Which of these is a renewable energy source? A) Coal B)
+Natural gas C) Solar power D) Crude oil Answer: C Explanation: Solar power comes from
+the sun, a naturally replenished source, unlike coal, gas, and oil which are fossil fuels.
+Q191 (Systems • Medium) Traits passed down from parents to their children, such as eye
+colour, are called what? A) Learned behaviours B) Inherited (hereditary) traits C)
+Environmental traits D) Random traits Answer: B Explanation: Inherited traits are
+characteristics passed from parents to offspring through genes.
+Q192 (Systems • Easy) The body’s system that fights off diseases and infections is called
+what? A) Digestive system B) Immune system C) Skeletal system D) Respiratory system
+Answer: B Explanation: The immune system defends the body against harmful germs and
+infections.
+Q193 (Cycles • Medium) Organisms that break down dead plants and animals, returning
+nutrients to the soil, are called what? A) Producers B) Consumers C) Decomposers D)
+Predators Answer: C Explanation: Decomposers, such as fungi and bacteria, break down
+dead organic matter and recycle nutrients back into the ecosystem.
+Q194 (Humans and the Environment • Hard) An economy that promotes sustainable
+development while reducing environmental risks is called what? A) Black economy B) Green
+economy C) Grey economy D) Informal economy Answer: B Explanation: A green economy
+focuses on economic growth that protects the environment and uses resources sustainably.
+
+===== PAGE 21 =====
+Computing
+Q195 (Information Security • Medium) A fraudulent attempt to obtain personal information
+through fake emails or messages is called what? A) Phishing B) Blogging C) Streaming D)
+Coding Answer: A Explanation: Phishing scams trick people into revealing sensitive
+information by pretending to be a trustworthy source.
+Q196 (Web Technologies • Easy) A program used to access websites, such as Chrome or
+Firefox, is called what? A) An operating system B) A web browser C) A search engine D) A
+firewall Answer: B Explanation: A web browser is software that lets you view and navigate
+websites on the internet.
+Q197 (Computational Thinking • Medium) In programming, a set of instructions that repeats
+several times is called what? A) A variable B) A loop C) A function only D) A comment
+Answer: B Explanation: A loop repeats a block of instructions until a certain condition is
+met, saving the need to rewrite the same steps.
+Q198 (Computational Thinking • Easy) A machine that can be programmed to carry out
+tasks automatically is called what? A) A robot B) A modem C) A monitor D) A router
+Answer: A Explanation: Robots are machines designed to perform tasks automatically,
+often guided by programmed instructions.
+Q199 (Computational Thinking • Medium) Artificial Intelligence (AI) mainly refers to what?
+A) Computers that can only do arithmetic B) Computer systems that can perform tasks that
+normally require human intelligence C) Any device with a screen D) A type of computer virus
+Answer: B Explanation: AI involves designing computer systems that can learn, reason, or
+make decisions in ways similar to human thinking.
+Q200 (Web Technologies • Hard) How does the World Wide Web (WWW) relate to the
+internet? A) They are exactly the same thing B) The WWW is a collection of websites and
+pages accessible via the internet C) The internet only works without the WWW D) The
+WWW is a type of computer hardware Answer: B Explanation: The internet is the global
+network of connected computers, while the World Wide Web is a system of linked websites
+and pages that we access using that network.
+Answer Key (Quick Reference)
+Q
+Ans
+Q
+Ans
+Q
+Ans
+Q
+Ans
+Q
+Ans
+1 C
+2 C
+3 B
+4 B
+5 C
+6 C
+7 A
+8 C
+9 B
+10 D
+11 B
+12 B
+13 C
+14 C
+15 C
+16 B
+17 B
+18 B
+19 B
+20 B
+
+===== PAGE 22 =====
+21 C
+22 C
+23 A
+24 B
+25 B
+26 C
+27 B
+28 B
+29 A
+30 C
+31 B
+32 B
+33 B
+34 B
+35 C
+36 A
+37 C
+38 C
+39 B
+40 C
+41 B
+42 C
+43 C
+44 B
+45 B
+46 D
+47 C
+48 B
+49 C
+50 B
+51 B
+52 C
+53 B
+54 B
+55 B
+56 C
+57 B
+58 C
+59 A
+60 B
+61 B
+62 B
+63 A
+64 B
+65 A
+66 B
+67 B
+68 C
+69 B
+70 C
+71 D
+72 C
+73 C
+74 C
+75 C
+76 C
+77 B
+78 B
+79 C
+80 C
+81 A
+82 D
+83 B
+84 A
+85 B
+86 B
+87 C
+88 B
+89 C
+90 B
+91 B
+92 B
+93 B
+94 A
+95 B
+96 A
+97 B
+98 B
+99 A
+100 B
+101 B
+102
+D
+103 A
+104
+A
+105 B
+106
+C
+107 B
+108 B
+109 B
+110 B
+111 C
+112 B
+113 C
+114 C
+115 A
+116 B
+117 B
+118 C
+119 B
+120 B
+121 B
+122 B
+123 A
+124 B
+125 C
+126 B
+127 B
+128 B
+129 A
+130 A
+131 A
+132
+D
+133 A
+134
+B
+135
+C
+136
+C
+137 A
+138
+C
+139 B
+140 C
+141
+C
+142
+C
+143
+C
+144
+B
+145
+C
+146 B
+147
+C
+148 B
+149 B
+150 B
+151 B
+152 B
+153 B
+154
+B
+155 A
+156 A
+157
+C
+158 A
+159
+C
+160 B
+161 B
+162 B
+163 A
+164
+B
+165 A
+166
+C
+167 A
+168
+C
+169
+C
+170 B
+171 A
+172 C
+173 B
+174 B
+175 C
+176 B
+177 C
+178 B
+179 B
+180 A
+181
+D
+182
+C
+183 B
+184
+B
+185 B
+186 B
+187 A
+188 A
+189
+C
+190 C
+191 B
+192 B
+193
+C
+194
+B
+195 A
+196 B
+197 B
+198 A
+199 B
+200
+B
+Next steps for the content pipeline: tag each question with a Learning Indicator code
+once you’ve mapped them to the official NaCCA documents, and consider commissioning
+
+===== PAGE 23 =====
+simple diagrams for the simple-machines, computer-parts, and body-systems questions
+flagged above.

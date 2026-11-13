@@ -22,10 +22,13 @@ python3 -m venv venv            # create fresh — NEVER copy a venv between mac
 ./venv/bin/pip install --upgrade pip
 ./venv/bin/pip install -r requirements.txt
 cp .env.example .env            # then set JWT_SECRET (required) and DATABASE_URL
-./venv/bin/python -m uvicorn src.main:app --host 0.0.0.0 --port 8001
+ADMIN_PASSWORD='<choose-one>' ./venv/bin/python -m uvicorn src.main:app --host 0.0.0.0 --port 8001
 ```
 
-Check: `curl http://localhost:8001/health` → `{"status":"ok","service":"kwizbox"}`.
+`JWT_SECRET` and `ADMIN_PASSWORD` are both required — startup seeds the
+super-admin and refuses to run without them.
+
+Check: `curl http://localhost:8001/health` → `{"status":"ok","service":"KwizBox"}`.
 On startup the app runs idempotent SQLite migrations and seeds the super-admin
 account if missing.
 
@@ -34,11 +37,15 @@ account if missing.
 ```bash
 cd frontend
 npm ci                          # use ci (lockfile-exact), not install
-npm run dev                     # :5173 (auto-bumps to 5174 when busy)
+npm run dev -- --port 5174 --strictPort
 ```
 
-`frontend/.env` sets `VITE_API_URL` (local default `http://localhost:8001`).
-Production build: `npm run build` → `dist/`.
+`.env.development` deliberately sets `VITE_API_URL=` **empty**, so requests are
+same-origin and Vite proxies the API routes + `/ws` to `:8001`. That keeps the
+HttpOnly session cookie first-party; calling `http://localhost:8001` directly
+makes Chrome drop it. Open `http://localhost:5174` (not `127.0.0.1`).
+Production build: `npm run build` → `dist/` (set `VITE_API_URL` first —
+`.env.production` still has the retired Fly URL).
 
 ## Tests
 

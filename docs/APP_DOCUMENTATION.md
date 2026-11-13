@@ -55,8 +55,8 @@ MY APP/
 │   ├── src/
 │   │   ├── main.jsx         # React entry, ErrorBoundary
 │   │   ├── App.jsx          # React Router + AnimatePresence
-│   │   ├── api.js           # fetch client — VITE_API_URL direct
-│   │   ├── auth.jsx         # AuthContext (JWT in localStorage)
+│   │   ├── api.js           # fetch client (credentials: 'include')
+│   │   ├── auth.jsx         # AuthContext (HttpOnly cookie session)
 │   │   ├── styles.css       # Complete design system (~752 lines)
 │   │   ├── subjects.js      # 15 subjects + BADGE_SUBJECT_MAP
 │   │   ├── sound.js         # SFX hooks (correct, wrong, streak, combo)

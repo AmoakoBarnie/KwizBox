@@ -22,10 +22,10 @@ engagement **18/18**, mascot/share **18/18**, routes **13/13**, register
 **15/15**, production build OK (`npm run build`). Evidence is append-only in
 `docs/05-testing/TEST_RESULTS.md`; bugs BUG-009/012/013/014/015/016 are resolved.
 
-**Next:** final documentation sync (README stale paths/dead Fly URL, architecture
-notes), answer the pending owner question about the 298 tracked files deleted
-from the working tree, then M3 (Android APK) when the owner approves. M1/M2 stay
-rejected.
+**Next:** M3 (Android APK) when the owner approves. `models/` + `scripts/` were
+restored on 2026-11-13 and the docs synced to the current cookie-auth/duel
+architecture; `frontend/.env.production` still needs a real backend URL before
+store builds. M1/M2 stay rejected.
 
 ## Current phase
 

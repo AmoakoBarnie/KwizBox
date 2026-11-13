@@ -6,15 +6,16 @@
 
 ## Base URL
 
-- Local dev: `http://localhost:8001`
-- Target production (M2): `https://<fly-app>.fly.dev` (current value in
-  `frontend/.env.production`: `https://kwizbox-still-bush-3080.fly.dev`)
+- Local dev: `http://localhost:8001` (frontend proxies through `http://localhost:5174`)
+- Production: **not chosen yet** (M2 hosting was rejected). `frontend/.env.production`
+  still contains the retired Fly URL and must be updated before any store build.
 
 ## Conventions
 
 - JSON bodies/responses; Pydantic-validated.
-- Auth: `Authorization: Bearer <JWT>` for player routes; admin routes need an
-  admin token from `POST /admin/token`.
+- Auth: the JWT is set at login in the HttpOnly `kwizbox_access` cookie;
+  `Authorization: Bearer <JWT>` is still accepted for scripts/tests. Admin
+  routes need a separate admin token from `POST /admin/token`.
 - Errors: standard HTTP status codes + FastAPI error bodies.
 - **Security invariant:** quiz pack responses never include `answer_index` or
   `explanation` (REQ-QUIZ-002).

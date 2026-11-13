@@ -59,34 +59,39 @@ KwizBox/
 │   │   ├── mastery.py         # Topic mastery calculation
 │   │   ├── periods.py         # Weekly/monthly bucketing
 │   │   ├── progress.py        # Per-subject + per-topic progress
+│   │   ├── xp.py              # Levels 1–10, leagues, streak calendar
 │   │   ├── seed_admin.py      # Seeds super admin on startup
 │   │   └── routes/
 │   │       ├── auth.py        # register, login, guest, me, password reset
 │   │       ├── quiz.py        # pack, check, submit, leaderboard, progress
 │   │       ├── admin.py       # dashboard, users, questions CRUD, etc.
 │   │       ├── curriculum.py  # GET /curriculum/manifest + /topics
-│   │       └── challenge.py   # POST /create, GET /{code}/questions, etc.
-│   ├── trivia.db              # SQLite — 7,890 questions, user data
+│   │       ├── challenge.py   # POST /create, GET /{code}/questions, etc.
+│   │       └── duel.py        # WS /ws/duel/{code} display-only relay
+│   ├── tests/                 # pytest (question types, duel relay)
+│   ├── trivia.db              # SQLite — questions + user data (gitignored)
 │   └── requirements.txt
 ├── frontend/
 │   ├── src/
 │   │   ├── main.jsx           # React entry, ErrorBoundary
 │   │   ├── App.jsx            # React Router + page transitions
-│   │   ├── api.js             # fetch client → backend
-│   │   ├── auth.jsx           # AuthContext (JWT in localStorage)
+│   │   ├── api.js             # fetch client (credentials: 'include')
+│   │   ├── auth.jsx           # AuthContext (cookie session, no JS token)
+│   │   ├── duel.js            # useDuelRoom — display-only WS hook
 │   │   ├── styles.css         # Design system (dark/light, Ghana flags, etc.)
 │   │   ├── badges.js          # 24 badge definitions
-│   │   ├── subjects.js        # SUBJECTS list (15 subjects)
-│   │   ├── sound.js           # SFX hooks
 │   │   ├── subjects.js        # SUBJECTS + BADGE_SUBJECT_MAP
-│   │   └── components/        # Mascot, AnimatedBg, KenteFrame, etc.
+│   │   ├── sound.js           # SFX hooks
+│   │   ├── components/        # Mascot, AnimatedBg, KenteFrame, etc.
 │   │   └── pages/             # Landing, ChooseQuiz, Challenge, Quiz,
 │   │                            #   Summary, Leaderboard, Profile, Admin
-│   ├── public/                # PWA assets
-│   ├── vite.config.js         # Vite: PWA config, port 5173, /api + /media proxy
-│   ├── .env                   # VITE_API_URL=http://localhost:8001
+│   ├── tests/                 # Playwright e2e + unit checks
+│   ├── public/                # PWA assets + served mascot copies
+│   ├── vite.config.js         # Vite: port 5173, per-route proxy + /ws
+│   ├── .env.development       # VITE_API_URL= (empty → same-origin proxy)
 │   └── package.json
-└── scripts/                   # Question parsers, generators, importers, vetting
+├── scripts/                   # Question parsers, generators, importers, vetting
+└── models/                    # 3D mascot source library (copied into public/)
 ```
 
 ---
@@ -103,25 +108,33 @@ KwizBox/
 
 ```bash
 cd /media/stephen/FILES/My\Projects/KwizBox/backend
-python -m venv venv
+python3 -m venv venv
 source venv/bin/activate  # Windows: venv\Scripts\activate
 pip install -r requirements.txt
-./venv/bin/python -m uvicorn src.main:app --host 0.0.0.0 --port 8001
+ADMIN_PASSWORD='<choose-one>' ./venv/bin/python -m uvicorn src.main:app --host 0.0.0.0 --port 8001
 ```
 
-Health check: `curl http://localhost:8001/health` → `{"status":"ok","service":"kwizbox"}`
+`ADMIN_PASSWORD` is mandatory: startup seeds/updates the super-admin account
+and exits if it is missing.
+
+Health check: `curl http://localhost:8001/health` → `{"status":"ok","service":"KwizBox"}`
 
 ### Frontend (port 5173 or 5174)
 
 ```bash
 cd /media/stephen/FILES/My\Projects/KwizBox/frontend
 npm install
-npm run dev
+npm run dev -- --port 5174 --strictPort
 ```
 
-The Vite dev server auto-increments to 5174 when 5173 is busy — both work.
-The `.env` file sets `VITE_API_URL=http://localhost:8001` so the frontend
-bypasses the Vite proxy and calls the backend directly.
+The Vite dev server auto-increments to 5174 when 5173 is busy — both work, but
+open `http://localhost:5174`, **not** `127.0.0.1`, so the session cookie stays
+first-party.
+
+`.env.development` keeps `VITE_API_URL=` **empty** on purpose: the app then
+calls its own origin and Vite proxies the API routes and `/ws` to `:8001`.
+Pointing the frontend directly at `http://localhost:8001` makes Chrome drop the
+`Secure` cookie between sites, so the app appears signed out.
 
 ---
 
