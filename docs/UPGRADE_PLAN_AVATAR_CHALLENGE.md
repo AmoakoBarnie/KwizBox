@@ -403,10 +403,9 @@ there are at least 2. The frontend already filters to the challenge's players.
   receives undefined.
 
 ### Test users for dev
-- peswa / password123 — normal signed-in user, can create + join challenges,
-  can set avatar.
-- testuser / password123 — second signed-in user, used to test the 1-on-1
-  challenge flow (one creates, one joins).
+- Use two locally-created accounts (or the Playwright suites' throwaway
+  `e2e_*` users) — one creates a challenge, the other joins. Never commit
+  their passwords; create them with the register form.
 - The challenge flow needs two signed-in users to test end-to-end. Use
   incognito / two sessions.
 

@@ -1,8 +1,8 @@
 import requests, json
 from collections import Counter
+from admin_auth import admin_token
 
-r = requests.post('http://localhost:8001/admin/token', json={'username':'admin','password':'Admin@1234'}, timeout=5)
-token = r.json()['access_token']
+token = admin_token()
 print(f"Logged in, token: {token[:30]}...")
 
 # Count questions

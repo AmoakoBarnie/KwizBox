@@ -6,6 +6,7 @@ then check which indicator_ids are covered.
 """
 import requests, json
 from collections import defaultdict
+from admin_auth import admin_token
 
 # Load vetted JSON (has indicator_id per question)
 with open("output/quiz_bank_vetted.json") as f:
@@ -18,8 +19,7 @@ for q in vetted:
     vetted_by_text[text] = q
 
 # Fetch DB questions
-r = requests.post("http://localhost:8001/admin/token", json={"username":"admin","password":"Admin@1234"}, timeout=5)
-token = r.json()["access_token"]
+token = admin_token()
 
 all_questions = []
 for offset in [0, 1000, 2000]:

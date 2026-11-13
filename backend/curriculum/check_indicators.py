@@ -1,6 +1,7 @@
 """Check all indicators in the DB against the manifest — find gaps."""
 import requests, json
 from collections import defaultdict
+from admin_auth import admin_token
 
 # Load manifest
 with open("output/nacca_manifest.json") as f:
@@ -29,8 +30,7 @@ for subj in manifest["subjects"]:
                             manifest_indicators[code][iid] = {"text": text, "cs_id": cs_id}
 
 # Fetch questions from DB
-r = requests.post("http://localhost:8001/admin/token", json={"username":"admin","password":"Admin@1234"}, timeout=5)
-token = r.json()["access_token"]
+token = admin_token()
 
 all_questions = []
 for offset in [0, 1000, 2000]:

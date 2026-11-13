@@ -59,11 +59,13 @@ def main():
         bank = json.load(f)
 
     username = os.environ.get("ADMIN_USERNAME", "admin")
-    password = os.environ.get("ADMIN_PASSWORD", "Admin@1234")
+    password = os.environ.get("ADMIN_PASSWORD")
     if len(sys.argv) > 1:
         username = sys.argv[1]
     if len(sys.argv) > 2:
         password = sys.argv[2]
+    if not password:
+        raise SystemExit("Set ADMIN_PASSWORD (or pass it as the second argument).")
 
     print(f"📦 Loaded {len(bank)} questions from {bank_path}")
     print(f"🔐 Admin: {username}")

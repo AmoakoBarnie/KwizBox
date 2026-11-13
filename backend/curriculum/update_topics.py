@@ -5,6 +5,7 @@ For pre-existing STEM questions: assign topics based on heuristics from existing
 """
 import requests, json, re
 from collections import defaultdict
+from admin_auth import admin_token
 
 # Load manifest
 with open("output/nacca_manifest.json") as f:
@@ -46,8 +47,7 @@ for subj in manifest["subjects"]:
 print(f"Indicator -> topic map: {len(ind_topic_map)} entries")
 
 # Login to DB
-r = requests.post("http://localhost:8001/admin/token", json={"username":"admin","password":"Admin@1234"}, timeout=5)
-token = r.json()["access_token"]
+token = admin_token()
 
 # Fetch ALL questions from DB
 all_questions = []

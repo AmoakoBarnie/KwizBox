@@ -237,3 +237,16 @@ Notes:
   and resolves `../scripts/questions.json`, which is back.
 - `frontend/.env.production` still points at the retired Fly URL; replacing it
   requires an approved production backend URL.
+
+### Follow-up — hardcoded admin password scrub (BUG-017)
+
+| Check | Command | Result |
+|---|---|---|
+| Hardcoded password gone | `grep -rn "Admin@1234" backend/curriculum` | **No matches** — 8 scripts now use `admin_auth.admin_token()` / `ADMIN_PASSWORD`; docs table replaced with a no-credentials note (the value appears only in BUG-017's description) |
+| Helper compiles | `python -m py_compile admin_auth.py check_*.py update_topics.py push_questions.py` | **OK** (9 files) |
+| Graceful failure | inspect `admin_auth.admin_token()` | Raises `SystemExit("Set KWIZBOX_ADMIN_PASSWORD…")` when the env var is missing; no default secret |
+| Docs | `docs/APP_DOCUMENTATION.md`, `docs/UPGRADE_PLAN_AVATAR_CHALLENGE.md` | Plaintext test-account passwords removed |
+
+The `password123` string still appears as a distractor option inside a quiz
+question (`scripts/incoming_204_303.json`); it is question content, not a
+credential.

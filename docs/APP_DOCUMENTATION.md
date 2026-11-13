@@ -121,13 +121,14 @@ cd frontend && npx vite build
 
 ## 🔑 Test Credentials
 
-| Nickname | Password | Role |
-|----------|----------|------|
-| admin | Admin@1234 | Admin (full dashboard) |
-| peswa | password123 | Regular user |
-| testuser | password123 | Regular user |
-| logintest | password123 | Regular user |
-| stephen | stephen123 | Regular user |
+Credentials are **not stored in this repository**. Ask the owner for the admin
+account (kept in a password manager / the local credentials file) and never
+commit passwords, tokens or `.env` files.
+
+- Admin: set `ADMIN_USERNAME` + `ADMIN_PASSWORD` when starting the backend;
+  the seeded account uses those values.
+- Player test accounts: create them locally, or let the Playwright suites
+  register throwaway `e2e_*` users (dev DB only).
 
 Guest mode: any nickname + class level → temporary session.
 

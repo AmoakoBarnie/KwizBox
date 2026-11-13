@@ -20,6 +20,14 @@ does not use semantic versioning yet (pre-1.0, unreleased).
   the four masters keep `source_md5`/`source_bytes` for their original exports,
   and all four match `frontend/public/assets/mascots-v2/animated/` byte-for-byte.
 
+**Security (BUG-017)**
+- Removed the legacy hardcoded `admin` password from eight
+  `backend/curriculum/` scripts: they now use `admin_auth.admin_token()` with
+  `KWIZBOX_ADMIN_USERNAME` / `KWIZBOX_ADMIN_PASSWORD` (or `ADMIN_PASSWORD` for
+  `push_questions.py`) and fail clearly when unset.
+- Removed the plaintext test-credential tables from `docs/APP_DOCUMENTATION.md`
+  and `docs/UPGRADE_PLAN_AVATAR_CHALLENGE.md`.
+
 **Docs synced to the current architecture**
 - README, `docs/README.md`, `docs/00-getting-started.md`: cookie auth, the
   same-origin Vite proxy + `/ws`, `ADMIN_PASSWORD`, `npm run dev -- --port 5174`,

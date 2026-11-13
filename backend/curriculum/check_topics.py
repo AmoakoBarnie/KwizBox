@@ -1,6 +1,7 @@
 """Check all NaCCA topics covered + question counts per topic/class/subject."""
 import requests, json
 from collections import defaultdict
+from admin_auth import admin_token
 
 # Load manifest
 with open("output/nacca_manifest.json") as f:
@@ -38,8 +39,7 @@ for subj in manifest["subjects"]:
                 manifest_strands[code][class_label].add(strand_name)
 
 # Fetch DB questions
-r = requests.post("http://localhost:8001/admin/token", json={"username":"admin","password":"Admin@1234"}, timeout=5)
-token = r.json()["access_token"]
+token = admin_token()
 
 all_questions = []
 for offset in [0, 1000, 2000]:

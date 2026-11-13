@@ -1,9 +1,9 @@
 """Show all unique topic/sub_topic combos in DB and flag issues."""
 import requests, json
 from collections import defaultdict
+from admin_auth import admin_token
 
-r = requests.post("http://localhost:8001/admin/token", json={"username":"admin","password":"Admin@1234"}, timeout=5)
-token = r.json()["access_token"]
+token = admin_token()
 
 # Fetch all questions
 all_qs = []
