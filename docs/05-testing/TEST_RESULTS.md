@@ -250,3 +250,30 @@ Notes:
 The `password123` string still appears as a distractor option inside a quiz
 question (`scripts/incoming_204_303.json`); it is question content, not a
 credential.
+
+## 2026-11-13 — Full end-to-end regression (post-restore)
+
+Environment: dev stack at `98b69b9` — backend `:8001` (SQLite dev DB), Vite
+`:5174` with the same-origin proxy and `/ws`. Suites were run sequentially with
+65 s gaps so the register rate limit (10/min) reset between them. Admin checks
+used `KWIZBOX_ADMIN_USERNAME=Pblack` + `KWIZBOX_ADMIN_PASSWORD` from the local
+credentials file.
+
+| # | Check | Command | Result |
+|---|---|---|---|
+| 1 | Backend unit/relay tests | `./venv/bin/python -m pytest tests/ -q` | **7 passed** (3.61 s) |
+| 2 | Production build | `npm run build` | **OK** (17.04 s; only the pre-existing >500 kB chunk warning) |
+| 3 | Route smoke | `node tests/route-smoke.mjs http://localhost:5174` | **13/13 routes**, no fatal errors |
+| 4 | Register → quiz → summary | `node tests/e2e-register.mjs http://localhost:5174` | **15/15 PASS**, 0 page errors |
+| 5 | Guest journey | `node tests/e2e-guest.mjs http://localhost:5174` | **5/5 PASS** (cookie session, age/gender persisted, `is_guest`) |
+| 6 | Engagement surfaces | `node tests/e2e-engagement.mjs http://localhost:5174` | **18/18 PASS**, 0 page errors |
+| 7 | Mascot + PNG share | `node tests/e2e-mascot-share.mjs http://localhost:5174` | **18/18 PASS**, 0 page errors |
+| 8 | Live duel (two contexts) | `node tests/e2e-duel.mjs http://localhost:5174` | **13/13 PASS**; challenge `8YJZ7S`; lobby presence, rival strip `1/12`, `Finished`; 0 page errors |
+| 9 | Full API e2e | `KWIZBOX_TEST_URL=http://127.0.0.1:8001 node tests/full-e2e.mjs` | **37 passed, 0 failed** — “FULL APP END-TO-END PASSED” (auth/cookie, headers, rate limits, quiz, admin, challenge compare) |
+
+**Outcome:** 9/9 suites green, no new bugs found (BUG-017 remains the only
+change since the last full pass). Test users created during this run:
+`e2e_mwestgyd`, `e2e_eng_mwesxmou`, `e2e_mascot_mwet07ud`, duel pair
+`e2e_duel_*`, plus full-e2e `fullci_*` (dev DB only, harmless).
+
+Raw log: `/tmp/opencode/e2e-2026-11-13.log` (local, not committed).

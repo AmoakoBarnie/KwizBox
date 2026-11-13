@@ -56,9 +56,11 @@ delivered:
 - Restart the backend after relay changes and Vite after `vite.config.js`
   changes (the `/ws` proxy must be active).
 
-**Verification evidence** — `docs/05-testing/TEST_RESULTS.md` (2026-11-12):
-backend pytest 7/7, duel e2e 13/13, engagement 18/18, mascot/share 18/18,
-routes 13/13, register 15/15, build OK. ADR: `docs/adr/0002-live-duel-relay.md`.
+**Verification evidence** — `docs/05-testing/TEST_RESULTS.md`: the 2026-11-13
+full regression (post-restore) is **9/9 suites green** — backend 7/7, build OK,
+routes 13/13, register 15/15, guest 5/5, engagement 18/18, mascot/share 18/18,
+duel 13/13, full API 37/37. The 2026-11-12 Group A–D evidence is above it in the
+same file. ADR: `docs/adr/0002-live-duel-relay.md`.
 
 **Still open**
 - `frontend/.env.production` still targets the retired Fly URL
