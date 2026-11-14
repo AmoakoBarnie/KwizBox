@@ -546,3 +546,11 @@ the live backend):
 | Leaderboard CSV export | **Pass** — `leaderboard-global.csv` (65 bytes) |
 | Only HTTP errors | expected signed-out `/auth/me` 401 |
 | Production build | **Pass** (`vite build`, exit 0) |
+
+Redeployed to Fly (`kwizbox-gh`, image `deployment-01M7CT6JANFVJSKH6CZKGZ8PAG`)
+and re-verified against <https://kwizbox-gh.fly.dev> with a real browser:
+
+- Admin login reaches the dashboard: **26 registered users, 7,890 questions**.
+- All 8 admin tabs load; the audit log records the `Pblack` login.
+- Leaderboard **Export CSV** downloads `leaderboard-global.csv` (65 bytes).
+- Volume data survived the redeploy (same 26 test users; no re-seed).
