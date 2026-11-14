@@ -76,16 +76,53 @@ def _players(code: str) -> list[str]:
     return seen
 
 
-def _peers(code: str, exclude_id: int | None = None) -> list[dict]:
-    peers = []
+def _peers(code: str, exclude_id: int | None = None,
+           exclude_nickname: str | None = None) -> list[dict]:
+    """Unique peers, carrying the best progress seen for each nickname.
+
+    A browser can hold more than one socket for the same account (React
+    StrictMode mounts twice in development; a phone can also reconnect before
+    the old socket is reaped). Collapsing duplicates here means a fresh socket
+    never resets the opponent's board to an empty state.
+    """
+    peers: list[dict] = []
+    positions: dict[str, int] = {}
     for pid, player in _rooms.get(code, {}).items():
-        if pid == exclude_id:
+        nickname = player["nickname"]
+        if pid == exclude_id or nickname == exclude_nickname:
             continue
-        peers.append({
-            "nickname": player["nickname"],
-            "progress": player.get("progress"),
-        })
+        if nickname not in positions:
+            positions[nickname] = len(peers)
+            peers.append({"nickname": nickname, "progress": player.get("progress")})
+            continue
+        index = positions[nickname]
+        if _progress_rank(player.get("progress")) > _progress_rank(peers[index]["progress"]):
+            peers[index]["progress"] = player.get("progress")
     return peers
+
+
+def _progress_rank(progress: dict | None) -> tuple:
+    """Order progress snapshots so the most advanced one wins."""
+    if not progress:
+        return (-1, -1, -1, -1, -1)
+    return (
+        1 if progress.get("finished") else 0,
+        progress.get("index", 0),
+        progress.get("score", 0),
+        progress.get("correct", 0),
+        progress.get("total", 0),
+    )
+
+
+def _latest_progress(code: str, nickname: str) -> dict | None:
+    """Best progress for a nickname across all of its live sockets."""
+    best = None
+    for player in _rooms.get(code, {}).values():
+        if player["nickname"] != nickname:
+            continue
+        if best is None or _progress_rank(player.get("progress")) > _progress_rank(best):
+            best = player.get("progress")
+    return best
 
 
 async def _send(ws: WebSocket, payload: dict) -> None:
@@ -143,7 +180,10 @@ async def duel_room(websocket: WebSocket, code: str):
     _rooms[room_code][player_id] = {
         "ws": websocket,
         "nickname": nickname,
-        "progress": None,
+        # A reconnect for the same nickname inherits the display progress that
+        # its other socket already reported, so the rival's board never blinks
+        # back to 0/N.
+        "progress": _latest_progress(room_code, nickname),
     }
 
     try:
@@ -154,7 +194,8 @@ async def duel_room(websocket: WebSocket, code: str):
             "code": room_code,
             "you": nickname,
             "players": _players(room_code),
-            "peers": _peers(room_code, exclude_id=player_id),
+            "peers": _peers(room_code, exclude_id=player_id,
+                            exclude_nickname=nickname),
         })
         await _broadcast(room_code, {
             "type": "presence",
@@ -217,7 +258,15 @@ async def duel_room(websocket: WebSocket, code: str):
         if not _rooms[room_code]:
             _rooms.pop(room_code, None)
         else:
-            await _broadcast(room_code, {"type": "left", "nickname": nickname})
+            # Only announce a departure when the nickname has no other live
+            # socket. A reconnect can briefly overlap the old connection; the
+            # rival should not see "left" (and lose the progress board) then.
+            still_present = any(
+                player["nickname"] == nickname
+                for player in _rooms[room_code].values()
+            )
+            if not still_present:
+                await _broadcast(room_code, {"type": "left", "nickname": nickname})
             await _broadcast(room_code, {
                 "type": "presence",
                 "code": room_code,

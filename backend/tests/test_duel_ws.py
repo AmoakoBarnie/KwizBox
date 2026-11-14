@@ -92,6 +92,81 @@ def test_two_players_see_presence_and_progress():
             assert after["players"] == ["Alpha"]
 
 
+def test_reconnect_inherits_progress_and_does_not_announce_leave():
+    """A second socket for the same nickname must not wipe the rival's board.
+
+    React StrictMode (and a flaky phone connection) can open a new socket
+    before the old one is closed. The relay must treat them as one player:
+    inherit the last progress, do not broadcast "left" while any socket for
+    that nickname remains, and keep relaying updates from the new socket.
+    """
+    with TestClient(app) as client:
+        alpha_cm = client.websocket_connect("/ws/duel/RECON1?nickname=Alpha")
+        alpha = alpha_cm.__enter__()
+        beta_cm = client.websocket_connect("/ws/duel/RECON1?nickname=Beta")
+        beta = beta_cm.__enter__()
+        try:
+            assert alpha.receive_json()["type"] == "joined"
+            assert beta.receive_json()["type"] == "joined"
+            assert alpha.receive_json()["type"] == "presence"
+
+            beta.send_json({"type": "progress", "index": 4, "total": 12,
+                            "correct": 3, "score": 40})
+            assert alpha.receive_json()["index"] == 4
+
+            beta2_cm = client.websocket_connect("/ws/duel/RECON1?nickname=Beta")
+            beta2 = beta2_cm.__enter__()
+            try:
+                beta2_joined = beta2.receive_json()
+                assert beta2_joined["players"] == ["Alpha", "Beta"]
+                # Own nickname is excluded from peers even with two sockets.
+                assert beta2_joined["peers"] == [{"nickname": "Alpha", "progress": None}]
+                # The room sees presence for the reconnect, not a new player.
+                assert alpha.receive_json()["type"] == "presence"
+
+                # Retire the old socket. Beta is still connected, so Alpha must
+                # NOT receive a "left" event that clears the progress board.
+                beta_cm.__exit__(None, None, None)
+                beta = None
+                event = alpha.receive_json()
+                assert event["type"] == "presence", event
+                assert event["players"] == ["Alpha", "Beta"]
+                assert beta2.receive_json()["type"] == "presence"
+
+                # The inherited progress survives on the new socket.
+                with client.websocket_connect("/ws/duel/RECON1?nickname=Gamma") as gamma:
+                    gamma_joined = gamma.receive_json()
+                    peers = {p["nickname"]: p["progress"] for p in gamma_joined["peers"]}
+                    assert peers["Beta"]["index"] == 4
+                    assert peers["Beta"]["correct"] == 3
+                    assert alpha.receive_json()["type"] == "presence"
+                    assert beta2.receive_json()["type"] == "presence"
+                # Gamma left; Beta's board is still not cleared.
+                assert alpha.receive_json()["type"] == "left"
+                assert beta2.receive_json()["type"] == "left"
+                assert alpha.receive_json()["type"] == "presence"
+                assert beta2.receive_json()["type"] == "presence"
+
+                # Updates from the new socket still relay.
+                beta2.send_json({"type": "progress", "index": 5, "total": 12,
+                                 "correct": 4, "score": 50})
+                assert alpha.receive_json()["index"] == 5
+
+                # Closing the last socket for Beta emits exactly one "left".
+                beta2_cm.__exit__(None, None, None)
+                beta2 = None
+                left = alpha.receive_json()
+                assert left == {"type": "left", "nickname": "Beta"}
+                assert alpha.receive_json()["type"] == "presence"
+            finally:
+                if beta2 is not None:
+                    beta2_cm.__exit__(None, None, None)
+        finally:
+            if beta is not None:
+                beta_cm.__exit__(None, None, None)
+            alpha_cm.__exit__(None, None, None)
+
+
 def test_nickname_is_sanitised_and_required_fields_are_bounded():
     with TestClient(app) as client:
         with client.websocket_connect("/ws/duel/ROOM42?nickname=%3Cscript%3E%20Ada") as ws:
