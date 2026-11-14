@@ -41,6 +41,10 @@ does not use semantic versioning yet (pre-1.0, unreleased).
 **Fixed**
 - BUG-024 (shared rate-limit bucket behind Fly proxy), BUG-025 (empty manifest
   in container), BUG-026 (dead cache-busting + CSP-blocked inline script).
+- BUG-027 (admin UI token dropped by the API client: login returned 200 but
+  every admin request was unauthenticated). `request()` now sends the Bearer
+  header when a token is supplied, and CSV export uses an authenticated Blob
+  download.
 
 **Verified (public)**
 - Health 200; admin login 200 (`super_admin`); dashboard 7,890 questions,

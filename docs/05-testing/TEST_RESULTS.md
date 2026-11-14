@@ -522,3 +522,27 @@ Raw logs: `/tmp/opencode/fly-deploy.log`,
 `/tmp/opencode/public-e2e-duel-2.log`,
 `/tmp/opencode/public-dashboard-after.json` (local, not committed).
 Screenshots: `/tmp/opencode/prod-sim-home.png`, `/tmp/opencode/public-home.png`.
+
+## 2026-11-14 — Admin UI token fix (BUG-027)
+
+The owner reported that the production admin login “not working”. The API was
+healthy (`POST /admin/token` 200), but the browser returned to the login screen:
+
+- `GET /admin/me` with the freshly issued token → **401 Not authenticated**
+- Cause: `frontend/src/api.js` had stopped sending its `token` argument after
+  user auth moved to the HttpOnly cookie, so admin requests carried no
+  `Authorization` header.
+- Fix: send `Authorization: Bearer <token>` when a token is passed (the backend
+  still prefers the user cookie), and download CSVs with an authenticated
+  `fetch` + Blob instead of an `<a href>`.
+
+Verification (Playwright, frontend on `:5174`, admin/API requests forwarded to
+the live backend):
+
+| Check | Result |
+|---|---|
+| Admin login → dashboard | **Pass** — 26 registered users, 7,890 questions |
+| Admin tabs (Users, Questions, Schools, Leaderboards, Monitor, Settings, Audit, Admins) | **8/8 load** |
+| Leaderboard CSV export | **Pass** — `leaderboard-global.csv` (65 bytes) |
+| Only HTTP errors | expected signed-out `/auth/me` 401 |
+| Production build | **Pass** (`vite build`, exit 0) |

@@ -18,8 +18,10 @@ export function mediaUrl(path) {
 async function request(method, path, body, token) {
   const headers = {}
   if (body) headers['Content-Type'] = 'application/json'
-  // User auth is now via HttpOnly cookie (credentials: 'include'), the token
-  // argument is retained for backward compatibility only and is not sent.
+  // Admin endpoints use an explicit Bearer token (the admin token is never
+  // stored in a cookie). User auth still rides the HttpOnly cookie; the
+  // backend checks the cookie first, so a stale token cannot override it.
+  if (token) headers.Authorization = `Bearer ${token}`
   const res = await fetch(`${BASE}${path}`, {
     method,
     headers,
@@ -103,5 +105,15 @@ export const api = {
     admins: (token) => request('GET', '/admin/admins', undefined, token),
     createAdmin: (data, token) => request('POST', '/admin/admins', data, token),
     exportUrl: (kind) => `${BASE}/admin/export/${kind}`,
+    // Admin exports are authenticated; a plain <a href> cannot send the
+    // Bearer header, so fetch the CSV and hand the caller a Blob.
+    exportDownload: async (kind, params, token) => {
+      const qs = new URLSearchParams(params || {}).toString()
+      const res = await fetch(`${BASE}/admin/export/${kind}${qs ? `?${qs}` : ''}`, {
+        headers: token ? { Authorization: `Bearer ${token}` } : {},
+      })
+      if (!res.ok) throw new Error(`Export failed (${res.status})`)
+      return res.blob()
+    },
   },
 }

@@ -306,10 +306,21 @@ function Leaderboards({ token }) {
   const [scope, setScope] = useState('global')
   const [rows, setRows] = useState([])
   const [classLevel, setClassLevel] = useState('')
+  const [msg, setMsg] = useState('')
   useEffect(()=>{
     const p={scope, limit:50}; if(classLevel)p.class_level=classLevel
     api.admin.leaderboard(p, token).then(setRows).catch(()=>{})
   }, [scope, classLevel])
+  const exportCsv = async () => {
+    setMsg('')
+    try {
+      const blob = await api.admin.exportDownload('leaderboard', { scope }, token)
+      const url = URL.createObjectURL(blob)
+      const a = document.createElement('a')
+      a.href = url; a.download = `leaderboard-${scope}.csv`; a.click()
+      URL.revokeObjectURL(url)
+    } catch (e) { setMsg(e.message || 'Export failed') }
+  }
   return (
     <div>
       <div className="tabs tabs-4">
@@ -321,7 +332,8 @@ function Leaderboards({ token }) {
           <li key={r.rank} className="board-row"><span className="rank">{r.rank}</span><span className="name">{r.nickname} {r.class_level}</span><span className="pts">{r.lifetime_score} pts</span><span className="acc">{(r.accuracy*100).toFixed(0)}%</span></li>
         ))}
       </ol>
-      <a className="btn small" href={api.admin.exportUrl('leaderboard')+'?scope='+scope} target="_blank" rel="noreferrer">Export CSV</a>
+      <a className="btn small" href={api.admin.exportUrl('leaderboard')+'?scope='+scope} target="_blank" rel="noreferrer" onClick={(e)=>{e.preventDefault(); exportCsv()}}>Export CSV</a>
+      {msg && <p className="err">{msg}</p>}
     </div>
   )
 }

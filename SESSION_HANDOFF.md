@@ -98,11 +98,13 @@ and `DATABASE_URL=sqlite:////data/trivia.db`. Nothing sensitive is in
 
 **Next exact actions**
 1. Owner tests <https://kwizbox-gh.fly.dev> and supplies any UI feedback.
-2. Decide whether to delete the small set of deployment test users (approval +
+2. Admin UI: BUG-027 fixed (Bearer header was dropped, so every admin request
+   after login returned 401) and redeployed 2026-11-14.
+3. Decide whether to delete the small set of deployment test users (approval +
    backup required).
-3. M3: Capacitor APK rebuild against `https://kwizbox-gh.fly.dev` (set
+4. M3: Capacitor APK rebuild against `https://kwizbox-gh.fly.dev` (set
    `VITE_API_URL` explicitly for the native build).
-4. Commit + push the deployment artifacts and doc updates.
+5. Commit + push the deployment artifacts and doc updates.
 
 ## Previous session (2026-11-13) — offline practice
 
