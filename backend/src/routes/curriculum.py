@@ -10,7 +10,8 @@ from ..models import Question
 
 router = APIRouter(prefix="/curriculum", tags=["curriculum"])
 
-MANIFEST_PATH = Path("/media/stephen/FILES/MyShit/ghana-stem-trivia/backend/curriculum/output/nacca_manifest.json")
+# backend/src/routes/curriculum.py -> backend/curriculum/output/...
+MANIFEST_PATH = Path(__file__).resolve().parents[2] / "curriculum" / "output" / "nacca_manifest.json"
 
 
 @router.get("/manifest")

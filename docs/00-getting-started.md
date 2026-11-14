@@ -227,7 +227,7 @@ Every task in this project draws from these five layers:
 | M0.5 | PR #2 merge + question import | ✅ Done (7,890 questions in DB) |
 | M0.7 | BUG-007 purge (sensitive history removal) | ✅ Executed |
 | M1 | SQLite → Postgres (Supabase) migration | ❌ **Rejected** — app stays on SQLite |
-| M2 | Backend hosting/deployment | ❌ **Rejected** — no hosting |
+| M2 | Backend hosting/deployment | ✅ **Done 2026-11-14** — live at <https://kwizbox-gh.fly.dev> (Fly Machines) |
 | M3 | Android APK rebuild (Capacitor) | Not started — pending owner approval |
 | M4 | Play Store submission | Not started — needs $25 developer account |
 | M5 | Post-launch stabilization & feature work | Not started |

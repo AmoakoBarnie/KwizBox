@@ -7,8 +7,9 @@
 ## Base URL
 
 - Local dev: `http://localhost:8001` (frontend proxies through `http://localhost:5174`)
-- Production: **not chosen yet** (M2 hosting was rejected). `frontend/.env.production`
-  still contains the retired Fly URL and must be updated before any store build.
+- Production: <https://kwizbox-gh.fly.dev> (same-origin web build; the frontend
+  and API share the origin). Android/Capacitor builds set
+  `VITE_API_URL=https://kwizbox-gh.fly.dev` explicitly.
 
 ## Conventions
 

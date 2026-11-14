@@ -1,4 +1,5 @@
 """FastAPI entry point for the KwizBox backend."""
+import re
 from pathlib import Path
 
 from fastapi import FastAPI, Request
@@ -11,6 +12,7 @@ from slowapi.util import get_remote_address
 from slowapi.errors import RateLimitExceeded
 
 from .database import init_db
+from .middleware import FlyClientIPMiddleware
 from .rate_limit import limiter
 from .routes import (
     auth, quiz, admin,
@@ -58,13 +60,16 @@ app.add_middleware(
     ProxyHeadersMiddleware,
     trusted_hosts=["10.0.2.2", "127.0.0.1", "::1"],
 )
+# Fly.io sets Fly-Client-IP at the edge; trust it so rate limits are per user.
+app.add_middleware(FlyClientIPMiddleware)
 
 
 @app.middleware("http")
 async def _security_headers(request, call_next):
     response = await call_next(request)
     response.headers["Content-Security-Policy"] = (
-        "default-src 'self'; script-src 'self' 'unsafe-eval'; "
+        "default-src 'self'; script-src 'self' 'unsafe-eval' "
+        "'sha256-laK5M79dU2kmEnu28ZXHl2GAeyZFGa7Je8au6HKNqpk='; "
         "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; "
         # GLTF models decode embedded textures to blob: URLs.
         "img-src 'self' data: blob:; "
@@ -179,14 +184,12 @@ async def serve_frontend(request: Request, full_path: str = ""):
     # index.html — inject SW-kill + cache-bust asset URLs
     index_html = (DIST_DIR / "index.html").read_text(encoding="utf-8")
 
-    # Add cache-busting query param to JS and CSS URLs
-    index_html = index_html.replace(
-        'src="/assets/index-_Whnn0pU.js"',
-        f'src="/assets/index-_Whnn0pU.js?v={_CACHE_BUST}"'
-    )
-    index_html = index_html.replace(
-        'href="/assets/index-Ct1LAUFI.css"',
-        f'href="/assets/index-Ct1LAUFI.css?v={_CACHE_BUST}"'
+    # Add cache-busting query param to every built JS/CSS asset. Asset names
+    # are content-hashed, so match them instead of hard-coding old filenames.
+    index_html = re.sub(
+        r'((?:src|href)=")(/assets/[^"?]+\.(?:js|css))(")',
+        lambda m: f"{m.group(1)}{m.group(2)}?v={_CACHE_BUST}{m.group(3)}",
+        index_html,
     )
 
     # Inject SW-kill + cache-clear script as the FIRST thing in <head>

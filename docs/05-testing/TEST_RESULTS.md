@@ -438,3 +438,87 @@ Raw logs: `/tmp/opencode/smoke-auth-csp.log`,
 `/tmp/opencode/route-smoke-8001.log`, `/tmp/opencode/guest-8001.log`;
 screenshots `/tmp/opencode/mascot-5174.png` (correct dev), `mascot-8001.png`
 (gray before fix), `mascot-csp-fixed.png` (correct after fix).
+
+## 2026-11-14 — Fly.io production deployment
+
+**Result: LIVE at <https://kwizbox-gh.fly.dev>.** Fly Machine
+`867653ce026d28` in `jnb`, `shared-cpu-1x` / 512 MB, volume
+`kwizbox_data` (1 GB) mounted at `/data`, image 75 MB, health check 1/1
+passing. Deployment command:
+`flyctl deploy --app kwizbox-gh --remote-only --ha=false`.
+
+### Sanitized seed
+
+`scripts/build_production_seed.py` built `deploy/trivia-seed.db` from
+`backend/trivia.db`:
+
+| Check | Result |
+|---|---|
+| Questions in seed | **7,890** (32 probe rows excluded) |
+| Probe topics remaining | **0** |
+| Users / admins / sessions / audit logs / school codes | **0 each** |
+| Settings | `maintenance_mode=false`, `max_class_level=B9` |
+| Answer counters | reset to 0 |
+| SQLite integrity | **ok** |
+| Seed size | 2.9 MiB |
+
+The entrypoint installs this seed only when `/data/trivia.db` is absent.
+Startup then seeds the super-admin from Fly secrets. Public dashboard after
+first boot: **7,890 questions, 0 registered users**.
+
+### Pre-deploy simulation (local, `:8090`, production seed)
+
+| Check | Result |
+|---|---|
+| Backend pytest (incl. 3 new middleware tests) | **12 passed** |
+| Admin login | **200**, role `super_admin` |
+| Curriculum manifest | **13 subjects** |
+| Routes (production build) | **13/13** |
+| Guest journey | **5/5** |
+| Rate limits with 11 distinct `Fly-Client-IP` values | **11 × 200**; `last_ip` matched each header |
+| Playwright | both mascots animate; full colours; no CSP/font errors |
+
+### Public verification
+
+| Check | Result |
+|---|---|
+| `GET /health` | **200** `{"status":"ok","service":"KwizBox"}` |
+| `/admin` + policies | **200 / 200 / 200 / 200** |
+| Admin login (`Pblack`) | **200**, role `super_admin` |
+| `/curriculum/manifest` | **13 subjects** |
+| Security headers | CSP, HSTS, XFO, COOP, COEP all present |
+| Routes | **13/13** |
+| Guest journey | **5/5** |
+| Security smoke (`smoke-auth.mjs`) | **30 passed, 0 failed** |
+| Full API e2e | **37/37** (first run 35/37 only because `KWIZBOX_ADMIN_PASSWORD` was unset; rerun with it passed 37/37) |
+| Register UI e2e | **15/15** |
+| Duel WebSocket e2e | **13/13** (challenge `8TPQTM`) |
+| Playwright home page | 2 canvases, both mascots `walk`, full colour; only expected signed-out `/auth/me` 401 |
+| Machine restart | volume persisted: **26 test users / 7,890 questions** before and after; no re-seed; health 200 |
+
+### Deployment fixes found during verification
+
+- **BUG-024:** `FlyClientIPMiddleware` restores per-client rate limits and
+  `last_ip` behind the Fly proxy.
+- **BUG-025:** curriculum manifest path made container-relative; manifest
+  copied into the image.
+- **BUG-026:** asset cache-busting now rewrites every built JS/CSS URL; CSP
+  includes the inline SW-kill script hash.
+
+### Test data note
+
+The verification suites intentionally create accounts (the full e2e fires a
+15-call register burst to prove rate limiting). Public dashboard after all
+runs: **26 registered test users, 5 games played**. They are test artifacts;
+removing them requires owner approval plus an md5-verified SQLite backup (see
+`PROJECT_STATUS.md`).
+
+Raw logs: `/tmp/opencode/fly-deploy.log`,
+`/tmp/opencode/uvicorn_8090.log`, `/tmp/opencode/route-smoke-8090.log`,
+`/tmp/opencode/guest-8090.log`, `/tmp/opencode/public-route-smoke.log`,
+`/tmp/opencode/public-guest.log`, `/tmp/opencode/public-smoke-auth.log`,
+`/tmp/opencode/public-full-e2e-2.log`,
+`/tmp/opencode/public-e2e-register-2.log`,
+`/tmp/opencode/public-e2e-duel-2.log`,
+`/tmp/opencode/public-dashboard-after.json` (local, not committed).
+Screenshots: `/tmp/opencode/prod-sim-home.png`, `/tmp/opencode/public-home.png`.

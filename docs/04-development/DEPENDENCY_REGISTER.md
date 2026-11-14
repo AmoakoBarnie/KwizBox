@@ -41,9 +41,10 @@
 
 | Item | Version/State | Notes |
 |---|---|---|
-| Docker multi-stage | Dockerfile at root | Hardened in `c3de450` |
-| Fly.io app | `kwizbox-still-bush-3080.fly.dev` | Deploy workflow present; verify live state in M2 |
-| Supabase project | `gfjcoowxijvmmkdwciwq` (Europe, free tier) | Connection string pending (M1 blocker) |
+| Docker multi-stage | `Dockerfile` at root | Builds the Vite app and Python runtime for Fly |
+| Fly.io app | `kwizbox-gh.fly.dev` | Live since 2026-11-14; one Machine + 1 GB volume; manual `flyctl deploy` |
+| Fly volume | `kwizbox_data` (1 GB, `jnb`) | SQLite at `/data/trivia.db`; scheduled snapshots |
+| Supabase project | none in use | M1 (Postgres) rejected; connection string is not a blocker |
 | GitHub Actions CI | `ci.yml` | Node 20, Python 3.11 |
 
 ## Rules

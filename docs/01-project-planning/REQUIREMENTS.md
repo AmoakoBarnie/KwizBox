@@ -91,8 +91,8 @@
 | REQ-NFR-002 | PWA: installable, offline app shell via service worker | Implemented |
 | REQ-NFR-003 | Android app via Capacitor (`com.kwizbox.app`), APK buildable | Implemented |
 | REQ-NFR-004 | Accessibility: focus rings, skip-nav, `prefers-reduced-motion` support | Implemented (incl. JS-motion guards) |
-| REQ-NFR-005 | Postgres (Supabase) as production database | **Pending (M1)** — migration script proven, connection string missing |
-| REQ-NFR-006 | Public backend deployment (Fly.io) | **Pending (M2)** — configs ready |
+| REQ-NFR-005 | Postgres (Supabase) as production database | **Rejected (M1)** — owner kept SQLite |
+| REQ-NFR-006 | Public backend deployment (Fly.io) | **Implemented 2026-11-14** — <https://kwizbox-gh.fly.dev> |
 | REQ-NFR-007 | Play Store publication | **Pending (M4)** |
 
 ## Acceptance criteria convention

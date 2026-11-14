@@ -10,8 +10,9 @@
 | [ADR-001](decisions/ADR-001-reuse-existing-codebase.md) | Adopt and relocate the existing KwizBox codebase (no greenfield rebuild) | 2026-11-10 | Accepted |
 | [ADR-002](decisions/ADR-002-repository-location-ntfs.md) | Working repository on the NTFS FILES drive | 2026-11-10 | Accepted |
 | [ADR-003](decisions/ADR-003-github-canonical-remote.md) | GitHub `AmoakoBarnie/KwizBox` as the canonical remote | 2026-11-10 | Accepted |
-| [ADR-004](decisions/ADR-004-postgres-supabase-migration.md) | Migrate SQLite to Postgres on Supabase | 2026-11-10 | Accepted (execution pending M1) |
+| [ADR-004](decisions/ADR-004-postgres-supabase-migration.md) | Migrate SQLite to Postgres on Supabase | 2026-11-10 | Rejected by owner 2026-11-11 |
 | [ADR-005](decisions/ADR-005-governance-system.md) | Adopt the professional governance/documentation system | 2026-11-10 | Accepted |
+| [ADR-006](decisions/ADR-006-fly-machines-sqlite-deployment.md) | Deploy on Fly Machines with SQLite on a persistent volume | 2026-11-14 | Accepted |
 
 ## Pre-existing implicit decisions (recorded for traceability; predates ADRs)
 

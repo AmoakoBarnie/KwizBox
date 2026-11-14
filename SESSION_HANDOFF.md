@@ -2,7 +2,7 @@
 
 > Written so that a completely fresh AI agent (or developer) can continue this
 > project **without access to any previous conversation**.
-> Last updated: 2026-11-13 (offline practice shipped and regression-tested)
+> Last updated: 2026-11-14 (Fly.io production deployment live)
 
 ## Read first
 
@@ -18,11 +18,12 @@
 3. **M1 (Postgres/Supabase migration): REJECTED** (recorded 2026-11-10,
    owner-confirmed 2026-11-11) — removed from scope; the app stays on
    SQLite. Do no migration work.
-4. **M2 (hosting): REJECTED** (recorded 2026-11-10, owner-confirmed
-   2026-11-11) — no hosting deployment planned. The Fly Deploy workflow,
-   platform configs, and the stale live Fly app were all removed/destroyed.
-   Do not re-add deploy automation or configure `FLY_API_TOKEN` unless the
-   owner reopens hosting.
+4. **M2 (hosting): REOPENED & DEPLOYED 2026-11-14.** The owner explicitly
+   requested Fly.io hosting (`https://fly.io/agent-ready.md`), superseding the
+   earlier deferral. Live app: `kwizbox-gh` → <https://kwizbox-gh.fly.dev>
+   (personal org, region `jnb`, 1 GB volume, single Machine). The old app
+   `kwizbox-still-bush-3080` remains destroyed; never reuse it. Deployment is
+   manual (`flyctl deploy`); no GitHub deploy workflow or `FLY_API_TOKEN`.
 5. **Release scope: APPROVED** — public web app + Android (Capacitor) +
    Play Store; M3–M5 continue.
 6. **BUG-007: EXECUTED & CLOSED 2026-11-10** (history purge, JWT rotation,
@@ -31,7 +32,79 @@
    Never re-publish the old history (the frozen `~/Desktop/KwizBoz Andriod`
    copy and the pre-purge bundle contain it).
 
-## Latest session (2026-11-13) — offline practice
+## Latest session (2026-11-14) — Fly.io production deployment
+
+The owner asked to be set up on Fly.io and launch the project in the
+`stephen-amoako` organization, following `https://fly.io/agent-ready.md`.
+KwizBox is now live at **<https://kwizbox-gh.fly.dev>**.
+
+**What was built**
+1. `Dockerfile` — multi-stage: Node 20 builds the Vite app same-origin; Python
+   3.12-slim installs `backend/requirements.txt` (bcrypt stays `4.0.1`) and runs
+   `uvicorn` on `0.0.0.0:8080`.
+2. `fly.toml` — app `kwizbox-gh`, `primary_region = "jnb"`, `internal_port =
+   8080`, single Machine (`shared-cpu-1x`, 512 MB), volume `kwizbox_data` at
+   `/data`, HTTP health check `/health`, `strategy = "immediate"` (one volume =
+   one Machine).
+3. `deploy/entrypoint.sh` — copies the sanitized seed to `/data/trivia.db`
+   only when the volume database is missing, then starts uvicorn.
+4. `scripts/build_production_seed.py` — builds a questions-only SQLite seed
+   from `backend/trivia.db`: **7,890 questions**, two safe settings, no users,
+   admins, sessions, audit logs, school codes, progress, or probe questions.
+   `deploy/trivia-seed.db` is generated and gitignored, but included in the
+   Docker build context.
+5. `.dockerignore` — excludes secrets, dev DBs, venvs, `node_modules`, docs.
+
+**Runtime configuration** is in Fly secrets only: `JWT_SECRET`,
+`ADMIN_USERNAME=Pblack`, `ADMIN_PASSWORD` (owner holds it), `ADMIN_FULLNAME`,
+and `DATABASE_URL=sqlite:////data/trivia.db`. Nothing sensitive is in
+`fly.toml` or Git. The super-admin is seeded on first boot by
+`seed_super_admin()`; the password is not recorded in the repo.
+
+**Deployment-time fixes**
+- **BUG-024:** Fly Proxy made every visitor share one rate-limit bucket. New
+  `backend/src/middleware.py` trusts the edge-set `Fly-Client-IP` and
+  `X-Forwarded-Proto` (validated), so rate limits and `last_ip` are per client.
+- **BUG-025:** curriculum manifest used an absolute dev path
+  (`/media/stephen/...`). It is now relative to the backend and copied into the
+  image; the public manifest returns 13 subjects.
+- **BUG-026:** asset cache-busting hard-coded two old filenames, and the
+  injected service-worker-kill script was blocked by CSP. The backend now
+  rewrites every built JS/CSS URL with `?v=…` and CSP includes the script hash.
+
+**Verified (public URL, 2026-11-14)**
+- `/health` 200; admin login 200 (`super_admin`); dashboard **7,890 questions,
+  0 registered users**; policies + `/admin` 200; manifest 13 subjects.
+- Routes **13/13**, guest journey **5/5**, security smoke **30/30**.
+- Full API e2e **35/37** on the first run — the only two failures were the
+  admin-credential checks because `KWIZBOX_ADMIN_PASSWORD` was not exported
+  (admin login was independently verified 200). Rerun with the env var:
+  **37/37**.
+- Playwright: both mascots animate (`walk`, two canvases) in full colour; only
+  console error is the expected 401 from `/auth/me` for a signed-out visitor.
+- Machine restart: volume persisted (3 test users and 7,890 questions before
+  and after); no re-seed; health returned 200.
+
+**State / caveats**
+- Deployment verification created a few test users/guests in production. They
+  are harmless; deleting them needs owner approval + an md5-verified backup
+  (see `PROJECT_STATUS.md` pending decisions).
+- `frontend/.env.production` is now `VITE_API_URL=` (same-origin). The old dead
+  Fly URL is gone from the bundle.
+- Local dev still runs on `:5174` / `:8001`; production is `:8080` in the
+  container.
+- Deployment docs: `docs/06-deployment/DEPLOYMENT_GUIDE.md`. Evidence:
+  `docs/05-testing/TEST_RESULTS.md` (2026-11-14 Fly section).
+
+**Next exact actions**
+1. Owner tests <https://kwizbox-gh.fly.dev> and supplies any UI feedback.
+2. Decide whether to delete the small set of deployment test users (approval +
+   backup required).
+3. M3: Capacitor APK rebuild against `https://kwizbox-gh.fly.dev` (set
+   `VITE_API_URL` explicitly for the native build).
+4. Commit + push the deployment artifacts and doc updates.
+
+## Previous session (2026-11-13) — offline practice
 
 The owner selected **offline practice** as the next upgrade. It is implemented,
 committed and verified by a full regression:
@@ -71,10 +144,10 @@ engagement 18/18, mascot/share 18/18, duel 13/13, full API 37/37. The previous
 post-restore full pass (9/9) is above it in the same file.
 
 **Still open**
-- `frontend/.env.production` still targets the retired Fly URL
-  `https://kwizbox-still-bush-3080.fly.dev`; no replacement backend URL is
-  approved yet (set it before M3/M4 builds).
-- M3 (Android APK) waits for owner approval; M1/M2 remain rejected.
+- ~~`frontend/.env.production` still targets the retired Fly URL~~ — resolved
+  2026-11-14: it is now `VITE_API_URL=` (same-origin production build).
+- M3 (Android APK) waits for owner approval; the public backend is now
+  `https://kwizbox-gh.fly.dev`. M1 (Postgres) remains rejected.
 
 **Resolved earlier this session (2026-11-13)**
 - Owner chose to restore `models/` + `scripts/` from before `e013937`; 70 files

@@ -1,7 +1,8 @@
 # ADR-004: Migrate SQLite to Postgres on Supabase
 
 - **Date:** 2026-11-10 (decision pre-dates this session; recorded now)
-- **Status:** Accepted — **execution pending (M1)**
+- **Status:** **Rejected by the owner on 2026-11-11** — the app stays on SQLite.
+  Superseded in deployment terms by ADR-006 (Fly Machines + SQLite volume).
 
 ## 1. Context
 The app runs on a single SQLite file (`backend/trivia.db`) holding both the

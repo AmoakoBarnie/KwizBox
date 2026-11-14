@@ -1,0 +1,33 @@
+# Never ship VCS data or local tooling
+.git
+.github
+.gitignore
+**/__pycache__
+**/*.pyc
+**/*.pyo
+**/*.bak
+**/*.bak_*
+
+# Local environments and build output
+backend/venv
+backend/.venv
+frontend/node_modules
+frontend/dist
+frontend/android
+
+# Secrets and local databases (never in an image)
+**/.env
+**/.env.*
+backend/trivia.db
+backend/trivia.db-*
+backend/trivia.db.bak_*
+
+# Test evidence / docs / screenshots are not runtime dependencies
+docs
+models
+preview-assets
+frontend/tests
+*.log
+
+# The sanitized seed is the one intentional binary in the build context.
+!deploy/trivia-seed.db

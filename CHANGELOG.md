@@ -10,6 +10,52 @@ does not use semantic versioning yet (pre-1.0, unreleased).
 
 ## [Unreleased]
 
+### 2026-11-14 — Fly.io production deployment
+
+**Added**
+- Live deployment at <https://kwizbox-gh.fly.dev> (Fly Machines, personal org,
+  region `jnb`): one `shared-cpu-1x`/512 MB Machine with a 1 GB volume
+  `kwizbox_data` at `/data` and SQLite at `/data/trivia.db`.
+- `Dockerfile` (multi-stage: Node 20 Vite build → Python 3.12 runtime,
+  uvicorn on `0.0.0.0:8080`), `fly.toml`, `.dockerignore`, and
+  `deploy/entrypoint.sh` (seed-once then start).
+- `scripts/build_production_seed.py`: sanitized questions-only seed from
+  `backend/trivia.db` — **7,890 questions**, no users/admins/sessions/audit
+  logs/school codes/progress, and no BUG-018 probe rows. `deploy/trivia-seed.db`
+  is generated, gitignored, and baked into the image.
+- `backend/src/middleware.py` (`FlyClientIPMiddleware`) + 3 regression tests:
+  trusts Fly's validated `Fly-Client-IP`/`X-Forwarded-Proto` so rate limits and
+  `last_ip` are per client.
+- `backend/tests/test_middleware.py`.
+
+**Changed**
+- `frontend/.env.production` is now `VITE_API_URL=` (same-origin); the retired
+  Fly URL is gone from production bundles.
+- Curriculum manifest resolves relative to `backend/curriculum/output/` and is
+  copied into the image.
+- `serve_frontend()` cache-busts every built JS/CSS asset (regex, not two
+  hard-coded filenames); CSP includes the inline SW-kill script hash.
+- Deployment guide rewritten for Fly (secrets, volume, seed, redeploy,
+  backups, rollback, one-Machine/SQLite constraint).
+
+**Fixed**
+- BUG-024 (shared rate-limit bucket behind Fly proxy), BUG-025 (empty manifest
+  in container), BUG-026 (dead cache-busting + CSP-blocked inline script).
+
+**Verified (public)**
+- Health 200; admin login 200 (`super_admin`); dashboard 7,890 questions,
+  0 registered users at first boot; policies + admin 200; manifest 13 subjects.
+- Routes 13/13, guest 5/5, smoke-auth 30/30, full API e2e 37/37,
+  register UI 15/15, duel WebSocket 13/13.
+- Playwright: both mascots animate in full colour; no CSP/font errors.
+- Machine restart: volume persisted (26 test users / 7,890 questions), no
+  re-seed, health 200.
+
+**Notes**
+- Deployment tests created 26 test users / 5 games. Cleanup is pending owner
+  approval + an md5-verified backup; nothing is deleted automatically.
+- Manual deploys only — no GitHub deploy workflow / `FLY_API_TOKEN`.
+
 ### 2026-11-13 — Offline practice (device-local packs + local grading)
 
 **Added**

@@ -1,10 +1,11 @@
 # SYSTEM_ARCHITECTURE.md
 
 > Part of `docs/02-architecture/`. The **as-built** architecture, verified
-> against the code 2026-11-10. Change this document whenever the architecture
-> changes — via an ADR first if the change is significant. M1 (Postgres) and
-> M2 (hosting) were **rejected** by the owner on 2026-11-10/11. The app stays on
-> SQLite. Android (Capacitor) is the only approved post-launch platform.
+> against the code 2026-11-14. Change this document whenever the architecture
+> changes — via an ADR first if the change is significant. M1 (Postgres) was
+> **rejected** by the owner; M2 (hosting) was reopened on 2026-11-14 and is
+> now **live on Fly.io**. The app stays on SQLite. Android (Capacitor) remains
+> the post-launch native platform.
 
 ## Overview
 
@@ -75,11 +76,12 @@ stateless REST API, plus an Android wrapper that reuses the same frontend.
 
 ## Database
 
-- **Today:** SQLite (`backend/trivia.db`) — 13 tables, **7,890 questions**
-  (7,710 pre-PR #2 + 180 from PR #2 + 180 additional via DB direct import),
-  users and sessions live data. Live data + question bank in one file.
-- **Target:** Supabase Postgres (M1). Migration script proven; connection string
-  pending. Schema documented in `DATABASE_SCHEMA.md`.
+- **Today:** SQLite. Development: `backend/trivia.db`; production:
+  `/data/trivia.db` on the Fly volume `kwizbox_data`. 13 tables, **7,890
+  curated questions** plus live users/sessions. Live data + question bank in
+  one file.
+- **Target:** none — the Postgres/Supabase migration (M1) was rejected by the
+  owner. The schema is documented in `DATABASE_SCHEMA.md`.
 
 ## Data flow — core quiz loop
 
@@ -92,31 +94,43 @@ stateless REST API, plus an Android wrapper that reuses the same frontend.
    `LeaderboardPeriod` buckets (weekly/monthly).
 5. Leaderboards/progress read back via `GET /quiz/leaderboard`, `/quiz/progress`.
 
-## Deployment topology (target, M2)
+## Deployment topology (as-built, 2026-11-14)
 
-- **Backend:** Fly.io (Docker multi-stage build; `fly.toml`; GitHub Actions
-  deploy workflow). Secrets: `DATABASE_URL`, `JWT_SECRET`, `ALLOWED_ORIGINS`.
-- **Database:** Supabase (managed Postgres, Europe region, free tier).
-- **Frontend:** static hosting (GitHub Pages legacy deploy exists on
-  `gh-pages`; final hosting decision part of M2) + Android APK from the same
-  build.
-- **Dev tunnels:** `cloudflared` configs exist for local-exposure testing
+- **Platform:** Fly.io Machines, app `kwizbox-gh` at
+  <https://kwizbox-gh.fly.dev>, region `jnb`.
+- **Backend:** one `shared-cpu-1x`/512 MB Machine; multi-stage Docker image
+  (`node:20-alpine` build → `python:3.12-slim` runtime); uvicorn on
+  `0.0.0.0:8080`; FastAPI serves the same-origin Vite build from
+  `/app/frontend/dist`. Health check `/health` every 30 s.
+- **Database:** SQLite at `/data/trivia.db` on the 1 GB volume
+  `kwizbox_data`. The image carries a sanitized questions-only seed;
+  `deploy/entrypoint.sh` installs it only when the volume DB is absent.
+- **Secrets:** Fly secrets only (`JWT_SECRET`, `ADMIN_USERNAME`,
+  `ADMIN_PASSWORD`, `ADMIN_FULLNAME`, `DATABASE_URL`) — never `fly.toml`/Git.
+- **Frontend:** same-origin web build plus the Android Capacitor wrapper; the
+  native build must set `VITE_API_URL=https://kwizbox-gh.fly.dev`.
+- **One Machine only:** a Fly volume attaches to one Machine, so horizontal
+  scaling requires a Postgres migration first.
+- **Dev tunnels:** `cloudflared` configs remain for local-exposure testing
   (historical; not part of production).
 
 ## Cross-cutting concerns
 
 - **Auth:** JWT Bearer + cookie-based auth; guests get short-lived tokens and
   are excluded from leaderboards by design.
-- **Rate limiting:** slowapi on sensitive endpoints (`rate_limit.py`).
-- **Security headers:** applied in hardening `d17a252`.
+- **Rate limiting:** slowapi on sensitive endpoints (`rate_limit.py`); in
+  production `FlyClientIPMiddleware` makes the key the real client IP from
+  Fly's edge (`Fly-Client-IP`), not the proxy address.
+- **Security headers:** applied in hardening `d17a252`; CSP allows `blob:`
+  textures/workers, Google Fonts, and the inline SW-kill script hash.
 - **CORS:** env-driven `ALLOWED_ORIGINS`.
 - **Admin:** separate admin accounts with roles and permission sets; audit log.
 
 ## Known architectural limitations (honest view)
 
 - Single-process API + SQLite caps concurrent writes; fine for current scale
-  (tens of users). M1 (Postgres migration) was **rejected** by the owner
-  (2026-11-10/11) — the app stays on SQLite.
+  (tens of users). M1 (Postgres migration) was **rejected** by the owner; the
+  production app is one Machine with one volume, so it cannot scale out.
 - Badges live in `localStorage` (frontend) — device-bound, not server-authoritative.
 - `models.py.bak_before_pg` exists in `backend/src/` — historical backup file;
   candidate for cleanup (tracked in BUG_TRACKER as housekeeping).

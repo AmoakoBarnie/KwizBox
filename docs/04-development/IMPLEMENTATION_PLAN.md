@@ -1,14 +1,18 @@
 # IMPLEMENTATION_PLAN.md
 
 > Part of `docs/04-development/`. The task breakdown for the **current**
-> milestone (M1) plus the outline for M2–M4. Milestone definitions and
-> acceptance criteria: `docs/01-project-planning/ROADMAP.md`.
+> milestone. M1 (Postgres) is rejected; M2 (hosting) completed on 2026-11-14.
+> Next: M3 (Android APK). Milestone definitions and acceptance criteria:
+> `docs/01-project-planning/ROADMAP.md`.
 
 ## M0 — Initialization (COMPLETE 2026-11-10)
 
 All tasks delivered; see `PROJECT_STATUS.md`. Approval gate pending.
 
-## M1 — SQLite → Postgres (Supabase) — CURRENT (BLOCKED)
+## M1 — SQLite → Postgres (Supabase) — REJECTED (2026-11-11)
+
+Kept for history. The owner rejected the migration; the app runs on SQLite.
+Do not execute these tasks unless the owner explicitly reopens M1.
 
 | # | Task | Depends on | Done when |
 |---|---|---|---|
@@ -21,15 +25,15 @@ All tasks delivered; see `PROJECT_STATUS.md`. Approval gate pending.
 | 1.7 | Update env docs + DECISION_LOG entry marking ADR-004 executed | 1.6 | docs updated |
 | 1.8 | Decide SQLite fallback policy (keep file read-only as rollback) | 1.6 | documented in ADR-004 addendum |
 
-## M2 — Backend deployment (Fly.io)
+## M2 — Backend deployment (Fly.io) — ✅ COMPLETE 2026-11-14
 
-| # | Task | Done when |
-|---|---|---|
-| 2.1 | Set Fly secrets (`DATABASE_URL`, `JWT_SECRET`, `ALLOWED_ORIGINS`) | secrets exist in Fly only |
-| 2.2 | Deploy via `.github/workflows/fly-deploy.yml` (or `fly deploy`) | deployment green |
-| 2.3 | Public `/health` 200 + security headers + rate limits verified | curl evidence in TEST_RESULTS |
-| 2.4 | CORS finalized for deployed frontend origin; localhost entries removed | verified from non-local network |
-| 2.5 | Frontend env files updated to the public URL | `frontend/.env.production` committed |
+| # | Task | Done when | Status |
+|---|---|---|---|
+| 2.1 | Set Fly secrets (`JWT_SECRET`, `ADMIN_USERNAME`, `ADMIN_PASSWORD`, `ADMIN_FULLNAME`, `DATABASE_URL`) | secrets exist in Fly only | ✅ |
+| 2.2 | Deploy with `flyctl deploy --remote-only --ha=false` (manual; no GitHub workflow) | deployment green | ✅ |
+| 2.3 | Public `/health` 200 + security headers + per-client rate limits verified | curl evidence in TEST_RESULTS | ✅ |
+| 2.4 | Same-origin frontend, CSP (blob textures/fonts), curriculum manifest | verified from public URL | ✅ |
+| 2.5 | Frontend env: production web same-origin (`VITE_API_URL=`); native build uses public URL | committed | ✅ |
 
 ## M3 — Android APK rebuild
 

@@ -9,8 +9,8 @@
 | ID | Milestone | Status | Depends on |
 |---|---|---|---|
 | M0 | Professional initialization & governance | ✅ Done 2026-11-10 (approval pending) | — |
-| M1 | SQLite → Postgres (Supabase) migration | ⛔ Blocked on connection string | M0 |
-| M2 | Backend public deployment (Fly.io) | Not started | M1 |
+| M1 | SQLite → Postgres (Supabase) migration | ❌ Rejected by owner 2026-11-11 | — |
+| M2 | Backend public deployment (Fly.io) | ✅ Done 2026-11-14 — <https://kwizbox-gh.fly.dev> | — |
 | M3 | Android APK rebuild against public backend | Not started | M2 |
 | M4 | Play Store submission | Not started | M3, owner accounts |
 | M5 | Post-release stabilization | Not started | M4 |
@@ -43,16 +43,19 @@ Acceptance criteria:
 - [ ] `/health` returns `{"status":"ok","service":"kwizbox"}`.
 - [ ] Rollback possible: SQLite file untouched + backup exists.
 
-## M2 — Backend deployment (Fly.io)
+## M2 — Backend deployment (Fly.io) — ✅ 2026-11-14
 
-Tasks: set `DATABASE_URL` + `JWT_SECRET` as Fly secrets; deploy via existing
-Dockerfile/workflow; set `ALLOWED_ORIGINS`; verify public `/health`; smoke test
-from the public URL; record the backend URL in env files.
+Tasks completed: created app `kwizbox-gh` + 1 GB volume in `jnb`; set
+`JWT_SECRET`, `ADMIN_USERNAME`, `ADMIN_PASSWORD`, `ADMIN_FULLNAME` and
+`DATABASE_URL` as Fly secrets; deployed via `flyctl deploy --remote-only
+--ha=false`; sanitized questions-only seed installed on first boot; same-origin
+frontend served by FastAPI.
 
 Acceptance criteria:
-- [ ] `https://<fly-app>.fly.dev/health` returns 200 from the public internet.
-- [ ] Rate limits + security headers verified on the public URL.
-- [ ] Secrets only in Fly/GitHub secret stores — gitleaks clean.
+- [x] `https://kwizbox-gh.fly.dev/health` returns 200 from the public internet.
+- [x] Rate limits + security headers verified on the public URL (per-client
+      `Fly-Client-IP`; smoke-auth 30/30).
+- [x] Secrets only in Fly secrets — no secrets in `fly.toml`/Git.
 
 ## M3 — Android APK rebuild
 

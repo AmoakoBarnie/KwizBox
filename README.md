@@ -6,6 +6,9 @@ across 16 subjects. Built foundation-first: backend + question bank verified bef
 
 > **Working repository:** `/media/stephen/FILES/My Projects/KwizBox` ·
 > **Remote:** `github.com/AmoakoBarnie/KwizBox` (branch `main`)
+>
+> **Live:** <https://kwizbox-gh.fly.dev> — Fly.io, Johannesburg (`jnb`),
+> deployed 2026-11-14 on a single Machine with a persistent SQLite volume.
 
 ## Project organization & documentation map
 
@@ -31,6 +34,9 @@ verification rules, feature workflow, security rules). Then:
 ## Stack
 - **Frontend:** React + Vite (PWA via `vite-plugin-pwa`). Mobile-first, low-data.
 - **Backend:** FastAPI + SQLite. JWT auth (registered + guest).
+- **Hosting:** Fly.io Machines (`kwizbox-gh`, region `jnb`) — multi-stage
+  Docker image, FastAPI serves the same-origin Vite build, SQLite on a 1 GB
+  persistent volume mounted at `/data`.
 - **Content:** 7,890 questions across 16 subjects (13 subjects + Mixed), tagged by
   class (B4–B9) · subject · strand/topic · difficulty, each with a 1–4 sentence
   explanation. 7,710 + 180 from PR #2 (imported 2026-11-10).
