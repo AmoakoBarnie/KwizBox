@@ -1,25 +1,16 @@
 """Question type coverage: default mcq, T/F pack shape, image_mcq URL, T/F grading.
 
-Uses an isolated temp SQLite DB so the live backend/trivia.db is never touched.
+Uses an isolated temp SQLite DB (set up in `tests/conftest.py`) so the live
+backend/trivia.db is never touched.
 Run from backend/:  venv/Scripts/python -m pytest tests/test_question_types.py -q
 """
-import os
 import sys
-import tempfile
 import unittest
 import uuid
 from pathlib import Path
 
 BACKEND = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(BACKEND))
-
-_fd, _DB = tempfile.mkstemp(suffix=".db")
-os.close(_fd)
-os.environ["DATABASE_URL"] = "sqlite:///" + _DB.replace("\\", "/")
-# seed_super_admin() refuses to run (sys.exit) without ADMIN_PASSWORD, which
-# kills the TestClient lifespan with a confusing CancelledError — set a
-# throwaway value for the isolated temp DB only.
-os.environ.setdefault("ADMIN_PASSWORD", "test-only")
 
 from fastapi.testclient import TestClient  # noqa: E402
 from src.main import app  # noqa: E402

@@ -3,8 +3,6 @@ import { api } from './api.js'
 
 const AuthContext = createContext(null)
 
-const TOKEN_KEY = 'kwizbox_token'
-
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null)
   const [token, setToken] = useState(null)

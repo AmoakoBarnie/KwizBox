@@ -48,20 +48,24 @@ console.log('\ncanvases:', info.canvasCount, JSON.stringify(info.canvases));
 console.log('webgl versions:', info.glOK);
 
 // sample pixels: is anything actually drawn?
-const drawn = await page.evaluate(() => {
+// WebGL canvases clear their drawing buffer after compositing unless
+// preserveDrawingBuffer is set, so drawImage() often returns a blank bitmap.
+// Read the framebuffer directly on the next animation frame instead.
+const drawn = await page.evaluate(async () => {
   const c = document.querySelector('canvas');
   if (!c) return { canvas: false };
-  const off = document.createElement('canvas');
-  off.width = c.width; off.height = c.height;
-  const g = off.getContext('2d');
-  g.drawImage(c, 0, 0);
-  const d = g.getImageData(0, 0, off.width, off.height).data;
+  const gl = c.getContext('webgl2') || c.getContext('webgl');
+  if (!gl) return { canvas: true, gl: false };
+  await new Promise((r) => requestAnimationFrame(r));
+  const w = gl.drawingBufferWidth, h = gl.drawingBufferHeight;
+  const px = new Uint8Array(w * h * 4);
+  gl.readPixels(0, 0, w, h, gl.RGBA, gl.UNSIGNED_BYTE, px);
   let nonBlank = 0, total = 0;
-  for (let i = 0; i < d.length; i += 4 * 97) {
+  for (let i = 3; i < px.length; i += 4 * 97) {
     total++;
-    if (d[i] || d[i + 1] || d[i + 2]) nonBlank++;
+    if (px[i] > 8) nonBlank++;
   }
-  return { canvas: true, sampled: total, nonBlank };
+  return { canvas: true, gl: true, sampled: total, nonBlank };
 });
 console.log('pixel sample:', JSON.stringify(drawn));
 

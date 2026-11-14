@@ -6,7 +6,7 @@ export default function PrivacyPolicy() {
     <div className="policy-page">
       <div className="policy-hero">
         <h1 className="policy-title">Privacy Policy</h1>
-        <p className="policy-sub">KwizBox — last updated 19 October 2026</p>
+        <p className="policy-sub">KwizBox — last updated 13 November 2026</p>
       </div>
 
       <div className="policy-body">
@@ -82,11 +82,12 @@ export default function PrivacyPolicy() {
               and earned badges, so your progress and the leaderboard work.
             </li>
             <li>
-              <strong>Session token</strong> — a signed JWT stored in your browser's
-              <code>localStorage</code> that keeps you signed in. For regular users it
-              expires after <strong>30 days</strong>; guest sessions use a guest-scoped
-              token. Admin panel tokens expire after 2 hours. Clearing browser storage or
-              logging out removes the token immediately.
+              <strong>Session token</strong> — a signed JWT stored in an HttpOnly,
+              Secure, SameSite=Strict cookie named <code>kwizbox_access</code>. It keeps
+              you signed in and JavaScript cannot read it. For regular users and guest
+              sessions it expires after <strong>30 days</strong>. Admin panel tokens are
+              stored separately and expire after 2 hours. Logging out or clearing cookies
+              removes the session immediately.
             </li>
           </ul>
         </section>
@@ -94,7 +95,9 @@ export default function PrivacyPolicy() {
         <section className="policy-section">
           <h2 className="policy-h2">4. What we do NOT collect</h2>
           <ul className="policy-list">
-            <li>No cookies of any kind are set by this application.</li>
+            <li>Only one essential first-party cookie is set: the HttpOnly session
+              cookie described in section 3. We do not use analytics, advertising,
+              tracking, or third-party cookies.</li>
             <li>No analytics, advertising, or tracking scripts (Google Analytics, Meta
               Pixel, Mixpanel, Hotjar, Segment, and similar) are loaded.</li>
             <li>No third-party service worker or tracking SDK is registered. The
@@ -121,10 +124,10 @@ export default function PrivacyPolicy() {
         <section className="policy-section">
           <h2 className="policy-h2">6. Data storage and retention</h2>
           <p>
-            Data is stored in a database on the server that hosts the app. Today that is a
-            local SQLite database; the app is being moved to a hosted PostgreSQL database,
-            and this section will be updated when that migration is complete. Either way
-            the data stays with the app's own hosting and is not shared externally.
+            Data is stored in a SQLite database on the server that hosts the app. The data
+            stays with the app's own hosting and is not shared externally. A move to a
+            hosted database is not part of the current release plan; this section will be
+            updated if that changes.
           </p>
           <p>
             Guest records are lightweight and can be removed by deleting the guest session
@@ -163,7 +166,7 @@ export default function PrivacyPolicy() {
             </li>
             <li>
               <strong>Withdraw consent</strong> — simply stop using the app, or log out to
-              clear your in-browser token.
+              clear your session cookie.
             </li>
           </ul>
         </section>

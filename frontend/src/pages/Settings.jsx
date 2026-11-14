@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useAuth } from '../auth.jsx'
 import { api } from '../api.js'
+import { clearOfflinePack } from '../offlinePractice.js'
 import Mascot from '../components/Mascot.jsx'
 import Mascot3D from '../components/Mascot3D.jsx'
 
@@ -268,12 +269,17 @@ export default function Settings() {
               <p style={{ fontSize: 14, color: 'var(--muted)', marginBottom: 14 }}>
                 Remove cached data from this browser. Your account progress is safe on the server.
               </p>
-              <button className="btn" onClick={() => {
+              <button className="btn" onClick={async () => {
                 localStorage.removeItem('kwizbox_badges')
                 localStorage.removeItem('kwizbox_last_result')
                 localStorage.removeItem('kwizbox_last_cfg')
+                localStorage.removeItem('stem_mode')
+                localStorage.removeItem('app_mode')
+                localStorage.removeItem('stem_mute')
+                // Legacy keys from earlier builds.
                 localStorage.removeItem('stem_theme')
                 localStorage.removeItem('stem_sound')
+                try { await clearOfflinePack() } catch {}
                 setToast({ msg: 'Local data cleared', type: 'success' })
               }}>Clear Cache</button>
             </motion.div>

@@ -346,3 +346,71 @@ DB), Vite `:5174` with the same-origin proxy incl. `/quiz/offline-pack` and
 `e2e_duel_*`, plus full-e2e `fullci_*` (dev DB only, harmless).
 
 Raw log: `/tmp/opencode/e2e-offline-2026-11-13.log` (local, not committed).
+
+## 2026-11-14 — Extra verification suites (policy, storage, mascot)
+
+Environment: dev stack (backend `:8001`, Vite `:5174`) after BUG-018/019/020/021
+fixes. Playwright Chromium with SwiftShader; each script run from `frontend/`.
+
+| Check | Command | Result |
+|---|---|---|
+| Policy pages render | `node tests/policy-check.mjs` | **3/3 pages** — 10/11/14 sections, 886/840/748 words, Back button present, 0 page errors |
+| Policy claims match code | `node tests/policy-facts.mjs` | **30/30 PASS** — cookie name/flags/expiry, real localStorage keys, offline IndexedDB/Cache Storage, SQLite, B4–S3, minors |
+| Policy Back buttons | `node tests/back-button.mjs` | **3/3 PASS** — each policy returns to `/`; footer links correct |
+| Settings → Clear Cache | `node tests/settings-clear.mjs` | **6/6 PASS** — guest session; 9 localStorage keys + IndexedDB pack + media cache seeded, all removed, success toast shown |
+| 3D mascot render | `node tests/mascot-render-check.mjs` | **PASS** — 2 WebGL2 canvases, 4 GLBs HTTP 200, 143/1123 sampled pixels non-blank; no failed requests |
+| Walk clip playing | `node tests/verify-walk-plays.mjs` | **2/2 canvases ANIMATING** (25 distinct frames each) |
+| Reduced motion | `node tests/verify-reduced-motion.mjs` | **2/2 mascots STILL**, `no-motion` class applied |
+| Stride geometry | `node tests/stride-geometry.mjs` | **PASS** — male leg band 7px + silhouette 113.3 cells; female silhouette 108.8 cells (dress hides leg width) |
+| Stride silhouette | `node tests/stride-shape.mjs` | **PASS** — 140 frames; 16.0% of silhouette changes over half a cycle |
+| Mascot clip resolver | `node tests/verify-mascot-clips.mjs` | **9/9 PASS** |
+
+**Test-script corrections:** `mascot-render-check.mjs` now reads the WebGL
+framebuffer directly (the old `drawImage()` path returned a blank bitmap), and
+`stride-geometry.mjs` accepts either a leg-band swing or silhouette deformation
+(the female model's dress masks leg width). Both were false failures; app code
+was not changed. Details: BUG-021.
+
+Raw logs: `/tmp/opencode/{policy-check,policy-facts,back-button,settings-clear,mascot-render-check,verify-walk-plays,verify-reduced-motion,stride-geometry,stride-shape,verify-mascot-clips}.log` (local, not committed).
+
+## 2026-11-14 — Final full end-to-end regression (all green)
+
+Environment: dev stack (backend `:8001`, Vite `:5174`), Playwright Chromium
+with SwiftShader, 65 s between suites so IP rate limits reset. Admin checks used
+`KWIZBOX_ADMIN_USERNAME=Pblack` + `KWIZBOX_ADMIN_PASSWORD` from the local
+credentials file.
+
+First run this day was **10/11**: the duel journey failed 9/10 while waiting for
+the rival strip to advance to `1/12`. Root cause was a duplicate WebSocket
+(reconnect/StrictMode) resetting the opponent's progress — **BUG-022**. After
+the relay fix, backend tests passed **9/9**, the duel journey passed **13/13 on
+three consecutive runs**, and the full regression was rerun clean:
+
+| # | Check | Command | Result |
+|---|---|---|---|
+| 1 | Backend unit/relay/offline tests | `./venv/bin/python -m pytest tests/ -q` | **9 passed** (1.62 s) — includes the new reconnect test |
+| 2 | Offline unit tests | `node --test tests/offlinePractice.test.js` | **4/4 pass** |
+| 3 | Production build | `npm run build` | **OK** (only the pre-existing >500 kB chunk warning) |
+| 4 | Route smoke | `node tests/route-smoke.mjs http://localhost:5174` | **13/13 routes**, no fatal errors |
+| 5 | Offline practice e2e | `node tests/e2e-offline.mjs http://localhost:5174` | **19/19 PASS** |
+| 6 | Register → quiz → summary | `node tests/e2e-register.mjs http://localhost:5174` | **15/15 PASS**, 0 page errors (`e2e_mwg1x8rv`) |
+| 7 | Guest journey | `node tests/e2e-guest.mjs http://localhost:5174` | **5/5 PASS** |
+| 8 | Engagement surfaces | `node tests/e2e-engagement.mjs http://localhost:5174` | **18/18 PASS**, 0 page errors |
+| 9 | Mascot + PNG share | `node tests/e2e-mascot-share.mjs http://localhost:5174` | **18/18 PASS**, 0 page errors |
+| 10 | Live duel (two contexts) | `node tests/e2e-duel.mjs http://localhost:5174` | **13/13 PASS**; challenge `FULGM4`; 0 page errors |
+| 11 | Full API e2e | `KWIZBOX_TEST_URL=http://127.0.0.1:8001 node tests/full-e2e.mjs` | **37 passed, 0 failed** — “FULL APP END-TO-END PASSED” |
+| 12 | Security smoke (last, trips limits) | `node tests/smoke-auth.mjs` | **28 passed, 0 failed** — cookie flags, `/auth/me`, headers, 429s, bad admin creds |
+
+**Outcome:** 11/11 regression suites + 12/12 including the security smoke; all
+extra policy/storage/mascot suites recorded above are green on the same code.
+No product failures remain.
+
+**Test isolation:** backend pytest ran against its throwaway SQLite DB.
+Live dev DB question count stayed **7,922** (including the 32 probe rows from
+the earlier isolation bug); probe users stayed at **4**. E2E journeys added
+test accounts to the dev DB as expected (270 users total after the runs).
+
+Raw logs: `/tmp/opencode/e2e-final-2026-11-14.log`,
+`/tmp/opencode/e2e-full-2026-11-14.log` (first 10/11 run),
+`/tmp/opencode/smoke-auth.log`, `/tmp/opencode/duel-rerun*.log` (local, not
+committed).
