@@ -414,3 +414,27 @@ Raw logs: `/tmp/opencode/e2e-final-2026-11-14.log`,
 `/tmp/opencode/e2e-full-2026-11-14.log` (first 10/11 run),
 `/tmp/opencode/smoke-auth.log`, `/tmp/opencode/duel-rerun*.log` (local, not
 committed).
+
+## 2026-11-14 — Static-build CSP fix (BUG-023)
+
+The backend-served build at `:8001` showed both hero mascots as untextured gray
+figures. Diagnosis: GLTFLoader decodes embedded textures to `blob:` URLs, but
+the API's CSP allowed only `img-src 'self' data:` / `connect-src 'self'`; the
+browser blocked every texture (and the Google Fonts stylesheets). Vite dev at
+`:5174` was unaffected because it does not send the API CSP.
+
+Fix: allow `blob:` for `img-src`, `connect-src`, and `worker-src`, and allow
+`fonts.googleapis.com` / `fonts.gstatic.com`. Verified:
+
+| Check | Result |
+|---|---|
+| Backend tests | **9 passed** |
+| Mascot colours at `:8001` | **Restored** — screenshot shows skin tones, white/blue uniform, brown bag, striped socks; no blob/connect CSP errors, no failed requests |
+| Routes at `:8001` | **13/13** |
+| Guest journey at `:8001` | **5/5** |
+| Security smoke | **30 passed, 0 failed** — includes new assertions that CSP allows blob textures and Google Fonts |
+
+Raw logs: `/tmp/opencode/smoke-auth-csp.log`,
+`/tmp/opencode/route-smoke-8001.log`, `/tmp/opencode/guest-8001.log`;
+screenshots `/tmp/opencode/mascot-5174.png` (correct dev), `mascot-8001.png`
+(gray before fix), `mascot-csp-fixed.png` (correct after fix).

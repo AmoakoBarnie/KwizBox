@@ -65,8 +65,12 @@ async def _security_headers(request, call_next):
     response = await call_next(request)
     response.headers["Content-Security-Policy"] = (
         "default-src 'self'; script-src 'self' 'unsafe-eval'; "
-        "style-src 'self' 'unsafe-inline'; img-src 'self' data:; "
-        "font-src 'self' data:; connect-src 'self'; frame-ancestors 'none'"
+        "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; "
+        # GLTF models decode embedded textures to blob: URLs.
+        "img-src 'self' data: blob:; "
+        "font-src 'self' data: https://fonts.gstatic.com; "
+        "connect-src 'self' blob: https://fonts.googleapis.com https://fonts.gstatic.com; "
+        "worker-src 'self' blob:; frame-ancestors 'none'"
     )
     response.headers["Strict-Transport-Security"] = "max-age=31536000; includeSubDomains"
     response.headers["X-Content-Type-Options"] = "nosniff"
